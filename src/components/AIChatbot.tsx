@@ -3,8 +3,9 @@ import { MessageCircle, X, Send, Bot, User, Loader2 } from 'lucide-react';
 import { GoogleGenAI } from '@google/genai';
 import Markdown from 'react-markdown';
 
-// Initialize Gemini API
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+// Initialize Gemini API safely
+const apiKey = process.env.GEMINI_API_KEY;
+const ai = apiKey && apiKey !== "undefined" ? new GoogleGenAI({ apiKey }) : null;
 
 type Message = {
   id: string;
@@ -32,6 +33,7 @@ export default function AIChatbot() {
   const headshotUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150&h=150";
 
   useEffect(() => {
+    if (!ai) return;
     if (!chatRef.current) {
       chatRef.current = ai.chats.create({
         model: "gemini-3-flash-preview",
@@ -65,6 +67,16 @@ export default function AIChatbot() {
     setInput('');
     setMessages(prev => [...prev, { id: Date.now().toString(), role: 'user', text: userMsg }]);
     setIsLoading(true);
+
+    if (!ai || !chatRef.current) {
+      setMessages(prev => [...prev, { 
+        id: Date.now().toString(), 
+        role: 'model', 
+        text: 'Sorry, the chatbot is currently offline. Please call us at (980) 372-4103.' 
+      }]);
+      setIsLoading(false);
+      return;
+    }
 
     try {
       const response = await chatRef.current.sendMessage({ message: userMsg });
