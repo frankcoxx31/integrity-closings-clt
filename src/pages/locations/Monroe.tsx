@@ -5,7 +5,7 @@ export default function Monroe() {
   return (
     <CityPageLayout
       city="Monroe"
-      image="/monroe 1.jpg"
+      image="/monroe-1.jpg"
       introText={
         <>
           At <strong>Integrity Closings CLT</strong>, we bring professional notary services directly to you throughout the Monroe community. Whether you are at a local coffee shop in <strong>Downtown Monroe</strong>, a business near <strong>Highway 74</strong>, or your own front door, we ensure your documents are handled with integrity.

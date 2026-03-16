@@ -5,7 +5,7 @@ export default function Matthews() {
   return (
     <CityPageLayout
       city="Matthews"
-      image="/matthews 1.jpg"
+      image="/matthews-1.jpg"
       introText={
         <>
           At <strong>Integrity Closings CLT</strong>, we bring professional notary services directly to you throughout the Matthews community. Whether you are at a local coffee shop in <strong>Historic Downtown Matthews</strong>, a business near <strong>Windsor Square</strong>, or your own front door, we ensure your documents are handled with integrity.

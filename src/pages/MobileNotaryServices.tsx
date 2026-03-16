@@ -5,55 +5,55 @@ export default function MobileNotaryServices() {
   const serviceCategories = [
     {
       title: "Personal Documents",
-      image: "/Personal Documents.png",
+      image: "/personal-documents.png",
       link: "/services/personal-documents",
       items: ["Affidavits", "Power of Attorney", "Wills & Trusts", "Medical Directives", "Passport Applications"]
     },
     {
       title: "Business Documents",
-      image: "/Business Documents.png",
+      image: "/business-documents.png",
       link: "/services/business-documents",
       items: ["Contracts", "Corporate Resolutions", "Employment Verification", "Lease Agreements", "Partnership Agreements"]
     },
     {
       title: "Financial Documents",
-      image: "/Financial Documents.png",
+      image: "/financial-documents.png",
       link: "/services/financial-documents",
       items: ["Loan Modifications", "Refinances", "HELOCs", "Reverse Mortgages", "Promissory Notes"]
     },
     {
       title: "Legal Documents",
-      image: "/Legal Documents.png",
+      image: "/legal-documents.png",
       link: "/services/legal-documents",
       items: ["Court Documents", "Divorce Decrees", "Adoption Papers", "Settlement Agreements", "Guardianship Papers"]
     },
     {
       title: "Real Estate Documents",
-      image: "/Real Estate Documents.png",
+      image: "/real-estate-documents.png",
       link: "/services/real-estate-documents",
       items: ["Deeds", "Closing Disclosures", "Title Documents", "Property Transfers", "Easements"]
     },
     {
       title: "Special Considerations",
-      image: "/Special Considerations.png",
+      image: "/special-considerations.png",
       link: "/services/special-considerations",
       items: ["Jail/Detention Center Visits", "After-Hours/Emergency Signings", "Workplace/Office Visits", "Public Location Meetups"]
     },
     {
       title: "Miscellaneous Documents",
-      image: "/Miscellaneous Documents.png",
+      image: "/miscellaneous-documents.png",
       link: "/services/miscellaneous-documents",
       items: ["Vehicle Title Transfers", "School Forms", "Travel Consents", "I-9 Verification", "Copy Certifications"]
     },
     {
       title: "Hospitals & Nursing Homes",
-      image: "/Hospitals & Nursing Homes.png",
+      image: "/hospitals-nursing-homes.png",
       link: "/services/hospitals-nursing-homes",
       items: ["Medical Power of Attorney", "Living Wills", "Advance Directives", "HIPAA Authorizations", "Healthcare Proxies"]
     },
     {
       title: "Lender Provided Documents",
-      image: "/Lender Provided Documents.png",
+      image: "/lender-provided-documents.png",
       link: "/services/lender-provided-documents",
       items: ["Refinance Packages", "Buyer/Seller Packages", "Loan Modifications", "HELOCs", "Reverse Mortgages"]
     }

@@ -9,19 +9,19 @@ export default function Services() {
     {
       title: 'Mobile Loan Closings',
       description: 'Professional loan signing agent services for real estate transactions.',
-      image: '/Mobile Notary.jpg',
+      image: '/mobile-notary.jpg',
       link: '/services/mobile-loan-closings'
     },
     {
       title: 'General Mobile Notary',
       description: 'We travel to your home, office, or coffee shop for any notarization needs.',
-      image: '/General Notary work.png',
+      image: '/general-notary-work.png',
       link: '/services/general-notary'
     },
     {
       title: 'Lender Provided Documents',
       description: 'Specialized handling for borrower-provided loan documents and packages.',
-      image: '/Lender Sent Documents.png',
+      image: '/lender-sent-documents.png',
       link: '/services/lender-documents'
     }
   ];

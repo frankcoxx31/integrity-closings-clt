@@ -23,19 +23,19 @@ export default function Locations() {
     {
       city: 'Salisbury',
       areas: 'China Grove, Faith, Rockwell, Spencer, Granite Quarry',
-      image: '/silisbury nc.jpg',
+      image: '/salisbury-nc.jpg',
       link: '/locations/salisbury'
     },
     {
       city: 'Monroe',
       areas: 'Waxhaw, Indian Trail, Weddington, Stallings, Wesley Chapel, Marshville, Wingate',
-      image: '/monroe 1.jpg',
+      image: '/monroe-1.jpg',
       link: '/locations/monroe'
     },
     {
       city: 'Matthews',
       areas: 'Waxhaw, Indian Trail, Weddington, Stallings, Wesley Chapel, Mint Hill',
-      image: '/matthews 1.jpg',
+      image: '/matthews-1.jpg',
       link: '/locations/matthews'
     }
   ];

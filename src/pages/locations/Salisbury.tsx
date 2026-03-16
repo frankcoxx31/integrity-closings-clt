@@ -5,7 +5,7 @@ export default function Salisbury() {
   return (
     <CityPageLayout
       city="Salisbury"
-      image="/silisbury nc.jpg"
+      image="/salisbury-nc.jpg"
       introText={
         <>
           At <strong>Integrity Closings CLT</strong>, we bring professional notary services directly to you throughout the Salisbury community. Whether you are at a local coffee shop in the <strong>Historic District</strong>, a business near <strong>Innes Street</strong>, or your own front door, we ensure your documents are handled with integrity.
