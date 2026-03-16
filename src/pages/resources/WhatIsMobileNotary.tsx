@@ -63,9 +63,9 @@ export default function WhatIsMobileNotary() {
             <p className="text-slate-600 mb-6">
               Integrity Closings CLT is ready to come to your location.
             </p>
-            <a href="/booking" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors">
+            <Link to="/booking" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors">
               Book an Appointment
-            </a>
+            </Link>
           </div>
         </div>
       </div>

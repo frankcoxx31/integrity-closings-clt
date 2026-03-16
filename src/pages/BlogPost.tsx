@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 
@@ -73,8 +74,8 @@ export default function BlogPost() {
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Finalize Your Modification?</h2>
                     <p className="text-lg text-slate-300 mb-8">Don’t let a mountain of paperwork stress you out. Let us bring the professional closing to your table.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="tel:9803724103" className="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors">Call Now: 980-372-4103</a>
-                        <a href="https://booking.closewise.com/closing" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
+                        <a href="#" className="text-blue-600 hover:underline">Link</a>
+                        <Link to="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</Link>
                     </div>
                 </section>
             </div>
@@ -129,7 +130,7 @@ export default function BlogPost() {
                     <li><strong>Rescission Errors:</strong> Miscalculating the three-day "Right to Cancel" period due to incorrect dating can legally stall your loan.</li>
                     <li><strong>Recording Failures:</strong> Inaccurate execution of the acknowledgment or jurat will result in rejection by the county recorder.</li>
                 </ul>
-                <p className="mb-6"><em>Learn more about avoiding these pitfalls in our guide: <a href="https://www.integrityclosingsclt.com/common-mistakes-at-loan-signings-or-charlotte-nc-notary" className="text-blue-600 hover:underline">Common Mistakes at Loan Signings</a>.</em></p>
+                <p className="mb-6"><em>Learn more about avoiding these pitfalls in our guide: <a href="#" className="text-blue-600 hover:underline">Link</a>.</em></p>
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Efficiency Through Mobile Professionalism</h2>
                 <p className="mb-6">Refinancing is time-sensitive. Rate locks are temporary, and every day of delay carries a financial cost. Our mobile service eliminates the commute and the waiting room.</p>
@@ -146,8 +147,8 @@ export default function BlogPost() {
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready for a Stress-Free Closing?</h2>
                     <p className="text-lg text-slate-300 mb-8">Don’t leave your financial future to chance. Let us bring the professional closing to your home or office.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="tel:9803724103" className="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors">Call Now: 980-372-4103</a>
-                        <a href="https://booking.closewise.com/closing" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
+                        <a href="#" className="text-blue-600 hover:underline">Link</a>
+                        <Link to="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</Link>
                     </div>
                 </section>
             </div>
@@ -178,14 +179,14 @@ export default function BlogPost() {
 
                 <p className="mb-6">You hear a heavy "thud" on your front porch. You open the door to find a thick FedEx envelope—your mortgage refinance or loan modification documents. Along with the paperwork is a brief, frustrating instruction: <em>"Please find a notary and return these documents by Friday."</em></p>
 
-                <p className="mb-6">If you are like most homeowners, your first instinct is to head to a bank. However, a mortgage refinance is not a standard one-page document. It is a complex legal transaction. Using a general notary can lead to errors that delay your funding or cause your loan to be denied entirely. At <strong>Integrity Closings CLT</strong>, we specialize in high-stakes <a href="https://www.integrityclosingsclt.com/how-loan-signing-services-make-real-estate-transactions-faster-and-easier" className="text-blue-600 hover:underline">mortgage closings</a>, ensuring your paperwork is handled with the precision it deserves.</p>
+                <p className="mb-6">If you are like most homeowners, your first instinct is to head to a bank. However, a mortgage refinance is not a standard one-page document. It is a complex legal transaction. Using a general notary can lead to errors that delay your funding or cause your loan to be denied entirely. At <strong>Integrity Closings CLT</strong>, we specialize in high-stakes <a href="#" className="text-blue-600 hover:underline">Link</a>, ensuring your paperwork is handled with the precision it deserves.</p>
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Expertise in Complex Loan Documentation</h2>
                 <p className="mb-6">A mortgage package typically contains 100–150 pages of financial jargon and strict "sign here" rules. Certified loan signing agents undergo extensive training to help you navigate these documents, including the <strong>Closing Disclosure</strong>, the <strong>Note</strong>, and the <strong>Right to Cancel</strong>.</p>
                 
                 <img src="https://cdn.marblism.com/OoJ-h6xcsH_.webp" alt="Refinance document complexity" className="w-full h-auto rounded-lg my-8" />
 
-                <p className="mb-6">A single missed initial can trigger a mandatory three-day rescission delay, causing you to miss your rate-lock expiration. We perform a triple-check to ensure your loan stays on track. If you want to avoid these headaches, it is vital to know <a href="https://www.integrityclosingsclt.com/how-to-find-a-reliable-notary-near-you" className="text-blue-600 hover:underline">how to find a reliable notary near you</a> who understands the stakes.</p>
+                <p className="mb-6">A single missed initial can trigger a mandatory three-day rescission delay, causing you to miss your rate-lock expiration. We perform a triple-check to ensure your loan stays on track. If you want to avoid these headaches, it is vital to know <a href="#" className="text-blue-600 hover:underline">Link</a> who understands the stakes.</p>
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Compliance and Risk Mitigation</h2>
                 <p className="mb-6">Mortgage transactions are heavily regulated. A certified signing agent is well-versed in North Carolina statutes, ensuring every form—including Patriot Act identification—is compliant. We provide a secure, background-screened process that protects your sensitive information and eliminates the risk of "kickbacks" caused by errors in your documentation.</p>
@@ -196,14 +197,14 @@ export default function BlogPost() {
                 <p className="mb-6">Brick-and-mortar offices are often an ordeal. We offer a level of convenience they simply cannot match:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li><strong>We Come to You:</strong> Whether you are in Mint Hill, Uptown, or Monroe, we meet you where you are comfortable.</li>
-                    <li><strong>Flexible Scheduling:</strong> We offer <a href="https://www.integrityclosingsclt.com/same-day-mobile-notary-services-what-to-expect" className="text-blue-600 hover:underline">same-day</a> and <a href="https://www.integrityclosingsclt.com/after-hours-mobile-notary-services-concord-nc" className="text-blue-600 hover:underline">after-hours services</a> to meet your lender's deadlines.</li>
+                    <li><strong>Flexible Scheduling:</strong> We offer <a href="#" className="text-blue-600 hover:underline">Link</a> and <a href="#" className="text-blue-600 hover:underline">Link</a> to meet your lender's deadlines.</li>
                     <li><strong>Sanity Savings:</strong> Eliminate the need to take time off work or fight Charlotte traffic.</li>
                 </ul>
 
                 <img src="https://cdn.marblism.com/xfVlx0qVySN.webp" alt="Mobile notary home closing" className="w-full h-auto rounded-lg my-8" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Choose Integrity Closings CLT?</h2>
-                <p className="mb-6">We are the premier choice for <a href="https://www.integrityclosingsclt.com" className="text-blue-600 hover:underline">mortgage closings</a> in the Charlotte area. Our expertise includes:</p>
+                <p className="mb-6">We are the premier choice for <a href="#" className="text-blue-600 hover:underline">Link</a> in the Charlotte area. Our expertise includes:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li><strong>Full Refinance Packages</strong></li>
                     <li><strong>Loan Modifications</strong></li>
@@ -215,8 +216,8 @@ export default function BlogPost() {
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Don't Leave Your Refinance to Chance</h2>
                     <p className="text-lg text-slate-300 mb-8">Your mortgage refinance is a significant milestone. Ensure it is handled correctly the first time.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="tel:9803724103" className="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors">Call Now: 980-372-4103</a>
-                        <a href="https://booking.closewise.com/closing" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
+                        <a href="#" className="text-blue-600 hover:underline">Link</a>
+                        <Link to="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</Link>
                     </div>
                 </section>
             </div>
@@ -262,7 +263,7 @@ export default function BlogPost() {
                 <ol className="list-decimal pl-6 space-y-4 mb-6">
                     <li><strong>Expertise in Mortgage Documents:</strong> Not all notaries are created equal. A Certified Loan Signing Agent understands the difference between a Deed of Trust and a Note. We know exactly where the borrower needs to sign versus where they need to initial.</li>
                     <li><strong>Convenience and Privacy:</strong> Discussing your financial situation and signing sensitive documents on a retail counter while people wait in line behind you is far from ideal. An in-home signing allows you to review your documents in the privacy and comfort of your own home.</li>
-                    <li><strong>Flexible Scheduling:</strong> Most banks close at 5:00 PM and aren't open on Sundays. We understand that your life doesn't stop because of a loan modification. Whether you need an <a href="https://www.integrityclosingsclt.com/after-hours-mobile-notary-monroe-nc" className="text-blue-600 hover:underline">after-hours mobile notary in Monroe, NC</a> or a weekend appointment in Charlotte, we work around your schedule.</li>
+                    <li><strong>Flexible Scheduling:</strong> Most banks close at 5:00 PM and aren't open on Sundays. We understand that your life doesn't stop because of a loan modification. Whether you need an <a href="#" className="text-blue-600 hover:underline">Link</a> or a weekend appointment in Charlotte, we work around your schedule.</li>
                     <li><strong>Error Prevention:</strong> We double and triple-check the documents before leaving your home. Our goal is to ensure the lender accepts the package the first time, preventing costly delays.</li>
                 </ol>
 
@@ -278,7 +279,7 @@ export default function BlogPost() {
                     <li><strong>We Come to You:</strong> Whether you are at home, at your office, or a local coffee shop, we meet you where you are.</li>
                     <li><strong>Verification of Identity:</strong> We ensure all signers have the proper, unexpired government-issued identification required by North Carolina law.</li>
                     <li><strong>Guided Signing:</strong> While we cannot provide legal advice, we can identify the documents and point out exactly where the lender requires signatures, initials, and dates.</li>
-                    <li><strong>Prompt Return:</strong> Many of our clients are in a rush. We offer <a href="https://www.integrityclosingsclt.com/same-day-mobile-notary-services-what-to-expect" className="text-blue-600 hover:underline">same-day mobile notary services</a> to ensure your documents are ready to be dropped at FedEx or UPS immediately.</li>
+                    <li><strong>Prompt Return:</strong> Many of our clients are in a rush. We offer <a href="#" className="text-blue-600 hover:underline">Link</a> to ensure your documents are ready to be dropped at FedEx or UPS immediately.</li>
                 </ul>
 
                 <div className="bg-slate-50 border-l-4 border-slate-900 p-6 my-8">
@@ -294,14 +295,14 @@ export default function BlogPost() {
                 <img src="https://cdn.marblism.com/_O18aS9i0tt.webp" alt="Notary workspace" className="w-full h-auto rounded-lg my-8" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Beyond the Living Room: Special Circumstances</h2>
-                <p className="mb-6">We realize that life happens. Perhaps you are dealing with a health issue or are currently in the hospital. We provide specialized services for these exact situations, including <a href="https://www.integrityclosingsclt.com/mobile-notary-for-hospital-notary-charlotte-nc" className="text-blue-600 hover:underline">mobile notary for hospital visits in Charlotte, NC</a>. No matter where you are, the goal remains the same: getting your documents signed correctly and on time.</p>
+                <p className="mb-6">We realize that life happens. Perhaps you are dealing with a health issue or are currently in the hospital. We provide specialized services for these exact situations, including <a href="#" className="text-blue-600 hover:underline">Link</a>. No matter where you are, the goal remains the same: getting your documents signed correctly and on time.</p>
 
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Finish Your Loan Modification?</h2>
                     <p className="text-lg text-slate-300 mb-8">Don't let the final stack of paperwork stand between you and your new loan terms. We handle the logistics so you can focus on getting back to your life.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="tel:9803724103" className="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors">Call Now: 980-372-4103</a>
-                        <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Book Appointment Online</a>
+                        <a href="#" className="text-blue-600 hover:underline">Link</a>
+                        <Link to="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Book Appointment Online</Link>
                     </div>
                 </section>
 

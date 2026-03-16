@@ -37,9 +37,9 @@ export default function HospitalNotary() {
               <p className="text-blue-800">We understand the sensitive nature of these visits. Our notaries are experienced in working with patients, medical staff, and families to ensure documents are executed legally and respectfully, without causing unnecessary stress to the patient.</p>
             </div>
             <div className="text-center">
-              <a href="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+              <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
                 Schedule an Appointment <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
