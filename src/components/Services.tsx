@@ -3,25 +3,25 @@ export default function Services() {
     {
       title: 'Hospitals & Nursing Homes',
       description: 'Compassionate bedside service for medical directives, POAs, and wills.',
-      image: '/hospital.png',
+      image: '/assets/hospital.png',
       link: '/services/hospital-notary'
     },
     {
       title: 'Mobile Loan Closings',
       description: 'Professional loan signing agent services for real estate transactions.',
-      image: '/mobile-notary.jpg',
+      image: '/assets/mobile-notary.jpg',
       link: '/services/mobile-loan-closings'
     },
     {
       title: 'General Mobile Notary',
       description: 'We travel to your home, office, or coffee shop for any notarization needs.',
-      image: '/general-notary-work.png',
+      image: '/assets/general-notary-work.png',
       link: '/services/general-notary'
     },
     {
       title: 'Lender Provided Documents',
       description: 'Specialized handling for borrower-provided loan documents and packages.',
-      image: '/lender-sent-documents.png',
+      image: '/assets/lender-sent-documents.png',
       link: '/services/lender-documents'
     }
   ];
@@ -42,7 +42,7 @@ export default function Services() {
                   src={service.image} 
                   alt={service.title} 
                   className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
+                  
                 />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>

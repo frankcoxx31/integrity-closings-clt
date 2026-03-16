@@ -63,7 +63,7 @@ export default function Logo({
       src={imgSrc} 
       alt="Integrity Closings CLT" 
       className={className}
-      referrerPolicy="no-referrer"
+      
     />
   );
 }

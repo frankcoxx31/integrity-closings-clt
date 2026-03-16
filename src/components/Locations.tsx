@@ -5,37 +5,37 @@ export default function Locations() {
     {
       city: 'Charlotte',
       areas: 'Mint Hill, Huntersville, Cornelius, Davidson, Matthews, Pineville, Uptown and Downtown',
-      image: '/charlotte.jpg',
+      image: '/assets/charlotte.jpg',
       link: '/locations/charlotte'
     },
     {
       city: 'Concord',
       areas: 'China Grove, Kannapolis, Harrisburg, Mount Pleasant, Midland, Locust',
-      image: '/concord.jpg',
+      image: '/assets/concord.jpg',
       link: '/locations/concord'
     },
     {
       city: 'Gastonia',
       areas: 'Belmont, Mount Holly, Dallas, Bessemer City, Lowell, Stanley',
-      image: '/gastiona.png',
+      image: '/assets/gastiona.png',
       link: '/locations/gastonia'
     },
     {
       city: 'Salisbury',
       areas: 'China Grove, Faith, Rockwell, Spencer, Granite Quarry',
-      image: '/salisbury-nc.jpg',
+      image: '/assets/salisbury-nc.jpg',
       link: '/locations/salisbury'
     },
     {
       city: 'Monroe',
       areas: 'Waxhaw, Indian Trail, Weddington, Stallings, Wesley Chapel, Marshville, Wingate',
-      image: '/monroe-1.jpg',
+      image: '/assets/monroe-1.jpg',
       link: '/locations/monroe'
     },
     {
       city: 'Matthews',
       areas: 'Waxhaw, Indian Trail, Weddington, Stallings, Wesley Chapel, Mint Hill',
-      image: '/matthews-1.jpg',
+      image: '/assets/matthews-1.jpg',
       link: '/locations/matthews'
     }
   ];
@@ -56,7 +56,7 @@ export default function Locations() {
                   src={loc.image} 
                   alt={`${loc.city}, NC`} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
+                  
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
