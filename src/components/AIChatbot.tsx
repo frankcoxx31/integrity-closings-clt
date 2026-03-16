@@ -42,7 +42,7 @@ export default function AIChatbot() {
           You answer questions about notary services, service areas (Charlotte, Concord, Gastonia, Salisbury, Monroe, Matthews), and general pricing. 
           Always be polite and professional. 
           CRITICAL: Keep your answers EXTREMELY concise. Aim for 1 to 3 short sentences maximum. Do not write long paragraphs.
-          When encouraging users to book an appointment, ALWAYS use this exact markdown link format: [Book Online](/booking)
+          When encouraging users to book an appointment, ALWAYS use this exact markdown link format: [Book Online](PASTE_MY_BOOKING_URL_HERE)
           You can also provide the phone number: (980) 372-4103.`,
         }
       });
@@ -144,10 +144,12 @@ export default function AIChatbot() {
                     <Markdown
                       components={{
                         a: ({ node, ...props }) => {
-                          if (props.href === '/booking') {
+                          if (props.href === 'PASTE_MY_BOOKING_URL_HERE') {
                             return (
                               <a 
                                 {...props} 
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-block mt-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg no-underline transition-colors"
                               >
                                 {props.children}

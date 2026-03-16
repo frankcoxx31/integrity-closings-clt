@@ -79,7 +79,7 @@ export default function Charlotte() {
         <div className="text-center mb-12">
           <h2 className="text-2xl font-bold text-[#2c3e50] mb-4">Ready to Secure Your Notarization?</h2>
           <p className="mb-8">Schedule your appointment online in seconds. Fast, secure, and professional.</p>
-          <Link to="/booking" className="inline-block px-6 py-3 bg-[#3498db] text-white no-underline font-bold rounded-[5px] hover:bg-[#2980b9] transition-colors">Book Your Appointment Online</Link>
+          <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-[#3498db] text-white no-underline font-bold rounded-[5px] hover:bg-[#2980b9] transition-colors">Book Your Appointment Online</a>
         </div>
       </div>
 

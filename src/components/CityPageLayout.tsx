@@ -113,7 +113,7 @@ export default function CityPageLayout({
           <Phone className="w-6 h-6 text-blue-600" />
           <span>Call or Text: 980-372-4103</span>
         </div>
-        <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">Book Appointment Now</Link>
+        <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">Book Appointment Now</a>
       </div>
     </div>
   );

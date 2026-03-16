@@ -76,7 +76,7 @@ export default function Navbar() {
                 </button>
               ))}
               <button 
-                onClick={() => handleNavigation('/booking')}
+                onClick={() => window.open('PASTE_MY_BOOKING_URL_HERE', '_blank')}
                 className="flex items-center bg-white text-blue-950 px-6 py-2.5 rounded-full font-bold hover:bg-slate-100 transition-colors"
               >
                 Book Now
@@ -108,7 +108,7 @@ export default function Navbar() {
                 </button>
               ))}
               <button 
-                onClick={() => handleNavigation('/booking')}
+                onClick={() => window.open('PASTE_MY_BOOKING_URL_HERE', '_blank')}
                 className="block w-full text-center mt-4 bg-white text-blue-950 px-4 py-3 rounded-full font-bold hover:bg-slate-100"
               >
                 Book Now

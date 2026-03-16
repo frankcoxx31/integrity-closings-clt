@@ -25,7 +25,6 @@ import Disclaimer from './pages/Disclaimer';
 import FAQPage from './pages/FAQPage';
 import QuoteCalculator from './pages/QuoteCalculator';
 import Resources from './pages/Resources';
-import Booking from './pages/Booking';
 
 // Resource Articles
 import AcknowledgmentVsJurat from './pages/resources/AcknowledgmentVsJurat';
@@ -85,7 +84,6 @@ export default function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/booking" element={<Booking />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources/acknowledgment-vs-jurat" element={<AcknowledgmentVsJurat />} />

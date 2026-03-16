@@ -74,7 +74,7 @@ export default function BlogPost() {
                     <p className="text-lg text-slate-300 mb-8">Don’t let a mountain of paperwork stress you out. Let us bring the professional closing to your table.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <a href="#" className="text-blue-600 hover:underline">Link</a>
-                        <Link to="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</Link>
+                        <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>
                 </section>
             </div>
@@ -147,7 +147,7 @@ export default function BlogPost() {
                     <p className="text-lg text-slate-300 mb-8">Don’t leave your financial future to chance. Let us bring the professional closing to your home or office.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <a href="#" className="text-blue-600 hover:underline">Link</a>
-                        <Link to="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</Link>
+                        <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>
                 </section>
             </div>
@@ -216,7 +216,7 @@ export default function BlogPost() {
                     <p className="text-lg text-slate-300 mb-8">Your mortgage refinance is a significant milestone. Ensure it is handled correctly the first time.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <a href="#" className="text-blue-600 hover:underline">Link</a>
-                        <Link to="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</Link>
+                        <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>
                 </section>
             </div>
@@ -301,7 +301,7 @@ export default function BlogPost() {
                     <p className="text-lg text-slate-300 mb-8">Don't let the final stack of paperwork stand between you and your new loan terms. We handle the logistics so you can focus on getting back to your life.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <a href="#" className="text-blue-600 hover:underline">Link</a>
-                        <Link to="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Book Appointment Online</Link>
+                        <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Book Appointment Online</a>
                     </div>
                 </section>
 

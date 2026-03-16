@@ -80,7 +80,7 @@ export default function MobileNotaryServices() {
                 This service is designed for immediate needs, ensuring your critical documents are handled efficiently and without delay.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/booking" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">Book Now</Link>
+                <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">Book Now</a>
                 <a 
                   href="tel:9803724103" 
                   className="inline-flex items-center justify-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors"
@@ -137,7 +137,7 @@ export default function MobileNotaryServices() {
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
             Book your appointment online now or give us a call to schedule your mobile notary service.
           </p>
-          <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-slate-900 bg-white hover:bg-slate-100 transition-colors">Book Appointment</Link>
+          <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-slate-900 bg-white hover:bg-slate-100 transition-colors">Book Appointment</a>
         </div>
       </div>
     </div>
