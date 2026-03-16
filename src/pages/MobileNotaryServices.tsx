@@ -81,7 +81,7 @@ export default function MobileNotaryServices() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a 
-                  href="https://icclt.com/booking" 
+                  href="/booking" 
                   className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
                 >
                   Book Now
@@ -143,7 +143,7 @@ export default function MobileNotaryServices() {
             Book your appointment online now or give us a call to schedule your mobile notary service.
           </p>
           <a 
-            href="https://icclt.com/booking" 
+            href="/booking" 
             className="inline-block bg-white text-slate-900 font-bold py-3 px-8 rounded-lg hover:bg-blue-50 transition-colors"
           >
             Book Appointment

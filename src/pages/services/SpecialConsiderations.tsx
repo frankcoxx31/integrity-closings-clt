@@ -41,7 +41,7 @@ export default function SpecialConsiderations() {
             </div>
             
             <div className="text-center pt-6 border-t border-slate-100">
-              <a href="https://icclt.com/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+              <a href="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
                 Book Appointment
               </a>
             </div>

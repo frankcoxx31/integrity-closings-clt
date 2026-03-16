@@ -79,7 +79,7 @@ export default function Charlotte() {
           <h2 className="text-2xl font-bold text-[#2c3e50] mb-4">Ready to Secure Your Notarization?</h2>
           <p className="mb-8">Schedule your appointment online in seconds. Fast, secure, and professional.</p>
           <a 
-            href="https://icclt.com/booking" 
+            href="/booking" 
             className="block w-full md:w-auto md:inline-block px-10 py-4 bg-[#27ae60] hover:bg-[#219150] text-white text-[1.2rem] font-bold rounded transition-colors box-border"
           >
             Book Your Appointment Online

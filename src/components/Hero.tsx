@@ -22,15 +22,13 @@ export default function Hero() {
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-4xl mx-auto">
-          <a 
-            href="https://icclt.com/booking" 
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link 
+            to="/booking" 
             className="flex-1 inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-slate-900 bg-white hover:bg-slate-100 transition-colors"
           >
             <Calendar className="w-5 h-5 mr-2" />
             Get An Appointment
-          </a>
+          </Link>
           <Link 
             to="/calculator" 
             className="flex-1 inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 transition-colors"

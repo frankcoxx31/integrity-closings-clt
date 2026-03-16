@@ -113,7 +113,7 @@ export default function CityPageLayout({
           <span>Call or Text: 980-372-4103</span>
         </div>
         <a 
-          href="https://icclt.com/booking" 
+          href="/booking" 
           className="inline-block px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg transition-colors shadow-md hover:shadow-lg"
         >
           Book an Appointment Now

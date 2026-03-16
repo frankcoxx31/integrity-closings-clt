@@ -75,14 +75,12 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <a 
-                href="https://icclt.com/booking" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <button 
+                onClick={() => handleNavigation('/booking')}
                 className="flex items-center bg-white text-blue-950 px-6 py-2.5 rounded-full font-bold hover:bg-slate-100 transition-colors"
               >
                 Book Now
-              </a>
+              </button>
             </div>
 
             <div className="flex items-center lg:hidden">
@@ -109,14 +107,12 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
-              <a 
-                href="https://icclt.com/booking" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <button 
+                onClick={() => handleNavigation('/booking')}
                 className="block w-full text-center mt-4 bg-white text-blue-950 px-4 py-3 rounded-full font-bold hover:bg-slate-100"
               >
                 Book Now
-              </a>
+              </button>
             </div>
           </div>
         )}

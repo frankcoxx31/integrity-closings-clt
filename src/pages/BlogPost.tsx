@@ -301,7 +301,7 @@ export default function BlogPost() {
                     <p className="text-lg text-slate-300 mb-8">Don't let the final stack of paperwork stand between you and your new loan terms. We handle the logistics so you can focus on getting back to your life.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <a href="tel:9803724103" className="inline-block px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-colors">Call Now: 980-372-4103</a>
-                        <a href="https://icclt.com/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Book Appointment Online</a>
+                        <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Book Appointment Online</a>
                     </div>
                 </section>
 

@@ -78,16 +78,14 @@ export default function WelcomePopup() {
             </a>
 
             {/* Secondary Button: Book Online */}
-            <a 
-              href="https://icclt.com/booking" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <Link 
+              to="/booking" 
               onClick={handleClose}
               className="flex items-center justify-center w-full py-3 px-6 rounded-xl bg-slate-100 text-blue-950 font-bold hover:bg-slate-200 transition-colors"
             >
               <Calendar className="w-5 h-5 mr-2 text-blue-700" />
               Book Online
-            </a>
+            </Link>
 
             {/* Secondary Button: Quick Quote */}
             <Link 
