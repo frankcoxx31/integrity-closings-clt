@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowLeft } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 export default function Charlotte() {
   return (
     <div className="font-sans text-[#333] leading-relaxed bg-white">
@@ -78,12 +79,7 @@ export default function Charlotte() {
         <div className="text-center mb-12">
           <h2 className="text-2xl font-bold text-[#2c3e50] mb-4">Ready to Secure Your Notarization?</h2>
           <p className="mb-8">Schedule your appointment online in seconds. Fast, secure, and professional.</p>
-          <a 
-            href="/booking" 
-            className="block w-full md:w-auto md:inline-block px-10 py-4 bg-[#27ae60] hover:bg-[#219150] text-white text-[1.2rem] font-bold rounded transition-colors box-border"
-          >
-            Book Your Appointment Online
-          </a>
+          <Link to="/booking" className="inline-block px-6 py-3 bg-[#3498db] text-white no-underline font-bold rounded-[5px] hover:bg-[#2980b9] transition-colors">Book Your Appointment Online</Link>
         </div>
       </div>
 

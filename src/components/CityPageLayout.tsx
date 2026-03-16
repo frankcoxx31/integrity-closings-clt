@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { MapPin, Phone } from 'lucide-react';
 import React from 'react';
 
@@ -112,12 +113,7 @@ export default function CityPageLayout({
           <Phone className="w-6 h-6 text-blue-600" />
           <span>Call or Text: 980-372-4103</span>
         </div>
-        <a 
-          href="/booking" 
-          className="inline-block px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-lg transition-colors shadow-md hover:shadow-lg"
-        >
-          Book an Appointment Now
-        </a>
+        <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">Book Appointment Now</Link>
       </div>
     </div>
   );
