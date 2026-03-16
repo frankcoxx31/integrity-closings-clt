@@ -20,7 +20,7 @@ export default function FinancialDocuments() {
         
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
-            <img src="/assets/financial-documents.png" alt="Financial Documents" className="w-full h-full object-cover" />
+            <img src="/financial-documents.png" alt="Financial Documents" className="w-full h-full object-cover" />
           </div>
           
           <div className="p-8 sm:p-12">

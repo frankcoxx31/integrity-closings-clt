@@ -20,7 +20,7 @@ export default function HospitalsNursingHomes() {
         
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
-            <img src="/assets/hospitals-nursing-homes.png" alt="Hospitals & Nursing Homes" className="w-full h-full object-cover" />
+            <img src="/hospitals-nursing-homes.png" alt="Hospitals & Nursing Homes" className="w-full h-full object-cover" />
           </div>
           
           <div className="p-8 sm:p-12">

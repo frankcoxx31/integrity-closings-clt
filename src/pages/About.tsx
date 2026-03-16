@@ -5,7 +5,7 @@ export default function About() {
     <div className="min-h-screen bg-slate-50 pb-12">
       {/* Header Image */}
       <div className="h-64 sm:h-80 w-full mb-8">
-        <img src="/assets/hero-bj.jpg" alt="About Integrity Closings CLT" className="w-full h-full object-cover object-top" />
+        <img src="/hero-bj.jpg" alt="About Integrity Closings CLT" className="w-full h-full object-cover object-top" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +43,7 @@ export default function About() {
             <div className="mt-12 lg:mt-0 relative">
               <div className="absolute inset-0 bg-blue-600 rounded-2xl transform rotate-3 opacity-10"></div>
               <img 
-                src="/assets/about-page.jpg" 
+                src="/about-page.jpg" 
                 alt="Professional Notary Service" 
                 className="relative rounded-2xl shadow-xl w-full object-cover h-96"
               />

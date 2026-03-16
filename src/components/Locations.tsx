@@ -5,37 +5,37 @@ export default function Locations() {
     {
       city: 'Charlotte',
       areas: 'Mint Hill, Huntersville, Cornelius, Davidson, Matthews, Pineville, Uptown and Downtown',
-      image: '/assets/charlotte.jpg',
+      image: '/charlotte.jpg',
       link: '/locations/charlotte'
     },
     {
       city: 'Concord',
       areas: 'China Grove, Kannapolis, Harrisburg, Mount Pleasant, Midland, Locust',
-      image: '/assets/concord.jpg',
+      image: '/concord.jpg',
       link: '/locations/concord'
     },
     {
       city: 'Gastonia',
       areas: 'Belmont, Mount Holly, Dallas, Bessemer City, Lowell, Stanley',
-      image: '/assets/gastiona.png',
+      image: '/gastiona.png',
       link: '/locations/gastonia'
     },
     {
       city: 'Salisbury',
       areas: 'China Grove, Faith, Rockwell, Spencer, Granite Quarry',
-      image: '/assets/salisbury-nc.jpg',
+      image: '/salisbury-nc.jpg',
       link: '/locations/salisbury'
     },
     {
       city: 'Monroe',
       areas: 'Waxhaw, Indian Trail, Weddington, Stallings, Wesley Chapel, Marshville, Wingate',
-      image: '/assets/monroe-1.jpg',
+      image: '/monroe-1.jpg',
       link: '/locations/monroe'
     },
     {
       city: 'Matthews',
       areas: 'Waxhaw, Indian Trail, Weddington, Stallings, Wesley Chapel, Mint Hill',
-      image: '/assets/matthews-1.jpg',
+      image: '/matthews-1.jpg',
       link: '/locations/matthews'
     }
   ];

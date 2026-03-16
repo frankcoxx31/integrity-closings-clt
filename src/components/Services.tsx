@@ -3,25 +3,25 @@ export default function Services() {
     {
       title: 'Hospitals & Nursing Homes',
       description: 'Compassionate bedside service for medical directives, POAs, and wills.',
-      image: '/assets/hospital.png',
+      image: '/hospital.png',
       link: '/services/hospital-notary'
     },
     {
       title: 'Mobile Loan Closings',
       description: 'Professional loan signing agent services for real estate transactions.',
-      image: '/assets/mobile-notary.jpg',
+      image: '/mobile-notary.jpg',
       link: '/services/mobile-loan-closings'
     },
     {
       title: 'General Mobile Notary',
       description: 'We travel to your home, office, or coffee shop for any notarization needs.',
-      image: '/assets/general-notary-work.png',
+      image: '/general-notary-work.png',
       link: '/services/general-notary'
     },
     {
       title: 'Lender Provided Documents',
       description: 'Specialized handling for borrower-provided loan documents and packages.',
-      image: '/assets/lender-sent-documents.png',
+      image: '/lender-sent-documents.png',
       link: '/services/lender-documents'
     }
   ];

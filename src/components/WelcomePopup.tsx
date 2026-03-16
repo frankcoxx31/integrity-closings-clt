@@ -45,7 +45,7 @@ export default function WelcomePopup() {
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <img 
-              src="/assets/logo.jpg" 
+              src="/logo.jpg" 
               alt="Integrity Closings CLT" 
               className="h-24 w-auto mix-blend-multiply object-contain"
             />
