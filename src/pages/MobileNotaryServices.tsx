@@ -47,7 +47,7 @@ export default function MobileNotaryServices() {
     },
     {
       title: "Hospitals & Nursing Homes",
-      image: "/hospitals-nursing-homes.png",
+      image: "/hospital-and-nursing-home-notarizations-pua.jpg",
       link: "/services/hospitals-nursing-homes",
       items: ["Medical Power of Attorney", "Living Wills", "Advance Directives", "HIPAA Authorizations", "Healthcare Proxies"]
     },
