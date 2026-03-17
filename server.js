@@ -1,22 +1,43 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createServer as createViteServer } from 'vite';
+import fs from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+async function startServer() {
+  const app = express();
+  const PORT = process.env.PORT || 3000;
 
-// Serve static files from the React app build directory
-app.use(express.static(path.join(__dirname, 'dist')));
+  // API route to download the build
+  app.get('/website-build.zip', (req, res) => {
+    const zipPath = path.join(__dirname, 'website-build.zip');
+    if (fs.existsSync(zipPath)) {
+      res.download(zipPath, 'website-build.zip');
+    } else {
+      res.status(404).send('Build zip not found. Please wait for it to be generated.');
+    }
+  });
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
+  // Vite middleware for development
+  if (process.env.NODE_ENV !== 'production') {
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: 'spa',
+    });
+    app.use(vite.middlewares);
+  } else {
+    app.use(express.static(path.join(__dirname, 'dist')));
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    });
+  }
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+}
+
+startServer();

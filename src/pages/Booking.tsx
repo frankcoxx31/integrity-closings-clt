@@ -132,7 +132,7 @@ export default function Booking() {
 
           {/* Progress Bar */}
           <div className="bg-slate-50 border-b border-slate-200 px-6 py-4">
-            <div className="flex items-center justify-between max-w-2xl mx-auto">
+            <div className="flex items-center justify-between max-w-2xl mx-auto relative">
               {[
                 { num: 1, label: 'Service' },
                 { num: 2, label: 'Date & Time' },
@@ -151,7 +151,7 @@ export default function Booking() {
                 </div>
               ))}
               {/* Connecting Lines */}
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-200 -z-0 hidden sm:block"></div>
+              <div className="absolute left-0 top-4 -translate-y-1/2 w-full h-1 bg-slate-200 -z-0 hidden sm:block"></div>
             </div>
           </div>
 
