@@ -37,7 +37,7 @@ export default function GeneralNotary() {
               <p className="text-blue-800">We offer flexible scheduling, including evenings and weekends, to accommodate your busy lifestyle. Just let us know where and when, and we'll be there to ensure your documents are legally and properly notarized.</p>
             </div>
             <div className="text-center">
-              <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+              <a href="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
                 Request a Notary <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </div>

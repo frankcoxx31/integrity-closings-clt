@@ -37,7 +37,7 @@ export default function MobileLoanClosings() {
               <p className="text-blue-800">We don't just stamp documents; we guide signers through their loan packages, ensuring all signatures, dates, and initials are completed accurately. We guarantee prompt document return and clear communication throughout the entire process.</p>
             </div>
             <div className="text-center">
-              <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+              <a href="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
                 Book a Closing <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </div>

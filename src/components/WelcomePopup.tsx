@@ -78,7 +78,7 @@ export default function WelcomePopup() {
             </a>
 
             {/* Secondary Button: Book Online */}
-            <a href="PASTE_MY_BOOKING_URL_HERE" target="_blank" rel="noopener noreferrer" 
+            <a href="/booking" 
               onClick={handleClose}
               className="flex items-center justify-center w-full py-3 px-6 rounded-xl bg-slate-100 text-blue-950 font-bold hover:bg-slate-200 transition-colors"
             >

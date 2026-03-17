@@ -25,6 +25,7 @@ import Disclaimer from './pages/Disclaimer';
 import FAQPage from './pages/FAQPage';
 import QuoteCalculator from './pages/QuoteCalculator';
 import Resources from './pages/Resources';
+import Booking from './pages/Booking';
 
 // Resource Articles
 import AcknowledgmentVsJurat from './pages/resources/AcknowledgmentVsJurat';
@@ -90,6 +91,7 @@ export default function App() {
             <Route path="/resources/acceptable-id-nc" element={<AcceptableIdNc />} />
             <Route path="/resources/what-is-mobile-notary" element={<WhatIsMobileNotary />} />
             <Route path="/calculator" element={<QuoteCalculator />} />
+            <Route path="/booking" element={<Booking />} />
             <Route path="/services/hospital-notary" element={<HospitalNotary />} />
             <Route path="/services/mobile-loan-closings" element={<MobileLoanClosings />} />
             <Route path="/services/general-notary" element={<GeneralNotary />} />
