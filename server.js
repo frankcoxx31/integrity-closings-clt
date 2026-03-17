@@ -13,7 +13,7 @@ async function startServer() {
 
   // API route to download the build
   app.get('/website-build.zip', (req, res) => {
-    const zipPath = path.join(__dirname, 'website-build.zip');
+    const zipPath = path.join(__dirname, '.tmp', 'website-build.zip');
     if (fs.existsSync(zipPath)) {
       res.download(zipPath, 'website-build.zip');
     } else {
