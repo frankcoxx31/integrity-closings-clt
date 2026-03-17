@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar as CalendarIcon, Clock, MapPin, CheckCircle, ChevronLeft, ChevronRight, User, Phone, Mail, FileText } from 'lucide-react';
-import { format, addMonths, subMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, isToday, addDays, startOfWeek, endOfWeek } from 'date-fns';
+import { format, addMonths, subMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, isToday, addDays, startOfWeek, endOfWeek, parseISO, isWithinInterval } from 'date-fns';
 
 type Service = {
   id: string;
@@ -56,7 +56,7 @@ const generateTimeSlots = () => {
   return slots;
 };
 
-const TIME_SLOTS = generateTimeSlots();
+const ALL_TIME_SLOTS = generateTimeSlots();
 
 export default function Booking() {
   const [step, setStep] = useState(1);
@@ -65,6 +65,9 @@ export default function Booking() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const [availableSlots, setAvailableSlots] = useState<string[]>([]);
+  const [isLoadingSlots, setIsLoadingSlots] = useState(false);
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -79,6 +82,74 @@ export default function Booking() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  // Fetch availability when date changes
+  useEffect(() => {
+    async function fetchAvailability() {
+      if (!selectedDate || !selectedService) return;
+      
+      setIsLoadingSlots(true);
+      try {
+        const response = await fetch('/api/availability', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ date: selectedDate.toISOString() })
+        });
+        
+        if (!response.ok) throw new Error('Failed to fetch availability');
+        
+        const { busy } = await response.json();
+        const service = SERVICES.find(s => s.id === selectedService);
+        const durationMinutes = service?.duration || 30;
+        
+        // Filter ALL_TIME_SLOTS
+        const filtered = ALL_TIME_SLOTS.filter(timeStr => {
+          // Parse timeStr into a Date object for the selected date
+          const timeMatch = timeStr.match(/(\d+):(\d+)\s+(AM|PM)/);
+          if (!timeMatch) return false;
+          
+          let hours = parseInt(timeMatch[1]);
+          const minutes = parseInt(timeMatch[2]);
+          const ampm = timeMatch[3];
+          
+          if (ampm === 'PM' && hours < 12) hours += 12;
+          if (ampm === 'AM' && hours === 12) hours = 0;
+          
+          const slotStart = new Date(selectedDate);
+          slotStart.setHours(hours, minutes, 0, 0);
+          
+          const slotEnd = new Date(slotStart.getTime() + durationMinutes * 60000);
+          
+          // Check if this slot overlaps with any busy period
+          const isBusy = busy.some((busyPeriod: {start: string, end: string}) => {
+            const busyStart = parseISO(busyPeriod.start);
+            const busyEnd = parseISO(busyPeriod.end);
+            
+            // Overlap condition: slotStart < busyEnd AND slotEnd > busyStart
+            return slotStart < busyEnd && slotEnd > busyStart;
+          });
+          
+          // Also filter out past times if it's today
+          const now = new Date();
+          if (isSameDay(selectedDate, now) && slotStart < now) {
+            return false;
+          }
+          
+          return !isBusy;
+        });
+        
+        setAvailableSlots(filtered);
+      } catch (error) {
+        console.error('Error fetching availability:', error);
+        // Fallback to all slots if API fails
+        setAvailableSlots(ALL_TIME_SLOTS);
+      } finally {
+        setIsLoadingSlots(false);
+      }
+    }
+    
+    fetchAvailability();
+  }, [selectedDate, selectedService]);
 
   const handleNext = () => setStep(s => Math.min(s + 1, 4));
   const handleBack = () => setStep(s => Math.max(s - 1, 1));
@@ -307,21 +378,37 @@ export default function Booking() {
                     </h3>
                     
                     {selectedDate ? (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3 max-h-[320px] overflow-y-auto pr-2 custom-scrollbar">
-                        {TIME_SLOTS.map(time => (
-                          <button
-                            key={time}
-                            onClick={() => setSelectedTime(time)}
-                            className={`py-2 px-3 rounded-lg border text-sm font-medium transition-all ${
-                              selectedTime === time 
-                                ? 'border-blue-600 bg-blue-600 text-white shadow-md' 
-                                : 'border-slate-200 text-slate-700 hover:border-blue-400 hover:bg-blue-50'
-                            }`}
-                          >
-                            {time}
-                          </button>
-                        ))}
-                      </div>
+                      isLoadingSlots ? (
+                        <div className="h-[320px] flex flex-col items-center justify-center border-2 border-dashed border-slate-200 rounded-xl bg-slate-50">
+                          <svg className="animate-spin h-8 w-8 text-blue-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          <p className="text-slate-500 font-medium">Checking calendar availability...</p>
+                        </div>
+                      ) : availableSlots.length > 0 ? (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3 max-h-[320px] overflow-y-auto pr-2 custom-scrollbar">
+                          {availableSlots.map(time => (
+                            <button
+                              key={time}
+                              onClick={() => setSelectedTime(time)}
+                              className={`py-2 px-3 rounded-lg border text-sm font-medium transition-all ${
+                                selectedTime === time 
+                                  ? 'border-blue-600 bg-blue-600 text-white shadow-md' 
+                                  : 'border-slate-200 text-slate-700 hover:border-blue-400 hover:bg-blue-50'
+                              }`}
+                            >
+                              {time}
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="h-[320px] flex flex-col items-center justify-center border-2 border-dashed border-slate-200 rounded-xl bg-slate-50">
+                          <Clock className="w-8 h-8 text-slate-400 mb-2" />
+                          <p className="text-slate-600 font-medium text-center px-6">No available times on this date.</p>
+                          <p className="text-slate-500 text-sm text-center px-6 mt-1">Please select another date.</p>
+                        </div>
+                      )
                     ) : (
                       <div className="h-[320px] flex items-center justify-center border-2 border-dashed border-slate-200 rounded-xl bg-slate-50">
                         <p className="text-slate-500 text-center px-6">Please select a date from the calendar to view available times.</p>

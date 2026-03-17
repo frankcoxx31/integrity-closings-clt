@@ -78,7 +78,7 @@ async function startServer() {
         credentials.client_email,
         null,
         credentials.private_key,
-        ['https://www.googleapis.com/auth/calendar.events']
+        ['https://www.googleapis.com/auth/calendar']
       );
 
       const calendar = google.calendar({ version: 'v3', auth });
@@ -106,6 +106,80 @@ async function startServer() {
     } catch (error) {
       console.error('Calendar API Error:', error);
       res.status(500).json({ error: 'Failed to create calendar event' });
+    }
+  });
+
+  // API route to check calendar availability
+  app.post('/api/availability', async (req, res) => {
+    try {
+      const { date } = req.body; // e.g., "2023-10-25"
+      
+      let privateKey = process.env.GOOGLE_PRIVATE_KEY;
+      let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+      
+      if (!privateKey || !clientEmail) {
+        try {
+          const decoded = Buffer.from(ENCODED_CREDENTIALS, 'base64').toString('utf-8');
+          const parsed = JSON.parse(decoded);
+          privateKey = parsed.private_key;
+          clientEmail = parsed.client_email;
+        } catch (e) {
+          console.error('Failed to parse baked-in credentials');
+        }
+      }
+
+      if (privateKey) {
+        if (privateKey.trim().startsWith('{')) {
+          try {
+            const parsed = JSON.parse(privateKey);
+            if (parsed.private_key) privateKey = parsed.private_key;
+          } catch (e) {}
+        }
+        privateKey = privateKey.replace(/['"]/g, '').trim();
+        if (!privateKey.includes('BEGIN PRIVATE KEY')) {
+          privateKey = privateKey.replace(/\\n/g, '');
+          privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----\n`;
+        } else {
+          privateKey = privateKey.replace(/\\n/g, '\n');
+        }
+      }
+
+      const calendarId = process.env.GOOGLE_CALENDAR_ID;
+
+      if (!clientEmail || !privateKey || !calendarId) {
+        return res.status(500).json({ error: 'Calendar credentials not configured' });
+      }
+
+      const auth = new google.auth.JWT(
+        clientEmail,
+        null,
+        privateKey,
+        ['https://www.googleapis.com/auth/calendar.readonly']
+      );
+
+      const calendar = google.calendar({ version: 'v3', auth });
+
+      // Set time range for the requested date (from midnight to midnight next day)
+      const timeMin = new Date(date);
+      timeMin.setHours(0, 0, 0, 0);
+      
+      const timeMax = new Date(date);
+      timeMax.setHours(23, 59, 59, 999);
+
+      const response = await calendar.freebusy.query({
+        requestBody: {
+          timeMin: timeMin.toISOString(),
+          timeMax: timeMax.toISOString(),
+          timeZone: 'America/New_York',
+          items: [{ id: calendarId }]
+        }
+      });
+
+      const busySlots = response.data.calendars[calendarId].busy;
+      res.json({ busy: busySlots });
+    } catch (error) {
+      console.error('Availability API Error:', error);
+      res.status(500).json({ error: 'Failed to fetch availability' });
     }
   });
 
