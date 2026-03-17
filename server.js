@@ -15,7 +15,9 @@ async function startServer() {
   app.get('/website-build.zip', (req, res) => {
     const zipPath = path.join(__dirname, '.tmp', 'website-build.zip');
     if (fs.existsSync(zipPath)) {
-      res.download(zipPath, 'website-build.zip');
+      res.setHeader('Content-Disposition', 'attachment; filename="website-build.zip"');
+      res.setHeader('Content-Type', 'application/zip');
+      res.sendFile(zipPath);
     } else {
       res.status(404).send('Build zip not found. Please wait for it to be generated.');
     }

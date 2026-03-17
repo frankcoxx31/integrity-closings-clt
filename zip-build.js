@@ -1,28 +1,22 @@
-import fs from 'fs';
+import AdmZip from 'adm-zip';
 import path from 'path';
-import archiver from 'archiver';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const output = fs.createWriteStream(path.join(__dirname, '.tmp', 'website-build.zip'));
-const archive = archiver('zip', {
-  zlib: { level: 9 } // Sets the compression level.
-});
+try {
+  const zip = new AdmZip();
+  const distPath = path.join(__dirname, 'dist');
+  const outputPath = path.join(__dirname, '.tmp', 'website-build.zip');
 
-output.on('close', function() {
-  console.log(archive.pointer() + ' total bytes');
-  console.log('archiver has been finalized and the output file descriptor has closed.');
-});
+  // Add all files from the dist folder directly to the root of the zip
+  zip.addLocalFolder(distPath);
 
-archive.on('error', function(err) {
-  throw err;
-});
-
-archive.pipe(output);
-
-// append files from a sub-directory, putting its contents at the root of archive
-archive.directory(path.join(__dirname, 'dist'), false);
-
-archive.finalize();
+  // Write the zip file to disk
+  zip.writeZip(outputPath);
+  
+  console.log('Successfully created zip file at:', outputPath);
+} catch (error) {
+  console.error('Error creating zip:', error);
+}
