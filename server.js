@@ -19,9 +19,25 @@ async function startServer() {
     try {
       const { firstName, lastName, email, phone, address, notes, serviceName, startTime, endTime } = req.body;
 
+      let privateKey = process.env.GOOGLE_PRIVATE_KEY;
+      
+      // Handle base64 encoded keys (Hostinger workaround)
+      if (privateKey && !privateKey.includes('BEGIN PRIVATE KEY')) {
+        try {
+          privateKey = Buffer.from(privateKey, 'base64').toString('utf-8');
+        } catch (e) {
+          console.error('Failed to decode base64 private key');
+        }
+      }
+
+      // Handle standard \n replacements if it wasn't base64 encoded
+      if (privateKey) {
+        privateKey = privateKey.replace(/\\n/g, '\n');
+      }
+
       const credentials = {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+        private_key: privateKey,
       };
 
       const calendarId = process.env.GOOGLE_CALENDAR_ID;
