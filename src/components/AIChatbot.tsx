@@ -79,16 +79,30 @@ export default function AIChatbot() {
     }
 
     try {
-      const response = await chatRef.current.sendMessage({ message: userMsg });
-      setMessages(prev => [...prev, { id: Date.now().toString(), role: 'model', text: response.text }]);
+      const responseStream = await chatRef.current.sendMessageStream({ message: userMsg });
+      const messageId = Date.now().toString();
+      
+      // Add an empty message first to hold the streaming text
+      setMessages(prev => [...prev, { id: messageId, role: 'model', text: '' }]);
+      
+      // Turn off the loading spinner as soon as the stream connects
+      setIsLoading(false);
+
+      for await (const chunk of responseStream) {
+        const c = chunk as any;
+        if (c.text) {
+          setMessages(prev => prev.map(msg => 
+            msg.id === messageId ? { ...msg, text: msg.text + c.text } : msg
+          ));
+        }
+      }
     } catch (error) {
       console.error("Chat error:", error);
       setMessages(prev => [...prev, { 
         id: Date.now().toString(), 
         role: 'model', 
-        text: 'Sorry, I encountered an error. Please try again or call us at (980) 372-4103.' 
+        text: 'Sorry, I encountered an error connecting to the AI. Please check your API key or try again later.' 
       }]);
-    } finally {
       setIsLoading(false);
     }
   };
