@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
 import fs from 'fs';
 import { google } from 'googleapis';
+import { ENCODED_CREDENTIALS } from './calendar-secret.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,23 +21,50 @@ async function startServer() {
       const { firstName, lastName, email, phone, address, notes, serviceName, startTime, endTime } = req.body;
 
       let privateKey = process.env.GOOGLE_PRIVATE_KEY;
+      let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
       
-      // Handle base64 encoded keys (Hostinger workaround)
-      if (privateKey && !privateKey.includes('BEGIN PRIVATE KEY')) {
+      // Fallback to baked-in credentials if Hostinger environment variables are missing
+      if (!privateKey || !clientEmail) {
         try {
-          privateKey = Buffer.from(privateKey, 'base64').toString('utf-8');
+          const decoded = Buffer.from(ENCODED_CREDENTIALS, 'base64').toString('utf-8');
+          const parsed = JSON.parse(decoded);
+          privateKey = parsed.private_key;
+          clientEmail = parsed.client_email;
         } catch (e) {
-          console.error('Failed to decode base64 private key');
+          console.error('Failed to parse baked-in credentials');
         }
       }
 
-      // Handle standard \n replacements if it wasn't base64 encoded
       if (privateKey) {
-        privateKey = privateKey.replace(/\\n/g, '\n');
+        // If the user pasted the entire JSON string, parse it out
+        if (privateKey.trim().startsWith('{')) {
+          try {
+            const parsed = JSON.parse(privateKey);
+            if (parsed.private_key) {
+              privateKey = parsed.private_key;
+            }
+          } catch (e) {
+            console.error('Failed to parse JSON private key');
+          }
+        }
+
+        // Clean up any accidental spaces or quotes the user might have pasted
+        privateKey = privateKey.replace(/['"]/g, '').trim();
+
+        // If the user pasted the raw key without the BEGIN/END tags, add them back!
+        if (!privateKey.includes('BEGIN PRIVATE KEY')) {
+          // Remove any \n literals if they accidentally included them
+          privateKey = privateKey.replace(/\\n/g, '');
+          // Reconstruct the proper PEM format Google requires
+          privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----\n`;
+        } else {
+          // Standard replacement if they managed to paste the whole thing with \n
+          privateKey = privateKey.replace(/\\n/g, '\n');
+        }
       }
 
       const credentials = {
-        client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+        client_email: clientEmail,
         private_key: privateKey,
       };
 
