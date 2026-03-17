@@ -77,6 +77,9 @@ export default function Booking() {
   // Calendar State
   const [currentMonth, setCurrentMonth] = useState(new Date());
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
   const handleNext = () => setStep(s => Math.min(s + 1, 4));
   const handleBack = () => setStep(s => Math.max(s - 1, 1));
 
@@ -85,11 +88,60 @@ export default function Booking() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, this would send data to a backend
-    console.log('Booking submitted:', { selectedService, selectedDate, selectedTime, formData });
-    handleNext(); // Move to confirmation step
+    setIsSubmitting(true);
+    setSubmitError(null);
+    
+    try {
+      if (!selectedDate || !selectedTime || !selectedService) {
+        throw new Error('Missing required booking details');
+      }
+
+      const service = SERVICES.find(s => s.id === selectedService);
+      
+      // Parse the selected time (e.g., "9:00 AM")
+      const timeMatch = selectedTime.match(/(\d+):(\d+)\s+(AM|PM)/);
+      if (!timeMatch) throw new Error('Invalid time format');
+      
+      let hours = parseInt(timeMatch[1]);
+      const minutes = parseInt(timeMatch[2]);
+      const ampm = timeMatch[3];
+      
+      if (ampm === 'PM' && hours < 12) hours += 12;
+      if (ampm === 'AM' && hours === 12) hours = 0;
+
+      // Create start Date object
+      const startTime = new Date(selectedDate);
+      startTime.setHours(hours, minutes, 0, 0);
+
+      // Create end Date object based on service duration
+      const endTime = new Date(startTime.getTime() + (service?.duration || 30) * 60000);
+
+      const response = await fetch('/api/book', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          serviceName: service?.name,
+          startTime: startTime.toISOString(),
+          endTime: endTime.toISOString(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to book appointment');
+      }
+
+      handleNext(); // Move to confirmation step
+    } catch (error) {
+      console.error('Booking error:', error);
+      setSubmitError('There was an error scheduling your appointment. Please try again or call us.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Calendar Logic
@@ -423,20 +475,39 @@ export default function Booking() {
                     </div>
                   </div>
 
-                  <div className="mt-8 flex justify-between">
-                    <button 
-                      type="button"
-                      onClick={handleBack}
-                      className="px-6 py-3 text-slate-600 font-bold rounded-lg hover:bg-slate-100 transition-colors"
-                    >
-                      Back
-                    </button>
-                    <button 
-                      type="submit"
-                      className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      Confirm Booking
-                    </button>
+                  <div className="mt-8">
+                    {submitError && (
+                      <div className="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
+                        {submitError}
+                      </div>
+                    )}
+                    <div className="flex justify-between">
+                      <button 
+                        type="button"
+                        onClick={handleBack}
+                        disabled={isSubmitting}
+                        className="px-6 py-3 text-slate-600 font-bold rounded-lg hover:bg-slate-100 transition-colors disabled:opacity-50"
+                      >
+                        Back
+                      </button>
+                      <button 
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400 flex items-center"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Booking...
+                          </>
+                        ) : (
+                          'Confirm Booking'
+                        )}
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>
