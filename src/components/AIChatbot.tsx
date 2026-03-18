@@ -4,8 +4,7 @@ import { GoogleGenAI } from '@google/genai';
 import Markdown from 'react-markdown';
 
 // Initialize Gemini API safely
-const apiKey = process.env.GEMINI_API_KEY;
-const ai = apiKey && apiKey !== "undefined" ? new GoogleGenAI({ apiKey }) : null;
+let ai: GoogleGenAI | null = null;
 
 type Message = {
   id: string;
@@ -24,6 +23,7 @@ export default function AIChatbot() {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isConfigured, setIsConfigured] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   
   // Keep track of the chat instance
@@ -33,12 +33,19 @@ export default function AIChatbot() {
   const headshotUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150&h=150";
 
   useEffect(() => {
-    if (!ai) return;
-    if (!chatRef.current) {
-      chatRef.current = ai.chats.create({
-        model: "gemini-3-flash-preview",
-        config: {
-          systemInstruction: `Your job is to help website visitors quickly schedule a mobile notary appointment for Integrity Closings CLT.
+    async function initChat() {
+      try {
+        // Fetch API key from server
+        const configRes = await fetch('/api/config');
+        const config = await configRes.json();
+        
+        if (config.geminiKey) {
+          ai = new GoogleGenAI({ apiKey: config.geminiKey });
+          
+          chatRef.current = ai.chats.create({
+            model: "gemini-3-flash-preview",
+            config: {
+              systemInstruction: `Your job is to help website visitors quickly schedule a mobile notary appointment for Integrity Closings CLT.
 
 IMPORTANT RESPONSE RULES:
 • Keep responses short and easy to read
@@ -97,9 +104,16 @@ Then ask for location and time.
 
 MOST IMPORTANT RULE:
 Never generate large blocks of text. Responses must be short, easy to scan, and conversational.`,
+            }
+          });
+          setIsConfigured(true);
         }
-      });
+      } catch (error) {
+        console.error("Failed to initialize chatbot:", error);
+      }
     }
+    
+    initChat();
   }, []);
 
   const scrollToBottom = () => {
@@ -121,7 +135,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
     setMessages(prev => [...prev, { id: Date.now().toString(), role: 'user', text: userMsg }]);
     setIsLoading(true);
 
-    if (!ai || !chatRef.current) {
+    if (!isConfigured || !chatRef.current) {
       setMessages(prev => [...prev, { 
         id: Date.now().toString(), 
         role: 'model', 
@@ -154,7 +168,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
       setMessages(prev => [...prev, { 
         id: Date.now().toString(), 
         role: 'model', 
-        text: 'Sorry, I encountered an error connecting to the AI. Please check your API key or try again later.' 
+        text: 'Sorry, I encountered an error. Please try again later or call us.' 
       }]);
       setIsLoading(false);
     }

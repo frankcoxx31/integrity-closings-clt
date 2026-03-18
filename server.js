@@ -15,6 +15,25 @@ async function startServer() {
 
   app.use(express.json());
 
+  // API route for health check and environment variable verification
+  app.get('/api/health', (req, res) => {
+    const calendarId = process.env.GOOGLE_CALENDAR_ID;
+    const geminiKey = process.env.GEMINI_API_KEY;
+    const privateKey = process.env.GOOGLE_PRIVATE_KEY;
+    const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+
+    res.json({
+      status: 'ok',
+      env: {
+        GOOGLE_CALENDAR_ID: calendarId ? `${calendarId.substring(0, 3)}...` : 'MISSING',
+        GEMINI_API_KEY: geminiKey ? 'CONFIGURED' : 'MISSING',
+        GOOGLE_PRIVATE_KEY: privateKey ? 'CONFIGURED' : 'MISSING (Using fallback)',
+        GOOGLE_SERVICE_ACCOUNT_EMAIL: clientEmail ? 'CONFIGURED' : 'MISSING (Using fallback)',
+        NODE_ENV: process.env.NODE_ENV || 'development'
+      }
+    });
+  });
+
   // API route to book calendar event
   app.post('/api/book', async (req, res) => {
     try {
@@ -113,11 +132,20 @@ async function startServer() {
   app.post('/api/availability', async (req, res) => {
     try {
       const { date } = req.body; // e.g., "2023-10-25"
+      console.log('Checking availability for date:', date);
       
       let privateKey = process.env.GOOGLE_PRIVATE_KEY;
       let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+      const calendarId = process.env.GOOGLE_CALENDAR_ID;
+
+      console.log('Credentials check:', { 
+        hasPrivateKey: !!privateKey, 
+        hasClientEmail: !!clientEmail, 
+        hasCalendarId: !!calendarId 
+      });
       
       if (!privateKey || !clientEmail) {
+        console.log('Using baked-in credentials fallback');
         try {
           const decoded = Buffer.from(ENCODED_CREDENTIALS, 'base64').toString('utf-8');
           const parsed = JSON.parse(decoded);
@@ -144,9 +172,8 @@ async function startServer() {
         }
       }
 
-      const calendarId = process.env.GOOGLE_CALENDAR_ID;
-
       if (!clientEmail || !privateKey || !calendarId) {
+        console.error('Missing configuration:', { clientEmail: !!clientEmail, privateKey: !!privateKey, calendarId: !!calendarId });
         return res.status(500).json({ error: 'Calendar credentials not configured' });
       }
 
@@ -154,7 +181,7 @@ async function startServer() {
         clientEmail,
         null,
         privateKey,
-        ['https://www.googleapis.com/auth/calendar.readonly']
+        ['https://www.googleapis.com/auth/calendar']
       );
 
       const calendar = google.calendar({ version: 'v3', auth });
@@ -166,6 +193,8 @@ async function startServer() {
       const timeMax = new Date(date);
       timeMax.setHours(23, 59, 59, 999);
 
+      console.log('Querying freebusy for:', { timeMin: timeMin.toISOString(), timeMax: timeMax.toISOString() });
+
       const response = await calendar.freebusy.query({
         requestBody: {
           timeMin: timeMin.toISOString(),
@@ -175,12 +204,20 @@ async function startServer() {
         }
       });
 
-      const busySlots = response.data.calendars[calendarId].busy;
+      const busySlots = response.data.calendars[calendarId].busy || [];
+      console.log('Found busy slots:', busySlots.length);
       res.json({ busy: busySlots });
     } catch (error) {
       console.error('Availability API Error:', error);
-      res.status(500).json({ error: 'Failed to fetch availability' });
+      res.status(500).json({ error: 'Failed to fetch availability', details: error.message });
     }
+  });
+
+  // API route to provide config to the frontend (e.g. Gemini key)
+  app.get('/api/config', (req, res) => {
+    res.json({
+      geminiKey: process.env.GEMINI_API_KEY || ''
+    });
   });
 
   // API route to download the build
