@@ -35,16 +35,24 @@ export default function Blog() {
 
   return (
     <div className="bg-slate-50 min-h-screen pb-20">
-      {/* Hero Section */}
-      <div className="bg-blue-950 py-20">
+      {/* Hero Image Section */}
+      <div className="w-full h-auto overflow-hidden relative">
+        <img 
+          src="/blog-hero.png" 
+          alt="Integrity Closings Blog Hero" 
+          className="w-full h-full object-contain"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
+      {/* Blog Header Content */}
+      <div className="bg-white py-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-6">
-            <BookOpen className="h-8 w-8 text-blue-300" />
+          <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+            <BookOpen className="h-8 w-8 text-blue-600" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-            Our Blog
-          </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <h1 className="text-4xl font-bold text-slate-900 mb-4 font-serif">Our Blog</h1>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             Helpful articles, guides, and insights about notary services, loan signings, and more.
           </p>
         </div>
