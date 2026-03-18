@@ -47,17 +47,18 @@ async function startServer() {
     // 3. Fallback to baked-in credentials if still missing or looks like a personal email
     // Service account emails MUST end in .gserviceaccount.com
     const isServiceAccountEmail = clientEmail && clientEmail.includes('.gserviceaccount.com');
+    let credentialsObj = null;
     
     if (!privateKey || !isServiceAccountEmail || privateKey.length < 100) {
       fallbackStatus = "ATTEMPTING_FALLBACK_FILE";
       try {
         const cleanEncoded = ENCODED_CREDENTIALS.trim();
         const decoded = Buffer.from(cleanEncoded, 'base64').toString('utf8');
-        const credentials = JSON.parse(decoded);
+        credentialsObj = JSON.parse(decoded);
         
         // Force fallback if the current ones are broken or not service account
-        privateKey = credentials.private_key;
-        clientEmail = credentials.client_email;
+        privateKey = credentialsObj.private_key;
+        clientEmail = credentialsObj.client_email;
         source = "FALLBACK_FILE";
         fallbackStatus = "FALLBACK_FILE_SUCCESS";
       } catch (e) {
@@ -82,12 +83,21 @@ async function startServer() {
       calendarId = calendarId.replace(/['"]/g, '').trim();
     }
 
-    return { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError, source };
+    // If we don't have a credentials object yet (from fallback), create one for fromJSON
+    if (!credentialsObj && privateKey && clientEmail) {
+      credentialsObj = {
+        client_email: clientEmail,
+        private_key: privateKey,
+        type: 'service_account'
+      };
+    }
+
+    return { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError, source, credentialsObj };
   };
 
   // API route for health check and environment variable verification
   app.get('/api/health', async (req, res) => {
-    const { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError, source } = getGoogleCredentials();
+    const { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError, source, credentialsObj } = getGoogleCredentials();
     const geminiKey = process.env.GEMINI_API_KEY;
 
     let authTest = "NOT_STARTED";
@@ -99,13 +109,10 @@ async function startServer() {
     }
 
     try {
-      if (clientEmail && privateKey && calendarId) {
-        const auth = new google.auth.JWT(
-          clientEmail,
-          null,
-          privateKey,
-          ['https://www.googleapis.com/auth/calendar']
-        );
+      if (credentialsObj && calendarId) {
+        // Use fromJSON for maximum compatibility
+        const auth = google.auth.fromJSON(credentialsObj);
+        auth.scopes = ['https://www.googleapis.com/auth/calendar'];
         
         const token = await auth.authorize();
         authTest = `SUCCESS: Token acquired! (Expires: ${new Date(token.expiry_date).toLocaleTimeString()})`;
@@ -154,18 +161,14 @@ async function startServer() {
   app.post('/api/book', async (req, res) => {
     try {
       const { firstName, lastName, email, phone, address, notes, serviceName, startTime, endTime } = req.body;
-      const { privateKey, clientEmail, calendarId } = getGoogleCredentials();
+      const { credentialsObj, calendarId } = getGoogleCredentials();
 
-      if (!clientEmail || !privateKey || !calendarId) {
+      if (!credentialsObj || !calendarId) {
         return res.status(500).json({ error: 'Calendar credentials not configured' });
       }
 
-      const auth = new google.auth.JWT(
-        clientEmail,
-        null,
-        privateKey,
-        ['https://www.googleapis.com/auth/calendar']
-      );
+      const auth = google.auth.fromJSON(credentialsObj);
+      auth.scopes = ['https://www.googleapis.com/auth/calendar'];
 
       const calendar = google.calendar({ version: 'v3', auth });
 
@@ -201,19 +204,14 @@ async function startServer() {
       const { date } = req.body; // e.g., "2023-10-25"
       console.log('Checking availability for date:', date);
       
-      const { privateKey, clientEmail, calendarId } = getGoogleCredentials();
+      const { credentialsObj, calendarId } = getGoogleCredentials();
 
-      if (!clientEmail || !privateKey || !calendarId) {
-        console.error('Missing configuration:', { clientEmail: !!clientEmail, privateKey: !!privateKey, calendarId: !!calendarId });
+      if (!credentialsObj || !calendarId) {
         return res.status(500).json({ error: 'Calendar credentials not configured' });
       }
 
-      const auth = new google.auth.JWT(
-        clientEmail,
-        null,
-        privateKey,
-        ['https://www.googleapis.com/auth/calendar']
-      );
+      const auth = google.auth.fromJSON(credentialsObj);
+      auth.scopes = ['https://www.googleapis.com/auth/calendar'];
 
       const calendar = google.calendar({ version: 'v3', auth });
 
