@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, User, Loader2 } from 'lucide-react';
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenAI, GenerateContentResponse } from '@google/genai';
 import Markdown from 'react-markdown';
 
 // Initialize Gemini API safely
@@ -43,7 +43,7 @@ export default function AIChatbot() {
           ai = new GoogleGenAI({ apiKey: config.geminiKey });
           
           chatRef.current = ai.chats.create({
-            model: "gemini-1.5-flash",
+            model: "gemini-3-flash-preview",
             config: {
               systemInstruction: `Your job is to help website visitors quickly schedule a mobile notary appointment for Integrity Closings CLT.
 
@@ -158,7 +158,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
 
       let fullText = '';
       for await (const chunk of responseStream) {
-        const c = chunk as any;
+        const c = chunk as GenerateContentResponse;
         if (c.text) {
           fullText += c.text;
           setMessages(prev => prev.map(msg => 
