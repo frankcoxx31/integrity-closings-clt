@@ -114,7 +114,7 @@ export default function MobileNotaryServices() {
           {serviceCategories.map((category, index) => (
             <Link to={category.link} key={index} className="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow flex flex-col group">
               <div className="mb-5 w-full h-48 rounded-xl overflow-hidden bg-slate-100">
-                <img src={category.image} alt={category.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={category.image} alt={category.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">{category.title}</h3>
               <ul className="space-y-2 mb-6 flex-grow">

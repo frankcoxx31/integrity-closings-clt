@@ -38,7 +38,7 @@ export default function CityPageLayout({
       {/* Header Section */}
       <div className="bg-blue-950 text-white py-16 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <img src={image} alt={city} className="w-full h-full object-cover" />
+          <img src={image} alt={city} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-blue-950 mix-blend-multiply"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">

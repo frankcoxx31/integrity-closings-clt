@@ -56,7 +56,7 @@ export default function Locations() {
                   src={loc.image} 
                   alt={`${loc.city}, NC`} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  
+                  referrerPolicy="no-referrer"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">

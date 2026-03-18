@@ -193,7 +193,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
         {/* Header */}
         <div className="bg-blue-950 text-white p-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img src={headshotUrl} alt="Mr. Frank" className="w-10 h-10 rounded-full object-cover border-2 border-blue-600" />
+            <img src={headshotUrl} alt="Mr. Frank" className="w-10 h-10 rounded-full object-cover border-2 border-blue-600" referrerPolicy="no-referrer" />
             <h3 className="font-bold text-lg">Mr. Frank</h3>
           </div>
           <button 
@@ -212,7 +212,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
               className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
             >
               <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center overflow-hidden ${msg.role === 'user' ? 'bg-slate-800' : 'bg-blue-600'}`}>
-                {msg.role === 'user' ? <User className="w-5 h-5 text-white" /> : <img src={headshotUrl} alt="Mr. Frank" className="w-full h-full object-cover" />}
+                {msg.role === 'user' ? <User className="w-5 h-5 text-white" /> : <img src={headshotUrl} alt="Mr. Frank" className="w-full h-full object-cover" referrerPolicy="no-referrer" />}
               </div>
               <div 
                 className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm ${
@@ -252,7 +252,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
           {isLoading && (
             <div className="flex gap-3">
               <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center overflow-hidden">
-                <img src={headshotUrl} alt="Mr. Frank" className="w-full h-full object-cover" />
+                <img src={headshotUrl} alt="Mr. Frank" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm flex items-center gap-2">
                 <Loader2 className="w-4 h-4 text-slate-400 animate-spin" />

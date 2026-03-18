@@ -24,7 +24,7 @@ export default function BlogPost() {
             </div>
 
             <div className="prose prose-lg prose-slate max-w-none">
-                <img src="https://cdn.marblism.com/ygYtnHwZ_eT.webp" alt="Home closing documentation" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/ygYtnHwZ_eT.webp" alt="Home closing documentation" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <p className="mb-6">You’ve spent months on the phone with your lender. You’ve sent in pay stubs, written hardship letters, and navigated the grueling trial period of a loan modification. Finally, the heavy envelope arrives in the mail. You open it, expecting a simple "congratulations," but instead, you find a 50-page stack of legal documents and a cover letter that essentially says: <em>"Find a notary, get this signed, and send it back to us by Friday."</em></p>
 
@@ -33,7 +33,7 @@ export default function BlogPost() {
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Lenders Make You Find Your Own Notary</h2>
                 <p className="mb-6">Mortgage servicers are often located hundreds of miles away and do not have local offices to assist you. By shifting the responsibility to the homeowner, they reduce overhead, but they create a significant logistical hurdle for you.</p>
 
-                <img src="https://cdn.marblism.com/sKQgV4BD_aK.webp" alt="Mortgage loan modification documents" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/sKQgV4BD_aK.webp" alt="Mortgage loan modification documents" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Problem with the "Traditional" Notary Search</h2>
                 <p className="mb-6">If you decide to drive around town to find a notary, you’ll likely encounter several common frustrations:</p>
@@ -47,7 +47,7 @@ export default function BlogPost() {
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Convenience of a Notary Closing at Home</h2>
                 <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we bring the professional to you. Whether you are in <strong>Mint Hill</strong>, Uptown, or anywhere in the Charlotte area, a mobile loan signing agent ensures your documents are executed with the precision lenders demand.</p>
 
-                <img src="https://cdn.marblism.com/iuUsMUPjKdt.webp" alt="Mobile notary service in Mint Hill" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/iuUsMUPjKdt.webp" alt="Mobile notary service in Mint Hill" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What Exactly is a Mortgage Loan Modification?</h2>
                 <p className="mb-6">A mortgage loan modification is a permanent change in your loan terms to make payments more affordable. The process typically follows these steps:</p>
@@ -67,7 +67,7 @@ export default function BlogPost() {
                     <li><strong>Clear Your Workspace:</strong> A clean dining table provides the space needed for a 50+ page packet.</li>
                 </ul>
 
-                <img src="https://cdn.marblism.com/FefqoHSrmLZ.webp" alt="Organized workspace for mortgage signing" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/FefqoHSrmLZ.webp" alt="Organized workspace for mortgage signing" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Finalize Your Modification?</h2>
@@ -101,7 +101,7 @@ export default function BlogPost() {
             </div>
 
             <div className="prose prose-lg prose-slate max-w-none">
-                <img src="https://cdn.marblism.com/Ko03CDvLN27.webp" alt="Refinance Documentation" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/Ko03CDvLN27.webp" alt="Refinance Documentation" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <p className="mb-6">Opening a thick envelope from your mortgage lender can be daunting. Tucked between pages of complex legal terminology is often a simple directive: <em>"Please find a notary and return these documents by Friday."</em></p>
 
@@ -116,7 +116,7 @@ export default function BlogPost() {
 
                 <p className="mb-6">In the world of mortgage lending, a single missed initial can trigger a document rejection, potentially resetting your waiting period or causing an interest rate lock to expire—costs that far outweigh the investment in a professional.</p>
 
-                <img src="https://cdn.marblism.com/WlKRjXvB-Rk.webp" alt="Professional Loan Signing Setup" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/WlKRjXvB-Rk.webp" alt="Professional Loan Signing Setup" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Banks Often Decline Mortgage Notarizations</h2>
                 <p className="mb-6">Many homeowners assume their local bank is the safest bet. In reality, most major financial institutions prohibit their employees from notarizing outside mortgage documents due to <strong>liability concerns</strong>.</p>
@@ -174,7 +174,7 @@ export default function BlogPost() {
             </div>
 
             <div className="prose prose-lg prose-slate max-w-none">
-                <img src="https://cdn.marblism.com/5NFgiVVQnUQ.webp" alt="Mortgage Refinance Documents" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/5NFgiVVQnUQ.webp" alt="Mortgage Refinance Documents" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <p className="mb-6">You hear a heavy "thud" on your front porch. You open the door to find a thick FedEx envelope—your mortgage refinance or loan modification documents. Along with the paperwork is a brief, frustrating instruction: <em>"Please find a notary and return these documents by Friday."</em></p>
 
@@ -183,14 +183,14 @@ export default function BlogPost() {
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Expertise in Complex Loan Documentation</h2>
                 <p className="mb-6">A mortgage package typically contains 100–150 pages of financial jargon and strict "sign here" rules. Certified loan signing agents undergo extensive training to help you navigate these documents, including the <strong>Closing Disclosure</strong>, the <strong>Note</strong>, and the <strong>Right to Cancel</strong>.</p>
                 
-                <img src="https://cdn.marblism.com/OoJ-h6xcsH_.webp" alt="Refinance document complexity" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/OoJ-h6xcsH_.webp" alt="Refinance document complexity" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <p className="mb-6">A single missed initial can trigger a mandatory three-day rescission delay, causing you to miss your rate-lock expiration. We perform a triple-check to ensure your loan stays on track. If you want to avoid these headaches, it is vital to know <a href="#" className="text-blue-600 hover:underline">Link</a> who understands the stakes.</p>
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Compliance and Risk Mitigation</h2>
                 <p className="mb-6">Mortgage transactions are heavily regulated. A certified signing agent is well-versed in North Carolina statutes, ensuring every form—including Patriot Act identification—is compliant. We provide a secure, background-screened process that protects your sensitive information and eliminates the risk of "kickbacks" caused by errors in your documentation.</p>
 
-                <img src="https://cdn.marblism.com/OkaEg5SjvhL.webp" alt="Professional notary seal" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/OkaEg5SjvhL.webp" alt="Professional notary seal" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. Unmatched Convenience and Efficiency</h2>
                 <p className="mb-6">Brick-and-mortar offices are often an ordeal. We offer a level of convenience they simply cannot match:</p>
@@ -200,7 +200,7 @@ export default function BlogPost() {
                     <li><strong>Sanity Savings:</strong> Eliminate the need to take time off work or fight Charlotte traffic.</li>
                 </ul>
 
-                <img src="https://cdn.marblism.com/xfVlx0qVySN.webp" alt="Mobile notary home closing" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/xfVlx0qVySN.webp" alt="Mobile notary home closing" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Choose Integrity Closings CLT?</h2>
                 <p className="mb-6">We are the premier choice for <a href="#" className="text-blue-600 hover:underline">Link</a> in the Charlotte area. Our expertise includes:</p>
@@ -242,7 +242,7 @@ export default function BlogPost() {
               </div>
             </div>
 
-            <img src="https://cdn.marblism.com/AV3NIamNct8.webp" alt="Struggling with Loan Mod Paperwork" className="w-full h-auto rounded-lg mb-8" />
+            <img src="https://cdn.marblism.com/AV3NIamNct8.webp" alt="Struggling with Loan Mod Paperwork" className="w-full h-auto rounded-lg mb-8" referrerPolicy="no-referrer" />
 
             <div className="prose prose-lg prose-slate max-w-none">
                 <p className="mb-6">You’ve been through the ringer. You’ve spent weeks, perhaps months, going back and forth with your lender, submitting pay stubs, tax returns, and letters of explanation. Finally, the news arrives: your loan modification is approved. You feel a massive sense of relief until you open your mailbox and find a thick, daunting envelope filled with dozens of pages of legal jargon.</p>
@@ -255,7 +255,7 @@ export default function BlogPost() {
                 <p className="mb-6">Lenders are increasingly shifting the responsibility of document execution onto the borrower. While this might save the bank a few dollars, it puts a significant burden on you. Most people assume they can simply walk into their local bank or a shipping store to get a loan modification signed. However, you quickly realize that many "general" notaries are uncomfortable with real estate documents.</p>
                 <p className="mb-6">Loan modification paperwork isn't just a single signature. It often involves multiple riders, affidavits, and a specific "Modification Agreement" that requires precise execution. If a notary misses a single initial or fails to stamp a page correctly, the lender may reject the entire package. In the world of loan mods, a rejection often means you have to start the process over or, worse, you miss your deadline and lose the modification entirely.</p>
 
-                <img src="https://cdn.marblism.com/RS0uIMtvqsj.webp" alt="Loan modification paperwork" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/RS0uIMtvqsj.webp" alt="Loan modification paperwork" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why a Professional Home Closing Service Beats the Local Bank</h2>
                 <p className="mb-6">When you use a dedicated home closing service, you aren't just getting a stamp; you are getting expertise. Here is why choosing a mobile specialist is a smarter move than trying to handle it yourself at a retail location:</p>
@@ -270,7 +270,7 @@ export default function BlogPost() {
                 <p className="mb-6">According to industry standards, once you receive your final modification agreement, you typically have a strict window—often 30 days or less—to return the executed documents. However, many lenders "backdate" their letters, meaning by the time you receive the package, you might only have a few days left to act.</p>
                 <p className="mb-6">The final step involves executing the modification agreement, which legally alters your original loan terms. This could mean a lower interest rate, an extended maturity date, or moving past-due amounts to the back of the loan. Because these documents are recorded with the county, the notarization must be flawless. Any smudge on the seal or incorrect date can lead to a recording rejection at the Register of Deeds.</p>
 
-                <img src="https://cdn.marblism.com/no87KDpta-X.webp" alt="Mobile notary guiding a homeowner" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/no87KDpta-X.webp" alt="Mobile notary guiding a homeowner" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How a Mobile Notary Simplifies the Process</h2>
                 <p className="mb-6">When you book a mobile notary in Charlotte, NC, the process becomes streamlined. Here is how we at Integrity Closings CLT help you navigate the final hurdle:</p>
@@ -291,7 +291,7 @@ export default function BlogPost() {
                     </ul>
                 </div>
 
-                <img src="https://cdn.marblism.com/_O18aS9i0tt.webp" alt="Notary workspace" className="w-full h-auto rounded-lg my-8" />
+                <img src="https://cdn.marblism.com/_O18aS9i0tt.webp" alt="Notary workspace" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Beyond the Living Room: Special Circumstances</h2>
                 <p className="mb-6">We realize that life happens. Perhaps you are dealing with a health issue or are currently in the hospital. We provide specialized services for these exact situations, including <a href="#" className="text-blue-600 hover:underline">Link</a>. No matter where you are, the goal remains the same: getting your documents signed correctly and on time.</p>

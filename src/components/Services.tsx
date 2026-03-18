@@ -42,7 +42,7 @@ export default function Services() {
                   src={service.image} 
                   alt={service.title} 
                   className="w-full h-full object-cover"
-                  
+                  referrerPolicy="no-referrer"
                 />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>

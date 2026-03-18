@@ -12,7 +12,6 @@ export default function Logo({
 
   useEffect(() => {
     const img = new Image();
-    img.crossOrigin = "Anonymous";
     img.src = "/logo.jpg";
     img.onload = () => {
       const canvas = document.createElement('canvas');
@@ -63,7 +62,7 @@ export default function Logo({
       src={imgSrc} 
       alt="Integrity Closings CLT" 
       className={className}
-      
+      referrerPolicy="no-referrer"
     />
   );
 }
