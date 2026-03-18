@@ -36,11 +36,11 @@ export default function Blog() {
   return (
     <div className="bg-slate-50 min-h-screen pb-20">
       {/* Hero Image Section */}
-      <div className="w-full h-auto overflow-hidden relative">
+      <div className="w-full h-[250px] md:h-[400px] overflow-hidden relative bg-slate-900">
         <img 
           src="/blog-hero.png" 
           alt="Integrity Closings Blog Hero" 
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
       </div>
