@@ -1,12 +1,39 @@
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function MobileNotaryServices() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Mobile Notary Services in Charlotte, NC",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Integrity Closings CLT",
+        "url": "https://www.integrityclosingsclt.com/"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Charlotte"
+      },
+      "serviceType": "Mobile Notary Services",
+      "description": "Professional mobile notary services in Charlotte, NC for affidavits, powers of attorney, estate planning documents, medical forms, and more.",
+      "url": "https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc"
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   const serviceCategories = [
     {
       title: "Personal Documents",
       image: "/personal-documents.png",
-      link: "/services/personal-documents",
+      link: "/estate-planning-notary-charlotte-nc",
       items: ["Affidavits", "Power of Attorney", "Wills & Trusts", "Medical Directives", "Passport Applications"]
     },
     {

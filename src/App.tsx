@@ -60,10 +60,10 @@ export default function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/mobile-notary-services" element={<MobileNotaryServices />} />
+            <Route path="/mobile-notary-charlotte-nc" element={<MobileNotaryServices />} />
             
             {/* Detailed Service Pages */}
-            <Route path="/services/personal-documents" element={<PersonalDocuments />} />
+            <Route path="/estate-planning-notary-charlotte-nc" element={<PersonalDocuments />} />
             <Route path="/services/business-documents" element={<BusinessDocuments />} />
             <Route path="/services/financial-documents" element={<FinancialDocuments />} />
             <Route path="/services/legal-documents" element={<LegalDocuments />} />
@@ -92,7 +92,7 @@ export default function App() {
             <Route path="/resources/what-is-mobile-notary" element={<WhatIsMobileNotary />} />
             <Route path="/calculator" element={<QuoteCalculator />} />
             <Route path="/booking" element={<Booking />} />
-            <Route path="/services/hospital-notary" element={<HospitalNotary />} />
+            <Route path="/hospital-notary-charlotte-nc" element={<HospitalNotary />} />
             <Route path="/services/mobile-loan-closings" element={<MobileLoanClosings />} />
             <Route path="/services/general-notary" element={<GeneralNotary />} />
             <Route path="/services/lender-documents" element={<LenderDocuments />} />

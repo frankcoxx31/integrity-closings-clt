@@ -41,7 +41,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/mobile-notary-services' },
+    { name: 'Services', href: '/mobile-notary-charlotte-nc' },
     { name: 'About', href: '/about' },
     { name: 'Blog', href: '/blog' },
     { name: 'Resources', href: '/resources' },

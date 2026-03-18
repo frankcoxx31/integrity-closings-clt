@@ -1,10 +1,41 @@
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function HospitalNotary() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Hospital Notary Services in Charlotte, NC",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Integrity Closings CLT",
+        "url": "https://www.integrityclosingsclt.com/"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Charlotte"
+      },
+      "serviceType": "Hospital Notary Services",
+      "description": "Compassionate bedside notary services for patients in hospitals, nursing homes, and assisted living facilities in Charlotte, NC.",
+      "url": "https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc"
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6 transition-colors">
+          <ArrowRight className="w-4 h-4 mr-2 rotate-180" />
+          Back to All Services
+        </Link>
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative">
             <img src="/hospital.png" alt="Hospitals & Nursing Homes Notary" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
