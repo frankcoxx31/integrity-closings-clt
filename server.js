@@ -27,18 +27,25 @@ async function startServer() {
 
     try {
       if (!privateKey || !clientEmail) {
-        const decoded = Buffer.from(ENCODED_CREDENTIALS, 'base64').toString('utf-8');
+        // Scrub spaces from base64 string before decoding
+        const cleanEncoded = ENCODED_CREDENTIALS.replace(/\s/g, '');
+        const decoded = Buffer.from(cleanEncoded, 'base64').toString('utf-8');
         const parsed = JSON.parse(decoded);
         privateKey = parsed.private_key;
         clientEmail = parsed.client_email;
       }
 
       if (privateKey) {
+        // Deep clean the private key
         privateKey = privateKey.replace(/['"]/g, '').trim();
+        
+        // If it's the raw base64-ish string without headers
         if (!privateKey.includes('BEGIN PRIVATE KEY')) {
-          privateKey = privateKey.replace(/\\n/g, '');
+          privateKey = privateKey.replace(/\\n/g, '').replace(/\s/g, '');
+          // Reconstruct PEM format
           privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----\n`;
         } else {
+          // It has headers, just fix the newlines
           privateKey = privateKey.replace(/\\n/g, '\n');
         }
       }
@@ -48,16 +55,26 @@ async function startServer() {
           clientEmail,
           null,
           privateKey,
-          ['https://www.googleapis.com/auth/calendar.readonly']
+          ['https://www.googleapis.com/auth/calendar']
         );
+        
+        // Test 1: Can we get a token?
+        const token = await auth.authorize();
+        authTest = `SUCCESS: Token acquired! (Expires: ${new Date(token.expiry_date).toLocaleTimeString()})`;
+        
+        // Test 2: Can we actually see the calendar?
         const calendar = google.calendar({ version: 'v3', auth });
-        await calendar.calendarList.get({ calendarId });
-        authTest = "SUCCESS: Connected to Google Calendar!";
+        await calendar.events.list({ 
+          calendarId, 
+          maxResults: 1,
+          timeMin: new Date().toISOString()
+        });
+        authTest += " | Calendar is visible and readable.";
       } else {
         authTest = "SKIPPED: Missing credentials or Calendar ID";
       }
     } catch (error) {
-      authTest = "FAILED: Could not connect to Google Calendar";
+      authTest = "FAILED: Authentication or Permission error";
       authError = error.message;
       console.error('Health Check Auth Error:', error);
     }
