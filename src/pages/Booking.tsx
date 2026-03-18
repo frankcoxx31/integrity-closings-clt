@@ -368,6 +368,12 @@ export default function Booking() {
                         );
                       })}
                     </div>
+
+                    <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                      <p className="text-xs text-blue-800 leading-relaxed">
+                        <strong>Note:</strong> In North Carolina, the notary fee is $10 per notarized principal signature. Mobile notaries may also charge travel reimbursement at the IRS mileage rate ($0.725 per mile), which must be agreed to before the appointment.
+                      </p>
+                    </div>
                   </div>
 
                   {/* Time Slots */}
@@ -388,19 +394,34 @@ export default function Booking() {
                         </div>
                       ) : availableSlots.length > 0 ? (
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3 max-h-[320px] overflow-y-auto pr-2 custom-scrollbar">
-                          {availableSlots.map(time => (
-                            <button
-                              key={time}
-                              onClick={() => setSelectedTime(time)}
-                              className={`py-2 px-3 rounded-lg border text-sm font-medium transition-all ${
-                                selectedTime === time 
-                                  ? 'border-blue-600 bg-blue-600 text-white shadow-md' 
-                                  : 'border-slate-200 text-slate-700 hover:border-blue-400 hover:bg-blue-50'
-                              }`}
-                            >
-                              {time}
-                            </button>
-                          ))}
+                          {availableSlots.map(time => {
+                            // Helper to determine if a time slot is after hours (7 PM or later)
+                            const isAfterHours = (timeStr: string) => {
+                              const match = timeStr.match(/(\d+):(\d+)\s+(AM|PM)/);
+                              if (!match) return false;
+                              let hours = parseInt(match[1]);
+                              const ampm = match[3];
+                              if (ampm === 'PM' && hours !== 12) hours += 12;
+                              if (ampm === 'AM' && hours === 12) hours = 0;
+                              return hours >= 19;
+                            };
+                            
+                            const displayTime = isAfterHours(time) ? `After-Hours: ${time}` : time;
+
+                            return (
+                              <button
+                                key={time}
+                                onClick={() => setSelectedTime(time)}
+                                className={`py-2 px-3 rounded-lg border text-sm font-medium transition-all ${
+                                  selectedTime === time 
+                                    ? 'border-blue-600 bg-blue-600 text-white shadow-md' 
+                                    : 'border-slate-200 text-slate-700 hover:border-blue-400 hover:bg-blue-50'
+                                }`}
+                              >
+                                {displayTime}
+                              </button>
+                            );
+                          })}
                         </div>
                       ) : (
                         <div className="h-[320px] flex flex-col items-center justify-center border-2 border-dashed border-slate-200 rounded-xl bg-slate-50">

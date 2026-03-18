@@ -233,12 +233,13 @@ async function startServer() {
         }
       });
 
-      const busySlots = response.data.calendars[calendarId].busy || [];
+      const calendarData = response.data.calendars[calendarId];
+      const busySlots = calendarData ? (calendarData.busy || []) : [];
       console.log('Found busy slots:', busySlots.length);
       res.json({ busy: busySlots });
     } catch (error) {
       console.error('Availability API Error:', error);
-      res.status(500).json({ error: 'Failed to fetch availability', details: error.message });
+      res.status(500).json({ error: 'Failed to fetch availability' });
     }
   });
 
