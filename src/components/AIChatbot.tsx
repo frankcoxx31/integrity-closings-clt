@@ -146,6 +146,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
     }
 
     try {
+      console.log('Sending message to Gemini...');
       const responseStream = await chatRef.current.sendMessageStream({ message: userMsg });
       const messageId = Date.now().toString();
       
@@ -155,20 +156,22 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
       // Turn off the loading spinner as soon as the stream connects
       setIsLoading(false);
 
+      let fullText = '';
       for await (const chunk of responseStream) {
         const c = chunk as any;
         if (c.text) {
+          fullText += c.text;
           setMessages(prev => prev.map(msg => 
-            msg.id === messageId ? { ...msg, text: msg.text + c.text } : msg
+            msg.id === messageId ? { ...msg, text: fullText } : msg
           ));
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Chat error:", error);
       setMessages(prev => [...prev, { 
         id: Date.now().toString(), 
         role: 'model', 
-        text: 'Sorry, I encountered an error. Please try again later or call us.' 
+        text: `Sorry, I encountered an error: ${error.message || 'Unknown error'}. Please try again later or call us.` 
       }]);
       setIsLoading(false);
     }

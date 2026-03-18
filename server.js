@@ -16,19 +16,61 @@ async function startServer() {
   app.use(express.json());
 
   // API route for health check and environment variable verification
-  app.get('/api/health', (req, res) => {
+  app.get('/api/health', async (req, res) => {
     const calendarId = process.env.GOOGLE_CALENDAR_ID;
     const geminiKey = process.env.GEMINI_API_KEY;
-    const privateKey = process.env.GOOGLE_PRIVATE_KEY;
-    const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+    let privateKey = process.env.GOOGLE_PRIVATE_KEY;
+    let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+
+    let authTest = "NOT_STARTED";
+    let authError = null;
+
+    try {
+      if (!privateKey || !clientEmail) {
+        const decoded = Buffer.from(ENCODED_CREDENTIALS, 'base64').toString('utf-8');
+        const parsed = JSON.parse(decoded);
+        privateKey = parsed.private_key;
+        clientEmail = parsed.client_email;
+      }
+
+      if (privateKey) {
+        privateKey = privateKey.replace(/['"]/g, '').trim();
+        if (!privateKey.includes('BEGIN PRIVATE KEY')) {
+          privateKey = privateKey.replace(/\\n/g, '');
+          privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----\n`;
+        } else {
+          privateKey = privateKey.replace(/\\n/g, '\n');
+        }
+      }
+
+      if (clientEmail && privateKey && calendarId) {
+        const auth = new google.auth.JWT(
+          clientEmail,
+          null,
+          privateKey,
+          ['https://www.googleapis.com/auth/calendar.readonly']
+        );
+        const calendar = google.calendar({ version: 'v3', auth });
+        await calendar.calendarList.get({ calendarId });
+        authTest = "SUCCESS: Connected to Google Calendar!";
+      } else {
+        authTest = "SKIPPED: Missing credentials or Calendar ID";
+      }
+    } catch (error) {
+      authTest = "FAILED: Could not connect to Google Calendar";
+      authError = error.message;
+      console.error('Health Check Auth Error:', error);
+    }
 
     res.json({
       status: 'ok',
+      google_auth_test: authTest,
+      google_auth_error: authError,
       env: {
         GOOGLE_CALENDAR_ID: calendarId ? `${calendarId.substring(0, 3)}...` : 'MISSING',
         GEMINI_API_KEY: geminiKey ? 'CONFIGURED' : 'MISSING',
-        GOOGLE_PRIVATE_KEY: privateKey ? 'CONFIGURED' : 'MISSING (Using fallback)',
-        GOOGLE_SERVICE_ACCOUNT_EMAIL: clientEmail ? 'CONFIGURED' : 'MISSING (Using fallback)',
+        GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY ? 'CONFIGURED' : 'MISSING (Using fallback)',
+        GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? 'CONFIGURED' : 'MISSING (Using fallback)',
         NODE_ENV: process.env.NODE_ENV || 'development'
       }
     });
