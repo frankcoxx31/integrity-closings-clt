@@ -42,14 +42,14 @@ const SERVICES: Service[] = [
   }
 ];
 
-// Generate available time slots (9 AM to 5 PM)
+// Generate available time slots (9 AM to 11 PM)
 const generateTimeSlots = () => {
   const slots = [];
-  for (let i = 9; i <= 17; i++) {
+  for (let i = 9; i <= 23; i++) {
     const hour = i > 12 ? i - 12 : i;
     const ampm = i >= 12 ? 'PM' : 'AM';
     slots.push(`${hour}:00 ${ampm}`);
-    if (i !== 17) {
+    if (i !== 23) {
       slots.push(`${hour}:30 ${ampm}`);
     }
   }
