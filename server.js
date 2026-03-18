@@ -20,29 +20,44 @@ async function startServer() {
     let privateKey = process.env.GOOGLE_PRIVATE_KEY;
     let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
     const calendarId = process.env.GOOGLE_CALENDAR_ID;
-
-    // Handle "undefined" or "null" strings from some environments
-    if (privateKey === 'undefined' || privateKey === 'null') privateKey = null;
-    if (clientEmail === 'undefined' || clientEmail === 'null') clientEmail = null;
+    const fullJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
 
     let fallbackStatus = "NOT_USED";
     let fallbackError = null;
 
+    // 1. Try to load from full JSON environment variable first (most reliable)
+    if (fullJson) {
+      try {
+        const credentials = JSON.parse(fullJson);
+        privateKey = credentials.private_key;
+        clientEmail = credentials.client_email;
+        fallbackStatus = "LOADED_FROM_JSON_ENV";
+      } catch (e) {
+        fallbackError = `JSON_ENV_PARSE_ERROR: ${e.message}`;
+      }
+    }
+
+    // 2. Handle "undefined" or "null" strings from some environments
+    if (privateKey === 'undefined' || privateKey === 'null') privateKey = null;
+    if (clientEmail === 'undefined' || clientEmail === 'null') clientEmail = null;
+
+    // 3. Fallback to baked-in credentials if still missing
     if (!privateKey || !clientEmail) {
-      fallbackStatus = "ATTEMPTING";
+      fallbackStatus = "ATTEMPTING_FALLBACK_FILE";
       try {
         const cleanEncoded = ENCODED_CREDENTIALS.trim();
         const decoded = Buffer.from(cleanEncoded, 'base64').toString('utf8');
         const credentials = JSON.parse(decoded);
         if (!privateKey) privateKey = credentials.private_key;
         if (!clientEmail) clientEmail = credentials.client_email;
-        fallbackStatus = "SUCCESS";
+        fallbackStatus = "FALLBACK_FILE_SUCCESS";
       } catch (e) {
-        fallbackStatus = "FAILED";
+        fallbackStatus = "FALLBACK_FILE_FAILED";
         fallbackError = e.message;
       }
     }
 
+    // 4. Clean the private key
     if (privateKey && typeof privateKey === 'string') {
       privateKey = privateKey.replace(/['"]/g, '').trim();
       if (!privateKey.includes('BEGIN PRIVATE KEY')) {
@@ -107,6 +122,7 @@ async function startServer() {
         GEMINI_API_KEY: geminiKey ? 'CONFIGURED' : 'MISSING',
         GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY ? (process.env.GOOGLE_PRIVATE_KEY === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING (Using fallback)',
         GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING (Using fallback)',
+        GOOGLE_SERVICE_ACCOUNT_JSON: process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? 'CONFIGURED' : 'MISSING',
         NODE_ENV: process.env.NODE_ENV || 'development'
       }
     });
