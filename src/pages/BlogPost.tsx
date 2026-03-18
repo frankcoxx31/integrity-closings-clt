@@ -5,26 +5,212 @@ export default function BlogPost() {
   const { slug } = useParams();
 
   const renderContent = () => {
+    if (slug === '7-mistakes-charlotte-sellers-make-with-closings') {
+      return (
+        <>
+            <div className="prose prose-lg prose-slate max-w-none">
+                <img src="https://cdn.marblism.com/wylLzlbVBtP.webp" alt="heroImage" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-2" />
+                    Integrity Closings CLT
+                  </div>
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    3/18/2026
+                  </div>
+                </div>
+
+                <p className="mb-6">Selling your Charlotte home should be exciting, not stressful. Yet many sellers find themselves scrambling at the last minute because they've made preventable mistakes during the closing process. The good news? You don't have to join the ranks of sellers who've experienced closing delays, legal complications, or financial surprises.</p>
+                <p className="mb-6">Mobile notary services are transforming how Charlotte sellers approach closings, offering solutions that eliminate common pitfalls while letting you complete your sale from the comfort of your own home. Let's explore the seven most frequent mistakes sellers make and how mobile notary services fix each one.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #1: Incomplete or Inaccurate Documentation</h2>
+                <p className="mb-6">You've probably heard horror stories about closings being delayed because of a missing signature or an incorrect date. For sellers, this is often the result of trying to manage complex legal documents without professional guidance.</p>
+                <p className="mb-6"><strong>The Fix:</strong> Mobile notary services specialize in real estate documentation. They ensure every signature, initial, and date is correctly placed before the documents leave your sight, preventing technical rejections that can stall your sale.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #2: Underestimating the Importance of Proper Identification</h2>
+                <p className="mb-6">Many sellers are surprised to learn that their closing can't proceed if their identification is expired or doesn't exactly match the name on the property deed. This is a common point of failure in the closing process.</p>
+                <p className="mb-6"><strong>The Fix:</strong> A professional mobile notary verifies your identification well in advance of the signing. They can identify potential issues with your ID and help you resolve them before they become a closing-day crisis.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #3: Waiting Until the Last Minute to Find a Notary</h2>
+                <p className="mb-6">Scrambling to find a notary on the day of your closing is a recipe for stress. Many retail notaries have limited hours or may not be comfortable handling complex real estate documents.</p>
+                <p className="mb-6"><strong>The Fix:</strong> Mobile notary services offer flexible scheduling, including evenings and weekends. You can book your appointment in advance, ensuring a professional is ready to assist you exactly when you need them.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #4: Overlooking the Convenience of In-Home Closings</h2>
+                <p className="mb-6">Traditional closings often require sellers to take time off work and fight Charlotte traffic to reach an attorney's office or a title company. This adds unnecessary stress to an already busy time.</p>
+                <p className="mb-6"><strong>The Fix:</strong> Mobile notary services bring the closing table to you. Whether you're at home, in your office, or even at a local coffee shop, you can complete your paperwork in a comfortable and convenient environment.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #5: Failing to Account for Out-of-State Sellers</h2>
+                <p className="mb-6">If you're selling a Charlotte property but live in another state, the closing process can be particularly challenging. Coordinating document delivery and notarization across state lines often leads to delays.</p>
+                <p className="mb-6"><strong>The Fix:</strong> Mobile notary services are part of a nationwide network. They can coordinate with notaries in your current location to ensure your documents are properly executed and returned to Charlotte on time.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #6: Ignoring the Security of Your Personal Information</h2>
+                <p className="mb-6">Signing sensitive financial documents in a public place, like a shipping store or a bank lobby, can feel uncomfortable and insecure. Your personal information is on display for anyone passing by.</p>
+                <p className="mb-6"><strong>The Fix:</strong> In-home closings provide a private and secure environment for signing your documents. You can review your paperwork without the pressure of a waiting line or the prying eyes of strangers.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #7: Not Verifying the Notary's Credentials</h2>
+                <p className="mb-6">Not all notaries are created equal. Entrusting your closing to an inexperienced or uncertified notary can lead to errors that jeopardize your sale.</p>
+                <p className="mb-6"><strong>The Fix:</strong> Professional mobile notary services employ certified loan signing agents who have undergone extensive training and background checks. They understand the specific requirements of Charlotte real estate transactions and provide the expertise you need for a successful closing.</p>
+                
+                <p className="mb-6">Selling your Charlotte home is a major milestone. By avoiding these common mistakes and leveraging the convenience and expertise of mobile notary services, you can ensure your closing is as smooth and stress-free as possible.</p>
+                
+                <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
+                    <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready for a Stress-Free Closing?</h2>
+                    <p className="text-lg text-slate-300 mb-8">Don't let preventable mistakes delay your home sale. Schedule your professional mobile notary appointment today.</p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
+                    </div>
+                </section>
+            </div>
+        </>
+      );
+    }
+
+    if (slug === 'charlotte-notary-public-secrets-revealed') {
+      return (
+        <>
+            <div className="prose prose-lg prose-slate max-w-none">
+                <img src="https://cdn.marblism.com/VTuQliWOuxM.webp" alt="heroImage" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-2" />
+                    Integrity Closings CLT
+                  </div>
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    3/18/2026
+                  </div>
+                </div>
+
+                <p className="mb-6">You trust notaries public with your most important documents: mortgage papers, property deeds, legal agreements that can change your life. But what if that trust is misplaced? A recent investigation uncovered disturbing truths about North Carolina's notary system that every Charlotte resident needs to know before their next signing appointment.</p>
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Hidden Crisis in Charlotte's Notary System</h2>
+                <p className="mb-6">Since 2015, North Carolina has stripped 84 notaries of their commissions. That's not just a number: it represents 84 instances where the system failed to protect you. Among these cases, 22 notaries were directly connected to fraud, forgery, or embezzlement. Even more shocking: 10 of these notaries had criminal records the state never knew about when granting their original commissions.</p>
+                <p className="mb-6">State Senator Natasha Marcus admitted what many suspected: "There are people who slip through the cracks and unfortunately should never have had a notary public seal." This systemic failure means you could unknowingly work with a notary who shouldn't have a commission in the first place.</p>
+
+                <img src="https://cdn.marblism.com/97buOqJAQ3X.webp" alt="image_1" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Real Charlotte Families Pay the Price</h2>
+                <p className="mb-6">The consequences aren't just administrative: they're devastating. In Charlotte, investigators documented cases where corrupt notaries facilitated home theft schemes. One victim, Rahim Roopani, discovered his $300,000+ Charlotte home had been fraudulently sold for just $9,000 using forged signatures. He only learned about the theft when a neighbor called about strangers at his property.</p>
+                <p className="mb-6">This wasn't an isolated incident. Another home in the same neighborhood suffered an identical crime, involving the same notary stamp and signature. The notary officially resigned just one month after police reports were filed and promptly moved out of state: leaving victims to fight lengthy legal battles to reclaim their property.</p>
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How Unqualified Notaries Slip Through the Cracks</h2>
+                <p className="mb-6">Understanding how the system fails helps you protect yourself. North Carolina requires notaries to:</p>
+                <ul className="list-disc pl-6 space-y-4 mb-6">
+                    <li>Be at least 18 years old</li>
+                    <li>Reside or work in North Carolina</li>
+                    <li>Complete a 3-6 hour training course</li>
+                    <li>Pass an exam with 80% accuracy</li>
+                    <li>Disclose any criminal history</li>
+                    <li>Not have been incarcerated, on probation, or parole within 10 years</li>
+                </ul>
+                <p className="mb-6">The problem? Enforcement of these requirements has proven inconsistent. One terminated notary's records showed they failed to disclose a criminal record yet were allowed to renew their commission in 1997, 2002, 2007, and 2012. That's 15 years of renewals despite having disqualifying background issues.</p>
+
+                <img src="https://cdn.marblism.com/wayLxgk3SIs.webp" alt="image_2" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Red Flags That Should Make You Walk Away</h2>
+                <p className="mb-6">Protecting yourself starts with recognizing warning signs of problematic notaries:</p>
+                <p className="mb-4"><strong>Pressure to Sign Quickly</strong>: Legitimate notaries never rush you through important documents. If someone pressures you to sign without reading or understanding what you're agreeing to, that's your cue to leave.</p>
+                <p className="mb-4"><strong>Unwillingness to Verify Your Identity</strong>: Proper notaries always check government-issued photo ID. Anyone who skips this step isn't following basic notary law.</p>
+                <p className="mb-4"><strong>Pre-Signed Documents</strong>: Your signature should never appear on documents before you arrive. If you see your name already signed, you're looking at potential fraud.</p>
+                <p className="mb-4"><strong>Refusal to Keep Records</strong>: North Carolina law requires notaries to maintain detailed records of every transaction. A notary who can't or won't show you their logbook is breaking the law.</p>
+                <p className="mb-6"><strong>Operating Without Proper Credentials</strong>: Always ask to see their notary commission certificate. If they can't produce it immediately, find another notary.</p>
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What to Bring to Your Notary Appointment</h2>
+                <p className="mb-6">Proper preparation protects you from both delays and potential fraud. Here's exactly what you need for a successful notary appointment:</p>
+                <p className="mb-4"><strong>Required Identification</strong>: Bring a current, government-issued photo ID. This means your driver's license, state ID card, passport, or military ID. The photo must look like you, and the ID cannot be expired.</p>
+                <p className="mb-4"><strong>All Necessary Documents</strong>: Bring every document that needs notarization, but don't pre-sign anything. The notary must witness your actual signature.</p>
+                <p className="mb-4"><strong>Additional Signers</strong>: If multiple people need to sign, everyone must appear in person with their own valid ID. No exceptions.</p>
+                <p className="mb-6"><strong>Payment Method</strong>: Most notaries accept cash, but ask about payment options when scheduling your appointment.</p>
+
+                <img src="https://cdn.marblism.com/N1JrhBIVWbR.webp" alt="image_3" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The True Cost of Cheap Notary Services</h2>
+                <p className="mb-6">The total cost to become a notary in North Carolina ranges from just $180 to $349. This low barrier to entry means almost anyone can become a notary: including people who shouldn't have access to this position of trust.</p>
+                <p className="mb-6">When you choose notary services based solely on price, you're gambling with documents that control your financial future. A mortgage closing mistake can cost thousands in delays. A property deed error can create ownership disputes lasting years.</p>
+                <p className="mb-6">Professional notary services charge more because they invest in:</p>
+                <ul className="list-disc pl-6 space-y-4 mb-6">
+                    <li>Comprehensive background checks beyond state minimums</li>
+                    <li>Ongoing education and training</li>
+                    <li>Professional liability insurance</li>
+                    <li>Secure document handling procedures</li>
+                    <li>Detailed record-keeping systems</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Location Matters for Your Safety</h2>
+                <p className="mb-6">Mobile notary services offer convenience, but they also create opportunities for fraud. When a notary comes to your home or office, you have less ability to verify their credentials or escape if something feels wrong.</p>
+                <p className="mb-6"><a href="https://www.integrityclosingsclt.com" className="text-blue-600 hover:underline">Professional notary services</a> operate from established business locations where you can:</p>
+                <ul className="list-disc pl-6 space-y-4 mb-6">
+                    <li>Verify their business credentials</li>
+                    <li>Feel secure in a professional environment</li>
+                    <li>Access help if problems arise</li>
+                    <li>Know exactly where to find them if issues develop later</li>
+                </ul>
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Questions Every Charlotte Resident Should Ask</h2>
+                <p className="mb-6">Before scheduling any notary appointment, get answers to these crucial questions:</p>
+                <p className="mb-4"><strong>"How long have you been in business?"</strong> Established notaries have track records you can verify.</p>
+                <p className="mb-4"><strong>"Are you insured and bonded?"</strong> Professional notaries carry insurance protecting you from their mistakes.</p>
+                <p className="mb-4"><strong>"Can you provide references?"</strong> Legitimate notaries happily share testimonials from satisfied clients.</p>
+                <p className="mb-4"><strong>"What's your process for verifying identity?"</strong> The answer should include checking government-issued photo ID and possibly additional verification steps.</p>
+                <p className="mb-6"><strong>"Do you maintain detailed records?"</strong> Professional notaries keep comprehensive logs of every transaction.</p>
+
+                <img src="https://cdn.marblism.com/qhWfCPSorlx.webp" alt="image_4" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What Happens When Things Go Wrong</h2>
+                <p className="mb-6">If you discover notary fraud or errors affecting your documents, you need to act immediately:</p>
+                <ol className="list-decimal pl-6 space-y-4 mb-6">
+                    <li>Contact local law enforcement to file a police report</li>
+                    <li>Notify your lender, title company, or attorney involved in the transaction  </li>
+                    <li>Report the incident to the North Carolina Secretary of State</li>
+                    <li>Consult with a real estate attorney about your legal options</li>
+                    <li>Request new, properly notarized documents as quickly as possible</li>
+                </ol>
+                <p className="mb-6">The victims in Charlotte's home theft cases learned these lessons the hard way. Don't let inadequate notary services put your property and financial future at risk.</p>
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Your Next Steps for Safer Notarization</h2>
+                <p className="mb-6">Now that you understand the risks, you can make informed decisions about notary services. Start by researching any notary before your appointment. Check their business credentials, read online reviews, and verify they're currently licensed through the North Carolina Secretary of State website.</p>
+
+                <img src="https://cdn.marblism.com/Kzv_lOfKavv.webp" alt="image_5" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <p className="mb-6">When you need reliable notary services in Charlotte, choose professionals who prioritize your security over convenience. Look for established businesses with proper insurance, comprehensive training, and transparent business practices.</p>
+
+                <p className="mb-6">Remember: the few extra dollars you spend on professional notary services could save you thousands in legal fees and financial losses later. Your most important documents deserve the highest level of protection available.</p>
+
+                <p className="mb-6">The investigation into Charlotte's notary problems revealed systemic failures that put residents at risk. By choosing your notary services carefully and staying informed about these issues, you protect yourself from becoming the next victim of notary fraud.</p>
+
+                <p className="mb-6">Don't gamble with documents that control your financial future. When you need <a href="https://www.integrityclosingsclt.com" className="text-blue-600 hover:underline">reliable notary services</a>, choose professionals who understand the true value of your trust.</p>
+
+                <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
+                    <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Protect Your Most Important Documents</h2>
+                    <p className="text-lg text-slate-300 mb-8">Don't take chances with your legal and financial paperwork. Schedule a professional notarization today.</p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
+                    </div>
+                </section>
+            </div>
+        </>
+      );
+    }
+
     if (slug === 'diy-mortgage-loan-modification-notarized-at-home-charlotte') {
       return (
         <>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">
-              The "DIY" Mortgage Loan Modification: How to Get Your Documents Notarized at Home in Charlotte
-            </h1>
-
-            <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
-              <div className="flex items-center">
-                <User className="w-4 h-4 mr-2" />
-                Integrity Closings CLT
-              </div>
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-2" />
-                3/15/2026
-              </div>
-            </div>
-
             <div className="prose prose-lg prose-slate max-w-none">
                 <img src="https://cdn.marblism.com/ygYtnHwZ_eT.webp" alt="Home closing documentation" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-2" />
+                    Integrity Closings CLT
+                  </div>
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    3/15/2026
+                  </div>
+                </div>
 
                 <p className="mb-6">You’ve spent months on the phone with your lender. You’ve sent in pay stubs, written hardship letters, and navigated the grueling trial period of a loan modification. Finally, the heavy envelope arrives in the mail. You open it, expecting a simple "congratulations," but instead, you find a 50-page stack of legal documents and a cover letter that essentially says: <em>"Find a notary, get this signed, and send it back to us by Friday."</em></p>
 
@@ -85,23 +271,19 @@ export default function BlogPost() {
     if (slug === 'why-your-refinance-demands-specialized-loan-signing-agent') {
       return (
         <>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">
-              Why Your Refinance Demands a Specialized Loan Signing Agent
-            </h1>
-
-            <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
-              <div className="flex items-center">
-                <User className="w-4 h-4 mr-2" />
-                Integrity Closings CLT
-              </div>
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-2" />
-                3/15/2026
-              </div>
-            </div>
-
             <div className="prose prose-lg prose-slate max-w-none">
                 <img src="https://cdn.marblism.com/Ko03CDvLN27.webp" alt="Refinance Documentation" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-2" />
+                    Integrity Closings CLT
+                  </div>
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    3/15/2026
+                  </div>
+                </div>
 
                 <p className="mb-6">Opening a thick envelope from your mortgage lender can be daunting. Tucked between pages of complex legal terminology is often a simple directive: <em>"Please find a notary and return these documents by Friday."</em></p>
 
@@ -158,23 +340,19 @@ export default function BlogPost() {
     if (slug === 'certified-loan-signing-agent-mortgage-refinance') {
       return (
         <>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">
-              3 Reasons a Certified Loan Signing Agent is a Must for Your Mortgage Refinance
-            </h1>
-
-            <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
-              <div className="flex items-center">
-                <User className="w-4 h-4 mr-2" />
-                Integrity Closings CLT
-              </div>
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-2" />
-                3/15/2026
-              </div>
-            </div>
-
             <div className="prose prose-lg prose-slate max-w-none">
                 <img src="https://cdn.marblism.com/5NFgiVVQnUQ.webp" alt="Mortgage Refinance Documents" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-2" />
+                    Integrity Closings CLT
+                  </div>
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    3/15/2026
+                  </div>
+                </div>
 
                 <p className="mb-6">You hear a heavy "thud" on your front porch. You open the door to find a thick FedEx envelope—your mortgage refinance or loan modification documents. Along with the paperwork is a brief, frustrating instruction: <em>"Please find a notary and return these documents by Friday."</em></p>
 
@@ -227,24 +405,19 @@ export default function BlogPost() {
     if (slug === 'struggling-with-loan-mod-paperwork') {
       return (
         <>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">
-              Struggling with Loan Mod Paperwork? How a Mobile Notary Makes the Final Step Stress-Free
-            </h1>
-
-            <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
-              <div className="flex items-center">
-                <User className="w-4 h-4 mr-2" />
-                Frank L Coxx
-              </div>
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-2" />
-                3/7/2026
-              </div>
-            </div>
-
-            <img src="https://cdn.marblism.com/AV3NIamNct8.webp" alt="Struggling with Loan Mod Paperwork" className="w-full h-auto rounded-lg mb-8" referrerPolicy="no-referrer" />
-
             <div className="prose prose-lg prose-slate max-w-none">
+                <img src="https://cdn.marblism.com/AV3NIamNct8.webp" alt="Struggling with Loan Mod Paperwork" className="w-full h-auto rounded-lg mb-8" referrerPolicy="no-referrer" />
+
+                <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-2" />
+                    Frank L Coxx
+                  </div>
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    3/7/2026
+                  </div>
+                </div>
                 <p className="mb-6">You’ve been through the ringer. You’ve spent weeks, perhaps months, going back and forth with your lender, submitting pay stubs, tax returns, and letters of explanation. Finally, the news arrives: your loan modification is approved. You feel a massive sense of relief until you open your mailbox and find a thick, daunting envelope filled with dozens of pages of legal jargon.</p>
 
                 <p className="mb-6">To make matters worse, the cover letter from your lender likely says something like, <em>"Please have these documents executed in the presence of a notary public and returned to us within 48 hours."</em></p>

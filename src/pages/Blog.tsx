@@ -4,6 +4,20 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   const posts = [
     {
+      title: '7 Mistakes Charlotte Sellers Make with Closings (And How Mobile Notary Services Fix Them)',
+      slug: '7-mistakes-charlotte-sellers-make-with-closings',
+      date: 'March 18, 2026',
+      excerpt: 'Selling your Charlotte home should be exciting, not stressful. Yet many sellers find themselves scrambling at the last minute because they\'ve made preventable mistakes during the closing process.',
+      imageUrl: 'https://cdn.marblism.com/wylLzlbVBtP.webp'
+    },
+    {
+      title: 'Charlotte Notary Public Secrets Revealed: What Experts Don\'t Want You to Know',
+      slug: 'charlotte-notary-public-secrets-revealed',
+      date: 'March 18, 2026',
+      excerpt: 'You trust notaries public with your most important documents: mortgage papers, property deeds, legal agreements that can change your life. But what if that trust is misplaced?',
+      imageUrl: 'https://cdn.marblism.com/VTuQliWOuxM.webp'
+    },
+    {
       title: 'The "DIY" Mortgage Loan Modification: How to Get Your Documents Notarized at Home in Charlotte',
       slug: 'diy-mortgage-loan-modification-notarized-at-home-charlotte',
       date: 'March 15, 2026',
