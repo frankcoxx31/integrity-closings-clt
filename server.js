@@ -15,41 +15,56 @@ async function startServer() {
 
   app.use(express.json());
 
-  // API route for health check and environment variable verification
-  app.get('/api/health', async (req, res) => {
-    const calendarId = process.env.GOOGLE_CALENDAR_ID;
-    const geminiKey = process.env.GEMINI_API_KEY;
+  // Helper to load and clean Google Calendar credentials
+  const getGoogleCredentials = () => {
     let privateKey = process.env.GOOGLE_PRIVATE_KEY;
     let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+    const calendarId = process.env.GOOGLE_CALENDAR_ID;
+
+    // Handle "undefined" or "null" strings from some environments
+    if (privateKey === 'undefined' || privateKey === 'null') privateKey = null;
+    if (clientEmail === 'undefined' || clientEmail === 'null') clientEmail = null;
+
+    let fallbackStatus = "NOT_USED";
+    let fallbackError = null;
+
+    if (!privateKey || !clientEmail) {
+      fallbackStatus = "ATTEMPTING";
+      try {
+        const cleanEncoded = ENCODED_CREDENTIALS.trim();
+        const decoded = Buffer.from(cleanEncoded, 'base64').toString('utf8');
+        const credentials = JSON.parse(decoded);
+        if (!privateKey) privateKey = credentials.private_key;
+        if (!clientEmail) clientEmail = credentials.client_email;
+        fallbackStatus = "SUCCESS";
+      } catch (e) {
+        fallbackStatus = "FAILED";
+        fallbackError = e.message;
+      }
+    }
+
+    if (privateKey && typeof privateKey === 'string') {
+      privateKey = privateKey.replace(/['"]/g, '').trim();
+      if (!privateKey.includes('BEGIN PRIVATE KEY')) {
+        privateKey = privateKey.replace(/\\n/g, '').replace(/\s/g, '');
+        privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----\n`;
+      } else {
+        privateKey = privateKey.replace(/\\n/g, '\n');
+      }
+    }
+
+    return { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError };
+  };
+
+  // API route for health check and environment variable verification
+  app.get('/api/health', async (req, res) => {
+    const { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError } = getGoogleCredentials();
+    const geminiKey = process.env.GEMINI_API_KEY;
 
     let authTest = "NOT_STARTED";
     let authError = null;
 
     try {
-      if (!privateKey || !clientEmail) {
-        // Scrub spaces from base64 string before decoding
-        const cleanEncoded = ENCODED_CREDENTIALS.replace(/\s/g, '');
-        const decoded = Buffer.from(cleanEncoded, 'base64').toString('utf-8');
-        const parsed = JSON.parse(decoded);
-        privateKey = parsed.private_key;
-        clientEmail = parsed.client_email;
-      }
-
-      if (privateKey) {
-        // Deep clean the private key
-        privateKey = privateKey.replace(/['"]/g, '').trim();
-        
-        // If it's the raw base64-ish string without headers
-        if (!privateKey.includes('BEGIN PRIVATE KEY')) {
-          privateKey = privateKey.replace(/\\n/g, '').replace(/\s/g, '');
-          // Reconstruct PEM format
-          privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----\n`;
-        } else {
-          // It has headers, just fix the newlines
-          privateKey = privateKey.replace(/\\n/g, '\n');
-        }
-      }
-
       if (clientEmail && privateKey && calendarId) {
         const auth = new google.auth.JWT(
           clientEmail,
@@ -58,20 +73,22 @@ async function startServer() {
           ['https://www.googleapis.com/auth/calendar']
         );
         
-        // Test 1: Can we get a token?
         const token = await auth.authorize();
         authTest = `SUCCESS: Token acquired! (Expires: ${new Date(token.expiry_date).toLocaleTimeString()})`;
         
-        // Test 2: Can we actually see the calendar?
         const calendar = google.calendar({ version: 'v3', auth });
-        await calendar.events.list({ 
+        const events = await calendar.events.list({ 
           calendarId, 
           maxResults: 1,
           timeMin: new Date().toISOString()
         });
-        authTest += " | Calendar is visible and readable.";
+        authTest += ` | Calendar is accessible. Found ${events.data.items?.length || 0} upcoming events.`;
       } else {
-        authTest = "SKIPPED: Missing credentials or Calendar ID";
+        const missing = [];
+        if (!clientEmail) missing.push('clientEmail');
+        if (!privateKey) missing.push('privateKey');
+        if (!calendarId) missing.push('calendarId');
+        authTest = `SKIPPED: Missing ${missing.join(', ')}`;
       }
     } catch (error) {
       authTest = "FAILED: Authentication or Permission error";
@@ -83,11 +100,13 @@ async function startServer() {
       status: 'ok',
       google_auth_test: authTest,
       google_auth_error: authError,
+      fallback_status: fallbackStatus,
+      fallback_error: fallbackError,
       env: {
-        GOOGLE_CALENDAR_ID: calendarId ? `${calendarId.substring(0, 3)}...` : 'MISSING',
+        GOOGLE_CALENDAR_ID: calendarId ? `${calendarId.substring(0, 5)}...` : 'MISSING',
         GEMINI_API_KEY: geminiKey ? 'CONFIGURED' : 'MISSING',
-        GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY ? 'CONFIGURED' : 'MISSING (Using fallback)',
-        GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? 'CONFIGURED' : 'MISSING (Using fallback)',
+        GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY ? (process.env.GOOGLE_PRIVATE_KEY === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING (Using fallback)',
+        GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING (Using fallback)',
         NODE_ENV: process.env.NODE_ENV || 'development'
       }
     });
@@ -97,65 +116,16 @@ async function startServer() {
   app.post('/api/book', async (req, res) => {
     try {
       const { firstName, lastName, email, phone, address, notes, serviceName, startTime, endTime } = req.body;
+      const { privateKey, clientEmail, calendarId } = getGoogleCredentials();
 
-      let privateKey = process.env.GOOGLE_PRIVATE_KEY;
-      let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-      
-      // Fallback to baked-in credentials if Hostinger environment variables are missing
-      if (!privateKey || !clientEmail) {
-        try {
-          const decoded = Buffer.from(ENCODED_CREDENTIALS, 'base64').toString('utf-8');
-          const parsed = JSON.parse(decoded);
-          privateKey = parsed.private_key;
-          clientEmail = parsed.client_email;
-        } catch (e) {
-          console.error('Failed to parse baked-in credentials');
-        }
-      }
-
-      if (privateKey) {
-        // If the user pasted the entire JSON string, parse it out
-        if (privateKey.trim().startsWith('{')) {
-          try {
-            const parsed = JSON.parse(privateKey);
-            if (parsed.private_key) {
-              privateKey = parsed.private_key;
-            }
-          } catch (e) {
-            console.error('Failed to parse JSON private key');
-          }
-        }
-
-        // Clean up any accidental spaces or quotes the user might have pasted
-        privateKey = privateKey.replace(/['"]/g, '').trim();
-
-        // If the user pasted the raw key without the BEGIN/END tags, add them back!
-        if (!privateKey.includes('BEGIN PRIVATE KEY')) {
-          // Remove any \n literals if they accidentally included them
-          privateKey = privateKey.replace(/\\n/g, '');
-          // Reconstruct the proper PEM format Google requires
-          privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----\n`;
-        } else {
-          // Standard replacement if they managed to paste the whole thing with \n
-          privateKey = privateKey.replace(/\\n/g, '\n');
-        }
-      }
-
-      const credentials = {
-        client_email: clientEmail,
-        private_key: privateKey,
-      };
-
-      const calendarId = process.env.GOOGLE_CALENDAR_ID;
-
-      if (!credentials.client_email || !credentials.private_key || !calendarId) {
+      if (!clientEmail || !privateKey || !calendarId) {
         return res.status(500).json({ error: 'Calendar credentials not configured' });
       }
 
       const auth = new google.auth.JWT(
-        credentials.client_email,
+        clientEmail,
         null,
-        credentials.private_key,
+        privateKey,
         ['https://www.googleapis.com/auth/calendar']
       );
 
@@ -193,43 +163,7 @@ async function startServer() {
       const { date } = req.body; // e.g., "2023-10-25"
       console.log('Checking availability for date:', date);
       
-      let privateKey = process.env.GOOGLE_PRIVATE_KEY;
-      let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-      const calendarId = process.env.GOOGLE_CALENDAR_ID;
-
-      console.log('Credentials check:', { 
-        hasPrivateKey: !!privateKey, 
-        hasClientEmail: !!clientEmail, 
-        hasCalendarId: !!calendarId 
-      });
-      
-      if (!privateKey || !clientEmail) {
-        console.log('Using baked-in credentials fallback');
-        try {
-          const decoded = Buffer.from(ENCODED_CREDENTIALS, 'base64').toString('utf-8');
-          const parsed = JSON.parse(decoded);
-          privateKey = parsed.private_key;
-          clientEmail = parsed.client_email;
-        } catch (e) {
-          console.error('Failed to parse baked-in credentials');
-        }
-      }
-
-      if (privateKey) {
-        if (privateKey.trim().startsWith('{')) {
-          try {
-            const parsed = JSON.parse(privateKey);
-            if (parsed.private_key) privateKey = parsed.private_key;
-          } catch (e) {}
-        }
-        privateKey = privateKey.replace(/['"]/g, '').trim();
-        if (!privateKey.includes('BEGIN PRIVATE KEY')) {
-          privateKey = privateKey.replace(/\\n/g, '');
-          privateKey = `-----BEGIN PRIVATE KEY-----\n${privateKey}\n-----END PRIVATE KEY-----\n`;
-        } else {
-          privateKey = privateKey.replace(/\\n/g, '\n');
-        }
-      }
+      const { privateKey, clientEmail, calendarId } = getGoogleCredentials();
 
       if (!clientEmail || !privateKey || !calendarId) {
         console.error('Missing configuration:', { clientEmail: !!clientEmail, privateKey: !!privateKey, calendarId: !!calendarId });

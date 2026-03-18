@@ -43,7 +43,7 @@ export default function AIChatbot() {
           ai = new GoogleGenAI({ apiKey: config.geminiKey });
           
           chatRef.current = ai.chats.create({
-            model: "gemini-3-flash-preview",
+            model: "gemini-1.5-flash",
             config: {
               systemInstruction: `Your job is to help website visitors quickly schedule a mobile notary appointment for Integrity Closings CLT.
 
