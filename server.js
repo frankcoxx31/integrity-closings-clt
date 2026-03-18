@@ -24,6 +24,7 @@ async function startServer() {
 
     let fallbackStatus = "NOT_USED";
     let fallbackError = null;
+    let source = "ENV";
 
     // 1. Try to load from full JSON environment variable first (most reliable)
     if (fullJson && fullJson !== 'undefined' && fullJson !== 'null') {
@@ -31,6 +32,7 @@ async function startServer() {
         const credentials = JSON.parse(fullJson);
         privateKey = credentials.private_key;
         clientEmail = credentials.client_email;
+        source = "JSON_ENV";
         fallbackStatus = "LOADED_FROM_JSON_ENV";
       } catch (e) {
         fallbackError = `JSON_ENV_PARSE_ERROR: ${e.message}`;
@@ -38,22 +40,25 @@ async function startServer() {
     }
 
     // 2. Handle "undefined" or "null" strings from some environments
-    if (privateKey === 'undefined' || privateKey === 'null') privateKey = null;
-    if (clientEmail === 'undefined' || clientEmail === 'null') clientEmail = null;
-    if (calendarId === 'undefined' || calendarId === 'null') calendarId = null;
+    if (privateKey === 'undefined' || privateKey === 'null' || !privateKey) privateKey = null;
+    if (clientEmail === 'undefined' || clientEmail === 'null' || !clientEmail) clientEmail = null;
+    if (calendarId === 'undefined' || calendarId === 'null' || !calendarId) calendarId = null;
 
-    // 3. Fallback to baked-in credentials if still missing or incomplete
-    if (!privateKey || !clientEmail || privateKey.length < 100) {
+    // 3. Fallback to baked-in credentials if still missing or looks like a personal email
+    // Service account emails MUST end in .gserviceaccount.com
+    const isServiceAccountEmail = clientEmail && clientEmail.includes('.gserviceaccount.com');
+    
+    if (!privateKey || !isServiceAccountEmail || privateKey.length < 100) {
       fallbackStatus = "ATTEMPTING_FALLBACK_FILE";
       try {
         const cleanEncoded = ENCODED_CREDENTIALS.trim();
         const decoded = Buffer.from(cleanEncoded, 'base64').toString('utf8');
         const credentials = JSON.parse(decoded);
         
-        // If the env vars are missing or look like placeholders, use the fallback
-        if (!privateKey || privateKey.length < 100) privateKey = credentials.private_key;
-        if (!clientEmail || clientEmail.includes('example.com')) clientEmail = credentials.client_email;
-        
+        // Force fallback if the current ones are broken or not service account
+        privateKey = credentials.private_key;
+        clientEmail = credentials.client_email;
+        source = "FALLBACK_FILE";
         fallbackStatus = "FALLBACK_FILE_SUCCESS";
       } catch (e) {
         fallbackStatus = "FALLBACK_FILE_FAILED";
@@ -77,16 +82,21 @@ async function startServer() {
       calendarId = calendarId.replace(/['"]/g, '').trim();
     }
 
-    return { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError };
+    return { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError, source };
   };
 
   // API route for health check and environment variable verification
   app.get('/api/health', async (req, res) => {
-    const { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError } = getGoogleCredentials();
+    const { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError, source } = getGoogleCredentials();
     const geminiKey = process.env.GEMINI_API_KEY;
 
     let authTest = "NOT_STARTED";
     let authError = null;
+    let keyPreview = "NONE";
+
+    if (privateKey) {
+      keyPreview = `${privateKey.substring(0, 20)}... (Length: ${privateKey.length})`;
+    }
 
     try {
       if (clientEmail && privateKey && calendarId) {
@@ -126,11 +136,14 @@ async function startServer() {
       google_auth_error: authError,
       fallback_status: fallbackStatus,
       fallback_error: fallbackError,
+      auth_source: source,
+      using_email: clientEmail,
+      key_preview: keyPreview,
       env: {
         GOOGLE_CALENDAR_ID: calendarId ? `${calendarId.substring(0, 5)}...` : 'MISSING',
         GEMINI_API_KEY: geminiKey ? 'CONFIGURED' : 'MISSING',
-        GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY ? (process.env.GOOGLE_PRIVATE_KEY === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING (Using fallback)',
-        GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING (Using fallback)',
+        GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY ? (process.env.GOOGLE_PRIVATE_KEY === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING',
+        GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING',
         GOOGLE_SERVICE_ACCOUNT_JSON: process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? 'CONFIGURED' : 'MISSING',
         NODE_ENV: process.env.NODE_ENV || 'development'
       }
