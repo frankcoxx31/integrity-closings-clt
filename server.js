@@ -19,14 +19,14 @@ async function startServer() {
   const getGoogleCredentials = () => {
     let privateKey = process.env.GOOGLE_PRIVATE_KEY;
     let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-    const calendarId = process.env.GOOGLE_CALENDAR_ID;
+    let calendarId = process.env.GOOGLE_CALENDAR_ID;
     const fullJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
 
     let fallbackStatus = "NOT_USED";
     let fallbackError = null;
 
     // 1. Try to load from full JSON environment variable first (most reliable)
-    if (fullJson) {
+    if (fullJson && fullJson !== 'undefined' && fullJson !== 'null') {
       try {
         const credentials = JSON.parse(fullJson);
         privateKey = credentials.private_key;
@@ -40,16 +40,20 @@ async function startServer() {
     // 2. Handle "undefined" or "null" strings from some environments
     if (privateKey === 'undefined' || privateKey === 'null') privateKey = null;
     if (clientEmail === 'undefined' || clientEmail === 'null') clientEmail = null;
+    if (calendarId === 'undefined' || calendarId === 'null') calendarId = null;
 
-    // 3. Fallback to baked-in credentials if still missing
-    if (!privateKey || !clientEmail) {
+    // 3. Fallback to baked-in credentials if still missing or incomplete
+    if (!privateKey || !clientEmail || privateKey.length < 100) {
       fallbackStatus = "ATTEMPTING_FALLBACK_FILE";
       try {
         const cleanEncoded = ENCODED_CREDENTIALS.trim();
         const decoded = Buffer.from(cleanEncoded, 'base64').toString('utf8');
         const credentials = JSON.parse(decoded);
-        if (!privateKey) privateKey = credentials.private_key;
-        if (!clientEmail) clientEmail = credentials.client_email;
+        
+        // If the env vars are missing or look like placeholders, use the fallback
+        if (!privateKey || privateKey.length < 100) privateKey = credentials.private_key;
+        if (!clientEmail || clientEmail.includes('example.com')) clientEmail = credentials.client_email;
+        
         fallbackStatus = "FALLBACK_FILE_SUCCESS";
       } catch (e) {
         fallbackStatus = "FALLBACK_FILE_FAILED";
@@ -66,6 +70,11 @@ async function startServer() {
       } else {
         privateKey = privateKey.replace(/\\n/g, '\n');
       }
+    }
+
+    // 5. Clean Calendar ID
+    if (calendarId && typeof calendarId === 'string') {
+      calendarId = calendarId.replace(/['"]/g, '').trim();
     }
 
     return { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError };
