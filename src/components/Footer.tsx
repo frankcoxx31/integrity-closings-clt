@@ -20,15 +20,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-6">Contact Info</h3>
+            <h3 className="text-lg font-bold mb-6">Need a Notary Now?</h3>
+            <p className="text-slate-300 mb-6">
+              Call or text <a href="tel:9803724103" className="text-blue-400 font-bold hover:underline">980-372-4103</a> for immediate assistance or to schedule your appointment. Same-day and after-hours appointments available.
+            </p>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-blue-400 mr-3 mt-1" />
                 <span className="text-slate-300">Mint Hill NC 28227</span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="w-5 h-5 text-blue-400 mr-3" />
-                <a href="tel:9803724103" className="text-slate-300 hover:text-white transition-colors">980-372-4103</a>
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 text-blue-400 mr-3" />
@@ -41,7 +40,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li><Link to="/" className="text-slate-400 hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/mobile-notary-services" className="text-slate-400 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/mobile-notary-charlotte-nc" className="text-slate-400 hover:text-white transition-colors">Services</Link></li>
               <li><Link to="/#locations" className="text-slate-400 hover:text-white transition-colors">Service Areas</Link></li>
               <li><Link to="/blog" className="text-slate-400 hover:text-white transition-colors">Blog</Link></li>
               <li><Link to="/resources" className="text-slate-400 hover:text-white transition-colors">Resources</Link></li>
@@ -59,6 +58,12 @@ export default function Footer() {
             <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link to="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
           </div>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-slate-800/50 text-center">
+          <p className="text-slate-600 text-xs tracking-wider uppercase">
+            Mobile Notary Charlotte NC | Loan Signing Agent Charlotte NC | Hospital Notary Charlotte NC | Estate Notary Services | After Hours Notary Charlotte
+          </p>
         </div>
       </div>
     </footer>

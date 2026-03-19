@@ -64,8 +64,22 @@ export default function HospitalNotary() {
               ))}
             </ul>
             <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 mb-8">
-              <h3 className="text-lg font-bold text-blue-900 mb-2">Why Choose Us for Healthcare Facilities?</h3>
-              <p className="text-blue-800">We understand the sensitive nature of these visits. Our notaries are experienced in working with patients, medical staff, and families to ensure documents are executed legally and respectfully, without causing unnecessary stress to the patient.</p>
+              <h3 className="text-lg font-bold text-blue-900 mb-3">Why Choose Integrity Closings CLT?</h3>
+              <ul className="space-y-3 mb-4">
+                {[
+                  "Mobile Notary That Comes to You",
+                  "Same-Day & Emergency Appointments Available",
+                  "Experienced Loan Signing Agent",
+                  "Professional, Accurate, and Reliable Service",
+                  "Serving Charlotte and Surrounding Areas"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-blue-900 font-medium italic">We make notarization simple, fast, and convenient—right at your location.</p>
             </div>
             <div className="text-center">
               <a href="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">

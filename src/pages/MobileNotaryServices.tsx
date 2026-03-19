@@ -117,15 +117,14 @@ export default function MobileNotaryServices() {
               </div>
             </div>
             <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-              <h3 className="text-lg font-bold text-blue-900 mb-3">Why Choose Our Mobile Service?</h3>
+              <h3 className="text-lg font-bold text-blue-900 mb-3">Why Choose Integrity Closings CLT?</h3>
               <ul className="space-y-3">
                 {[
-                  "We travel to your location",
-                  "Available evenings and weekends",
-                  "Certified and background screened",
-                  "Errors & Omissions insured",
-                  "Professional and reliable",
-                  "Same-day appointments available"
+                  "Mobile Notary That Comes to You",
+                  "Same-Day & Emergency Appointments Available",
+                  "Experienced Loan Signing Agent",
+                  "Professional, Accurate, and Reliable Service",
+                  "Serving Charlotte and Surrounding Areas"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
@@ -133,6 +132,7 @@ export default function MobileNotaryServices() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-6 text-blue-900 font-medium italic">We make notarization simple, fast, and convenient—right at your location.</p>
             </div>
           </div>
         </div>

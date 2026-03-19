@@ -1,28 +1,34 @@
 export default function Services() {
   const services = [
     {
-      title: 'Hospitals & Nursing Homes',
-      description: 'Compassionate bedside service for medical directives, POAs, and wills.',
-      image: '/hospital.png',
-      link: '/services/hospital-notary'
+      title: 'Mobile Notary Services Charlotte NC',
+      description: 'We travel to your home, office, or coffee shop for any notarization needs.',
+      image: '/general-notary-work.png',
+      link: '/mobile-notary-charlotte-nc'
     },
     {
-      title: 'Mobile Loan Closings',
+      title: 'Loan Signing Agent Charlotte NC',
       description: 'Professional loan signing agent services for real estate transactions.',
       image: '/mobile-notary.jpg',
       link: '/services/mobile-loan-closings'
     },
     {
-      title: 'General Mobile Notary',
-      description: 'We travel to your home, office, or coffee shop for any notarization needs.',
-      image: '/general-notary-work.png',
-      link: '/services/general-notary'
+      title: 'Hospital & Nursing Home Notary',
+      description: 'Compassionate bedside service for medical directives, POAs, and wills.',
+      image: '/hospital.png',
+      link: '/hospital-notary-charlotte-nc'
     },
     {
-      title: 'Lender Provided Documents',
-      description: 'Specialized handling for borrower-provided loan documents and packages.',
+      title: 'Estate Planning & Power of Attorney Notarization',
+      description: 'Specialized handling for wills, trusts, and power of attorney documents.',
+      image: '/personal-documents.png',
+      link: '/estate-planning-notary-charlotte-nc'
+    },
+    {
+      title: 'After Hours Mobile Notary',
+      description: 'Available for urgent signings during evenings, weekends, and holidays.',
       image: '/lender-sent-documents.png',
-      link: '/services/lender-documents'
+      link: '/services/special-considerations'
     }
   ];
 
@@ -31,10 +37,10 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Our Services</h2>
-          <p className="mt-4 text-lg text-slate-600">Professional, reliable, and convenient notary services at your location.</p>
+          <p className="mt-4 text-lg text-slate-600">We provide professional mobile notary and loan signing services in Charlotte, NC. Whether you need documents notarized at home, in a hospital, or at a business location, we come to you quickly and reliably.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
               <div className="mb-6 w-full h-40 rounded-lg overflow-hidden bg-slate-100">

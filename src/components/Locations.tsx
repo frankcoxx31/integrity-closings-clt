@@ -44,8 +44,8 @@ export default function Locations() {
     <section id="locations" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Communities & Towns We Serve</h2>
-          <p className="mt-4 text-lg text-slate-600">We travel throughout the greater Charlotte area and surrounding counties.</p>
+          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Mobile Notary Services in Charlotte, NC and Nearby Areas</h2>
+          <p className="mt-4 text-lg text-slate-600">We proudly serve Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and surrounding areas. If you’re searching for a 'mobile notary near me,' we are ready to come to your location.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
