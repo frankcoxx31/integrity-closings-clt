@@ -29,6 +29,12 @@ export default function Services() {
       description: 'Available for urgent signings during evenings, weekends, and holidays.',
       image: '/lender-sent-documents.png',
       link: '/services/special-considerations'
+    },
+    {
+      title: 'Power of Attorney & Estate Documents',
+      description: 'Notarization for powers of attorney, wills, trusts, advance directives, and other estate planning documents at your home, office, hospital, or care facility.',
+      image: '/personal-documents.png',
+      link: '/power-of-attorney-estate-documents-charlotte-nc'
     }
   ];
 

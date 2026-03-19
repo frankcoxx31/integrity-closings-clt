@@ -42,6 +42,7 @@ import SpecialConsiderations from './pages/services/SpecialConsiderations';
 import MiscellaneousDocuments from './pages/services/MiscellaneousDocuments';
 import HospitalsNursingHomes from './pages/services/HospitalsNursingHomes';
 import LenderProvidedDocuments from './pages/services/LenderProvidedDocuments';
+import PowerOfAttorneyEstateDocuments from './pages/services/PowerOfAttorneyEstateDocuments';
 
 // Location Pages
 import Charlotte from './pages/locations/Charlotte';
@@ -72,6 +73,7 @@ export default function App() {
             <Route path="/services/miscellaneous-documents" element={<MiscellaneousDocuments />} />
             <Route path="/services/hospitals-nursing-homes" element={<HospitalsNursingHomes />} />
             <Route path="/services/lender-provided-documents" element={<LenderProvidedDocuments />} />
+            <Route path="/power-of-attorney-estate-documents-charlotte-nc" element={<PowerOfAttorneyEstateDocuments />} />
 
             {/* Location Pages */}
             <Route path="/locations/charlotte" element={<Charlotte />} />
