@@ -76,6 +76,15 @@ export default function PowerOfAttorneyEstateDocuments() {
               Need a mobile notary for important estate planning documents? Integrity Closings CLT provides professional notarization for powers of attorney, trusts, wills, advance directives, affidavits, and other estate-related documents in Charlotte, NC and surrounding areas.
             </p>
             
+            <div className="mb-12 rounded-xl overflow-hidden shadow-sm border border-slate-100">
+              <img 
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200" 
+                alt="Mobile notary signing documents in Charlotte NC" 
+                className="w-full h-64 sm:h-80 object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            
             <section className="mb-10">
               <div className="flex items-center mb-4">
                 <MapPin className="w-6 h-6 text-blue-600 mr-3" />
@@ -84,6 +93,14 @@ export default function PowerOfAttorneyEstateDocuments() {
               <p className="text-slate-600 leading-relaxed">
                 We travel to homes, hospitals, nursing homes, rehabilitation centers, assisted living facilities, offices, and other convenient locations. If you need a document notarized for a loved one who cannot travel, mobile service makes the process easier and more convenient.
               </p>
+              <div className="mt-6 rounded-xl overflow-hidden shadow-sm border border-slate-100">
+                <img 
+                  src="https://images.unsplash.com/photo-1573164067507-406183a7b1ad?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Mobile notary service at home in Charlotte North Carolina" 
+                  className="w-full h-64 object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </section>
             
             <section className="mb-10">
@@ -96,6 +113,14 @@ export default function PowerOfAttorneyEstateDocuments() {
                   </div>
                 ))}
               </div>
+              <div className="mt-8 rounded-xl overflow-hidden shadow-sm border border-slate-100">
+                <img 
+                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Notary signing legal documents in Charlotte NC" 
+                  className="w-full h-64 object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </section>
             
             <section className="mb-10">
@@ -103,6 +128,14 @@ export default function PowerOfAttorneyEstateDocuments() {
               <p className="text-slate-600 leading-relaxed">
                 Clients often need estate documents notarized quickly and professionally. We help by providing mobile appointments, after-hours availability, and service at locations where signers may already be receiving care or assistance.
               </p>
+              <div className="mt-6 rounded-xl overflow-hidden shadow-sm border border-slate-100">
+                <img 
+                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Professional mobile notary service Charlotte NC" 
+                  className="w-full h-64 object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </section>
             
             <section className="mb-10 p-6 bg-blue-50 rounded-xl border border-blue-100">
