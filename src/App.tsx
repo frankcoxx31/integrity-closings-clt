@@ -14,6 +14,7 @@ import MobileNotaryServices from './pages/MobileNotaryServices';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import About from './pages/About';
+import AfterHoursNotary from './pages/AfterHoursNotary';
 import Contact from './pages/Contact';
 import EstateNotary from './pages/EstateNotary';
 import HospitalNotary from './pages/HospitalNotary';
@@ -96,6 +97,7 @@ export default function App() {
             <Route path="/resources/what-is-mobile-notary" element={<WhatIsMobileNotary />} />
             <Route path="/calculator" element={<QuoteCalculator />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/after-hours-mobile-notary-charlotte-nc" element={<AfterHoursNotary />} />
             <Route path="/estate-notary-charlotte-nc" element={<EstateNotary />} />
             <Route path="/hospital-notary-charlotte-nc" element={<HospitalNotary />} />
             <Route path="/loan-signing-agent-charlotte-nc" element={<LoanSigningAgent />} />
