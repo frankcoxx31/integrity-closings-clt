@@ -2,37 +2,37 @@ export default function Services() {
   const services = [
     {
       title: 'Mobile Notary Services Charlotte NC',
-      description: 'We travel to your home, office, or coffee shop for any notarization needs.',
+      description: 'Notarizations at your home, office, or preferred location.',
       image: '/general-notary-work.png',
       link: '/mobile-notary-charlotte-nc'
     },
     {
       title: 'Loan Signing Agent Charlotte NC',
-      description: 'Professional loan signing agent services for real estate transactions.',
+      description: 'Accurate and professional real estate loan signings.',
       image: '/mobile-notary.jpg',
       link: '/services/mobile-loan-closings'
     },
     {
       title: 'Hospital & Nursing Home Notary',
-      description: 'Compassionate bedside service for medical directives, POAs, and wills.',
+      description: 'Convenient notarizations for patients and caregivers.',
       image: '/hospital.png',
       link: '/hospital-notary-charlotte-nc'
     },
     {
       title: 'Estate Planning & Power of Attorney Notarization',
-      description: 'Specialized handling for wills, trusts, and power of attorney documents.',
+      description: 'Power of attorney, wills, trusts, and advance directives.',
       image: '/personal-documents.png',
       link: '/estate-planning-notary-charlotte-nc'
     },
     {
       title: 'After Hours Mobile Notary',
-      description: 'Available for urgent signings during evenings, weekends, and holidays.',
+      description: 'Evening and weekend appointments available.',
       image: '/lender-sent-documents.png',
       link: '/services/special-considerations'
     },
     {
       title: 'Power of Attorney & Estate Documents',
-      description: 'Notarization for powers of attorney, wills, trusts, advance directives, and other estate planning documents at your home, office, hospital, or care facility.',
+      description: 'Power of attorney, wills, trusts, and advance directives.',
       image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800',
       link: '/power-of-attorney-estate-documents-charlotte-nc'
     }

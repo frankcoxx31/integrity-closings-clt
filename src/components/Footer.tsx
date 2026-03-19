@@ -22,7 +22,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6">Need a Notary Now?</h3>
             <p className="text-slate-300 mb-6">
-              Call or text <a href="tel:9803724103" className="text-blue-400 font-bold hover:underline">980-372-4103</a> for immediate assistance or to schedule your appointment. Same-day and after-hours appointments available.
+              Call or text <a href="tel:9803724103" className="text-blue-400 font-bold hover:underline">980-372-4103</a> to schedule your appointment. Same-day and after-hours appointments available.
             </p>
             <ul className="space-y-4">
               <li className="flex items-start">
