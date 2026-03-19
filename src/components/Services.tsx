@@ -33,7 +33,7 @@ export default function Services() {
     {
       title: 'Power of Attorney & Estate Documents',
       description: 'Notarization for powers of attorney, wills, trusts, advance directives, and other estate planning documents at your home, office, hospital, or care facility.',
-      image: '/personal-documents.png',
+      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800',
       link: '/power-of-attorney-estate-documents-charlotte-nc'
     }
   ];

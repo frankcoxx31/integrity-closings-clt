@@ -60,7 +60,7 @@ export default function PowerOfAttorneyEstateDocuments() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
             <img 
-              src="/personal-documents.png" 
+              src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200" 
               alt="Power of Attorney & Estate Documents" 
               className="w-full h-full object-cover" 
               referrerPolicy="no-referrer" 
