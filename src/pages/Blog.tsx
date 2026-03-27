@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   const posts = [
     {
+      title: 'Navigating the North Carolina Remote Electronic Notarization Act (RENA): What to Expect in 2025',
+      slug: 'navigating-nc-rena-2025',
+      date: 'March 27, 2026',
+      excerpt: 'For years, the way you notarize documents in North Carolina has been in a state of transition. From the traditional pen-and-paper methods to the temporary "emergency" video measures introduced during the pandemic, the landscape has been shifting beneath our feet.',
+      imageUrl: 'https://cdn.marblism.com/HhH2JJOzWG0.webp'
+    },
+    {
       title: '7 Mistakes Charlotte Sellers Make with Closings (And How Mobile Notary Services Fix Them)',
       slug: '7-mistakes-charlotte-sellers-make-with-closings',
       date: 'March 18, 2026',

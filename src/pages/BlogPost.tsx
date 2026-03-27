@@ -5,6 +5,84 @@ export default function BlogPost() {
   const { slug } = useParams();
 
   const renderContent = () => {
+    if (slug === 'navigating-nc-rena-2025') {
+      return (
+        <>
+            <div className="prose prose-lg prose-slate max-w-none">
+                <img src="https://cdn.marblism.com/HhH2JJOzWG0.webp" alt="heroImage" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+                  <div className="flex items-center">
+                    <User className="w-4 h-4 mr-2" />
+                    Integrity Closings CLT
+                  </div>
+                  <div className="flex items-center">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    3/27/2026
+                  </div>
+                </div>
+
+                <p className="mb-6">For years, the way you notarize documents in North Carolina has been in a state of transition. From the traditional pen-and-paper methods to the temporary "emergency" video measures introduced during the pandemic, the landscape has been shifting beneath our feet. As we move through 2026, we are now living in the reality shaped by the <strong>North Carolina Remote Electronic Notarization Act (RENA)</strong>.</p>
+                <p className="mb-6">If you are a homeowner, a business owner, or a legal professional, understanding the permanent framework that took root on July 1, 2025, is essential. This legislation didn't just make video notarization permanent; it introduced rigorous standards to ensure the security and integrity of your most important transactions.</p>
+                <p className="mb-6">Here is what you need to know about navigating RENA in 2025 and beyond.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Shift from "Emergency" to Permanent</h2>
+                <p className="mb-6">During the COVID-19 pandemic, North Carolina allowed "Emergency Video Notarization" (EVN). It was a temporary fix that allowed notaries to witness signatures via standard video platforms like Zoom or FaceTime. However, EVN was never intended to be a long-term solution.</p>
+                <p className="mb-6">RENA replaced the temporary measures with a robust, permanent system for <strong>Remote Electronic Notarization (REN)</strong>. Unlike the emergency measures, REN requires the use of specialized, secure platforms that meet strict state requirements for identity verification and session recording.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Key Features of RENA: What’s Different Now?</h2>
+                <p className="mb-6">The permanent act introduced several layers of security that were missing from the emergency video protocols:</p>
+                <ol className="list-decimal pl-6 space-y-4 mb-6">
+                    <li><strong>Identity Proofing and Credential Analysis:</strong> It’s no longer enough to just hold your ID up to a webcam. RENA-compliant platforms use automated technology to verify the authenticity of your government-issued ID and may use "knowledge-based authentication" (KBA)—asking questions only you would know the answer to—to confirm your identity.</li>
+                    <li><strong>Secure Communication Technology:</strong> Standard video apps are out. Notaries must use platforms specifically approved by the North Carolina Secretary of State that provide high-quality, real-time audio and video feeds.</li>
+                    <li><strong>Tamper-Evident Technology:</strong> Electronic documents must be protected by technology that makes any subsequent changes to the document obvious. This ensures the integrity of the document after it has been signed and notarized.</li>
+                    <li><strong>Mandatory Recording and Journals:</strong> Every remote session must be recorded and stored securely for at least ten years. Notaries are also required to maintain a detailed electronic journal of every remote act they perform.</li>
+                </ol>
+                
+                <img src="https://cdn.marblism.com/HhH2JJOzWG0.webp" alt="Remote Electronic Notarization Setup" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Mobile Notary Services Remain Vital</h2>
+                <p className="mb-6">With the rise of remote electronic notarization, you might wonder: <em>"Do I still need a mobile notary to come to my house?"</em></p>
+                <p className="mb-6">The answer is a resounding <strong>yes</strong>. While REN offers convenience, it isn't always the right choice for every situation. Here is why mobile notary services in Charlotte, NC, continue to be the preferred choice for many:</p>
+                
+                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">1. Not All Documents Are Eligible</h3>
+                <p className="mb-6">Certain high-stakes documents, such as some types of trusts or specific real estate deeds, may still require traditional "wet ink" signatures and in-person notarization depending on the requirements of the receiving agency or lender. A mobile notary ensures that these critical documents are executed correctly in person.</p>
+                
+                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">2. The Technology Gap</h3>
+                <p className="mb-6">Remote notarization requires a reliable high-speed internet connection, a compatible device, and a certain level of comfort with digital platforms. For many individuals—especially those in hospitals or nursing homes—the technology can be a barrier. A mobile notary eliminates this hurdle by bringing the "office" directly to the signer, wherever they are.</p>
+                
+                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">3. The Human Element and Complex Closings</h3>
+                <p className="mb-6">Mortgage refinances and estate planning often involve large stacks of paperwork and multiple signers. Navigating these documents digitally can be confusing and prone to errors. A mobile notary provides a physical presence, guiding you through the packet, ensuring every initial is in the right place, and answering questions in real-time.</p>
+                
+                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">4. Immediate Peace of Mind</h3>
+                <p className="mb-6">When a mobile notary leaves your home, you have the physical, notarized documents in your hand. There is no waiting for digital files to process or worrying about whether a platform’s security certificate is up to date. You have the tangible proof of a completed transaction.</p>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Preparing for Your Notarization in 2025</h2>
+                <p className="mb-6">Whether you choose a remote electronic notarization or a traditional mobile notary service, preparation is key to a smooth experience:</p>
+                <ul className="list-disc pl-6 space-y-4 mb-6">
+                    <li><strong>Verify the Requirements:</strong> Always check with the person or agency receiving the document to see if they accept electronic signatures and remote notarization.</li>
+                    <li><strong>Have Valid ID Ready:</strong> Regardless of the method, you will need a current, government-issued photo ID.</li>
+                    <li><strong>Review Your Documents:</strong> Make sure you understand what you are signing before the notary arrives or the video session begins.</li>
+                    <li><strong>Choose a Professional:</strong> Whether in-person or remote, ensure your notary is properly commissioned and experienced in the type of document you are signing.</li>
+                </ul>
+                
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Integrity Closings CLT: Your Partner in a Changing Landscape</h2>
+                <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we stay at the forefront of North Carolina’s notary laws to provide you with the most accurate and reliable service possible. Whether you need a <a href="/hospital-notary-charlotte-nc" className="text-blue-600 hover:underline">hospital notary</a>, a <a href="/loan-signing-agent-charlotte-nc" className="text-blue-600 hover:underline">loan signing agent</a>, or an <a href="/estate-notary-charlotte-nc" className="text-blue-600 hover:underline">estate document notary</a>, we bring professional expertise directly to your door.</p>
+                <p className="mb-6">The North Carolina Remote Electronic Notarization Act has brought our state into the digital age, but the need for professional, reliable, and personal service remains unchanged. We are here to help you navigate these changes with confidence.</p>
+                <p className="mb-6"><strong>Need a mobile notary in Charlotte, NC?</strong> <a href="/booking" className="text-blue-600 hover:underline">Schedule your appointment today</a> and experience the peace of mind that comes with professional, in-person service.</p>
+                
+                <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
+                    <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Experience Professional Mobile Notary Service</h2>
+                    <p className="text-lg text-slate-300 mb-8">Whether you need in-person or guidance on the latest North Carolina notary laws, we are here to help.</p>
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
+                    </div>
+                </section>
+            </div>
+        </>
+      );
+    }
+
     if (slug === '7-mistakes-charlotte-sellers-make-with-closings') {
       return (
         <>
