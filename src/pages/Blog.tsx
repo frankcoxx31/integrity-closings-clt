@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   const posts = [
     {
+      title: 'Settlement vs. Closing: Why You Won\'t Get Your Keys at the Signing Table in North Carolina',
+      slug: 'settlement-vs-closing-nc-real-estate',
+      date: 'April 1, 2026',
+      excerpt: 'You have spent weeks, perhaps months, navigating the North Carolina real estate market. You have toured dozens of homes, survived the "Due Diligence" period, and finalized your mortgage. Now, the big day is here: Closing Day...',
+      imageUrl: 'https://cdn.marblism.com/bMA7PAb3_YS.webp'
+    },
+    {
       title: 'Navigating the North Carolina Remote Electronic Notarization Act (RENA): What to Expect in 2025',
       slug: 'navigating-nc-rena-2025',
       date: 'March 27, 2026',

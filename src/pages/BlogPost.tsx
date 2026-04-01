@@ -5,6 +5,133 @@ export default function BlogPost() {
   const { slug } = useParams();
 
   const renderContent = () => {
+    if (slug === 'settlement-vs-closing-nc-real-estate') {
+      return (
+        <div className="prose prose-lg prose-slate max-w-none">
+          <img 
+            src="https://cdn.marblism.com/bMA7PAb3_YS.webp" 
+            alt="[HERO] Settlement vs. Closing: Why You Won't Get Your Keys at the Signing Table in North Carolina" 
+            className="w-full h-auto rounded-lg my-8" 
+            referrerPolicy="no-referrer" 
+          />
+
+          <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+            <div className="flex items-center">
+              <User className="w-4 h-4 mr-2" />
+              Integrity Closings CLT
+            </div>
+            <div className="flex items-center">
+              <Calendar className="w-4 h-4 mr-2" />
+              4/1/2026
+            </div>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">
+            Settlement vs. Closing: Why You Won't Get Your Keys at the Signing Table in North Carolina
+          </h1>
+
+          <p className="mb-6">You have spent weeks, perhaps months, navigating the North Carolina real estate market. You have toured dozens of homes, survived the "Due Diligence" period, and finalized your mortgage. Now, the big day is here: Closing Day. You arrive at the attorney's office with a pen in hand, ready to sign your name a hundred times and walk out with the keys to your new home.</p>
+          <p className="mb-6">However, as the meeting ends, your attorney tells you that you can’t have the keys yet. You are told you have to wait for "recording."</p>
+          <p className="mb-6">For many first-time home buyers in North Carolina, this is a major point of confusion and frustration. In many other states, you get your keys the moment you finish signing. But North Carolina operates differently. To navigate your home purchase successfully, you must understand the critical legal distinction between <strong>Settlement</strong> and <strong>Closing</strong>.</p>
+
+          <img 
+            src="https://cdn.marblism.com/p0AjO8CbS01.webp" 
+            alt="House keys on North Carolina real estate settlement documents in a professional office setting." 
+            className="w-full h-auto rounded-lg my-8" 
+            referrerPolicy="no-referrer" 
+          />
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Understanding the Vocabulary: Settlement vs. Closing</h2>
+          <p className="mb-6">In casual conversation, we use these terms interchangeably. However, in a North Carolina real estate contract, they represent two very different events on the timeline.</p>
+
+          <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">What is Settlement?</h3>
+          <p className="mb-6">Settlement is the actual meeting. This is when you, the buyer, sit down (often at a closing attorney's office or via a <a href="/mobile-notary-services" className="text-blue-600 hover:underline">mobile notary service</a>) to execute all the necessary paperwork. During settlement, you sign the Deed of Trust, the Closing Disclosure (CD), and various other state and federal disclosures. You also provide the remaining funds required to complete the purchase.</p>
+
+          <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">What is Closing?</h3>
+          <p className="mb-6">In North Carolina, "Closing" is not a meeting; it is a process. Legally, closing is defined as the moment the deed is officially recorded at the local Register of Deeds. Only when the county clerk stamps that document and adds it to the public record is the transaction considered "closed." This is the moment ownership officially transfers from the seller to you.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Role of the Closing Attorney in the "Gap"</h2>
+          <p className="mb-6">North Carolina is an "attorney state," meaning an attorney must oversee the real estate transaction. Their job doesn't end when you stop signing documents. In fact, some of their most critical work happens in the hours: or sometimes days: immediately following your settlement meeting.</p>
+          <p className="mb-6">Once you leave the table, the attorney must perform several tasks before they can record the deed:</p>
+          <ol className="list-decimal pl-6 space-y-4 mb-6">
+            <li><strong>The Title Update:</strong> The attorney performs a "bring-down" or final title search. They check the public record one last time to ensure no new liens, judgments, or encumbrances have been filed against the property since the initial title search.</li>
+            <li><strong>Document Verification:</strong> They ensure every signature is perfect and every notary seal is clear. Even a small mistake can cause the Register of Deeds to reject the filing.</li>
+            <li><strong>Lender Authorization:</strong> If you are financing the home, the attorney must send specific documents back to your lender. The lender then reviews them and gives the "authorization to record."</li>
+          </ol>
+
+          <img 
+            src="https://cdn.marblism.com/Z95Ibk5u2TO.webp" 
+            alt="Close-up of a pen and legal paperwork for funds disbursement and attorney review in NC." 
+            className="w-full h-auto rounded-lg my-8" 
+            referrerPolicy="no-referrer" 
+          />
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Timing Matters for Funds Disbursement</h2>
+          <p className="mb-6">A common misconception is that the seller gets their check as soon as you sign yours. In reality, the North Carolina Good Funds Settlement Act prohibits attorneys from dispersing money until the deed is recorded.</p>
+          <p className="mb-6">This means:</p>
+          <ul className="list-disc pl-6 space-y-4 mb-6">
+            <li><strong>The Seller</strong> does not get their proceeds at the settlement table.</li>
+            <li><strong>Real Estate Agents</strong> do not get their commissions at the settlement table.</li>
+            <li><strong>The Mortgage</strong> on the property isn't paid off until after recording.</li>
+          </ul>
+          <p className="mb-6">Because the money cannot move until the deed is recorded, the seller has a legal right to retain possession of the house until that moment. If they give you the keys before the deed is recorded and something goes wrong with the funding, they are still the legal owners, but you are now inside their property. To protect everyone involved, keys stay with the attorney or the listing agent until the "all clear" is given.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Recording Reality: Why You Won't Always Get Keys on Friday</h2>
+          <p className="mb-6">If you schedule your settlement for 4:00 PM on a Friday, you are almost certainly not moving in that evening.</p>
+          <p className="mb-6">The Register of Deeds in counties like <a href="/mecklenburg-county" className="text-blue-600 hover:underline">Mecklenburg County</a> or <a href="/rowan-county" className="text-blue-600 hover:underline">Rowan County</a> operates on government business hours. If your settlement happens late in the day, the attorney may not be able to finish their title update and submit the documents before the recording office closes.</p>
+          <p className="mb-6">In this scenario, "Closing" won't happen until Monday morning. You will have "settled" on Friday, but you won't "close" or get your keys until the following week. For a first-time buyer with a moving truck idling in the driveway, this can be a disaster.</p>
+
+          <img 
+            src="https://cdn.marblism.com/Gx50ZQGKj2m.webp" 
+            alt="Charlotte office view at dusk representing the delay in deed recording for first-time buyers." 
+            className="w-full h-auto rounded-lg my-8" 
+            referrerPolicy="no-referrer" 
+          />
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How to Prepare for the Wait</h2>
+          <p className="mb-6">To ensure a smooth transition and minimize the stress of the "possession gap," follow these practical steps:</p>
+          <ul className="list-disc pl-6 space-y-4 mb-6">
+            <li><strong>Schedule Early in the Day:</strong> Try to set your settlement appointment for the morning. This gives the attorney enough time to update the title, get lender approval, and record the deed before the end of the business day.</li>
+            <li><strong>Schedule Mid-Week:</strong> Avoid closing on a Friday if possible. If a delay occurs on a Tuesday, you can usually close on Wednesday. If a delay occurs on a Friday, you are stuck waiting until Monday.</li>
+            <li><strong>Don't Schedule the Mover for the Same Day:</strong> If possible, schedule your moving truck for the day <em>after</em> settlement. This gives you a buffer in case recording is delayed.</li>
+            <li><strong>Know What to Bring:</strong> Delays often happen because of missing information. Check out our guide on <a href="/what-to-bring-to-a-notary-appointment" className="text-blue-600 hover:underline">what to bring to a notary appointment</a> to ensure you have your ID and funds ready to go.</li>
+          </ul>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How Integrity Closings CLT Simplifies the Process</h2>
+          <p className="mb-6">While the legal "gap" is a mandatory part of North Carolina law, the way you handle your side of the paperwork can significantly impact the speed of the transaction. At Integrity Closings CLT, we specialize in making the "Settlement" portion as convenient as possible.</p>
+          <p className="mb-6">We understand that you may not have time to drive across town to an attorney's office, especially if you are balancing a job and a move. We offer <a href="/mobile-notary-services" className="text-blue-600 hover:underline">mobile notary services</a> and <a href="/mobile-refi-service-notarization" className="text-blue-600 hover:underline">mobile refi notarization</a> to bring the signing table to you. Whether you are in Pineville, Charlotte, or the surrounding areas, our professional team ensures that your documents are executed perfectly the first time, preventing administrative delays that could push back your recording time.</p>
+          <p className="mb-6">For sellers who have already moved out of state or are busy packing, our <a href="/seller-notarization-same-day-notary-service" className="text-blue-600 hover:underline">seller notarization services</a> allow you to sign your deed and closing docs from your own kitchen table. By getting the seller's paperwork finalized and delivered to the attorney early, you help ensure that everything is ready for the buyer’s settlement.</p>
+
+          <img 
+            src="https://cdn.marblism.com/T7D7GbiqFxW.webp" 
+            alt="A mobile notary professional assisting with home signing documents in a contemporary setting." 
+            className="w-full h-auto rounded-lg my-8" 
+            referrerPolicy="no-referrer" 
+          />
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Summary: Key Takeaways for Buyers</h2>
+          <ul className="list-disc pl-6 space-y-4 mb-6">
+            <li><strong>Settlement</strong> is the meeting where you sign.</li>
+            <li><strong>Closing</strong> is the legal recording of the deed at the courthouse.</li>
+            <li><strong>Ownership</strong> does not transfer until the deed is recorded.</li>
+            <li><strong>Keys</strong> are typically withheld until recording is confirmed.</li>
+            <li><strong>Delays</strong> are common for late-afternoon or Friday appointments.</li>
+          </ul>
+
+          <p className="mb-6">Navigating your first home purchase in North Carolina doesn't have to be overwhelming. By understanding the legal requirements of the state and planning for the recording gap, you can set realistic expectations for your moving day.</p>
+          <p className="mb-6">If you are a seller looking for a more convenient way to handle your paperwork, or an attorney needing a reliable <a href="/loan-signing-notary-pineville-nc" className="text-blue-600 hover:underline">loan signing notary in Pineville, NC</a>, we are here to help. At Integrity Closings CLT, we bring professionalism and efficiency to the signing table, helping you get one step closer to those keys.</p>
+
+          <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
+            <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Schedule Your Signing?</h2>
+            <p className="text-lg text-slate-300 mb-8">Contact Integrity Closings CLT today for reliable, professional notary services that come to you.</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
+            </div>
+          </section>
+        </div>
+      );
+    }
+
     if (slug === 'navigating-nc-rena-2025') {
       return (
         <>
