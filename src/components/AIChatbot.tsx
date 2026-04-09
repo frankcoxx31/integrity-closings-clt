@@ -29,8 +29,8 @@ export default function AIChatbot() {
   // Keep track of the chat instance
   const chatRef = useRef<any>(null);
 
-  // Use a placeholder headshot URL. You can replace this with your actual uploaded photo URL.
-  const headshotUrl = "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=150&h=150";
+  // Use the new headshot URL.
+  const headshotUrl = "/new%20pic%20of%20me%20smaller.jpg";
 
   useEffect(() => {
     async function initChat() {

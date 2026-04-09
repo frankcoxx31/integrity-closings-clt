@@ -26,6 +26,12 @@ export default function Resources() {
 
   const articles = [
     { 
+      title: '5 Documents You Should Have Notarized Before You Turn 50', 
+      description: 'Turning 50 is a major milestone. Ensure your future is secure by having these 5 essential legal documents properly notarized.', 
+      icon: <FileText className="w-6 h-6 text-blue-600" />,
+      link: '/blog/5-documents-notarized-before-50'
+    },
+    { 
       title: 'The Difference Between an Acknowledgment and a Jurat', 
       description: 'Learn about the two most common types of notarizations and when each is required for your legal documents.', 
       icon: <FileText className="w-6 h-6 text-blue-600" />,

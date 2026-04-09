@@ -5,6 +5,100 @@ export default function BlogPost() {
   const { slug } = useParams();
 
   const renderContent = () => {
+    if (slug === '5-documents-notarized-before-50') {
+      return (
+        <div className="prose prose-lg prose-slate max-w-none">
+          <img 
+            src="https://cdn.marblism.com/hkSJJN7zxUI.webp" 
+            alt="[HERO] 5 Documents You Should Have Notarized Before You Turn 50" 
+            className="w-full h-auto rounded-lg my-8 shadow-xl" 
+            referrerPolicy="no-referrer" 
+          />
+
+          <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+            <div className="flex items-center">
+              <User className="w-4 h-4 mr-2" />
+              Integrity Closings CLT
+            </div>
+            <div className="flex items-center">
+              <Calendar className="w-4 h-4 mr-2" />
+              4/9/2026
+            </div>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">
+            5 Documents You Should Have Notarized Before You Turn 50
+          </h1>
+
+          <p className="mb-6">Turning 50 is a significant milestone. It is often a time of reflection, celebration, and, most importantly, proactive planning. While you are likely focused on your career peak or looking ahead toward retirement, there is a critical set of "housekeeping" tasks that often get pushed to the back burner: estate planning and legal protection.</p>
+          <p className="mb-6">Securing your future isn't just about how much is in your 401(k); it’s about ensuring your wishes are respected and your loved ones are protected if life takes an unexpected turn. The most effective way to solidify these plans is through properly executed and notarized legal documents. Notarization adds a layer of integrity and legal weight to your papers, discouraging fraud and ensuring they are recognized by courts and financial institutions.</p>
+          <p className="mb-6">Here are five essential documents you should have notarized before you blow out the candles on your 50th birthday.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Durable Power of Attorney (DPOA)</h2>
+          <p className="mb-6">A Durable Power of Attorney is perhaps the most critical document in your legal arsenal. It allows you to designate a trusted person (your "agent" or "attorney-in-fact") to manage your financial affairs if you become incapacitated and unable to do so yourself.</p>
+          
+          <img 
+            src="https://cdn.marblism.com/Fbuyep9F9Bb.webp" 
+            alt="Durable Power of Attorney document review" 
+            className="w-full h-auto rounded-lg my-8 shadow-lg" 
+            referrerPolicy="no-referrer" 
+          />
+
+          <p className="mb-6"><strong>Why it’s essential before 50:</strong> As you accumulate more assets—real estate, retirement accounts, and investments—the complexity of managing them increases. If a sudden illness or accident occurs, without a DPOA, your family might have to go through a lengthy and expensive court process (guardianship or conservatorship) just to pay your mortgage or access your bank accounts.</p>
+          <p className="mb-6"><strong>The Notary Connection:</strong> In North Carolina, a DPOA must be notarized to be legally valid. Furthermore, many financial institutions will not honor a DPOA unless it bears a clear, official notary seal. Having this document notarized now ensures a seamless transition of authority when it matters most.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Healthcare Power of Attorney (HCPOA)</h2>
+          <p className="mb-6">While a DPOA handles your money, a Healthcare Power of Attorney handles your life. This document names someone to make medical decisions on your behalf if you are unconscious, mentally incompetent, or otherwise unable to communicate with doctors.</p>
+          <p className="mb-6"><strong>Why it’s essential before 50:</strong> Health crises don’t wait for retirement. By age 50, you likely have specific preferences regarding your medical care. An HCPOA ensures that your "person" can speak for you, preventing family disputes and ensuring doctors follow your intended treatment plan.</p>
+          <p className="mb-6"><strong>The Notary Connection:</strong> To be enforceable in North Carolina, an HCPOA must be signed in the presence of two qualified witnesses and a notary public. A <a href="/hospital-notary-charlotte-nc" className="text-blue-600 hover:underline">hospital notary</a> or mobile service can ensure this is done correctly, even if you are currently healthy and just planning ahead.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. Last Will and Testament</h2>
+          <p className="mb-6">A Will is the blueprint for how your estate will be distributed after your death. It names an executor to manage the process and specifies who inherits your property, from your home to your sentimental heirlooms.</p>
+          
+          <img 
+            src="https://cdn.marblism.com/CQG4R3yeYOX.webp" 
+            alt="Last Will and Testament signing" 
+            className="w-full h-auto rounded-lg my-8 shadow-lg" 
+            referrerPolicy="no-referrer" 
+          />
+
+          <p className="mb-6"><strong>Why it’s essential before 50:</strong> By 50, you’ve likely spent decades building your legacy. Dying "intestate" (without a will) means the state of North Carolina decides who gets your assets, which often leads to unintended consequences and family friction. A Will gives you the final word.</p>
+          <p className="mb-6"><strong>The Notary Connection:</strong> While North Carolina law doesn’t strictly require a Will to be notarized, it is highly recommended to include a <strong>Self-Proving Affidavit</strong>. This is a notarized attachment where the witnesses swear to the validity of the Will. When a Will is "self-proving," it can be admitted to probate much faster because the court doesn’t have to track down the witnesses years later. This saves your family time, money, and stress during a difficult time.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. Living Will (Advance Directive)</h2>
+          <p className="mb-6">A Living Will is different from a Last Will. It specifically addresses end-of-life decisions, such as whether you want to be kept on life support or receive artificial nutrition if you have a terminal condition or are in a persistent vegetative state.</p>
+          <p className="mb-6"><strong>Why it’s essential before 50:</strong> These are the hardest conversations to have, but they are the most important. A Living Will removes the agonizing burden of these decisions from your grieving family members. It is a gift of clarity during a time of chaos.</p>
+          <p className="mb-6"><strong>The Notary Connection:</strong> Like the HCPOA, a Living Will in North Carolina requires two witnesses and a notary’s acknowledgment to be legally binding. It is often executed alongside other <a href="/estate-notary-charlotte-nc" className="text-blue-600 hover:underline">estate documents</a> to ensure a comprehensive plan is in place.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. Revocable Living Trust</h2>
+          <p className="mb-6">For many people hitting 50, a Trust is a more efficient alternative (or supplement) to a Will. A Revocable Living Trust allows you to place your assets into a trust while you are alive, which then transfers to your beneficiaries immediately upon your death without going through the public and often slow probate process.</p>
+          
+          <img 
+            src="https://cdn.marblism.com/G-8Z5dLf3tL.webp" 
+            alt="Revocable Living Trust planning" 
+            className="w-full h-auto rounded-lg my-8 shadow-lg" 
+            referrerPolicy="no-referrer" 
+          />
+
+          <p className="mb-6"><strong>Why it’s essential before 50:</strong> If you own property in multiple states or have a complex family dynamic, a Trust offers privacy and speed that a Will cannot. It also allows for more control over <em>how</em> and <em>when</em> beneficiaries receive their inheritance (e.g., at certain ages or milestones).</p>
+          <p className="mb-6"><strong>The Notary Connection:</strong> To "fund" the trust, you must transfer titles of your assets (like your home deed) into the name of the trust. These deeds <strong>must</strong> be notarized to be recorded with the county. Additionally, the Trust document itself should be notarized to prove its authenticity and prevent future legal challenges.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Don’t Wait for a Crisis to Plan</h2>
+          <p className="mb-6">The common thread among these documents is that they must be created while you are of sound mind and capable of making your own decisions. Waiting until a health scare or a family emergency occurs is often too late.</p>
+          <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we understand that estate planning can feel overwhelming. That’s why we offer <a href="/mobile-notary-services" className="text-blue-600 hover:underline">mobile notary services</a> throughout the Charlotte area. We bring the professional, stress-free notarization process to your home or office, so you can secure your future without the hassle of traveling to a bank or attorney’s office.</p>
+          <p className="mb-6">Turning 50 is a time to celebrate how far you’ve come. Make sure you’re protected for how far you’re going. <a href="/booking" className="text-blue-600 hover:underline">Schedule your mobile notary appointment today</a> and cross these essential documents off your list.</p>
+
+          <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
+            <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Schedule Your Signing?</h2>
+            <p className="text-lg text-slate-300 mb-8">Contact Integrity Closings CLT today for reliable, professional notary services that come to you.</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
+            </div>
+          </section>
+        </div>
+      );
+    }
+
     if (slug === 'settlement-vs-closing-nc-real-estate') {
       return (
         <div className="prose prose-lg prose-slate max-w-none">

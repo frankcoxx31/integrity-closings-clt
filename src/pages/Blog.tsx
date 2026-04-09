@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   const posts = [
     {
+      title: '5 Documents You Should Have Notarized Before You Turn 50',
+      slug: '5-documents-notarized-before-50',
+      date: 'April 9, 2026',
+      excerpt: 'Turning 50 is a significant milestone. It is often a time of reflection, celebration, and, most importantly, proactive planning. While you are likely focused on your career peak or looking ahead toward retirement, there is a critical set of "housekeeping" tasks that often get pushed to the back burner: estate planning and legal protection.',
+      imageUrl: 'https://cdn.marblism.com/hkSJJN7zxUI.webp'
+    },
+    {
       title: 'Settlement vs. Closing: Why You Won\'t Get Your Keys at the Signing Table in North Carolina',
       slug: 'settlement-vs-closing-nc-real-estate',
       date: 'April 1, 2026',
@@ -66,7 +73,7 @@ export default function Blog() {
       {/* Hero Image Section */}
       <div className="w-full h-[250px] md:h-[400px] overflow-hidden relative bg-slate-900">
         <img 
-          src="/blog-hero.png" 
+          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1920" 
           alt="Integrity Closings Blog Hero" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
@@ -79,7 +86,7 @@ export default function Blog() {
           <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
             <BookOpen className="h-8 w-8 text-blue-600" />
           </div>
-          <h1 className="text-4xl font-bold text-slate-900 mb-4 font-serif">Our Blog</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-serif">Insights & Expert Advice</h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
             Helpful articles, guides, and insights about notary services, loan signings, and more.
           </p>
