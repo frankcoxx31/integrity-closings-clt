@@ -1,34 +1,43 @@
 import CityPageLayout from '../../components/CityPageLayout';
-import { FileSignature, FileText, Laptop } from 'lucide-react';
+import { FileSignature, FileText, Laptop, Clock, HeartPulse } from 'lucide-react';
 
 export default function Concord() {
   return (
     <CityPageLayout
       city="Concord"
-      image="/concord.jpg"
+      image="https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&q=80&w=1920"
       introText={
         <>
-          At <strong>Integrity Closings CLT</strong>, we bring professional notary services directly to you throughout the Concord community. Whether you are at a local coffee shop in <strong>Historic Downtown Concord</strong>, a business near <strong>Concord Mills</strong>, or your own front door, we ensure your documents are handled with integrity.
+          Searching for a <strong>mobile notary in Concord, NC</strong>? Integrity Closings CLT offers professional, reliable, and fast notary services throughout Cabarrus County. Whether you are at a local coffee shop in <strong>Historic Downtown Concord</strong>, a business near <strong>Concord Mills</strong>, or your own front door, we bring the notary office directly to you. We specialize in complex signings and urgent requests, ensuring your legal documents are handled with the highest level of integrity.
         </>
       }
       services={[
         {
           title: "Loan Signing Services",
           description: <>Expert handling of mortgages, refinances, HELOCs, and seller packages. We serve homeowners in neighborhoods like <strong>Afton Village, Beverly Hills, and Poplar Woods</strong>.</>,
-          icon: <FileSignature className="w-6 h-6 text-blue-600" />
+          icon: <FileSignature className="w-6 h-6 text-blue-600" />,
+          link: "/services/loan-signings"
         },
         {
-          title: "General Notary Work",
-          description: <>Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Cabarrus Brewing Company</strong> or the <strong>Concord Library</strong> for your convenience.</>,
-          icon: <FileText className="w-6 h-6 text-blue-600" />
+          title: "Estate Planning Notary",
+          description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Cabarrus Brewing Company</strong> or the <strong>Concord Library</strong>.</>,
+          icon: <FileText className="w-6 h-6 text-blue-600" />,
+          link: "/services/estate-planning"
         },
         {
-          title: "Remote Online Notary (RON)",
-          description: <>Secure virtual notarization available for residents in <strong>Coddle Creek, Roberta Mill</strong>, and across the Concord area who prefer digital signing.</>,
-          icon: <Laptop className="w-6 h-6 text-blue-600" />
+          title: "Hospital & Nursing Home",
+          description: <>Compassionate bedside notary services for medical POAs and living wills for patients at <strong>Atrium Health Cabarrus</strong> and surrounding medical offices.</>,
+          icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
+          link: "/services/hospital-notary"
+        },
+        {
+          title: "After Hours Notary",
+          description: <>Available for late-night and weekend signings in <strong>Coddle Creek, Roberta Mill</strong>, and across the Concord area when standard offices are closed.</>,
+          icon: <Clock className="w-6 h-6 text-blue-600" />,
+          link: "/services/after-hours"
         }
       ]}
-      hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the area:"
+      hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Concord area:"
       hospitals={[
         {
           name: "Atrium Health Cabarrus",
@@ -43,12 +52,35 @@ export default function Concord() {
       ]}
       additionalLocations={[
         "Charlotte Motor Speedway",
-        "Great Wolf Lodge",
+        "Concord Mills Mall",
+        "Great Wolf Lodge Water Park",
         "Frank Liske Park",
         "Historic Cabarrus County Courthouse",
         "Zmax Dragway",
-        "Concord Regional Airport"
+        "Concord Regional Airport",
+        "Cabarrus Arena & Events Center",
+        "Gibson Mill",
+        "Carolina Mall Area"
       ]}
+      faqs={[
+        {
+          question: "Do you offer mobile notary services near Concord Mills?",
+          answer: "Yes! We frequently serve the Concord Mills area, including the surrounding business parks and residential neighborhoods like Christie's Crossing."
+        },
+        {
+          question: "Can you meet me at the Charlotte Motor Speedway?",
+          answer: "Absolutely. We can meet you at the Speedway, Zmax Dragway, or any of the surrounding hotels and corporate offices for your notarization needs."
+        },
+        {
+          question: "Are you available for after-hours notary in Concord?",
+          answer: "Yes, we offer 24/7 emergency mobile notary services in Concord. Whether it's a late-night hospital signing or a weekend real estate closing, we are here to help."
+        },
+        {
+          question: "How do I book a mobile notary in Concord?",
+          answer: "You can book directly through our website's booking tool or call/text us at 980-372-4103 for immediate assistance."
+        }
+      ]}
+      mapEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51965.41904712348!2d-80.64166255136719!3d35.40263590000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885404566735661d%3A0x884650e6bfde5145!2sConcord%2C%20NC!5e0!3m2!1sen!2sus!4v1712874300000!5m2!1sen!2sus"
     />
   );
 }

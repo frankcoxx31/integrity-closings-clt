@@ -1,34 +1,43 @@
 import CityPageLayout from '../../components/CityPageLayout';
-import { FileSignature, FileText, Laptop } from 'lucide-react';
+import { FileSignature, FileText, Laptop, Clock, HeartPulse } from 'lucide-react';
 
 export default function Monroe() {
   return (
     <CityPageLayout
       city="Monroe"
-      image="/monroe-1.jpg"
+      image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920"
       introText={
         <>
-          At <strong>Integrity Closings CLT</strong>, we bring professional notary services directly to you throughout the Monroe community. Whether you are at a local coffee shop in <strong>Downtown Monroe</strong>, a business near <strong>Highway 74</strong>, or your own front door, we ensure your documents are handled with integrity.
+          Need a <strong>mobile notary in Monroe, NC</strong>? Integrity Closings CLT provides professional, on-demand notary services throughout Union County. Whether you are at a local coffee shop in <strong>Downtown Monroe</strong>, a business near <strong>Highway 74</strong>, or your own front door, we bring the notary office to you. We are committed to providing Monroe residents with secure, accurate, and stress-free notarizations for all their legal and financial documents.
         </>
       }
       services={[
         {
           title: "Loan Signing Services",
           description: <>Expert handling of mortgages, refinances, HELOCs, and seller packages. We serve homeowners in neighborhoods like <strong>Rolling Hills, South Monroe, and Benton Heights</strong>.</>,
-          icon: <FileSignature className="w-6 h-6 text-blue-600" />
+          icon: <FileSignature className="w-6 h-6 text-blue-600" />,
+          link: "/services/loan-signings"
         },
         {
-          title: "General Notary Work",
-          description: <>Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Treehouse Vineyards</strong> or the <strong>Union County Library</strong> for your convenience.</>,
-          icon: <FileText className="w-6 h-6 text-blue-600" />
+          title: "Estate Planning Notary",
+          description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Treehouse Vineyards</strong> or the <strong>Union County Library</strong>.</>,
+          icon: <FileText className="w-6 h-6 text-blue-600" />,
+          link: "/services/estate-planning"
         },
         {
-          title: "Remote Online Notary (RON)",
-          description: <>Secure virtual notarization available for residents across the Monroe area who prefer digital signing.</>,
-          icon: <Laptop className="w-6 h-6 text-blue-600" />
+          title: "Hospital & Nursing Home",
+          description: <>Compassionate bedside notary services for medical POAs and living wills for patients at <strong>Atrium Health Union</strong> and <strong>Monroe Rehabilitation Center</strong>.</>,
+          icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
+          link: "/services/hospital-notary"
+        },
+        {
+          title: "After Hours Notary",
+          description: <>Available for late-night and weekend signings across the Monroe area when standard offices are closed.</>,
+          icon: <Clock className="w-6 h-6 text-blue-600" />,
+          link: "/services/after-hours"
         }
       ]}
-      hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the area:"
+      hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Monroe area:"
       hospitals={[
         {
           name: "Atrium Health Union",
@@ -47,8 +56,31 @@ export default function Monroe() {
         "Monroe Aquatics and Fitness Center",
         "Historic Union County Courthouse",
         "Charlotte-Monroe Executive Airport",
-        "Belk Tonawanda Park"
+        "Belk Tonawanda Park",
+        "Treehouse Vineyards",
+        "Monroe Science Center",
+        "Wingate University (Nearby)",
+        "Union County Courthouse"
       ]}
+      faqs={[
+        {
+          question: "Can you meet me at Treehouse Vineyards for a notarization?",
+          answer: "Yes! We can meet you at Treehouse Vineyards or any other local landmark in Monroe for your convenience."
+        },
+        {
+          question: "Do you offer mobile notary services at Atrium Health Union?",
+          answer: "Absolutely. We provide prompt bedside notary services at Atrium Health Union for medical directives, powers of attorney, and other urgent legal documents."
+        },
+        {
+          question: "Are you available for after-hours notary in Monroe?",
+          answer: "Yes, we offer 24/7 mobile notary services by appointment in Monroe, including evenings, weekends, and holidays."
+        },
+        {
+          question: "How do I book a mobile notary in Monroe?",
+          answer: "You can book directly through our website's booking tool or call/text us at 980-372-4103 for immediate assistance."
+        }
+      ]}
+      mapEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52165.41904712348!2d-80.54333335136719!3d34.98263590000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885404566735661d%3A0x884650e6bfde5145!2sMonroe%2C%20NC!5e0!3m2!1sen!2sus!4v1712874700000!5m2!1sen!2sus"
     />
   );
 }

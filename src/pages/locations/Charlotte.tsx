@@ -1,92 +1,86 @@
-import { Link } from 'react-router-dom';
+import CityPageLayout from '../../components/CityPageLayout';
+import { FileSignature, FileText, Laptop, Clock, ShieldCheck, HeartPulse } from 'lucide-react';
+
 export default function Charlotte() {
   return (
-    <div className="font-sans text-[#333] leading-relaxed bg-white">
-      <header className="bg-[#2c3e50] text-white py-10 px-4 text-center">
-        <h1 className="text-4xl font-bold mb-2 text-white">Mobile Notary Charlotte, NC</h1>
-        <p className="text-lg mb-6">Professional Notary Services Delivered to Your Location</p>
-        <a 
-          href="tel:9803724103" 
-          className="inline-block px-10 py-4 bg-[#e67e22] hover:bg-[#d35400] text-white font-bold rounded transition-colors mt-6"
-        >
-          Call (980) 372-4103
-        </a>
-      </header>
-
-      <div className="max-w-[900px] mx-auto my-8 px-6">
-        <section>
-          <h2 className="text-2xl font-bold text-[#2c3e50] mb-4">Your Local Queen City Notary Partner</h2>
-          <p>
-            Skip the trip to the bank and avoid the Charlotte traffic. Whether you're finalizing a corporate contract in <strong>Uptown</strong> or signing medical directives near <strong>Atrium Health</strong>, we provide reliable, professional mobile notary services tailored to your schedule.
-          </p>
-        </section>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-          <div className="bg-[#f9f9f9] p-6 border-l-[5px] border-[#2c3e50] rounded">
-            <h4 className="font-bold text-lg mb-2 text-[#2c3e50]">Real Estate & Loans</h4>
-            <p>Certified signing agent for refinances, HELOCs, and title transfers.</p>
-          </div>
-          <div className="bg-[#f9f9f9] p-6 border-l-[5px] border-[#2c3e50] rounded">
-            <h4 className="font-bold text-lg mb-2 text-[#2c3e50]">Wills & Trusts</h4>
-            <p>Secure notarization for power of attorney and estate planning.</p>
-          </div>
-          <div className="bg-[#f9f9f9] p-6 border-l-[5px] border-[#2c3e50] rounded">
-            <h4 className="font-bold text-lg mb-2 text-[#2c3e50]">General Notary</h4>
-            <p>Quick service for affidavits, I-9 verifications, and minor travel consents.</p>
-          </div>
-        </div>
-
-        <hr className="border-0 h-px bg-[#eee] my-12" />
-
-        <section className="bg-[#ecf0f1] p-8 rounded-lg mt-12">
-          <h3 className="text-xl font-bold text-[#2c3e50] mb-4">Areas & Landmarks We Serve</h3>
-          <p className="mb-6">We travel throughout Mecklenburg County and the surrounding Charlotte metro area, including:</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <strong className="block mb-2 text-[#333]">Neighborhoods:</strong>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Ballantyne & Piper Glen</li>
-                <li>South End & Dilworth</li>
-                <li>NoDa & Plaza Midwood</li>
-                <li>University City & Steele Creek</li>
-                <li>Myers Park & SouthPark</li>
-              </ul>
-            </div>
-            <div>
-              <strong className="block mb-2 text-[#333]">Landmarks We Meet At:</strong>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Uptown Corporate Offices</li>
-                <li>Charlotte Douglas Airport (CLT)</li>
-                <li>Bank of America Stadium Area</li>
-                <li>The Arboretum Shopping Center</li>
-                <li>Birkdale Village (Huntersville)</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-2">
-            <span className="inline-block bg-white px-3 py-1 rounded-[20px] text-[0.9rem] border border-[#bdc3c7] text-[#7f8c8d]">Matthews</span>
-            <span className="inline-block bg-white px-3 py-1 rounded-[20px] text-[0.9rem] border border-[#bdc3c7] text-[#7f8c8d]">Mint Hill</span>
-            <span className="inline-block bg-white px-3 py-1 rounded-[20px] text-[0.9rem] border border-[#bdc3c7] text-[#7f8c8d]">Pineville</span>
-            <span className="inline-block bg-white px-3 py-1 rounded-[20px] text-[0.9rem] border border-[#bdc3c7] text-[#7f8c8d]">Davidson</span>
-            <span className="inline-block bg-white px-3 py-1 rounded-[20px] text-[0.9rem] border border-[#bdc3c7] text-[#7f8c8d]">Cornelius</span>
-          </div>
-        </section>
-
-        <hr className="border-0 h-px bg-[#eee] my-12" />
-
-        <div className="text-center mb-12">
-          <h2 className="text-2xl font-bold text-[#2c3e50] mb-4">Ready to Secure Your Notarization?</h2>
-          <p className="mb-8">Schedule your appointment online in seconds. Fast, secure, and professional.</p>
-          <a href="/booking" className="inline-block px-6 py-3 bg-[#3498db] text-white no-underline font-bold rounded-[5px] hover:bg-[#2980b9] transition-colors">Book Your Appointment Online</a>
-        </div>
-      </div>
-
-      <footer className="bg-[#2c3e50] text-white text-center p-8 mt-16">
-        <p>&copy; 2026 Mobile Notary Charlotte NC</p>
-        <p><small>Providing 100% Mobile Services in Charlotte, NC & Surrounding Areas</small></p>
-      </footer>
-    </div>
+    <CityPageLayout
+      city="Charlotte"
+      image="https://images.unsplash.com/photo-1559530075-006499996884?auto=format&fit=crop&q=80&w=1920"
+      introText={
+        <>
+          As the premier <strong>mobile notary in Charlotte, NC</strong>, Integrity Closings CLT provides professional, on-demand notarization services across the entire Queen City. Whether you're finalizing a corporate merger in <strong>Uptown</strong>, signing medical directives near <strong>Atrium Health Main</strong>, or closing on a new home in <strong>Ballantyne</strong>, we bring the notary office directly to your location. Skip the Charlotte traffic and let us handle your important documents with the precision and integrity you deserve.
+        </>
+      }
+      services={[
+        {
+          title: "Loan Signing Services",
+          description: <>Expert handling of mortgage refinances, HELOCs, and seller packages. We work with title companies and lenders to ensure error-free closings in neighborhoods like <strong>Myers Park, SouthPark, and Dilworth</strong>.</>,
+          icon: <FileSignature className="w-6 h-6 text-blue-600" />,
+          link: "/services/loan-signings"
+        },
+        {
+          title: "Estate Planning Notary",
+          description: <>Secure notarization for Wills, Trusts, and Power of Attorney documents. We provide mobile service to your home or office in <strong>South End, NoDa, and Plaza Midwood</strong>.</>,
+          icon: <FileText className="w-6 h-6 text-blue-600" />,
+          link: "/services/estate-planning"
+        },
+        {
+          title: "Hospital & Nursing Home",
+          description: <>Compassionate bedside notary services for medical directives and urgent legal papers at <strong>Novant Health</strong> and <strong>Atrium Health</strong> facilities throughout Charlotte.</>,
+          icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
+          link: "/services/hospital-notary"
+        },
+        {
+          title: "After Hours & Emergency",
+          description: <>Need a notary late at night or on the weekend? We offer 24/7 emergency mobile notary services for urgent matters across <strong>Mecklenburg County</strong>.</>,
+          icon: <Clock className="w-6 h-6 text-blue-600" />,
+          link: "/services/after-hours"
+        }
+      ]}
+      hospitalsIntro="We understand that legal needs often arise during medical challenges. We provide prompt, professional mobile notary services to patients and families at Charlotte's leading medical centers:"
+      hospitals={[
+        {
+          name: "Atrium Health Carolinas Medical Center",
+          location: "Charlotte, NC (Uptown/Midtown)",
+          description: <>Providing bedside notarization for medical POAs, living wills, and financial documents for patients at the region's flagship hospital.</>
+        },
+        {
+          name: "Novant Health Presbyterian Medical Center",
+          location: "Charlotte, NC (Elizabeth)",
+          description: <>Reliable mobile notary service for patients and staff, available for urgent signings and routine estate planning needs.</>
+        }
+      ]}
+      additionalLocations={[
+        "Uptown Charlotte Corporate Offices",
+        "Charlotte Douglas International Airport (CLT)",
+        "Bank of America Stadium",
+        "SouthPark Mall Area",
+        "University City / UNC Charlotte",
+        "The Arboretum Shopping Center",
+        "Steele Creek / Rivergate",
+        "Northgate / North Croft",
+        "Freedom Park",
+        "NASCAR Hall of Fame"
+      ]}
+      faqs={[
+        {
+          question: "How much does a mobile notary in Charlotte cost?",
+          answer: "Our fees consist of the North Carolina statutory notary fee per signature plus a travel fee based on your specific location in Charlotte and the time of day. Contact us for a precise quote."
+        },
+        {
+          question: "Can you meet me at Charlotte Douglas Airport (CLT)?",
+          answer: "Yes! We frequently meet clients at CLT airport for urgent travel consents, business contracts, and other time-sensitive documents."
+        },
+        {
+          question: "Do you offer same-day notary appointments in Charlotte?",
+          answer: "Absolutely. We specialize in same-day and emergency mobile notary services. We can often be at your location within 60-90 minutes depending on traffic."
+        },
+        {
+          question: "What do I need to have ready for the notary?",
+          answer: "You must have a valid, government-issued photo ID (like a driver's license or passport) and the document must be complete (no blank spaces) but unsigned until the notary is present."
+        }
+      ]}
+      mapEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d208648.4014165584!2d-81.01211754020358!3d35.20307424683526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88541fc4fc381a81%3A0x884650e6bfde5145!2sCharlotte%2C%20NC!5e0!3m2!1sen!2sus!4v1712874200000!5m2!1sen!2sus"
+    />
   );
 }
