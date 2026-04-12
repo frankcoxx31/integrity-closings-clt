@@ -1,5 +1,5 @@
 import CityPageLayout from '../../components/CityPageLayout';
-import { FileSignature, FileText, Laptop, Clock, HeartPulse } from 'lucide-react';
+import { FileSignature, FileText, Laptop, Clock, HeartPulse, ShieldCheck } from 'lucide-react';
 
 export default function Gastonia() {
   return (
@@ -35,6 +35,18 @@ export default function Gastonia() {
           description: <>Available for late-night and weekend signings near <strong>Crowders Mountain</strong> and across the Gastonia area when standard offices are closed.</>,
           icon: <Clock className="w-6 h-6 text-blue-600" />,
           link: "/services/after-hours"
+        },
+        {
+          title: "General Notary Services",
+          description: <>Mobile notarization for affidavits, I-9 verifications, and vehicle titles. We meet you anywhere in <strong>Gastonia</strong> for your convenience.</>,
+          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          link: "/services/general-notary"
+        },
+        {
+          title: "Business & Corporate",
+          description: <>Professional notary support for corporate contracts and employment documents. Serving businesses in the <strong>FUSE District</strong> and beyond.</>,
+          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          link: "/services/corporate-notary"
         }
       ]}
       hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Gastonia area:"

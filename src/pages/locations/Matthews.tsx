@@ -1,5 +1,5 @@
 import CityPageLayout from '../../components/CityPageLayout';
-import { FileSignature, FileText, Laptop, Clock, HeartPulse } from 'lucide-react';
+import { FileSignature, FileText, Laptop, Clock, HeartPulse, ShieldCheck } from 'lucide-react';
 
 export default function Matthews() {
   return (
@@ -35,6 +35,18 @@ export default function Matthews() {
           description: <>Available for late-night and weekend signings in <strong>Cresswind, Fairhaven</strong>, and across the 28105 area when standard offices are closed.</>,
           icon: <Clock className="w-6 h-6 text-blue-600" />,
           link: "/services/after-hours"
+        },
+        {
+          title: "General Notary Services",
+          description: <>Fast and reliable notarization for affidavits, vehicle titles, and school forms. We meet you at any <strong>Matthews</strong> location for your convenience.</>,
+          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          link: "/services/general-notary"
+        },
+        {
+          title: "Business & Corporate",
+          description: <>Professional notary support for corporate contracts and employment documents. Serving businesses in <strong>Windsor Square</strong> and the <strong>Matthews</strong> area.</>,
+          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          link: "/services/corporate-notary"
         }
       ]}
       hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Matthews area:"

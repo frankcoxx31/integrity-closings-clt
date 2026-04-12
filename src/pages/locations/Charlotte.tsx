@@ -35,6 +35,18 @@ export default function Charlotte() {
           description: <>Need a notary late at night or on the weekend? We offer 24/7 emergency mobile notary services for urgent matters across <strong>Mecklenburg County</strong>.</>,
           icon: <Clock className="w-6 h-6 text-blue-600" />,
           link: "/services/after-hours"
+        },
+        {
+          title: "General Notary Services",
+          description: <>Fast and reliable notarization for affidavits, I-9 verifications, minor travel consents, and vehicle titles. We meet you at any <strong>Charlotte</strong> location.</>,
+          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          link: "/services/general-notary"
+        },
+        {
+          title: "Business & Corporate",
+          description: <>Professional notary support for corporate contracts, NDAs, and employment documents. Serving businesses in <strong>Uptown</strong> and the <strong>University City</strong> area.</>,
+          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          link: "/services/corporate-notary"
         }
       ]}
       hospitalsIntro="We understand that legal needs often arise during medical challenges. We provide prompt, professional mobile notary services to patients and families at Charlotte's leading medical centers:"

@@ -1,5 +1,5 @@
 import CityPageLayout from '../../components/CityPageLayout';
-import { FileSignature, FileText, Laptop, Clock, HeartPulse } from 'lucide-react';
+import { FileSignature, FileText, Laptop, Clock, HeartPulse, ShieldCheck } from 'lucide-react';
 
 export default function Concord() {
   return (
@@ -35,6 +35,18 @@ export default function Concord() {
           description: <>Available for late-night and weekend signings in <strong>Coddle Creek, Roberta Mill</strong>, and across the Concord area when standard offices are closed.</>,
           icon: <Clock className="w-6 h-6 text-blue-600" />,
           link: "/services/after-hours"
+        },
+        {
+          title: "General Notary Services",
+          description: <>Quick and accurate notarization for affidavits, vehicle titles, and school forms. Serving all of <strong>Cabarrus County</strong> with mobile convenience.</>,
+          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          link: "/services/general-notary"
+        },
+        {
+          title: "Business & Corporate",
+          description: <>Mobile notary support for business contracts and employment paperwork. We meet you at your office or <strong>Concord Mills</strong> area businesses.</>,
+          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          link: "/services/corporate-notary"
         }
       ]}
       hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Concord area:"
