@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   const posts = [
     {
+      title: 'Charlotte, NC Remote Closings: How Mobile Notaries Help Buyers',
+      slug: 'charlotte-nc-remote-closings-how-mobile-notaries-help-buyers',
+      date: 'April 17, 2026',
+      excerpt: 'Tired of Charlotte traffic? Learn how mobile notaries bring the home closing process to your kitchen table, making your next real estate move simple and stress-free.',
+      imageUrl: 'https://cdn.marblism.com/S2zi-vf5vHv.webp'
+    },
+    {
       title: '5 Documents You Should Have Notarized Before You Turn 50',
       slug: '5-documents-notarized-before-50',
       date: 'April 9, 2026',

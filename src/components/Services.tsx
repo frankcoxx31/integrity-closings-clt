@@ -1,40 +1,40 @@
 export default function Services() {
   const services = [
     {
-      title: 'Mobile Notary Services Charlotte NC',
-      description: 'Notarizations at your home, office, or preferred location.',
+      title: 'General Mobile Notary',
+      description: 'Standard notarizations at your home, office, or preferred location across the metro area.',
       image: '/general-notary-work.png',
-      link: '/mobile-notary-charlotte-nc'
+      link: '/services/general-notary'
     },
     {
-      title: 'Loan Signing Agent Charlotte NC',
-      description: 'Accurate and professional real estate loan signings.',
+      title: 'Loan Signing Agent',
+      description: 'Accurate, professional handling of real estate and mortgage loan closings.',
       image: '/mobile-notary.jpg',
-      link: '/services/mobile-loan-closings'
+      link: '/services/loan-signing'
     },
     {
-      title: 'Hospital & Nursing Home Notary',
-      description: 'Convenient notarizations for patients and caregivers.',
+      title: 'Hospital & Healthcare Notary',
+      description: 'Compassionate, discreet notarizations for patients and caregivers at medical facilities.',
       image: '/hospital.png',
-      link: '/hospital-notary-charlotte-nc'
+      link: '/services/hospital-notary'
     },
     {
-      title: 'Estate Planning & Power of Attorney Notarization',
-      description: 'Power of attorney, wills, trusts, and advance directives.',
+      title: 'Estate Planning Documents',
+      description: 'Secure notarization for wills, trusts, living wills, and advance directives.',
       image: '/personal-documents.png',
-      link: '/estate-planning-notary-charlotte-nc'
+      link: '/services/estate-planning'
     },
     {
-      title: 'After Hours Mobile Notary',
-      description: 'Evening and weekend appointments available.',
-      image: '/lender-sent-documents.png',
-      link: '/services/special-considerations'
-    },
-    {
-      title: 'Power of Attorney & Estate Documents',
-      description: 'Power of attorney, wills, trusts, and advance directives.',
+      title: 'Power of Attorney',
+      description: 'Legally binding notarization for financial, medical, and general POAs.',
       image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800',
-      link: '/power-of-attorney-estate-documents-charlotte-nc'
+      link: '/services/power-of-attorney'
+    },
+    {
+      title: 'After-Hours & Emergency Notary',
+      description: 'Urgent evening and weekend appointments available when you need us most.',
+      image: '/lender-sent-documents.png',
+      link: '/services/after-hours'
     }
   ];
 
@@ -43,7 +43,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Our Services</h2>
-          <p className="mt-4 text-lg text-slate-600">Professional mobile notary and loan signing services in Charlotte, NC and surrounding areas.</p>
+          <p className="mt-4 text-lg text-slate-600">Professional mobile notary and signing services delivered directly to your location.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

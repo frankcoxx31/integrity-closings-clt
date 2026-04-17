@@ -77,12 +77,12 @@ export default function FAQPage() {
             <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Our Service Area</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto flex items-center justify-center">
               <MapPin className="w-5 h-5 text-blue-600 mr-2" />
-              Serving Mint Hill, Charlotte, and surrounding Mecklenburg County areas.
+              Serving Charlotte, NC and surrounding Mecklenburg County areas.
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 h-[500px]">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104332.61036817652!2d-80.75169477028987!3d35.18386407026723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8854215867140723%3A0x867011d67e716e25!2sMint%20Hill%2C%20NC!5e0!3m2!1sen!2sus!4v1709669012345!5m2!1sen!2sus" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d208648.4014165584!2d-81.01211754020358!3d35.20307424683526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88541fc4fc381a81%3A0x884650e6bfde5145!2sCharlotte%2C%20NC!5e0!3m2!1sen!2sus!4v1712874200000!5m2!1sen!2sus"
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 

@@ -14,9 +14,6 @@ export default function Footer() {
             <p className="text-slate-400 mb-6">
               Professional mobile notary and loan signing services brought directly to your doorstep.
             </p>
-            <div className="flex space-x-4">
-              {/* Social placeholders */}
-            </div>
           </div>
 
           <div>
@@ -27,7 +24,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-blue-400 mr-3 mt-1" />
-                <span className="text-slate-300">Mint Hill NC 28227</span>
+                <span className="text-slate-300">Serving the Greater Metro Area</span>
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 text-blue-400 mr-3" />
@@ -40,10 +37,10 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li><Link to="/" className="text-slate-400 hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/mobile-notary-charlotte-nc" className="text-slate-400 hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/#services" className="text-slate-400 hover:text-white transition-colors">Services</Link></li>
               <li><Link to="/#locations" className="text-slate-400 hover:text-white transition-colors">Service Areas</Link></li>
               <li><Link to="/blog" className="text-slate-400 hover:text-white transition-colors">Blog</Link></li>
-              <li><Link to="/resources" className="text-slate-400 hover:text-white transition-colors">Resources</Link></li>
+              <li><Link to="/faq" className="text-slate-400 hover:text-white transition-colors">FAQ</Link></li>
               <li><a href="/booking" className="text-slate-400 hover:text-white transition-colors">Book Appointment</a></li>
             </ul>
           </div>
@@ -56,14 +53,7 @@ export default function Footer() {
           <div className="flex space-x-6 text-sm text-slate-500">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link to="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
           </div>
-        </div>
-
-        <div className="mt-8 pt-8 border-t border-slate-800/50 text-center">
-          <p className="text-slate-600 text-xs tracking-wider uppercase">
-            Mobile Notary Charlotte NC | Loan Signing Agent Charlotte NC | Hospital Notary Charlotte NC | Estate Notary Services | After Hours Notary Charlotte
-          </p>
         </div>
       </div>
     </footer>
