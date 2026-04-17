@@ -1,4 +1,4 @@
-import { Calendar, Phone } from 'lucide-react';
+import { Calendar, Phone, Calculator } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Hero() {
@@ -23,13 +23,20 @@ export default function Hero() {
           Same-Day Service • After Hours Available • Professional Signings
         </p>
         
-        <div className="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-2xl mx-auto">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-4xl mx-auto">
           <Link 
             to="/booking" 
             className="flex-1 inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
           >
             <Calendar className="w-5 h-5 mr-2" />
             Book Appointment
+          </Link>
+          <Link 
+            to="/calculator" 
+            className="flex-1 inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 transition-colors"
+          >
+            <Calculator className="w-5 h-5 mr-2" />
+            Free Quote
           </Link>
           <a 
             href="tel:9803724103" 
