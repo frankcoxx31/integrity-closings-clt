@@ -54,6 +54,7 @@ import Gastonia from './pages/locations/Gastonia';
 import Salisbury from './pages/locations/Salisbury';
 import Monroe from './pages/locations/Monroe';
 import Matthews from './pages/locations/Matthews';
+import AreasServed from './pages/AreasServed';
 
 export default function App() {
   return (
@@ -79,6 +80,7 @@ export default function App() {
             <Route path="/power-of-attorney-estate-documents-charlotte-nc" element={<PowerOfAttorneyEstateDocuments />} />
 
             {/* Location Pages */}
+            <Route path="/areas-served" element={<AreasServed />} />
             <Route path="/locations/charlotte" element={<Charlotte />} />
             <Route path="/locations/concord" element={<Concord />} />
             <Route path="/locations/gastonia" element={<Gastonia />} />

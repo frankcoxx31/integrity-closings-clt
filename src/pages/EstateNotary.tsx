@@ -5,35 +5,84 @@ import { useEffect } from 'react';
 export default function EstateNotary() {
   useEffect(() => {
     // SEO Meta Tags
-    document.title = "Estate Notary Charlotte NC | Power of Attorney Notary";
+    document.title = "Estate & Trust Notarization Charlotte NC | Mobile Notary";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Mobile notary for estate documents in Charlotte, NC, including powers of attorney, trusts, living wills, and advance directives.");
+      metaDescription.setAttribute('content', "Mobile notary for estate & trust documents in Charlotte, NC. We travel to you for powers of attorney, trusts, living wills, and advance directives.");
     }
 
     // JSON-LD Schema
     const script = document.createElement('script');
     script.type = 'application/ld+json';
+    script.id = 'estate-notary-schema';
     script.innerHTML = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Estate Document Notary in Charlotte, NC",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Integrity Closings CLT",
-        "url": "https://www.integrityclosingsclt.com/"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Charlotte"
-      },
-      "serviceType": "Estate Document Notary",
-      "description": "Mobile notary for estate documents in Charlotte, NC, including powers of attorney, trusts, living wills, and advance directives.",
-      "url": "https://www.integrityclosingsclt.com/estate-notary-charlotte-nc"
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Estate & Trust Notarization",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Integrity Closings CLT",
+            "url": "https://www.integrityclosingsclt.com/"
+          },
+          "areaServed": {"@type": "City", "name": "Charlotte"},
+          "description": "Mobile notary for estate documents in Charlotte, NC, including powers of attorney, trusts, living wills, and advance directives.",
+          "url": "https://www.integrityclosingsclt.com/estate-notary-charlotte-nc"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What documents do you notarize for estate attorneys?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We frequently notarize a wide variety of estate documents including Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare Powers of Attorney, Advance Directives, and Beneficiary Designations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you provide witnesses for estate document signings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we can arrange for impartial witnesses if requested in advance. However, an additional fee may apply per witness. In many cases, family members who are not named in the documents can also serve as witnesses, depending on the document requirements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to draft my own trust or will before you arrive?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. As Notaries Public, we are legally prohibited from drafting legal documents or providing legal advice. Your documents must be fully prepared by an estate attorney or drawn up yourself prior to our arrival."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will you travel to an elder care facility or hospital for the notarization?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We specialize in mobile services and frequently travel to hospitals, nursing homes, and assisted living facilities throughout the Charlotte area to notarize estate documents for patients and residents."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens if the signer has dementia or cognitive decline?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "By law, the notary must independently verify that the signer is aware of what they are signing and doing so willingly. If the signer cannot communicate effectively or does not understand the document due to cognitive decline or heavy medication, we cannot proceed with the notarization."
+              }
+            }
+          ]
+        }
+      ]
     });
     document.head.appendChild(script);
     return () => {
-      document.head.removeChild(script);
+      const existingScript = document.getElementById('estate-notary-schema');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
     };
   }, []);
 
@@ -77,7 +126,7 @@ export default function EstateNotary() {
           
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-              Estate Document Notary in Charlotte, NC
+              Estate & Trust Notarization
             </h1>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -145,6 +194,39 @@ export default function EstateNotary() {
                 ))}
               </div>
             </section>
+
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                {[
+                  {
+                    q: "What documents do you notarize for estate attorneys?",
+                    a: "We frequently notarize a wide variety of estate documents including Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare Powers of Attorney, Advance Directives, and Beneficiary Designations."
+                  },
+                  {
+                    q: "Can you provide witnesses for estate document signings?",
+                    a: "Yes, we can arrange for impartial witnesses if requested in advance. However, an additional fee may apply per witness. In many cases, family members who are not named in the documents can also serve as witnesses, depending on the document requirements."
+                  },
+                  {
+                    q: "Do I need to draft my own trust or will before you arrive?",
+                    a: "Yes. As Notaries Public, we are legally prohibited from drafting legal documents or providing legal advice. Your documents must be fully prepared by an estate attorney or drawn up yourself prior to our arrival."
+                  },
+                  {
+                    q: "Will you travel to an elder care facility or hospital for the notarization?",
+                    a: "Absolutely. We specialize in mobile services and frequently travel to hospitals, nursing homes, and assisted living facilities throughout the Charlotte area to notarize estate documents for patients and residents."
+                  },
+                  {
+                    q: "What happens if the signer has dementia or cognitive decline?",
+                    a: "By law, the notary must independently verify that the signer is aware of what they are signing and doing so willingly. If the signer cannot communicate effectively or does not understand the document due to cognitive decline or heavy medication, we cannot proceed with the notarization."
+                  }
+                ].map((faq, i) => (
+                  <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
+                    <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
+                    <p className="text-slate-600">{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
             
             <section className="mb-12">
               <div className="flex items-center mb-4">
@@ -152,7 +234,7 @@ export default function EstateNotary() {
                 <h2 className="text-2xl font-bold text-slate-900">Areas We Serve</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We provide estate document notarization in Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and nearby areas.
+                We provide estate document notarization in Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and nearby areas in Mecklenburg and Union County.
               </p>
             </section>
             

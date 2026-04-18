@@ -5,35 +5,84 @@ import { useEffect } from 'react';
 export default function HospitalNotary() {
   useEffect(() => {
     // SEO Meta Tags
-    document.title = "Hospital Notary Charlotte NC | Mobile Notary for Patients & Families";
+    document.title = "Hospital & Bedside Notary Charlotte NC | Mobile Notary for Patients";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Need a notary at a hospital in Charlotte, NC? We provide mobile notary services for patients and families at Atrium Health, Novant Health, and care facilities.");
+      metaDescription.setAttribute('content', "Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.");
     }
 
     // JSON-LD Schema
     const script = document.createElement('script');
     script.type = 'application/ld+json';
+    script.id = 'hospital-notary-schema';
     script.innerHTML = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Hospital Notary in Charlotte, NC",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Integrity Closings CLT",
-        "url": "https://www.integrityclosingsclt.com/"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Charlotte"
-      },
-      "serviceType": "Hospital Notary Services",
-      "description": "Mobile notary services for patients, families, and caregivers at hospitals, nursing homes, and care facilities in Charlotte, NC.",
-      "url": "https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc"
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Hospital & Bedside Notary",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Integrity Closings CLT",
+            "url": "https://www.integrityclosingsclt.com/"
+          },
+          "areaServed": {"@type": "City", "name": "Charlotte"},
+          "description": "Mobile notary services for patients, families, and caregivers at hospitals, nursing homes, and care facilities in Charlotte, NC.",
+          "url": "https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Can you come to a hospital room same-day?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we frequently fulfill same-day requests for hospital bedside notarizations. However, we ask that you secure approval from the nursing staff regarding visitation policies before we arrive."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if the patient does not have a physical ID on them?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If a physical ID (like a Driver's License or Passport) was left at home, North Carolina law may allow the use of credible identifying witnesses. Call us directly to discuss the specific circumstances so we can verify if this option is legally viable."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the patient need to be awake and communicative?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. By law, the notary must assess that the signer is alert, aware of what they are signing, and signing willingly. We cannot notarize documents for a patient who is unconscious, heavily medicated to the point of impairment, or unable to communicate."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to print the documents, or can you bring them?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We typically ask that you print the documents beforehand or have the hospital social worker print them. If that is impossible, we can offer document printing services for an additional convenience fee if you email us the files prior to the appointment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can a nurse or doctor act as a witness?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hospital staff and doctors are usually prohibited by hospital policy from acting as witnesses for legal documents. We recommend arranging for friends or non-beneficiary family members to act as witnesses. If needed, we can try to provide a witness for an additional fee."
+              }
+            }
+          ]
+        }
+      ]
     });
     document.head.appendChild(script);
     return () => {
-      document.head.removeChild(script);
+      const existingScript = document.getElementById('hospital-notary-schema');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
     };
   }, []);
 
@@ -82,7 +131,7 @@ export default function HospitalNotary() {
           
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-              Hospital Notary in Charlotte, NC – We Come to You
+              Hospital & Bedside Notary
             </h1>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
@@ -148,6 +197,39 @@ export default function HospitalNotary() {
                   <div key={i} className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-slate-700">{reason}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                {[
+                  {
+                    q: "Can you come to a hospital room same-day?",
+                    a: "Yes, we frequently fulfill same-day requests for hospital bedside notarizations. However, we ask that you secure approval from the nursing staff regarding visitation policies before we arrive."
+                  },
+                  {
+                    q: "What if the patient does not have a physical ID on them?",
+                    a: "If a physical ID (like a Driver's License or Passport) was left at home, North Carolina law may allow the use of credible identifying witnesses. Call us directly to discuss the specific circumstances so we can verify if this option is legally viable."
+                  },
+                  {
+                    q: "Does the patient need to be awake and communicative?",
+                    a: "Absolutely. By law, the notary must assess that the signer is alert, aware of what they are signing, and signing willingly. We cannot notarize documents for a patient who is unconscious, heavily medicated to the point of impairment, or unable to communicate."
+                  },
+                  {
+                    q: "Do I need to print the documents, or can you bring them?",
+                    a: "We typically ask that you print the documents beforehand or have the hospital social worker print them. If that is impossible, we can offer document printing services for an additional convenience fee if you email us the files prior to the appointment."
+                  },
+                  {
+                    q: "Can a nurse or doctor act as a witness?",
+                    a: "Hospital staff and doctors are usually prohibited by hospital policy from acting as witnesses for legal documents. We recommend arranging for friends or non-beneficiary family members to act as witnesses. If needed, we can try to provide a witness for an additional fee."
+                  }
+                ].map((faq, i) => (
+                  <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
+                    <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
+                    <p className="text-slate-600">{faq.a}</p>
                   </div>
                 ))}
               </div>
