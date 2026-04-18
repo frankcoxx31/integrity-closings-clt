@@ -4,37 +4,37 @@ export default function Services() {
       title: 'General Mobile Notary',
       description: 'Standard notarizations at your home, office, or preferred location across the metro area.',
       image: '/general-notary-work.png',
-      link: '/services/general-notary'
-    },
-    {
-      title: 'Loan Signing Agent',
-      description: 'Accurate, professional handling of real estate and mortgage loan closings.',
-      image: '/mobile-notary.jpg',
-      link: '/services/loan-signing'
+      link: '/general-notary-charlotte-nc'
     },
     {
       title: 'Hospital & Healthcare Notary',
       description: 'Compassionate, discreet notarizations for patients and caregivers at medical facilities.',
       image: '/hospital.png',
-      link: '/services/hospital-notary'
+      link: '/hospital-notary-charlotte-nc'
     },
     {
       title: 'Estate Planning Documents',
       description: 'Secure notarization for wills, trusts, living wills, and advance directives.',
       image: '/personal-documents.png',
-      link: '/services/estate-planning'
-    },
-    {
-      title: 'Power of Attorney',
-      description: 'Legally binding notarization for financial, medical, and general POAs.',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800',
-      link: '/services/power-of-attorney'
+      link: '/estate-notary-charlotte-nc'
     },
     {
       title: 'After-Hours & Emergency Notary',
       description: 'Urgent evening and weekend appointments available when you need us most.',
       image: '/lender-sent-documents.png',
-      link: '/services/after-hours'
+      link: '/after-hours-mobile-notary-charlotte-nc'
+    },
+    {
+      title: 'Power of Attorney',
+      description: 'Legally binding notarization for financial, medical, and general POAs.',
+      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800',
+      link: '/power-of-attorney-estate-documents-charlotte-nc'
+    },
+    {
+      title: 'Loan Signing Agent',
+      description: 'Accurate, professional handling of real estate and mortgage loan closings.',
+      image: '/mobile-notary.jpg',
+      link: '/loan-signing-agent-charlotte-nc'
     }
   ];
 

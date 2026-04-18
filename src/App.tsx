@@ -19,9 +19,7 @@ import Contact from './pages/Contact';
 import EstateNotary from './pages/EstateNotary';
 import HospitalNotary from './pages/HospitalNotary';
 import LoanSigningAgent from './pages/LoanSigningAgent';
-import MobileLoanClosings from './pages/MobileLoanClosings';
 import GeneralNotary from './pages/GeneralNotary';
-import LenderDocuments from './pages/LenderDocuments';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Disclaimer from './pages/Disclaimer';
@@ -36,14 +34,12 @@ import AcceptableIdNc from './pages/resources/AcceptableIdNc';
 import WhatIsMobileNotary from './pages/resources/WhatIsMobileNotary';
 
 // New Service Pages
-import PersonalDocuments from './pages/services/PersonalDocuments';
 import BusinessDocuments from './pages/services/BusinessDocuments';
 import FinancialDocuments from './pages/services/FinancialDocuments';
 import LegalDocuments from './pages/services/LegalDocuments';
 import RealEstateDocuments from './pages/services/RealEstateDocuments';
 import SpecialConsiderations from './pages/services/SpecialConsiderations';
 import MiscellaneousDocuments from './pages/services/MiscellaneousDocuments';
-import HospitalsNursingHomes from './pages/services/HospitalsNursingHomes';
 import LenderProvidedDocuments from './pages/services/LenderProvidedDocuments';
 import PowerOfAttorneyEstateDocuments from './pages/services/PowerOfAttorneyEstateDocuments';
 
@@ -68,14 +64,14 @@ export default function App() {
             <Route path="/mobile-notary-charlotte-nc" element={<MobileNotaryServices />} />
             
             {/* Detailed Service Pages */}
-            <Route path="/estate-planning-notary-charlotte-nc" element={<PersonalDocuments />} />
+            <Route path="/estate-planning-notary-charlotte-nc" element={<EstateNotary />} />
             <Route path="/services/business-documents" element={<BusinessDocuments />} />
             <Route path="/services/financial-documents" element={<FinancialDocuments />} />
             <Route path="/services/legal-documents" element={<LegalDocuments />} />
             <Route path="/services/real-estate-documents" element={<RealEstateDocuments />} />
             <Route path="/services/special-considerations" element={<SpecialConsiderations />} />
             <Route path="/services/miscellaneous-documents" element={<MiscellaneousDocuments />} />
-            <Route path="/services/hospitals-nursing-homes" element={<HospitalsNursingHomes />} />
+            <Route path="/services/hospitals-nursing-homes" element={<HospitalNotary />} />
             <Route path="/services/lender-provided-documents" element={<LenderProvidedDocuments />} />
             <Route path="/power-of-attorney-estate-documents-charlotte-nc" element={<PowerOfAttorneyEstateDocuments />} />
 
@@ -103,9 +99,7 @@ export default function App() {
             <Route path="/estate-notary-charlotte-nc" element={<EstateNotary />} />
             <Route path="/hospital-notary-charlotte-nc" element={<HospitalNotary />} />
             <Route path="/loan-signing-agent-charlotte-nc" element={<LoanSigningAgent />} />
-            <Route path="/services/mobile-loan-closings" element={<MobileLoanClosings />} />
-            <Route path="/services/general-notary" element={<GeneralNotary />} />
-            <Route path="/services/lender-documents" element={<LenderDocuments />} />
+            <Route path="/general-notary-charlotte-nc" element={<GeneralNotary />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/disclaimer" element={<Disclaimer />} />

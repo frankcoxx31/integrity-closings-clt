@@ -16,37 +16,37 @@ export default function Concord() {
           title: "Loan Signing Services",
           description: <>Expert handling of mortgages, refinances, HELOCs, and seller packages. We serve homeowners in neighborhoods like <strong>Afton Village, Beverly Hills, and Poplar Woods</strong>.</>,
           icon: <FileSignature className="w-6 h-6 text-blue-600" />,
-          link: "/services/loan-signings"
+          link: "/loan-signing-agent-charlotte-nc"
         },
         {
           title: "Estate Planning Notary",
           description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Cabarrus Brewing Company</strong> or the <strong>Concord Library</strong>.</>,
           icon: <FileText className="w-6 h-6 text-blue-600" />,
-          link: "/services/estate-planning"
+          link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home",
           description: <>Compassionate bedside notary services for medical POAs and living wills for patients at <strong>Atrium Health Cabarrus</strong> and surrounding medical offices.</>,
           icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
-          link: "/services/hospital-notary"
+          link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours Notary",
           description: <>Available for late-night and weekend signings in <strong>Coddle Creek, Roberta Mill</strong>, and across the Concord area when standard offices are closed.</>,
           icon: <Clock className="w-6 h-6 text-blue-600" />,
-          link: "/services/after-hours"
+          link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
           description: <>Quick and accurate notarization for affidavits, vehicle titles, and school forms. Serving all of <strong>Cabarrus County</strong> with mobile convenience.</>,
           icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
-          link: "/services/general-notary"
+          link: "/general-notary-charlotte-nc"
         },
         {
           title: "Business & Corporate",
           description: <>Mobile notary support for business contracts and employment paperwork. We meet you at your office or <strong>Concord Mills</strong> area businesses.</>,
           icon: <Laptop className="w-6 h-6 text-blue-600" />,
-          link: "/services/corporate-notary"
+          link: "/services/business-documents"
         }
       ]}
       hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Concord area:"

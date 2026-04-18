@@ -6,26 +6,76 @@ export default function MobileNotaryServices() {
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
+    script.id = 'mobile-notary-schema';
     script.innerHTML = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Mobile Notary Services in Charlotte, NC",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Integrity Closings CLT",
-        "url": "https://www.integrityclosingsclt.com/"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Charlotte"
-      },
-      "serviceType": "Mobile Notary Services",
-      "description": "Professional mobile notary services in Charlotte, NC for affidavits, powers of attorney, estate planning documents, medical forms, and more.",
-      "url": "https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc"
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Mobile Notary Services in Charlotte, NC",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Integrity Closings CLT",
+            "url": "https://www.integrityclosingsclt.com/"
+          },
+          "areaServed": {"@type": "City", "name": "Charlotte"},
+          "serviceType": "Mobile Notary Services",
+          "description": "Professional mobile notary services in Charlotte, NC for affidavits, powers of attorney, estate planning documents, medical forms, and more.",
+          "url": "https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a mobile notary?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A mobile notary is a commissioned Notary Public who travels to your specific location—whether that's your home, office, hospital room, or local coffee shop—to perform notarial acts, rather than you having to visit a storefront."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does a mobile notary cost in North Carolina?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The State of North Carolina regulates the notarial fee at a maximum of $10 per principal signature. In addition to this state-mandated fee, mobile notaries charge a separate travel/convenience fee which varies based on distance, time of day, and location."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you provide witnesses for document signings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "If your documents require additional witnesses beyond the notary, we can often provide them given enough advance notice. An additional fee applies per witness provided."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How far do you travel in the Charlotte area?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We travel extensively throughout Mecklenburg County, Union County, and parts of Cabarrus County. This includes Charlotte, Mint Hill, Matthews, Pineville, Concord, Monroe, and Indian Trail."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you print my documents before arriving?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we offer document printing services for an additional fee. You can simply email us your PDF documents beforehand, and we will bring the physical copies to your location."
+              }
+            }
+          ]
+        }
+      ]
     });
     document.head.appendChild(script);
     return () => {
-      document.head.removeChild(script);
+      const existingScript = document.getElementById('mobile-notary-schema');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
     };
   }, []);
 
@@ -33,7 +83,7 @@ export default function MobileNotaryServices() {
     {
       title: "Personal Documents",
       image: "/personal-documents.png",
-      link: "/estate-planning-notary-charlotte-nc",
+      link: "/estate-notary-charlotte-nc",
       items: ["Affidavits", "Power of Attorney", "Wills & Trusts", "Medical Directives", "Passport Applications"]
     },
     {
@@ -75,13 +125,13 @@ export default function MobileNotaryServices() {
     {
       title: "Hospitals & Nursing Homes",
       image: "/hospital-and-nursing-home-notarizations-pua.jpg",
-      link: "/services/hospitals-nursing-homes",
+      link: "/hospital-notary-charlotte-nc",
       items: ["Medical Power of Attorney", "Living Wills", "Advance Directives", "HIPAA Authorizations", "Healthcare Proxies"]
     },
     {
       title: "Lender Provided Documents",
       image: "/lender-provided-documents.png",
-      link: "/services/lender-provided-documents",
+      link: "/loan-signing-agent-charlotte-nc",
       items: ["Refinance Packages", "Buyer/Seller Packages", "Loan Modifications", "HELOCs", "Reverse Mortgages"]
     }
   ];
@@ -137,7 +187,7 @@ export default function MobileNotaryServices() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {serviceCategories.map((category, index) => (
             <Link to={category.link} key={index} className="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow flex flex-col group">
               <div className="mb-5 w-full h-48 rounded-xl overflow-hidden bg-slate-100">
@@ -159,7 +209,41 @@ export default function MobileNotaryServices() {
           ))}
         </div>
 
-        <div className="mt-12 bg-slate-900 rounded-2xl p-8 text-center text-white">
+        {/* FAQ Section */}
+        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 mb-12">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            {[
+              {
+                q: "What is a mobile notary?",
+                a: "A mobile notary is a commissioned Notary Public who travels to your specific location—whether that's your home, office, hospital room, or local coffee shop—to perform notarial acts, rather than you having to visit a storefront."
+              },
+              {
+                q: "How much does a mobile notary cost in North Carolina?",
+                a: "The State of North Carolina regulates the notarial fee at a maximum of $10 per principal signature. In addition to this state-mandated fee, mobile notaries charge a separate travel/convenience fee which varies based on distance, time of day, and location."
+              },
+              {
+                q: "Do you provide witnesses for document signings?",
+                a: "If your documents require additional witnesses beyond the notary, we can often provide them given enough advance notice. An additional fee applies per witness provided."
+              },
+              {
+                q: "How far do you travel in the Charlotte area?",
+                a: "We travel extensively throughout Mecklenburg County, Union County, and parts of Cabarrus County. This includes Charlotte, Mint Hill, Matthews, Pineville, Concord, Monroe, and Indian Trail."
+              },
+              {
+                q: "Can you print my documents before arriving?",
+                a: "Yes, we offer document printing services for an additional fee. You can simply email us your PDF documents beforehand, and we will bring the physical copies to your location."
+              }
+            ].map((faq, i) => (
+              <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
+                <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
+                <p className="text-slate-600">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-slate-900 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Ready to get started?</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
             Book your appointment online now or give us a call to schedule your mobile notary service.

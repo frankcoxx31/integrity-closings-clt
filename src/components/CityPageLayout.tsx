@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, CheckCircle, Shield, Award, Clock, Calendar, MessageSquare, ChevronDown } from 'lucide-react';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ServiceCard {
   title: string;
@@ -47,76 +47,90 @@ export default function CityPageLayout({
 }: CityPageLayoutProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // Schema Markup
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Mobile Notary Public",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Integrity Closings CLT",
-      "image": "https://integrityclosingsclt.com/logo.png",
-      "telephone": "980-372-4103",
-      "url": "https://integrityclosingsclt.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": city,
-        "addressRegion": "NC",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCircle",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Mobile Notary"
-        },
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "35.2271",
-          "longitude": "-80.8431"
-        },
-        "geoRadius": "50000"
+  useEffect(() => {
+    document.title = `Mobile Notary ${city} NC | Integrity Closings CLT`;
+    if (metaDescription) {
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) {
+        meta.setAttribute('content', metaDescription);
       }
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": city
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Notary Services",
-      "itemListElement": services.map((s, i) => ({
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": s.title
-        }
-      }))
     }
-  };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
-  };
+    const script1 = document.createElement('script');
+    script1.type = 'application/ld+json';
+    script1.id = `schema-city-${city.replace(/\s+/g, '-').toLowerCase()}`;
+    script1.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "serviceType": "Mobile Notary Public",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Integrity Closings CLT",
+            "image": "https://integrityclosingsclt.com/logo.png",
+            "telephone": "980-372-4103",
+            "url": "https://integrityclosingsclt.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": city,
+              "addressRegion": "NC",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCircle",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mobile Notary"
+              },
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "35.2271",
+                "longitude": "-80.8431"
+              },
+              "geoRadius": "50000"
+            }
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": city
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Notary Services",
+            "itemListElement": services.map((s) => ({
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": s.title
+              }
+            }))
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        }
+      ]
+    });
+    
+    document.head.appendChild(script1);
+
+    return () => {
+      const existing1 = document.getElementById(`schema-city-${city.replace(/\s+/g, '-').toLowerCase()}`);
+      if (existing1) document.head.removeChild(existing1);
+    };
+  }, [city, metaDescription, services, faqs]);
 
   return (
     <div className="bg-white font-sans">
-      <script type="application/ld+json">
-        {JSON.stringify(schemaData)}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema)}
-      </script>
-
       {/* Header Section */}
       <div className="bg-blue-950 text-white py-20 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">

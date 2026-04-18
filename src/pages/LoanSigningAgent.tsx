@@ -14,26 +14,76 @@ export default function LoanSigningAgent() {
     // JSON-LD Schema
     const script = document.createElement('script');
     script.type = 'application/ld+json';
+    script.id = 'loan-signing-schema';
     script.innerHTML = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Loan Signing Agent in Charlotte, NC",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Integrity Closings CLT",
-        "url": "https://www.integrityclosingsclt.com/"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Charlotte"
-      },
-      "serviceType": "Loan Signing Agent",
-      "description": "Professional mobile loan signing services for buyers, sellers, refinances, HELOCs, and other real estate transactions in Charlotte, NC.",
-      "url": "https://www.integrityclosingsclt.com/loan-signing-agent-charlotte-nc"
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Loan Signing Agent in Charlotte, NC",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Integrity Closings CLT",
+            "url": "https://www.integrityclosingsclt.com/"
+          },
+          "areaServed": {"@type": "City", "name": "Charlotte"},
+          "serviceType": "Loan Signing Agent",
+          "description": "Professional mobile loan signing services for buyers, sellers, refinances, HELOCs, and other real estate transactions in Charlotte, NC.",
+          "url": "https://www.integrityclosingsclt.com/loan-signing-agent-charlotte-nc"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What does a loan signing agent do?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A loan signing agent is a specialized notary public certified to guide borrowers through mortgage loan documents. They ensure all signatures, dates, and initials are properly executed and return the documents promptly to the title company or lender."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you travel to my clients for loan closings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we provide 100% mobile loan signing services. We can travel to your client's home, office, real estate agency, or any mutually agreed-upon location in the greater Charlotte area."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly can you return the closing documents?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We immediately review all documents for accuracy at the signing table. Scantebacks are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are you certified and background screened?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we are highly trained, NNA Certified, background screened, and carry $100,000 in Errors and Omissions (E&O) insurance to protect both you and your clients."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What types of loan packages do you handle?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We handle Buyer, Seller, Refinance, HELOCs, Reverse Mortgages, Loan Modifications, and Commercial real estate packages."
+              }
+            }
+          ]
+        }
+      ]
     });
     document.head.appendChild(script);
     return () => {
-      document.head.removeChild(script);
+      const existingScript = document.getElementById('loan-signing-schema');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
     };
   }, []);
 
@@ -138,6 +188,39 @@ export default function LoanSigningAgent() {
                   <div key={i} className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-slate-700">{reason}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                {[
+                  {
+                    q: "What does a loan signing agent do?",
+                    a: "A loan signing agent is a specialized notary public certified to guide borrowers through mortgage loan documents. They ensure all signatures, dates, and initials are properly executed and return the documents promptly to the title company or lender."
+                  },
+                  {
+                    q: "Do you travel to my clients for loan closings?",
+                    a: "Yes, we provide 100% mobile loan signing services. We can travel to your client's home, office, real estate agency, or any mutually agreed-upon location in the greater Charlotte area."
+                  },
+                  {
+                    q: "How quickly can you return the closing documents?",
+                    a: "We immediately review all documents for accuracy at the signing table. Scantebacks are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
+                  },
+                  {
+                    q: "Are you certified and background screened?",
+                    a: "Yes, we are highly trained, NNA Certified, background screened, and carry $100,000 in Errors and Omissions (E&O) insurance to protect both you and your clients."
+                  },
+                  {
+                    q: "What types of loan packages do you handle?",
+                    a: "We handle Buyer, Seller, Refinance, HELOCs, Reverse Mortgages, Loan Modifications, and Commercial real estate packages."
+                  }
+                ].map((faq, i) => (
+                  <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
+                    <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
+                    <p className="text-slate-600">{faq.a}</p>
                   </div>
                 ))}
               </div>

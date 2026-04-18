@@ -16,37 +16,37 @@ export default function Gastonia() {
           title: "Loan Signing Services",
           description: <>Expert handling of mortgages, refinances, HELOCs, and seller packages. We serve homeowners in neighborhoods like <strong>Loray Mill, Boogertown, and Ranlo</strong>.</>,
           icon: <FileSignature className="w-6 h-6 text-blue-600" />,
-          link: "/services/loan-signings"
+          link: "/loan-signing-agent-charlotte-nc"
         },
         {
           title: "Estate Planning Notary",
           description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Schiele Museum</strong> or the <strong>Gaston County Public Library</strong>.</>,
           icon: <FileText className="w-6 h-6 text-blue-600" />,
-          link: "/services/estate-planning"
+          link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home",
           description: <>Compassionate bedside notary services for medical POAs and living wills for patients at <strong>CaroMont Regional Medical Center</strong> and surrounding care facilities.</>,
           icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
-          link: "/services/hospital-notary"
+          link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours Notary",
           description: <>Available for late-night and weekend signings near <strong>Crowders Mountain</strong> and across the Gastonia area when standard offices are closed.</>,
           icon: <Clock className="w-6 h-6 text-blue-600" />,
-          link: "/services/after-hours"
+          link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
           description: <>Mobile notarization for affidavits, I-9 verifications, and vehicle titles. We meet you anywhere in <strong>Gastonia</strong> for your convenience.</>,
           icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
-          link: "/services/general-notary"
+          link: "/general-notary-charlotte-nc"
         },
         {
           title: "Business & Corporate",
           description: <>Professional notary support for corporate contracts and employment documents. Serving businesses in the <strong>FUSE District</strong> and beyond.</>,
           icon: <Laptop className="w-6 h-6 text-blue-600" />,
-          link: "/services/corporate-notary"
+          link: "/services/business-documents"
         }
       ]}
       hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Gastonia area:"

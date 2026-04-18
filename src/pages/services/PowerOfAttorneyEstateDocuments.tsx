@@ -14,26 +14,79 @@ export default function PowerOfAttorneyEstateDocuments() {
     // JSON-LD Schema
     const script = document.createElement('script');
     script.type = 'application/ld+json';
+    script.id = 'poa-schema';
     script.innerHTML = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Power of Attorney & Estate Document Notary in Charlotte, NC",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "Integrity Closings CLT",
-        "url": "https://www.integrityclosingsclt.com/"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Charlotte"
-      },
-      "serviceType": "Power of Attorney & Estate Document Notary",
-      "description": "Professional mobile notary for power of attorney, trusts, wills, and estate documents in Charlotte, NC. Home, hospital, nursing home, and after-hours appointments available.",
-      "url": "https://www.integrityclosingsclt.com/power-of-attorney-estate-documents-charlotte-nc"
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Power of Attorney & Estate Document Notary in Charlotte, NC",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Integrity Closings CLT",
+            "url": "https://www.integrityclosingsclt.com/"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Charlotte"
+          },
+          "serviceType": "Power of Attorney & Estate Document Notary",
+          "description": "Professional mobile notary for power of attorney, trusts, wills, and estate documents in Charlotte, NC. Home, hospital, nursing home, and after-hours appointments available.",
+          "url": "https://www.integrityclosingsclt.com/power-of-attorney-estate-documents-charlotte-nc"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is required to notarize a Power of Attorney?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Principal (the person granting authority) must be physically present, have valid government-issued ID, and be alert and aware enough to understand what they are signing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you draft a Power of Attorney for me?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Under North Carolina law, Notaries Public are legally barred from drafting legal documents or providing advice. Please have an attorney or legal service prepare the POA before we arrive."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need witnesses for a Healthcare Power of Attorney?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Typically, yes. Most Healthcare Power of Attorney forms in North Carolina require two impartial witnesses in addition to the notary. We recommend providing your own witnesses if possible."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "If my parent is in the hospital, can you notarize their POA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, as long as they are conscious, understand the document, and are willing to sign. We specialize in hospital visits for emergency POA signings."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens if the Principal cannot physically write?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "North Carolina allows for a 'Signature by Mark' (like an X) or a directed signature, provided the Principal can clearly communicate their intent and the proper witnesses are present."
+              }
+            }
+          ]
+        }
+      ]
     });
     document.head.appendChild(script);
     return () => {
-      document.head.removeChild(script);
+      const existingScript = document.getElementById('poa-schema');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
     };
   }, []);
 
@@ -93,14 +146,6 @@ export default function PowerOfAttorneyEstateDocuments() {
               <p className="text-slate-600 leading-relaxed">
                 We travel to homes, hospitals, nursing homes, rehabilitation centers, assisted living facilities, offices, and other convenient locations. If you need a document notarized for a loved one who cannot travel, mobile service makes the process easier and more convenient.
               </p>
-              <div className="mt-6 rounded-xl overflow-hidden shadow-sm border border-slate-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1573164067507-406183a7b1ad?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Mobile notary service at home in Charlotte North Carolina" 
-                  className="w-full h-64 object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
             </section>
             
             <section className="mb-10">
@@ -113,28 +158,38 @@ export default function PowerOfAttorneyEstateDocuments() {
                   </div>
                 ))}
               </div>
-              <div className="mt-8 rounded-xl overflow-hidden shadow-sm border border-slate-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Notary signing legal documents in Charlotte NC" 
-                  className="w-full h-64 object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
             </section>
-            
-            <section className="mb-10">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">Why Clients Call Us</h2>
-              <p className="text-slate-600 leading-relaxed">
-                Clients often need estate documents notarized quickly and professionally. We help by providing mobile appointments, after-hours availability, and service at locations where signers may already be receiving care or assistance.
-              </p>
-              <div className="mt-6 rounded-xl overflow-hidden shadow-sm border border-slate-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Professional mobile notary service Charlotte NC" 
-                  className="w-full h-64 object-cover"
-                  referrerPolicy="no-referrer"
-                />
+
+            <section className="mb-12 mt-12 border-t border-slate-100 pt-10">
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                {[
+                  {
+                    q: "What is required to notarize a Power of Attorney?",
+                    a: "The Principal (the person granting authority) must be physically present, have valid government-issued ID, and be alert and aware enough to understand what they are signing."
+                  },
+                  {
+                    q: "Can you draft a Power of Attorney for me?",
+                    a: "No. Under North Carolina law, Notaries Public are legally barred from drafting legal documents or providing advice. Please have an attorney or legal service prepare the POA before we arrive."
+                  },
+                  {
+                    q: "Do I need witnesses for a Healthcare Power of Attorney?",
+                    a: "Typically, yes. Most Healthcare Power of Attorney forms in North Carolina require two impartial witnesses in addition to the notary. We recommend providing your own witnesses if possible."
+                  },
+                  {
+                    q: "If my parent is in the hospital, can you notarize their POA?",
+                    a: "Yes, as long as they are conscious, understand the document, and are willing to sign. We specialize in hospital visits for emergency POA signings."
+                  },
+                  {
+                    q: "What happens if the Principal cannot physically write?",
+                    a: "North Carolina allows for a 'Signature by Mark' (like an X) or a directed signature, provided the Principal can clearly communicate their intent and the proper witnesses are present."
+                  }
+                ].map((faq, i) => (
+                  <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
+                    <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
+                    <p className="text-slate-600">{faq.a}</p>
+                  </div>
+                ))}
               </div>
             </section>
             
@@ -150,13 +205,6 @@ export default function PowerOfAttorneyEstateDocuments() {
               </div>
             </section>
             
-            <section className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">Areas We Serve</h2>
-              <p className="text-slate-600 leading-relaxed">
-                We serve Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and surrounding areas.
-              </p>
-            </section>
-            
             <div className="text-center pt-10 border-t border-slate-100">
               <div className="inline-flex flex-col items-center">
                 <p className="text-xl font-bold text-slate-900 mb-6">
@@ -169,9 +217,6 @@ export default function PowerOfAttorneyEstateDocuments() {
                   <Phone className="w-5 h-5 mr-2" />
                   Call or text 980-372-4103
                 </a>
-                <p className="mt-4 text-slate-500">
-                  Schedule a mobile notary appointment in Charlotte, NC.
-                </p>
               </div>
             </div>
           </div>

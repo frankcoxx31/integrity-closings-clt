@@ -16,37 +16,37 @@ export default function Matthews() {
           title: "Loan Signing Services",
           description: <>Expert handling of mortgages, refinances, HELOCs, and seller packages. We serve homeowners in neighborhoods like <strong>Brightmoor, Sardis Forest, and Providence Woods</strong>.</>,
           icon: <FileSignature className="w-6 h-6 text-blue-600" />,
-          link: "/services/loan-signings"
+          link: "/loan-signing-agent-charlotte-nc"
         },
         {
           title: "Estate Planning Notary",
           description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Brakeman’s Coffee</strong> or the <strong>Matthews Library</strong>.</>,
           icon: <FileText className="w-6 h-6 text-blue-600" />,
-          link: "/services/estate-planning"
+          link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home",
           description: <>Compassionate bedside notary services for medical POAs and living wills for patients at <strong>Novant Health Matthews</strong> and <strong>Atrium Health Union West</strong>.</>,
           icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
-          link: "/services/hospital-notary"
+          link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours Notary",
           description: <>Available for late-night and weekend signings in <strong>Cresswind, Fairhaven</strong>, and across the 28105 area when standard offices are closed.</>,
           icon: <Clock className="w-6 h-6 text-blue-600" />,
-          link: "/services/after-hours"
+          link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
           description: <>Fast and reliable notarization for affidavits, vehicle titles, and school forms. We meet you at any <strong>Matthews</strong> location for your convenience.</>,
           icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
-          link: "/services/general-notary"
+          link: "/general-notary-charlotte-nc"
         },
         {
           title: "Business & Corporate",
           description: <>Professional notary support for corporate contracts and employment documents. Serving businesses in <strong>Windsor Square</strong> and the <strong>Matthews</strong> area.</>,
           icon: <Laptop className="w-6 h-6 text-blue-600" />,
-          link: "/services/corporate-notary"
+          link: "/services/business-documents"
         }
       ]}
       hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Matthews area:"

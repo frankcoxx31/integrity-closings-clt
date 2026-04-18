@@ -16,37 +16,37 @@ export default function Charlotte() {
           title: "Loan Signing Services",
           description: <>Expert handling of mortgage refinances, HELOCs, and seller packages. We work with title companies and lenders to ensure error-free closings in neighborhoods like <strong>Myers Park, SouthPark, and Dilworth</strong>.</>,
           icon: <FileSignature className="w-6 h-6 text-blue-600" />,
-          link: "/services/loan-signings"
+          link: "/loan-signing-agent-charlotte-nc"
         },
         {
           title: "Estate Planning Notary",
           description: <>Secure notarization for Wills, Trusts, and Power of Attorney documents. We provide mobile service to your home or office in <strong>South End, NoDa, and Plaza Midwood</strong>.</>,
           icon: <FileText className="w-6 h-6 text-blue-600" />,
-          link: "/services/estate-planning"
+          link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home",
           description: <>Compassionate bedside notary services for medical directives and urgent legal papers at <strong>Novant Health</strong> and <strong>Atrium Health</strong> facilities throughout Charlotte.</>,
           icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
-          link: "/services/hospital-notary"
+          link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours & Emergency",
           description: <>Need a notary late at night or on the weekend? We offer 24/7 emergency mobile notary services for urgent matters across <strong>Mecklenburg County</strong>.</>,
           icon: <Clock className="w-6 h-6 text-blue-600" />,
-          link: "/services/after-hours"
+          link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
           description: <>Fast and reliable notarization for affidavits, I-9 verifications, minor travel consents, and vehicle titles. We meet you at any <strong>Charlotte</strong> location.</>,
           icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
-          link: "/services/general-notary"
+          link: "/general-notary-charlotte-nc"
         },
         {
           title: "Business & Corporate",
           description: <>Professional notary support for corporate contracts, NDAs, and employment documents. Serving businesses in <strong>Uptown</strong> and the <strong>University City</strong> area.</>,
           icon: <Laptop className="w-6 h-6 text-blue-600" />,
-          link: "/services/corporate-notary"
+          link: "/services/business-documents"
         }
       ]}
       hospitalsIntro="We understand that legal needs often arise during medical challenges. We provide prompt, professional mobile notary services to patients and families at Charlotte's leading medical centers:"
