@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -27,6 +27,7 @@ import FAQPage from './pages/FAQPage';
 import QuoteCalculator from './pages/QuoteCalculator';
 import Resources from './pages/Resources';
 import Booking from './pages/Booking';
+import BookLanding from './pages/BookLanding';
 
 // Resource Articles
 import AcknowledgmentVsJurat from './pages/resources/AcknowledgmentVsJurat';
@@ -56,12 +57,23 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-white flex flex-col">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/mobile-notary-charlotte-nc" element={<MobileNotaryServices />} />
+      <AppContent />
+    </Router>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+  const isLandingPage = location.pathname === '/book';
+
+  return (
+    <div className="min-h-screen bg-white flex flex-col">
+      {!isLandingPage && <Navbar />}
+      <main className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/book" element={<BookLanding />} />
+          <Route path="/mobile-notary-charlotte-nc" element={<MobileNotaryServices />} />
             
             {/* Detailed Service Pages */}
             <Route path="/estate-planning-notary-charlotte-nc" element={<EstateNotary />} />
@@ -105,10 +117,9 @@ export default function App() {
             <Route path="/disclaimer" element={<Disclaimer />} />
           </Routes>
         </main>
-        <Footer />
-        <AIChatbot />
-        <WelcomePopup />
+        {!isLandingPage && <Footer />}
+        {!isLandingPage && <AIChatbot />}
+        {!isLandingPage && <WelcomePopup />}
       </div>
-    </Router>
   );
 }
