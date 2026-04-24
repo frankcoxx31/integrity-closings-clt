@@ -8,7 +8,7 @@ export default function EstateNotary() {
     document.title = "Estate & Trust Notarization Charlotte NC | Mobile Notary";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Mobile notary for estate & trust documents in Charlotte, NC. We travel to you for powers of attorney, trusts, living wills, and advance directives.");
+      metaDescription.setAttribute('content', "Professional mobile notary for estate planning and trust documents in Charlotte, NC. We travel to homes, hospitals, and nursing homes for Wills, Trusts, and POA.");
     }
 
     // JSON-LD Schema
@@ -27,7 +27,7 @@ export default function EstateNotary() {
             "url": "https://www.integrityclosingsclt.com/"
           },
           "areaServed": {"@type": "City", "name": "Charlotte"},
-          "description": "Mobile notary for estate documents in Charlotte, NC, including powers of attorney, trusts, living wills, and advance directives.",
+          "description": "Professional mobile notary for estate planning and trust documents in Charlotte, NC. Hospital and nursing home visits available for Wills, Trusts, and POA.",
           "url": "https://www.integrityclosingsclt.com/estate-notary-charlotte-nc"
         },
         {
@@ -35,42 +35,34 @@ export default function EstateNotary() {
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "What documents do you notarize for estate attorneys?",
+              "name": "What types of documents can you notarize for estate planning?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We frequently notarize a wide variety of estate documents including Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare Powers of Attorney, Advance Directives, and Beneficiary Designations."
+                "text": "We frequently notarize Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare POAs, Advance Directives, Living Wills, and HIPAA Authorizations."
               }
             },
             {
               "@type": "Question",
-              "name": "Can you provide witnesses for estate document signings?",
+              "name": "Do I need to have my witnesses ready?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we can arrange for impartial witnesses if requested in advance. However, an additional fee may apply per witness. In many cases, family members who are not named in the documents can also serve as witnesses, depending on the document requirements."
+                "text": "Yes. Many NC estate documents require two impartial witnesses in addition to the notary. These witnesses generally cannot be named in the document or related to the signer. Please confirm witness requirements with your attorney and ensure they are present at the scheduled time."
               }
             },
             {
               "@type": "Question",
-              "name": "Do I need to draft my own trust or will before you arrive?",
+              "name": "Can the notary help me understand what I am signing?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. As Notaries Public, we are legally prohibited from drafting legal documents or providing legal advice. Your documents must be fully prepared by an estate attorney or drawn up yourself prior to our arrival."
+                "text": "No. As a Notary Public, I am legally prohibited from explaining the legal effects of a document or providing any guidance on how to fill them out. Your attorney or document preparer is the only one who can provide that information."
               }
             },
             {
               "@type": "Question",
-              "name": "Will you travel to an elder care facility or hospital for the notarization?",
+              "name": "Will you travel to patients in the ICU or memory care units?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely. We specialize in mobile services and frequently travel to hospitals, nursing homes, and assisted living facilities throughout the Charlotte area to notarize estate documents for patients and residents."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What happens if the signer has dementia or cognitive decline?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "By law, the notary must independently verify that the signer is aware of what they are signing and doing so willingly. If the signer cannot communicate effectively or does not understand the document due to cognitive decline or heavy medication, we cannot proceed with the notarization."
+                "text": "Yes, we travel to all medical facilities. However, if the signer is under heavy sedation or cannot demonstrate awareness of the document and a willingness to sign, we legally cannot proceed with the notarization."
               }
             }
           ]
@@ -99,11 +91,11 @@ export default function EstateNotary() {
   ];
 
   const whyChooseUs = [
-    "Mobile service at your location",
-    "Professional, patient, and reliable",
-    "Flexible scheduling available",
-    "Serving Charlotte and surrounding areas",
-    "Experienced with estate-related notarizations"
+    "Mobile service at your home, office, or care facility",
+    "Professional, patient, and respectful with seniors",
+    "Punctual and reliable for sensitive appointments",
+    "Serving Charlotte, Matthews, Concord, and beyond",
+    "Duly Commissioned NC Notary Public since 2017"
   ];
 
   return (
@@ -126,11 +118,11 @@ export default function EstateNotary() {
           
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-              Estate & Trust Notarization
+              Estate & Trust Notarization — Charlotte, NC
             </h1>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Need a mobile notary for estate documents in Charlotte, NC? Integrity Closings CLT provides professional notarization for powers of attorney, trusts, living wills, advance directives, affidavits, and other estate-related documents. We travel to homes, hospitals, nursing homes, and care facilities throughout Charlotte and surrounding areas.
+              Integrity Closings CLT provides professional mobile notary services specializing in the sensitive and precise nature of estate planning documents. We understand that these moments are critical, which is why we offer discreet, patient service directly to your home, attorney’s office, hospital room, or assisted living facility throughout the Greater Charlotte area.
             </p>
 
             <div className="mb-10 text-center">
@@ -146,10 +138,10 @@ export default function EstateNotary() {
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <MapPin className="w-6 h-6 text-blue-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Mobile Notary for Estate Documents</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Mobile Service to Hospitals & Care Facilities</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We come directly to your location for convenient estate document notarization. Whether the signer is at home, in a hospital, or in a nursing facility, we provide professional mobile notary service throughout Charlotte, NC.
+                Navigating the notarization of Wills, Trusts, and Powers of Attorney when a loved one is in a medical or senior living facility requires experience and patience. We regularly visit major hospitals and nursing homes in Mecklenburg County, providing a calm and professional presence for every signing.
               </p>
             </section>
             
@@ -168,13 +160,28 @@ export default function EstateNotary() {
               </div>
             </section>
 
+            <section className="mb-12 p-6 bg-slate-50 rounded-xl border border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-4">Notary Fees & Travel</h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed">
+                <p>
+                  North Carolina law sets the maximum fee for traditional notarial acts at $10.00 per principal signature notarized.
+                </p>
+                <p>
+                  For mobile and on-site appointments, a separate travel fee may apply at the current federal mileage rate. All travel fees are discussed and must be agreed upon in writing prior to my departure for the appointment.
+                </p>
+                <p className="text-sm italic">
+                  Note: If your documents require witnesses, specific legal formats, or if you have questions regarding the legal implications of a document, please consult with your attorney or document preparer before our arrival. Notaries cannot provide legal guidance or draft legal documents.
+                </p>
+              </div>
+            </section>
+
             <section className="mb-12 p-6 bg-blue-50 rounded-xl border border-blue-100">
               <div className="flex items-start">
                 <Info className="w-6 h-6 text-blue-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
-                  <h2 className="text-xl font-bold text-slate-900 mb-2">Important Information Before the Appointment</h2>
+                  <h2 className="text-xl font-bold text-slate-900 mb-2">Signer Requirements</h2>
                   <p className="text-slate-600 leading-relaxed">
-                    All signers must be willing, aware, and able to communicate during the notarization. A valid government-issued photo ID is required. We cannot provide legal advice or tell a signer which documents they need.
+                    By law, all signers must be willing, fully aware, and able to communicate clearly with the notary during the appointment. A valid, unexpired government-issued photo ID (such as a Driver’s License or Passport) is required for each signer. 
                   </p>
                 </div>
               </div>
@@ -200,24 +207,20 @@ export default function EstateNotary() {
               <div className="space-y-6">
                 {[
                   {
-                    q: "What documents do you notarize for estate attorneys?",
-                    a: "We frequently notarize a wide variety of estate documents including Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare Powers of Attorney, Advance Directives, and Beneficiary Designations."
+                    q: "What types of documents can you notarize for estate planning?",
+                    a: "We frequently notarize Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare POAs, Advance Directives, Living Wills, and HIPAA Authorizations."
                   },
                   {
-                    q: "Can you provide witnesses for estate document signings?",
-                    a: "Yes, we can arrange for impartial witnesses if requested in advance. However, an additional fee may apply per witness. In many cases, family members who are not named in the documents can also serve as witnesses, depending on the document requirements."
+                    q: "Do I need to have my witnesses ready?",
+                    a: "Yes. Many NC estate documents require two impartial witnesses in addition to the notary. These witnesses generally cannot be named in the document or related to the signer. Please confirm witness requirements with your attorney and ensure they are present at the scheduled time."
                   },
                   {
-                    q: "Do I need to draft my own trust or will before you arrive?",
-                    a: "Yes. As Notaries Public, we are legally prohibited from drafting legal documents or providing legal advice. Your documents must be fully prepared by an estate attorney or drawn up yourself prior to our arrival."
+                    q: "Can the notary help me understand what I am signing?",
+                    a: "No. As a Notary Public, I am legally prohibited from explaining the legal effects of a document or providing any guidance on how to fill them out. Your attorney or document preparer is the only one who can provide that information."
                   },
                   {
-                    q: "Will you travel to an elder care facility or hospital for the notarization?",
-                    a: "Absolutely. We specialize in mobile services and frequently travel to hospitals, nursing homes, and assisted living facilities throughout the Charlotte area to notarize estate documents for patients and residents."
-                  },
-                  {
-                    q: "What happens if the signer has dementia or cognitive decline?",
-                    a: "By law, the notary must independently verify that the signer is aware of what they are signing and doing so willingly. If the signer cannot communicate effectively or does not understand the document due to cognitive decline or heavy medication, we cannot proceed with the notarization."
+                    q: "Will you travel to patients in the ICU or memory care units?",
+                    a: "Yes, we travel to all medical facilities. However, if the signer is under heavy sedation or cannot demonstrate awareness of the document and a willingness to sign, we legally cannot proceed with the notarization."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
