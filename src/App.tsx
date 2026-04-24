@@ -28,7 +28,6 @@ import QuoteCalculator from './pages/QuoteCalculator';
 import Resources from './pages/Resources';
 import Booking from './pages/Booking';
 import BookLanding from './pages/BookLanding';
-import BookLanding from './pages/BookLanding';
 
 // Resource Articles
 import AcknowledgmentVsJurat from './pages/resources/AcknowledgmentVsJurat';

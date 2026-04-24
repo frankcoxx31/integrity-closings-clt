@@ -161,16 +161,16 @@ export default function EstateNotary() {
             </section>
 
             <section className="mb-12 p-6 bg-slate-50 rounded-xl border border-slate-100">
-              <h2 className="text-xl font-bold text-slate-900 mb-4">Notary Fees & Travel</h2>
+              <h2 className="text-xl font-bold text-slate-900 mb-4">Fees & Travel</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  North Carolina law sets the maximum fee for traditional notarial acts at $10.00 per principal signature notarized.
+                  North Carolina law allows a maximum fee of $10 per notarized principal signature for most traditional notarial acts.
                 </p>
                 <p>
-                  For mobile and on-site appointments, a separate travel fee may apply at the current federal mileage rate. All travel fees are discussed and must be agreed upon in writing prior to my departure for the appointment.
+                  For mobile appointments, a separate travel fee may apply at the current federal mileage rate when approved in writing before travel.
                 </p>
-                <p className="text-sm italic">
-                  Note: If your documents require witnesses, specific legal formats, or if you have questions regarding the legal implications of a document, please consult with your attorney or document preparer before our arrival. Notaries cannot provide legal guidance or draft legal documents.
+                <p>
+                  If witnesses, document requirements, or legal guidance are needed, clients should confirm those details with their attorney or document preparer before the appointment.
                 </p>
               </div>
             </section>
