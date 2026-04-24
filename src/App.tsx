@@ -28,6 +28,8 @@ import QuoteCalculator from './pages/QuoteCalculator';
 import Resources from './pages/Resources';
 import Booking from './pages/Booking';
 import BookLanding from './pages/BookLanding';
+import Appointments from './pages/Appointments';
+import Journal from './pages/Journal';
 
 // Resource Articles
 import AcknowledgmentVsJurat from './pages/resources/AcknowledgmentVsJurat';
@@ -99,6 +101,8 @@ function AppContent() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
+            <Route path="/appointments" element={<Appointments />} />
+            <Route path="/journal" element={<Journal />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/resources" element={<Resources />} />
