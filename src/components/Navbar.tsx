@@ -47,8 +47,6 @@ export default function Navbar() {
     { name: 'Resources', href: '/resources' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Signings', href: '/appointments' },
-    { name: 'Journal', href: '/journal' },
   ];
 
   const isHomePage = location.pathname === '/';
