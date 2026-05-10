@@ -63,6 +63,19 @@ export default function Contact() {
                     <p className="text-sm text-slate-400 mt-1">After-hours service available (7:00pm - 11:00pm)</p>
                   </div>
                 </div>
+
+                <div className="pt-8 border-t border-blue-900">
+                  <h3 className="font-semibold text-lg mb-4">Leave a Google Review</h3>
+                  <div className="bg-white p-3 rounded-xl inline-block">
+                    <img 
+                      src="/google_review_qr.png" 
+                      alt="Google Review QR Code" 
+                      className="w-32 h-32"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <p className="text-sm text-slate-400 mt-3">Scan to share your experience with us!</p>
+                </div>
               </div>
             </div>
 
