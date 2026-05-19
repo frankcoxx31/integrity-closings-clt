@@ -55,36 +55,39 @@ async function startServer() {
     // 4. Clean the private key
     if (privateKey && typeof privateKey === 'string') {
       const cleanKey = (key: string) => {
-        // Remove surrounding quotes and whitespace
-        let processed = key.trim().replace(/^["']|["']$/g, "").trim();
+        if (!key) return key;
         
-        // Handle double quotes from being saved in env twice
-        if ((processed.startsWith('"') && processed.endsWith('"')) || 
-            (processed.startsWith("'") && processed.endsWith("'"))) {
+        // 1. Basic trimming and quote removal (handling potential double-quoted env vars)
+        let processed = key.trim();
+        while ((processed.startsWith('"') && processed.endsWith('"')) || 
+               (processed.startsWith("'") && processed.endsWith("'"))) {
           processed = processed.substring(1, processed.length - 1).trim();
         }
 
-        // Handle escaped newlines (very common in env vars)
+        // 2. Handle escaped newlines (very common in env vars)
         processed = processed.replace(/\\n/g, '\n');
         
-        // Extract the base64 part from between headers if they exist
-        // This regex is very forgiving of internal whitespace
-        const match = processed.match(/-----BEGIN (?:RSA )?PRIVATE KEY-----([\s\S]*)-----END (?:RSA )?PRIVATE KEY-----/);
+        // 3. Normalize headers (case-insensitive and whitespace-tolerant)
+        const headerPattern = /-----[\s]*BEGIN[\s]+(?:RSA[\s]+)?PRIVATE[\s]+KEY[\s]*-----/i;
+        const footerPattern = /-----[\s]*END[\s]+(?:RSA[\s]+)?PRIVATE[\s]+KEY[\s]*-----/i;
         
-        if (match) {
-          // Normalize the body by removing ALL whitespace/newlines
-          const base64Body = match[1].replace(/\s/g, '');
-          // Re-wrap with standard headers and a single newline
-          return `-----BEGIN PRIVATE KEY-----\n${base64Body}\n-----END PRIVATE KEY-----\n`;
+        let body = processed;
+        const headerMatch = processed.match(headerPattern);
+        const footerMatch = processed.match(footerPattern);
+
+        if (headerMatch && footerMatch) {
+          const start = headerMatch.index! + headerMatch[0].length;
+          const end = footerMatch.index!;
+          body = processed.substring(start, end);
         }
         
-        // If no headers found, but it looks like a long base64 string, wrap it
-        const simpleBase64 = processed.replace(/\s/g, '');
-        if (simpleBase64.length > 500) {
-          return `-----BEGIN PRIVATE KEY-----\n${simpleBase64}\n-----END PRIVATE KEY-----\n`;
-        }
+        // 4. Clean the body: remove ALL whitespace, non-base64 characters
+        // We only keep characters that are valid in base64: A-Z, a-z, 0-9, +, /, =
+        const cleanBody = body.replace(/[^A-Za-z0-9+/=]/g, '');
         
-        return processed;
+        // 5. Reconstruct with standard format
+        // Node's crypto (used by google-auth-library) is most compatible with exactly this format
+        return `-----BEGIN PRIVATE KEY-----\n${cleanBody}\n-----END PRIVATE KEY-----\n`;
       };
       
       privateKey = cleanKey(privateKey);
@@ -116,11 +119,12 @@ async function startServer() {
       return null;
     }
     
-    // Explicitly use fromJSON which handles the credential object format
-    const auth = google.auth.fromJSON(credentialsObj) as any;
-    if (auth) {
-      auth.scopes = ['https://www.googleapis.com/auth/calendar'];
-    }
+    // Explicitly use JWT constructor for maximum control over parameters
+    const auth = new google.auth.JWT({
+      email: credentialsObj.client_email,
+      key: credentialsObj.private_key,
+      scopes: ['https://www.googleapis.com/auth/calendar']
+    });
     
     return auth;
   };
