@@ -17,7 +17,7 @@ export default function Locations() {
     {
       city: 'Mint Hill',
       areas: 'Brighton Park, Farmwood, Olde Sycamore, Summerwood, Fairview Road',
-      image: '/matthews-1.jpg',
+      image: '/mint-hill.jpg',
       link: '/locations/mint-hill-loan-signing-agent'
     },
     {
