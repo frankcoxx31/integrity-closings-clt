@@ -206,7 +206,7 @@ async function startServer() {
   const ENABLE_CRM_SYNC = true;
 
   /**
-   * Generates a 9-character alphanumeric ID for new CRM customer records.
+   * Generates a 9-character alphanumeric ID for new CRM records.
    */
   function generateCrmId() {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -308,13 +308,11 @@ async function startServer() {
       };
 
       if (existingDoc) {
-        // ── Update existing record ───────────────────────────────────────────
         console.log(`[CRM] Updating existing customer: ${existingDoc.id}`);
         await existingDoc.ref.update(payload);
         console.log(`[CRM] Update successful for: ${existingDoc.id}`);
         return existingDoc.id;
       } else {
-        // ── Create new record ────────────────────────────────────────────────
         const customId = generateCrmId();
         const newRecord = {
           ...payload,
@@ -392,7 +390,6 @@ async function startServer() {
       });
 
       if (!customerId) {
-        // syncToCrm throws on failure, but guard the null case explicitly
         console.error('[API] syncToCrm returned null without throwing. Customer record was NOT created.');
         return res.status(500).json({
           error: 'CRM sync failed: customer record was not created. Check server logs for details.'
@@ -412,7 +409,7 @@ async function startServer() {
     }
   });
 
-  // API route to book calendar event
+  // API route to book calendar event and create CRM appointment
   app.post('/api/book', async (req, res) => {
     try {
       const { firstName, lastName, email, phone, address, notes, serviceName, startTime, endTime } = req.body;
@@ -441,12 +438,16 @@ async function startServer() {
         },
       };
 
-      await calendar.events.insert({
+      // Insert calendar event and capture the event ID
+      const calendarEvent = await calendar.events.insert({
         calendarId: calendarId,
         requestBody: event,
       });
 
-      // Save to Firebase bookings collection
+      const googleCalendarEventId = calendarEvent.data.id || '';
+      console.log(`[API] Google Calendar event created. ID: ${googleCalendarEventId}`);
+
+      // ── Save to /bookings collection ───────────────────────────────────────
       try {
         if (adminDb) {
           await adminDb.collection('bookings').add({
@@ -461,17 +462,121 @@ async function startServer() {
             end_time: endTime,
             created_at: new Date().toISOString()
           });
-          console.log('Booking saved to Firebase successfully');
+          console.log('[API] Booking saved to /bookings successfully.');
         } else {
-          console.warn('Firebase Admin not initialized, skipping DB save');
+          console.warn('[API] Firebase Admin not initialized, skipping /bookings save.');
         }
-      } catch (fbE) {
-        console.error('Firebase Booking Error (Non-blocking):', fbE);
+      } catch (fbE: any) {
+        console.error('[API] Firebase /bookings save error (non-blocking):', fbE.message);
       }
 
+      // ── Write appointment record to CRM /appointments collection ───────────
+      try {
+        if (adminDb) {
+          const ownerUserId = process.env.CRM_OWNER_USER_ID;
+          if (!ownerUserId) {
+            console.error('[CRM] CRM_OWNER_USER_ID missing — skipping appointment write.');
+          } else {
+            // Parse startTime (Eastern) into separate date and time fields
+            const startDate = new Date(startTime);
+
+            // date field: "2026-05-26"
+            const dateStr = startDate.toLocaleDateString('en-CA', {
+              timeZone: 'America/New_York'
+            });
+
+            // time field: "11:00 AM"
+            const timeStr = startDate.toLocaleTimeString('en-US', {
+              timeZone: 'America/New_York',
+              hour: 'numeric',
+              minute: '2-digit',
+              hour12: true
+            });
+
+            // sortableDateTime: full ISO string for CRM calendar sorting
+            const sortableDateTime = startDate.toISOString();
+
+            const appointmentId = generateCrmId();
+            const now = new Date().toISOString();
+
+            const appointmentRecord = {
+              id: appointmentId,
+              userId: ownerUserId,
+              firstName: firstName || '',
+              lastName: lastName || '',
+              customerName: `${firstName || ''} ${lastName || ''}`.trim(),
+              email: email || '',
+              phone: phone || '',
+              address: address || '',
+              city: '',
+              state: '',
+              zip: '',
+              location: address || '',
+              date: dateStr,
+              time: timeStr,
+              sortableDateTime: sortableDateTime,
+              notes: notes || '',
+              signingType: serviceName || 'General Notary',
+              actType: '',
+              docType: '',
+              docs: [],
+              status: 'Scheduled',
+              fee: 0,
+              agreedFee: 0,
+              offeredFee: 0,
+              amountCollected: 0,
+              amountOutstanding: 0,
+              estimatedProfit: 0,
+              totalJobCost: 0,
+              travelCost: 0,
+              printingCost: 0,
+              otherSigningCost: 0,
+              parkingTollsCost: 0,
+              milesDriven: 0,
+              mileageRate: 0.725,
+              roundTripMiles: true,
+              profitMarginPercent: 0,
+              paymentStatus: 'Not Sent',
+              paymentMethod: '',
+              paymentDueDate: '',
+              invoiceNumber: '',
+              invoiceSent: false,
+              scanbackStatus: 'Not Required',
+              companyId: '',
+              companyName: '',
+              signingCompany: '',
+              signers: [
+                {
+                  id: generateCrmId(),
+                  firstName: firstName || '',
+                  lastName: lastName || '',
+                  email: email || '',
+                  phone: phone || '',
+                  address: address || '',
+                  city: '',
+                  state: '',
+                  zip: ''
+                }
+              ],
+              googleCalendarEventId: googleCalendarEventId,
+              source: 'website',
+              createdBy: 'website-form',
+              createdAt: now,
+              updatedAt: now,
+            };
+
+            await adminDb.collection('appointments').doc(appointmentId).set(appointmentRecord);
+            console.log(`[CRM] Appointment created successfully. ID: ${appointmentId}`);
+          }
+        }
+      } catch (apptE: any) {
+        console.error('[CRM] Appointment write error (non-blocking):', apptE.message);
+      }
+
+      // Respond to client before running customer sync
       res.json({ success: true });
 
-      // After responding, sync the customer to CRM (non-blocking)
+      // ── Sync customer to CRM /customers collection (non-blocking) ──────────
       try {
         await syncToCrm({
           firstName,
@@ -486,8 +591,9 @@ async function startServer() {
           zip: ''
         });
       } catch (crmE) {
-        console.error('[CRM] Non-blocking CRM sync error during booking:', crmE);
+        console.error('[CRM] Non-blocking customer sync error during booking:', crmE);
       }
+
     } catch (error) {
       console.error('Calendar API Error:', error);
       res.status(500).json({ error: 'Failed to create calendar event' });
