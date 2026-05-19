@@ -13,18 +13,20 @@ export default function AreasServed() {
   }, []);
 
   const serviceAreas = [
-    "Mint Hill",
-    "Matthews",
-    "Stallings",
-    "Indian Trail",
-    "Monroe",
-    "Harrisburg",
-    "Concord",
-    "Kannapolis",
-    "Huntersville",
-    "NoDa (North Davidson)",
     "Ballantyne",
-    "Pineville"
+    "Concord",
+    "Harrisburg",
+    "Huntersville",
+    "Indian Trail",
+    "Kannapolis",
+    "Locust",
+    "Matthews",
+    "Midland",
+    "Mint Hill",
+    "Monroe",
+    "NoDa (North Davidson)",
+    "Pineville",
+    "Stallings"
   ];
 
   return (

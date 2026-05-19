@@ -51,6 +51,8 @@ import Gastonia from './pages/locations/Gastonia';
 import Salisbury from './pages/locations/Salisbury';
 import Monroe from './pages/locations/Monroe';
 import Matthews from './pages/locations/Matthews';
+import Midland from './pages/locations/Midland';
+import Locust from './pages/locations/Locust';
 import MintHillLoanSigning from './pages/locations/MintHillLoanSigning';
 import MatthewsLoanSigning from './pages/locations/MatthewsLoanSigning';
 import ConcordLoanSigning from './pages/locations/ConcordLoanSigning';
@@ -98,9 +100,11 @@ function AppContent() {
             <Route path="/locations/charlotte" element={<Charlotte />} />
             <Route path="/locations/concord" element={<Concord />} />
             <Route path="/locations/gastonia" element={<Gastonia />} />
-            <Route path="/locations/salisbury" element={<Salisbury />} />
-            <Route path="/locations/monroe" element={<Monroe />} />
+            <Route path="/locations/locust" element={<Locust />} />
             <Route path="/locations/matthews" element={<Matthews />} />
+            <Route path="/locations/midland" element={<Midland />} />
+            <Route path="/locations/monroe" element={<Monroe />} />
+            <Route path="/locations/salisbury" element={<Salisbury />} />
             <Route path="/locations/mint-hill-loan-signing-agent" element={<MintHillLoanSigning />} />
             <Route path="/locations/matthews-loan-signing-agent" element={<MatthewsLoanSigning />} />
             <Route path="/locations/concord-loan-signing-agent" element={<ConcordLoanSigning />} />

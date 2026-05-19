@@ -15,22 +15,34 @@ export default function Locations() {
       link: '/locations/concord-loan-signing-agent'
     },
     {
-      city: 'Mint Hill',
-      areas: 'Brighton Park, Farmwood, Olde Sycamore, Summerwood, Fairview Road',
-      image: '/mint-hill.jpg',
-      link: '/locations/mint-hill-loan-signing-agent'
-    },
-    {
       city: 'Gastonia',
       areas: 'Belmont, Mount Holly, Dallas, Bessemer City, Lowell, Stanley',
       image: '/gastiona.png',
       link: '/locations/gastonia'
     },
     {
-      city: 'Salisbury',
-      areas: 'China Grove, Faith, Rockwell, Spencer, Granite Quarry',
-      image: '/salisbury-nc.jpg',
-      link: '/locations/salisbury'
+      city: 'Locust',
+      areas: 'Stanfield, Oakboro, Red Bridge, Mission, Locust Town Center',
+      image: '/locust.png',
+      link: '/locations/locust'
+    },
+    {
+      city: 'Matthews',
+      areas: 'Waxhaw, Indian Trail, Weddington, Stallings, Wesley Chapel, Mint Hill',
+      image: '/matthews-1.jpg',
+      link: '/locations/matthews-loan-signing-agent'
+    },
+    {
+      city: 'Midland',
+      areas: 'Reed Gold Mine, Rob Wallace Park, Rocky River, Highway 24/27',
+      image: '/midland.png',
+      link: '/locations/midland'
+    },
+    {
+      city: 'Mint Hill',
+      areas: 'Brighton Park, Farmwood, Olde Sycamore, Summerwood, Fairview Road',
+      image: '/mint-hill.jpg',
+      link: '/locations/mint-hill-loan-signing-agent'
     },
     {
       city: 'Monroe',
@@ -39,10 +51,10 @@ export default function Locations() {
       link: '/locations/monroe'
     },
     {
-      city: 'Matthews',
-      areas: 'Waxhaw, Indian Trail, Weddington, Stallings, Wesley Chapel, Mint Hill',
-      image: '/matthews-1.jpg',
-      link: '/locations/matthews-loan-signing-agent'
+      city: 'Salisbury',
+      areas: 'China Grove, Faith, Rockwell, Spencer, Granite Quarry',
+      image: '/salisbury-nc.jpg',
+      link: '/locations/salisbury'
     }
   ];
 
