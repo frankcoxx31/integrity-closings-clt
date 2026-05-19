@@ -211,6 +211,148 @@ async function startServer() {
     });
   });
 
+  // --- CRM Integration ---
+  const CRM_CUSTOMER_COLLECTION = 'customers';
+  const ENABLE_CRM_SYNC = true;
+
+  /**
+   * Helper to generate a 9-character alphanumeric ID for CRM records
+   */
+  function generateCrmId() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 9; i++) {
+      result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+  }
+
+  /**
+   * Helper to sync a customer record to the CRM Firestore collection.
+   */
+  async function syncToCrm(customerData: any) {
+    const ownerUserId = process.env.CRM_OWNER_USER_ID;
+    
+    if (!adminDb || !ENABLE_CRM_SYNC) {
+      return null;
+    }
+
+    if (!ownerUserId) {
+      console.error('[CRM] CONFIG ERROR: CRM_OWNER_USER_ID is missing from environment variables. CRM sync failed.');
+      return null;
+    }
+
+    try {
+      const { email, phone, firstName, lastName } = customerData;
+      
+      // 1. Deduplication logic: check by email first, then phone
+      let existingDoc = null;
+
+      if (email) {
+        const emailQuery = await adminDb.collection(CRM_CUSTOMER_COLLECTION)
+          .where('userId', '==', ownerUserId)
+          .where('email', '==', email)
+          .limit(1)
+          .get();
+        if (!emailQuery.empty) {
+          existingDoc = emailQuery.docs[0];
+        }
+      }
+
+      if (!existingDoc && phone) {
+        const phoneQuery = await adminDb.collection(CRM_CUSTOMER_COLLECTION)
+          .where('userId', '==', ownerUserId)
+          .where('phone', '==', phone)
+          .limit(1)
+          .get();
+        if (!phoneQuery.empty) {
+          existingDoc = phoneQuery.docs[0];
+        }
+      }
+
+      const now = new Date().toISOString();
+      const fullName = `${firstName || ''} ${lastName || ''}`.trim();
+      
+      // Target payload following CRM schema
+      const payload = {
+        userId: ownerUserId,
+        firstName: firstName || '',
+        lastName: lastName || '',
+        fullName: fullName || '',
+        email: email || '',
+        phone: phone || '',
+        address: customerData.streetAddress || customerData.address || '',
+        city: customerData.city || '',
+        state: customerData.state || '',
+        zip: customerData.zip || '',
+        notes: customerData.notes || '',
+        customerType: customerData.customerType || 'General Client',
+        source: 'website',
+        status: 'new',
+        updatedAt: now,
+        updatedBy: 'website-form'
+      };
+
+      if (existingDoc) {
+        console.log(`[CRM] Found existing customer "${existingDoc.id}", updating record...`);
+        await existingDoc.ref.update(payload);
+        return existingDoc.id;
+      } else {
+        const customId = generateCrmId();
+        console.log(`[CRM] No existing customer found. Creating new record with ID: ${customId}`);
+        await adminDb.collection(CRM_CUSTOMER_COLLECTION).doc(customId).set({
+          ...payload,
+          id: customId,
+          createdAt: now,
+          createdBy: 'website-form',
+          tags: ['website-lead']
+        });
+        return customId;
+      }
+    } catch (error) {
+      console.error('[CRM] Sync Error:', error);
+      throw error;
+    }
+  }
+
+  // API route to handle contact form and CRM customer creation
+  app.post('/api/contact', async (req, res) => {
+    try {
+      const { firstName, lastName, email, phone, message } = req.body;
+      
+      if (!firstName || !lastName || !email) {
+        return res.status(400).json({ error: 'Missing required fields' });
+      }
+
+      // 1. Save to a general "messages" collection for this website specifically
+      if (adminDb) {
+        await adminDb.collection('messages').add({
+          firstName,
+          lastName,
+          email,
+          phone: phone || "",
+          message: message || "",
+          createdAt: new Date().toISOString()
+        });
+      }
+
+      // 2. Sync to CRM as a customer record
+      await syncToCrm({
+        firstName,
+        lastName,
+        email,
+        phone: phone || "",
+        notes: message || "",
+        customerType: 'General Client'
+      });
+
+      res.json({ success: true });
+    } catch (error) {
+      console.error('Contact API Error:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
   // API route to book calendar event
   app.post('/api/book', async (req, res) => {
     try {
@@ -269,6 +411,24 @@ async function startServer() {
       }
 
       res.json({ success: true });
+
+      // After booking, also sync the customer to CRM
+      try {
+        await syncToCrm({
+          firstName,
+          lastName,
+          email,
+          phone: phone || "",
+          notes: notes || "",
+          customerType: 'General Client',
+          streetAddress: address || "",
+          city: '',
+          state: '',
+          zip: ''
+        });
+      } catch (crmE) {
+        console.error('[CRM] Non-blocking CRM sync error during booking:', crmE);
+      }
     } catch (error) {
       console.error('Calendar API Error:', error);
       res.status(500).json({ error: 'Failed to create calendar event' });

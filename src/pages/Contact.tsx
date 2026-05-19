@@ -3,12 +3,52 @@ import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    // Reset the success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) throw new Error('Failed to send message');
+
+      setIsSubmitted(true);
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      // Reset the success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (err) {
+      console.error('Contact submit error:', err);
+      setSubmitError('There was an error sending your message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
   };
 
   return (
@@ -83,6 +123,12 @@ export default function Contact() {
             <div className="p-8 sm:p-12">
               <h2 className="text-2xl font-bold text-slate-900 mb-8">Send a Message</h2>
               
+              {submitError && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                  {submitError}
+                </div>
+              )}
+
               {isSubmitted ? (
                 <div className="bg-green-50 border border-green-200 text-green-800 rounded-xl p-8 text-center h-full flex flex-col justify-center items-center">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
@@ -98,31 +144,45 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">First Name</label>
-                      <input type="text" id="firstName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="John" />
+                      <input type="text" id="firstName" value={formData.firstName} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="John" />
                     </div>
                     <div>
                       <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
-                      <input type="text" id="lastName" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="Doe" />
+                      <input type="text" id="lastName" value={formData.lastName} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="Doe" />
                     </div>
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                    <input type="email" id="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="john@example.com" />
+                    <input type="email" id="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="john@example.com" />
                   </div>
 
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
-                    <input type="tel" id="phone" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="(555) 123-4567" />
+                    <input type="tel" id="phone" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="(555) 123-4567" />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                    <textarea id="message" required rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors resize-none" placeholder="How can we help you today?"></textarea>
+                    <textarea id="message" value={formData.message} onChange={handleInputChange} required rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors resize-none" placeholder="How can we help you today?"></textarea>
                   </div>
 
-                  <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-colors">
-                    Send Message
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-colors disabled:bg-blue-400 flex items-center justify-center"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      'Send Message'
+                    )}
                   </button>
                 </form>
               )}
