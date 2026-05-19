@@ -126,8 +126,12 @@ async function startServer() {
     let firebaseStatus = "NOT_CONFIGURED";
     let firebaseError = null;
     try {
-      const collections = await adminDb.listCollections();
-      firebaseStatus = `CONNECTED: Found ${collections.length} collections`;
+      if (adminDb) {
+        const collections = await adminDb.listCollections();
+        firebaseStatus = `CONNECTED: Found ${collections.length} collections`;
+      } else {
+        firebaseStatus = "SKIPPED: Firebase Admin not initialized";
+      }
     } catch (e) {
       firebaseStatus = "ERROR: " + e.message;
       firebaseError = e.message;
@@ -191,19 +195,23 @@ async function startServer() {
 
       // Save to Firebase
       try {
-        await adminDb.collection('bookings').add({
-          first_name: firstName,
-          last_name: lastName,
-          email,
-          phone: phone || "",
-          address: address || "",
-          notes: notes || "",
-          service_name: serviceName,
-          start_time: startTime,
-          end_time: endTime,
-          created_at: new Date().toISOString() // Using ISO string for now to match rules isValidBooking check
-        });
-        console.log('Booking saved to Firebase successfully');
+        if (adminDb) {
+          await adminDb.collection('bookings').add({
+            first_name: firstName,
+            last_name: lastName,
+            email,
+            phone: phone || "",
+            address: address || "",
+            notes: notes || "",
+            service_name: serviceName,
+            start_time: startTime,
+            end_time: endTime,
+            created_at: new Date().toISOString() // Using ISO string for now to match rules isValidBooking check
+          });
+          console.log('Booking saved to Firebase successfully');
+        } else {
+          console.warn('Firebase Admin not initialized, skipping DB save');
+        }
       } catch (fbE) {
         console.error('Firebase Booking Error (Non-blocking):', fbE);
       }
