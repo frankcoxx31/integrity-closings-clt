@@ -1,70 +1,112 @@
 import admin from 'firebase-admin';
 import { getFirestore } from 'firebase-admin/firestore';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Helper to get config safely
-const getFirebaseConfig = () => {
-  // 1. Try to find the platform-injected config
-  const configPath = path.resolve(__dirname, '../../firebase-applet-config.json');
-  if (fs.existsSync(configPath)) {
-    try {
-      const content = fs.readFileSync(configPath, 'utf8');
-      return { ...JSON.parse(content), source: 'APPLET_CONFIG' };
-    } catch (e) {
-      console.warn('Failed to parse firebase-applet-config.json:', e);
-    }
+/**
+ * Initializes Firebase Admin SDK.
+ * Primary:  GOOGLE_SERVICE_ACCOUNT_JSON (full JSON blob) — used on Hostinger
+ * Fallback: FIREBASE_PROJECT_ID + GOOGLE_CLIENT_EMAIL + GOOGLE_PRIVATE_KEY
+ */
+const initFirebase = (): admin.app.App | null => {
+  if (admin.apps.length) {
+    return admin.app();
   }
 
-  // 2. Try to load from GOOGLE_SERVICE_ACCOUNT_JSON env var (very common on Hostinger/Cloud Run)
+  // ── Path 1: Full service account JSON (Hostinger production) ──────────────
   const fullJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
-  if (fullJson && fullJson !== 'undefined' && fullJson !== 'null') {
+
+  if (!fullJson || fullJson === 'undefined' || fullJson === 'null') {
+    console.warn('[Firebase] GOOGLE_SERVICE_ACCOUNT_JSON is not set. Trying individual env vars.');
+  } else {
     try {
       const credentials = JSON.parse(fullJson);
-      return {
-        projectId: credentials.project_id,
+
+      if (!credentials.project_id) {
+        console.error('[Firebase] FATAL: GOOGLE_SERVICE_ACCOUNT_JSON parsed but project_id is missing. Check the JSON value in Hostinger.');
+        return null;
+      }
+      if (!credentials.client_email) {
+        console.error('[Firebase] FATAL: GOOGLE_SERVICE_ACCOUNT_JSON parsed but client_email is missing.');
+        return null;
+      }
+      if (!credentials.private_key) {
+        console.error('[Firebase] FATAL: GOOGLE_SERVICE_ACCOUNT_JSON parsed but private_key is missing.');
+        return null;
+      }
+
+      const app = admin.initializeApp({
         credential: admin.credential.cert(credentials),
-        source: 'SERVICE_ACCOUNT_JSON'
-      };
-    } catch (e) {
-      console.warn('Failed to parse GOOGLE_SERVICE_ACCOUNT_JSON for Firebase:', e);
+        projectId: credentials.project_id,
+      });
+
+      console.log(`[Firebase] Admin SDK initialized via GOOGLE_SERVICE_ACCOUNT_JSON. Project: ${credentials.project_id}`);
+      return app;
+
+    } catch (e: any) {
+      console.error('[Firebase] FATAL: Failed to parse GOOGLE_SERVICE_ACCOUNT_JSON:', e.message);
+      console.error('[Firebase] Make sure the Hostinger env var contains valid JSON with no extra quotes or escaping.');
+      return null;
     }
   }
 
-  // 3. Fallback to individual environment variables
-  return {
-    projectId: process.env.FIREBASE_PROJECT_ID || process.env.GCP_PROJECT || process.env.GOOGLE_CLOUD_PROJECT,
-    firestoreDatabaseId: process.env.FIREBASE_DATABASE_ID || '(default)',
-    source: 'ENV_VARS'
-  };
+  // ── Path 2: Individual env vars (local dev / fallback) ────────────────────
+  const projectId = process.env.FIREBASE_PROJECT_ID;
+  const clientEmail = process.env.GOOGLE_CLIENT_EMAIL;
+  const rawPrivateKey = process.env.GOOGLE_PRIVATE_KEY;
+
+  if (!projectId) {
+    console.error('[Firebase] FATAL: FIREBASE_PROJECT_ID is not set and GOOGLE_SERVICE_ACCOUNT_JSON is missing. Firebase cannot initialize.');
+    return null;
+  }
+
+  if (!clientEmail || !rawPrivateKey) {
+    console.error('[Firebase] FATAL: GOOGLE_CLIENT_EMAIL or GOOGLE_PRIVATE_KEY is missing. Firebase cannot initialize.');
+    return null;
+  }
+
+  try {
+    const privateKey = rawPrivateKey.replace(/\\n/g, '\n');
+    const app = admin.initializeApp({
+      credential: admin.credential.cert({ projectId, clientEmail, privateKey }),
+      projectId,
+    });
+    console.log(`[Firebase] Admin SDK initialized via individual env vars. Project: ${projectId}`);
+    return app;
+  } catch (e: any) {
+    console.error('[Firebase] FATAL: Failed to initialize with individual env vars:', e.message);
+    return null;
+  }
 };
 
-const config = getFirebaseConfig();
+const firebaseApp = initFirebase();
 
-// Initialize Firebase Admin
-if (!admin.apps.length && config.projectId) {
-  try {
-    const initOptions: any = {
-      projectId: config.projectId
-    };
-    if (config.credential) {
-      initOptions.credential = config.credential;
-    }
-    
-    admin.initializeApp(initOptions);
-    console.log(`[Firebase] Admin initialized using ${config.source} for project: ${config.projectId}`);
-  } catch (error) {
-    console.error('[Firebase] Admin initialization error:', error);
-  }
-} else if (!config.projectId) {
-  console.warn('[Firebase] Project ID missing. Database features will be unavailable.');
+// Always default to the (default) Firestore database unless explicitly set to something else.
+// Bug fix: when config comes from SERVICE_ACCOUNT_JSON, firestoreDatabaseId was undefined,
+// causing getFirestore(undefined) to be treated as a named DB lookup instead of the default.
+const rawDbId = process.env.FIREBASE_DATABASE_ID;
+const useDefaultDb =
+  !rawDbId ||
+  rawDbId.trim() === '' ||
+  rawDbId.trim() === '(default)' ||
+  rawDbId.trim() === 'undefined' ||
+  rawDbId.trim() === 'null';
+
+export const adminDb = firebaseApp
+  ? getFirestore(useDefaultDb ? undefined : rawDbId.trim())
+  : null;
+
+export const adminAuth = firebaseApp ? admin.auth() : null;
+
+// Loud startup warning so it's impossible to miss in Hostinger logs
+if (!firebaseApp) {
+  console.error('');
+  console.error('══════════════════════════════════════════════════════');
+  console.error('[Firebase] FATAL: Admin SDK did NOT initialize.');
+  console.error('[Firebase] All Firestore writes will be skipped.');
+  console.error('[Firebase] Fix: Set GOOGLE_SERVICE_ACCOUNT_JSON in Hostinger.');
+  console.error('══════════════════════════════════════════════════════');
+  console.error('');
 }
 
-export const adminDb = config.projectId 
-  ? getFirestore(config.firestoreDatabaseId === '(default)' ? undefined : config.firestoreDatabaseId)
-  : null;
-export const adminAuth = config.projectId ? admin.auth() : null;
+if (firebaseApp && !adminDb) {
+  console.error('[Firebase] FATAL: adminDb is null even though app initialized. Check FIREBASE_DATABASE_ID.');
+}
