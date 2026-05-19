@@ -232,8 +232,15 @@ async function startServer() {
    */
   async function syncToCrm(customerData: any) {
     const ownerUserId = process.env.CRM_OWNER_USER_ID;
+    console.log(`[CRM] syncToCrm called for: ${customerData.email || 'no-email'}`);
     
-    if (!adminDb || !ENABLE_CRM_SYNC) {
+    if (!adminDb) {
+      console.error('[CRM] ERROR: Firestore Admin SDK (adminDb) is not initialized.');
+      return null;
+    }
+
+    if (!ENABLE_CRM_SYNC) {
+      console.log('[CRM] Sync skipped: ENABLE_CRM_SYNC is false.');
       return null;
     }
 
@@ -242,6 +249,8 @@ async function startServer() {
       return null;
     }
 
+    console.log(`[CRM] Using Owner UID: ${ownerUserId}`);
+
     try {
       const { email, phone, firstName, lastName } = customerData;
       
@@ -249,6 +258,7 @@ async function startServer() {
       let existingDoc = null;
 
       if (email) {
+        console.log(`[CRM] Searching for existing customer with email: ${email}`);
         const emailQuery = await adminDb.collection(CRM_CUSTOMER_COLLECTION)
           .where('userId', '==', ownerUserId)
           .where('email', '==', email)
@@ -256,10 +266,12 @@ async function startServer() {
           .get();
         if (!emailQuery.empty) {
           existingDoc = emailQuery.docs[0];
+          console.log(`[CRM] Found match by email: ${existingDoc.id}`);
         }
       }
 
       if (!existingDoc && phone) {
+        console.log(`[CRM] Searching for existing customer with phone: ${phone}`);
         const phoneQuery = await adminDb.collection(CRM_CUSTOMER_COLLECTION)
           .where('userId', '==', ownerUserId)
           .where('phone', '==', phone)
@@ -267,6 +279,7 @@ async function startServer() {
           .get();
         if (!phoneQuery.empty) {
           existingDoc = phoneQuery.docs[0];
+          console.log(`[CRM] Found match by phone: ${existingDoc.id}`);
         }
       }
 
@@ -294,12 +307,12 @@ async function startServer() {
       };
 
       if (existingDoc) {
-        console.log(`[CRM] Found existing customer "${existingDoc.id}", updating record...`);
+        console.log(`[CRM] Updating existing customer record: ${existingDoc.id}`);
         await existingDoc.ref.update(payload);
         return existingDoc.id;
       } else {
         const customId = generateCrmId();
-        console.log(`[CRM] No existing customer found. Creating new record with ID: ${customId}`);
+        console.log(`[CRM] Creating NEW customer record with ID: ${customId}`);
         await adminDb.collection(CRM_CUSTOMER_COLLECTION).doc(customId).set({
           ...payload,
           id: customId,
@@ -307,25 +320,31 @@ async function startServer() {
           createdBy: 'website-form',
           tags: ['website-lead']
         });
+        console.log(`[CRM] Successfully created customer: ${customId}`);
         return customId;
       }
     } catch (error) {
-      console.error('[CRM] Sync Error:', error);
+      console.error('[CRM] Sync Error Exception:', error);
       throw error;
     }
   }
 
   // API route to handle contact form and CRM customer creation
   app.post('/api/contact', async (req, res) => {
+    console.log('[API] Received POST /api/contact');
+    console.log('[API] Request Body:', JSON.stringify(req.body, null, 2));
+
     try {
       const { firstName, lastName, email, phone, message } = req.body;
       
       if (!firstName || !lastName || !email) {
+        console.warn('[API] Validation failed: Missing required fields');
         return res.status(400).json({ error: 'Missing required fields' });
       }
 
       // 1. Save to a general "messages" collection for this website specifically
       if (adminDb) {
+        console.log('[API] Saving to "messages" collection...');
         await adminDb.collection('messages').add({
           firstName,
           lastName,
@@ -334,10 +353,14 @@ async function startServer() {
           message: message || "",
           createdAt: new Date().toISOString()
         });
+        console.log('[API] Saved to "messages" successfully.');
+      } else {
+        console.warn('[API] adminDb not available for "messages" save.');
       }
 
       // 2. Sync to CRM as a customer record
-      await syncToCrm({
+      console.log('[API] Initiating CRM sync...');
+      const customerId = await syncToCrm({
         firstName,
         lastName,
         email,
@@ -345,11 +368,12 @@ async function startServer() {
         notes: message || "",
         customerType: 'General Client'
       });
+      console.log(`[API] CRM sync completed. CustomerID: ${customerId || 'NONE'}`);
 
-      res.json({ success: true });
+      res.json({ success: true, customerId });
     } catch (error) {
-      console.error('Contact API Error:', error);
-      res.status(500).json({ error: 'Internal server error' });
+      console.error('[API] Contact API Error Exception:', error);
+      res.status(500).json({ error: 'Internal server error', details: error.message });
     }
   });
 

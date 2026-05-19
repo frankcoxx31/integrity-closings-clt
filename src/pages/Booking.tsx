@@ -218,13 +218,14 @@ export default function Booking() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to book appointment');
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.details || errorData.error || 'Failed to book appointment');
       }
 
       handleNext(); // Move to confirmation step
-    } catch (error) {
+    } catch (error: any) {
       console.error('Booking error:', error);
-      setSubmitError('There was an error scheduling your appointment. Please try again or call us.');
+      setSubmitError(error.message || 'There was an error scheduling your appointment. Please try again or call us.');
     } finally {
       setIsSubmitting(false);
     }

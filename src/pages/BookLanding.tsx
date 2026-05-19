@@ -258,10 +258,13 @@ export default function BookLanding() {
           endTime: endTime.toISOString(),
         }),
       });
-      if (!response.ok) throw new Error('Failed to book');
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.details || errorData.error || 'Failed to book');
+      }
       setStep(4); // Success step
-    } catch (error) {
-      setSubmitError('Booking failed. Please call (980) 372-4103.');
+    } catch (error: any) {
+      setSubmitError(error.message || 'Booking failed. Please call (980) 372-4103.');
     } finally {
       setIsSubmitting(false);
     }

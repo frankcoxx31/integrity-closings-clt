@@ -25,7 +25,10 @@ export default function Contact() {
         body: JSON.stringify(formData)
       });
 
-      if (!response.ok) throw new Error('Failed to send message');
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.details || errorData.error || 'Failed to send message');
+      }
 
       setIsSubmitted(true);
       // Reset form
@@ -36,11 +39,12 @@ export default function Contact() {
         phone: '',
         message: ''
       });
-      // Reset the success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (err) {
+      // Do not auto-reset isSubmitted too quickly, let them see it.
+      // But we can reset it after 10 seconds if we want.
+      setTimeout(() => setIsSubmitted(false), 10000);
+    } catch (err: any) {
       console.error('Contact submit error:', err);
-      setSubmitError('There was an error sending your message. Please try again.');
+      setSubmitError(err.message || 'There was an error sending your message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
