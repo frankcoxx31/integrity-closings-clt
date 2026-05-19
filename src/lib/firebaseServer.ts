@@ -1,70 +1,69 @@
-import admin from 'firebase-admin';
+import { initializeApp, cert, getApps } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+function parseServiceAccountJson(): any {
+  const raw = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+  if (!raw) throw new Error('GOOGLE_SERVICE_ACCOUNT_JSON is not set');
 
-// Helper to get config safely
-const getFirebaseConfig = () => {
-  // 1. Try to find the platform-injected config
-  const configPath = path.resolve(__dirname, '../../firebase-applet-config.json');
-  if (fs.existsSync(configPath)) {
+  const attempts = [
+    () => JSON.parse(raw),
+    () => JSON.parse(raw.replace(/\\{/g, '{').replace(/\\}/g, '}')),
+    () => JSON.parse(raw.replace(/\\{/g, '{').replace(/\\}/g, '}').replace(/\\"/g, '"')),
+    () => JSON.parse(raw.replace(/\\([^"\\\/bfnrtu])/g, '$1')),
+  ];
+
+  for (let i = 0; i < attempts.length; i++) {
     try {
-      const content = fs.readFileSync(configPath, 'utf8');
-      return { ...JSON.parse(content), source: 'APPLET_CONFIG' };
+      const result = attempts[i]();
+      console.log(`[Firebase] JSON parsed successfully on attempt ${i + 1}`);
+      return result;
     } catch (e) {
-      console.warn('Failed to parse firebase-applet-config.json:', e);
+      console.warn(`[Firebase] Parse attempt ${i + 1} failed`);
     }
   }
-
-  // 2. Try to load from GOOGLE_SERVICE_ACCOUNT_JSON env var (very common on Hostinger/Cloud Run)
-  const fullJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
-  if (fullJson && fullJson !== 'undefined' && fullJson !== 'null') {
-    try {
-      const credentials = JSON.parse(fullJson);
-      return {
-        projectId: credentials.project_id,
-        credential: admin.credential.cert(credentials),
-        source: 'SERVICE_ACCOUNT_JSON'
-      };
-    } catch (e) {
-      console.warn('Failed to parse GOOGLE_SERVICE_ACCOUNT_JSON for Firebase:', e);
-    }
-  }
-
-  // 3. Fallback to individual environment variables
-  return {
-    projectId: process.env.FIREBASE_PROJECT_ID || process.env.GCP_PROJECT || process.env.GOOGLE_CLOUD_PROJECT,
-    firestoreDatabaseId: process.env.FIREBASE_DATABASE_ID || '(default)',
-    source: 'ENV_VARS'
-  };
-};
-
-const config = getFirebaseConfig();
-
-// Initialize Firebase Admin
-if (!admin.apps.length && config.projectId) {
-  try {
-    const initOptions: any = {
-      projectId: config.projectId
-    };
-    if (config.credential) {
-      initOptions.credential = config.credential;
-    }
-    
-    admin.initializeApp(initOptions);
-    console.log(`[Firebase] Admin initialized using ${config.source} for project: ${config.projectId}`);
-  } catch (error) {
-    console.error('[Firebase] Admin initialization error:', error);
-  }
-} else if (!config.projectId) {
-  console.warn('[Firebase] Project ID missing. Database features will be unavailable.');
+  throw new Error('All JSON parse attempts failed for GOOGLE_SERVICE_ACCOUNT_JSON');
 }
 
-export const adminDb = config.projectId 
-  ? getFirestore(config.firestoreDatabaseId === '(default)' ? undefined : config.firestoreDatabaseId)
-  : null;
-export const adminAuth = config.projectId ? admin.auth() : null;
+function fixPrivateKey(key: string): string {
+  if (!key) return key;
+  key = key.replace(/\\n/g, '\n');
+  if (
+    key.includes('-----BEGIN RSA PRIVATE KEY-----') ||
+    key.includes('-----BEGIN PRIVATE KEY-----')
+  ) {
+    const header = key.match(/-----BEGIN [^-]+-----/)?.[0] || '-----BEGIN PRIVATE KEY-----';
+    const footer = key.match(/-----END [^-]+-----/)?.[0] || '-----END PRIVATE KEY-----';
+    const body = key
+      .replace(/-----BEGIN [^-]+-----/, '')
+      .replace(/-----END [^-]+-----/, '')
+      .replace(/\s+/g, '');
+    const lines = body.match(/.{1,64}/g)?.join('\n') || body;
+    return `${header}\n${lines}\n${footer}`;
+  }
+  return key;
+}
+
+let adminDb: FirebaseFirestore.Firestore | null = null;
+
+try {
+  const serviceAccount = parseServiceAccountJson();
+  serviceAccount.private_key = fixPrivateKey(serviceAccount.private_key);
+
+  if (!getApps().length) {
+    initializeApp({ credential: cert(serviceAccount) });
+  }
+
+  const rawDbId = process.env.FIREBASE_DATABASE_ID || '';
+  const useDefault =
+    !rawDbId ||
+    ['', '(default)', 'undefined', 'null'].includes(rawDbId.trim());
+
+  adminDb = useDefault ? getFirestore() : getFirestore(rawDbId.trim());
+  console.log(
+    `[Firebase] Connected to Firestore: ${useDefault ? 'default' : rawDbId.trim()}`
+  );
+} catch (e: any) {
+  console.error('[Firebase] Failed to initialize:', e?.message || e);
+}
+
+export { adminDb };
