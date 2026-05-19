@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
 import fs from 'fs';
 import { google } from 'googleapis';
+import { getSupabaseServer } from './src/lib/supabaseServer.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -142,8 +143,29 @@ async function startServer() {
       console.error('Health Check Auth Error:', error);
     }
 
+    // Test Supabase Connection
+    let supabaseStatus = "NOT_CONFIGURED";
+    let supabaseError = null;
+    try {
+      if (process.env.VITE_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+        const supabaseServer = getSupabaseServer();
+        const { data, error } = await supabaseServer.from('_test_health').select('*').limit(1);
+        // Note: _test_health might not exist, but valid API communication is enough
+        if (error && error.code !== 'PGRST116' && error.message !== 'relation "_test_health" does not exist') {
+           supabaseStatus = `FAILED: ${error.message}`;
+           supabaseError = error;
+        } else {
+           supabaseStatus = "CONNECTED: API reachable";
+        }
+      }
+    } catch (e) {
+      supabaseStatus = "ERROR: " + e.message;
+    }
+
     res.json({
       status: 'ok',
+      supabase: supabaseStatus,
+      supabase_error: supabaseError,
       google_auth_test: authTest,
       google_auth_error: authError,
       fallback_status: fallbackStatus,
