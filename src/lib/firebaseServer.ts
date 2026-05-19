@@ -21,73 +21,87 @@ const initFirebase = (): admin.app.App | null => {
 
     let credentials: any = null;
 
-    // ── Attempt 1: Parse directly ────────────────────────────────────────────
-    try {
-      credentials = JSON.parse(fullJson);
-      console.log('[Firebase] JSON parsed successfully on first attempt.');
-    } catch (e1: any) {
-      console.warn('[Firebase] Direct parse failed:', e1.message);
-      console.warn(`[Firebase] Raw value first 50 chars: [${fullJson.substring(0, 50)}]`);
-
-      // ── Attempt 2: Strip leading backslash-brace (Hostinger escaping) ──────
-      // Hostinger sometimes stores \{ instead of { at the start
+    // Helper: attempt JSON.parse and return null instead of throwing
+    const tryParse = (str: string): any | null => {
       try {
-        const stripped = fullJson.replace(/^\\+/, '').trim();
-        credentials = JSON.parse(stripped);
-        console.log('[Firebase] JSON parsed successfully after stripping leading backslashes.');
-      } catch (e2: any) {
-        console.warn('[Firebase] Strip-leading-backslash parse failed:', e2.message);
+        return JSON.parse(str);
+      } catch {
+        return null;
+      }
+    };
 
-        // ── Attempt 3: Unescape all backslash-escaped characters ─────────────
-        // Hostinger may double-escape the entire JSON string
-        try {
-          const unescaped = fullJson
-            .replace(/\\"/g, '"')   // \" → "
-            .replace(/\\n/g, '\n')  // \n → newline
-            .replace(/\\r/g, '')    // \r → strip
-            .replace(/\\t/g, '\t')  // \t → tab
-            .replace(/\\\\/g, '\\') // \\ → \
-            .trim();
-          credentials = JSON.parse(unescaped);
-          console.log('[Firebase] JSON parsed successfully after unescaping.');
-        } catch (e3: any) {
-          console.warn('[Firebase] Unescape parse failed:', e3.message);
+    // ── Attempt 1: Parse directly ────────────────────────────────────────────
+    credentials = tryParse(fullJson);
+    if (credentials) {
+      console.log('[Firebase] JSON parsed successfully on attempt 1 (direct).');
+    }
 
-          // ── Attempt 4: Treat as JSON string literal (double-encoded) ────────
-          // Some hosts wrap the JSON in an outer string: "{\"type\":\"service_account\"...}"
-          try {
-            const inner = JSON.parse(fullJson); // parse outer string
-            if (typeof inner === 'string') {
-              credentials = JSON.parse(inner);   // parse inner JSON
-              console.log('[Firebase] JSON parsed successfully after double-decode.');
-            } else {
-              credentials = inner;
-              console.log('[Firebase] JSON parsed successfully as already-decoded object.');
-            }
-          } catch (e4: any) {
-            console.error('[Firebase] FATAL: All JSON parse attempts failed.');
-            console.error(`[Firebase] Attempt 1 (direct):         ${e1.message}`);
-            console.error(`[Firebase] Attempt 2 (strip backslash): ${e2.message}`);
-            console.error(`[Firebase] Attempt 3 (unescape):        ${e3.message}`);
-            console.error(`[Firebase] Attempt 4 (double-decode):   ${e4.message}`);
-            console.error(`[Firebase] Raw value first 50 chars:    [${fullJson.substring(0, 50)}]`);
-            console.error(`[Firebase] Raw value last  50 chars:    [${fullJson.substring(fullJson.length - 50)}]`);
-            return null;
-          }
+    // ── Attempt 2: Fix Hostinger brace-escaping \{ and \} ───────────────────
+    // Hostinger escapes every { and } with a leading backslash
+    if (!credentials) {
+      const bracesFixed = fullJson.replace(/\\{/g, '{').replace(/\\}/g, '}');
+      credentials = tryParse(bracesFixed);
+      if (credentials) {
+        console.log('[Firebase] JSON parsed successfully on attempt 2 (brace-unescape).');
+      }
+    }
+
+    // ── Attempt 3: Fix braces AND unescape other characters ─────────────────
+    if (!credentials) {
+      const fullyUnescaped = fullJson
+        .replace(/\\{/g, '{')
+        .replace(/\\}/g, '}')
+        .replace(/\\"/g, '"')
+        .replace(/\\n/g, '\n')
+        .replace(/\\r/g, '')
+        .replace(/\\t/g, '\t')
+        .replace(/\\\\/g, '\\')
+        .trim();
+      credentials = tryParse(fullyUnescaped);
+      if (credentials) {
+        console.log('[Firebase] JSON parsed successfully on attempt 3 (full unescape).');
+      }
+    }
+
+    // ── Attempt 4: Strip ALL backslashes before non-special characters ───────
+    // Nuclear option: remove any backslash not followed by a legitimate escape
+    if (!credentials) {
+      const stripped = fullJson.replace(/\\([^"\\\/bfnrtu])/g, '$1');
+      credentials = tryParse(stripped);
+      if (credentials) {
+        console.log('[Firebase] JSON parsed successfully on attempt 4 (strip invalid escapes).');
+      }
+    }
+
+    // ── Attempt 5: Double-decode (outer string wrapping inner JSON) ──────────
+    if (!credentials) {
+      const inner = tryParse(fullJson);
+      if (typeof inner === 'string') {
+        credentials = tryParse(inner);
+        if (credentials) {
+          console.log('[Firebase] JSON parsed successfully on attempt 5 (double-decode).');
         }
       }
     }
 
+    if (!credentials) {
+      console.error('[Firebase] FATAL: All JSON parse attempts failed.');
+      console.error(`[Firebase] Raw value first 50 chars: [${fullJson.substring(0, 50)}]`);
+      console.error(`[Firebase] Raw value last  50 chars: [${fullJson.substring(fullJson.length - 50)}]`);
+      console.error('[Firebase] Char codes at start:', [...fullJson.substring(0, 10)].map(c => `${c}=${c.charCodeAt(0)}`).join(' '));
+      return null;
+    }
+
     // ── Validate required fields ─────────────────────────────────────────────
-    if (!credentials?.project_id) {
+    if (!credentials.project_id) {
       console.error('[Firebase] FATAL: Parsed JSON is missing project_id.');
       return null;
     }
-    if (!credentials?.client_email) {
+    if (!credentials.client_email) {
       console.error('[Firebase] FATAL: Parsed JSON is missing client_email.');
       return null;
     }
-    if (!credentials?.private_key) {
+    if (!credentials.private_key) {
       console.error('[Firebase] FATAL: Parsed JSON is missing private_key.');
       return null;
     }
@@ -117,9 +131,9 @@ const initFirebase = (): admin.app.App | null => {
 
   if (!clientEmail || !rawPrivateKey) {
     console.error('[Firebase] FATAL: client email or GOOGLE_PRIVATE_KEY is missing. Firebase cannot initialize.');
-    console.error(`[Firebase] GOOGLE_CLIENT_EMAIL:        ${process.env.GOOGLE_CLIENT_EMAIL ? 'SET' : 'MISSING'}`);
+    console.error(`[Firebase] GOOGLE_CLIENT_EMAIL:          ${process.env.GOOGLE_CLIENT_EMAIL ? 'SET' : 'MISSING'}`);
     console.error(`[Firebase] GOOGLE_SERVICE_ACCOUNT_EMAIL: ${process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? 'SET' : 'MISSING'}`);
-    console.error(`[Firebase] GOOGLE_PRIVATE_KEY:         ${process.env.GOOGLE_PRIVATE_KEY ? 'SET' : 'MISSING'}`);
+    console.error(`[Firebase] GOOGLE_PRIVATE_KEY:           ${process.env.GOOGLE_PRIVATE_KEY ? 'SET' : 'MISSING'}`);
     return null;
   }
 
