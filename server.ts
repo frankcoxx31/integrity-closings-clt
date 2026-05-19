@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
 import fs from 'fs';
 import { google } from 'googleapis';
-import { getSupabaseServer } from './src/lib/supabaseServer.js';
+import { getSupabaseServer } from './src/lib/supabaseServer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
