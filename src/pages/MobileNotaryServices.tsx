@@ -39,7 +39,7 @@ export default function MobileNotaryServices() {
               "name": "How much does a mobile notary cost in North Carolina?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The State of North Carolina regulates the notarial fee at a maximum of $10 per principal signature. In addition to this state-mandated fee, mobile notaries charge a separate travel/convenience fee which varies based on distance, time of day, and location."
+                "text": "The State of North Carolina regulates the notarial fee at a maximum of $10 per principal signature. In addition to this state-mandated fee, mobile notaries charge a separate travel fee which varies based on distance."
               }
             },
             {
@@ -220,7 +220,7 @@ export default function MobileNotaryServices() {
               },
               {
                 q: "How much does a mobile notary cost in North Carolina?",
-                a: "The State of North Carolina regulates the notarial fee at a maximum of $10 per principal signature. In addition to this state-mandated fee, mobile notaries charge a separate travel/convenience fee which varies based on distance, time of day, and location."
+                a: "The State of North Carolina regulates the notarial fee at a maximum of $10 per principal signature. In addition to this state-mandated fee, mobile notaries charge a separate travel fee which varies based on distance."
               },
               {
                 q: "Do you provide witnesses for document signings?",
