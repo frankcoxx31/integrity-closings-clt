@@ -7,6 +7,7 @@ interface Product {
   amazonUrl: string;
   image?: string;
   franksPick?: boolean;
+  buttonText?: string;
 }
 
 interface Section {
@@ -74,7 +75,7 @@ function ProductCard({ product }: { product: Product }) {
             className="flex items-center justify-center gap-2 bg-blue-950 text-white text-xs font-bold uppercase tracking-widest py-3 px-4 rounded-lg hover:bg-yellow-500 hover:text-blue-950 transition-colors duration-300"
           >
             <ShoppingCart className="w-4 h-4" />
-            Check Price on Amazon
+            {product.buttonText || 'Check Price on Amazon'}
           </a>
         </div>
       </div>
@@ -194,11 +195,13 @@ const sections: Section[] = [
     description: 'Signing software, scheduling tools, and e-notary platforms that keep your business running smoothly.',
     products: [
       {
-        name: 'Notarize.com (RON Platform)',
-        description: 'My top pick for Remote Online Notarization. Easy to use, compliant in most states, and keeps a secure digital audit trail for every session.',
+        name: 'Certified Trust Delivery Agent',
+        description: 'Get certified and stand out from the competition. This training program walks you through everything you need to become a trusted, professional trust delivery agent and grow your notary income.',
         stars: 5.0,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        amazonUrl: 'https://www.skool.com/signup?ref=ab105e0f05d449c1a72769eb3bafead7',
+        image: '/certified-trust-delivery-agent.jpg',
         franksPick: true,
+        buttonText: 'Enroll Now',
       },
       {
         name: 'Notary Gadget (Business Management Software)',
