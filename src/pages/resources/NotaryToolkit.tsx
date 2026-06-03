@@ -219,10 +219,11 @@ const sections: Section[] = [
     description: 'Notary bags, document organizers, and car accessories — stay mobile and look professional on every job.',
     products: [
       {
-        name: 'Solo New York Pro Slim Laptop Briefcase',
-        description: 'Professional, lightweight, and fits a 15.6" laptop plus all your notary supplies. This is what I carry to every single signing appointment.',
+        name: 'VANKEAN Premium Laptop Briefcase — Fits Up to 17.3", Expandable, Water-Repellent',
+        description: 'This is what I carry to every signing. Premium business shoulder bag with expandable storage, water-repellent exterior, and enough room for your laptop, journal, stamps, and full signing kit.',
         stars: 5.0,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        amazonUrl: 'https://amzn.to/3RZtyRZ',
+        image: '/vankean-laptop-briefcase.jpg',
         franksPick: true,
       },
       {
