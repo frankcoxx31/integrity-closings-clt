@@ -150,10 +150,11 @@ const sections: Section[] = [
     description: 'Stamps, journals, pens, embossers, and folders — the essentials every notary needs in their bag.',
     products: [
       {
-        name: 'Notary Rubber Stamp — Pre-Inked',
-        description: 'Clean, professional impressions every time. Pre-inked stamps last thousands of uses without re-inking — a must for busy notaries.',
+        name: 'ExcelMark Notary Stamp — Official State Seal, All 50 States',
+        description: 'Clean, professional impressions every time. Available for all 50 states with the official state seal — a must-have for every notary who wants to look sharp and stay compliant.',
         stars: 5.0,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        amazonUrl: 'https://amzn.to/4oePhSc',
+        image: '/excelmark-notary-stamp.jpg',
         franksPick: true,
       },
       {
