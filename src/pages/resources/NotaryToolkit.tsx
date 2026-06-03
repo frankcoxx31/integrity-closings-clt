@@ -270,10 +270,17 @@ export default function NotaryToolkit() {
     <div className="bg-gray-50 min-h-screen">
 
       {/* YouTube Banner */}
-      <div className="bg-red-600 text-white text-center py-2.5 px-4 flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest">
+      <div className="bg-red-600 text-white text-center py-2.5 px-4 flex items-center justify-center gap-4 text-sm font-bold uppercase tracking-widest flex-wrap">
         <Youtube className="w-5 h-5" />
         As Seen On My YouTube Channel
-        <Youtube className="w-5 h-5" />
+        <a
+          href="https://www.youtube.com/@IntegrityClosingsCLT"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 bg-white text-red-600 px-4 py-1 rounded-full text-xs font-extrabold hover:bg-red-50 transition-colors"
+        >
+          <Youtube className="w-3.5 h-3.5" /> Subscribe
+        </a>
       </div>
 
       {/* Sticky Section Nav */}
@@ -356,7 +363,7 @@ export default function NotaryToolkit() {
           Subscribe to my YouTube channel for real notary tips, gear reviews, signing walkthroughs, and everything I wish I knew when I started.
         </p>
         <a
-          href="https://youtube.com/@PLACEHOLDER"
+          href="https://www.youtube.com/@IntegrityClosingsCLT"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-white text-red-600 font-extrabold text-sm uppercase tracking-widest px-10 py-4 rounded-full hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
