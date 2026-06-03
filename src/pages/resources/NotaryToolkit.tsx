@@ -180,6 +180,13 @@ const sections: Section[] = [
         image: '/start-your-notary-business-book.jpg',
       },
       {
+        name: 'Amazon Basics Multipurpose Printer Paper — 8.5x11", 20lb, 92 Bright, 8 Reams (4,000 Sheets)',
+        description: 'Never run out mid-signing. 4,000 sheets of bright white 92-brightness paper delivers crisp, professional prints every time — stocked in bulk so you\'re always ready for high-volume signing packages.',
+        stars: 4.5,
+        amazonUrl: 'https://amzn.to/4g5bUpQ',
+        image: '/amazon-basics-printer-paper.jpg',
+      },
+      {
         name: 'Staples Recycled Legal Size File Folders — 1/3-Cut Tabs, Manila, 100/Box',
         description: 'Legal-size manila folders perfect for organizing signing packages. 30% recycled paper stock, 1/3-cut tabs for easy labeling — stock up and never run out on a busy signing day.',
         stars: 4.5,
