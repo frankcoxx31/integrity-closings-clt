@@ -120,10 +120,11 @@ const sections: Section[] = [
     description: 'Best laptops and iPads for notaries — fast, reliable, and built for the road.',
     products: [
       {
-        name: 'Apple iPad Pro 11" (M2) with Apple Pencil',
-        description: 'The ultimate signing tool. Lightweight, powerful, and perfect for RON (Remote Online Notarization) and digital document review.',
-        stars: 5.0,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        name: 'Microsoft Surface Pro 7+ 2-in-1 Tablet — Intel Core i7, 16GB RAM, 512GB SSD (Renewed)',
+        description: 'A powerhouse 2-in-1 tablet for notaries who need desktop performance on the road. 12.3" touchscreen, Windows 11 Pro, and all-day battery — perfect for RON sessions and document management.',
+        stars: 4.5,
+        amazonUrl: 'https://amzn.to/4x629xR',
+        image: '/microsoft-surface-pro-7.jpg',
         franksPick: true,
       },
       {
