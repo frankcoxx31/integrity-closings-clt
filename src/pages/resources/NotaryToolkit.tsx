@@ -172,10 +172,11 @@ const sections: Section[] = [
         image: '/linbsunne-gel-pens.jpg',
       },
       {
-        name: 'Notary Embosser Seal',
-        description: 'Adds a professional raised seal impression to your documents. Clients love the look and adds an extra layer of credibility to every notarization.',
-        stars: 4.0,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        name: 'Start Your Notary Public & Loan Signing Agent Business — The Insider\'s Guide to a Six-Figure Notary Side Hustle',
+        description: 'Everything you need to launch and grow a profitable notary business — all state requirements included. The go-to guide for notaries serious about building real income.',
+        stars: 5.0,
+        amazonUrl: 'https://amzn.to/4ema42H',
+        image: '/start-your-notary-business-book.jpg',
       },
       {
         name: 'Staples Recycled Legal Size File Folders — 1/3-Cut Tabs, Manila, 100/Box',
