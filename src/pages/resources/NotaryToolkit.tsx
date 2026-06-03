@@ -204,10 +204,12 @@ const sections: Section[] = [
         buttonText: 'Enroll Now',
       },
       {
-        name: 'Notary Gadget (Business Management Software)',
-        description: 'Built specifically for notaries. Track signings, mileage, income, and expenses all in one place. Makes tax time a breeze.',
-        stars: 4.5,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        name: 'High Performance Notary',
+        description: 'Take your notary business to the next level. High Performance Notary gives you the systems, strategies, and community to build a thriving, six-figure notary business.',
+        stars: 5.0,
+        amazonUrl: 'https://www.skool.com/signup?ref=ab105e0f05d449c1a72769eb3bafead7',
+        image: '/high-performance-notary.jpg',
+        buttonText: 'Enroll Now',
       },
       {
         name: 'DocuSign eSignature',
