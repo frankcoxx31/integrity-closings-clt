@@ -1,4 +1,4 @@
-import { Star, StarHalf, ShoppingCart, Youtube, Stamp, Laptop, Package, AppWindow, Briefcase, ExternalLink } from 'lucide-react';
+import { Star, StarHalf, ShoppingCart, Youtube, Stamp, Laptop, AppWindow, Briefcase } from 'lucide-react';
 
 interface Product {
   name: string;
