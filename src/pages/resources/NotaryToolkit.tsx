@@ -236,12 +236,12 @@ const sections: Section[] = [
         image: '/engpow-file-organizer.jpg',
       },
       {
-        name: 'Car Seat Back Organizer with Work Surface',
-        description: 'Turns your backseat into a mobile office. Organize supplies, hold documents, and have a flat surface ready before you walk into a signing.',
-        stars: 4.0,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        name: 'TRUNKCRATEPRO XL Heavy-Duty Trunk Organizer — 6 Adjustable Compartments, Non-Slip Base, Foldable',
+        description: 'Built for SUVs and trucks — 6 adjustable compartments with securing straps keep your notary supplies, printer, and signing packages from shifting on the way to every appointment.',
+        stars: 4.5,
+        amazonUrl: 'https://amzn.to/4eqgVXZ',
+        image: '/trunkcratepro-xl.jpg',
       },
-      // placeholder end bags
     ],
   },
 ];
