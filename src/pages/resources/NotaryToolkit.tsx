@@ -165,10 +165,11 @@ const sections: Section[] = [
         image: '/clever-fox-notary-journal.jpg',
       },
       {
-        name: 'SKILCRAFT B3 Aviator Multi-Color Pen (12-Pack)',
-        description: 'The signing pen of choice for professionals. Smooth black ink, comfortable grip, and clients actually comment on how nice they write.',
-        stars: 5.0,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        name: 'Linbsunne Gel Pens Black Ink 0.5mm Fine Point — Smooth Writing Retractable (12-Count)',
+        description: 'Ultra-fine 0.5mm tip delivers clean, precise signatures every time. Smooth retractable design, great grip, and clients love how they write — a notary bag essential.',
+        stars: 4.5,
+        amazonUrl: 'https://amzn.to/4o8lr1E',
+        image: '/linbsunne-gel-pens.jpg',
       },
       {
         name: 'Notary Embosser Seal',
