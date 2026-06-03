@@ -158,10 +158,11 @@ const sections: Section[] = [
         franksPick: true,
       },
       {
-        name: 'Notary Journal — 496 Entries',
-        description: 'A proper hard-cover notary journal with 496 entries. Keeps you legally protected and organized for every single signing appointment.',
+        name: 'Clever Fox Notary Journal Log Book — 612 Entries, Numbered Pages, Hardcover 8.5x11"',
+        description: '612 record entries with numbered pages and a durable hardcover — keeps you legally protected and perfectly organized for every signing. One of the best notary journals on the market.',
         stars: 4.5,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        amazonUrl: 'https://amzn.to/4dOXhWt',
+        image: '/clever-fox-notary-journal.jpg',
       },
       {
         name: 'SKILCRAFT B3 Aviator Multi-Color Pen (12-Pack)',
