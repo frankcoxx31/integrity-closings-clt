@@ -128,10 +128,11 @@ const sections: Section[] = [
         franksPick: true,
       },
       {
-        name: 'Lenovo IdeaPad Flex 5i Chromebook',
-        description: 'Affordable, fast, and runs all notary web platforms perfectly. Great for notaries who want a reliable laptop without the laptop price tag.',
-        stars: 4.5,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        name: 'Apple iPad 11-inch (A16) — 128GB, Wi-Fi 6, Liquid Retina Display, Silver',
+        description: 'The latest iPad with A16 chip, 12MP front and back cameras, Touch ID, and all-day battery life. Lightweight and powerful — ideal for mobile notaries handling digital documents and RON sessions.',
+        stars: 5.0,
+        amazonUrl: 'https://amzn.to/3PVCDL8',
+        image: '/apple-ipad-11.jpg',
       },
       {
         name: 'Samsung Galaxy Tab S9 FE',
