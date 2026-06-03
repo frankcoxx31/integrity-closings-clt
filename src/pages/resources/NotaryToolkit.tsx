@@ -240,6 +240,7 @@ const sections: Section[] = [
         stars: 4.0,
         amazonUrl: 'https://amzn.to/PLACEHOLDER',
       },
+      // placeholder end bags
     ],
   },
 ];
