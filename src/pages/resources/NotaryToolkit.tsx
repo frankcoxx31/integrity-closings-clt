@@ -228,10 +228,11 @@ const sections: Section[] = [
         franksPick: true,
       },
       {
-        name: 'Expanding File Accordion Document Organizer',
-        description: 'Keep multiple signing packages organized and separated. Color-coded tabs make it easy to grab the right documents at any appointment.',
+        name: 'ENGPOW Fireproof File Organizer Bag — 13-Pocket Accordion, Lock & Labels, Portable',
+        description: 'Fireproof, lockable, and portable with 13 accordion pockets and labels. Keeps your important notary documents, contracts, and records safe whether you\'re at home or on the road.',
         stars: 4.5,
-        amazonUrl: 'https://amzn.to/PLACEHOLDER',
+        amazonUrl: 'https://amzn.to/4fuP3nH',
+        image: '/engpow-file-organizer.jpg',
       },
       {
         name: 'Car Seat Back Organizer with Work Surface',
