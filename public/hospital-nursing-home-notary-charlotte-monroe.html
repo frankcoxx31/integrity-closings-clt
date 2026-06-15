@@ -1254,6 +1254,32 @@
      JAVASCRIPT
 ============================================================ -->
 <script>
+  // Strip logo background (same logic as Logo.tsx)
+  function stripLogoBg(img) {
+    const canvas = document.createElement('canvas');
+    canvas.width  = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx) return;
+    ctx.drawImage(img, 0, 0);
+    const data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const px   = data.data;
+    const bgR  = px[0], bgG = px[1], bgB = px[2];
+    const tol = 30, fade = 40;
+    for (let i = 0; i < px.length; i += 4) {
+      const d = Math.sqrt((px[i]-bgR)**2 + (px[i+1]-bgG)**2 + (px[i+2]-bgB)**2);
+      if (d <= tol)          px[i+3] = 0;
+      else if (d <= tol+fade) px[i+3] = Math.floor(((d-tol)/fade)*255);
+    }
+    ctx.putImageData(data, 0, 0);
+    img.src = canvas.toDataURL('image/png');
+  }
+
+  document.querySelectorAll('img[src="/logo.jpg"]').forEach(img => {
+    if (img.complete && img.naturalWidth) { stripLogoBg(img); }
+    else { img.addEventListener('load', () => stripLogoBg(img)); }
+  });
+
   // Navbar transparency on scroll
   const navbar = document.querySelector('.navbar');
   const hero   = document.querySelector('.hero');
