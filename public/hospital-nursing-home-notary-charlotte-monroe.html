@@ -167,12 +167,23 @@
        NAVBAR
     ============================================================ */
     .navbar {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
-      background: var(--navy);
+      background: transparent;
       padding: 0;
+      transition: background .3s ease, box-shadow .3s ease;
     }
+
+    .navbar.scrolled {
+      background: var(--navy);
+      box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    }
+
+    /* push content below fixed navbar */
+    .hero { padding-top: 120px; }
 
     .nav-inner {
       display: flex;
@@ -1243,6 +1254,16 @@
      JAVASCRIPT
 ============================================================ -->
 <script>
+  // Navbar transparency on scroll
+  const navbar = document.querySelector('.navbar');
+  const hero   = document.querySelector('.hero');
+  function updateNav() {
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    navbar.classList.toggle('scrolled', heroBottom <= 0);
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+
   // Footer year
   document.getElementById('footerYear').textContent = new Date().getFullYear();
 
