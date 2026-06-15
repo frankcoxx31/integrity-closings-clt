@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   const posts = [
     {
+      title: 'Why Charlotte Closing Attorneys Need a Trusted Mobile Signing Partner in 2026',
+      slug: 'why-charlotte-closing-attorneys-need-trusted-mobile-signing-partner-2026',
+      date: 'June 15, 2026',
+      excerpt: 'Charlotte\'s booming real estate market is putting pressure on closing attorneys to scale without sacrificing service. Here\'s why a trusted mobile signing partner is now a strategic necessity for law firms in the Queen City.',
+      imageUrl: 'https://cdn.marblism.com/xFn3vBAqQAS.webp'
+    },
+    {
       title: '7 Ways a Reliable Signing Agent Makes Your Closings Run Smoother',
       slug: '7-ways-reliable-signing-agent-makes-closings-run-smoother',
       date: 'May 31, 2026',
