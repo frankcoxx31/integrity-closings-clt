@@ -236,9 +236,10 @@
     .hero {
       background: var(--hero-bg);
       color: #fff;
-      padding: 80px 0 72px;
+      padding: 48px 0 64px;
       position: relative;
       overflow: hidden;
+      text-align: center;
     }
 
     .hero-bg-img {
@@ -253,11 +254,11 @@
       position: absolute;
       inset: 0;
       z-index: 1;
-      background: linear-gradient(160deg, rgba(186,220,255,.18) 0%, rgba(15,40,80,.82) 100%);
+      background: rgba(15, 23, 42, 0.80);
       pointer-events: none;
     }
 
-    .hero-content { position: relative; z-index: 2; max-width: 720px; }
+    .hero-content { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
 
     .hero-badge {
       display: inline-flex;
@@ -272,6 +273,8 @@
       color: rgba(255,255,255,.88);
       margin-bottom: 22px;
       letter-spacing: .02em;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-badge::before { content: '●'; color: #4ade80; font-size: .55rem; }
@@ -282,13 +285,13 @@
       font-size: 1.12rem;
       color: rgba(255,255,255,.82);
       max-width: 600px;
-      margin-bottom: 36px;
+      margin: 0 auto 36px;
       line-height: 1.7;
     }
 
     .hero-sub strong { color: var(--primary-text); }
 
-    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; justify-content: center; }
 
     .hero-trust {
       display: flex;
@@ -296,6 +299,7 @@
       gap: 18px;
       padding-top: 30px;
       border-top: 1px solid rgba(255,255,255,.12);
+      justify-content: center;
     }
 
     .trust-item {
