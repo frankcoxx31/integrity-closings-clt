@@ -1298,22 +1298,71 @@
   // Footer year
   document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-  // Lead form submit handler
-  // To wire this to a real backend, replace the body of this handler with a fetch() POST
-  // to Formspree, Netlify Forms, or your own endpoint.
-  document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+  // Lead form — posts to the same /api/contact endpoint as the main site contact form
+  document.getElementById('appointmentForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const name  = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const city  = document.getElementById('city').value;
-    if (!name || !phone || !city) {
+
+    const fullName = document.getElementById('name').value.trim();
+    const phone    = document.getElementById('phone').value.trim();
+    const city     = document.getElementById('city').value;
+
+    if (!fullName || !phone || !city) {
       alert('Please fill in your name, phone number, and city before submitting.');
       return;
     }
-    this.style.display = 'none';
-    const success = document.getElementById('formSuccess');
-    success.style.display = 'block';
-    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Split name into first / last for the CRM schema
+    const nameParts = fullName.split(' ');
+    const firstName = nameParts[0] || fullName;
+    const lastName  = nameParts.slice(1).join(' ') || '';
+
+    // Bundle landing-page-specific fields into the notes/message for CRM visibility
+    const facility = document.getElementById('facility').value.trim();
+    const docType  = document.getElementById('docType').value;
+    const urgency  = document.getElementById('urgency').value;
+    const notes    = document.getElementById('notes').value.trim();
+
+    const messageParts = [];
+    if (facility) messageParts.push(`Facility: ${facility}`);
+    if (city)     messageParts.push(`City: ${city}`);
+    if (docType)  messageParts.push(`Document Type: ${docType}`);
+    if (urgency)  messageParts.push(`Urgency: ${urgency}`);
+    if (notes)    messageParts.push(`Notes: ${notes}`);
+    const message = messageParts.join('\n');
+
+    const submitBtn = this.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email: document.getElementById('email').value.trim(),
+          phone,
+          message
+        })
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.details || err.error || 'Submission failed');
+      }
+
+      this.style.display = 'none';
+      const success = document.getElementById('formSuccess');
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Check Same-Day Availability';
+      alert('There was a problem submitting your request. Please call us directly at 980-372-4103.');
+      console.error('Form submission error:', err);
+    }
   });
 
   // Hide sticky bar when contact section is visible
