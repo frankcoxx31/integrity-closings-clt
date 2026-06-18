@@ -222,7 +222,7 @@ export default function Booking() {
         throw new Error(errorData.details || errorData.error || 'Failed to book appointment');
       }
 
-      handleNext(); // Move to confirmation step
+      window.location.href = '/thank-you.html';
     } catch (error: any) {
       console.error('Booking error:', error);
       setSubmitError(error.message || 'There was an error scheduling your appointment. Please try again or call us.');

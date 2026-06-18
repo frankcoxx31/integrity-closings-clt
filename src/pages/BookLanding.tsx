@@ -262,7 +262,7 @@ export default function BookLanding() {
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.details || errorData.error || 'Failed to book');
       }
-      setStep(4); // Success step
+      window.location.href = '/thank-you.html';
     } catch (error: any) {
       setSubmitError(error.message || 'Booking failed. Please call (980) 372-4103.');
     } finally {
