@@ -619,6 +619,16 @@ async function startServer() {
     });
   });
 
+  // Extensionless route for Google Ads sitelink
+  app.get('/service-locations-mobile-services-north-carolina', (req, res) => {
+    const filePath = path.join(process.cwd(), 'dist', 'service-locations-mobile-services-north-carolina.html');
+    if (fs.existsSync(filePath)) {
+      res.sendFile(filePath);
+    } else {
+      res.status(404).send('Page not found');
+    }
+  });
+
   // API route to download the build
   app.get('/website-build.zip', (req, res) => {
     const zipPath = path.join(__dirname, '.tmp', 'website-build.zip');
