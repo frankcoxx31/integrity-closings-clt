@@ -117,6 +117,13 @@ export default function Navbar() {
                         </button>
                         <div className="border-t border-white/10" />
                         <button
+                          onClick={() => { setServicesOpen(false); navigate('/estate-planning-notary-charlotte-nc'); }}
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                        >
+                          📜 Estate Notarizations
+                        </button>
+                        <div className="border-t border-white/10" />
+                        <button
                           onClick={() => { setServicesOpen(false); window.location.href = '/emergency-airport-notary-charlotte-clt.html'; }}
                           className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
                         >
@@ -204,6 +211,12 @@ export default function Navbar() {
                 className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
               >
                 📋 Loan Signing Agent
+              </button>
+              <button
+                onClick={() => { setIsOpen(false); navigate('/estate-planning-notary-charlotte-nc'); }}
+                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
+              >
+                📜 Estate Notarizations
               </button>
               <button
                 onClick={() => { setIsOpen(false); window.location.href = '/emergency-airport-notary-charlotte-clt.html'; }}
