@@ -222,6 +222,10 @@ export default function Booking() {
         throw new Error(errorData.details || errorData.error || 'Failed to book appointment');
       }
 
+      // Fire Google Ads conversion event before redirect
+      if (typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'conversion', { send_to: 'AW-17355177903/uEIWCN7xusAcEK__y9NA' });
+      }
       window.location.href = '/thank-you.html';
     } catch (error: any) {
       console.error('Booking error:', error);
