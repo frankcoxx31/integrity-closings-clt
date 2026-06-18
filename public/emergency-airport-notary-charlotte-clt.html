@@ -101,8 +101,8 @@
     .btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
     .btn-primary  { background: var(--primary); color: #fff; border-color: var(--primary); }
     .btn-primary:hover  { background: var(--primary-hover); border-color: var(--primary-hover); color: #fff; }
-    .btn-outline  { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
-    .btn-outline:hover  { background: rgba(255,255,255,.1); color: #fff; }
+    .btn-outline  { background: transparent; color: var(--navy); border-color: var(--navy); }
+    .btn-outline:hover  { background: var(--navy); color: #fff; }
     .btn-navy { background: var(--navy); color: #fff; border-color: var(--navy); }
     .btn-navy:hover { background: #1e3a8a; border-color: #1e3a8a; color: #fff; }
     .btn-lg { padding: 15px 32px; font-size: 1.02rem; }
@@ -123,14 +123,14 @@
     .nav-call svg { flex-shrink: 0; }
 
     /* ── Hero ─────────────────────────────────────────────── */
-    .hero { background: var(--hero-bg); color: #fff; padding: 88px 0 80px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(23,37,84,.96) 0%, rgba(15,23,42,.88) 100%); }
+    .hero { background: #ffffff; color: var(--navy); padding: 88px 0 80px; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .hero::before { display: none; }
     .hero-inner { position: relative; display: grid; gap: 48px; grid-template-columns: 1fr; align-items: center; }
     @media (min-width: 820px) { .hero-inner { grid-template-columns: 1fr 380px; } }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(185,88,9,.22); border: 1px solid rgba(185,88,9,.4); color: #fbbf24; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 18px; }
-    .hero h1 { color: #fff; margin-bottom: 18px; }
-    .hero-sub { font-size: 1.08rem; color: rgba(255,255,255,.78); line-height: 1.7; margin-bottom: 28px; max-width: 540px; }
-    .hero-trust { font-size: .85rem; color: rgba(255,255,255,.5); margin-top: 18px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-light); border: 1px solid #fcd34d; color: var(--accent); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 18px; }
+    .hero h1 { color: var(--navy); margin-bottom: 18px; }
+    .hero-sub { font-size: 1.08rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; max-width: 540px; }
+    .hero-trust { font-size: .85rem; color: var(--text-muted); margin-top: 18px; }
     .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
     .hero-graphic { display: flex; justify-content: center; }
     .hero-graphic svg { width: 100%; max-width: 340px; height: auto; opacity: .92; }
@@ -280,13 +280,13 @@
   <!-- ── Hero ─────────────────────────────────────────────── -->
   <section class="hero" aria-labelledby="hero-h1">
     <!-- Background travel-themed SVG graphic -->
-    <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:.04;pointer-events:none;" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <path d="M820 200 L720 170 L650 200 L600 180 L500 210 L400 185 L300 205 L200 175 L100 200 L50 190" stroke="white" stroke-width="2" fill="none" stroke-dasharray="8 6"/>
-      <circle cx="820" cy="200" r="10" fill="white"/>
-      <circle cx="100" cy="200" r="6" fill="white" opacity=".5"/>
-      <path d="M760 120 L780 110 L800 118 L785 125 Z" fill="white" opacity=".6"/>
-      <rect x="60" y="300" width="60" height="14" rx="4" fill="white" opacity=".3"/>
-      <rect x="130" y="295" width="90" height="20" rx="4" fill="white" opacity=".2"/>
+    <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;opacity:.06;pointer-events:none;" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <path d="M820 200 L720 170 L650 200 L600 180 L500 210 L400 185 L300 205 L200 175 L100 200 L50 190" stroke="#172554" stroke-width="2" fill="none" stroke-dasharray="8 6"/>
+      <circle cx="820" cy="200" r="10" fill="#172554"/>
+      <circle cx="100" cy="200" r="6" fill="#172554" opacity=".5"/>
+      <path d="M760 120 L780 110 L800 118 L785 125 Z" fill="#172554" opacity=".6"/>
+      <rect x="60" y="300" width="60" height="14" rx="4" fill="#172554" opacity=".3"/>
+      <rect x="130" y="295" width="90" height="20" rx="4" fill="#172554" opacity=".2"/>
     </svg>
 
     <div class="container">
@@ -314,29 +314,29 @@
         <div class="hero-graphic" aria-hidden="true">
           <svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg">
             <!-- Document -->
-            <rect x="80" y="40" width="140" height="180" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.2)" stroke-width="1.5"/>
-            <rect x="96" y="62" width="100" height="6" rx="3" fill="rgba(255,255,255,.25)"/>
-            <rect x="96" y="78" width="80" height="5" rx="2.5" fill="rgba(255,255,255,.15)"/>
-            <rect x="96" y="92" width="92" height="5" rx="2.5" fill="rgba(255,255,255,.15)"/>
-            <rect x="96" y="106" width="68" height="5" rx="2.5" fill="rgba(255,255,255,.15)"/>
+            <rect x="80" y="40" width="140" height="180" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+            <rect x="96" y="62" width="100" height="6" rx="3" fill="#172554"/>
+            <rect x="96" y="78" width="80" height="5" rx="2.5" fill="#cbd5e1"/>
+            <rect x="96" y="92" width="92" height="5" rx="2.5" fill="#cbd5e1"/>
+            <rect x="96" y="106" width="68" height="5" rx="2.5" fill="#cbd5e1"/>
             <!-- Signature line -->
-            <line x1="96" y1="180" x2="188" y2="180" stroke="rgba(255,255,255,.3)" stroke-width="1"/>
-            <path d="M96 174 Q104 168 110 174 Q116 180 124 170 Q130 162 136 168" stroke="#93c5fd" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <line x1="96" y1="180" x2="188" y2="180" stroke="#94a3b8" stroke-width="1"/>
+            <path d="M96 174 Q104 168 110 174 Q116 180 124 170 Q130 162 136 168" stroke="#2563eb" stroke-width="2" fill="none" stroke-linecap="round"/>
             <!-- Notary seal -->
-            <circle cx="174" cy="196" r="18" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3 2"/>
-            <circle cx="174" cy="196" r="12" fill="none" stroke="#fbbf24" stroke-width="1"/>
-            <text x="174" y="200" text-anchor="middle" fill="#fbbf24" font-size="10" font-family="serif">NC</text>
+            <circle cx="174" cy="196" r="18" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="3 2"/>
+            <circle cx="174" cy="196" r="12" fill="none" stroke="#b45309" stroke-width="1"/>
+            <text x="174" y="200" text-anchor="middle" fill="#b45309" font-size="10" font-family="serif">NC</text>
             <!-- Plane silhouette -->
             <g transform="translate(220, 58) rotate(-35)">
-              <path d="M0 8 L28 0 L26 5 L8 8 L26 11 L28 16 Z" fill="rgba(147,197,253,.6)"/>
-              <path d="M4 6 L14 0 L13 4 Z" fill="rgba(147,197,253,.4)"/>
-              <path d="M4 10 L14 16 L13 12 Z" fill="rgba(147,197,253,.4)"/>
+              <path d="M0 8 L28 0 L26 5 L8 8 L26 11 L28 16 Z" fill="#2563eb"/>
+              <path d="M4 6 L14 0 L13 4 Z" fill="#1d4ed8"/>
+              <path d="M4 10 L14 16 L13 12 Z" fill="#1d4ed8"/>
             </g>
             <!-- Clock urgency indicator -->
-            <circle cx="246" cy="196" r="22" fill="rgba(180,83,9,.18)" stroke="rgba(251,191,36,.4)" stroke-width="1.5"/>
-            <circle cx="246" cy="196" r="3" fill="#fbbf24"/>
-            <line x1="246" y1="196" x2="246" y2="180" stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="246" y1="196" x2="258" y2="200" stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="246" cy="196" r="22" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+            <circle cx="246" cy="196" r="3" fill="#b45309"/>
+            <line x1="246" y1="196" x2="246" y2="180" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="246" y1="196" x2="258" y2="200" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"/>
           </svg>
         </div>
       </div>
