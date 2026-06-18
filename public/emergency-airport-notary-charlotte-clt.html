@@ -748,18 +748,26 @@
 
   <!-- ── JavaScript ─────────────────────────────────────────── -->
   <script>
-    // Strip white background from logo so it renders cleanly on dark footer
+    // Strip logo background using tolerance-based approach (matches Logo.tsx)
     function stripLogoBg(img) {
-      const c = document.createElement('canvas');
+      var c = document.createElement('canvas');
       c.width = img.naturalWidth; c.height = img.naturalHeight;
-      const ctx = c.getContext('2d');
+      var ctx = c.getContext('2d', { willReadFrequently: true });
       ctx.drawImage(img, 0, 0);
-      const d = ctx.getImageData(0, 0, c.width, c.height);
-      for (let i = 0; i < d.data.length; i += 4) {
-        if (d.data[i] > 200 && d.data[i+1] > 200 && d.data[i+2] > 200) d.data[i+3] = 0;
+      var d = ctx.getImageData(0, 0, c.width, c.height);
+      var px = d.data;
+      var bgR = px[0], bgG = px[1], bgB = px[2];
+      var tolerance = 30, fade = 40;
+      for (var i = 0; i < px.length; i += 4) {
+        var dist = Math.sqrt(Math.pow(px[i]-bgR,2) + Math.pow(px[i+1]-bgG,2) + Math.pow(px[i+2]-bgB,2));
+        if (dist <= tolerance) {
+          px[i+3] = 0;
+        } else if (dist <= tolerance + fade) {
+          px[i+3] = Math.floor(((dist - tolerance) / fade) * 255);
+        }
       }
       ctx.putImageData(d, 0, 0);
-      img.src = c.toDataURL();
+      img.src = c.toDataURL('image/png');
     }
     document.querySelectorAll('img[src="/logo.jpg"]').forEach(function(img) {
       if (img.complete && img.naturalWidth) stripLogoBg(img);
