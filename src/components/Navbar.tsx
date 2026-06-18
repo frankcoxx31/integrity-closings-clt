@@ -7,7 +7,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const resourcesRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -16,6 +18,9 @@ export default function Navbar() {
     const handler = (e: MouseEvent) => {
       if (resourcesRef.current && !resourcesRef.current.contains(e.target as Node)) {
         setResourcesOpen(false);
+      }
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
       }
     };
     document.addEventListener('mousedown', handler);
@@ -80,7 +85,47 @@ export default function Navbar() {
             
             <div className="hidden lg:flex items-center space-x-8">
               {navLinks.map((link) =>
-                link.name === 'Resources' ? (
+                link.name === 'Services' ? (
+                  <div key={link.name} className="relative" ref={servicesRef}>
+                    <button
+                      onClick={() => setServicesOpen(o => !o)}
+                      className="flex items-center gap-1 text-white hover:text-blue-300 px-3 py-2 rounded-md text-base font-bold transition-colors focus:outline-none"
+                    >
+                      Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {servicesOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-60 bg-blue-950 border-t-2 border-yellow-400 shadow-xl rounded-b-lg overflow-hidden z-50">
+                        <button
+                          onClick={() => { setServicesOpen(false); navigate('/mobile-notary-charlotte-nc'); }}
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                        >
+                          All Services
+                        </button>
+                        <div className="border-t border-white/10" />
+                        <button
+                          onClick={() => { setServicesOpen(false); navigate('/hospital-notary'); }}
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                        >
+                          🏥 Hospital &amp; Nursing Home
+                        </button>
+                        <div className="border-t border-white/10" />
+                        <button
+                          onClick={() => { setServicesOpen(false); navigate('/loan-signing-agent-charlotte-nc'); }}
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                        >
+                          📋 Loan Signing Agent
+                        </button>
+                        <div className="border-t border-white/10" />
+                        <button
+                          onClick={() => { setServicesOpen(false); window.location.href = '/emergency-airport-notary-charlotte-clt.html'; }}
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                        >
+                          ✈️ Airport Notarizations
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                ) : link.name === 'Resources' ? (
                   <div key={link.name} className="relative" ref={resourcesRef}>
                     <button
                       onClick={() => setResourcesOpen(o => !o)}
@@ -148,6 +193,24 @@ export default function Navbar() {
                   {link.name}
                 </button>
               ))}
+              <button
+                onClick={() => { setIsOpen(false); navigate('/hospital-notary'); }}
+                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
+              >
+                🏥 Hospital &amp; Nursing Home
+              </button>
+              <button
+                onClick={() => { setIsOpen(false); navigate('/loan-signing-agent-charlotte-nc'); }}
+                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
+              >
+                📋 Loan Signing Agent
+              </button>
+              <button
+                onClick={() => { setIsOpen(false); window.location.href = '/emergency-airport-notary-charlotte-clt.html'; }}
+                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
+              >
+                ✈️ Airport Notarizations
+              </button>
               <button
                 onClick={() => { setIsOpen(false); navigate('/resources/notary-toolkit'); }}
                 className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-yellow-400 hover:text-yellow-300 hover:bg-blue-900 focus:outline-none"
