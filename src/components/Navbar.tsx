@@ -103,7 +103,7 @@ export default function Navbar() {
                         </button>
                         <div className="border-t border-white/10" />
                         <button
-                          onClick={() => { setServicesOpen(false); navigate('/hospital-notary'); }}
+                          onClick={() => { setServicesOpen(false); navigate('/hospital-notary-charlotte-nc'); }}
                           className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
                         >
                           🏥 Hospital &amp; Nursing Home
@@ -194,7 +194,7 @@ export default function Navbar() {
                 </button>
               ))}
               <button
-                onClick={() => { setIsOpen(false); navigate('/hospital-notary'); }}
+                onClick={() => { setIsOpen(false); navigate('/hospital-notary-charlotte-nc'); }}
                 className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
               >
                 🏥 Hospital &amp; Nursing Home
