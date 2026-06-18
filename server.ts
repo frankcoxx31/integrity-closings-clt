@@ -620,8 +620,8 @@ async function startServer() {
   });
 
   // Extensionless route for Google Ads sitelink
-  app.get('/service-locations-mobile-services-north-carolina', (req, res) => {
-    const filePath = path.join(process.cwd(), 'dist', 'service-locations-mobile-services-north-carolina.html');
+  app.get('/notary-service-locations-nc', (req, res) => {
+    const filePath = path.join(process.cwd(), 'dist', 'notary-service-locations-nc.html');
     if (fs.existsSync(filePath)) {
       res.sendFile(filePath);
     } else {
