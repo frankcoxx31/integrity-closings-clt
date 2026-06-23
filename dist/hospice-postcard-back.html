@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Postcard Back — Integrity Closings CLT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @media print {
+      @page { margin: 0; size: 8.5in 5.5in landscape; }
+      html, body { width: 8.5in; height: 5.5in; overflow: hidden; margin: 0; padding: 0; }
+      .no-print { display: none !important; }
+      .card { box-shadow: none !important; }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+
+    .no-print { text-align: center; margin-bottom: 20px; }
+    .no-print button {
+      background: #172554; color: #fff; border: none;
+      padding: 10px 24px; border-radius: 6px; font-size: .95rem;
+      font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif;
+    }
+    .no-print p { margin-top: 6px; font-size: .8rem; color: #64748b; }
+
+    /* Card is 8.5 x 5.5 landscape */
+    .card {
+      width: 8.5in;
+      height: 5.5in;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.15);
+      display: grid;
+      grid-template-columns: 1fr 2.8in;
+      overflow: hidden;
+    }
+
+    /* ── LEFT: message side ── */
+    .left {
+      background: #172554;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 44px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* decorative circle */
+    .left::before {
+      content: '';
+      position: absolute;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      border: 40px solid rgba(255,255,255,.04);
+      bottom: -80px; right: -80px;
+    }
+
+    .tag {
+      font-size: .6rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: #93c5fd; margin-bottom: 12px;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem; font-weight: 700; color: #fff;
+      line-height: 1.25; margin-bottom: 14px;
+    }
+
+    .sub {
+      font-size: .78rem; color: rgba(255,255,255,.65);
+      line-height: 1.6; margin-bottom: 20px;
+      max-width: 340px;
+    }
+
+    .bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .bullets li {
+      font-size: .74rem; color: rgba(255,255,255,.75);
+      display: flex; gap: 8px; align-items: flex-start;
+    }
+    .bullets li::before { content: '✓'; color: #93c5fd; font-weight: 700; flex-shrink: 0; }
+
+    .orange-bar {
+      margin-top: 22px;
+      background: #b45309;
+      border-radius: 5px;
+      padding: 9px 14px;
+      font-size: .74rem; font-weight: 700; color: #fff;
+      display: inline-block;
+      max-width: fit-content;
+    }
+
+    /* ── RIGHT: address / contact side ── */
+    .right {
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      padding: 28px 28px 18px;
+      border-left: 1px solid #e2e8f0;
+    }
+
+    /* Return address */
+    .return-addr {
+      font-size: .6rem; color: #94a3b8; line-height: 1.6;
+      margin-bottom: auto;
+    }
+    .return-addr strong { display: block; font-size: .64rem; color: #475569; margin-bottom: 2px; }
+
+    /* Stamp placeholder */
+    .stamp-box {
+      align-self: flex-end;
+      width: 60px; height: 72px;
+      border: 1.5px dashed #cbd5e1;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .5rem;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* Address lines */
+    .addr-lines {
+      margin-top: 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .addr-line {
+      height: 1px; background: #e2e8f0; margin-bottom: 16px;
+    }
+
+    /* CTA block */
+    .cta-block {
+      margin-top: auto;
+      background: #172554;
+      border-radius: 7px;
+      padding: 12px 16px;
+      text-align: center;
+    }
+    .cta-block .cta-label {
+      font-size: .58rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: #93c5fd; margin-bottom: 3px;
+    }
+    .cta-block .cta-phone {
+      font-size: 1.25rem; font-weight: 700; color: #fff;
+      font-family: 'Inter', sans-serif; display: block; margin-bottom: 2px;
+    }
+    .cta-block .cta-sub {
+      font-size: .6rem; color: rgba(255,255,255,.5);
+    }
+
+    /* QR placeholder */
+    .qr-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .qr-box {
+      width: 54px; height: 54px;
+      border: 2px solid #e2e8f0;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    /* Simple QR-like pattern using CSS */
+    .qr-box svg { width: 46px; height: 46px; }
+    .qr-text {
+      font-size: .58rem; color: #64748b; line-height: 1.5;
+    }
+    .qr-text strong { display: block; font-size: .62rem; color: #172554; }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <p>Print settings: Landscape · Paper size 8.5×5.5 in · Background graphics ON</p>
+  </div>
+
+  <div class="card">
+
+    <!-- LEFT MESSAGE SIDE -->
+    <div class="left">
+      <div class="tag">Mobile Notary · Charlotte, NC</div>
+      <div class="headline">We Come to<br>the Bedside.</div>
+      <p class="sub">When a family can't leave the bedside to find a notary, we go to them — at the hospital, nursing home, or hospice facility. Same-day and after-hours, throughout Charlotte.</p>
+      <ul class="bullets">
+        <li>Power of Attorney &amp; Healthcare Directives</li>
+        <li>Living Wills &amp; Advance Directives</li>
+        <li>Deeds, Affidavits &amp; Estate Documents</li>
+        <li>Atrium Health · Novant Health · All area facilities</li>
+      </ul>
+      <div class="orange-bar">Same Day &nbsp;·&nbsp; After Hours &nbsp;·&nbsp; Weekends</div>
+    </div>
+
+    <!-- RIGHT MAILING SIDE -->
+    <div class="right">
+
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div class="return-addr">
+          <strong>Integrity Closings CLT</strong>
+          Frank L. Coxx, NC Notary Public<br>
+          Charlotte, NC<br>
+          integrityclosingsclt.com
+        </div>
+        <div class="stamp-box">Place<br>Stamp<br>Here</div>
+      </div>
+
+      <!-- Address lines for handwriting -->
+      <div class="addr-lines">
+        <div class="addr-line"></div>
+        <div class="addr-line"></div>
+        <div class="addr-line"></div>
+      </div>
+
+      <div class="cta-block">
+        <div class="cta-label">Call or Text Anytime</div>
+        <span class="cta-phone">980-372-4103</span>
+        <div class="cta-sub">fcoxx@integrityclosingsclt.com</div>
+      </div>
+
+      <div class="qr-wrap" style="margin-top:10px;">
+        <div class="qr-box">
+          <!-- Simple QR-style placeholder grid -->
+          <svg viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg" fill="#172554">
+            <rect x="2" y="2" width="14" height="14" rx="1.5"/>
+            <rect x="4" y="4" width="10" height="10" rx="1" fill="#fff"/>
+            <rect x="6" y="6" width="6" height="6" rx="0.5"/>
+            <rect x="30" y="2" width="14" height="14" rx="1.5"/>
+            <rect x="32" y="4" width="10" height="10" rx="1" fill="#fff"/>
+            <rect x="34" y="6" width="6" height="6" rx="0.5"/>
+            <rect x="2" y="30" width="14" height="14" rx="1.5"/>
+            <rect x="4" y="32" width="10" height="10" rx="1" fill="#fff"/>
+            <rect x="6" y="34" width="6" height="6" rx="0.5"/>
+            <rect x="20" y="2" width="4" height="4"/>
+            <rect x="26" y="2" width="2" height="2"/>
+            <rect x="20" y="8" width="2" height="4"/>
+            <rect x="24" y="6" width="4" height="2"/>
+            <rect x="20" y="20" width="6" height="2"/>
+            <rect x="28" y="20" width="4" height="4"/>
+            <rect x="34" y="20" width="4" height="2"/>
+            <rect x="20" y="24" width="2" height="6"/>
+            <rect x="24" y="26" width="4" height="4"/>
+            <rect x="30" y="28" width="6" height="2"/>
+            <rect x="38" y="24" width="6" height="2"/>
+            <rect x="20" y="32" width="4" height="2"/>
+            <rect x="26" y="30" width="2" height="6"/>
+            <rect x="30" y="34" width="4" height="2"/>
+            <rect x="36" y="30" width="2" height="6"/>
+            <rect x="40" y="36" width="4" height="4"/>
+            <rect x="2" y="20" width="4" height="2"/>
+            <rect x="8" y="20" width="2" height="4"/>
+            <rect x="12" y="22" width="4" height="2"/>
+            <rect x="2" y="24" width="2" height="4"/>
+          </svg>
+        </div>
+        <div class="qr-text">
+          <strong>Scan to visit our site</strong>
+          integrityclosingsclt.com<br>
+          Book online or call directly
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
