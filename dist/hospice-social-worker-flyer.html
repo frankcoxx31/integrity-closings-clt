@@ -7,10 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     @media print {
-      body { margin: 0; padding: 0; background: #fff; }
-      .no-print { display: none !important; }
       @page { margin: 0; size: 8.5in 11in portrait; }
-      .sheet { box-shadow: none !important; }
+      html { height: 11in; overflow: hidden; }
+      body { margin: 0; padding: 0; background: #fff; height: 11in; overflow: hidden; }
+      .no-print { display: none !important; }
+      .sheet { box-shadow: none !important; width: 8.5in !important; height: 11in !important; overflow: hidden !important; }
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
