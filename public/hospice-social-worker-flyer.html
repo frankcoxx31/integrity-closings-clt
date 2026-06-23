@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospice & Social Worker Flyer — Integrity Closings CLT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @media print {
+      body { margin: 0; padding: 0; background: #fff; }
+      .no-print { display: none !important; }
+      @page { margin: 0; size: letter; }
+      .sheet { box-shadow: none; }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; display: flex; flex-direction: column; align-items: center; padding: 32px 16px; min-height: 100vh; }
+
+    .no-print { text-align: center; margin-bottom: 24px; }
+    .no-print button { background: #172554; color: #fff; border: none; padding: 12px 28px; border-radius: 6px; font-size: 1rem; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; }
+    .no-print button:hover { background: #1e3a8a; }
+    .no-print p { margin-top: 8px; font-size: .85rem; color: #64748b; }
+
+    .sheet {
+      width: 8.5in;
+      min-height: 11in;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.12);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .sheet-header {
+      background: #172554;
+      padding: 36px 48px 30px;
+      text-align: center;
+    }
+    .header-eyebrow {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 12px;
+    }
+    .header-h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .header-sub {
+      font-size: .95rem;
+      color: rgba(255,255,255,.7);
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* Urgent strip */
+    .urgent-strip {
+      background: #b45309;
+      padding: 14px 48px;
+      text-align: center;
+      font-size: .95rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .02em;
+    }
+    .urgent-strip span { color: #fef3c7; }
+
+    /* Body */
+    .sheet-body { padding: 36px 48px; flex: 1; }
+
+    /* Situation section */
+    .situation-intro { margin-bottom: 30px; }
+    .situation-intro p { font-size: .95rem; color: #334155; line-height: 1.7; }
+
+    /* Scenarios */
+    .scenarios { margin-bottom: 32px; }
+    .scenarios h2 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #172554; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+    .scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .scenario-card { background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #2563eb; border-radius: 6px; padding: 14px 16px; }
+    .scenario-card h4 { font-size: .85rem; font-weight: 700; color: #172554; margin-bottom: 5px; font-family: 'Inter', sans-serif; }
+    .scenario-card p { font-size: .82rem; color: #64748b; line-height: 1.55; }
+
+    /* What we do */
+    .services-section { margin-bottom: 32px; }
+    .services-section h2 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #172554; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+    .services-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .services-col h4 { font-size: .82rem; font-weight: 700; color: #172554; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px; font-family: 'Inter', sans-serif; }
+    .services-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .services-col ul li { font-size: .85rem; color: #475569; display: flex; gap: 8px; align-items: flex-start; }
+    .services-col ul li::before { content: '✓'; color: #2563eb; font-weight: 700; flex-shrink: 0; }
+
+    /* Contact callout */
+    .contact-callout {
+      background: #172554;
+      border-radius: 10px;
+      padding: 28px 32px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .callout-left h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #fff; margin-bottom: 8px; }
+    .callout-left p { font-size: .88rem; color: rgba(255,255,255,.7); line-height: 1.6; }
+    .callout-right { text-align: center; flex-shrink: 0; }
+    .callout-phone { font-size: 1.5rem; font-weight: 700; color: #93c5fd; font-family: 'Inter', sans-serif; display: block; margin-bottom: 4px; }
+    .callout-label { font-size: .75rem; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .08em; }
+
+    /* About */
+    .about-bar { display: flex; gap: 16px; align-items: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; }
+    .about-avatar { width: 48px; height: 48px; border-radius: 50%; background: #172554; color: #93c5fd; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .about-text h4 { font-size: .88rem; font-weight: 700; color: #172554; margin-bottom: 3px; font-family: 'Inter', sans-serif; }
+    .about-text p { font-size: .8rem; color: #64748b; line-height: 1.5; }
+
+    /* Footer */
+    .sheet-footer { background: #0f172a; padding: 14px 48px; display: flex; justify-content: space-between; align-items: center; }
+    .sheet-footer p { font-size: .75rem; color: rgba(255,255,255,.4); }
+
+    @media (max-width: 900px) {
+      .sheet { width: 100%; min-height: auto; }
+      .scenario-grid, .services-two-col { grid-template-columns: 1fr; }
+      .contact-callout { grid-template-columns: 1fr; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <p>Print as a half-sheet (scale to 50%) or full page. Leave at nurses' stations, social work offices, and care facility front desks.</p>
+  </div>
+
+  <div class="sheet">
+
+    <div class="sheet-header">
+      <div class="header-eyebrow">For Hospice & Social Work Professionals</div>
+      <h1 class="header-h1">When a Family Needs a Notary<br>and Can't Leave the Bedside</h1>
+      <p class="header-sub">We come directly to the patient — at the hospital, nursing home, or hospice facility. Same-day and after-hours available throughout the Charlotte area.</p>
+    </div>
+
+    <div class="urgent-strip">
+      Available Same Day &nbsp;·&nbsp; After Hours &nbsp;·&nbsp; Weekends &nbsp;&nbsp;<span>Call or Text: 980-372-4103</span>
+    </div>
+
+    <div class="sheet-body">
+
+      <div class="situation-intro">
+        <p>When a patient or resident urgently needs legal documents notarized — and their family can't leave them to find a notary — Integrity Closings CLT is the resource you can hand to that family right now. We specialize in bedside notarizations and understand how to work quietly and professionally in care settings.</p>
+      </div>
+
+      <div class="scenarios">
+        <h2>Situations We Handle Every Week</h2>
+        <div class="scenario-grid">
+          <div class="scenario-card">
+            <h4>No Power of Attorney in Place</h4>
+            <p>A family discovers their loved one has no POA and decisions need to be made. We notarize the document at bedside while the patient is still able to sign.</p>
+          </div>
+          <div class="scenario-card">
+            <h4>Healthcare Directive Needed</h4>
+            <p>A patient wants to document their end-of-life wishes before it's too late. We handle advance directives and healthcare POA with care and discretion.</p>
+          </div>
+          <div class="scenario-card">
+            <h4>Family Arriving from Out of Town</h4>
+            <p>A family member flies in and needs documents notarized immediately. We can meet them at the facility the same day they arrive.</p>
+          </div>
+          <div class="scenario-card">
+            <h4>Property or Financial Decisions</h4>
+            <p>A patient needs to sign a deed, financial POA, or estate document while hospitalized. We travel to them — no transportation required.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-section">
+        <h2>Documents We Notarize at the Bedside</h2>
+        <div class="services-two-col">
+          <div class="services-col">
+            <h4>Estate & Legal</h4>
+            <ul>
+              <li>Durable Power of Attorney</li>
+              <li>Healthcare Power of Attorney</li>
+              <li>Living Wills & Advance Directives</li>
+              <li>Trust Documents</li>
+              <li>Last Will & Testament</li>
+            </ul>
+          </div>
+          <div class="services-col">
+            <h4>Property & Financial</h4>
+            <ul>
+              <li>Deeds (Warranty, Quitclaim)</li>
+              <li>Financial Affidavits</li>
+              <li>Real estate documents</li>
+              <li>General Affidavits</li>
+              <li>Business documents</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-callout">
+        <div class="callout-left">
+          <h3>Give This Number to the Family</h3>
+          <p>When a family asks where to find a notary, hand them this flyer. Frank responds quickly, explains the process clearly, and handles the appointment with the professionalism and compassion the situation calls for.</p>
+          <p style="margin-top:8px;font-size:.82rem;color:rgba(255,255,255,.5);">We follow all hospital visitor protocols and coordinate with nursing staff before entering patient rooms.</p>
+        </div>
+        <div class="callout-right">
+          <span class="callout-phone">980-372-4103</span>
+          <span class="callout-label">Call or Text Anytime</span>
+          <div style="margin-top:10px;font-size:.78rem;color:rgba(255,255,255,.5);">fcoxx@integrityclosingsclt.com</div>
+          <div style="margin-top:3px;font-size:.78rem;color:rgba(255,255,255,.5);">integrityclosingsclt.com</div>
+        </div>
+      </div>
+
+      <div class="about-bar">
+        <div class="about-avatar">FC</div>
+        <div class="about-text">
+          <h4>Frank Lamon Coxx — Integrity Closings CLT &nbsp;·&nbsp; NC Commissioned Notary Public</h4>
+          <p>Charlotte-area mobile notary specializing in hospital, nursing home, and hospice bedside notarizations. Serving Atrium Health, Novant Health, and care facilities throughout Charlotte, Mint Hill, Matthews, Monroe, Indian Trail, Waxhaw, Pineville, and surrounding areas.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sheet-footer">
+      <p>Integrity Closings CLT · Charlotte, NC · integrityclosingsclt.com · 980-372-4103</p>
+      <p>Notarization services only — not legal advice.</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

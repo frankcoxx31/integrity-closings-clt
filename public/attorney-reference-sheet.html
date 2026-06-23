@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attorney Reference Sheet — Integrity Closings CLT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @media print {
+      body { margin: 0; padding: 0; }
+      .no-print { display: none !important; }
+      @page { margin: 0.5in; size: letter; }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; display: flex; flex-direction: column; align-items: center; padding: 32px 16px; min-height: 100vh; }
+
+    .no-print { text-align: center; margin-bottom: 24px; }
+    .no-print button { background: #172554; color: #fff; border: none; padding: 12px 28px; border-radius: 6px; font-size: 1rem; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; }
+    .no-print button:hover { background: #1e3a8a; }
+    .no-print p { margin-top: 8px; font-size: .85rem; color: #64748b; }
+
+    .sheet {
+      width: 8.5in;
+      min-height: 11in;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .sheet-header {
+      background: #172554;
+      padding: 32px 40px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .header-left h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .header-left p { color: rgba(255,255,255,.65); font-size: .85rem; }
+    .header-right { text-align: right; }
+    .header-right .phone { font-size: 1.3rem; font-weight: 700; color: #93c5fd; font-family: 'Inter', sans-serif; }
+    .header-right .email { color: rgba(255,255,255,.6); font-size: .82rem; margin-top: 4px; }
+    .header-right .web { color: rgba(255,255,255,.6); font-size: .82rem; margin-top: 2px; }
+
+    /* Tagline strip */
+    .tagline-strip {
+      background: #2563eb;
+      padding: 12px 40px;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: .03em;
+    }
+
+    /* Body */
+    .sheet-body { padding: 32px 40px; flex: 1; }
+
+    /* Intro */
+    .intro { margin-bottom: 28px; }
+    .intro p { font-size: .95rem; color: #334155; line-height: 1.7; }
+
+    /* Two column layout */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+
+    .box { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+    .box-header { background: #172554; padding: 10px 16px; }
+    .box-header h3 { font-family: 'Playfair Display', Georgia, serif; font-size: .95rem; font-weight: 700; color: #fff; }
+    .box-body { padding: 14px 16px; }
+    .box-body ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .box-body ul li { font-size: .85rem; color: #475569; display: flex; gap: 8px; align-items: flex-start; }
+    .box-body ul li::before { content: '✓'; color: #2563eb; font-weight: 700; flex-shrink: 0; font-size: .8rem; margin-top: 1px; }
+
+    /* How it works */
+    .how-section { margin-bottom: 28px; }
+    .how-section h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-weight: 700; color: #172554; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+    .steps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .step-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; background: #172554; color: #fff; font-weight: 700; font-size: .82rem; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; font-family: 'Inter', sans-serif; }
+    .step-box h4 { font-size: .82rem; font-weight: 700; color: #172554; margin-bottom: 4px; font-family: 'Inter', sans-serif; }
+    .step-box p { font-size: .78rem; color: #64748b; line-height: 1.5; }
+
+    /* About */
+    .about-section { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px; margin-bottom: 24px; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; }
+    .about-avatar { width: 52px; height: 52px; border-radius: 50%; background: #172554; color: #93c5fd; font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .about-text h3 { font-family: 'Playfair Display', serif; font-size: .95rem; color: #172554; margin-bottom: 3px; }
+    .about-text p { font-size: .82rem; color: #64748b; line-height: 1.55; }
+
+    /* Service area */
+    .area-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .area-tag { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: .78rem; font-weight: 600; padding: 4px 12px; border-radius: 100px; }
+
+    /* Footer */
+    .sheet-footer { background: #0f172a; padding: 16px 40px; display: flex; justify-content: space-between; align-items: center; }
+    .sheet-footer p { font-size: .75rem; color: rgba(255,255,255,.45); }
+    .sheet-footer .footer-right { font-size: .75rem; color: rgba(255,255,255,.45); text-align: right; }
+
+    @media (max-width: 900px) {
+      .sheet { width: 100%; min-height: auto; }
+      .two-col { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print">
+    <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <p>Use your browser's Print dialog → Save as PDF for a clean one-page document.</p>
+  </div>
+
+  <div class="sheet">
+    <div class="sheet-header">
+      <div class="header-left">
+        <h1>Integrity Closings CLT</h1>
+        <p>Mobile Notary Public — Charlotte, NC</p>
+        <p style="margin-top:6px;color:rgba(255,255,255,.5);font-size:.78rem;">Attorney Partner Reference Sheet</p>
+      </div>
+      <div class="header-right">
+        <div class="phone">980-372-4103</div>
+        <div class="email">fcoxx@integrityclosingsclt.com</div>
+        <div class="web">integrityclosingsclt.com</div>
+      </div>
+    </div>
+
+    <div class="tagline-strip">
+      When your client can't come to you — we go to them. Same-day · After-Hours · Hospital · Nursing Home · Home Visits
+    </div>
+
+    <div class="sheet-body">
+
+      <div class="intro">
+        <p>Integrity Closings CLT provides professional mobile notarization services for estate planning attorneys whose clients are unable to travel to the office. Whether your client is hospitalized, in a nursing home, or simply homebound, we provide same-day and after-hours service throughout the Charlotte metro area — reliably, professionally, and with the sensitivity these situations require.</p>
+      </div>
+
+      <div class="two-col">
+        <div class="box">
+          <div class="box-header"><h3>Documents We Notarize</h3></div>
+          <div class="box-body">
+            <ul>
+              <li>Durable & General Power of Attorney</li>
+              <li>Healthcare Power of Attorney</li>
+              <li>Living Wills & Advance Directives</li>
+              <li>Trust Documents & Amendments</li>
+              <li>Deeds (Warranty, Quitclaim)</li>
+              <li>Affidavits of all types</li>
+              <li>Last Will & Testament</li>
+              <li>Real estate closing documents</li>
+              <li>Business & corporate agreements</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-header"><h3>Where We Go</h3></div>
+          <div class="box-body">
+            <ul>
+              <li>Atrium Health (all Charlotte locations)</li>
+              <li>Novant Health (Charlotte area)</li>
+              <li>Assisted living & memory care facilities</li>
+              <li>Nursing homes & skilled nursing facilities</li>
+              <li>Client's home or residence</li>
+              <li>Your office (if needed)</li>
+              <li>Hotels and temporary residences</li>
+              <li>Rehabilitation & long-term care centers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="how-section">
+        <h2>How Referrals Work</h2>
+        <div class="steps-row">
+          <div class="step-box">
+            <div class="step-num">1</div>
+            <h4>Contact Frank Directly</h4>
+            <p>Call or text 980-372-4103. Share the client name, location, document type, and urgency. We confirm availability immediately.</p>
+          </div>
+          <div class="step-box">
+            <div class="step-num">2</div>
+            <h4>We Handle the Visit</h4>
+            <p>Frank travels to your client, verifies identity, witnesses the signing, and applies the official NC notary seal. Discreet and professional.</p>
+          </div>
+          <div class="step-box">
+            <div class="step-num">3</div>
+            <h4>Confirmation to You</h4>
+            <p>We confirm completion by call or text so you can update your client's file. Clean, simple, and reliable every time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <div class="about-avatar">FC</div>
+        <div class="about-text">
+          <h3>Frank Lamon Coxx — North Carolina Commissioned Notary Public</h3>
+          <p>Charlotte-area mobile notary public with experience in hospital bedside, nursing home, and estate document notarizations. Professional, responsive, and familiar with the sensitivity of end-of-life and incapacity situations. Serving Mecklenburg, Union, and surrounding counties.</p>
+        </div>
+      </div>
+
+      <div class="how-section">
+        <h2>Service Area</h2>
+      </div>
+      <div class="area-row">
+        <span class="area-tag">Charlotte</span>
+        <span class="area-tag">Mint Hill</span>
+        <span class="area-tag">Matthews</span>
+        <span class="area-tag">Monroe</span>
+        <span class="area-tag">Indian Trail</span>
+        <span class="area-tag">Waxhaw</span>
+        <span class="area-tag">Weddington</span>
+        <span class="area-tag">Stallings</span>
+        <span class="area-tag">Pineville</span>
+        <span class="area-tag">Ballantyne</span>
+        <span class="area-tag">Concord</span>
+        <span class="area-tag">Huntersville</span>
+      </div>
+
+    </div>
+
+    <div class="sheet-footer">
+      <p>Integrity Closings CLT · Frank Lamon Coxx, NC Notary Public · Charlotte, NC</p>
+      <div class="footer-right">
+        <p>Not legal advice. Notarization services only.</p>
+        <p>integrityclosingsclt.com</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
