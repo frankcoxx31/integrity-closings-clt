@@ -10,36 +10,16 @@
       body { margin: 0; padding: 0; background: #fff; }
       .no-print { display: none !important; }
       @page { margin: 0; size: letter portrait; }
+      html, body { width: 8.5in; height: 11in; overflow: hidden; }
       .sheet {
         box-shadow: none;
         width: 8.5in;
-        min-height: 0 !important;
         height: 11in;
+        min-height: 0 !important;
         overflow: hidden;
-        page-break-after: avoid;
+        transform-origin: top left;
+        transform: scale(0.82);
       }
-      .sheet-header { padding: 20px 40px 16px !important; }
-      .header-h1 { font-size: 1.6rem !important; }
-      .header-sub { font-size: .82rem !important; }
-      .urgent-strip { padding: 10px 40px !important; font-size: .82rem !important; }
-      .sheet-body { padding: 20px 40px !important; }
-      .situation-intro { margin-bottom: 14px !important; }
-      .situation-intro p { font-size: .82rem !important; }
-      .scenarios { margin-bottom: 16px !important; }
-      .scenario-grid { gap: 8px !important; }
-      .scenario-card { padding: 10px 12px !important; }
-      .scenario-card h4 { font-size: .78rem !important; }
-      .scenario-card p { font-size: .74rem !important; }
-      .services-section { margin-bottom: 16px !important; }
-      .services-two-col { gap: 14px !important; }
-      .services-col ul li { font-size: .78rem !important; }
-      .contact-callout { padding: 18px 22px !important; margin-bottom: 14px !important; }
-      .callout-left h3 { font-size: .95rem !important; }
-      .callout-left p { font-size: .78rem !important; }
-      .callout-phone { font-size: 1.2rem !important; }
-      .about-bar { padding: 12px 16px !important; }
-      .about-text p { font-size: .74rem !important; }
-      h2 { font-size: .9rem !important; margin-bottom: 10px !important; }
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
