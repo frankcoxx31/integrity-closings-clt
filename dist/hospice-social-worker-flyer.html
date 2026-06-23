@@ -10,16 +10,37 @@
       body { margin: 0; padding: 0; background: #fff; }
       .no-print { display: none !important; }
       @page { margin: 0; size: letter portrait; }
-      html, body { width: 8.5in; height: 11in; overflow: hidden; }
-      .sheet {
-        box-shadow: none;
-        width: 8.5in;
-        height: 11in;
-        min-height: 0 !important;
-        overflow: hidden;
-        transform-origin: top left;
-        transform: scale(0.82);
-      }
+      .sheet { box-shadow: none; width: 100%; min-height: 0 !important; }
+      .sheet-header { padding: 18px 36px 14px !important; }
+      .header-eyebrow { margin-bottom: 6px !important; font-size: .7rem !important; }
+      .header-h1 { font-size: 1.45rem !important; margin-bottom: 8px !important; }
+      .header-sub { font-size: .78rem !important; }
+      .urgent-strip { padding: 8px 36px !important; font-size: .78rem !important; }
+      .sheet-body { padding: 16px 36px !important; }
+      .situation-intro { margin-bottom: 12px !important; }
+      .situation-intro p { font-size: .78rem !important; line-height: 1.5 !important; }
+      .scenarios { margin-bottom: 12px !important; }
+      .scenarios h2, .services-section h2 { font-size: .85rem !important; margin-bottom: 8px !important; padding-bottom: 5px !important; }
+      .scenario-grid { gap: 7px !important; }
+      .scenario-card { padding: 8px 10px !important; }
+      .scenario-card h4 { font-size: .74rem !important; margin-bottom: 3px !important; }
+      .scenario-card p { font-size: .7rem !important; line-height: 1.4 !important; }
+      .services-section { margin-bottom: 12px !important; }
+      .services-two-col { gap: 10px !important; }
+      .services-col h4 { font-size: .7rem !important; margin-bottom: 6px !important; }
+      .services-col ul { gap: 3px !important; }
+      .services-col ul li { font-size: .72rem !important; }
+      .contact-callout { padding: 14px 18px !important; margin-bottom: 10px !important; border-radius: 6px !important; }
+      .callout-left h3 { font-size: .88rem !important; margin-bottom: 5px !important; }
+      .callout-left p { font-size: .72rem !important; line-height: 1.45 !important; }
+      .callout-phone { font-size: 1.1rem !important; }
+      .callout-label { font-size: .65rem !important; }
+      .about-bar { padding: 10px 14px !important; gap: 10px !important; }
+      .about-avatar { width: 38px !important; height: 38px !important; font-size: 1rem !important; }
+      .about-text h4 { font-size: .74rem !important; }
+      .about-text p { font-size: .68rem !important; line-height: 1.4 !important; }
+      .sheet-footer { padding: 8px 36px !important; }
+      .sheet-footer p { font-size: .65rem !important; }
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
