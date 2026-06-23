@@ -14,7 +14,7 @@ export default function Hero() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-12 md:py-16">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-          Mobile Notary Services
+          Charlotte's On-Demand Notary — Home, Office, or Hospital
         </h1>
         <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-4xl mx-auto">
           We come to you for same-day notarizations, hospital visits, estate documents, and loan signings.
