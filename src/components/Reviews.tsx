@@ -3,25 +3,25 @@ import { Star } from 'lucide-react';
 export default function Reviews() {
   const reviews = [
     {
+      name: "Barbara Ellis",
+      date: "18 weeks ago",
+      text: "He did wonderful! Was very accommodating and respectful. He helped get everything situated with my family and I couldn't be more happy!",
+      initial: "B",
+      color: "bg-purple-500"
+    },
+    {
+      name: "Ginger Shutt",
+      date: "Mar 18, 2025",
+      text: "Prompt, Professional, Timely delivery of signed documents and Free of Errors. Highly Recommend!",
+      initial: "G",
+      color: "bg-emerald-500"
+    },
+    {
       name: "Lauren Hamlett",
       date: "Mar 14, 2025",
       text: "Professional, organized, and great communication! I was very pleased with the experience and would recommend their services to friends and use again myself!",
       initial: "L",
       color: "bg-blue-500"
-    },
-    {
-      name: "Karen Crespo",
-      date: "Feb 25, 2025",
-      text: "Very personable and professional. I highly recommend their services.",
-      initial: "K",
-      color: "bg-emerald-500"
-    },
-    {
-      name: "Mallory Foushee",
-      date: "Mar 15, 2025",
-      text: "5 stars — great experience with Integrity Closings CLT.",
-      initial: "M",
-      color: "bg-purple-500"
     }
   ];
 
