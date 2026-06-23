@@ -3,25 +3,25 @@ import { Star } from 'lucide-react';
 export default function Reviews() {
   const reviews = [
     {
-      name: "Sarah Jenkins",
-      date: "2 weeks ago",
-      text: "Incredibly professional and arrived right on time. Made the loan closing process so easy! Highly recommend their mobile notary services.",
-      initial: "S",
-      color: "bg-purple-500"
-    },
-    {
-      name: "Michael T.",
-      date: "1 month ago",
-      text: "Needed a notary at the hospital last minute for my father. They were compassionate, quick, and very helpful during a stressful time.",
-      initial: "M",
+      name: "Lauren Hamlett",
+      date: "Mar 14, 2025",
+      text: "Professional, organized, and great communication! I was very pleased with the experience and would recommend their services to friends and use again myself!",
+      initial: "L",
       color: "bg-blue-500"
     },
     {
-      name: "David Chen",
-      date: "2 months ago",
-      text: "Great communication and very convenient. They came right to my office in Uptown Charlotte. Will definitely use them again.",
-      initial: "D",
+      name: "Karen Crespo",
+      date: "Feb 25, 2025",
+      text: "Very personable and professional. I highly recommend their services.",
+      initial: "K",
       color: "bg-emerald-500"
+    },
+    {
+      name: "Mallory Foushee",
+      date: "Mar 15, 2025",
+      text: "5 stars — great experience with Integrity Closings CLT.",
+      initial: "M",
+      color: "bg-purple-500"
     }
   ];
 
