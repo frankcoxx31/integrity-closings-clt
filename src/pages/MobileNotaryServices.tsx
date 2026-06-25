@@ -32,7 +32,7 @@ export default function MobileNotaryServices() {
           "@id": "https://www.integrityclosingsclt.com/#business",
           "name": "Integrity Closings CLT",
           "url": "https://www.integrityclosingsclt.com/",
-          "telephone": "+1-980-372-4103",
+          "telephone": "(980) 372-4103",
           "email": "fcoxx@integrityclosingsclt.com",
           "image": "https://www.integrityclosingsclt.com/logo.jpg",
           "description": "Professional mobile notary services in Charlotte, NC — same-day, after-hours, hospital bedside, and estate document notarizations throughout Mecklenburg and Union counties.",
