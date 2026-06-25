@@ -38,6 +38,13 @@ export default function MobileNotaryServices() {
           "description": "Professional mobile notary services in Charlotte, NC — same-day, after-hours, hospital bedside, and estate document notarizations throughout Mecklenburg and Union counties.",
           "priceRange": "$$",
           "openingHours": "Mo-Su 08:00-21:00",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "3",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Charlotte",
