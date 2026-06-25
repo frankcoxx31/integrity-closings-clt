@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   const posts = [
     {
+      title: 'Power of Attorney in North Carolina: What You Need, What to Bring, and How to Get It Notarized',
+      slug: 'power-of-attorney-north-carolina-notarized',
+      date: 'July 2, 2026',
+      excerpt: 'A Power of Attorney that isn\'t signed, witnessed, and notarized correctly in NC is legally worthless. Learn the types, requirements, what to bring, and how a Charlotte mobile notary can come to you — even at the hospital.',
+      imageUrl: 'https://images.unsplash.com/photo-1603796846097-bee99e4a601f?auto=format&fit=crop&q=80&w=800'
+    },
+    {
       title: 'What Title Companies Really Need From a Mobile Loan Signing Agent',
       slug: 'what-title-companies-need-from-mobile-loan-signing-agent',
       date: 'June 25, 2026',

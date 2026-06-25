@@ -7,6 +7,10 @@ export default function BlogPost() {
 
   useEffect(() => {
     const seoData: Record<string, { title: string, description: string }> = {
+      'power-of-attorney-north-carolina-notarized': {
+        title: 'Power of Attorney in North Carolina: What You Need & How to Get It Notarized | Integrity Closings CLT',
+        description: 'Learn the NC Power of Attorney requirements, types, what to bring to your notary appointment, and how a Charlotte mobile notary can come to your home or hospital room.'
+      },
       'what-title-companies-need-from-mobile-loan-signing-agent': {
         title: 'What Title Companies Need From a Mobile Loan Signing Agent | Integrity Closings CLT',
         description: 'Title companies need more than a notary stamp. Discover the 6 qualities that separate a reliable mobile loan signing agent from one that creates costly errors and delays.'
@@ -40,6 +44,168 @@ export default function BlogPost() {
   }, [slug]);
 
   const renderContent = () => {
+    if (slug === 'power-of-attorney-north-carolina-notarized') {
+      return (
+        <div className="prose prose-lg prose-slate max-w-none">
+          <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+            <div className="flex items-center">
+              <User className="w-4 h-4 mr-2" />
+              Integrity Closings CLT
+            </div>
+            <div className="flex items-center">
+              <Calendar className="w-4 h-4 mr-2" />
+              July 2, 2026
+            </div>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">
+            Power of Attorney in North Carolina: What You Need, What to Bring, and How to Get It Notarized
+          </h1>
+
+          <img
+            src="https://images.unsplash.com/photo-1603796846097-bee99e4a601f?auto=format&fit=crop&q=80&w=800"
+            alt="Two people signing legal documents at a table"
+            className="w-full h-auto rounded-lg my-8 shadow-md"
+            referrerPolicy="no-referrer"
+          />
+
+          <p className="text-lg text-slate-700 leading-relaxed mb-8">
+            When a family member is aging, ill, or simply planning ahead, a Power of Attorney is one of the most important legal documents they can have in place. In North Carolina, a POA that isn't properly executed — signed, witnessed, and notarized correctly — is legally worthless. And when you need it most, there's no time to start over.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed mb-8">
+            This guide walks you through exactly what a Power of Attorney is, the types recognized in North Carolina, what you need to bring to get it notarized, and how a mobile notary in Charlotte, NC can make the entire process easier — especially when the person signing can't travel.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What Is a Power of Attorney?</h2>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            A Power of Attorney (POA) is a legal document that gives one person (the "agent") the authority to act on behalf of another person (the "principal") in financial, legal, or medical matters. The agent can pay bills, manage bank accounts, sell property, make healthcare decisions, or handle a wide range of other affairs — depending on how the document is written.
+          </p>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            In North Carolina, POAs are governed by the <strong>Uniform Power of Attorney Act (NCGS Chapter 32C)</strong>, which took effect January 1, 2018.
+          </p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Types of Power of Attorney in North Carolina</h2>
+
+          <img
+            src="https://images.unsplash.com/photo-1664463760781-f159dfe3af30?auto=format&fit=crop&q=80&w=800"
+            alt="People reviewing legal documents at a meeting table"
+            className="w-full h-auto rounded-lg my-8 shadow-md"
+            referrerPolicy="no-referrer"
+          />
+
+          <p className="text-slate-700 leading-relaxed mb-4">Not all POAs are the same. Here are the most common types we notarize:</p>
+          <p className="text-slate-700 leading-relaxed mb-4"><strong>Durable Power of Attorney</strong> — The most commonly requested. Remains in effect even if the principal becomes incapacitated. Without the word "durable" in the document, a standard POA terminates if the principal loses mental capacity — exactly when you need it most.</p>
+          <p className="text-slate-700 leading-relaxed mb-4"><strong>Healthcare Power of Attorney</strong> — Authorizes the agent to make medical decisions on the principal's behalf. Only activates when the principal can no longer decide for themselves. Frequently paired with a Living Will or Advance Directive.</p>
+          <p className="text-slate-700 leading-relaxed mb-4"><strong>Limited (Special) Power of Attorney</strong> — Grants authority for a specific transaction or time period — such as allowing someone to sign real estate closing documents on your behalf while you're traveling.</p>
+          <p className="text-slate-700 leading-relaxed mb-6"><strong>Springing Power of Attorney</strong> — Only activates under specific conditions, usually when a physician certifies incapacity. Less common in NC because durable POAs are generally preferred.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">North Carolina POA Requirements: What Makes It Legal</h2>
+
+          <img
+            src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&q=80&w=800"
+            alt="Close-up of a hand signing a legal document with a pen"
+            className="w-full h-auto rounded-lg my-8 shadow-md"
+            referrerPolicy="no-referrer"
+          />
+
+          <p className="text-slate-700 leading-relaxed mb-4">For a Power of Attorney to be valid in North Carolina, it must meet all three of these requirements:</p>
+          <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+            <li><strong>Signed by the principal</strong> — the person granting the authority</li>
+            <li><strong>Signed in the presence of two qualified witnesses</strong> — witnesses cannot be the named agent, the notary, or a relative of the principal</li>
+            <li><strong>Notarized</strong> — the principal's signature must be acknowledged before a commissioned NC Notary Public</li>
+          </ul>
+          <p className="text-slate-700 leading-relaxed mb-6">If any of these elements are missing, the document may be rejected by banks, hospitals, courts, or government agencies — even if it looks official.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What to Bring to Your Notary Appointment</h2>
+          <p className="text-slate-700 leading-relaxed mb-4">Whether you're meeting at an office or a mobile notary is coming to you, have these ready:</p>
+          <p className="text-slate-700 leading-relaxed mb-2"><strong>The principal must bring:</strong></p>
+          <ul className="list-disc pl-6 mb-4 text-slate-700 space-y-2">
+            <li>A valid, government-issued photo ID (driver's license, state ID, or passport)</li>
+            <li>The completed and <strong>unsigned</strong> POA document — do not sign it before the notary arrives</li>
+            <li>Two qualified witnesses present in person</li>
+          </ul>
+          <p className="text-slate-700 leading-relaxed mb-6">The agent does not need to be present at the signing — only the principal signs at this stage.</p>
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg mb-6">
+            <p className="text-blue-900 font-semibold mb-1">Important</p>
+            <p className="text-blue-800 text-sm leading-relaxed">In North Carolina, the notary must witness the principal sign. If the document is already signed when the notary arrives, the notarization is invalid.</p>
+          </div>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Can the Witnesses Be Anyone?</h2>
+          <p className="text-slate-700 leading-relaxed mb-4">North Carolina law is specific. <strong>Witnesses cannot be:</strong></p>
+          <ul className="list-disc pl-6 mb-6 text-slate-700 space-y-2">
+            <li>The agent named in the POA</li>
+            <li>A relative of the principal by blood, marriage, or adoption</li>
+            <li>Anyone who stands to inherit from the principal</li>
+            <li>The notary performing the acknowledgment</li>
+          </ul>
+          <p className="text-slate-700 leading-relaxed mb-6">If you don't have two qualified witnesses available, contact us before your appointment — we can sometimes arrange witnesses for an additional fee.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What If the Principal Can't Leave — Or Is in the Hospital?</h2>
+
+          <img
+            src="https://images.unsplash.com/photo-1620790647593-b3a6916c7d60?auto=format&fit=crop&q=80&w=800"
+            alt="Elderly patient in wheelchair in a hospital hallway"
+            className="w-full h-auto rounded-lg my-8 shadow-md"
+            referrerPolicy="no-referrer"
+          />
+
+          <p className="text-slate-700 leading-relaxed mb-4">This is one of the most common situations we handle. A parent is admitted to Atrium Health or Novant after a health emergency. The family realizes there's no POA in place. Time is critical.</p>
+          <p className="text-slate-700 leading-relaxed mb-4">A hospital mobile notary can come directly to the room. We coordinate with nursing staff before entering patient rooms, follow all facility visitor protocols, and handle the appointment with the professionalism and calm the situation requires.</p>
+          <p className="text-slate-700 leading-relaxed mb-6">The key requirement: the principal must still have <strong>mental capacity</strong>. They must understand what they are signing and what authority they are granting. If you're concerned about a loved one's capacity, speak with their physician before scheduling.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Common Mistakes That Invalidate a North Carolina POA</h2>
+
+          <img
+            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800"
+            alt="Man carefully signing documents at a desk"
+            className="w-full h-auto rounded-lg my-8 shadow-md"
+            referrerPolicy="no-referrer"
+          />
+
+          <p className="text-slate-700 leading-relaxed mb-4">Even a well-drafted POA can become useless if the execution is flawed:</p>
+          <ol className="list-decimal pl-6 mb-6 text-slate-700 space-y-3">
+            <li><strong>The principal signed before the notary arrived</strong> — the notary must witness the actual signature</li>
+            <li><strong>Unqualified witnesses</strong> — a spouse or adult child as witness disqualifies the document</li>
+            <li><strong>Wrong notary block</strong> — NC uses a specific acknowledgment format; a generic jurat won't work</li>
+            <li><strong>Missing "durable" language</strong> — without it, the POA terminates if the principal becomes incapacitated</li>
+            <li><strong>No witnesses at all</strong> — NC requires two witnesses in addition to the notary</li>
+          </ol>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How to Schedule a Mobile Notary for Your POA in Charlotte</h2>
+          <ol className="list-decimal pl-6 mb-6 text-slate-700 space-y-3">
+            <li><strong>Call or text (980) 372-4103</strong> — tell us what you need and where you are</li>
+            <li><strong>Confirm your two witnesses</strong> — make sure they'll be present and qualify under NC law</li>
+            <li><strong>Have your ID and unsigned document ready</strong> — we'll handle the rest when we arrive</li>
+            <li><strong>We come to you</strong> — home, office, hospital, or care facility</li>
+          </ol>
+          <p className="text-slate-700 leading-relaxed mb-6">We serve Mecklenburg, Union, and Cabarrus counties including Charlotte, Mint Hill, Matthews, Monroe, Indian Trail, Waxhaw, Pineville, and surrounding areas. Same-day and after-hours appointments available.</p>
+
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Frequently Asked Questions</h2>
+
+          <p className="text-slate-700 leading-relaxed mb-2"><strong>How much does it cost to have a POA notarized in North Carolina?</strong></p>
+          <p className="text-slate-700 leading-relaxed mb-6">NC caps the notarial fee at $10 per principal signature. A mobile notary also charges a travel fee that varies by distance. Contact us for a quote.</p>
+
+          <p className="text-slate-700 leading-relaxed mb-2"><strong>Does a Power of Attorney need to be recorded with the county?</strong></p>
+          <p className="text-slate-700 leading-relaxed mb-6">Generally no. However, if the agent will use the POA for real estate transactions, it may need to be recorded with the Register of Deeds in the county where the property is located.</p>
+
+          <p className="text-slate-700 leading-relaxed mb-2"><strong>Can I use a North Carolina POA in another state?</strong></p>
+          <p className="text-slate-700 leading-relaxed mb-6">Most states will honor a validly executed out-of-state POA, but some banks and hospitals may require their own forms. Check with the institution in advance.</p>
+
+          <p className="text-slate-700 leading-relaxed mb-2"><strong>What's the difference between a POA and a Living Will?</strong></p>
+          <p className="text-slate-700 leading-relaxed mb-6">A POA authorizes someone to act on your behalf. A Living Will documents your own end-of-life medical wishes. Many people execute both at the same time — we notarize both in a single appointment.</p>
+
+          <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
+            <h2 className="text-2xl font-bold mb-4 text-white font-sans">Ready to Get Your Power of Attorney Notarized?</h2>
+            <p className="text-slate-300 mb-8 font-sans">Call or text (980) 372-4103 for same-day service, or book online. We come to you anywhere in the Charlotte area.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/book" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors font-sans">Book Appointment</Link>
+              <a href="tel:9803724103" className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-colors font-sans">Call (980) 372-4103</a>
+            </div>
+            <p className="text-slate-400 text-sm mt-6 font-sans italic">Notarization services only — not legal advice. For legal guidance on drafting a POA, consult a licensed North Carolina attorney.</p>
+          </section>
+        </div>
+      );
+    }
     if (slug === 'mobile-loan-signing-support-saves-closing-team-time') {
       return (
         <div className="prose prose-lg prose-slate max-w-none">
