@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 export default function Blog() {
   const posts = [
     {
+      title: 'What Title Companies Really Need From a Mobile Loan Signing Agent',
+      slug: 'what-title-companies-need-from-mobile-loan-signing-agent',
+      date: 'June 25, 2026',
+      excerpt: 'For title companies, the signing agent is the only face of your brand the borrower sees in person. Here\'s exactly what separates a reliable mobile loan signing partner from one that creates problems.',
+      imageUrl: 'https://cdn.marblism.com/bEDYByIxIxK.webp'
+    },
+    {
       title: 'Why Charlotte Closing Attorneys Need a Trusted Mobile Signing Partner in 2026',
       slug: 'why-charlotte-closing-attorneys-need-trusted-mobile-signing-partner-2026',
       date: 'June 15, 2026',
