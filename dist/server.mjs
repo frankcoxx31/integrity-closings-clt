@@ -629,14 +629,69 @@ Notes: ${notes}`,
       console.error("[Error] dist directory not found at", distPath);
     }
     app.use(express.static(distPath));
+    const pageMeta = {
+      "/nursing-home-notary-charlotte-nc": {
+        title: "Nursing Home Notary Charlotte NC | Mobile Notary for Assisted Living | Integrity Closings CLT",
+        description: "Need a notary at a nursing home or assisted living facility in Charlotte, NC? Integrity Closings CLT sends a commissioned notary directly to residents in Mecklenburg, Union, and Cabarrus counties.",
+        canonical: "https://www.integrityclosingsclt.com/nursing-home-notary-charlotte-nc"
+      },
+      "/hospital-notary-charlotte-nc": {
+        title: "Hospital & Bedside Notary Charlotte NC | Mobile Notary for Patients | Integrity Closings CLT",
+        description: "Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.",
+        canonical: "https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc"
+      },
+      "/mobile-notary-charlotte-nc": {
+        title: "Mobile Notary Services in Charlotte, NC | Integrity Closings CLT",
+        description: "Integrity Closings CLT provides professional mobile notary services throughout Charlotte, NC. We come to your home, office, hospital, or care facility \u2014 same-day appointments available.",
+        canonical: "https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc"
+      },
+      "/estate-planning-notary-charlotte-nc": {
+        title: "Estate & Trust Notarization Charlotte NC | Mobile Notary | Integrity Closings CLT",
+        description: "Professional mobile notary for estate planning and trust documents in Charlotte, NC. We travel to homes, hospitals, and nursing homes for Wills, Trusts, and POA.",
+        canonical: "https://www.integrityclosingsclt.com/estate-planning-notary-charlotte-nc"
+      },
+      "/after-hours-mobile-notary-charlotte-nc": {
+        title: "After-Hours Mobile Notary Charlotte NC | Evening & Weekend Notary | Integrity Closings CLT",
+        description: "Need a notary after hours in Charlotte, NC? Integrity Closings CLT offers evening and weekend mobile notary appointments \u2014 available when banks and UPS stores are closed.",
+        canonical: "https://www.integrityclosingsclt.com/after-hours-mobile-notary-charlotte-nc"
+      },
+      "/loan-signing-agent-charlotte-nc": {
+        title: "Loan Signing Agent Charlotte NC | Certified Mobile Notary | Integrity Closings CLT",
+        description: "Certified loan signing agent serving Charlotte, NC and surrounding areas. Professional, accurate, and reliable closings at your home, office, or any location.",
+        canonical: "https://www.integrityclosingsclt.com/loan-signing-agent-charlotte-nc"
+      },
+      "/areas-served": {
+        title: "Mobile Notary Service Areas | Charlotte NC & Surrounding Counties | Integrity Closings CLT",
+        description: "Integrity Closings CLT provides mobile notary services across Mecklenburg, Union, and Cabarrus counties including Mint Hill, Matthews, Huntersville, Monroe, and more.",
+        canonical: "https://www.integrityclosingsclt.com/areas-served"
+      }
+    };
     app.get("*", (req, res) => {
       const indexPath = path.join(distPath, "index.html");
-      if (fs.existsSync(indexPath)) {
-        res.sendFile(indexPath);
-      } else {
+      if (!fs.existsSync(indexPath)) {
         console.error("[Error] index.html not found at", indexPath);
         res.status(404).send("index.html not found. Check server logs.");
+        return;
       }
+      const meta = pageMeta[req.path];
+      if (!meta) {
+        res.sendFile(indexPath);
+        return;
+      }
+      let html = fs.readFileSync(indexPath, "utf-8");
+      html = html.replace(
+        /<title>[^<]*<\/title>/,
+        `<title>${meta.title}</title>`
+      );
+      html = html.replace(
+        /<meta name="description" content="[^"]*"/,
+        `<meta name="description" content="${meta.description}"`
+      );
+      html = html.replace(
+        /<link rel="canonical" href="[^"]*"/,
+        `<link rel="canonical" href="${meta.canonical}"`
+      );
+      res.send(html);
     });
   }
   app.listen(PORT, "0.0.0.0", () => {
