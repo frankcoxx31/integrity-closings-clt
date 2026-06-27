@@ -667,6 +667,7 @@ Notes: ${notes}`,
       }
     };
     app.get("*", (req, res) => {
+      res.setHeader("X-Served-By", "express-node");
       const indexPath = path.join(distPath, "index.html");
       if (!fs.existsSync(indexPath)) {
         console.error("[Error] index.html not found at", indexPath);

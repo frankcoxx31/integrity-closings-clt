@@ -750,6 +750,8 @@ async function startServer() {
     };
 
     app.get('*', (req, res) => {
+      // TEST HEADER — confirms Express is handling this request, not static file serving
+      res.setHeader('X-Served-By', 'express-node');
       const indexPath = path.join(distPath, 'index.html');
       if (!fs.existsSync(indexPath)) {
         console.error('[Error] index.html not found at', indexPath);
