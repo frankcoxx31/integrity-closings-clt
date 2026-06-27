@@ -709,8 +709,6 @@ async function startServer() {
       console.error('[Error] dist directory not found at', distPath);
     }
 
-    app.use(express.static(distPath));
-
     const pageMeta: Record<string, { title: string; description: string; canonical: string }> = {
       '/nursing-home-notary-charlotte-nc': {
         title: 'Nursing Home Notary Charlotte NC | Mobile Notary for Assisted Living | Integrity Closings CLT',
@@ -749,34 +747,39 @@ async function startServer() {
       },
     };
 
-    app.get('*', (req, res) => {
-      // TEST HEADER — confirms Express is handling this request, not static file serving
+    // Register meta-injection routes BEFORE express.static so Express handles
+    // them first — if registered after, the static middleware wins and Node never runs.
+    const indexPath = path.join(distPath, 'index.html');
+    const injectMeta = (req: express.Request, res: express.Response) => {
       res.setHeader('X-Served-By', 'express-node');
-      const indexPath = path.join(distPath, 'index.html');
       if (!fs.existsSync(indexPath)) {
-        console.error('[Error] index.html not found at', indexPath);
-        res.status(404).send('index.html not found. Check server logs.');
+        res.status(404).send('index.html not found.');
         return;
       }
       const meta = pageMeta[req.path];
-      if (!meta) {
-        res.sendFile(indexPath);
-        return;
-      }
       let html = fs.readFileSync(indexPath, 'utf-8');
-      html = html.replace(
-        /<title>[^<]*<\/title>/,
-        `<title>${meta.title}</title>`
-      );
-      html = html.replace(
-        /<meta name="description" content="[^"]*"/,
-        `<meta name="description" content="${meta.description}"`
-      );
-      html = html.replace(
-        /<link rel="canonical" href="[^"]*"/,
-        `<link rel="canonical" href="${meta.canonical}"`
-      );
+      if (meta) {
+        html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
+        html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);
+        html = html.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${meta.canonical}"`);
+      }
       res.send(html);
+    };
+
+    // Explicit routes for every page that needs its own meta tags
+    Object.keys(pageMeta).forEach(route => {
+      app.get(route, injectMeta);
+    });
+
+    app.use(express.static(distPath));
+
+    // SPA fallback for any other route
+    app.get('*', (req, res) => {
+      if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+      } else {
+        res.status(404).send('index.html not found. Check server logs.');
+      }
     });
   }
 

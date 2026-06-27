@@ -628,7 +628,6 @@ Notes: ${notes}`,
     if (!fs.existsSync(distPath)) {
       console.error("[Error] dist directory not found at", distPath);
     }
-    app.use(express.static(distPath));
     const pageMeta = {
       "/nursing-home-notary-charlotte-nc": {
         title: "Nursing Home Notary Charlotte NC | Mobile Notary for Assisted Living | Integrity Closings CLT",
@@ -666,33 +665,32 @@ Notes: ${notes}`,
         canonical: "https://www.integrityclosingsclt.com/areas-served"
       }
     };
-    app.get("*", (req, res) => {
+    const indexPath = path.join(distPath, "index.html");
+    const injectMeta = (req, res) => {
       res.setHeader("X-Served-By", "express-node");
-      const indexPath = path.join(distPath, "index.html");
       if (!fs.existsSync(indexPath)) {
-        console.error("[Error] index.html not found at", indexPath);
-        res.status(404).send("index.html not found. Check server logs.");
+        res.status(404).send("index.html not found.");
         return;
       }
       const meta = pageMeta[req.path];
-      if (!meta) {
-        res.sendFile(indexPath);
-        return;
-      }
       let html = fs.readFileSync(indexPath, "utf-8");
-      html = html.replace(
-        /<title>[^<]*<\/title>/,
-        `<title>${meta.title}</title>`
-      );
-      html = html.replace(
-        /<meta name="description" content="[^"]*"/,
-        `<meta name="description" content="${meta.description}"`
-      );
-      html = html.replace(
-        /<link rel="canonical" href="[^"]*"/,
-        `<link rel="canonical" href="${meta.canonical}"`
-      );
+      if (meta) {
+        html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
+        html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);
+        html = html.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${meta.canonical}"`);
+      }
       res.send(html);
+    };
+    Object.keys(pageMeta).forEach((route) => {
+      app.get(route, injectMeta);
+    });
+    app.use(express.static(distPath));
+    app.get("*", (req, res) => {
+      if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+      } else {
+        res.status(404).send("index.html not found. Check server logs.");
+      }
     });
   }
   app.listen(PORT, "0.0.0.0", () => {
