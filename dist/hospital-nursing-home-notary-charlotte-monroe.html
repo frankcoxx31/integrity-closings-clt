@@ -1358,10 +1358,7 @@
         throw new Error(err.details || err.error || 'Submission failed');
       }
 
-      this.style.display = 'none';
-      const success = document.getElementById('formSuccess');
-      success.style.display = 'block';
-      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      window.location.href = '/thank-you.html';
 
     } catch (err) {
       submitBtn.disabled = false;

@@ -60,6 +60,8 @@ try {
 }
 
 // server.ts
+import { Resend } from "resend";
+var resend = new Resend(process.env.RESEND_API_KEY);
 var __filename = fileURLToPath(import.meta.url);
 var __dirname = path.dirname(__filename);
 async function startServer() {
@@ -490,6 +492,48 @@ Notes: ${notes}`,
       } catch (apptE) {
         console.error("[CRM] Appointment write error (non-blocking):", apptE.message);
       }
+      try {
+        const startFormatted = new Date(startTime).toLocaleString("en-US", {
+          timeZone: "America/New_York",
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: true
+        });
+        await resend.emails.send({
+          from: "Integrity Closings CLT <noreply@integrityclosingsclt.com>",
+          to: "fcoxx@integrityclosingsclt.com",
+          subject: `New Booking: ${firstName} ${lastName} \u2014 ${startFormatted}`,
+          html: `
+            <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#f8fafc;border-radius:8px;">
+              <div style="background:#172554;padding:20px 24px;border-radius:6px 6px 0 0;">
+                <h1 style="color:#ffffff;margin:0;font-size:20px;">New Appointment Booked</h1>
+                <p style="color:rgba(255,255,255,.7);margin:4px 0 0;font-size:14px;">Integrity Closings CLT</p>
+              </div>
+              <div style="background:#ffffff;padding:24px;border-radius:0 0 6px 6px;border:1px solid #e2e8f0;border-top:none;">
+                <table style="width:100%;border-collapse:collapse;">
+                  <tr><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:14px;width:140px;">Client Name</td><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-weight:600;color:#0f172a;">${firstName} ${lastName}</td></tr>
+                  <tr><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:14px;">Phone</td><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-weight:600;color:#0f172a;"><a href="tel:${phone}" style="color:#2563eb;">${phone}</a></td></tr>
+                  <tr><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:14px;">Email</td><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-weight:600;color:#0f172a;"><a href="mailto:${email}" style="color:#2563eb;">${email}</a></td></tr>
+                  <tr><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:14px;">Service</td><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-weight:600;color:#0f172a;">${serviceName}</td></tr>
+                  <tr><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:14px;">Date & Time</td><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-weight:600;color:#0f172a;">${startFormatted}</td></tr>
+                  <tr><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;color:#64748b;font-size:14px;">Address</td><td style="padding:10px 0;border-bottom:1px solid #f1f5f9;font-weight:600;color:#0f172a;">${address || "Not provided"}</td></tr>
+                  <tr><td style="padding:10px 0;color:#64748b;font-size:14px;vertical-align:top;">Notes</td><td style="padding:10px 0;font-weight:600;color:#0f172a;">${notes || "None"}</td></tr>
+                </table>
+                <div style="margin-top:24px;padding:16px;background:#eff6ff;border-radius:6px;border-left:4px solid #2563eb;">
+                  <p style="margin:0;font-size:14px;color:#1e40af;">This appointment has been added to your Google Calendar automatically.</p>
+                </div>
+              </div>
+            </div>
+          `
+        });
+        console.log("[EMAIL] Booking notification sent to fcoxx@integrityclosingsclt.com");
+      } catch (emailErr) {
+        console.error("[EMAIL] Notification failed (non-blocking):", emailErr);
+      }
       res.json({ success: true });
       try {
         await syncToCrm({
@@ -550,6 +594,14 @@ Notes: ${notes}`,
     res.json({
       geminiKey: process.env.GEMINI_API_KEY || ""
     });
+  });
+  app.get("/notary-service-locations-nc", (req, res) => {
+    const filePath = path.join(process.cwd(), "dist", "notary-service-locations-nc.html");
+    if (fs.existsSync(filePath)) {
+      res.sendFile(filePath);
+    } else {
+      res.status(404).send("Page not found");
+    }
   });
   app.get("/website-build.zip", (req, res) => {
     const zipPath = path.join(__dirname, ".tmp", "website-build.zip");
