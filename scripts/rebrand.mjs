@@ -6,10 +6,11 @@
  * and server.ts.
  *
  * This does NOT touch the hand-authored landmark/hospital/FAQ copy inside
- * individual city pages, or any bare state-code text (e.g. "NC" in legal
- * disclaimers) — those need manual review per TEMPLATE_SETUP.md. This only
- * fixes the mechanical routing/linking so the site doesn't 404 or say the
- * old city name in the nav/hero/schema after a rename.
+ * individual city pages, blog post slugs/content, or any bare state-code
+ * text (e.g. "NC" in legal disclaimers) — those need manual review per
+ * TEMPLATE_SETUP.md. This only fixes the mechanical routing/linking so the
+ * site doesn't 404 or say the old city name in the nav/hero/schema after a
+ * rename.
  *
  * Usage:
  *   node scripts/rebrand.mjs --city=Austin --state=TX --slug=austin-tx [--dry-run]
@@ -58,16 +59,25 @@ function main() {
   const { newCity, newState, newSlug, dryRun } = parseArgs();
   const oldSlugPattern = new RegExp(`\\b${OLD_SLUG}\\b`, 'g');
   const oldCityPattern = new RegExp(`\\b${OLD_CITY}\\b`, 'g');
+  // The hub city's own dedicated page route is unsuffixed lowercase
+  // (/locations/charlotte, unlike other pages' /whatever-charlotte-nc), and
+  // it's the ONLY place that convention is used, so a narrow literal-path
+  // match is safe here without risking blog slugs that merely contain
+  // "charlotte" as a substring (e.g. "hospital-notary-services-charlotte").
+  const oldRoutePathPattern = /\/locations\/charlotte\b/g;
+  const newRoutePath = `/locations/${newCity.toLowerCase()}`;
 
   let filesChanged = 0;
   let slugHits = 0;
   let cityHits = 0;
+  let routePathHits = 0;
 
   for (const file of targetFiles()) {
     const original = fs.readFileSync(file, 'utf-8');
     let updated = original;
 
     updated = updated.replace(oldSlugPattern, () => { slugHits++; return newSlug; });
+    updated = updated.replace(oldRoutePathPattern, () => { routePathHits++; return newRoutePath; });
     updated = updated.replace(oldCityPattern, () => { cityHits++; return newCity; });
 
     if (updated !== original) {
@@ -91,9 +101,10 @@ function main() {
   }
 
   console.log(`\n${OLD_SLUG} -> ${newSlug}: ${slugHits} occurrence(s)`);
+  console.log(`/locations/charlotte -> ${newRoutePath}: ${routePathHits} occurrence(s)`);
   console.log(`${OLD_CITY} -> ${newCity}: ${cityHits} occurrence(s)`);
   console.log(`${filesChanged} file(s) ${dryRun ? 'would be' : ''} changed${renamedFile ? ', 1 file renamed' : ''}.`);
-  console.log(`\nNote: bare state-code text (e.g. "NC") and hand-authored city-page copy (landmarks, hospitals, FAQs) were NOT touched — see TEMPLATE_SETUP.md for what's still manual.`);
+  console.log(`\nNote: bare state-code text (e.g. "NC"), blog post slugs/content, and hand-authored city-page copy (landmarks, hospitals, FAQs) were NOT touched — see TEMPLATE_SETUP.md for what's still manual.`);
   if (!dryRun) {
     console.log(`\nRemember to also update src/config/business.ts: hubState: '${newState}' (hubCity was already renamed by the text substitution above).`);
   }
