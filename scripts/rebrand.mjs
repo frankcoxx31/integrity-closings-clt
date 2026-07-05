@@ -77,12 +77,25 @@ function main() {
     }
   }
 
+  // The hub city's own dedicated page file (e.g. src/pages/locations/Charlotte.tsx)
+  // is imported by filename elsewhere (import Charlotte from './locations/Charlotte'),
+  // and the text substitution above just renamed those import statements' text —
+  // so the physical file must be renamed to match, or the build breaks.
+  const oldCityFile = path.join(repoRoot, 'src', 'pages', 'locations', `${OLD_CITY}.tsx`);
+  const newCityFile = path.join(repoRoot, 'src', 'pages', 'locations', `${newCity}.tsx`);
+  let renamedFile = false;
+  if (fs.existsSync(oldCityFile)) {
+    renamedFile = true;
+    if (!dryRun) fs.renameSync(oldCityFile, newCityFile);
+    console.log(`${dryRun ? '[dry-run] would rename' : 'renamed'}: ${path.relative(repoRoot, oldCityFile)} -> ${path.relative(repoRoot, newCityFile)}`);
+  }
+
   console.log(`\n${OLD_SLUG} -> ${newSlug}: ${slugHits} occurrence(s)`);
   console.log(`${OLD_CITY} -> ${newCity}: ${cityHits} occurrence(s)`);
-  console.log(`${filesChanged} file(s) ${dryRun ? 'would be' : ''} changed.`);
+  console.log(`${filesChanged} file(s) ${dryRun ? 'would be' : ''} changed${renamedFile ? ', 1 file renamed' : ''}.`);
   console.log(`\nNote: bare state-code text (e.g. "NC") and hand-authored city-page copy (landmarks, hospitals, FAQs) were NOT touched — see TEMPLATE_SETUP.md for what's still manual.`);
   if (!dryRun) {
-    console.log(`\nRemember to also update src/config/business.ts: hubCity: '${newCity}', hubState: '${newState}'.`);
+    console.log(`\nRemember to also update src/config/business.ts: hubState: '${newState}' (hubCity was already renamed by the text substitution above).`);
   }
 }
 
