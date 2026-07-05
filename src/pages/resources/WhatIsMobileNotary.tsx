@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 export default function WhatIsMobileNotary() {
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
-      <div className="bg-blue-950 py-16">
+      <div className="bg-brand-950 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link to="/resources" className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors font-medium">
+          <Link to="/resources" className="inline-flex items-center text-brand-200 hover:text-white mb-6 transition-colors font-medium">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Resources
           </Link>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 font-serif leading-tight">
             What is a Mobile Notary?
           </h1>
-          <p className="text-lg text-blue-100">
+          <p className="text-lg text-brand-100">
             Discover the benefits of using a mobile notary service and how it saves you time and hassle.
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function WhatIsMobileNotary() {
             <p className="text-slate-600 mb-6">
               Integrity Closings CLT is ready to come to your location.
             </p>
-            <a href="/booking" className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors">
+            <a href="/booking" className="inline-block bg-brand-600 text-white font-bold py-3 px-8 rounded-full hover:bg-brand-700 transition-colors">
               Book an Appointment
             </a>
           </div>

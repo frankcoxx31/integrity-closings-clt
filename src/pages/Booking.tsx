@@ -257,19 +257,19 @@ export default function Booking() {
   return (
     <div className="bg-slate-50 min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="inline-flex items-center text-slate-600 hover:text-blue-600 mb-8 transition-colors">
+        <Link to="/" className="inline-flex items-center text-slate-600 hover:text-brand-600 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
         </Link>
         
         <div className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden">
           {/* Header */}
-          <div className="bg-blue-950 p-6 sm:p-8 text-white flex items-center gap-4">
-            <div className="bg-blue-800 p-3 rounded-xl">
-              <CalendarIcon className="w-8 h-8 text-blue-200" />
+          <div className="bg-brand-950 p-6 sm:p-8 text-white flex items-center gap-4">
+            <div className="bg-brand-800 p-3 rounded-xl">
+              <CalendarIcon className="w-8 h-8 text-brand-200" />
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold font-serif">Book an Appointment</h1>
-              <p className="text-blue-200 mt-1">Schedule your mobile notary service online.</p>
+              <p className="text-brand-200 mt-1">Schedule your mobile notary service online.</p>
             </div>
           </div>
 
@@ -284,11 +284,11 @@ export default function Booking() {
               ].map((s, i) => (
                 <div key={s.num} className="flex flex-col items-center relative z-10">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-colors ${
-                    step >= s.num ? 'bg-blue-600 text-white' : 'bg-slate-200 text-slate-500'
+                    step >= s.num ? 'bg-brand-600 text-white' : 'bg-slate-200 text-slate-500'
                   }`}>
                     {step > s.num ? <CheckCircle className="w-5 h-5" /> : s.num}
                   </div>
-                  <span className={`text-xs mt-2 font-medium ${step >= s.num ? 'text-blue-900' : 'text-slate-500'}`}>
+                  <span className={`text-xs mt-2 font-medium ${step >= s.num ? 'text-brand-900' : 'text-slate-500'}`}>
                     {s.label}
                   </span>
                 </div>
@@ -310,13 +310,13 @@ export default function Booking() {
                       onClick={() => setSelectedService(service.id)}
                       className={`p-5 rounded-xl border-2 cursor-pointer transition-all ${
                         selectedService === service.id 
-                          ? 'border-blue-600 bg-blue-50' 
-                          : 'border-slate-200 hover:border-blue-300 hover:bg-slate-50'
+                          ? 'border-brand-600 bg-brand-50' 
+                          : 'border-slate-200 hover:border-brand-300 hover:bg-slate-50'
                       }`}
                     >
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="font-bold text-slate-900">{service.name}</h3>
-                        <span className="text-sm font-semibold text-blue-600 bg-blue-100 px-2 py-1 rounded">{service.duration} min</span>
+                        <span className="text-sm font-semibold text-brand-600 bg-brand-100 px-2 py-1 rounded">{service.duration} min</span>
                       </div>
                       <p className="text-sm text-slate-600 mb-3">{service.description}</p>
                       <p className="text-sm font-medium text-slate-900">{service.price}</p>
@@ -327,7 +327,7 @@ export default function Booking() {
                   <button 
                     onClick={handleNext}
                     disabled={!selectedService}
-                    className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors disabled:bg-slate-300 disabled:cursor-not-allowed"
+                    className="px-8 py-3 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors disabled:bg-slate-300 disabled:cursor-not-allowed"
                   >
                     Continue
                   </button>
@@ -378,9 +378,9 @@ export default function Booking() {
                             className={`
                               aspect-square flex items-center justify-center rounded-full text-sm transition-all
                               ${!isCurrentMonth ? 'text-slate-300' : ''}
-                              ${disabled ? 'text-slate-300 cursor-not-allowed bg-slate-50' : 'hover:bg-blue-100 text-slate-700'}
-                              ${isSelected ? 'bg-blue-600 text-white hover:bg-blue-700 font-bold shadow-md' : ''}
-                              ${isToday(day) && !isSelected ? 'border border-blue-600 text-blue-600 font-bold' : ''}
+                              ${disabled ? 'text-slate-300 cursor-not-allowed bg-slate-50' : 'hover:bg-brand-100 text-slate-700'}
+                              ${isSelected ? 'bg-brand-600 text-white hover:bg-brand-700 font-bold shadow-md' : ''}
+                              ${isToday(day) && !isSelected ? 'border border-brand-600 text-brand-600 font-bold' : ''}
                             `}
                           >
                             {format(day, 'd')}
@@ -389,8 +389,8 @@ export default function Booking() {
                       })}
                     </div>
 
-                    <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
-                      <p className="text-xs text-blue-800 leading-relaxed">
+                    <div className="mt-6 p-4 bg-brand-50 rounded-lg border border-brand-100">
+                      <p className="text-xs text-brand-800 leading-relaxed">
                         <strong>Note:</strong> In North Carolina, the notary fee is $10 per notarized principal signature. Mobile notaries may also charge travel reimbursement at the IRS mileage rate ($0.725 per mile), which must be agreed to before the appointment.
                       </p>
                     </div>
@@ -399,14 +399,14 @@ export default function Booking() {
                   {/* Time Slots */}
                   <div>
                     <h3 className="font-bold text-slate-900 mb-4 flex items-center">
-                      <Clock className="w-5 h-5 mr-2 text-blue-600" />
+                      <Clock className="w-5 h-5 mr-2 text-brand-600" />
                       {selectedDate ? format(selectedDate, 'EEEE, MMMM d') : 'Select a date first'}
                     </h3>
                     
                     {selectedDate ? (
                       isLoadingSlots ? (
                         <div className="h-[320px] flex flex-col items-center justify-center border-2 border-dashed border-slate-200 rounded-xl bg-slate-50">
-                          <svg className="animate-spin h-8 w-8 text-blue-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <svg className="animate-spin h-8 w-8 text-brand-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
@@ -434,8 +434,8 @@ export default function Booking() {
                                 onClick={() => setSelectedTime(time)}
                                 className={`py-2 px-3 rounded-lg border text-sm font-medium transition-all ${
                                   selectedTime === time 
-                                    ? 'border-blue-600 bg-blue-600 text-white shadow-md' 
-                                    : 'border-slate-200 text-slate-700 hover:border-blue-400 hover:bg-blue-50'
+                                    ? 'border-brand-600 bg-brand-600 text-white shadow-md' 
+                                    : 'border-slate-200 text-slate-700 hover:border-brand-400 hover:bg-brand-50'
                                 }`}
                               >
                                 {displayTime}
@@ -468,7 +468,7 @@ export default function Booking() {
                   <button 
                     onClick={handleNext}
                     disabled={!selectedDate || !selectedTime}
-                    className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors disabled:bg-slate-300 disabled:cursor-not-allowed"
+                    className="px-8 py-3 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors disabled:bg-slate-300 disabled:cursor-not-allowed"
                   >
                     Continue
                   </button>
@@ -481,17 +481,17 @@ export default function Booking() {
               <div className="animate-in fade-in slide-in-from-right-4 duration-300">
                 <h2 className="text-xl font-bold text-slate-900 mb-6">Your Details</h2>
                 
-                <div className="bg-blue-50 rounded-xl p-4 mb-8 flex flex-col sm:flex-row gap-4 sm:items-center justify-between border border-blue-100">
+                <div className="bg-brand-50 rounded-xl p-4 mb-8 flex flex-col sm:flex-row gap-4 sm:items-center justify-between border border-brand-100">
                   <div>
-                    <p className="text-sm text-blue-800 font-medium">Selected Appointment:</p>
-                    <p className="font-bold text-blue-950">
+                    <p className="text-sm text-brand-800 font-medium">Selected Appointment:</p>
+                    <p className="font-bold text-brand-950">
                       {SERVICES.find(s => s.id === selectedService)?.name}
                     </p>
-                    <p className="text-sm text-blue-900">
+                    <p className="text-sm text-brand-900">
                       {selectedDate && format(selectedDate, 'MMMM d, yyyy')} at {selectedTime}
                     </p>
                   </div>
-                  <button onClick={() => setStep(2)} className="text-sm text-blue-600 hover:underline font-medium">
+                  <button onClick={() => setStep(2)} className="text-sm text-brand-600 hover:underline font-medium">
                     Change
                   </button>
                 </div>
@@ -511,7 +511,7 @@ export default function Booking() {
                           required
                           value={formData.firstName}
                           onChange={handleInputChange}
-                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors"
                           placeholder="John"
                         />
                       </div>
@@ -525,7 +525,7 @@ export default function Booking() {
                         required
                         value={formData.lastName}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors"
                         placeholder="Doe"
                       />
                     </div>
@@ -542,7 +542,7 @@ export default function Booking() {
                           required
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -560,7 +560,7 @@ export default function Booking() {
                           required
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors"
                           placeholder="(555) 123-4567"
                         />
                       </div>
@@ -578,7 +578,7 @@ export default function Booking() {
                           required
                           value={formData.address}
                           onChange={handleInputChange}
-                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors"
                           placeholder="123 Main St, Charlotte, NC 28202"
                         />
                       </div>
@@ -596,7 +596,7 @@ export default function Booking() {
                           rows={3}
                           value={formData.notes}
                           onChange={handleInputChange}
-                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                          className="pl-10 w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors"
                           placeholder="Any special instructions or details about the documents?"
                         ></textarea>
                       </div>
@@ -621,7 +621,7 @@ export default function Booking() {
                       <button 
                         type="submit"
                         disabled={isSubmitting}
-                        className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400 flex items-center"
+                        className="px-8 py-3 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors disabled:bg-brand-400 flex items-center"
                       >
                         {isSubmitting ? (
                           <>
@@ -655,22 +655,22 @@ export default function Booking() {
                   <h3 className="font-bold text-slate-900 mb-4 border-b pb-2">What happens next?</h3>
                   <ul className="space-y-3 text-sm text-slate-700">
                     <li className="flex items-start">
-                      <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold mr-3 shrink-0">1</span>
+                      <span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold mr-3 shrink-0">1</span>
                       We will review your request and calculate any applicable travel fees based on your address.
                     </li>
                     <li className="flex items-start">
-                      <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold mr-3 shrink-0">2</span>
+                      <span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold mr-3 shrink-0">2</span>
                       You will receive a confirmation email or text message shortly.
                     </li>
                     <li className="flex items-start">
-                      <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold mr-3 shrink-0">3</span>
+                      <span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold mr-3 shrink-0">3</span>
                       Our notary will meet you at your specified location at the scheduled time.
                     </li>
                   </ul>
                 </div>
                 <Link 
                   to="/"
-                  className="inline-flex items-center justify-center px-8 py-3 bg-blue-950 text-white font-bold rounded-lg hover:bg-blue-900 transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-3 bg-brand-950 text-white font-bold rounded-lg hover:bg-brand-900 transition-colors"
                 >
                   Return to Home
                 </Link>

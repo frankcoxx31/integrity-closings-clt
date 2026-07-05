@@ -1,5 +1,6 @@
 import { Calendar, Phone, Calculator } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { businessConfig } from '../config/business';
 
 export default function Hero() {
   return (
@@ -19,31 +20,31 @@ export default function Hero() {
         <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-4xl mx-auto">
           We come to you for same-day notarizations, hospital visits, estate documents, and loan signings.
         </p>
-        <p className="text-lg text-blue-400 font-semibold mb-8">
+        <p className="text-lg text-brand-400 font-semibold mb-8">
           Same-Day Service • After Hours Available • Professional Signings
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-4xl mx-auto">
           <Link 
             to="/booking" 
-            className="flex-1 inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+            className="flex-1 inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors"
           >
             <Calendar className="w-5 h-5 mr-2" />
             Book Appointment
           </Link>
           <Link 
             to="/calculator" 
-            className="flex-1 inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 transition-colors"
+            className="flex-1 inline-flex items-center justify-center px-6 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-secondary-500 hover:bg-secondary-600 transition-colors"
           >
             <Calculator className="w-5 h-5 mr-2" />
             Free Quote
           </Link>
-          <a 
-            href="tel:9803724103" 
+          <a
+            href={`tel:${businessConfig.phone.tel}`}
             className="flex-1 inline-flex items-center justify-center px-6 py-4 border-2 border-white text-lg font-medium rounded-md text-white bg-transparent hover:bg-white hover:text-slate-900 transition-colors"
           >
             <Phone className="w-5 h-5 mr-2" />
-            Call: 980-372-4103
+            Call: {businessConfig.phone.display}
           </a>
         </div>
       </div>

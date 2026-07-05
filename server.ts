@@ -5,6 +5,7 @@ import fs from 'fs';
 import { google } from 'googleapis';
 import { adminDb } from './src/lib/firebaseServer';
 import { Resend } from 'resend';
+import { businessConfig } from './src/config/business';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -550,14 +551,14 @@ async function startServer() {
           hour12: true
         });
         await resend.emails.send({
-          from: 'Integrity Closings CLT <noreply@integrityclosingsclt.com>',
-          to: 'fcoxx@integrityclosingsclt.com',
+          from: `${businessConfig.name} <noreply@${businessConfig.email.split('@')[1]}>`,
+          to: businessConfig.email,
           subject: `New Booking: ${firstName} ${lastName} — ${startFormatted}`,
           html: `
             <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#f8fafc;border-radius:8px;">
               <div style="background:#172554;padding:20px 24px;border-radius:6px 6px 0 0;">
                 <h1 style="color:#ffffff;margin:0;font-size:20px;">New Appointment Booked</h1>
-                <p style="color:rgba(255,255,255,.7);margin:4px 0 0;font-size:14px;">Integrity Closings CLT</p>
+                <p style="color:rgba(255,255,255,.7);margin:4px 0 0;font-size:14px;">${businessConfig.name}</p>
               </div>
               <div style="background:#ffffff;padding:24px;border-radius:0 0 6px 6px;border:1px solid #e2e8f0;border-top:none;">
                 <table style="width:100%;border-collapse:collapse;">
@@ -711,39 +712,39 @@ async function startServer() {
 
     const pageMeta: Record<string, { title: string; description: string; canonical: string }> = {
       '/nursing-home-notary-charlotte-nc': {
-        title: 'Nursing Home Notary Charlotte NC | Mobile Notary for Assisted Living | Integrity Closings CLT',
-        description: 'Need a notary at a nursing home or assisted living facility in Charlotte, NC? Integrity Closings CLT sends a commissioned notary directly to residents in Mecklenburg, Union, and Cabarrus counties.',
-        canonical: 'https://www.integrityclosingsclt.com/nursing-home-notary-charlotte-nc'
+        title: `Nursing Home Notary Charlotte NC | Mobile Notary for Assisted Living | ${businessConfig.name}`,
+        description: `Need a notary at a nursing home or assisted living facility in Charlotte, NC? ${businessConfig.name} sends a commissioned notary directly to residents in Mecklenburg, Union, and Cabarrus counties.`,
+        canonical: `${businessConfig.domain}/nursing-home-notary-charlotte-nc`
       },
       '/hospital-notary-charlotte-nc': {
-        title: 'Hospital & Bedside Notary Charlotte NC | Mobile Notary for Patients | Integrity Closings CLT',
+        title: `Hospital & Bedside Notary Charlotte NC | Mobile Notary for Patients | ${businessConfig.name}`,
         description: 'Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.',
-        canonical: 'https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc'
+        canonical: `${businessConfig.domain}/hospital-notary-charlotte-nc`
       },
       '/mobile-notary-charlotte-nc': {
-        title: 'Mobile Notary Services in Charlotte, NC | Integrity Closings CLT',
-        description: 'Integrity Closings CLT provides professional mobile notary services throughout Charlotte, NC. We come to your home, office, hospital, or care facility — same-day appointments available.',
-        canonical: 'https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc'
+        title: `Mobile Notary Services in Charlotte, NC | ${businessConfig.name}`,
+        description: `${businessConfig.name} provides professional mobile notary services throughout Charlotte, NC. We come to your home, office, hospital, or care facility — same-day appointments available.`,
+        canonical: `${businessConfig.domain}/mobile-notary-charlotte-nc`
       },
       '/estate-planning-notary-charlotte-nc': {
-        title: 'Estate & Trust Notarization Charlotte NC | Mobile Notary | Integrity Closings CLT',
+        title: `Estate & Trust Notarization Charlotte NC | Mobile Notary | ${businessConfig.name}`,
         description: 'Professional mobile notary for estate planning and trust documents in Charlotte, NC. We travel to homes, hospitals, and nursing homes for Wills, Trusts, and POA.',
-        canonical: 'https://www.integrityclosingsclt.com/estate-planning-notary-charlotte-nc'
+        canonical: `${businessConfig.domain}/estate-planning-notary-charlotte-nc`
       },
       '/after-hours-mobile-notary-charlotte-nc': {
-        title: 'After-Hours Mobile Notary Charlotte NC | Evening & Weekend Notary | Integrity Closings CLT',
-        description: 'Need a notary after hours in Charlotte, NC? Integrity Closings CLT offers evening and weekend mobile notary appointments — available when banks and UPS stores are closed.',
-        canonical: 'https://www.integrityclosingsclt.com/after-hours-mobile-notary-charlotte-nc'
+        title: `After-Hours Mobile Notary Charlotte NC | Evening & Weekend Notary | ${businessConfig.name}`,
+        description: `Need a notary after hours in Charlotte, NC? ${businessConfig.name} offers evening and weekend mobile notary appointments — available when banks and UPS stores are closed.`,
+        canonical: `${businessConfig.domain}/after-hours-mobile-notary-charlotte-nc`
       },
       '/loan-signing-agent-charlotte-nc': {
-        title: 'Loan Signing Agent Charlotte NC | Certified Mobile Notary | Integrity Closings CLT',
+        title: `Loan Signing Agent Charlotte NC | Certified Mobile Notary | ${businessConfig.name}`,
         description: 'Certified loan signing agent serving Charlotte, NC and surrounding areas. Professional, accurate, and reliable closings at your home, office, or any location.',
-        canonical: 'https://www.integrityclosingsclt.com/loan-signing-agent-charlotte-nc'
+        canonical: `${businessConfig.domain}/loan-signing-agent-charlotte-nc`
       },
       '/areas-served': {
-        title: 'Mobile Notary Service Areas | Charlotte NC & Surrounding Counties | Integrity Closings CLT',
-        description: 'Integrity Closings CLT provides mobile notary services across Mecklenburg, Union, and Cabarrus counties including Mint Hill, Matthews, Huntersville, Monroe, and more.',
-        canonical: 'https://www.integrityclosingsclt.com/areas-served'
+        title: `Mobile Notary Service Areas | Charlotte NC & Surrounding Counties | ${businessConfig.name}`,
+        description: `${businessConfig.name} provides mobile notary services across Mecklenburg, Union, and Cabarrus counties including Mint Hill, Matthews, Huntersville, Monroe, and more.`,
+        canonical: `${businessConfig.domain}/areas-served`
       },
     };
 

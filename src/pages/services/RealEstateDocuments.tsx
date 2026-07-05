@@ -90,7 +90,7 @@ export default function RealEstateDocuments() {
   return (
     <div className="min-h-screen bg-slate-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6 transition-colors">
+        <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-brand-600 hover:text-brand-800 mb-6 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to All Services
         </Link>
@@ -109,7 +109,7 @@ export default function RealEstateDocuments() {
             <div className="space-y-6 mb-10">
               {items.map((item, i) => (
                 <div key={i} className="flex items-start">
-                  <CheckCircle className="w-6 h-6 text-blue-600 mr-4 flex-shrink-0 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-brand-600 mr-4 flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-xl font-bold text-slate-900 mb-1">{item.name}</h3>
                     <p className="text-slate-600">{item.description}</p>
@@ -152,7 +152,7 @@ export default function RealEstateDocuments() {
             </section>
             
             <div className="text-center pt-6 border-t border-slate-100">
-              <a href="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+              <a href="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors">
                 Book Appointment
               </a>
             </div>

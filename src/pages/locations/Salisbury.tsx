@@ -5,6 +5,7 @@ export default function Salisbury() {
   return (
     <CityPageLayout
       city="Salisbury"
+      geo={{ lat: 35.6704, lng: -80.4747 }}
       image="https://images.unsplash.com/photo-1559530075-006499996884?auto=format&fit=crop&q=80&w=1920"
       introText={
         <>
@@ -15,37 +16,37 @@ export default function Salisbury() {
         {
           title: "Loan Signing Services",
           description: <>Expert handling of mortgages, refinances, HELOCs, and seller packages. We serve homeowners in neighborhoods like <strong>Fulton Heights, Brooklyn South Square, and Country Club</strong>.</>,
-          icon: <FileSignature className="w-6 h-6 text-blue-600" />,
+          icon: <FileSignature className="w-6 h-6 text-brand-600" />,
           link: "/loan-signing-agent-charlotte-nc"
         },
         {
           title: "Estate Planning Notary",
           description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Bell Tower Green</strong> or the <strong>Rowan Public Library</strong>.</>,
-          icon: <FileText className="w-6 h-6 text-blue-600" />,
+          icon: <FileText className="w-6 h-6 text-brand-600" />,
           link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home",
           description: <>Compassionate bedside notary services for medical POAs and living wills for patients at <strong>Novant Health Rowan</strong> and the <strong>VA Medical Center</strong>.</>,
-          icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
+          icon: <HeartPulse className="w-6 h-6 text-brand-600" />,
           link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours Notary",
           description: <>Available for late-night and weekend signings in <strong>West Square</strong> and across the Salisbury area when standard offices are closed.</>,
-          icon: <Clock className="w-6 h-6 text-blue-600" />,
+          icon: <Clock className="w-6 h-6 text-brand-600" />,
           link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
           description: <>Fast and reliable notarization for affidavits, vehicle titles, and school forms. We meet you at any <strong>Salisbury</strong> location for your convenience.</>,
-          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          icon: <ShieldCheck className="w-6 h-6 text-brand-600" />,
           link: "/general-notary-charlotte-nc"
         },
         {
           title: "Business & Corporate",
           description: <>Professional notary support for corporate contracts and employment documents. Serving businesses in the <strong>Innes Street</strong> shopping district.</>,
-          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          icon: <Laptop className="w-6 h-6 text-brand-600" />,
           link: "/services/business-documents"
         }
       ]}

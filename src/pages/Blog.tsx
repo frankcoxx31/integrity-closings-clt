@@ -132,8 +132,8 @@ export default function Blog() {
       {/* Blog Header Content */}
       <div className="bg-white py-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
-            <BookOpen className="h-8 w-8 text-blue-600" />
+          <div className="w-16 h-16 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-6">
+            <BookOpen className="h-8 w-8 text-brand-600" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-serif">Insights & Expert Advice</h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -164,13 +164,13 @@ export default function Blog() {
                   <Calendar className="w-4 h-4 mr-2" />
                   {post.date}
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors font-serif">
+                <h2 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-brand-600 transition-colors font-serif">
                   {post.title}
                 </h2>
                 <p className="text-slate-600 mb-6 flex-grow">
                   {post.excerpt}
                 </p>
-                <div className="flex items-center text-blue-600 font-semibold group-hover:text-blue-700">
+                <div className="flex items-center text-brand-600 font-semibold group-hover:text-brand-700">
                   Read Article <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>

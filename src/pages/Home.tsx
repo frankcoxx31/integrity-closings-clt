@@ -4,32 +4,33 @@ import Services from '../components/Services';
 import MeetNotary from '../components/MeetNotary';
 import Locations from '../components/Locations';
 import Reviews from '../components/Reviews';
+import { businessConfig } from '../config/business';
 
 export default function Home() {
   useEffect(() => {
     const schemaData = {
       "@context": "https://schema.org",
       "@type": ["LocalBusiness", "ProfessionalService"],
-      "name": "Integrity Closings CLT",
-      "url": "https://www.integrityclosingsclt.com",
-      "telephone": "+1-980-372-4103",
+      "name": businessConfig.name,
+      "url": businessConfig.domain,
+      "telephone": `+1-${businessConfig.phone.display}`,
       "description": "Mobile notary public and loan signing agent serving Charlotte, Mint Hill, Matthews, and surrounding Mecklenburg County. Specializing in estate notarization, hospital bedside signings, elder care facilities, and general mobile notary services.",
       "areaServed": [
-        "Mint Hill NC", "Charlotte NC", "Matthews NC", "Stallings NC", 
-        "Indian Trail NC", "Monroe NC", "Harrisburg NC", "Mecklenburg County NC", 
+        "Mint Hill NC", "Charlotte NC", "Matthews NC", "Stallings NC",
+        "Indian Trail NC", "Monroe NC", "Harrisburg NC", "Mecklenburg County NC",
         "Union County NC"
       ],
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Mint Hill",
-        "addressRegion": "NC",
-        "postalCode": "28227",
-        "addressCountry": "US"
+        "addressLocality": businessConfig.address.locality,
+        "addressRegion": businessConfig.address.region,
+        "postalCode": businessConfig.address.postalCode,
+        "addressCountry": businessConfig.address.country
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 35.1779,
-        "longitude": -80.6534
+        "latitude": businessConfig.officeLocation.lat,
+        "longitude": businessConfig.officeLocation.lng
       },
       "openingHoursSpecification": [{
         "@type": "OpeningHoursSpecification",

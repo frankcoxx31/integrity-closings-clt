@@ -111,14 +111,14 @@ export default function GeneralNotary() {
                 'Contracts & Business Agreements'
               ].map((item, i) => (
                 <li key={i} className="flex items-center text-slate-700">
-                  <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-brand-600 mr-3 flex-shrink-0" />
                   {item}
                 </li>
               ))}
             </ul>
-            <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 mb-8">
-              <h3 className="text-lg font-bold text-blue-900 mb-2">Fast, Flexible, and Reliable</h3>
-              <p className="text-blue-800">We offer flexible scheduling, including evenings and weekends, to accommodate your busy lifestyle. Just let us know where and when, and we'll be there to ensure your documents are legally and properly notarized.</p>
+            <div className="bg-brand-50 p-6 rounded-xl border border-brand-100 mb-8">
+              <h3 className="text-lg font-bold text-brand-900 mb-2">Fast, Flexible, and Reliable</h3>
+              <p className="text-brand-800">We offer flexible scheduling, including evenings and weekends, to accommodate your busy lifestyle. Just let us know where and when, and we'll be there to ensure your documents are legally and properly notarized.</p>
             </div>
 
             <section className="mb-12">
@@ -155,7 +155,7 @@ export default function GeneralNotary() {
             </section>
 
             <div className="text-center mt-12">
-              <a href="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+              <a href="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors">
                 Request a Notary <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </div>

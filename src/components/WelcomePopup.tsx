@@ -53,16 +53,16 @@ export default function WelcomePopup() {
           </div>
           
           {/* Heading */}
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-950 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-brand-950 mb-4">
             Need A Notary Now!
           </h2>
           
           {/* Body Text */}
-          <p className="text-blue-950 mb-4 text-base leading-relaxed px-2 font-medium">
-            If you need a notary immediately, use the buttons below or dial <a href="tel:9803724103" className="text-blue-700 font-bold hover:underline">(980)-372-4103</a> and ask for Frank Coxx.
+          <p className="text-brand-950 mb-4 text-base leading-relaxed px-2 font-medium">
+            If you need a notary immediately, use the buttons below or dial <a href="tel:9803724103" className="text-brand-700 font-bold hover:underline">(980)-372-4103</a> and ask for Frank Coxx.
           </p>
           
-          <p className="text-blue-950 mb-8 text-base px-2 font-medium">
+          <p className="text-brand-950 mb-8 text-base px-2 font-medium">
             Leave a message if no answer and he'll call you back asap...
           </p>
           
@@ -72,7 +72,7 @@ export default function WelcomePopup() {
             <a 
               href="sms:9805058050" 
               onClick={handleClose}
-              className="flex items-center justify-center w-full py-4 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-md"
+              className="flex items-center justify-center w-full py-4 px-6 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 text-white font-bold text-lg hover:opacity-90 transition-opacity shadow-md"
             >
               <MessageSquare className="w-5 h-5 mr-2" />
               Text Now 980-505-8050
@@ -81,9 +81,9 @@ export default function WelcomePopup() {
             {/* Secondary Button: Book Online */}
             <a href="/booking" 
               onClick={handleClose}
-              className="flex items-center justify-center w-full py-3 px-6 rounded-xl bg-slate-100 text-blue-950 font-bold hover:bg-slate-200 transition-colors"
+              className="flex items-center justify-center w-full py-3 px-6 rounded-xl bg-slate-100 text-brand-950 font-bold hover:bg-slate-200 transition-colors"
             >
-              <Calendar className="w-5 h-5 mr-2 text-blue-700" />
+              <Calendar className="w-5 h-5 mr-2 text-brand-700" />
               Book Online
             </a>
 
@@ -91,16 +91,16 @@ export default function WelcomePopup() {
             <Link 
               to="/calculator" 
               onClick={handleClose}
-              className="flex items-center justify-center w-full py-3 px-6 rounded-xl bg-slate-100 text-blue-950 font-bold hover:bg-slate-200 transition-colors"
+              className="flex items-center justify-center w-full py-3 px-6 rounded-xl bg-slate-100 text-brand-950 font-bold hover:bg-slate-200 transition-colors"
             >
-              <Calculator className="w-5 h-5 mr-2 text-blue-700" />
+              <Calculator className="w-5 h-5 mr-2 text-brand-700" />
               Quick Quote Calculator
             </Link>
           </div>
         </div>
 
         {/* Bottom Gradient Border */}
-        <div className="h-2 w-full bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500"></div>
+        <div className="h-2 w-full bg-gradient-to-r from-brand-400 via-indigo-500 to-purple-500"></div>
       </div>
     </div>
   );

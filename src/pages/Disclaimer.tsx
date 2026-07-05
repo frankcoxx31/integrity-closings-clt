@@ -5,14 +5,14 @@ export default function Disclaimer() {
   return (
     <div className="bg-slate-50 min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="inline-flex items-center text-slate-600 hover:text-blue-600 mb-8 transition-colors">
+        <Link to="/" className="inline-flex items-center text-slate-600 hover:text-brand-600 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
         </Link>
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 sm:p-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8 font-sans">Legal Disclaimer</h1>
           <div className="prose prose-slate max-w-none">
-            <div className="bg-blue-50 border-l-4 border-blue-600 p-6 mb-8 rounded-r-lg">
-              <p className="text-lg font-bold text-blue-900 m-0 uppercase tracking-wide">
+            <div className="bg-brand-50 border-l-4 border-brand-600 p-6 mb-8 rounded-r-lg">
+              <p className="text-lg font-bold text-brand-900 m-0 uppercase tracking-wide">
                 I AM NOT AN ATTORNEY LICENSED TO PRACTICE LAW IN THE STATE OF NORTH CAROLINA, AND I MAY NOT GIVE LEGAL ADVICE OR ACCEPT FEES FOR LEGAL ADVICE.
               </p>
             </div>

@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 export default function AcceptableIdNc() {
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
-      <div className="bg-blue-950 py-16">
+      <div className="bg-brand-950 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link to="/resources" className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors font-medium">
+          <Link to="/resources" className="inline-flex items-center text-brand-200 hover:text-white mb-6 transition-colors font-medium">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Resources
           </Link>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 font-serif leading-tight">
             Acceptable Forms of ID for Notarization in NC
           </h1>
-          <p className="text-lg text-blue-100">
+          <p className="text-lg text-brand-100">
             A comprehensive guide to the types of identification you can use for your mobile notary appointment in North Carolina.
           </p>
         </div>
@@ -67,9 +67,9 @@ export default function AcceptableIdNc() {
             A credible witness is someone who personally knows you and can swear under oath to your identity. In North Carolina, you typically need two credible witnesses who have valid ID themselves, are not named in the document, and do not have a financial interest in the transaction.
           </p>
           
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
-            <h3 className="text-xl font-bold text-blue-900 mb-2">Pro Tip for Your Appointment</h3>
-            <p className="text-blue-800">
+          <div className="bg-brand-50 border-l-4 border-brand-600 p-6 my-8 rounded-r-lg">
+            <h3 className="text-xl font-bold text-brand-900 mb-2">Pro Tip for Your Appointment</h3>
+            <p className="text-brand-800">
               Always ensure the name on your document matches the name on your ID. If your document says "John Robert Doe" but your ID only says "John Doe," it may cause issues depending on the receiving agency's strictness.
             </p>
           </div>

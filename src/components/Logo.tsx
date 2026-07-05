@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { businessConfig } from '../config/business';
 
 interface LogoProps {
   className?: string;
@@ -59,8 +60,8 @@ export default function Logo({
 
   return (
     <img 
-      src={imgSrc} 
-      alt="Integrity Closings CLT" 
+      src={imgSrc}
+      alt={businessConfig.name}
       className={className}
       referrerPolicy="no-referrer"
     />

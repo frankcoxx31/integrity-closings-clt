@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, CheckCircle, Shield, Award, Clock, Calendar, MessageSquare, ChevronDown, FileSignature, FileText, Landmark, Key, Receipt } from 'lucide-react';
+import { businessConfig } from '../config/business';
 
 interface LoanSigningService {
   title: string;
@@ -42,7 +43,7 @@ export default function LoanSigningCityLayout({
   const displayH1 = h1 || `${location} Loan Signing Agent`;
 
   useEffect(() => {
-    document.title = `${displayH1} | Integrity Closings CLT`;
+    document.title = `${displayH1} | ${businessConfig.name}`;
     const meta = document.querySelector('meta[name="description"]');
     if (meta) {
       meta.setAttribute('content', metaDescription);
@@ -59,9 +60,9 @@ export default function LoanSigningCityLayout({
       "serviceType": "Loan Signing Agent",
       "provider": {
         "@type": "LocalBusiness",
-        "name": "Integrity Closings CLT",
-        "telephone": "980-372-4103",
-        "url": "https://www.integrityclosingsclt.com"
+        "name": businessConfig.name,
+        "telephone": businessConfig.phone.display,
+        "url": businessConfig.domain
       },
       "areaServed": {
         "@type": "Place",
@@ -146,13 +147,13 @@ export default function LoanSigningCityLayout({
             {heroText}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/booking" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/25">
+            <Link to="/booking" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-lg text-white bg-brand-600 hover:bg-brand-700 transition-all shadow-lg hover:shadow-brand-500/25">
               <Calendar className="w-5 h-5 mr-2" />
               Book Appointment
             </Link>
-            <a href="tel:9803724103" className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-lg text-slate-900 bg-yellow-400 hover:bg-yellow-500 transition-all shadow-lg hover:shadow-yellow-500/25">
+            <a href={`tel:${businessConfig.phone.tel}`} className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-lg text-slate-900 bg-accent-400 hover:bg-accent-500 transition-all shadow-lg hover:shadow-accent-500/25">
               <Phone className="w-5 h-5 mr-2" />
-              Call (980) 372-4103
+              Call {businessConfig.phone.display}
             </a>
           </div>
         </div>
@@ -166,8 +167,8 @@ export default function LoanSigningCityLayout({
             <div className="text-lg text-slate-700 leading-relaxed space-y-6">
               {overviewText}
             </div>
-            <div className="mt-10 p-6 bg-blue-50 rounded-2xl border border-blue-100 italic">
-              <p className="text-slate-700">"Integrity Closings CLT is built on the foundation of providing a professional, punctual, and confidential signing experience for every client."</p>
+            <div className="mt-10 p-6 bg-brand-50 rounded-2xl border border-brand-100 italic">
+              <p className="text-slate-700">"{businessConfig.name} is built on the foundation of providing a professional, punctual, and confidential signing experience for every client."</p>
             </div>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
@@ -194,7 +195,7 @@ export default function LoanSigningCityLayout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {loanServices.map((service, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center mb-6">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
@@ -208,14 +209,14 @@ export default function LoanSigningCityLayout({
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Why Choose Integrity Closings CLT?</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Why Choose {businessConfig.name}?</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">Experience the benefits of working with a professional mobile loan signing agent in the {location} area.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {trustPoints.map((point, index) => (
               <div key={index} className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <CheckCircle className="w-6 h-6 text-blue-600 mt-1" />
+                  <CheckCircle className="w-6 h-6 text-brand-600 mt-1" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-slate-900 mb-2">{point.title}</h3>
@@ -234,7 +235,7 @@ export default function LoanSigningCityLayout({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             {coverageAreas.map((area, index) => (
               <div key={index} className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-yellow-400" />
+                <MapPin className="w-5 h-5 text-accent-400" />
                 <span className="text-slate-300 font-medium">{area}</span>
               </div>
             ))}
@@ -259,7 +260,7 @@ export default function LoanSigningCityLayout({
           
           <div className="mt-16 text-center">
             <p className="text-slate-400 mb-4">Looking for general information about our specialization?</p>
-            <Link to="/loan-signing-agent-charlotte-nc" className="text-yellow-400 font-bold hover:underline inline-flex items-center">
+            <Link to="/loan-signing-agent-charlotte-nc" className="text-accent-400 font-bold hover:underline inline-flex items-center">
               View All Loan Signing Services <Award className="w-4 h-4 ml-2" />
             </Link>
           </div>
@@ -295,17 +296,17 @@ export default function LoanSigningCityLayout({
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-blue-600 py-20 text-center px-4">
+      <section className="bg-brand-600 py-20 text-center px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to Schedule Your {location} Loan Signing?</h2>
-          <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">Don't risk delays. Work with a punctual mobile loan signing agent who understands the importance of error-free documents.</p>
+          <p className="text-xl text-brand-100 mb-12 max-w-2xl mx-auto">Don't risk delays. Work with a punctual mobile loan signing agent who understands the importance of error-free documents.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link to="/booking" className="w-full sm:w-auto px-10 py-5 bg-white text-blue-600 font-bold text-xl rounded-xl hover:bg-blue-50 transition-all shadow-xl">
+            <Link to="/booking" className="w-full sm:w-auto px-10 py-5 bg-white text-brand-600 font-bold text-xl rounded-xl hover:bg-brand-50 transition-all shadow-xl">
               Book Appointment
             </Link>
-            <a href="tel:9803724103" className="w-full sm:w-auto px-10 py-5 bg-yellow-400 text-slate-900 font-bold text-xl rounded-xl hover:bg-yellow-500 transition-all shadow-xl flex items-center justify-center">
+            <a href={`tel:${businessConfig.phone.tel}`} className="w-full sm:w-auto px-10 py-5 bg-accent-400 text-slate-900 font-bold text-xl rounded-xl hover:bg-accent-500 transition-all shadow-xl flex items-center justify-center">
               <Phone className="w-6 h-6 mr-3" />
-              980-372-4103
+              {businessConfig.phone.display}
             </a>
           </div>
         </div>

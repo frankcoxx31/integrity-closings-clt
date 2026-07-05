@@ -125,9 +125,9 @@ export default function BlogPost() {
             <li>Two qualified witnesses present in person</li>
           </ul>
           <p className="text-slate-700 leading-relaxed mb-6">The agent does not need to be present at the signing — only the principal signs at this stage.</p>
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg mb-6">
-            <p className="text-blue-900 font-semibold mb-1">Important</p>
-            <p className="text-blue-800 text-sm leading-relaxed">In North Carolina, the notary must witness the principal sign. If the document is already signed when the notary arrives, the notarization is invalid.</p>
+          <div className="bg-brand-50 border-l-4 border-brand-600 p-4 rounded-r-lg mb-6">
+            <p className="text-brand-900 font-semibold mb-1">Important</p>
+            <p className="text-brand-800 text-sm leading-relaxed">In North Carolina, the notary must witness the principal sign. If the document is already signed when the notary arrives, the notarization is invalid.</p>
           </div>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Can the Witnesses Be Anyone?</h2>
@@ -198,7 +198,7 @@ export default function BlogPost() {
             <h2 className="text-2xl font-bold mb-4 text-white font-sans">Ready to Get Your Power of Attorney Notarized?</h2>
             <p className="text-slate-300 mb-8 font-sans">Call or text (980) 372-4103 for same-day service, or book online. We come to you anywhere in the Charlotte area.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/book" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors font-sans">Book Appointment</Link>
+              <Link to="/book" className="bg-brand-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors font-sans">Book Appointment</Link>
               <a href="tel:9803724103" className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-colors font-sans">Call (980) 372-4103</a>
             </div>
             <p className="text-slate-400 text-sm mt-6 font-sans italic">Notarization services only — not legal advice. For legal guidance on drafting a POA, consult a licensed North Carolina attorney.</p>
@@ -331,13 +331,13 @@ export default function BlogPost() {
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Link 
               to="/title-company-attorney-closing-support-charlotte-nc" 
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-blue-700 transition-colors text-center"
+              className="bg-brand-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-brand-700 transition-colors text-center"
             >
               Closing Support Services
             </Link>
             <a 
               href="tel:9803724103" 
-              className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition-colors text-center"
+              className="bg-white text-brand-600 border-2 border-brand-600 px-8 py-4 rounded-lg font-bold hover:bg-brand-50 transition-colors text-center"
             >
               Call 980-372-4103
             </a>
@@ -401,7 +401,7 @@ export default function BlogPost() {
           <p className="mb-6">In a medical setting, the documents required are usually high-stakes. These aren't just simple forms; they are the tools that allow families to make decisions when a patient cannot.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">1. Durable Power of Attorney (DPOA)</h3>
-          <p className="mb-6">A Power of Attorney allows a patient to appoint someone to handle their financial affairs. If a patient is hospitalized and bills need to be paid or accounts managed, a DPOA is the only way a family member can step in legally. You can learn more about how we handle these on our <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-blue-600 hover:underline">Power of Attorney page</Link>.</p>
+          <p className="mb-6">A Power of Attorney allows a patient to appoint someone to handle their financial affairs. If a patient is hospitalized and bills need to be paid or accounts managed, a DPOA is the only way a family member can step in legally. You can learn more about how we handle these on our <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney page</Link>.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">2. Healthcare Power of Attorney & Living Wills</h3>
           <p className="mb-6">These documents dictate who can make medical decisions and what kind of life-sustaining treatment a patient desires. Having these notarized ensures the medical team has clear, legal instructions to follow.</p>
@@ -410,7 +410,7 @@ export default function BlogPost() {
           <p className="mb-6">Sometimes, a hospital stay prompts a patient to finally finalize their will. While North Carolina has specific requirements for witnesses, a <strong>Charlotte notary public</strong> is a critical part of making the document self-proving and legally robust.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">4. Real Estate Closing Documents</h3>
-          <p className="mb-6">Life doesn't stop because of a hospital stay. We frequently help patients sign closing disclosures or deeds so their home sale or purchase doesn't fall through while they are recovering. Check out our <Link to="/loan-signing-agent-charlotte-nc" className="text-blue-600 hover:underline">loan signing agent services</Link> for more details.</p>
+          <p className="mb-6">Life doesn't stop because of a hospital stay. We frequently help patients sign closing disclosures or deeds so their home sale or purchase doesn't fall through while they are recovering. Check out our <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing agent services</Link> for more details.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The "Sound Mind" Requirement: A Sensitive Balance</h2>
           <p className="mb-6">One of the most important roles of a notary in a hospital setting is determining "competence and willingness." For a notarization to be legal, the person signing must understand what they are signing and be doing so of their own free will.</p>
@@ -422,7 +422,7 @@ export default function BlogPost() {
           <p className="mb-6">We aim to make the process of booking a <strong>hospital notary</strong> as seamless as possible. Here is what you can expect when you work with us:</p>
           <ol className="list-decimal pl-6 space-y-4 mb-6">
             <li><strong>The Initial Call:</strong> You reach out to us (often on short notice). We’ll ask what documents need to be signed and where the patient is located.</li>
-            <li><strong>Scheduling:</strong> We coordinate a time that works between doctor rounds and visitor hours. We offer <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-blue-600 hover:underline">after-hours mobile notary services</Link> because emergencies don't stick to a 9-to-5 schedule.</li>
+            <li><strong>Scheduling:</strong> We coordinate a time that works between doctor rounds and visitor hours. We offer <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours mobile notary services</Link> because emergencies don't stick to a 9-to-5 schedule.</li>
             <li><strong>Preparation:</strong> We’ll remind you to ensure the patient has a valid, unexpired government-issued ID (like a driver's license or passport).</li>
             <li><strong>The Visit:</strong> We arrive at the hospital, check in, and proceed to the room. We take the time to explain the process to the patient, verify their identity, and ensure they are ready to sign.</li>
             <li><strong>Execution:</strong> We witness the signature, apply the seal, and you’re done. You have the legal peace of mind you need to focus back on recovery.</li>
@@ -444,16 +444,16 @@ export default function BlogPost() {
           <ul className="list-disc pl-6 space-y-4 mb-6">
             <li><strong>Atrium Health:</strong> Carolinas Medical Center, Mercy, Pineville, and University.</li>
             <li><strong>Novant Health:</strong> Presbyterian Medical Center, Matthews Medical Center, and Huntersville.</li>
-            <li><strong>Rehab and Nursing Homes:</strong> We regularly visit residents in <Link to="/nursing-home-notary" className="text-blue-600 hover:underline">nursing homes</Link> throughout Mecklenburg and Cabarrus counties.</li>
+            <li><strong>Rehab and Nursing Homes:</strong> We regularly visit residents in <Link to="/nursing-home-notary" className="text-brand-600 hover:underline">nursing homes</Link> throughout Mecklenburg and Cabarrus counties.</li>
           </ul>
-          <p className="mb-6">If you’re unsure if we cover your area, you can view our full list of <Link to="/areas-served" className="text-blue-600 hover:underline">areas served</Link>.</p>
+          <p className="mb-6">If you’re unsure if we cover your area, you can view our full list of <Link to="/areas-served" className="text-brand-600 hover:underline">areas served</Link>.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Families Choose Integrity Closings CLT</h2>
           <p className="mb-6">We know there are several options for a <strong>mobile notary in Charlotte NC</strong>, but hospital signings require a specific touch. It’s not just about the stamp; it’s about the person behind the stamp. </p>
           <ul className="list-disc pl-6 space-y-4 mb-6">
             <li><strong>Professionalism:</strong> We arrive dressed professionally and act as a calm presence in a stressful environment.</li>
             <li><strong>Knowledge:</strong> We understand NC notary laws inside and out, specifically regarding medical and estate documents.</li>
-            <li><strong>Flexibility:</strong> We offer <Link to="/about-same-day-service-near-you" className="text-blue-600 hover:underline">same-day service near you</Link> because we know that in a hospital, things change fast.</li>
+            <li><strong>Flexibility:</strong> We offer <Link to="/about-same-day-service-near-you" className="text-brand-600 hover:underline">same-day service near you</Link> because we know that in a hospital, things change fast.</li>
             <li><strong>Compassion:</strong> We treat every patient like they are our own family. We don't rush; we listen.</li>
           </ul>
 
@@ -464,14 +464,14 @@ export default function BlogPost() {
           <p className="mb-4 font-bold">Our Services Include:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
             <li>Hospital & Bedside Notarizations</li>
-            <li><Link to="/nursing-home-notary" className="text-blue-600 hover:underline">Nursing Home & Assisted Living Visits</Link></li>
-            <li><Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-blue-600 hover:underline">Power of Attorney & Estate Documents</Link></li>
-            <li><Link to="/general-notary-charlotte-nc" className="text-blue-600 hover:underline">General Notary Services</Link></li>
+            <li><Link to="/nursing-home-notary" className="text-brand-600 hover:underline">Nursing Home & Assisted Living Visits</Link></li>
+            <li><Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney & Estate Documents</Link></li>
+            <li><Link to="/general-notary-charlotte-nc" className="text-brand-600 hover:underline">General Notary Services</Link></li>
           </ul>
 
-          <p className="mb-6"><strong>Ready to get started?</strong><br/>You can <Link to="/book" className="text-blue-600 hover:underline">book your appointment online here</Link> or reach out to us directly to discuss your specific needs. We look forward to providing you with the professional, compassionate service that Integrity Closings CLT is known for.</p>
+          <p className="mb-6"><strong>Ready to get started?</strong><br/>You can <Link to="/book" className="text-brand-600 hover:underline">book your appointment online here</Link> or reach out to us directly to discuss your specific needs. We look forward to providing you with the professional, compassionate service that Integrity Closings CLT is known for.</p>
 
-          <div className="bg-slate-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
+          <div className="bg-slate-50 border-l-4 border-brand-600 p-6 my-8 rounded-r-lg">
             <h3 className="text-lg font-bold text-slate-900 mb-2 font-sans">Summary of Key Takeaways:</h3>
             <ul className="list-disc pl-6 space-y-2">
               <li>Hospitals rarely provide notary services for personal legal documents.</li>
@@ -537,7 +537,7 @@ export default function BlogPost() {
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Key Benefits for Charlotte Homebuyers</h2>
           <p className="mb-6">Why are more people choosing <strong>Charlotte mobile notary services</strong> instead of the traditional office visit? It usually boils down to four main things:</p>
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">1. Unmatched Convenience</h3>
-          <p className="mb-6">You’re moving. Your life is currently packed into cardboard boxes. The last thing you want to do is load the kids into the car or take a half-day off work to drive across town. With a mobile notary, the "office" comes to you. We’ve done closings in driveways, at work desks, and even in hospital rooms via our <Link to="/services/hospital-notary" className="text-blue-600 hover:underline">nursing home notary services</Link>.</p>
+          <p className="mb-6">You’re moving. Your life is currently packed into cardboard boxes. The last thing you want to do is load the kids into the car or take a half-day off work to drive across town. With a mobile notary, the "office" comes to you. We’ve done closings in driveways, at work desks, and even in hospital rooms via our <Link to="/services/hospital-notary" className="text-brand-600 hover:underline">nursing home notary services</Link>.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">2. Flexibility for Busy Professionals</h3>
           <p className="mb-6">Charlotte is a hub for finance, tech, and healthcare. We know your 9-to-5 isn’t always a 9-to-5. Mobile notaries often work outside of standard banking hours. Need to sign at 7:00 PM after the kids are in bed? We can make that happen.</p>
@@ -558,10 +558,10 @@ export default function BlogPost() {
           <li><strong>The Initial Escrow Account Disclosure:</strong> This explains how your taxes and insurance will be paid out of your monthly mortgage payment.</li>
           <li><strong>Signature Affidavit and Name Affidavit:</strong> A formal way to confirm that "Jon Doe" and "Jonathan Q. Doe" are the same person.</li>
           </ul>
-          <p className="mb-6">If you’re feeling overwhelmed, don't worry. Part of our <Link to="/services/mobile-notary-services" className="text-blue-600 hover:underline">mobile notary services</Link> involves helping you stay organized so you don't feel buried by the paperwork.</p>
+          <p className="mb-6">If you’re feeling overwhelmed, don't worry. Part of our <Link to="/services/mobile-notary-services" className="text-brand-600 hover:underline">mobile notary services</Link> involves helping you stay organized so you don't feel buried by the paperwork.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How to Prepare for a Smooth Remote or Mobile Closing</h2>
-          <p className="mb-6">To make sure your <strong>Charlotte NC remote closings</strong> go off without a hitch, here are a few <Link to="/what-to-bring-to-a-notary-appointment" className="text-blue-600 hover:underline">buyer closing tips Charlotte</Link>:</p>
+          <p className="mb-6">To make sure your <strong>Charlotte NC remote closings</strong> go off without a hitch, here are a few <Link to="/what-to-bring-to-a-notary-appointment" className="text-brand-600 hover:underline">buyer closing tips Charlotte</Link>:</p>
           <ol className="list-decimal pl-6 space-y-4 mb-6">
           <li><strong>Have Your ID Ready:</strong> We cannot notarize your signature without a valid, government-issued photo ID. A driver's license or passport works best. Check the expiration date!</li>
           <li><strong>Clear the Table:</strong> We need a little bit of room to spread out the documents. A kitchen table or dining room table is perfect.</li>
@@ -573,8 +573,8 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">North Carolina Rules: Why Working with Pros Matters</h2>
           <p className="mb-6">North Carolina has specific rules about how real estate is handled. Because we are an attorney-closings state, the mobile notary isn't a replacement for legal counsel, we are an extension of the service. </p>
-          <p className="mb-6">Working with a qualified <strong>loan signing agent Charlotte NC</strong> is vital because a single mistake can halt a multi-million dollar transaction. At Integrity Closings CLT, we understand the nuances of NC notary law and the specific requirements of major lenders. Whether it's a traditional purchase or a <Link to="/services/mobile-refi-service-notarization" className="text-blue-600 hover:underline">mobile refi service</Link>, we ensure the "integrity" of your documents is never in question.</p>
-          <p className="mb-6">If you are debating between an <Link to="/services/attorney-office-closing-vs-mobile-closing-which-is-better-for-your-charlotte-home-sale" className="text-blue-600 hover:underline">attorney office closing vs. a mobile closing</Link>, consider your own stress levels. If you value your time and want a personalized experience, the mobile route is almost always the winner.</p>
+          <p className="mb-6">Working with a qualified <strong>loan signing agent Charlotte NC</strong> is vital because a single mistake can halt a multi-million dollar transaction. At Integrity Closings CLT, we understand the nuances of NC notary law and the specific requirements of major lenders. Whether it's a traditional purchase or a <Link to="/services/mobile-refi-service-notarization" className="text-brand-600 hover:underline">mobile refi service</Link>, we ensure the "integrity" of your documents is never in question.</p>
+          <p className="mb-6">If you are debating between an <Link to="/services/attorney-office-closing-vs-mobile-closing-which-is-better-for-your-charlotte-home-sale" className="text-brand-600 hover:underline">attorney office closing vs. a mobile closing</Link>, consider your own stress levels. If you value your time and want a personalized experience, the mobile route is almost always the winner.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">FAQ: Charlotte Remote Closings &amp; Mobile Notaries</h2>
           <p className="mb-6"><strong>1. Is a remote closing legal in North Carolina?</strong><br/>
@@ -586,12 +586,12 @@ export default function BlogPost() {
           <p className="mb-6"><strong>4. What if I find an error in the documents during the signing?</strong><br/>
           If there’s a typo or a wrong number, we immediately contact your closing attorney or loan officer. In many cases, they can email a corrected page that we can print or handle digitally to keep the closing on track.</p>
           <p className="mb-6"><strong>5. Do you offer services outside of Charlotte?</strong><br/>
-          Yes! We serve the greater Charlotte area, including Pineville, Matthews, Concord, and even Gastonia. If you're looking for a <Link to="/locations/pineville" className="text-blue-600 hover:underline">loan signing notary in Pineville</Link>, we've got you covered.</p>
+          Yes! We serve the greater Charlotte area, including Pineville, Matthews, Concord, and even Gastonia. If you're looking for a <Link to="/locations/pineville" className="text-brand-600 hover:underline">loan signing notary in Pineville</Link>, we've got you covered.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Ready to Close on Your Terms?</h2>
           <p className="mb-6">Buying a home is a massive milestone. It should be a moment of celebration, not a logistical nightmare. By choosing a <strong>remote home closing Charlotte</strong> service, you’re taking control of your time and ensuring the process happens on your home turf.</p>
           <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we pride ourselves on being punctual, professional, and prepared. We don't just flip pages; we help you cross the finish line with confidence.</p>
-          <p className="mb-6"><strong>Ready to schedule your mobile closing?</strong><br/><Link to="/booking" className="text-blue-600 hover:underline">Contact Integrity Closings CLT today</Link> to book your appointment. Let’s get you into your new home without the headache!</p>
+          <p className="mb-6"><strong>Ready to schedule your mobile closing?</strong><br/><Link to="/booking" className="text-brand-600 hover:underline">Contact Integrity Closings CLT today</Link> to book your appointment. Let’s get you into your new home without the headache!</p>
 
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready for a Stress-Free Closing?</h2>
@@ -649,7 +649,7 @@ export default function BlogPost() {
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Healthcare Power of Attorney (HCPOA)</h2>
           <p className="mb-6">While a DPOA handles your money, a Healthcare Power of Attorney handles your life. This document names someone to make medical decisions on your behalf if you are unconscious, mentally incompetent, or otherwise unable to communicate with doctors.</p>
           <p className="mb-6"><strong>Why it’s essential before 50:</strong> Health crises don’t wait for retirement. By age 50, you likely have specific preferences regarding your medical care. An HCPOA ensures that your "person" can speak for you, preventing family disputes and ensuring doctors follow your intended treatment plan.</p>
-          <p className="mb-6"><strong>The Notary Connection:</strong> To be enforceable in North Carolina, an HCPOA must be signed in the presence of two qualified witnesses and a notary public. A <a href="/hospital-notary-charlotte-nc" className="text-blue-600 hover:underline">hospital notary</a> or mobile service can ensure this is done correctly, even if you are currently healthy and just planning ahead.</p>
+          <p className="mb-6"><strong>The Notary Connection:</strong> To be enforceable in North Carolina, an HCPOA must be signed in the presence of two qualified witnesses and a notary public. A <a href="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital notary</a> or mobile service can ensure this is done correctly, even if you are currently healthy and just planning ahead.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. Last Will and Testament</h2>
           <p className="mb-6">A Will is the blueprint for how your estate will be distributed after your death. It names an executor to manage the process and specifies who inherits your property, from your home to your sentimental heirlooms.</p>
@@ -667,7 +667,7 @@ export default function BlogPost() {
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. Living Will (Advance Directive)</h2>
           <p className="mb-6">A Living Will is different from a Last Will. It specifically addresses end-of-life decisions, such as whether you want to be kept on life support or receive artificial nutrition if you have a terminal condition or are in a persistent vegetative state.</p>
           <p className="mb-6"><strong>Why it’s essential before 50:</strong> These are the hardest conversations to have, but they are the most important. A Living Will removes the agonizing burden of these decisions from your grieving family members. It is a gift of clarity during a time of chaos.</p>
-          <p className="mb-6"><strong>The Notary Connection:</strong> Like the HCPOA, a Living Will in North Carolina requires two witnesses and a notary’s acknowledgment to be legally binding. It is often executed alongside other <a href="/estate-notary-charlotte-nc" className="text-blue-600 hover:underline">estate documents</a> to ensure a comprehensive plan is in place.</p>
+          <p className="mb-6"><strong>The Notary Connection:</strong> Like the HCPOA, a Living Will in North Carolina requires two witnesses and a notary’s acknowledgment to be legally binding. It is often executed alongside other <a href="/estate-notary-charlotte-nc" className="text-brand-600 hover:underline">estate documents</a> to ensure a comprehensive plan is in place.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. Revocable Living Trust</h2>
           <p className="mb-6">For many people hitting 50, a Trust is a more efficient alternative (or supplement) to a Will. A Revocable Living Trust allows you to place your assets into a trust while you are alive, which then transfers to your beneficiaries immediately upon your death without going through the public and often slow probate process.</p>
@@ -684,8 +684,8 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Don’t Wait for a Crisis to Plan</h2>
           <p className="mb-6">The common thread among these documents is that they must be created while you are of sound mind and capable of making your own decisions. Waiting until a health scare or a family emergency occurs is often too late.</p>
-          <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we understand that estate planning can feel overwhelming. That’s why we offer <a href="/mobile-notary-services" className="text-blue-600 hover:underline">mobile notary services</a> throughout the Charlotte area. We bring the professional, stress-free notarization process to your home or office, so you can secure your future without the hassle of traveling to a bank or attorney’s office.</p>
-          <p className="mb-6">Turning 50 is a time to celebrate how far you’ve come. Make sure you’re protected for how far you’re going. <a href="/booking" className="text-blue-600 hover:underline">Schedule your mobile notary appointment today</a> and cross these essential documents off your list.</p>
+          <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we understand that estate planning can feel overwhelming. That’s why we offer <a href="/mobile-notary-services" className="text-brand-600 hover:underline">mobile notary services</a> throughout the Charlotte area. We bring the professional, stress-free notarization process to your home or office, so you can secure your future without the hassle of traveling to a bank or attorney’s office.</p>
+          <p className="mb-6">Turning 50 is a time to celebrate how far you’ve come. Make sure you’re protected for how far you’re going. <a href="/booking" className="text-brand-600 hover:underline">Schedule your mobile notary appointment today</a> and cross these essential documents off your list.</p>
 
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Schedule Your Signing?</h2>
@@ -738,7 +738,7 @@ export default function BlogPost() {
           <p className="mb-6">In casual conversation, we use these terms interchangeably. However, in a North Carolina real estate contract, they represent two very different events on the timeline.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">What is Settlement?</h3>
-          <p className="mb-6">Settlement is the actual meeting. This is when you, the buyer, sit down (often at a closing attorney's office or via a <a href="/mobile-notary-services" className="text-blue-600 hover:underline">mobile notary service</a>) to execute all the necessary paperwork. During settlement, you sign the Deed of Trust, the Closing Disclosure (CD), and various other state and federal disclosures. You also provide the remaining funds required to complete the purchase.</p>
+          <p className="mb-6">Settlement is the actual meeting. This is when you, the buyer, sit down (often at a closing attorney's office or via a <a href="/mobile-notary-services" className="text-brand-600 hover:underline">mobile notary service</a>) to execute all the necessary paperwork. During settlement, you sign the Deed of Trust, the Closing Disclosure (CD), and various other state and federal disclosures. You also provide the remaining funds required to complete the purchase.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">What is Closing?</h3>
           <p className="mb-6">In North Carolina, "Closing" is not a meeting; it is a process. Legally, closing is defined as the moment the deed is officially recorded at the local Register of Deeds. Only when the county clerk stamps that document and adds it to the public record is the transaction considered "closed." This is the moment ownership officially transfers from the seller to you.</p>
@@ -771,7 +771,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Recording Reality: Why You Won't Always Get Keys on Friday</h2>
           <p className="mb-6">If you schedule your settlement for 4:00 PM on a Friday, you are almost certainly not moving in that evening.</p>
-          <p className="mb-6">The Register of Deeds in counties like <a href="/mecklenburg-county" className="text-blue-600 hover:underline">Mecklenburg County</a> or <a href="/rowan-county" className="text-blue-600 hover:underline">Rowan County</a> operates on government business hours. If your settlement happens late in the day, the attorney may not be able to finish their title update and submit the documents before the recording office closes.</p>
+          <p className="mb-6">The Register of Deeds in counties like <a href="/mecklenburg-county" className="text-brand-600 hover:underline">Mecklenburg County</a> or <a href="/rowan-county" className="text-brand-600 hover:underline">Rowan County</a> operates on government business hours. If your settlement happens late in the day, the attorney may not be able to finish their title update and submit the documents before the recording office closes.</p>
           <p className="mb-6">In this scenario, "Closing" won't happen until Monday morning. You will have "settled" on Friday, but you won't "close" or get your keys until the following week. For a first-time buyer with a moving truck idling in the driveway, this can be a disaster.</p>
 
           <img 
@@ -787,13 +787,13 @@ export default function BlogPost() {
             <li><strong>Schedule Early in the Day:</strong> Try to set your settlement appointment for the morning. This gives the attorney enough time to update the title, get lender approval, and record the deed before the end of the business day.</li>
             <li><strong>Schedule Mid-Week:</strong> Avoid closing on a Friday if possible. If a delay occurs on a Tuesday, you can usually close on Wednesday. If a delay occurs on a Friday, you are stuck waiting until Monday.</li>
             <li><strong>Don't Schedule the Mover for the Same Day:</strong> If possible, schedule your moving truck for the day <em>after</em> settlement. This gives you a buffer in case recording is delayed.</li>
-            <li><strong>Know What to Bring:</strong> Delays often happen because of missing information. Check out our guide on <a href="/what-to-bring-to-a-notary-appointment" className="text-blue-600 hover:underline">what to bring to a notary appointment</a> to ensure you have your ID and funds ready to go.</li>
+            <li><strong>Know What to Bring:</strong> Delays often happen because of missing information. Check out our guide on <a href="/what-to-bring-to-a-notary-appointment" className="text-brand-600 hover:underline">what to bring to a notary appointment</a> to ensure you have your ID and funds ready to go.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How Integrity Closings CLT Simplifies the Process</h2>
           <p className="mb-6">While the legal "gap" is a mandatory part of North Carolina law, the way you handle your side of the paperwork can significantly impact the speed of the transaction. At Integrity Closings CLT, we specialize in making the "Settlement" portion as convenient as possible.</p>
-          <p className="mb-6">We understand that you may not have time to drive across town to an attorney's office, especially if you are balancing a job and a move. We offer <a href="/mobile-notary-services" className="text-blue-600 hover:underline">mobile notary services</a> and <a href="/mobile-refi-service-notarization" className="text-blue-600 hover:underline">mobile refi notarization</a> to bring the signing table to you. Whether you are in Pineville, Charlotte, or the surrounding areas, our professional team ensures that your documents are executed perfectly the first time, preventing administrative delays that could push back your recording time.</p>
-          <p className="mb-6">For sellers who have already moved out of state or are busy packing, our <a href="/seller-notarization-same-day-notary-service" className="text-blue-600 hover:underline">seller notarization services</a> allow you to sign your deed and closing docs from your own kitchen table. By getting the seller's paperwork finalized and delivered to the attorney early, you help ensure that everything is ready for the buyer’s settlement.</p>
+          <p className="mb-6">We understand that you may not have time to drive across town to an attorney's office, especially if you are balancing a job and a move. We offer <a href="/mobile-notary-services" className="text-brand-600 hover:underline">mobile notary services</a> and <a href="/mobile-refi-service-notarization" className="text-brand-600 hover:underline">mobile refi notarization</a> to bring the signing table to you. Whether you are in Pineville, Charlotte, or the surrounding areas, our professional team ensures that your documents are executed perfectly the first time, preventing administrative delays that could push back your recording time.</p>
+          <p className="mb-6">For sellers who have already moved out of state or are busy packing, our <a href="/seller-notarization-same-day-notary-service" className="text-brand-600 hover:underline">seller notarization services</a> allow you to sign your deed and closing docs from your own kitchen table. By getting the seller's paperwork finalized and delivered to the attorney early, you help ensure that everything is ready for the buyer’s settlement.</p>
 
           <img 
             src="https://cdn.marblism.com/T7D7GbiqFxW.webp" 
@@ -812,7 +812,7 @@ export default function BlogPost() {
           </ul>
 
           <p className="mb-6">Navigating your first home purchase in North Carolina doesn't have to be overwhelming. By understanding the legal requirements of the state and planning for the recording gap, you can set realistic expectations for your moving day.</p>
-          <p className="mb-6">If you are a seller looking for a more convenient way to handle your paperwork, or an attorney needing a reliable <a href="/loan-signing-notary-pineville-nc" className="text-blue-600 hover:underline">loan signing notary in Pineville, NC</a>, we are here to help. At Integrity Closings CLT, we bring professionalism and efficiency to the signing table, helping you get one step closer to those keys.</p>
+          <p className="mb-6">If you are a seller looking for a more convenient way to handle your paperwork, or an attorney needing a reliable <a href="/loan-signing-notary-pineville-nc" className="text-brand-600 hover:underline">loan signing notary in Pineville, NC</a>, we are here to help. At Integrity Closings CLT, we bring professionalism and efficiency to the signing table, helping you get one step closer to those keys.</p>
 
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Schedule Your Signing?</h2>
@@ -887,9 +887,9 @@ export default function BlogPost() {
                 </ul>
                 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Integrity Closings CLT: Your Partner in a Changing Landscape</h2>
-                <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we stay at the forefront of North Carolina’s notary laws to provide you with the most accurate and reliable service possible. Whether you need a <a href="/hospital-notary-charlotte-nc" className="text-blue-600 hover:underline">hospital notary</a>, a <a href="/loan-signing-agent-charlotte-nc" className="text-blue-600 hover:underline">loan signing agent</a>, or an <a href="/estate-notary-charlotte-nc" className="text-blue-600 hover:underline">estate document notary</a>, we bring professional expertise directly to your door.</p>
+                <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we stay at the forefront of North Carolina’s notary laws to provide you with the most accurate and reliable service possible. Whether you need a <a href="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital notary</a>, a <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing agent</a>, or an <a href="/estate-notary-charlotte-nc" className="text-brand-600 hover:underline">estate document notary</a>, we bring professional expertise directly to your door.</p>
                 <p className="mb-6">The North Carolina Remote Electronic Notarization Act has brought our state into the digital age, but the need for professional, reliable, and personal service remains unchanged. We are here to help you navigate these changes with confidence.</p>
-                <p className="mb-6"><strong>Need a mobile notary in Charlotte, NC?</strong> <a href="/booking" className="text-blue-600 hover:underline">Schedule your appointment today</a> and experience the peace of mind that comes with professional, in-person service.</p>
+                <p className="mb-6"><strong>Need a mobile notary in Charlotte, NC?</strong> <a href="/booking" className="text-brand-600 hover:underline">Schedule your appointment today</a> and experience the peace of mind that comes with professional, in-person service.</p>
                 
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Experience Professional Mobile Notary Service</h2>
@@ -980,7 +980,7 @@ export default function BlogPost() {
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Take Control of Your Charlotte Home Sale</h2>
                 <p className="mb-6">You don't have to accept the stress and uncertainty that often accompany real estate closings. Mobile notary services put you in control of the process while providing professional expertise that prevents costly mistakes.</p>
                 <p className="mb-6">By choosing mobile notary services for your Charlotte home sale, you're investing in peace of mind and a smoother transaction. You'll avoid the seven most common seller mistakes while enjoying the convenience of completing your closing at home.</p>
-                <p className="mb-6">Ready to experience a stress-free closing for your Charlotte home sale? <a href="https://www.integrityclosingsclt.com" className="text-blue-600 hover:underline">Contact Integrity Closings CLT</a> today to learn how our mobile notary services can make your closing convenient, professional, and error-free. Your successful home sale is our priority.</p>
+                <p className="mb-6">Ready to experience a stress-free closing for your Charlotte home sale? <a href="https://www.integrityclosingsclt.com" className="text-brand-600 hover:underline">Contact Integrity Closings CLT</a> today to learn how our mobile notary services can make your closing convenient, professional, and error-free. Your successful home sale is our priority.</p>
 
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Protect Your Most Important Documents</h2>
@@ -1068,7 +1068,7 @@ export default function BlogPost() {
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Location Matters for Your Safety</h2>
                 <p className="mb-6">Mobile notary services offer convenience, but they also create opportunities for fraud. When a notary comes to your home or office, you have less ability to verify their credentials or escape if something feels wrong.</p>
-                <p className="mb-6"><a href="https://www.integrityclosingsclt.com" className="text-blue-600 hover:underline">Professional notary services</a> operate from established business locations where you can:</p>
+                <p className="mb-6"><a href="https://www.integrityclosingsclt.com" className="text-brand-600 hover:underline">Professional notary services</a> operate from established business locations where you can:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li>Verify their business credentials</li>
                     <li>Feel secure in a professional environment</li>
@@ -1108,7 +1108,7 @@ export default function BlogPost() {
 
                 <p className="mb-6">The investigation into Charlotte's notary problems revealed systemic failures that put residents at risk. By choosing your notary services carefully and staying informed about these issues, you protect yourself from becoming the next victim of notary fraud.</p>
 
-                <p className="mb-6">Don't gamble with documents that control your financial future. When you need <a href="https://www.integrityclosingsclt.com" className="text-blue-600 hover:underline">reliable notary services</a>, choose professionals who understand the true value of your trust.</p>
+                <p className="mb-6">Don't gamble with documents that control your financial future. When you need <a href="https://www.integrityclosingsclt.com" className="text-brand-600 hover:underline">reliable notary services</a>, choose professionals who understand the true value of your trust.</p>
 
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Protect Your Most Important Documents</h2>
@@ -1186,7 +1186,7 @@ export default function BlogPost() {
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Finalize Your Modification?</h2>
                     <p className="text-lg text-slate-300 mb-8">Don’t let a mountain of paperwork stress you out. Let us bring the professional closing to your table.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#" className="text-blue-600 hover:underline">Link</a>
+                        <a href="#" className="text-brand-600 hover:underline">Link</a>
                         <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>
                 </section>
@@ -1238,7 +1238,7 @@ export default function BlogPost() {
                     <li><strong>Rescission Errors:</strong> Miscalculating the three-day "Right to Cancel" period due to incorrect dating can legally stall your loan.</li>
                     <li><strong>Recording Failures:</strong> Inaccurate execution of the acknowledgment or jurat will result in rejection by the county recorder.</li>
                 </ul>
-                <p className="mb-6"><em>Learn more about avoiding these pitfalls in our guide: <a href="#" className="text-blue-600 hover:underline">Link</a>.</em></p>
+                <p className="mb-6"><em>Learn more about avoiding these pitfalls in our guide: <a href="#" className="text-brand-600 hover:underline">Link</a>.</em></p>
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Efficiency Through Mobile Professionalism</h2>
                 <p className="mb-6">Refinancing is time-sensitive. Rate locks are temporary, and every day of delay carries a financial cost. Our mobile service eliminates the commute and the waiting room.</p>
@@ -1255,7 +1255,7 @@ export default function BlogPost() {
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready for a Stress-Free Closing?</h2>
                     <p className="text-lg text-slate-300 mb-8">Don’t leave your financial future to chance. Let us bring the professional closing to your home or office.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#" className="text-blue-600 hover:underline">Link</a>
+                        <a href="#" className="text-brand-600 hover:underline">Link</a>
                         <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>
                 </section>
@@ -1283,14 +1283,14 @@ export default function BlogPost() {
 
                 <p className="mb-6">You hear a heavy "thud" on your front porch. You open the door to find a thick FedEx envelope—your mortgage refinance or loan modification documents. Along with the paperwork is a brief, frustrating instruction: <em>"Please find a notary and return these documents by Friday."</em></p>
 
-                <p className="mb-6">If you are like most homeowners, your first instinct is to head to a bank. However, a mortgage refinance is not a standard one-page document. It is a complex legal transaction. Using a general notary can lead to errors that delay your funding or cause your loan to be denied entirely. At <strong>Integrity Closings CLT</strong>, we specialize in high-stakes <a href="#" className="text-blue-600 hover:underline">Link</a>, ensuring your paperwork is handled with the precision it deserves.</p>
+                <p className="mb-6">If you are like most homeowners, your first instinct is to head to a bank. However, a mortgage refinance is not a standard one-page document. It is a complex legal transaction. Using a general notary can lead to errors that delay your funding or cause your loan to be denied entirely. At <strong>Integrity Closings CLT</strong>, we specialize in high-stakes <a href="#" className="text-brand-600 hover:underline">Link</a>, ensuring your paperwork is handled with the precision it deserves.</p>
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Expertise in Complex Loan Documentation</h2>
                 <p className="mb-6">A mortgage package typically contains 100–150 pages of financial jargon and strict "sign here" rules. Certified loan signing agents undergo extensive training to help you navigate these documents, including the <strong>Closing Disclosure</strong>, the <strong>Note</strong>, and the <strong>Right to Cancel</strong>.</p>
                 
                 <img src="https://cdn.marblism.com/OoJ-h6xcsH_.webp" alt="Refinance document complexity" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
-                <p className="mb-6">A single missed initial can trigger a mandatory three-day rescission delay, causing you to miss your rate-lock expiration. We perform a triple-check to ensure your loan stays on track. If you want to avoid these headaches, it is vital to know <a href="#" className="text-blue-600 hover:underline">Link</a> who understands the stakes.</p>
+                <p className="mb-6">A single missed initial can trigger a mandatory three-day rescission delay, causing you to miss your rate-lock expiration. We perform a triple-check to ensure your loan stays on track. If you want to avoid these headaches, it is vital to know <a href="#" className="text-brand-600 hover:underline">Link</a> who understands the stakes.</p>
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Compliance and Risk Mitigation</h2>
                 <p className="mb-6">Mortgage transactions are heavily regulated. A certified signing agent is well-versed in North Carolina statutes, ensuring every form—including Patriot Act identification—is compliant. We provide a secure, background-screened process that protects your sensitive information and eliminates the risk of "kickbacks" caused by errors in your documentation.</p>
@@ -1301,14 +1301,14 @@ export default function BlogPost() {
                 <p className="mb-6">Brick-and-mortar offices are often an ordeal. We offer a level of convenience they simply cannot match:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li><strong>We Come to You:</strong> Whether you are in Mint Hill, Uptown, or Monroe, we meet you where you are comfortable.</li>
-                    <li><strong>Flexible Scheduling:</strong> We offer <a href="#" className="text-blue-600 hover:underline">Link</a> and <a href="#" className="text-blue-600 hover:underline">Link</a> to meet your lender's deadlines.</li>
+                    <li><strong>Flexible Scheduling:</strong> We offer <a href="#" className="text-brand-600 hover:underline">Link</a> and <a href="#" className="text-brand-600 hover:underline">Link</a> to meet your lender's deadlines.</li>
                     <li><strong>Sanity Savings:</strong> Eliminate the need to take time off work or fight Charlotte traffic.</li>
                 </ul>
 
                 <img src="https://cdn.marblism.com/xfVlx0qVySN.webp" alt="Mobile notary home closing" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Choose Integrity Closings CLT?</h2>
-                <p className="mb-6">We are the premier choice for <a href="#" className="text-blue-600 hover:underline">Link</a> in the Charlotte area. Our expertise includes:</p>
+                <p className="mb-6">We are the premier choice for <a href="#" className="text-brand-600 hover:underline">Link</a> in the Charlotte area. Our expertise includes:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li><strong>Full Refinance Packages</strong></li>
                     <li><strong>Loan Modifications</strong></li>
@@ -1320,7 +1320,7 @@ export default function BlogPost() {
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Don't Leave Your Refinance to Chance</h2>
                     <p className="text-lg text-slate-300 mb-8">Your mortgage refinance is a significant milestone. Ensure it is handled correctly the first time.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#" className="text-blue-600 hover:underline">Link</a>
+                        <a href="#" className="text-brand-600 hover:underline">Link</a>
                         <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>
                 </section>
@@ -1362,7 +1362,7 @@ export default function BlogPost() {
                 <ol className="list-decimal pl-6 space-y-4 mb-6">
                     <li><strong>Expertise in Mortgage Documents:</strong> Not all notaries are created equal. A Certified Loan Signing Agent understands the difference between a Deed of Trust and a Note. We know exactly where the borrower needs to sign versus where they need to initial.</li>
                     <li><strong>Convenience and Privacy:</strong> Discussing your financial situation and signing sensitive documents on a retail counter while people wait in line behind you is far from ideal. An in-home signing allows you to review your documents in the privacy and comfort of your own home.</li>
-                    <li><strong>Flexible Scheduling:</strong> Most banks close at 5:00 PM and aren't open on Sundays. We understand that your life doesn't stop because of a loan modification. Whether you need an <a href="#" className="text-blue-600 hover:underline">Link</a> or a weekend appointment in Charlotte, we work around your schedule.</li>
+                    <li><strong>Flexible Scheduling:</strong> Most banks close at 5:00 PM and aren't open on Sundays. We understand that your life doesn't stop because of a loan modification. Whether you need an <a href="#" className="text-brand-600 hover:underline">Link</a> or a weekend appointment in Charlotte, we work around your schedule.</li>
                     <li><strong>Error Prevention:</strong> We double and triple-check the documents before leaving your home. Our goal is to ensure the lender accepts the package the first time, preventing costly delays.</li>
                 </ol>
 
@@ -1378,7 +1378,7 @@ export default function BlogPost() {
                     <li><strong>We Come to You:</strong> Whether you are at home, at your office, or a local coffee shop, we meet you where you are.</li>
                     <li><strong>Verification of Identity:</strong> We ensure all signers have the proper, unexpired government-issued identification required by North Carolina law.</li>
                     <li><strong>Guided Signing:</strong> While we cannot provide legal advice, we can identify the documents and point out exactly where the lender requires signatures, initials, and dates.</li>
-                    <li><strong>Prompt Return:</strong> Many of our clients are in a rush. We offer <a href="#" className="text-blue-600 hover:underline">Link</a> to ensure your documents are ready to be dropped at FedEx or UPS immediately.</li>
+                    <li><strong>Prompt Return:</strong> Many of our clients are in a rush. We offer <a href="#" className="text-brand-600 hover:underline">Link</a> to ensure your documents are ready to be dropped at FedEx or UPS immediately.</li>
                 </ul>
 
                 <div className="bg-slate-50 border-l-4 border-slate-900 p-6 my-8">
@@ -1394,13 +1394,13 @@ export default function BlogPost() {
                 <img src="https://cdn.marblism.com/_O18aS9i0tt.webp" alt="Notary workspace" className="w-full h-auto rounded-lg my-8" referrerPolicy="no-referrer" />
 
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Beyond the Living Room: Special Circumstances</h2>
-                <p className="mb-6">We realize that life happens. Perhaps you are dealing with a health issue or are currently in the hospital. We provide specialized services for these exact situations, including <a href="#" className="text-blue-600 hover:underline">Link</a>. No matter where you are, the goal remains the same: getting your documents signed correctly and on time.</p>
+                <p className="mb-6">We realize that life happens. Perhaps you are dealing with a health issue or are currently in the hospital. We provide specialized services for these exact situations, including <a href="#" className="text-brand-600 hover:underline">Link</a>. No matter where you are, the goal remains the same: getting your documents signed correctly and on time.</p>
 
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Finish Your Loan Modification?</h2>
                     <p className="text-lg text-slate-300 mb-8">Don't let the final stack of paperwork stand between you and your new loan terms. We handle the logistics so you can focus on getting back to your life.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#" className="text-blue-600 hover:underline">Link</a>
+                        <a href="#" className="text-brand-600 hover:underline">Link</a>
                         <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Book Appointment Online</a>
                     </div>
                 </section>
@@ -1432,7 +1432,7 @@ export default function BlogPost() {
 
           <p className="mb-6">In the high-stakes world of real estate and finance, the closing table is where the magic happens. You've worked hard to secure the deal, the title is clear, and the borrowers are ready to move into their new home or finalize their refinance. However, the final few yards of this marathon are often the most precarious. This is where a <strong>loan signing agent</strong> becomes your most valuable asset.</p>
 
-          <p className="mb-6">A <a href="https://www.integrityclosingsclt.com" className="text-blue-600 hover:underline">professional notary service</a> does more than just witness signatures; they act as the final quality control check and the face of your company at the closing. If you are a title company, an attorney, or a lender in the Charlotte area, you know that a single missed initial can delay funding, frustrate clients, and cost money.</p>
+          <p className="mb-6">A <a href="https://www.integrityclosingsclt.com" className="text-brand-600 hover:underline">professional notary service</a> does more than just witness signatures; they act as the final quality control check and the face of your company at the closing. If you are a title company, an attorney, or a lender in the Charlotte area, you know that a single missed initial can delay funding, frustrate clients, and cost money.</p>
 
           <p className="mb-6">Here are seven specific ways a reliable signing agent ensures your closings stay on track and run smoother than ever before.</p>
 
@@ -1440,20 +1440,20 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. First Impressions and Professional Presence</h2>
           <p className="mb-6">When a signing agent walks into a borrower's home or a local coffee shop, they aren't just representing themselves: they are representing you. A reliable agent understands that their appearance, demeanor, and punctuality set the tone for the entire appointment.</p>
-          <p className="mb-6">By arriving five minutes early and presenting a professional image, the agent builds immediate trust. This is particularly important in <a href="https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc" className="text-blue-600 hover:underline">mobile notary Charlotte NC</a> services where the environment can be unpredictable. A professional who arrives organized and ready to lead the session reduces the borrower's anxiety, which in turn makes the document review process faster and more efficient.</p>
+          <p className="mb-6">By arriving five minutes early and presenting a professional image, the agent builds immediate trust. This is particularly important in <a href="https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">mobile notary Charlotte NC</a> services where the environment can be unpredictable. A professional who arrives organized and ready to lead the session reduces the borrower's anxiety, which in turn makes the document review process faster and more efficient.</p>
 
           <img src="https://cdn.marblism.com/ErYmzkKeN6j.webp" alt="Professional mobile notary service agent greeting homeowners for a real estate loan signing." className="w-full h-auto rounded-lg my-8 shadow-md" referrerPolicy="no-referrer" />
           <em>Visual: A diverse professional notary in a modern business-casual outfit greeting a smiling couple of different ethnic backgrounds at their dining room table. The atmosphere is bright, organized, and welcoming.</em>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Expert Document Knowledge and Error Prevention</h2>
           <p className="mb-6">The most common reason for a "re-sign" is a simple clerical error. A missed date, a forgotten initial on a Patriot Act form, or a signature that doesn't quite match the printed name can halt the entire process.</p>
-          <p className="mb-6">A seasoned <a href="https://www.integrityclosingsclt.com/loan-signing-agent-charlotte-nc" className="text-blue-600 hover:underline">loan signing agent</a> is trained to catch these issues before they leave the table. They don't just watch people sign; they perform a "triple-check" of the package:</p>
+          <p className="mb-6">A seasoned <a href="https://www.integrityclosingsclt.com/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing agent</a> is trained to catch these issues before they leave the table. They don't just watch people sign; they perform a "triple-check" of the package:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
             <li><strong>The Pre-Check:</strong> Ensuring all documents are printed correctly and no pages are missing.</li>
             <li><strong>The Table-Check:</strong> Reviewing each page as the borrower finishes it.</li>
             <li><strong>The Post-Check:</strong> A final page-by-page scan before the borrower leaves and the documents are dropped for overnight delivery.</li>
           </ul>
-          <p className="mb-6">This level of precision is why professional teams rely on Integrity Closings CLT to handle their <a href="https://www.integrityclosingsclt.com/mobile-refi-service-notarization" className="text-blue-600 hover:underline">mobile refi service notarization</a> and purchase files.</p>
+          <p className="mb-6">This level of precision is why professional teams rely on Integrity Closings CLT to handle their <a href="https://www.integrityclosingsclt.com/mobile-refi-service-notarization" className="text-brand-600 hover:underline">mobile refi service notarization</a> and purchase files.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. Navigating the Fine Line of Communication</h2>
           <p className="mb-6">One of the biggest headaches for closing teams is the "talkative" notary who oversteps their bounds. There is a delicate balance between explaining what a document is and giving unauthorized legal or financial advice.</p>
@@ -1461,7 +1461,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. Enhanced Fraud Prevention and Identity Verification</h2>
           <p className="mb-6">In 2026, real estate fraud is more sophisticated than ever. You need a signing agent who takes identity verification seriously. A reliable agent doesn't just glance at a driver's license; they meticulously verify the ID against the documents and look for red flags that might indicate "spoofing" or identity theft.</p>
-          <p className="mb-6">By serving as your eyes and ears on the ground, the agent provides an essential layer of security. This is especially vital for <a href="https://www.integrityclosingsclt.com/power-of-attorney-estate-documents-charlotte-nc" className="text-blue-600 hover:underline">power of attorney and estate documents</a> where the signers might be in high-stress situations. Whether it's a <a href="https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc" className="text-blue-600 hover:underline">hospital notary</a> visit or a standard home closing, the integrity of the signature is the foundation of the entire deal.</p>
+          <p className="mb-6">By serving as your eyes and ears on the ground, the agent provides an essential layer of security. This is especially vital for <a href="https://www.integrityclosingsclt.com/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">power of attorney and estate documents</a> where the signers might be in high-stress situations. Whether it's a <a href="https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital notary</a> visit or a standard home closing, the integrity of the signature is the foundation of the entire deal.</p>
 
           <img src="https://cdn.marblism.com/I3x1dQZdkE5.webp" alt="Expert loan signing agent verifying identity with a driver's license to prevent fraud in Charlotte NC." className="w-full h-auto rounded-lg my-8 shadow-md" referrerPolicy="no-referrer" />
           <em>Visual: A close-up shot of a diverse hand holding a high-tech, modern North Carolina driver's license next to a legal document, highlighting the careful verification process. The lighting is crisp and professional.</em>
@@ -1471,7 +1471,7 @@ export default function BlogPost() {
           <p className="mb-6">They use confident transitions to keep the process moving. By managing the stack of documents efficiently, they ensure that the most critical items (like the Deed of Trust and the RTC) are handled while the borrower's attention is at its peak. This command of the "table flow" ensures that a typical closing takes 45 to 60 minutes rather than dragging on for two hours.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">6. Real-Time Updates and Post-Closing Reliability</h2>
-          <p className="mb-6">Your job doesn't end when the borrower signs; in fact, the scramble to fund often begins the moment the ink is dry. A major benefit of working with a professional <a href="https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc" className="text-blue-600 hover:underline">Charlotte NC mobile notary</a> is the communication you receive after the appointment.</p>
+          <p className="mb-6">Your job doesn't end when the borrower signs; in fact, the scramble to fund often begins the moment the ink is dry. A major benefit of working with a professional <a href="https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">Charlotte NC mobile notary</a> is the communication you receive after the appointment.</p>
           <p className="mb-6">Reliable agents provide:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
             <li><strong>The "Sign-Off" Text:</strong> Immediate confirmation that the signing was successful.</li>
@@ -1484,8 +1484,8 @@ export default function BlogPost() {
           <em>Visual: An aerial view of a clean, organized workspace. A laptop shows a "Success" notification, a smartphone displays a tracking number, and a set of professional closing documents is neatly tucked into a shipping envelope. Diverse hands are seen finishing a scan.</em>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">7. Flexibility and Regional Expertise</h2>
-          <p className="mb-6">The Charlotte metro area is sprawling. From the heart of Uptown to the growing communities in <a href="https://www.integrityclosingsclt.com/iredell-county" className="text-blue-600 hover:underline">Iredell County</a>, logistics can be a nightmare. A reliable mobile signing partner saves you time by handling the travel.</p>
-          <p className="mb-6">Whether your client needs an <a href="https://www.integrityclosingsclt.com/after-hours-mobile-notary-charlotte-nc" className="text-blue-600 hover:underline">after-hours mobile notary</a> because of their work schedule or requires a <a href="https://www.integrityclosingsclt.com/hospital-and-nursing-home-notarizations" className="text-blue-600 hover:underline">hospital or nursing home notarization</a>, a dedicated partner adapts to the borrower's needs. This flexibility doesn't just make the closing smoother; it makes you look like a hero to your client for providing such a convenient service.</p>
+          <p className="mb-6">The Charlotte metro area is sprawling. From the heart of Uptown to the growing communities in <a href="https://www.integrityclosingsclt.com/iredell-county" className="text-brand-600 hover:underline">Iredell County</a>, logistics can be a nightmare. A reliable mobile signing partner saves you time by handling the travel.</p>
+          <p className="mb-6">Whether your client needs an <a href="https://www.integrityclosingsclt.com/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours mobile notary</a> because of their work schedule or requires a <a href="https://www.integrityclosingsclt.com/hospital-and-nursing-home-notarizations" className="text-brand-600 hover:underline">hospital or nursing home notarization</a>, a dedicated partner adapts to the borrower's needs. This flexibility doesn't just make the closing smoother; it makes you look like a hero to your client for providing such a convenient service.</p>
 
           <hr className="my-8" />
 
@@ -1496,16 +1496,16 @@ export default function BlogPost() {
           <h4 className="text-lg font-bold text-slate-900 mt-8 mb-4 font-sans">Our Professional Services Include:</h4>
           <ul className="list-disc pl-6 space-y-2 mb-6">
             <li><strong>Loan Signing Services:</strong> Refinances, Purchases, HELOCs, and Reverse Mortgages.</li>
-            <li><strong>Specialized Notarizations:</strong> <a href="https://www.integrityclosingsclt.com/estate-notary-charlotte-nc" className="text-blue-600 hover:underline">Estate Planning</a>, Power of Attorney, and <a href="https://www.integrityclosingsclt.com/general-notary-charlotte-nc" className="text-blue-600 hover:underline">General Notary</a> work.</li>
-            <li><strong>Mobile Support:</strong> We come to you or your client anywhere in our <a href="https://www.integrityclosingsclt.com/areas-served" className="text-blue-600 hover:underline">service area</a>.</li>
-            <li><strong>Flexible Scheduling:</strong> Including weekends and <a href="https://www.integrityclosingsclt.com/after-hours-mobile-notary-charlotte-nc" className="text-blue-600 hover:underline">after-hours</a> appointments.</li>
+            <li><strong>Specialized Notarizations:</strong> <a href="https://www.integrityclosingsclt.com/estate-notary-charlotte-nc" className="text-brand-600 hover:underline">Estate Planning</a>, Power of Attorney, and <a href="https://www.integrityclosingsclt.com/general-notary-charlotte-nc" className="text-brand-600 hover:underline">General Notary</a> work.</li>
+            <li><strong>Mobile Support:</strong> We come to you or your client anywhere in our <a href="https://www.integrityclosingsclt.com/areas-served" className="text-brand-600 hover:underline">service area</a>.</li>
+            <li><strong>Flexible Scheduling:</strong> Including weekends and <a href="https://www.integrityclosingsclt.com/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours</a> appointments.</li>
           </ul>
 
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to streamline your next closing?</h2>
             <p className="text-lg text-slate-300 mb-8">Book your signing agent or visit our website to learn more about how we support Charlotte's top title companies and attorneys.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="https://www.integrityclosingsclt.com/book" className="inline-block px-8 py-4 bg-blue-600 text-white hover:bg-blue-700 font-bold rounded-lg transition-colors">Book Your Signing Agent Here</a>
+              <a href="https://www.integrityclosingsclt.com/book" className="inline-block px-8 py-4 bg-brand-600 text-white hover:bg-brand-700 font-bold rounded-lg transition-colors">Book Your Signing Agent Here</a>
               <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Book Appointment Online</a>
             </div>
           </section>
@@ -1526,7 +1526,7 @@ export default function BlogPost() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">What Title Companies Really Need From a Mobile Loan Signing Agent</h1>
 
           <p className="mb-6">In the high-stakes world of mortgage closings, the final signing is the moment where everything either comes together or falls apart. For title companies and closing attorneys, the mobile loan signing agent is often the only person from the transaction that the borrower meets in person. You aren't just looking for a stamp; you are looking for a professional extension of your own brand.</p>
-          <p className="mb-6">When a file hits the finish line, you need to know that your <Link to="/loan-signing-agent-charlotte-nc" className="text-blue-600 hover:underline">mobile loan signing agent</Link> is competent, reliable, and detail-oriented. A single missed initial can delay funding, frustrate borrowers, and damage your reputation with lenders.</p>
+          <p className="mb-6">When a file hits the finish line, you need to know that your <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile loan signing agent</Link> is competent, reliable, and detail-oriented. A single missed initial can delay funding, frustrate borrowers, and damage your reputation with lenders.</p>
           <p className="mb-6">This guide breaks down exactly what title companies need from a professional signing partner to ensure every closing is a success.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Meticulous Attention to Detail (Zero-Error Tolerance)</h2>
@@ -1537,7 +1537,7 @@ export default function BlogPost() {
             <li><strong>Ensuring Notary Acts are complete:</strong> Correct venue, proper wording, and a clear, legible seal.</li>
             <li><strong>Properly Executed PCORs and Trust Certs:</strong> Handling the complex ancillary documents that often vary by county or lender.</li>
           </ul>
-          <p className="mb-6">When you hire a <Link to="/mobile-notary-charlotte-nc" className="text-blue-600 hover:underline">Charlotte notary public</Link> who understands the gravity of these documents, you save hours of administrative cleanup time.</p>
+          <p className="mb-6">When you hire a <Link to="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">Charlotte notary public</Link> who understands the gravity of these documents, you save hours of administrative cleanup time.</p>
 
           <img src="https://cdn.marblism.com/H83fMvCdmFg.webp" alt="Professional Charlotte notary public reviewing loan documents with meticulous attention to detail." className="w-full h-auto rounded-lg my-8 shadow-md" referrerPolicy="no-referrer" />
 
@@ -1556,7 +1556,7 @@ export default function BlogPost() {
           <ul className="list-disc pl-6 space-y-3 mb-6">
             <li><strong>NNA Certification and Background Screening:</strong> The industry standard that proves the agent is trained and has passed a rigorous annual background check.</li>
             <li><strong>Errors &amp; Omissions (E&amp;O) Insurance:</strong> While most states require a small bond, title companies typically need agents with at least $25,000 to $100,000 in E&amp;O coverage to mitigate risk.</li>
-            <li><strong>State-Specific Licensing:</strong> In North Carolina, ensuring the notary is properly commissioned and understands local customs — like how to handle <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-blue-600 hover:underline">power of attorney or estate documents</Link> — is vital.</li>
+            <li><strong>State-Specific Licensing:</strong> In North Carolina, ensuring the notary is properly commissioned and understands local customs — like how to handle <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">power of attorney or estate documents</Link> — is vital.</li>
           </ul>
 
           <img src="https://cdn.marblism.com/7g0mRXCKrhU.webp" alt="A professional mobile loan signing agent with credentials ready for a mortgage closing." className="w-full h-auto rounded-lg my-8 shadow-md" referrerPolicy="no-referrer" />
@@ -1571,7 +1571,7 @@ export default function BlogPost() {
           </ul>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. Logistics and Technical Proficiency</h2>
-          <p className="mb-6">The "mobile" part of being a mobile loan signing agent involves a lot of moving parts. Title companies need agents who are tech-savvy and equipped to handle the modern digital workflow of <Link to="/loan-signing-agent-charlotte-nc" className="text-blue-600 hover:underline">mortgage closings</Link>.</p>
+          <p className="mb-6">The "mobile" part of being a mobile loan signing agent involves a lot of moving parts. Title companies need agents who are tech-savvy and equipped to handle the modern digital workflow of <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mortgage closings</Link>.</p>
           <ul className="list-disc pl-6 space-y-3 mb-6">
             <li><strong>High-Quality Printing:</strong> Dual-tray laser printers are a must to ensure legal and letter-sized documents are printed correctly.</li>
             <li><strong>Mobile Scanning Capabilities:</strong> Many title companies require "scan-backs" immediately after the signing. Having a high-speed mobile scanner allows the agent to send the documents for review before they even leave the borrower's driveway.</li>
@@ -1585,12 +1585,12 @@ export default function BlogPost() {
           <ul className="list-disc pl-6 space-y-3 mb-6">
             <li><strong>Seller-Side Packages:</strong> Knowing exactly which deed and tax forms are required.</li>
             <li><strong>Estate and Trust Signings:</strong> Understanding who has the authority to sign and ensuring the notary block reflects that capacity.</li>
-            <li><strong>Hospital and Nursing Home Signings:</strong> Handling <Link to="/hospital-notary-charlotte-nc" className="text-blue-600 hover:underline">sensitive notarizations</Link> with patience and dignity for signers who may have mobility or health challenges.</li>
+            <li><strong>Hospital and Nursing Home Signings:</strong> Handling <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">sensitive notarizations</Link> with patience and dignity for signers who may have mobility or health challenges.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Local Expertise Matters in Charlotte</h2>
-          <p className="mb-6">Working with a local <Link to="/mobile-notary-charlotte-nc" className="text-blue-600 hover:underline">Charlotte notary public</Link> provides an added layer of security. Local agents understand North Carolina's specific notary laws and the geographic nuances of the Queen City. Whether the closing is in Uptown, Ballantyne, or Lake Norman, a local expert knows how to navigate the area to ensure punctuality.</p>
-          <p className="mb-6">Furthermore, local agents are often available for <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-blue-600 hover:underline">after-hours mobile notary services</Link>, which is a huge value-add for borrowers who work 9-to-5 jobs and cannot make it to an attorney's office during the day.</p>
+          <p className="mb-6">Working with a local <Link to="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">Charlotte notary public</Link> provides an added layer of security. Local agents understand North Carolina's specific notary laws and the geographic nuances of the Queen City. Whether the closing is in Uptown, Ballantyne, or Lake Norman, a local expert knows how to navigate the area to ensure punctuality.</p>
+          <p className="mb-6">Furthermore, local agents are often available for <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours mobile notary services</Link>, which is a huge value-add for borrowers who work 9-to-5 jobs and cannot make it to an attorney's office during the day.</p>
 
           <img src="https://cdn.marblism.com/CiK2pZgBTrq.webp" alt="A mobile loan signing agent assisting a couple with home closing documents in a residential setting." className="w-full h-auto rounded-lg my-8 shadow-md" referrerPolicy="no-referrer" />
 
@@ -1620,7 +1620,7 @@ export default function BlogPost() {
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Streamline Your Next Closing?</h2>
             <p className="text-lg text-slate-300 mb-8">Partner with Integrity Closings CLT and let us handle the field so you can focus on the file.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/booking" className="inline-block px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors">Book a Signing</Link>
+              <Link to="/booking" className="inline-block px-8 py-4 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors">Book a Signing</Link>
               <a href="tel:9803724103" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Call 980-372-4103</a>
             </div>
           </section>
@@ -1645,7 +1645,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The 2026 Reality: Why "Business as Usual" Doesn't Work Anymore</h2>
           <p className="mb-6">In 2026, the traditional 9-to-5 office closing is becoming the exception, not the rule. Your clients — whether they are first-time homebuyers in South End or busy executives in Ballantyne — value their time above all else. They expect a <strong>convenient home closing</strong> that fits into their hybrid work schedules and family lives.</p>
-          <p className="mb-6">If your firm requires every party to fight I-77 or I-485 traffic to sign documents in your Uptown or South Park office, you're creating a point of friction. A mobile signing partner allows you to meet the client where they are, literally. Whether it's a kitchen table, a local coffee shop, or even a healthcare facility, a <Link to="/loan-signing-agent-charlotte-nc" className="text-blue-600 hover:underline">mobile loan signing agent</Link> ensures the deal gets done on the client's terms.</p>
+          <p className="mb-6">If your firm requires every party to fight I-77 or I-485 traffic to sign documents in your Uptown or South Park office, you're creating a point of friction. A mobile signing partner allows you to meet the client where they are, literally. Whether it's a kitchen table, a local coffee shop, or even a healthcare facility, a <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile loan signing agent</Link> ensures the deal gets done on the client's terms.</p>
 
           <img src="https://cdn.marblism.com/wrF9kJLZae0.webp" alt="Mobile notary in Charlotte NC meeting a couple at a local cafe for a convenient loan signing session." className="w-full h-auto rounded-lg my-8 shadow-md" referrerPolicy="no-referrer" />
 
@@ -1655,7 +1655,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Professionalism as an Extension of Your Brand</h2>
           <p className="mb-6">A common misconception is that using a mobile signer means losing control over the client experience. In reality, a high-quality signing agent acts as a seamless extension of your law firm.</p>
-          <p className="mb-6">In 2026, the best mobile partners are not just notaries; they are specialists. They arrive on time, dress professionally, and possess the "soft skills" necessary to keep nervous buyers calm. When you hire an <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-blue-600 hover:underline">after-hours mobile notary in Charlotte, NC</Link>, you're telling your client that their convenience is your priority. This builds immense brand loyalty that leads to referrals and repeat business.</p>
+          <p className="mb-6">In 2026, the best mobile partners are not just notaries; they are specialists. They arrive on time, dress professionally, and possess the "soft skills" necessary to keep nervous buyers calm. When you hire an <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours mobile notary in Charlotte, NC</Link>, you're telling your client that their convenience is your priority. This builds immense brand loyalty that leads to referrals and repeat business.</p>
 
           <img src="https://cdn.marblism.com/MAzNIsYqwBU.webp" alt="Professional mobile signing agent facilitating a convenient home closing for a retired couple in Charlotte." className="w-full h-auto rounded-lg my-8 shadow-md" referrerPolicy="no-referrer" />
 
@@ -1665,13 +1665,13 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. Solving the "Last Minute" Crisis</h2>
           <p className="mb-6">We've all been there: a file is cleared to close at 4:00 PM on a Friday, and the buyers are leaving town the next morning. Or perhaps a seller is hospitalized and cannot make it to your office. These scenarios can derail a closing timeline and put a commission in jeopardy.</p>
-          <p className="mb-6">Having a go-to partner for <Link to="/hospital-and-nursing-home-notarizations" className="text-blue-600 hover:underline">hospital and nursing home notarizations</Link> or emergency weekend signings is a lifesaver. Instead of telling the client "we can't do it," you can say, "we'll send our mobile partner to you." This level of service distinguishes your firm from the competition.</p>
+          <p className="mb-6">Having a go-to partner for <Link to="/hospital-and-nursing-home-notarizations" className="text-brand-600 hover:underline">hospital and nursing home notarizations</Link> or emergency weekend signings is a lifesaver. Instead of telling the client "we can't do it," you can say, "we'll send our mobile partner to you." This level of service distinguishes your firm from the competition.</p>
 
           <img src="https://cdn.marblism.com/NjtrTERUYCq.webp" alt="Mobile notary Charlotte NC providing reliable signing services at a hospital for a closing attorney's client." className="w-full h-auto rounded-lg my-8 shadow-md" referrerPolicy="no-referrer" />
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. Strategic Geographic Flexibility</h2>
           <p className="mb-6">Charlotte is sprawling. A firm based in Davidson might find it difficult to service a client in Waxhaw or Belmont. By utilizing a mobile signing network, your "office" effectively expands to cover the entire metro area. You can take on more files from a wider geographic range because you aren't limited by your physical location.</p>
-          <p className="mb-6">For a deeper dive into how this compares to traditional methods, you might find our analysis on <Link to="/services/attorney-office-closing-vs-mobile-closing-which-is-better-for-your-charlotte-home-sale" className="text-blue-600 hover:underline">Attorney Office Closing vs. Mobile Closing</Link> helpful for explaining the benefits to your own clients.</p>
+          <p className="mb-6">For a deeper dive into how this compares to traditional methods, you might find our analysis on <Link to="/services/attorney-office-closing-vs-mobile-closing-which-is-better-for-your-charlotte-home-sale" className="text-brand-600 hover:underline">Attorney Office Closing vs. Mobile Closing</Link> helpful for explaining the benefits to your own clients.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">6. Reducing the Post-Closing Workload</h2>
           <p className="mb-6">Every minute your paralegals spend chasing down a missed signature is a minute they aren't working on the next file. A reliable mobile signing agent performs a "triple check" before leaving the signing table. This precision significantly reduces the post-closing "cleanup" that plagues so many law firms. When the documents come back right the first time, your staff can move directly to disbursement and recording, keeping the entire pipeline moving smoothly.</p>
@@ -1702,7 +1702,7 @@ export default function BlogPost() {
           </ul>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">Partner with Integrity Closings CLT</h3>
-          <p className="mb-6">At Integrity Closings CLT, we understand the high stakes of North Carolina real estate. We aren't just notaries; we are your partners in ensuring every transaction ends with a handshake and a smile. Whether you need help with a <Link to="/services/mobile-refi-service-notarization" className="text-blue-600 hover:underline">mobile refi service</Link> or a complex estate closing involving a <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-blue-600 hover:underline">Power of Attorney</Link>, we have the expertise you need.</p>
+          <p className="mb-6">At Integrity Closings CLT, we understand the high stakes of North Carolina real estate. We aren't just notaries; we are your partners in ensuring every transaction ends with a handshake and a smile. Whether you need help with a <Link to="/services/mobile-refi-service-notarization" className="text-brand-600 hover:underline">mobile refi service</Link> or a complex estate closing involving a <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney</Link>, we have the expertise you need.</p>
 
           <p className="mb-4 font-bold">Our Services Include:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
@@ -1717,7 +1717,7 @@ export default function BlogPost() {
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Streamline Your Closings?</h2>
             <p className="text-lg text-slate-300 mb-8">Partner with Integrity Closings CLT and let us handle the field so you can focus on the law.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/title-company-attorney-closing-support-charlotte-nc" className="inline-block px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors">Attorney Closing Support</Link>
+              <Link to="/title-company-attorney-closing-support-charlotte-nc" className="inline-block px-8 py-4 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors">Attorney Closing Support</Link>
               <a href="tel:9803724103" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Call 980-372-4103</a>
             </div>
           </section>
@@ -1747,7 +1747,7 @@ export default function BlogPost() {
   return (
     <div className="bg-slate-50 min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link to="/blog" className="inline-flex items-center text-slate-600 hover:text-blue-600 mb-8 transition-colors">
+        <Link to="/blog" className="inline-flex items-center text-slate-600 hover:text-brand-600 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
         </Link>
 

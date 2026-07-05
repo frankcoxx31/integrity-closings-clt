@@ -31,22 +31,22 @@ export default function TitleAttorneySupport() {
     {
       title: "Mobile Convenience",
       description: "We meet your clients at their home, office, or any preferred location across the Charlotte region.",
-      icon: <MapPin className="w-6 h-6 text-blue-600" />
+      icon: <MapPin className="w-6 h-6 text-brand-600" />
     },
     {
       title: "Punctual & Professional",
       description: "We represent your firm with the highest level of professionalism and reach every appointment on time.",
-      icon: <Clock className="w-6 h-6 text-blue-600" />
+      icon: <Clock className="w-6 h-6 text-brand-600" />
     },
     {
       title: "Clear Communication",
       description: "Prompt confirmations and status updates kept all parties informed throughout the signing process.",
-      icon: <Users className="w-6 h-6 text-blue-600" />
+      icon: <Users className="w-6 h-6 text-brand-600" />
     },
     {
       title: "Familiar Workflows",
       description: "Experienced with lender requirements and common title company document packages.",
-      icon: <ClipboardCheck className="w-6 h-6 text-blue-600" />
+      icon: <ClipboardCheck className="w-6 h-6 text-brand-600" />
     }
   ];
 
@@ -100,10 +100,10 @@ export default function TitleAttorneySupport() {
               Integrity Closings CLT provides professional mobile closing support for scheduled loan document appointments, signer coordination, and field signing coverage. We act as a reliable extension of your team to ensure every appointment is handled with technical precision.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/25">
+              <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-white bg-brand-600 hover:bg-brand-700 transition-all shadow-lg hover:shadow-brand-500/25">
                 Request Closing Support
               </Link>
-              <a href="tel:9803724103" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-slate-900 bg-yellow-400 hover:bg-yellow-500 transition-all shadow-lg hover:shadow-yellow-500/25">
+              <a href="tel:9803724103" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-slate-900 bg-accent-400 hover:bg-accent-500 transition-all shadow-lg hover:shadow-accent-500/25">
                 <Phone className="w-5 h-5 mr-3" />
                 (980) 372-4103
               </a>
@@ -129,7 +129,7 @@ export default function TitleAttorneySupport() {
                   "Error-Free Document Execution"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                    <CheckCircle2 className="w-5 h-5 text-brand-600" />
                     <span className="text-slate-800 font-medium">{item}</span>
                   </div>
                 ))}
@@ -143,7 +143,7 @@ export default function TitleAttorneySupport() {
                 { title: "Closing Teams", icon: <Users className="w-8 h-8" /> }
               ].map((item, idx) => (
                 <div key={idx} className="p-8 bg-slate-50 border border-slate-100 rounded-2xl flex flex-col items-center text-center">
-                  <div className="text-blue-600 mb-4">{item.icon}</div>
+                  <div className="text-brand-600 mb-4">{item.icon}</div>
                   <h3 className="font-bold text-slate-900">{item.title}</h3>
                 </div>
               ))}
@@ -162,7 +162,7 @@ export default function TitleAttorneySupport() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow group">
-                <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="w-12 h-12 bg-brand-100 text-brand-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
                   <FileSignature className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
@@ -202,17 +202,17 @@ export default function TitleAttorneySupport() {
           <h2 className="text-3xl font-bold mb-16">How Closing Support Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
               <h3 className="text-xl font-bold mb-4">Request Coordination</h3>
               <p className="text-slate-400">Share appointment details and document requirements via phone or our booking portal.</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
               <h3 className="text-xl font-bold mb-4">Professional Execution</h3>
               <p className="text-slate-400">We meet signers, facilitate the closing package, and perform all necessary notarizations.</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6">3</div>
+              <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6">3</div>
               <h3 className="text-xl font-bold mb-4">Prompt Return</h3>
               <p className="text-slate-400">Documents are scanned back or dropped at your preferred shipping carrier immediately.</p>
             </div>
@@ -235,7 +235,7 @@ export default function TitleAttorneySupport() {
             ))}
           </div>
           <div className="mt-12">
-            <Link to="/areas-served" className="text-blue-600 font-bold hover:underline inline-flex items-center">
+            <Link to="/areas-served" className="text-brand-600 font-bold hover:underline inline-flex items-center">
               View Specific Service Areas <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </div>
@@ -243,17 +243,17 @@ export default function TitleAttorneySupport() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-blue-600 text-white text-center px-4">
+      <section className="py-24 bg-brand-600 text-white text-center px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold mb-8">Partner With a Reliable Closing Resource</h2>
-          <p className="text-xl text-blue-100 mb-12">
+          <p className="text-xl text-brand-100 mb-12">
             Don't let logistics slow down your closings. Support your clients with a punctual mobile partner they can trust.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link to="/booking" className="w-full sm:w-auto px-10 py-5 bg-white text-blue-600 font-bold text-xl rounded-xl hover:bg-blue-50 transition-all shadow-xl">
+            <Link to="/booking" className="w-full sm:w-auto px-10 py-5 bg-white text-brand-600 font-bold text-xl rounded-xl hover:bg-brand-50 transition-all shadow-xl">
               Request Closing Support
             </Link>
-            <a href="tel:9803724103" className="w-full sm:w-auto px-10 py-5 bg-yellow-400 text-slate-900 font-bold text-xl rounded-xl hover:bg-yellow-500 transition-all shadow-xl flex items-center justify-center">
+            <a href="tel:9803724103" className="w-full sm:w-auto px-10 py-5 bg-accent-400 text-slate-900 font-bold text-xl rounded-xl hover:bg-accent-500 transition-all shadow-xl flex items-center justify-center">
               <Phone className="w-6 h-6 mr-3" />
               980-372-4103
             </a>

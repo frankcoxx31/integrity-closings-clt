@@ -183,7 +183,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
       {/* Floating Chat Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 p-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-xl transition-transform transform hover:scale-105 z-50 ${isOpen ? 'hidden' : 'flex'}`}
+        className={`fixed bottom-6 right-6 p-4 bg-brand-600 hover:bg-brand-700 text-white rounded-full shadow-xl transition-transform transform hover:scale-105 z-50 ${isOpen ? 'hidden' : 'flex'}`}
         aria-label="Open Chat"
       >
         <MessageCircle className="w-7 h-7" />
@@ -192,14 +192,14 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
       {/* Chat Window */}
       <div className={`fixed bottom-6 right-6 w-[350px] sm:w-[400px] h-[500px] max-h-[80vh] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden z-50 border border-slate-200 transition-all duration-300 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
         {/* Header */}
-        <div className="bg-blue-950 text-white p-4 flex justify-between items-center">
+        <div className="bg-brand-950 text-white p-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img src={headshotUrl} alt="Mr. Frank" className="w-10 h-10 rounded-full object-cover border-2 border-blue-600" referrerPolicy="no-referrer" />
+            <img src={headshotUrl} alt="Mr. Frank" className="w-10 h-10 rounded-full object-cover border-2 border-brand-600" referrerPolicy="no-referrer" />
             <h3 className="font-bold text-lg">Mr. Frank</h3>
           </div>
           <button 
             onClick={() => setIsOpen(false)}
-            className="text-blue-200 hover:text-white transition-colors"
+            className="text-brand-200 hover:text-white transition-colors"
           >
             <X className="w-6 h-6" />
           </button>
@@ -212,7 +212,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
               key={msg.id} 
               className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
             >
-              <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center overflow-hidden ${msg.role === 'user' ? 'bg-slate-800' : 'bg-blue-600'}`}>
+              <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center overflow-hidden ${msg.role === 'user' ? 'bg-slate-800' : 'bg-brand-600'}`}>
                 {msg.role === 'user' ? <User className="w-5 h-5 text-white" /> : <img src={headshotUrl} alt="Mr. Frank" className="w-full h-full object-cover" referrerPolicy="no-referrer" />}
               </div>
               <div 
@@ -233,13 +233,13 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
                             return (
                               <a 
                                 {...props} 
-                                className="inline-block mt-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg no-underline transition-colors"
+                                className="inline-block mt-2 px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg no-underline transition-colors"
                               >
                                 {props.children}
                               </a>
                             );
                           }
-                          return <a {...props} className="text-blue-600 hover:underline" />;
+                          return <a {...props} className="text-brand-600 hover:underline" />;
                         }
                       }}
                     >
@@ -252,7 +252,7 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
           ))}
           {isLoading && (
             <div className="flex gap-3">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center overflow-hidden">
+              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-600 flex items-center justify-center overflow-hidden">
                 <img src={headshotUrl} alt="Mr. Frank" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
               <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm flex items-center gap-2">
@@ -274,13 +274,13 @@ Never generate large blocks of text. Responses must be short, easy to scan, and 
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask a question..."
-            className="flex-1 bg-slate-100 border-transparent focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 rounded-full px-4 py-2 text-sm outline-none transition-all"
+            className="flex-1 bg-slate-100 border-transparent focus:bg-white focus:border-brand-500 focus:ring-2 focus:ring-brand-200 rounded-full px-4 py-2 text-sm outline-none transition-all"
             disabled={isLoading}
           />
           <button
             type="submit"
             disabled={!input.trim() || isLoading}
-            className="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white flex items-center justify-center transition-colors flex-shrink-0"
+            className="w-10 h-10 rounded-full bg-brand-600 hover:bg-brand-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white flex items-center justify-center transition-colors flex-shrink-0"
           >
             <Send className="w-4 h-4 ml-0.5" />
           </button>

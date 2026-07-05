@@ -5,6 +5,7 @@ export default function Midland() {
   return (
     <CityPageLayout
       city="Midland"
+      geo={{ lat: 35.2949, lng: -80.4956 }}
       image="/midland.png"
       introText={
         <>
@@ -15,37 +16,37 @@ export default function Midland() {
         {
           title: "Loan Signing Services",
           description: <>Professional handling of mortgage refinances, HELOCs, and seller packages. We work with lenders and title companies to provide stress-free mobile closings for residents of <strong>Midland and Mount Pleasant</strong>.</>,
-          icon: <FileSignature className="w-6 h-6 text-blue-600" />,
+          icon: <FileSignature className="w-6 h-6 text-brand-600" />,
           link: "/locations/union-county-loan-signing-agent"
         },
         {
           title: "Estate Planning Notary",
           description: <>Secure mobile notarization for Living Trusts, Last Will and Testament, and Power of Attorney (POA). We can meet you at your home or popular spots like <strong>Reed Gold Mine</strong> area.</>,
-          icon: <FileText className="w-6 h-6 text-blue-600" />,
+          icon: <FileText className="w-6 h-6 text-brand-600" />,
           link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Bedside Notary",
           description: <>Bedside notarizations for directives, proxies, and urgent legal documents. We serve local clinics, rehabilitation centers, and nearby hospitals.</>,
-          icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
+          icon: <HeartPulse className="w-6 h-6 text-brand-600" />,
           link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours & Emergency",
           description: <>Fast, 24/7 emergency notary services available for evenings, weekends, and holidays to accommodate Midland's busy, dynamic schedules.</>,
-          icon: <Clock className="w-6 h-6 text-blue-600" />,
+          icon: <Clock className="w-6 h-6 text-brand-600" />,
           link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
           description: <>Quick and pristine notarization for travel consents, vehicle title transfers, I-9 verifications, and general legal affidavits across Midland.</>,
-          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          icon: <ShieldCheck className="w-6 h-6 text-brand-600" />,
           link: "/general-notary-charlotte-nc"
         },
         {
           title: "Business & Corporate Notary",
           description: <>Professional notary assistance for corporate agreements, employment paperwork, NDAs, and corporate resolutions for businesses across the <strong>Cabarrus County</strong> region.</>,
-          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          icon: <Laptop className="w-6 h-6 text-brand-600" />,
           link: "/services/business-documents"
         }
       ]}

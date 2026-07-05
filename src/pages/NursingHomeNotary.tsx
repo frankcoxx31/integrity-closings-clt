@@ -140,7 +140,7 @@ export default function NursingHomeNotary() {
   return (
     <div className="min-h-screen bg-slate-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6 transition-colors">
+        <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-brand-600 hover:text-brand-800 mb-6 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to All Services
         </Link>
@@ -158,9 +158,9 @@ export default function NursingHomeNotary() {
           <div className="p-8 sm:p-12">
             {/* Breadcrumb */}
             <nav className="text-sm text-slate-500 mb-6 font-sans">
-              <Link to="/" className="hover:text-blue-600">Home</Link>
+              <Link to="/" className="hover:text-brand-600">Home</Link>
               <span className="mx-2">›</span>
-              <Link to="/mobile-notary-charlotte-nc" className="hover:text-blue-600">Services</Link>
+              <Link to="/mobile-notary-charlotte-nc" className="hover:text-brand-600">Services</Link>
               <span className="mx-2">›</span>
               <span className="text-slate-700">Nursing Home Notary</span>
             </nav>
@@ -175,7 +175,7 @@ export default function NursingHomeNotary() {
             <div className="mb-10 text-center">
               <a
                 href="tel:9803724103"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Call or text (980) 372-4103 to schedule
@@ -185,7 +185,7 @@ export default function NursingHomeNotary() {
             {/* How it works */}
             <section className="mb-12">
               <div className="flex items-center mb-4">
-                <Heart className="w-6 h-6 text-blue-600 mr-3" />
+                <Heart className="w-6 h-6 text-brand-600 mr-3" />
                 <h2 className="text-2xl font-bold text-slate-900">How Our Nursing Home Notary Service Works</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
@@ -195,7 +195,7 @@ export default function NursingHomeNotary() {
                   { step: "3", title: "We come to them", desc: "We arrive at the resident's room, verify identity, and complete the notarization on site." }
                 ].map((item) => (
                   <div key={item.step} className="bg-slate-50 rounded-xl p-6 border border-slate-100 text-center">
-                    <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">{item.step}</div>
+                    <div className="w-10 h-10 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">{item.step}</div>
                     <h3 className="font-bold text-slate-900 mb-2">{item.title}</h3>
                     <p className="text-slate-600 text-sm">{item.desc}</p>
                   </div>
@@ -206,32 +206,32 @@ export default function NursingHomeNotary() {
             {/* Documents */}
             <section className="mb-12">
               <div className="flex items-center mb-6">
-                <CheckCircle className="w-6 h-6 text-blue-600 mr-3" />
+                <CheckCircle className="w-6 h-6 text-brand-600 mr-3" />
                 <h2 className="text-2xl font-bold text-slate-900">Documents We Commonly Notarize at Nursing Homes</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {commonDocuments.map((doc, i) => (
                   <div key={i} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-brand-600 mr-3 flex-shrink-0" />
                     <span className="text-slate-700">{doc}</span>
                   </div>
                 ))}
               </div>
               <p className="text-slate-500 text-sm mt-4">
-                Need something not on this list? <a href="tel:9803724103" className="text-blue-600 hover:underline">Call us</a> — if it can be notarized in NC, we can handle it.
+                Need something not on this list? <a href="tel:9803724103" className="text-brand-600 hover:underline">Call us</a> — if it can be notarized in NC, we can handle it.
               </p>
             </section>
 
             {/* Facility types */}
             <section className="mb-12">
               <div className="flex items-center mb-4">
-                <Users className="w-6 h-6 text-blue-600 mr-3" />
+                <Users className="w-6 h-6 text-brand-600 mr-3" />
                 <h2 className="text-2xl font-bold text-slate-900">Facilities We Visit</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {facilities.map((f, i) => (
                   <div key={i} className="flex items-center">
-                    <div className="w-2 h-2 rounded-full bg-blue-600 mr-3 flex-shrink-0" />
+                    <div className="w-2 h-2 rounded-full bg-brand-600 mr-3 flex-shrink-0" />
                     <span className="text-slate-700">{f}</span>
                   </div>
                 ))}
@@ -278,7 +278,7 @@ export default function NursingHomeNotary() {
             {/* Areas */}
             <section className="mb-12">
               <div className="flex items-center mb-4">
-                <MapPin className="w-6 h-6 text-blue-600 mr-3" />
+                <MapPin className="w-6 h-6 text-brand-600 mr-3" />
                 <h2 className="text-2xl font-bold text-slate-900">Areas We Serve</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
@@ -289,7 +289,7 @@ export default function NursingHomeNotary() {
             {/* Why us */}
             <section className="mb-12">
               <div className="flex items-center mb-6">
-                <ShieldCheck className="w-6 h-6 text-blue-600 mr-3" />
+                <ShieldCheck className="w-6 h-6 text-brand-600 mr-3" />
                 <h2 className="text-2xl font-bold text-slate-900">Why Families Choose Integrity Closings CLT</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -302,7 +302,7 @@ export default function NursingHomeNotary() {
                   "We can sometimes arrange qualified witnesses if your family cannot provide them"
                 ].map((reason, i) => (
                   <div key={i} className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-brand-600 mr-3 flex-shrink-0 mt-0.5" />
                     <span className="text-slate-700">{reason}</span>
                   </div>
                 ))}
@@ -310,16 +310,16 @@ export default function NursingHomeNotary() {
             </section>
 
             {/* Related links */}
-            <section className="mb-12 p-6 bg-blue-50 rounded-xl border border-blue-100">
+            <section className="mb-12 p-6 bg-brand-50 rounded-xl border border-brand-100">
               <h3 className="font-bold text-slate-900 mb-3">Related Services</h3>
               <div className="flex flex-wrap gap-3">
-                <Link to="/hospital-notary-charlotte-nc" className="text-blue-600 hover:underline text-sm">Hospital & Bedside Notary</Link>
+                <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline text-sm">Hospital & Bedside Notary</Link>
                 <span className="text-slate-300">|</span>
-                <Link to="/estate-planning-notary-charlotte-nc" className="text-blue-600 hover:underline text-sm">Estate Planning Notary</Link>
+                <Link to="/estate-planning-notary-charlotte-nc" className="text-brand-600 hover:underline text-sm">Estate Planning Notary</Link>
                 <span className="text-slate-300">|</span>
-                <Link to="/blog/power-of-attorney-north-carolina-notarized" className="text-blue-600 hover:underline text-sm">Power of Attorney Guide</Link>
+                <Link to="/blog/power-of-attorney-north-carolina-notarized" className="text-brand-600 hover:underline text-sm">Power of Attorney Guide</Link>
                 <span className="text-slate-300">|</span>
-                <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-blue-600 hover:underline text-sm">After-Hours Notary</Link>
+                <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline text-sm">After-Hours Notary</Link>
               </div>
             </section>
 
@@ -330,14 +330,14 @@ export default function NursingHomeNotary() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="tel:9803724103"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Call or text (980) 372-4103
                 </a>
                 <Link
                   to="/book"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-blue-600 bg-blue-50 hover:bg-blue-100 transition-colors border border-blue-200"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-brand-600 bg-brand-50 hover:bg-brand-100 transition-colors border border-brand-200"
                 >
                   Book Online
                 </Link>

@@ -1,29 +1,8 @@
 import { Star } from 'lucide-react';
+import { businessConfig } from '../config/business';
 
 export default function Reviews() {
-  const reviews = [
-    {
-      name: "Barbara Ellis",
-      date: "18 weeks ago",
-      text: "He did wonderful! Was very accommodating and respectful. He helped get everything situated with my family and I couldn't be more happy!",
-      initial: "B",
-      color: "bg-purple-500"
-    },
-    {
-      name: "Ginger Shutt",
-      date: "Mar 18, 2025",
-      text: "Prompt, Professional, Timely delivery of signed documents and Free of Errors. Highly Recommend!",
-      initial: "G",
-      color: "bg-emerald-500"
-    },
-    {
-      name: "Lauren Hamlett",
-      date: "Mar 14, 2025",
-      text: "Professional, organized, and great communication! I was very pleased with the experience and would recommend their services to friends and use again myself!",
-      initial: "L",
-      color: "bg-blue-500"
-    }
-  ];
+  const reviews = businessConfig.reviews;
 
   return (
     <section className="py-20 bg-slate-50 border-t border-slate-100">
@@ -32,7 +11,7 @@ export default function Reviews() {
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">What Our Clients Say</h2>
           <div className="mt-4 flex items-center justify-center gap-2">
             <span className="text-lg font-semibold text-slate-700">Excellent</span>
-            <div className="flex text-yellow-400">
+            <div className="flex text-accent-400">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-current" />
               ))}
@@ -62,7 +41,7 @@ export default function Reviews() {
                   </svg>
                 </div>
               </div>
-              <div className="flex text-yellow-400 mb-4">
+              <div className="flex text-accent-400 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}

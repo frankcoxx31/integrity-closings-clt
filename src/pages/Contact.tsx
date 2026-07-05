@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
+import { businessConfig } from '../config/business';
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -68,47 +69,47 @@ export default function Contact() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             {/* Contact Info */}
-            <div className="bg-blue-950 text-white p-8 sm:p-12">
+            <div className="bg-brand-950 text-white p-8 sm:p-12">
               <h2 className="text-2xl font-bold mb-8">Get in Touch</h2>
               
               <div className="space-y-8">
                 <div className="flex items-start">
-                  <Phone className="w-6 h-6 text-blue-400 mr-4 flex-shrink-0" />
+                  <Phone className="w-6 h-6 text-brand-400 mr-4 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-lg">Phone</h3>
-                    <p className="text-slate-300 mt-1">980-372-4103</p>
+                    <p className="text-slate-300 mt-1">{businessConfig.phone.display}</p>
                     <p className="text-sm text-slate-400 mt-1">Call or text for immediate assistance</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <Mail className="w-6 h-6 text-blue-400 mr-4 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-lg">Email</h3>
-                    <p className="text-slate-300 mt-1">info@integrityclosingsclt.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <MapPin className="w-6 h-6 text-blue-400 mr-4 flex-shrink-0" />
+                  <Mail className="w-6 h-6 text-brand-400 mr-4 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-lg">Email</h3>
+                    <p className="text-slate-300 mt-1">{businessConfig.contactEmail}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <MapPin className="w-6 h-6 text-brand-400 mr-4 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-lg">Service Area</h3>
-                    <p className="text-slate-300 mt-1">Charlotte, NC & Surrounding Counties</p>
+                    <p className="text-slate-300 mt-1">{businessConfig.hubCity}, {businessConfig.hubState} & Surrounding Counties</p>
                     <p className="text-sm text-slate-400 mt-1">We travel to your location</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <Clock className="w-6 h-6 text-blue-400 mr-4 flex-shrink-0" />
+                  <Clock className="w-6 h-6 text-brand-400 mr-4 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-lg">Business Hours</h3>
-                    <p className="text-slate-300 mt-1">Monday - Saturday: 9:00am - 7:00pm</p>
-                    <p className="text-slate-300">Sunday: Closed</p>
-                    <p className="text-sm text-slate-400 mt-1">After-hours service available (7:00pm - 11:00pm)</p>
+                    <p className="text-slate-300 mt-1">{businessConfig.hours.weekday}</p>
+                    <p className="text-slate-300">{businessConfig.hours.weekend}</p>
+                    <p className="text-sm text-slate-400 mt-1">{businessConfig.hours.afterHours}</p>
                   </div>
                 </div>
 
-                <div className="pt-8 border-t border-blue-900">
+                <div className="pt-8 border-t border-brand-900">
                   <h3 className="font-semibold text-lg mb-4">Leave a Google Review</h3>
                   <div className="bg-white p-3 rounded-xl inline-block">
                     <img 
@@ -148,33 +149,33 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-2">First Name</label>
-                      <input type="text" id="firstName" value={formData.firstName} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="John" />
+                      <input type="text" id="firstName" value={formData.firstName} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-colors" placeholder="John" />
                     </div>
                     <div>
                       <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-2">Last Name</label>
-                      <input type="text" id="lastName" value={formData.lastName} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="Doe" />
+                      <input type="text" id="lastName" value={formData.lastName} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-colors" placeholder="Doe" />
                     </div>
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                    <input type="email" id="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="john@example.com" />
+                    <input type="email" id="email" value={formData.email} onChange={handleInputChange} required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-colors" placeholder="john@example.com" />
                   </div>
 
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
-                    <input type="tel" id="phone" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="(555) 123-4567" />
+                    <input type="tel" id="phone" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-colors" placeholder="(555) 123-4567" />
                   </div>
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                    <textarea id="message" value={formData.message} onChange={handleInputChange} required rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors resize-none" placeholder="How can we help you today?"></textarea>
+                    <textarea id="message" value={formData.message} onChange={handleInputChange} required rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-colors resize-none" placeholder="How can we help you today?"></textarea>
                   </div>
 
                   <button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-colors disabled:bg-blue-400 flex items-center justify-center"
+                    className="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-4 px-8 rounded-lg transition-colors disabled:bg-brand-400 flex items-center justify-center"
                   >
                     {isSubmitting ? (
                       <>

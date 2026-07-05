@@ -6,49 +6,50 @@ export default function Concord() {
   return (
     <CityPageLayout
       city="Concord"
+      geo={{ lat: 35.4087, lng: -80.5795 }}
       image="https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&q=80&w=1920"
       introText={
         <>
           Searching for a <strong>mobile notary in Concord, NC</strong>? Integrity Closings CLT provides professional general notary services throughout Cabarrus County. We meet you at your convenience—at home, at work, or a local Concord landmark—to notarize your legal paperwork quickly and securely.
           <br /><br />
-          <em>Closing on a home?</em> Please see our <Link to="/locations/concord-loan-signing-agent" className="text-blue-600 font-bold hover:underline">Concord Loan Signing Agent</Link> page for specialized mortgage document facilitation.
+          <em>Closing on a home?</em> Please see our <Link to="/locations/concord-loan-signing-agent" className="text-brand-600 font-bold hover:underline">Concord Loan Signing Agent</Link> page for specialized mortgage document facilitation.
         </>
       }
       services={[
         {
           title: "Loan Signing Specialty",
-          description: <>Specialized mortgage closing facilitation for lenders and borrowers. Visit our <Link to="/locations/concord-loan-signing-agent" className="text-blue-600 font-bold hover:underline">Concord Loan Signing</Link> page.</>,
-          icon: <FileSignature className="w-6 h-6 text-blue-600" />,
+          description: <>Specialized mortgage closing facilitation for lenders and borrowers. Visit our <Link to="/locations/concord-loan-signing-agent" className="text-brand-600 font-bold hover:underline">Concord Loan Signing</Link> page.</>,
+          icon: <FileSignature className="w-6 h-6 text-brand-600" />,
           link: "/locations/concord-loan-signing-agent"
         },
         {
           title: "Estate Planning Notary",
           description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Cabarrus Brewing Company</strong> or the <strong>Concord Library</strong>.</>,
-          icon: <FileText className="w-6 h-6 text-blue-600" />,
+          icon: <FileText className="w-6 h-6 text-brand-600" />,
           link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home",
           description: <>Compassionate bedside notary services for medical POAs and living wills for patients at <strong>Atrium Health Cabarrus</strong> and surrounding medical offices.</>,
-          icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
+          icon: <HeartPulse className="w-6 h-6 text-brand-600" />,
           link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours Notary",
           description: <>Available for late-night and weekend signings in <strong>Coddle Creek, Roberta Mill</strong>, and across the Concord area when standard offices are closed.</>,
-          icon: <Clock className="w-6 h-6 text-blue-600" />,
+          icon: <Clock className="w-6 h-6 text-brand-600" />,
           link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
           description: <>Quick and accurate notarization for affidavits, vehicle titles, and school forms. Serving all of <strong>Cabarrus County</strong> with mobile convenience.</>,
-          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          icon: <ShieldCheck className="w-6 h-6 text-brand-600" />,
           link: "/general-notary-charlotte-nc"
         },
         {
           title: "Business & Corporate",
           description: <>Mobile notary support for business contracts and employment paperwork. We meet you at your office or <strong>Concord Mills</strong> area businesses.</>,
-          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          icon: <Laptop className="w-6 h-6 text-brand-600" />,
           link: "/services/business-documents"
         }
       ]}
