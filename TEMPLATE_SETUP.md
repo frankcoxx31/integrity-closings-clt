@@ -81,3 +81,4 @@ the old number and swap it for `businessConfig.phone.display`/`.tel` in each.
 
 - Replace `/public/logo.jpg`, `/public/hero-bj.jpg`, the notary's headshot, and any city photos referenced in `src/components/Locations.tsx`
 - Set up a fresh `.env` (Firebase project, Google Calendar service account, Resend API key + verified sending domain) for the new customer — see `.env.example`
+- `src/components/AIChatbot.tsx` has an AI assistant persona hardcoded as "Mr. Frank" (name, greeting text, avatar alt text) — rename or restyle this for the new notary if they want a different assistant persona.
