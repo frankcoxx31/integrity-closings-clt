@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 export default function AcknowledgmentVsJurat() {
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
-      <div className="bg-blue-950 py-16">
+      <div className="bg-brand-950 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link to="/resources" className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors font-medium">
+          <Link to="/resources" className="inline-flex items-center text-brand-200 hover:text-white mb-6 transition-colors font-medium">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Resources
           </Link>
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 font-serif leading-tight">
             The Difference Between an Acknowledgment and a Jurat
           </h1>
-          <p className="text-lg text-blue-100">
+          <p className="text-lg text-brand-100">
             Learn about the two most common types of notarizations and when each is required for your legal documents.
           </p>
         </div>

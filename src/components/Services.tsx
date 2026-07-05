@@ -59,7 +59,7 @@ export default function Services() {
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
               <p className="text-slate-600 mb-6 flex-grow">{service.description}</p>
-              <a href={service.link} className="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center mt-auto">
+              <a href={service.link} className="text-brand-600 font-medium hover:text-brand-800 inline-flex items-center mt-auto">
                 Learn more &rarr;
               </a>
             </div>

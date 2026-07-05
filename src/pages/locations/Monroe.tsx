@@ -5,6 +5,7 @@ export default function Monroe() {
   return (
     <CityPageLayout
       city="Monroe"
+      geo={{ lat: 34.9854, lng: -80.5495 }}
       image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920"
       introText={
         <>
@@ -15,37 +16,37 @@ export default function Monroe() {
         {
           title: "Loan Signing Services",
           description: <>Expert handling of mortgages, refinances, HELOCs, and seller packages. We serve homeowners in neighborhoods like <strong>Rolling Hills, South Monroe, and Benton Heights</strong>.</>,
-          icon: <FileSignature className="w-6 h-6 text-blue-600" />,
+          icon: <FileSignature className="w-6 h-6 text-brand-600" />,
           link: "/loan-signing-agent-charlotte-nc"
         },
         {
           title: "Estate Planning Notary",
           description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Treehouse Vineyards</strong> or the <strong>Union County Library</strong>.</>,
-          icon: <FileText className="w-6 h-6 text-blue-600" />,
+          icon: <FileText className="w-6 h-6 text-brand-600" />,
           link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home",
           description: <>Compassionate bedside notary services for medical POAs and living wills for patients at <strong>Atrium Health Union</strong> and <strong>Monroe Rehabilitation Center</strong>.</>,
-          icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
+          icon: <HeartPulse className="w-6 h-6 text-brand-600" />,
           link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours Notary",
           description: <>Available for late-night and weekend signings across the Monroe area when standard offices are closed.</>,
-          icon: <Clock className="w-6 h-6 text-blue-600" />,
+          icon: <Clock className="w-6 h-6 text-brand-600" />,
           link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
           description: <>Quick and accurate notarization for affidavits, vehicle titles, and I-9 verifications. Serving all of <strong>Union County</strong> with mobile service.</>,
-          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          icon: <ShieldCheck className="w-6 h-6 text-brand-600" />,
           link: "/general-notary-charlotte-nc"
         },
         {
           title: "Business & Corporate",
           description: <>Professional notary support for business contracts and employment paperwork. We meet you at your office or <strong>Monroe</strong> area businesses.</>,
-          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          icon: <Laptop className="w-6 h-6 text-brand-600" />,
           link: "/services/business-documents"
         }
       ]}

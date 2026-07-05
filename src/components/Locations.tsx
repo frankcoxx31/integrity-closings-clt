@@ -78,9 +78,9 @@ export default function Locations() {
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{loc.city}</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">{loc.city}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">{loc.areas}</p>
-                <span className="text-blue-600 font-medium inline-flex items-center group-hover:text-blue-800 transition-colors">
+                <span className="text-brand-600 font-medium inline-flex items-center group-hover:text-brand-800 transition-colors">
                   View Service Area &rarr;
                 </span>
               </div>

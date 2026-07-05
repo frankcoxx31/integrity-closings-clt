@@ -24,9 +24,9 @@ function StarRating({ rating }: { rating: number }) {
   return (
     <div className="flex items-center gap-1">
       {Array.from({ length: full }).map((_, i) => (
-        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+        <Star key={i} className="w-4 h-4 fill-accent-400 text-accent-400" />
       ))}
-      {half && <StarHalf className="w-4 h-4 fill-yellow-400 text-yellow-400" />}
+      {half && <StarHalf className="w-4 h-4 fill-accent-400 text-accent-400" />}
       {Array.from({ length: 5 - full - (half ? 1 : 0) }).map((_, i) => (
         <Star key={i} className="w-4 h-4 text-gray-300" />
       ))}
@@ -40,8 +40,8 @@ function ProductCard({ product }: { product: Product }) {
     <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
       {/* Frank's Pick badge */}
       {product.franksPick && (
-        <div className="bg-yellow-500 text-blue-950 text-xs font-bold uppercase tracking-widest px-4 py-2 flex items-center gap-2">
-          <Star className="w-3 h-3 fill-blue-950 text-blue-950" /> Frank's Pick
+        <div className="bg-accent-500 text-brand-950 text-xs font-bold uppercase tracking-widest px-4 py-2 flex items-center gap-2">
+          <Star className="w-3 h-3 fill-brand-950 text-brand-950" /> Frank's Pick
         </div>
       )}
 
@@ -56,7 +56,7 @@ function ProductCard({ product }: { product: Product }) {
           />
         ) : (
           <div className="flex flex-col items-center gap-2 text-gray-400">
-            <ShoppingCart className="w-10 h-10 text-yellow-300" />
+            <ShoppingCart className="w-10 h-10 text-accent-300" />
             <span className="text-xs uppercase tracking-widest">Product Image</span>
           </div>
         )}
@@ -65,14 +65,14 @@ function ProductCard({ product }: { product: Product }) {
       {/* Body */}
       <div className="p-6 flex flex-col flex-1">
         <StarRating rating={product.stars} />
-        <h3 className="font-bold text-blue-950 text-base mt-3 mb-2 leading-snug">{product.name}</h3>
+        <h3 className="font-bold text-brand-950 text-base mt-3 mb-2 leading-snug">{product.name}</h3>
         <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-4">{product.description}</p>
         <div className="border-t border-gray-100 pt-4">
           <a
             href={product.amazonUrl}
             target="_blank"
             rel="nofollow noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-blue-950 text-white text-xs font-bold uppercase tracking-widest py-3 px-4 rounded-lg hover:bg-yellow-500 hover:text-blue-950 transition-colors duration-300"
+            className="flex items-center justify-center gap-2 bg-brand-950 text-white text-xs font-bold uppercase tracking-widest py-3 px-4 rounded-lg hover:bg-accent-500 hover:text-brand-950 transition-colors duration-300"
           >
             <ShoppingCart className="w-4 h-4" />
             {product.buttonText || 'Check Price on Amazon'}
@@ -284,22 +284,22 @@ export default function NotaryToolkit() {
       </div>
 
       {/* Sticky Section Nav */}
-      <div className="sticky top-20 z-40 bg-blue-950 shadow-md">
+      <div className="sticky top-20 z-40 bg-brand-950 shadow-md">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-2 overflow-x-auto scrollbar-hide py-1">
-          <span className="text-yellow-400 font-serif italic text-lg whitespace-nowrap pr-4 hidden md:block">The Notary's Toolkit</span>
+          <span className="text-accent-400 font-serif italic text-lg whitespace-nowrap pr-4 hidden md:block">The Notary's Toolkit</span>
           <div className="flex gap-1">
             {sections.map(s => (
               <button
                 key={s.id}
                 onClick={() => scrollTo(s.id)}
-                className="text-white/70 hover:text-yellow-400 text-xs font-bold uppercase tracking-wider px-3 py-4 whitespace-nowrap transition-colors"
+                className="text-white/70 hover:text-accent-400 text-xs font-bold uppercase tracking-wider px-3 py-4 whitespace-nowrap transition-colors"
               >
                 {s.label}
               </button>
             ))}
             <a
               href="#yt-cta"
-              className="text-white/70 hover:text-yellow-400 text-xs font-bold uppercase tracking-wider px-3 py-4 whitespace-nowrap transition-colors"
+              className="text-white/70 hover:text-accent-400 text-xs font-bold uppercase tracking-wider px-3 py-4 whitespace-nowrap transition-colors"
             >
               YouTube
             </a>
@@ -308,20 +308,20 @@ export default function NotaryToolkit() {
       </div>
 
       {/* Hero */}
-      <div className="bg-blue-950 pt-16 pb-20 px-6 text-center relative overflow-hidden">
+      <div className="bg-brand-950 pt-16 pb-20 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(234,179,8,0.12)_0%,transparent_65%)]" />
-        <p className="font-serif italic text-yellow-400 text-lg tracking-widest mb-4 relative">Frank Coxx · Notary Public</p>
+        <p className="font-serif italic text-accent-400 text-lg tracking-widest mb-4 relative">Frank Coxx · Notary Public</p>
         <h1 className="text-white font-extrabold text-5xl md:text-7xl tracking-tight leading-none mb-4 relative">
-          The Notary's <span className="text-yellow-400">Toolkit</span>
+          The Notary's <span className="text-accent-400">Toolkit</span>
         </h1>
         <p className="text-white/50 text-lg tracking-wider mb-12 relative">Everything You Need to Run a Professional Notary Business</p>
 
         {/* Frank Intro Card */}
-        <div className="max-w-2xl mx-auto bg-white/5 border border-yellow-400/20 rounded-xl p-8 flex gap-6 items-start text-left relative">
-          <div className="w-16 h-16 rounded-full bg-yellow-500 flex items-center justify-center text-blue-950 font-extrabold text-2xl flex-shrink-0">FC</div>
+        <div className="max-w-2xl mx-auto bg-white/5 border border-accent-400/20 rounded-xl p-8 flex gap-6 items-start text-left relative">
+          <div className="w-16 h-16 rounded-full bg-accent-500 flex items-center justify-center text-brand-950 font-extrabold text-2xl flex-shrink-0">FC</div>
           <div>
             <p className="text-white/75 text-sm leading-relaxed">
-              <span className="text-yellow-400 font-bold">Hey! I'm Frank</span> — a working notary who has tested and used everything on this page.
+              <span className="text-accent-400 font-bold">Hey! I'm Frank</span> — a working notary who has tested and used everything on this page.
               These are my personal recommendations to help you run a smooth, professional notary business.
               I only recommend products I actually use or genuinely believe in.
             </p>
@@ -337,9 +337,9 @@ export default function NotaryToolkit() {
         <div key={section.id} id={section.id} className={idx % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
           <div className="max-w-7xl mx-auto px-6 py-20">
             <div className="mb-12">
-              <p className="text-yellow-500 font-serif italic text-base tracking-widest mb-2">Section {String(idx + 1).padStart(2, '0')}</p>
-              <h2 className="text-blue-950 font-extrabold text-4xl tracking-tight flex items-center gap-3 mb-3">
-                <span className="text-yellow-500">{section.icon}</span>
+              <p className="text-accent-500 font-serif italic text-base tracking-widest mb-2">Section {String(idx + 1).padStart(2, '0')}</p>
+              <h2 className="text-brand-950 font-extrabold text-4xl tracking-tight flex items-center gap-3 mb-3">
+                <span className="text-accent-500">{section.icon}</span>
                 {section.label}
               </h2>
               <p className="text-gray-500 text-base max-w-xl">{section.description}</p>
@@ -373,8 +373,8 @@ export default function NotaryToolkit() {
       </div>
 
       {/* Footer Disclosure */}
-      <div className="bg-blue-950 py-12 px-6 text-center">
-        <p className="font-serif italic text-yellow-400 text-xl mb-4">The Notary's Toolkit</p>
+      <div className="bg-brand-950 py-12 px-6 text-center">
+        <p className="font-serif italic text-accent-400 text-xl mb-4">The Notary's Toolkit</p>
         <p className="text-white/30 text-xs leading-relaxed max-w-2xl mx-auto mb-4">
           <strong className="text-white/50">Affiliate Disclosure:</strong> This page contains affiliate links. As an Amazon Associate and affiliate partner of other services listed, I earn a small commission from qualifying purchases at no additional cost to you. I only recommend products I personally use or genuinely believe in. All opinions are my own.
         </p>

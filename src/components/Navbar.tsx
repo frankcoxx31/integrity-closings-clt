@@ -69,8 +69,8 @@ export default function Navbar() {
 
   const isHomePage = location.pathname === '/';
   const navBackground = isScrolled 
-    ? 'bg-blue-950 shadow-md' 
-    : (isHomePage ? 'bg-transparent' : 'bg-blue-950');
+    ? 'bg-brand-950 shadow-md' 
+    : (isHomePage ? 'bg-transparent' : 'bg-brand-950');
 
   return (
     <>
@@ -89,43 +89,43 @@ export default function Navbar() {
                   <div key={link.name} className="relative" ref={servicesRef}>
                     <button
                       onClick={() => setServicesOpen(o => !o)}
-                      className="flex items-center gap-1 text-white hover:text-blue-300 px-3 py-2 rounded-md text-base font-bold transition-colors focus:outline-none"
+                      className="flex items-center gap-1 text-white hover:text-brand-300 px-3 py-2 rounded-md text-base font-bold transition-colors focus:outline-none"
                     >
                       Services <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {servicesOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-60 bg-blue-950 border-t-2 border-yellow-400 shadow-xl rounded-b-lg overflow-hidden z-50">
+                      <div className="absolute top-full left-0 mt-2 w-60 bg-brand-950 border-t-2 border-accent-400 shadow-xl rounded-b-lg overflow-hidden z-50">
                         <button
                           onClick={() => { setServicesOpen(false); navigate('/mobile-notary-charlotte-nc'); }}
-                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-white/5 transition-colors"
                         >
                           All Services
                         </button>
                         <div className="border-t border-white/10" />
                         <button
                           onClick={() => { setServicesOpen(false); navigate('/hospital-notary-charlotte-nc'); }}
-                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-white/5 transition-colors"
                         >
                           🏥 Hospital &amp; Nursing Home
                         </button>
                         <div className="border-t border-white/10" />
                         <button
                           onClick={() => { setServicesOpen(false); navigate('/loan-signing-agent-charlotte-nc'); }}
-                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-white/5 transition-colors"
                         >
                           📋 Loan Signing Agent
                         </button>
                         <div className="border-t border-white/10" />
                         <button
                           onClick={() => { setServicesOpen(false); navigate('/estate-planning-notary-charlotte-nc'); }}
-                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-white/5 transition-colors"
                         >
                           📜 Estate Notarizations
                         </button>
                         <div className="border-t border-white/10" />
                         <button
                           onClick={() => { setServicesOpen(false); window.location.href = '/emergency-airport-notary-charlotte-clt.html'; }}
-                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-white/5 transition-colors"
                         >
                           ✈️ Airport Notarizations
                         </button>
@@ -136,22 +136,22 @@ export default function Navbar() {
                   <div key={link.name} className="relative" ref={resourcesRef}>
                     <button
                       onClick={() => setResourcesOpen(o => !o)}
-                      className="flex items-center gap-1 text-white hover:text-blue-300 px-3 py-2 rounded-md text-base font-bold transition-colors focus:outline-none"
+                      className="flex items-center gap-1 text-white hover:text-brand-300 px-3 py-2 rounded-md text-base font-bold transition-colors focus:outline-none"
                     >
                       Resources <ChevronDown className={`w-4 h-4 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {resourcesOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-blue-950 border-t-2 border-yellow-400 shadow-xl rounded-b-lg overflow-hidden z-50">
+                      <div className="absolute top-full left-0 mt-2 w-56 bg-brand-950 border-t-2 border-accent-400 shadow-xl rounded-b-lg overflow-hidden z-50">
                         <button
                           onClick={() => { setResourcesOpen(false); navigate('/resources'); }}
-                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-white/5 transition-colors"
                         >
                           All Resources
                         </button>
                         <div className="border-t border-white/10" />
                         <button
                           onClick={() => { setResourcesOpen(false); navigate('/resources/notary-toolkit'); }}
-                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-white/5 transition-colors"
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-white/5 transition-colors"
                         >
                           🛠️ The Notary's Toolkit
                         </button>
@@ -162,7 +162,7 @@ export default function Navbar() {
                   <button
                     key={link.name}
                     onClick={() => handleNavigation(link.href)}
-                    className="text-white hover:text-blue-300 px-3 py-2 rounded-md text-base font-bold transition-colors focus:outline-none"
+                    className="text-white hover:text-brand-300 px-3 py-2 rounded-md text-base font-bold transition-colors focus:outline-none"
                   >
                     {link.name}
                   </button>
@@ -170,7 +170,7 @@ export default function Navbar() {
               )}
               <button 
                 onClick={() => navigate('/booking')}
-                className="flex items-center bg-white text-blue-950 px-6 py-2.5 rounded-full font-bold hover:bg-slate-100 transition-colors"
+                className="flex items-center bg-white text-brand-950 px-6 py-2.5 rounded-full font-bold hover:bg-slate-100 transition-colors"
               >
                 Book Now
               </button>
@@ -179,7 +179,7 @@ export default function Navbar() {
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-300 focus:outline-none"
+                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-brand-300 focus:outline-none"
               >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -189,50 +189,50 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="lg:hidden bg-blue-950 border-t border-white/10">
+          <div className="lg:hidden bg-brand-950 border-t border-white/10">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
                   onClick={() => handleNavigation(link.href)}
-                  className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-white hover:text-blue-300 hover:bg-blue-900 focus:outline-none"
+                  className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-white hover:text-brand-300 hover:bg-brand-900 focus:outline-none"
                 >
                   {link.name}
                 </button>
               ))}
               <button
                 onClick={() => { setIsOpen(false); navigate('/hospital-notary-charlotte-nc'); }}
-                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
+                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-brand-900 focus:outline-none"
               >
                 🏥 Hospital &amp; Nursing Home
               </button>
               <button
                 onClick={() => { setIsOpen(false); navigate('/loan-signing-agent-charlotte-nc'); }}
-                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
+                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-brand-900 focus:outline-none"
               >
                 📋 Loan Signing Agent
               </button>
               <button
                 onClick={() => { setIsOpen(false); navigate('/estate-planning-notary-charlotte-nc'); }}
-                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
+                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-brand-900 focus:outline-none"
               >
                 📜 Estate Notarizations
               </button>
               <button
                 onClick={() => { setIsOpen(false); window.location.href = '/emergency-airport-notary-charlotte-clt.html'; }}
-                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-yellow-400 hover:bg-blue-900 focus:outline-none"
+                className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-brand-900 focus:outline-none"
               >
                 ✈️ Airport Notarizations
               </button>
               <button
                 onClick={() => { setIsOpen(false); navigate('/resources/notary-toolkit'); }}
-                className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-yellow-400 hover:text-yellow-300 hover:bg-blue-900 focus:outline-none"
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-accent-400 hover:text-accent-300 hover:bg-brand-900 focus:outline-none"
               >
                 🛠️ The Notary's Toolkit
               </button>
               <button 
                 onClick={() => navigate('/booking')}
-                className="block w-full text-center mt-4 bg-white text-blue-950 px-4 py-3 rounded-full font-bold hover:bg-slate-100"
+                className="block w-full text-center mt-4 bg-white text-brand-950 px-4 py-3 rounded-full font-bold hover:bg-slate-100"
               >
                 Book Now
               </button>

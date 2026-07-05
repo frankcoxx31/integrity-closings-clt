@@ -6,49 +6,50 @@ export default function Matthews() {
   return (
     <CityPageLayout
       city="Matthews"
+      geo={{ lat: 35.1168, lng: -80.7237 }}
       image="https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&q=80&w=1920"
       introText={
         <>
           Looking for a <strong>mobile notary in Matthews, NC</strong>? Integrity Closings CLT offers professional, on-demand general notary services for all your document needs. From power of attorney to vehicle titles, we bring the notary office to your home or office in Matthews.
           <br /><br />
-          <em>Need a mortgage closing?</em> Visit our dedicated <Link to="/locations/matthews-loan-signing-agent" className="text-blue-600 font-bold hover:underline">Matthews Loan Signing Agent</Link> page for high-intent mortgage facilitation.
+          <em>Need a mortgage closing?</em> Visit our dedicated <Link to="/locations/matthews-loan-signing-agent" className="text-brand-600 font-bold hover:underline">Matthews Loan Signing Agent</Link> page for high-intent mortgage facilitation.
         </>
       }
       services={[
         {
           title: "Loan Signing Specialty",
-          description: <>High-intent mortgage facilitation including refinances and purchases. Visit our dedicated <Link to="/locations/matthews-loan-signing-agent" className="text-blue-600 font-bold hover:underline">Matthews Loan Signing</Link> page.</>,
-          icon: <FileSignature className="w-6 h-6 text-blue-600" />,
+          description: <>High-intent mortgage facilitation including refinances and purchases. Visit our dedicated <Link to="/locations/matthews-loan-signing-agent" className="text-brand-600 font-bold hover:underline">Matthews Loan Signing</Link> page.</>,
+          icon: <FileSignature className="w-6 h-6 text-brand-600" />,
           link: "/locations/matthews-loan-signing-agent"
         },
         {
           title: "Estate Planning Notary",
           description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Brakeman’s Coffee</strong> or the <strong>Matthews Library</strong>.</>,
-          icon: <FileText className="w-6 h-6 text-blue-600" />,
+          icon: <FileText className="w-6 h-6 text-brand-600" />,
           link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home",
           description: <>Compassionate bedside notary services for medical POAs and living wills for patients at <strong>Novant Health Matthews</strong> and <strong>Atrium Health Union West</strong>.</>,
-          icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
+          icon: <HeartPulse className="w-6 h-6 text-brand-600" />,
           link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours Notary",
           description: <>Available for late-night and weekend signings in <strong>Cresswind, Fairhaven</strong>, and across the 28105 area when standard offices are closed.</>,
-          icon: <Clock className="w-6 h-6 text-blue-600" />,
+          icon: <Clock className="w-6 h-6 text-brand-600" />,
           link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
           description: <>Fast and reliable notarization for affidavits, vehicle titles, and school forms. We meet you at any <strong>Matthews</strong> location for your convenience.</>,
-          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          icon: <ShieldCheck className="w-6 h-6 text-brand-600" />,
           link: "/general-notary-charlotte-nc"
         },
         {
           title: "Business & Corporate",
           description: <>Professional notary support for corporate contracts and employment documents. Serving businesses in <strong>Windsor Square</strong> and the <strong>Matthews</strong> area.</>,
-          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          icon: <Laptop className="w-6 h-6 text-brand-600" />,
           link: "/services/business-documents"
         }
       ]}

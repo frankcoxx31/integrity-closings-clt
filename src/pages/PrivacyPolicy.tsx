@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
   return (
     <div className="bg-slate-50 min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="inline-flex items-center text-slate-600 hover:text-blue-600 mb-8 transition-colors">
+        <Link to="/" className="inline-flex items-center text-slate-600 hover:text-brand-600 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
         </Link>
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 sm:p-12">

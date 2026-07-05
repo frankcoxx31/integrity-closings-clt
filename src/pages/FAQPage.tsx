@@ -48,12 +48,12 @@ export default function FAQPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="bg-blue-950 py-20">
+      <div className="bg-brand-950 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl text-brand-100 max-w-2xl mx-auto">
             Find answers to common questions about our mobile notary and loan signing services in Charlotte, NC.
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function FAQPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Our Service Area</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-blue-600 mr-2" />
+              <MapPin className="w-5 h-5 text-brand-600 mr-2" />
               Serving Charlotte, NC and surrounding Mecklenburg County areas.
             </p>
           </div>
@@ -109,7 +109,7 @@ const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, ans
       >
         <span className="font-medium text-slate-900">{question}</span>
         {isOpen ? (
-          <Minus className="w-5 h-5 text-blue-600 flex-shrink-0" />
+          <Minus className="w-5 h-5 text-brand-600 flex-shrink-0" />
         ) : (
           <Plus className="w-5 h-5 text-slate-400 flex-shrink-0" />
         )}

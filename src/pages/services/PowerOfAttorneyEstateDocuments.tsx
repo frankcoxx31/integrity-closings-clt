@@ -105,7 +105,7 @@ export default function PowerOfAttorneyEstateDocuments() {
   return (
     <div className="min-h-screen bg-slate-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6 transition-colors">
+        <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-brand-600 hover:text-brand-800 mb-6 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to All Services
         </Link>
@@ -140,7 +140,7 @@ export default function PowerOfAttorneyEstateDocuments() {
             
             <section className="mb-10">
               <div className="flex items-center mb-4">
-                <MapPin className="w-6 h-6 text-blue-600 mr-3" />
+                <MapPin className="w-6 h-6 text-brand-600 mr-3" />
                 <h2 className="text-2xl font-bold text-slate-900">Mobile Service to Hospitals, Nursing Homes & Residences</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
@@ -153,7 +153,7 @@ export default function PowerOfAttorneyEstateDocuments() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {commonDocuments.map((doc, i) => (
                   <div key={i} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-brand-600 mr-3 flex-shrink-0" />
                     <span className="text-slate-700">{doc}</span>
                   </div>
                 ))}
@@ -204,9 +204,9 @@ export default function PowerOfAttorneyEstateDocuments() {
               </div>
             </section>
             
-            <section className="mb-10 p-6 bg-blue-50 rounded-xl border border-blue-100">
+            <section className="mb-10 p-6 bg-brand-50 rounded-xl border border-brand-100">
               <div className="flex items-start">
-                <Info className="w-6 h-6 text-blue-600 mr-4 flex-shrink-0 mt-1" />
+                <Info className="w-6 h-6 text-brand-600 mr-4 flex-shrink-0 mt-1" />
                 <div>
                   <h2 className="text-xl font-bold text-slate-900 mb-2">Signer Awareness & ID</h2>
                   <p className="text-slate-600 leading-relaxed">
@@ -223,7 +223,7 @@ export default function PowerOfAttorneyEstateDocuments() {
                 </p>
                 <a 
                   href="tel:9803724103" 
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-sm"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Call or text 980-372-4103

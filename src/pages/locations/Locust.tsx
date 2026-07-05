@@ -5,6 +5,7 @@ export default function Locust() {
   return (
     <CityPageLayout
       city="Locust"
+      geo={{ lat: 35.3960, lng: -80.4384 }}
       image="/locust.png"
       introText={
         <>
@@ -15,37 +16,37 @@ export default function Locust() {
         {
           title: "Loan Signing Services",
           description: <>Flawless facilitation of refinancing packets, HELOCs, buyer/seller packages, and home equity documentation. We travel straight to your Locust residence or local office space.</>,
-          icon: <FileSignature className="w-6 h-6 text-blue-600" />,
+          icon: <FileSignature className="w-6 h-6 text-brand-600" />,
           link: "/locations/union-county-loan-signing-agent"
         },
         {
           title: "Estate Planning Notary",
           description: <>We notarize crucial lifetime preparation documents including Wills, Living Trusts, Healthcare Directives, and Powers of Attorney (POA) right in Stanly County.</>,
-          icon: <FileText className="w-6 h-6 text-blue-600" />,
+          icon: <FileText className="w-6 h-6 text-brand-600" />,
           link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home Notary",
           description: <>Caring bedside services at hospitals, nursing clinics, and rehabilitation facilities. We make sure patients have stress-free access to urgent notarizations.</>,
-          icon: <HeartPulse className="w-6 h-6 text-blue-600" />,
+          icon: <HeartPulse className="w-6 h-6 text-brand-600" />,
           link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours & Emergency Notary",
           description: <>Need an evening or holiday signature? Our 24/7 on-demand network makes matching a notary in the Locust area convenient for any urgent deadline.</>,
-          icon: <Clock className="w-6 h-6 text-blue-600" />,
+          icon: <Clock className="w-6 h-6 text-brand-600" />,
           link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Mobile Notary",
           description: <>Expedited and accurate notarizations of legal templates: bill of sales, vehicle titles, major passport permissions, parent consents, and legal affidavits.</>,
-          icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
+          icon: <ShieldCheck className="w-6 h-6 text-brand-600" />,
           link: "/general-notary-charlotte-nc"
         },
         {
           title: "Corporate & Business Solutions",
           description: <>Mobile solutions for corporate agreements, employment authorization documents, NDAs, and corporate affidavits for businesses in Locust and <strong>Stanly County</strong>.</>,
-          icon: <Laptop className="w-6 h-6 text-blue-600" />,
+          icon: <Laptop className="w-6 h-6 text-brand-600" />,
           link: "/services/business-documents"
         }
       ]}

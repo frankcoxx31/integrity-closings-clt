@@ -235,9 +235,9 @@ export default function MobileNotaryServices() {
         {/* Breadcrumb */}
         <nav className="text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
           <ol className="flex items-center gap-2">
-            <li><Link to="/" className="hover:text-blue-600">Home</Link></li>
+            <li><Link to="/" className="hover:text-brand-600">Home</Link></li>
             <li>/</li>
-            <li><Link to="/mobile-notary-charlotte-nc" className="hover:text-blue-600 text-slate-700 font-medium">Mobile Notary Charlotte NC</Link></li>
+            <li><Link to="/mobile-notary-charlotte-nc" className="hover:text-brand-600 text-slate-700 font-medium">Mobile Notary Charlotte NC</Link></li>
           </ol>
         </nav>
 
@@ -263,14 +263,14 @@ export default function MobileNotaryServices() {
                 Simply call or text 980-372-4103, tell us what you need and where you are, and we'll confirm availability and arrive — often the same day.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/booking" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors">Book Now</Link>
+                <Link to="/booking" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors">Book Now</Link>
                 <a href="tel:9803724103" className="inline-flex items-center justify-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors">
                   Call 980-372-4103
                 </a>
               </div>
             </div>
-            <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-              <h3 className="text-lg font-bold text-blue-900 mb-3">Why Charlotte Residents Choose Integrity Closings CLT</h3>
+            <div className="bg-brand-50 rounded-xl p-6 border border-brand-100">
+              <h3 className="text-lg font-bold text-brand-900 mb-3">Why Charlotte Residents Choose Integrity Closings CLT</h3>
               <ul className="space-y-3">
                 {[
                   "We come to your home, office, or hospital room",
@@ -281,7 +281,7 @@ export default function MobileNotaryServices() {
                   "Responsive — call or text, we answer quickly"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-blue-600 mr-2 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-brand-600 mr-2 flex-shrink-0 mt-0.5" />
                     <span className="text-slate-700">{item}</span>
                   </li>
                 ))}
@@ -320,16 +320,16 @@ export default function MobileNotaryServices() {
               <div className="mb-5 w-full h-48 rounded-xl overflow-hidden bg-slate-100">
                 <img src={category.image} alt={category.alt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">{category.title}</h3>
+              <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-brand-600 transition-colors">{category.title}</h3>
               <ul className="space-y-2 mb-6 flex-grow">
                 {category.items.map((item, idx) => (
                   <li key={idx} className="text-slate-600 text-sm flex items-start">
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
+                    <span className="w-1.5 h-1.5 bg-brand-400 rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto pt-4 border-t border-slate-100 flex items-center text-blue-600 font-medium">
+              <div className="mt-auto pt-4 border-t border-slate-100 flex items-center text-brand-600 font-medium">
                 Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
@@ -350,18 +350,18 @@ export default function MobileNotaryServices() {
                 </div>
                 <p className="text-slate-700 text-sm leading-relaxed mb-4">"{t.text}"</p>
                 <div className="flex items-center gap-2 mt-auto">
-                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">{t.name[0]}</div>
+                  <div className="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-bold text-sm">{t.name[0]}</div>
                   <div>
                     <div className="text-sm font-semibold text-slate-800">{t.name}</div>
                     <div className="text-xs text-slate-500 flex items-center gap-1"><MapPin className="w-3 h-3" />{t.location}</div>
                   </div>
                 </div>
-                <div className="mt-3 text-xs text-blue-600 font-medium">{t.service}</div>
+                <div className="mt-3 text-xs text-brand-600 font-medium">{t.service}</div>
               </div>
             ))}
           </div>
           <div className="mt-6 text-center">
-            <a href="https://g.page/r/integrityclosingsclt/review" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm font-medium">Leave us a Google review →</a>
+            <a href="https://g.page/r/integrityclosingsclt/review" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline text-sm font-medium">Leave us a Google review →</a>
           </div>
         </div>
 
@@ -373,7 +373,7 @@ export default function MobileNotaryServices() {
           </p>
           <div className="flex flex-wrap gap-2 mb-6">
             {neighborhoods.map((n, i) => (
-              <span key={i} className="bg-blue-50 border border-blue-100 text-blue-700 text-sm font-medium px-3 py-1 rounded-full">{n}</span>
+              <span key={i} className="bg-brand-50 border border-brand-100 text-brand-700 text-sm font-medium px-3 py-1 rounded-full">{n}</span>
             ))}
           </div>
           {/* Google Map */}

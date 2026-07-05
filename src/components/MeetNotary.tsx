@@ -1,5 +1,6 @@
 import { Phone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { businessConfig } from '../config/business';
 
 export default function MeetNotary() {
   const navigate = useNavigate();
@@ -11,11 +12,11 @@ export default function MeetNotary() {
           {/* Photo Side */}
           <div className="flex-shrink-0 w-48 sm:w-64">
             <div className="relative">
-              <div className="absolute inset-0 bg-blue-600 rounded-2xl transform rotate-3 opacity-10"></div>
+              <div className="absolute inset-0 bg-brand-600 rounded-2xl transform rotate-3 opacity-10"></div>
               <div className="relative rounded-2xl shadow-lg overflow-hidden bg-slate-200 aspect-[3/4]">
-                <img 
-                  src="/new%20pic%20of%20me%20smaller.jpg" 
-                  alt="Frank Coxx - Professional Notary" 
+                <img
+                  src="/new%20pic%20of%20me%20smaller.jpg"
+                  alt={`${businessConfig.ownerName} - Professional Notary`}
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
@@ -30,7 +31,7 @@ export default function MeetNotary() {
             </h2>
             <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
               <p>
-                Hi, I'm Frank Coxx, the owner of Integrity Closings CLT. With over 7 years of experience in loan signings and 20 years in real estate, I take pride in providing accurate, stress-free notarizations — whether at your home, office, hospital, or wherever you need me.
+                Hi, I'm {businessConfig.ownerName}, the owner of {businessConfig.name}. With over 7 years of experience in loan signings and 20 years in real estate, I take pride in providing accurate, stress-free notarizations — whether at your home, office, hospital, or wherever you need me.
               </p>
               <p>
                 I built this business on trust and reliability, and I treat every signing like it's my own.
@@ -40,16 +41,16 @@ export default function MeetNotary() {
             <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
               <button 
                 onClick={() => navigate('/booking')}
-                className="inline-flex items-center justify-center px-8 py-3 text-base font-bold rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-md"
+                className="inline-flex items-center justify-center px-8 py-3 text-base font-bold rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-md"
               >
                 Book Now
               </button>
-              <a 
-                href="tel:9803724103"
-                className="inline-flex items-center justify-center px-8 py-3 text-base font-bold rounded-md text-blue-600 bg-blue-50 hover:bg-blue-100 transition-colors"
+              <a
+                href={`tel:${businessConfig.phone.tel}`}
+                className="inline-flex items-center justify-center px-8 py-3 text-base font-bold rounded-md text-brand-600 bg-brand-50 hover:bg-brand-100 transition-colors"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                980-372-4103
+                {businessConfig.phone.display}
               </a>
             </div>
           </div>

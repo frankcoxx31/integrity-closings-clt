@@ -1,16 +1,10 @@
 import { useState } from 'react';
 import { Calculator, ArrowLeft, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { businessConfig } from '../config/business';
 
 export default function QuoteCalculator() {
-  // ==========================================
-  // SETTINGS
-  // Change these values to update the calculator
-  // ==========================================
-  const SETTINGS = {
-    notaryFeePerSignature: 10,
-    irsMileageRate: 0.725
-  };
+  const SETTINGS = businessConfig.pricing;
 
   const [signatures, setSignatures] = useState<number>(1);
   const [miles, setMiles] = useState<number>(10);
@@ -29,7 +23,7 @@ export default function QuoteCalculator() {
 
     try {
       // 1. Geocode the address using Nominatim (OpenStreetMap)
-      const geocodeRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address + ', NC')}&limit=1`);
+      const geocodeRes = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address + ', ' + businessConfig.address.region)}&limit=1`);
       const geocodeData = await geocodeRes.json();
 
       if (!geocodeData || geocodeData.length === 0) {
@@ -39,9 +33,8 @@ export default function QuoteCalculator() {
       const destLat = parseFloat(geocodeData[0].lat);
       const destLon = parseFloat(geocodeData[0].lon);
 
-      // Mint Hill, NC coordinates
-      const originLat = 35.1813;
-      const originLon = -80.6556;
+      const originLat = businessConfig.officeLocation.lat;
+      const originLon = businessConfig.officeLocation.lng;
 
       // 2. Calculate driving distance using OSRM
       const routeRes = await fetch(`https://router.project-osrm.org/route/v1/driving/${originLon},${originLat};${destLon},${destLat}?overview=false`);
@@ -72,18 +65,18 @@ export default function QuoteCalculator() {
   return (
     <div className="bg-slate-50 min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="inline-flex items-center text-slate-600 hover:text-blue-600 mb-8 transition-colors">
+        <Link to="/" className="inline-flex items-center text-slate-600 hover:text-brand-600 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
         </Link>
         
         <div className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden">
-          <div className="bg-blue-950 p-6 sm:p-8 text-white flex items-center gap-4">
-            <div className="bg-blue-800 p-3 rounded-xl">
-              <Calculator className="w-8 h-8 text-blue-200" />
+          <div className="bg-brand-950 p-6 sm:p-8 text-white flex items-center gap-4">
+            <div className="bg-brand-800 p-3 rounded-xl">
+              <Calculator className="w-8 h-8 text-brand-200" />
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold font-serif">Quote Calculator</h1>
-              <p className="text-blue-200 mt-1">Estimate your mobile notary appointment cost. This is just an estimate and prices will be finalized at appointment confirmation.</p>
+              <p className="text-brand-200 mt-1">Estimate your mobile notary appointment cost. This is just an estimate and prices will be finalized at appointment confirmation.</p>
             </div>
           </div>
 
@@ -101,7 +94,7 @@ export default function QuoteCalculator() {
                     min="0"
                     value={signatures}
                     onChange={(e) => setSignatures(parseInt(e.target.value) || 0)}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors"
                   />
                 </div>
 
@@ -116,7 +109,7 @@ export default function QuoteCalculator() {
                     step="0.1"
                     value={miles}
                     onChange={(e) => setMiles(parseFloat(e.target.value) || 0)}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors"
                   />
                 </div>
 
@@ -128,7 +121,7 @@ export default function QuoteCalculator() {
                     id="location"
                     value={locationType}
                     onChange={(e) => setLocationType(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors bg-white"
                   >
                     <option value="Home">Home</option>
                     <option value="Office">Office</option>
@@ -166,7 +159,7 @@ export default function QuoteCalculator() {
 
                 <div className="border-t border-slate-200 pt-4 flex justify-between items-end">
                   <p className="text-lg font-bold text-slate-900">Estimated Total</p>
-                  <p className="text-3xl font-bold text-blue-600">${totalQuote.toFixed(2)}</p>
+                  <p className="text-3xl font-bold text-brand-600">${totalQuote.toFixed(2)}</p>
                 </div>
               </div>
             </div>
@@ -174,7 +167,7 @@ export default function QuoteCalculator() {
             {/* Address Lookup Section */}
             <div className="mt-8 bg-white border border-slate-200 rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center">
-                <MapPin className="w-5 h-5 text-blue-600 mr-2" />
+                <MapPin className="w-5 h-5 text-brand-600 mr-2" />
                 Calculate Exact Mileage
               </h3>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -187,26 +180,26 @@ export default function QuoteCalculator() {
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && calculateRealMiles()}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 transition-colors"
                   />
                 </div>
                 <button
                   onClick={calculateRealMiles}
                   disabled={isCalculatingDistance}
-                  className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400 whitespace-nowrap flex items-center justify-center"
+                  className="px-6 py-3 bg-brand-600 text-white font-semibold rounded-lg hover:bg-brand-700 transition-colors disabled:bg-brand-400 whitespace-nowrap flex items-center justify-center"
                 >
                   {isCalculatingDistance ? 'Calculating...' : 'Calculate Miles'}
                 </button>
               </div>
               {distanceError && <p className="text-red-600 text-sm mt-2">{distanceError}</p>}
               <p className="text-slate-500 text-sm mt-2">
-                Calculates round-trip driving distance from our office in Mint Hill, NC.
+                Calculates round-trip driving distance from our office in {businessConfig.address.locality}, {businessConfig.address.region}.
               </p>
             </div>
 
-            <div className="mt-8 bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg">
-              <p className="text-sm text-blue-900">
-                <strong>Disclaimer:</strong> In North Carolina, the notary fee is $10 per notarized principal signature. Mobile notaries may also charge travel reimbursement at the IRS mileage rate ($0.725 per mile), which must be agreed to before the appointment.
+            <div className="mt-8 bg-brand-50 border-l-4 border-brand-600 p-4 rounded-r-lg">
+              <p className="text-sm text-brand-900">
+                <strong>Disclaimer:</strong> In North Carolina, the notary fee is ${SETTINGS.notaryFeePerSignature} per notarized principal signature. Mobile notaries may also charge travel reimbursement at the IRS mileage rate (${SETTINGS.irsMileageRate} per mile), which must be agreed to before the appointment. This is state-specific notary law — rewrite this disclaimer if setting up for a customer outside North Carolina.
               </p>
             </div>
           </div>
