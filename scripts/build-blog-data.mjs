@@ -14,6 +14,18 @@ const src = JSON.parse(readFileSync(join(ROOT, 'data', 'blog-posts.json'), 'utf-
 
 const fmt = (iso) => new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
+// Match the styling the hand-written posts in BlogPost.tsx use, so data-driven
+// posts look identical (bordered H2s, brand links, consistent spacing).
+function styleHtml(html) {
+  return html
+    .replace(/<h2[^>]*>/g, '<h2 class="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">')
+    .replace(/<h3[^>]*>/g, '<h3 class="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">')
+    .replace(/<p[^>]*>/g, '<p class="mb-6 text-lg text-slate-700 leading-relaxed">')
+    .replace(/<ul[^>]*>/g, '<ul class="list-disc pl-6 space-y-2 mb-6 text-lg text-slate-700">')
+    .replace(/<ol[^>]*>/g, '<ol class="list-decimal pl-6 space-y-2 mb-6 text-lg text-slate-700">')
+    .replace(/<a href=/g, '<a class="text-brand-600 hover:underline font-semibold" href=');
+}
+
 const out = src
   .slice()
   .sort((a, b) => (a.date < b.date ? 1 : -1))
@@ -26,7 +38,7 @@ const out = src
     imageUrl: p.heroImg,
     seoTitle: `${p.title} | Integrity Closings CLT`,
     seoDescription: p.metaDescription,
-    contentHtml: p.bodyHtml,
+    contentHtml: styleHtml(p.bodyHtml),
   }));
 
 mkdirSync(join(ROOT, 'src', 'data'), { recursive: true });
