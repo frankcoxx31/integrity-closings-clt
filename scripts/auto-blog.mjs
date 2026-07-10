@@ -48,8 +48,8 @@ BUSINESS FACTS (use these; never invent others):
 
 CATEGORIES (pick the best fit): Estate & POA, Loan Signings, Hospital & Care, Mobile Notary, Small Business, Notary Insights
 
-INTERNAL LINKS you may use inside bodyHtml (use 2–4, choose relevant ones):
-/service-locations-mobile-services-north-carolina, /mobile-notary-mint-hill-nc, /mobile-notary-matthews-nc, /mobile-notary-monroe-nc, /mobile-notary-charlotte-nc, /hospital-notary-charlotte-nc, /estate-notary-charlotte-nc, /loan-signing-agent-charlotte-nc, /after-hours-mobile-notary-charlotte-nc, /book
+INTERNAL LINKS you may use inside bodyHtml (use 2–4 relevant ones; these are the real pages on this site — use them EXACTLY, including the .html extension):
+/notary-service-locations-nc.html, /hospital-notary-charlotte.html, /nursing-home-notary-charlotte.html, /hospital-nursing-home-notary-charlotte-monroe.html, /hospital-nursing-home-notary-service-area.html, /documents-we-notarize-hospital-nursing-home.html, /what-to-have-ready-for-bedside-notary.html, /why-families-choose-our-mobile-notary.html, /charlotte-notary-for-attorneys.html, /emergency-airport-notary-charlotte-clt.html, /#book
 
 ALREADY PUBLISHED (do NOT repeat these topics or titles):
 ${usedTitles.map(t => '- ' + t).join('\n') || '(none yet)'}
