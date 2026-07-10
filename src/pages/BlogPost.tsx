@@ -1,6 +1,7 @@
 import { Calendar, User, ArrowLeft } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import autoPosts from '../data/auto-blog-posts.json';
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -33,7 +34,8 @@ export default function BlogPost() {
       }
     };
 
-    const currentSeo = seoData[slug || ''];
+    const auto = autoPosts.find((p) => p.slug === slug);
+    const currentSeo = seoData[slug || ''] || (auto ? { title: auto.seoTitle, description: auto.seoDescription } : undefined);
     if (currentSeo) {
       document.title = currentSeo.title;
       const metaDesc = document.querySelector('meta[name="description"]');
@@ -1721,6 +1723,35 @@ export default function BlogPost() {
               <a href="tel:9803724103" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Call 980-372-4103</a>
             </div>
           </section>
+        </div>
+      );
+    }
+
+    // Data-driven posts (from src/data/auto-blog-posts.json — mine + automation)
+    const autoPost = autoPosts.find((p) => p.slug === slug);
+    if (autoPost) {
+      return (
+        <div className="prose prose-lg prose-slate max-w-none">
+          <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
+            <div className="flex items-center">
+              <User className="w-4 h-4 mr-2" />
+              Integrity Closings CLT
+            </div>
+            <div className="flex items-center">
+              <Calendar className="w-4 h-4 mr-2" />
+              {autoPost.date}
+            </div>
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">
+            {autoPost.title}
+          </h1>
+          <img
+            src={autoPost.imageUrl}
+            alt={autoPost.title}
+            className="w-full h-auto rounded-lg my-8 shadow-md"
+            referrerPolicy="no-referrer"
+          />
+          <div dangerouslySetInnerHTML={{ __html: autoPost.contentHtml }} />
         </div>
       );
     }

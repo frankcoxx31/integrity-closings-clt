@@ -1,8 +1,17 @@
 import { BookOpen, Calendar, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import autoPosts from '../data/auto-blog-posts.json';
 
 export default function Blog() {
   const posts = [
+    // Newest posts (data-driven, from src/data/auto-blog-posts.json) appear first.
+    ...autoPosts.map((p) => ({
+      title: p.title,
+      slug: p.slug,
+      date: p.date,
+      excerpt: p.excerpt,
+      imageUrl: p.imageUrl,
+    })),
     {
       title: 'Power of Attorney in North Carolina: What You Need, What to Bring, and How to Get It Notarized',
       slug: 'power-of-attorney-north-carolina-notarized',

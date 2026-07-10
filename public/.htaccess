@@ -2,14 +2,6 @@
   RewriteEngine On
   RewriteBase /
   RewriteRule ^index\.html$ - [L]
-  # --- blog pages (generated) ---
-  RewriteRule ^blog/?$ /blog/index.html [L]
-  RewriteRule ^blog/notarize-documents-after-hours-charlotte/?$ /blog/notarize-documents-after-hours-charlotte.html [L]
-  RewriteRule ^blog/do-you-need-a-notary-for-power-of-attorney-nc/?$ /blog/do-you-need-a-notary-for-power-of-attorney-nc.html [L]
-  # --- end blog pages ---
-
-
-
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
