@@ -428,7 +428,7 @@ export default function MobileNotaryServices() {
         <div className="bg-slate-900 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Need a Mobile Notary in Charlotte Today?</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            Call or text 980-372-4103 for same-day service, or book online. We serve Charlotte and all surrounding communities in Mecklenburg and Union counties.
+            Call 980-372-4103 or text 980-505-8050 for same-day service, or book online. We serve Charlotte and all surrounding communities in Mecklenburg and Union counties.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-slate-900 bg-white hover:bg-slate-100 transition-colors">Book Appointment</Link>

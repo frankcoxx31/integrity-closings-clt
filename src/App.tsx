@@ -93,7 +93,6 @@ function AppContent() {
             <Route path="/services/real-estate-documents" element={<RealEstateDocuments />} />
             <Route path="/services/special-considerations" element={<SpecialConsiderations />} />
             <Route path="/services/miscellaneous-documents" element={<MiscellaneousDocuments />} />
-            <Route path="/services/hospitals-nursing-homes" element={<HospitalNotary />} />
             <Route path="/services/lender-provided-documents" element={<LenderProvidedDocuments />} />
             <Route path="/power-of-attorney-estate-documents-charlotte-nc" element={<PowerOfAttorneyEstateDocuments />} />
 

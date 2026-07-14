@@ -4,37 +4,50 @@ export default function Services() {
       title: 'General Mobile Notary',
       description: 'Standard notarizations at your home, office, or preferred location across the metro area.',
       image: '/general-notary-work.png',
-      link: '/general-notary-charlotte-nc'
+      link: '/general-notary-charlotte-nc',
+      anchor: 'General Mobile Notary in Charlotte'
     },
     {
       title: 'Hospital & Healthcare Notary',
       description: 'Compassionate, discreet notarizations for patients and caregivers at medical facilities.',
       image: '/hospital.png',
-      link: '/hospital-notary-charlotte-nc'
+      link: '/hospital-notary-charlotte-nc',
+      anchor: 'Hospital Notary in Charlotte'
+    },
+    {
+      title: 'Nursing Home & Assisted Living Notary',
+      description: 'Mobile notary visits for residents at nursing homes, assisted living, and memory care facilities.',
+      image: '/hospital.png',
+      link: '/nursing-home-notary-charlotte-nc',
+      anchor: 'Nursing Home Notary in Charlotte'
     },
     {
       title: 'Estate Planning Documents',
       description: 'Secure notarization for wills, trusts, living wills, and advance directives.',
       image: '/personal-documents.png',
-      link: '/estate-notary-charlotte-nc'
+      link: '/estate-notary-charlotte-nc',
+      anchor: 'Estate Planning Notary in Charlotte'
     },
     {
       title: 'After-Hours & Emergency Notary',
       description: 'Urgent evening and weekend appointments available when you need us most.',
       image: '/lender-sent-documents.png',
-      link: '/after-hours-mobile-notary-charlotte-nc'
+      link: '/after-hours-mobile-notary-charlotte-nc',
+      anchor: 'After-Hours Notary in Charlotte'
     },
     {
       title: 'Power of Attorney',
       description: 'Legally binding notarization for financial, medical, and general POAs.',
       image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800',
-      link: '/power-of-attorney-estate-documents-charlotte-nc'
+      link: '/power-of-attorney-estate-documents-charlotte-nc',
+      anchor: 'Power of Attorney Notary in Charlotte'
     },
     {
       title: 'Loan Signing Agent',
       description: 'Professional mobile document signing support for real estate and mortgage appointments.',
       image: '/mobile-notary.jpg',
-      link: '/loan-signing-agent-charlotte-nc'
+      link: '/loan-signing-agent-charlotte-nc',
+      anchor: 'Loan Signing Agent in Charlotte'
     }
   ];
 
@@ -60,7 +73,7 @@ export default function Services() {
               <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
               <p className="text-slate-600 mb-6 flex-grow">{service.description}</p>
               <a href={service.link} className="text-brand-600 font-medium hover:text-brand-800 inline-flex items-center mt-auto">
-                Learn more &rarr;
+                {service.anchor} &rarr;
               </a>
             </div>
           ))}

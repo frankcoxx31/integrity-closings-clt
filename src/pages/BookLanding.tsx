@@ -790,7 +790,7 @@ export default function BookLanding() {
                 <Phone className="w-6 h-6 text-[#A87A35]" />
                 <div>
                   <a href="tel:9803724103" className="text-xl font-bold hover:text-[#A87A35] transition-colors">(980) 372-4103</a>
-                  <p className="text-xs text-slate-500 mt-1 font-bold">Call or Text for appointments</p>
+                  <p className="text-xs text-slate-500 mt-1 font-bold">Call for appointments, or text (980) 505-8050</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">

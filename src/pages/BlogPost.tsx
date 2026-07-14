@@ -175,7 +175,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How to Schedule a Mobile Notary for Your POA in Charlotte</h2>
           <ol className="list-decimal pl-6 mb-6 text-slate-700 space-y-3">
-            <li><strong>Call or text (980) 372-4103</strong> — tell us what you need and where you are</li>
+            <li><strong>Call (980) 372-4103 or text (980) 505-8050</strong> — tell us what you need and where you are</li>
             <li><strong>Confirm your two witnesses</strong> — make sure they'll be present and qualify under NC law</li>
             <li><strong>Have your ID and unsigned document ready</strong> — we'll handle the rest when we arrive</li>
             <li><strong>We come to you</strong> — home, office, hospital, or care facility</li>
@@ -198,7 +198,7 @@ export default function BlogPost() {
 
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-2xl font-bold mb-4 text-white font-sans">Ready to Get Your Power of Attorney Notarized?</h2>
-            <p className="text-slate-300 mb-8 font-sans">Call or text (980) 372-4103 for same-day service, or book online. We come to you anywhere in the Charlotte area.</p>
+            <p className="text-slate-300 mb-8 font-sans">Call (980) 372-4103 or text (980) 505-8050 for same-day service, or book online. We come to you anywhere in the Charlotte area.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/book" className="bg-brand-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors font-sans">Book Appointment</Link>
               <a href="tel:9803724103" className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-colors font-sans">Call (980) 372-4103</a>

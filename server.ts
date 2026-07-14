@@ -712,12 +712,12 @@ async function startServer() {
 
     const pageMeta: Record<string, { title: string; description: string; canonical: string }> = {
       '/nursing-home-notary-charlotte-nc': {
-        title: `Nursing Home Notary Charlotte NC | Mobile Notary for Assisted Living | ${businessConfig.name}`,
+        title: `Nursing Home Notary Charlotte NC | Mobile Notary`,
         description: `Need a notary at a nursing home or assisted living facility in Charlotte, NC? ${businessConfig.name} sends a commissioned notary directly to residents in Mecklenburg, Union, and Cabarrus counties.`,
         canonical: `${businessConfig.domain}/nursing-home-notary-charlotte-nc`
       },
       '/hospital-notary-charlotte-nc': {
-        title: `Hospital & Bedside Notary Charlotte NC | Mobile Notary for Patients | ${businessConfig.name}`,
+        title: `Hospital & Bedside Notary Charlotte NC | Mobile Notary`,
         description: 'Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.',
         canonical: `${businessConfig.domain}/hospital-notary-charlotte-nc`
       },

@@ -21,6 +21,11 @@ export const businessConfig = {
     display: '980-372-4103',
     tel: '9803724103',
   },
+  // Separate SMS-only line — the main number above does not accept texts.
+  textPhone: {
+    display: '980-505-8050',
+    sms: '9805058050',
+  },
   email: 'fcoxx@integrityclosingsclt.com',
   contactEmail: 'info@integrityclosingsclt.com',
   domain: 'https://www.integrityclosingsclt.com',

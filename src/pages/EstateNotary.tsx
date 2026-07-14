@@ -131,7 +131,7 @@ export default function EstateNotary() {
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call or text 980-372-4103 to schedule your appointment.
+                Call 980-372-4103 or text 980-505-8050 to schedule your appointment.
               </a>
             </div>
             
@@ -251,7 +251,7 @@ export default function EstateNotary() {
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Call or text 980-372-4103 to book your mobile notary appointment today.
+                  Call 980-372-4103 or text 980-505-8050 to book your mobile notary appointment today.
                 </a>
               </div>
             </div>

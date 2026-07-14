@@ -1,11 +1,11 @@
-import { ArrowLeft, CheckCircle, Info, MapPin, Phone, Hospital, Heart, Clock, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Info, MapPin, Phone, Hospital, Heart, Clock, ShieldCheck, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export default function HospitalNotary() {
   useEffect(() => {
     // SEO Meta Tags
-    document.title = "Hospital & Bedside Notary Charlotte NC | Mobile Notary for Patients";
+    document.title = "Hospital & Bedside Notary Charlotte NC | Mobile Notary";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.");
@@ -29,6 +29,29 @@ export default function HospitalNotary() {
           "areaServed": {"@type": "City", "name": "Charlotte"},
           "description": "Mobile notary services for patients, families, and caregivers at hospitals, nursing homes, and care facilities in Charlotte, NC.",
           "url": "https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.integrityclosingsclt.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Hospital & Bedside Notary",
+              "item": "https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc"
+            }
+          ]
         },
         {
           "@type": "FAQPage",
@@ -130,34 +153,53 @@ export default function HospitalNotary() {
           </div>
           
           <div className="p-8 sm:p-12">
+            <nav className="text-sm text-slate-500 mb-6 font-sans">
+              <Link to="/" className="hover:text-brand-600">Home</Link>
+              <span className="mx-2">›</span>
+              <Link to="/mobile-notary-charlotte-nc" className="hover:text-brand-600">Services</Link>
+              <span className="mx-2">›</span>
+              <span className="text-slate-700">Hospital & Bedside Notary</span>
+            </nav>
+
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-              Hospital & Bedside Notary
+              Hospital & Bedside Notary in Charlotte, NC
             </h1>
-            
+
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Need a notary at a hospital in Charlotte, NC? Integrity Closings CLT provides mobile notary services for patients, families, and caregivers. We travel to hospitals, nursing homes, and care facilities to notarize important documents quickly and professionally.
+              Need a notary at a hospital in Charlotte, NC? Integrity Closings CLT provides mobile bedside notary services for patients, families, and caregivers at Atrium Health Carolinas Medical Center, Novant Health Presbyterian Medical Center, Atrium Health Pineville, and rehabilitation and care facilities throughout the Charlotte metro. We travel directly to the patient's room to notarize important documents quickly and professionally, without the family needing to leave the hospital.
             </p>
 
-            <div className="mb-10 text-center">
-              <a 
-                href="tel:9803724103" 
+            <div className="mb-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:9803724103"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call or text 980-372-4103 to schedule a hospital notary appointment.
+                Call 980-372-4103
+              </a>
+              <a
+                href="sms:9805058050"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-brand-600 bg-brand-50 hover:bg-brand-100 transition-colors border border-brand-200"
+              >
+                <MessageSquare className="w-5 h-5 mr-2" />
+                Text 980-505-8050
               </a>
             </div>
+            <p className="text-center text-slate-500 -mt-6 mb-10 text-sm">To schedule a hospital notary appointment in Charlotte, NC — same-day requests welcome.</p>
             
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <Hospital className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Mobile Hospital Notary Services</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Mobile Hospital Notary Services in Charlotte, NC</h2>
               </div>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                We provide mobile notary services at hospitals, nursing homes, rehabilitation centers, and assisted living facilities throughout Charlotte, NC. If a signer cannot travel, we come directly to their location — a hospital bed, an ICU waiting room, or a rehab facility room.
+              </p>
               <p className="text-slate-600 leading-relaxed">
-                We provide mobile notary services at hospitals, nursing homes, rehabilitation centers, and assisted living facilities throughout Charlotte, NC. If a signer cannot travel, we come directly to their location.
+                Families in Charlotte often need a bedside notary on short notice: a parent is admitted and needs a Power of Attorney signed before surgery, a spouse needs a Healthcare Proxy notarized during an extended hospital stay, or a hospital social worker requests HIPAA authorization paperwork before discharge planning can begin. We understand these situations are stressful, and we work directly with hospital staff, charge nurses, and social workers to make the notarization as smooth as possible.
               </p>
             </section>
-            
+
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Documents We Commonly Notarize</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -168,6 +210,44 @@ export default function HospitalNotary() {
                   </div>
                 ))}
               </div>
+            </section>
+
+            <section className="mb-12 p-6 bg-slate-50 rounded-xl border border-slate-100">
+              <h2 className="text-xl font-bold text-slate-900 mb-4">What Does a Hospital Notary Visit Cost?</h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed">
+                <p>
+                  North Carolina law caps the notarial fee at $10 per notarized principal signature, regardless of where the notarization takes place.
+                </p>
+                <p>
+                  For a hospital or bedside visit, a separate travel fee applies at the current IRS mileage rate, calculated from our office to the hospital. There is no separate "hospital surcharge" — you're paying the statutory notary fee plus mileage, the same as any other mobile appointment.
+                </p>
+                <p>
+                  Call or text us with the hospital name and how many signatures are needed, and we'll give you the exact total before you book — no surprises at bedside.
+                </p>
+              </div>
+            </section>
+
+            <section className="mb-12 p-6 bg-brand-50 rounded-xl border border-brand-100">
+              <div className="flex items-center mb-4">
+                <ShieldCheck className="w-6 h-6 text-brand-600 mr-3" />
+                <h2 className="text-xl font-bold text-slate-900">Credentials Families Can Verify</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Commissioned Notary Public, State of North Carolina",
+                  "National Notary Association (NNA) Certified",
+                  "Background-screened",
+                  "$100,000 Errors & Omissions (E&O) insured"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-brand-600 mr-3 flex-shrink-0" />
+                    <span className="text-slate-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-slate-500 text-sm mt-4">
+                Your NC notary commission can be verified directly through the North Carolina Secretary of State's website.
+              </p>
             </section>
 
             <section className="mb-12 p-6 bg-amber-50 rounded-xl border border-amber-100">
@@ -240,8 +320,11 @@ export default function HospitalNotary() {
                 <MapPin className="w-6 h-6 text-brand-600 mr-3" />
                 <h2 className="text-2xl font-bold text-slate-900">Areas We Serve</h2>
               </div>
-              <p className="text-slate-600 leading-relaxed">
-                We serve all major hospitals and care facilities in Charlotte, NC, including Atrium Health, Novant Health, and surrounding rehabilitation centers.
+              <p className="text-slate-600 leading-relaxed mb-4">
+                We serve all major hospitals and care facilities in Charlotte, NC and the surrounding metro, including Atrium Health Carolinas Medical Center, Novant Health Presbyterian Medical Center Charlotte, Atrium Health Pineville, CMC-Mercy, and rehabilitation centers throughout Mecklenburg, Union, and Cabarrus counties.
+              </p>
+              <p className="text-slate-500 text-sm">
+                Need a notary for a resident at a nursing home or assisted living facility instead of a hospital? See our <Link to="/nursing-home-notary-charlotte-nc" className="text-brand-600 hover:underline">Nursing Home & Assisted Living Notary</Link> page.
               </p>
             </section>
             
@@ -250,13 +333,22 @@ export default function HospitalNotary() {
                 <p className="text-xl font-bold text-slate-900 mb-6">
                   Need a Hospital Notary Now?
                 </p>
-                <a 
-                  href="tel:9803724103" 
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call or text 980-372-4103
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="tel:9803724103"
+                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call 980-372-4103
+                  </a>
+                  <a
+                    href="sms:9805058050"
+                    className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-brand-600 bg-brand-50 hover:bg-brand-100 transition-colors border border-brand-200"
+                  >
+                    <MessageSquare className="w-5 h-5 mr-2" />
+                    Text 980-505-8050
+                  </a>
+                </div>
                 <p className="mt-4 text-slate-500">
                   Reliable mobile notary service for Charlotte hospitals.
                 </p>

@@ -20,7 +20,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6">Need a Notary Now?</h3>
             <p className="text-slate-300 mb-6">
-              Call or text <a href={`tel:${businessConfig.phone.tel}`} className="text-brand-400 font-bold hover:underline">{businessConfig.phone.display}</a> to schedule your appointment. Same-day and after-hours appointments available.
+              Call <a href={`tel:${businessConfig.phone.tel}`} className="text-brand-400 font-bold hover:underline">{businessConfig.phone.display}</a> or text <a href={`sms:${businessConfig.textPhone.sms}`} className="text-brand-400 font-bold hover:underline">{businessConfig.textPhone.display}</a> to schedule your appointment. Same-day and after-hours appointments available.
             </p>
             <ul className="space-y-4">
               <li className="flex items-start">
@@ -46,6 +46,13 @@ export default function Footer() {
               <li><a href="/booking" className="text-slate-400 hover:text-white transition-colors">Book Appointment</a></li>
             </ul>
           </div>
+        </div>
+
+        <div className="border-t border-slate-800 pt-8 pb-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-400">
+          <span>Commissioned NC Notary Public</span>
+          <span>NNA Certified</span>
+          <span>Background-Screened</span>
+          <span>$100,000 E&amp;O Insured</span>
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">

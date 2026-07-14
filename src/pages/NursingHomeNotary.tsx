@@ -1,10 +1,10 @@
-import { ArrowLeft, CheckCircle, Info, MapPin, Phone, Heart, Clock, ShieldCheck, Users } from 'lucide-react';
+import { ArrowLeft, CheckCircle, Info, MapPin, Phone, Heart, Clock, ShieldCheck, Users, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export default function NursingHomeNotary() {
   useEffect(() => {
-    document.title = "Nursing Home Notary Charlotte NC | Mobile Notary for Assisted Living";
+    document.title = "Nursing Home Notary Charlotte NC | Mobile Notary";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Need a notary at a nursing home or assisted living facility in Charlotte, NC? Integrity Closings CLT provides mobile notary services for residents at care facilities across Mecklenburg, Union, and Cabarrus counties.");
@@ -41,6 +41,29 @@ export default function NursingHomeNotary() {
           "url": "https://www.integrityclosingsclt.com/nursing-home-notary-charlotte-nc"
         },
         {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.integrityclosingsclt.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Services",
+              "item": "https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Nursing Home Notary",
+              "item": "https://www.integrityclosingsclt.com/nursing-home-notary-charlotte-nc"
+            }
+          ]
+        },
+        {
           "@type": "FAQPage",
           "mainEntity": [
             {
@@ -72,7 +95,7 @@ export default function NursingHomeNotary() {
               "name": "How do I schedule a notary to come to an assisted living facility?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Call or text Integrity Closings CLT at (980) 372-4103. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
+                "text": "Call Integrity Closings CLT at (980) 372-4103 or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
               }
             },
             {
@@ -129,7 +152,7 @@ export default function NursingHomeNotary() {
     },
     {
       q: "How do I schedule a notary to come to an assisted living facility?",
-      a: "Call or text (980) 372-4103. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
+      a: "Call (980) 372-4103 or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
     },
     {
       q: "Do we need witnesses for a Power of Attorney at a nursing home?",
@@ -172,15 +195,23 @@ export default function NursingHomeNotary() {
               When a loved one lives in a nursing home or assisted living facility, getting legal documents notarized shouldn't require anyone to travel. Integrity Closings CLT sends a commissioned NC notary directly to the resident's room — at facilities throughout Charlotte, Matthews, Monroe, Mint Hill, and Concord.
             </p>
 
-            <div className="mb-10 text-center">
+            <div className="mb-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:9803724103"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call or text (980) 372-4103 to schedule
+                Call (980) 372-4103
+              </a>
+              <a
+                href="sms:9805058050"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-brand-600 bg-brand-50 hover:bg-brand-100 transition-colors border border-brand-200"
+              >
+                <MessageSquare className="w-5 h-5 mr-2" />
+                Text (980) 505-8050
               </a>
             </div>
+            <p className="text-center text-slate-500 -mt-6 mb-10 text-sm">To schedule a nursing home or assisted living notary visit</p>
 
             {/* How it works */}
             <section className="mb-12">
@@ -219,6 +250,30 @@ export default function NursingHomeNotary() {
               </div>
               <p className="text-slate-500 text-sm mt-4">
                 Need something not on this list? <a href="tel:9803724103" className="text-brand-600 hover:underline">Call us</a> — if it can be notarized in NC, we can handle it.
+              </p>
+            </section>
+
+            {/* Credentials */}
+            <section className="mb-12 p-6 bg-brand-50 rounded-xl border border-brand-100">
+              <div className="flex items-center mb-4">
+                <ShieldCheck className="w-6 h-6 text-brand-600 mr-3" />
+                <h2 className="text-xl font-bold text-slate-900">Credentials Families Can Verify</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Commissioned Notary Public, State of North Carolina",
+                  "National Notary Association (NNA) Certified",
+                  "Background-screened",
+                  "$100,000 Errors & Omissions (E&O) insured"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-brand-600 mr-3 flex-shrink-0" />
+                    <span className="text-slate-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-slate-500 text-sm mt-4">
+                Your NC notary commission can be verified directly through the North Carolina Secretary of State's website.
               </p>
             </section>
 
@@ -333,7 +388,14 @@ export default function NursingHomeNotary() {
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Call or text (980) 372-4103
+                  Call (980) 372-4103
+                </a>
+                <a
+                  href="sms:9805058050"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-brand-600 bg-brand-50 hover:bg-brand-100 transition-colors border border-brand-200"
+                >
+                  <MessageSquare className="w-5 h-5 mr-2" />
+                  Text (980) 505-8050
                 </a>
                 <Link
                   to="/book"

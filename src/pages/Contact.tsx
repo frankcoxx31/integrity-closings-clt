@@ -77,8 +77,8 @@ export default function Contact() {
                   <Phone className="w-6 h-6 text-brand-400 mr-4 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-lg">Phone</h3>
-                    <p className="text-slate-300 mt-1">{businessConfig.phone.display}</p>
-                    <p className="text-sm text-slate-400 mt-1">Call or text for immediate assistance</p>
+                    <p className="text-slate-300 mt-1">Call: {businessConfig.phone.display}</p>
+                    <p className="text-slate-300 mt-1">Text: {businessConfig.textPhone.display}</p>
                   </div>
                 </div>
 
