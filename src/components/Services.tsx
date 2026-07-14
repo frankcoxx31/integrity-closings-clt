@@ -17,7 +17,7 @@ export default function Services() {
     {
       title: 'Nursing Home & Assisted Living Notary',
       description: 'Mobile notary visits for residents at nursing homes, assisted living, and memory care facilities.',
-      image: '/hospital.png',
+      image: '/Nursing Home & Assisted Living Notary.png',
       link: '/nursing-home-notary-charlotte-nc',
       anchor: 'Nursing Home Notary in Charlotte'
     },
