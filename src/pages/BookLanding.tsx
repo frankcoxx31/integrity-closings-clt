@@ -346,7 +346,7 @@ export default function BookLanding() {
           <div className="hidden lg:block relative animate-in fade-in slide-in-from-right-8 duration-700">
             <div className="relative z-10 rounded-2xl shadow-2xl overflow-hidden border-8 border-white">
               <img 
-                src="https://cdn.marblism.com/u0LLXUUVgpD.webp" 
+                src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&q=80&w=1200" 
                 alt="Notary with document" 
                 className="w-full aspect-[4/5] object-cover"
                 referrerPolicy="no-referrer"
@@ -435,7 +435,7 @@ export default function BookLanding() {
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://cdn.marblism.com/hHCdisgRgA2.webp" 
+                src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=1200" 
                 alt="About Integrity Closings CLT" 
                 className="w-full aspect-video object-cover"
                 referrerPolicy="no-referrer"
