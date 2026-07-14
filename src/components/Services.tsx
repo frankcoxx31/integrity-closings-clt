@@ -57,7 +57,7 @@ export default function Services() {
       anchor: 'Seller Documents Notary in Charlotte'
     },
     {
-      title: 'Lender Provided Documents',
+      title: 'Lender Documents',
       description: 'Signing support for refinance packages, buyer/seller packages, HELOCs, and loan modifications.',
       image: '/lender-provided-documents.png',
       link: '/services/lender-provided-documents',
