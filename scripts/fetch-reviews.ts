@@ -35,10 +35,22 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const outPath = path.join(__dirname, '..', 'src', 'data', 'reviews.json');
 
-const BUSINESS_QUERY = 'Integrity Closings CLT, Mint Hill, NC';
+const BUSINESS_QUERY = 'Integrity Closings CLT';
+// Actual office coordinates (src/config/business.ts officeLocation) — biases
+// the text search toward the right result without requiring an exact
+// address match, which is what caused the first attempt's ZERO_RESULTS.
+const OFFICE_LAT = 35.1813;
+const OFFICE_LNG = -80.6556;
 
 async function resolvePlaceId(apiKey: string): Promise<string | null> {
-  const url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(BUSINESS_QUERY)}&inputtype=textquery&fields=place_id&key=${apiKey}`;
+  const params = new URLSearchParams({
+    input: BUSINESS_QUERY,
+    inputtype: 'textquery',
+    fields: 'place_id',
+    locationbias: `point:${OFFICE_LAT},${OFFICE_LNG}`,
+    key: apiKey,
+  });
+  const url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?${params.toString()}`;
   const res = await fetch(url);
   if (!res.ok) {
     console.warn(`[fetch-reviews] Find Place lookup returned HTTP ${res.status}.`);
