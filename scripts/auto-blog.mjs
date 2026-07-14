@@ -101,7 +101,20 @@ if (usedSlugs.has(slug)) slug = `${slug}-${today}`;
 post.slug = slug;
 
 post.date = today;
-post.heroImg = CATEGORY_IMAGE[post.category] || FALLBACK_IMAGE;
+
+// Only 6 category images exist, so two posts landing in the same category
+// (e.g. two "Mobile Notary" posts) would otherwise get an identical hero
+// image back-to-back in the blog feed. If the category's canonical image
+// was used by any of the last few posts, fall back to whichever of the 6
+// images is least recently used instead of colliding.
+const RECENT_WINDOW = 5;
+const recentImages = manifest.slice(-RECENT_WINDOW).map(p => p.heroImg);
+let heroImg = CATEGORY_IMAGE[post.category] || FALLBACK_IMAGE;
+if (recentImages.includes(heroImg)) {
+  const alternative = Object.values(CATEGORY_IMAGE).find(img => !recentImages.includes(img));
+  if (alternative) heroImg = alternative;
+}
+post.heroImg = heroImg;
 
 // Minimal validation
 for (const f of ['title', 'metaDescription', 'category', 'excerpt', 'bodyHtml']) {
