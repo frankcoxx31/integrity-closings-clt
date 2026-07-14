@@ -222,11 +222,11 @@ export default function PowerOfAttorneyEstateDocuments() {
                   Need a Power of Attorney or Estate Document Notarized?
                 </p>
                 <a 
-                  href="tel:9803724103" 
+                  href="tel:9805058050" 
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Call 980-372-4103 or text 980-505-8050
+                  Call or text 980-505-8050
                 </a>
               </div>
             </div>

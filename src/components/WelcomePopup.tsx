@@ -59,7 +59,7 @@ export default function WelcomePopup() {
           
           {/* Body Text */}
           <p className="text-brand-950 mb-4 text-base leading-relaxed px-2 font-medium">
-            If you need a notary immediately, use the buttons below or dial <a href="tel:9803724103" className="text-brand-700 font-bold hover:underline">(980)-372-4103</a> and ask for Frank Coxx.
+            If you need a notary immediately, use the buttons below or dial <a href="tel:9805058050" className="text-brand-700 font-bold hover:underline">(980)-505-8050</a> and ask for Frank Coxx.
           </p>
           
           <p className="text-brand-950 mb-8 text-base px-2 font-medium">

@@ -93,7 +93,7 @@ export default function Matthews() {
         },
         {
           question: "How do I book a mobile notary in Matthews?",
-          answer: "You can book directly through our website's booking tool or call/text us at 980-372-4103 for immediate assistance."
+          answer: "You can book directly through our website's booking tool or call/text us at 980-505-8050 for immediate assistance."
         }
       ]}
       mapEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52125.41904712348!2d-80.71333335136719!3d35.12263590000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885404566735661d%3A0x884650e6bfde5145!2sMatthews%2C%20NC!5e0!3m2!1sen!2sus!4v1712874600000!5m2!1sen!2sus"

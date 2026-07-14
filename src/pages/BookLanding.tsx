@@ -267,7 +267,7 @@ export default function BookLanding() {
       }
       window.location.href = '/thank-you.html';
     } catch (error: any) {
-      setSubmitError(error.message || 'Booking failed. Please call (980) 372-4103.');
+      setSubmitError(error.message || 'Booking failed. Please call (980) 505-8050.');
     } finally {
       setIsSubmitting(false);
     }
@@ -291,11 +291,11 @@ export default function BookLanding() {
             </div>
           </div>
           <a 
-            href="tel:9803724103" 
+            href="tel:9805058050" 
             className="bg-[#0F1A2B] text-white px-4 py-2 md:px-6 md:py-2.5 rounded-full font-bold text-sm md:text-base hover:bg-[#1B2A40] transition-colors shadow-sm flex items-center gap-2"
           >
             <Phone className="w-4 h-4" />
-            <span className="hidden xs:inline">(980) 372-4103</span>
+            <span className="hidden xs:inline">(980) 505-8050</span>
             <span className="xs:hidden">Call</span>
           </a>
         </div>
@@ -323,10 +323,10 @@ export default function BookLanding() {
                 Book an appointment <ArrowRight className="w-5 h-5" />
               </button>
               <a 
-                href="tel:9803724103" 
+                href="tel:9805058050" 
                 className="border-2 border-[#E3E8EF] text-[#0F1A2B] px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
               >
-                Call (980) 372-4103
+                Call (980) 505-8050
               </a>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-slate-200">
@@ -760,10 +760,10 @@ export default function BookLanding() {
                   Book an appointment
                 </button>
                 <a 
-                  href="tel:9803724103" 
+                  href="tel:9805058050" 
                   className="px-10 py-5 border-2 border-white/20 text-white font-extrabold text-xl rounded-2xl hover:bg-white/10 transition-all flex items-center justify-center gap-3"
                 >
-                  <Phone className="w-6 h-6" /> (980) 372-4103
+                  <Phone className="w-6 h-6" /> (980) 505-8050
                 </a>
               </div>
             </div>
@@ -789,7 +789,7 @@ export default function BookLanding() {
               <li className="flex items-start gap-4">
                 <Phone className="w-6 h-6 text-[#A87A35]" />
                 <div>
-                  <a href="tel:9803724103" className="text-xl font-bold hover:text-[#A87A35] transition-colors">(980) 372-4103</a>
+                  <a href="tel:9805058050" className="text-xl font-bold hover:text-[#A87A35] transition-colors">(980) 505-8050</a>
                   <p className="text-xs text-slate-500 mt-1 font-bold">Call for appointments, or text (980) 505-8050</p>
                 </div>
               </li>

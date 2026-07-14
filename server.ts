@@ -384,7 +384,15 @@ async function startServer() {
   // API route to book calendar event
   app.post('/api/book', async (req, res) => {
     try {
-      const { firstName, lastName, email, phone, address, notes, serviceName, startTime, endTime } = req.body;
+      const { firstName, lastName, email, phone, address, notes, serviceName, startTime, endTime, mileageFeeAgreed } = req.body;
+
+      // N.C. Gen. Stat. § 10B-31 requires the principal to agree in writing
+      // to the mileage/travel fee before the notary travels. The booking
+      // form's checkbox is that written agreement — refuse to book without it.
+      if (mileageFeeAgreed !== true) {
+        return res.status(400).json({ error: 'You must agree to the mileage/travel fee to book an appointment.' });
+      }
+
       const { credentialsObj, calendarId } = await getGoogleCredentials();
 
       if (!credentialsObj || !calendarId) {
@@ -399,7 +407,7 @@ async function startServer() {
       const event = {
         summary: `Notary Booking: ${firstName} ${lastName}`,
         location: address,
-        description: `Service: ${serviceName}\nPhone: ${phone}\nEmail: ${email}\nAddress: ${address}\n\nNotes: ${notes}`,
+        description: `Service: ${serviceName}\nPhone: ${phone}\nEmail: ${email}\nAddress: ${address}\nMileage fee agreed in writing: Yes\n\nNotes: ${notes}`,
         start: {
           dateTime: startTime,
           timeZone: 'America/New_York',
@@ -430,6 +438,7 @@ async function startServer() {
             service_name: serviceName,
             start_time: startTime,
             end_time: endTime,
+            mileage_fee_agreed: true,
             created_at: new Date().toISOString() // Using ISO string for now to match rules isValidBooking check
           });
           console.log('Booking saved to Firebase successfully');
@@ -524,6 +533,7 @@ async function startServer() {
                 }
               ],
               googleCalendarEventId: googleCalendarEventId,
+              mileageFeeAgreed: true,
               source: 'website',
               createdBy: 'website-form',
               createdAt: now,
@@ -710,67 +720,16 @@ async function startServer() {
       console.error('[Error] dist directory not found at', distPath);
     }
 
-    const pageMeta: Record<string, { title: string; description: string; canonical: string }> = {
-      '/nursing-home-notary-charlotte-nc': {
-        title: `Nursing Home Notary Charlotte NC | Mobile Notary`,
-        description: `Need a notary at a nursing home or assisted living facility in Charlotte, NC? ${businessConfig.name} sends a commissioned notary directly to residents in Mecklenburg, Union, and Cabarrus counties.`,
-        canonical: `${businessConfig.domain}/nursing-home-notary-charlotte-nc`
-      },
-      '/hospital-notary-charlotte-nc': {
-        title: `Hospital & Bedside Notary Charlotte NC | Mobile Notary`,
-        description: 'Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.',
-        canonical: `${businessConfig.domain}/hospital-notary-charlotte-nc`
-      },
-      '/mobile-notary-charlotte-nc': {
-        title: `Mobile Notary Services in Charlotte, NC | ${businessConfig.name}`,
-        description: `${businessConfig.name} provides professional mobile notary services throughout Charlotte, NC. We come to your home, office, hospital, or care facility — same-day appointments available.`,
-        canonical: `${businessConfig.domain}/mobile-notary-charlotte-nc`
-      },
-      '/estate-planning-notary-charlotte-nc': {
-        title: `Estate & Trust Notarization Charlotte NC | Mobile Notary | ${businessConfig.name}`,
-        description: 'Professional mobile notary for estate planning and trust documents in Charlotte, NC. We travel to homes, hospitals, and nursing homes for Wills, Trusts, and POA.',
-        canonical: `${businessConfig.domain}/estate-planning-notary-charlotte-nc`
-      },
-      '/after-hours-mobile-notary-charlotte-nc': {
-        title: `After-Hours Mobile Notary Charlotte NC | Evening & Weekend Notary | ${businessConfig.name}`,
-        description: `Need a notary after hours in Charlotte, NC? ${businessConfig.name} offers evening and weekend mobile notary appointments — available when banks and UPS stores are closed.`,
-        canonical: `${businessConfig.domain}/after-hours-mobile-notary-charlotte-nc`
-      },
-      '/loan-signing-agent-charlotte-nc': {
-        title: `Loan Signing Agent Charlotte NC | Certified Mobile Notary | ${businessConfig.name}`,
-        description: 'Certified loan signing agent serving Charlotte, NC and surrounding areas. Professional, accurate, and reliable closings at your home, office, or any location.',
-        canonical: `${businessConfig.domain}/loan-signing-agent-charlotte-nc`
-      },
-      '/areas-served': {
-        title: `Mobile Notary Service Areas | Charlotte NC & Surrounding Counties | ${businessConfig.name}`,
-        description: `${businessConfig.name} provides mobile notary services across Mecklenburg, Union, and Cabarrus counties including Mint Hill, Matthews, Huntersville, Monroe, and more.`,
-        canonical: `${businessConfig.domain}/areas-served`
-      },
-    };
-
-    // Register meta-injection routes BEFORE express.static so Express handles
-    // them first — if registered after, the static middleware wins and Node never runs.
+    // scripts/prerender.tsx (run as part of `npm run build`) writes a fully
+    // rendered dist/<route>/index.html for every route in pageMeta (and more)
+    // — real page content plus correct <title>/description/canonical already
+    // baked in. express.static below serves those directly (with its default
+    // "/foo" -> "/foo/" redirect to the directory's index.html), so no
+    // runtime meta-injection or route-specific handling is needed here
+    // anymore. Routes that were never prerendered (the SPA fallback below)
+    // still get the generic index.html shell, same as before prerendering
+    // existed — not a regression, just not yet optimized.
     const indexPath = path.join(distPath, 'index.html');
-    const injectMeta = (req: express.Request, res: express.Response) => {
-      res.setHeader('X-Served-By', 'express-node');
-      if (!fs.existsSync(indexPath)) {
-        res.status(404).send('index.html not found.');
-        return;
-      }
-      const meta = pageMeta[req.path];
-      let html = fs.readFileSync(indexPath, 'utf-8');
-      if (meta) {
-        html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
-        html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);
-        html = html.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${meta.canonical}"`);
-      }
-      res.send(html);
-    };
-
-    // Explicit routes for every page that needs its own meta tags
-    Object.keys(pageMeta).forEach(route => {
-      app.get(route, injectMeta);
-    });
 
     app.use(express.static(distPath));
 

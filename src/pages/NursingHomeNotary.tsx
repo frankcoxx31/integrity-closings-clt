@@ -27,7 +27,7 @@ export default function NursingHomeNotary() {
           "provider": {
             "@type": "LocalBusiness",
             "name": "Integrity Closings CLT",
-            "telephone": "(980) 372-4103",
+            "telephone": "(980) 505-8050",
             "url": "https://www.integrityclosingsclt.com/"
           },
           "areaServed": [
@@ -95,7 +95,7 @@ export default function NursingHomeNotary() {
               "name": "How do I schedule a notary to come to an assisted living facility?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Call Integrity Closings CLT at (980) 372-4103 or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
+                "text": "Call or text Integrity Closings CLT at (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
               }
             },
             {
@@ -152,7 +152,7 @@ export default function NursingHomeNotary() {
     },
     {
       q: "How do I schedule a notary to come to an assisted living facility?",
-      a: "Call (980) 372-4103 or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
+      a: "Call or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
     },
     {
       q: "Do we need witnesses for a Power of Attorney at a nursing home?",
@@ -197,11 +197,11 @@ export default function NursingHomeNotary() {
 
             <div className="mb-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:9803724103"
+                href="tel:9805058050"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call (980) 372-4103
+                Call (980) 505-8050
               </a>
               <a
                 href="sms:9805058050"
@@ -249,7 +249,7 @@ export default function NursingHomeNotary() {
                 ))}
               </div>
               <p className="text-slate-500 text-sm mt-4">
-                Need something not on this list? <a href="tel:9803724103" className="text-brand-600 hover:underline">Call us</a> — if it can be notarized in NC, we can handle it.
+                Need something not on this list? <a href="tel:9805058050" className="text-brand-600 hover:underline">Call us</a> — if it can be notarized in NC, we can handle it.
               </p>
             </section>
 
@@ -384,11 +384,11 @@ export default function NursingHomeNotary() {
               <p className="text-slate-500 mb-6">We coordinate with the facility and come directly to the resident. Same-day appointments often available.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="tel:9803724103"
+                  href="tel:9805058050"
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Call (980) 372-4103
+                  Call (980) 505-8050
                 </a>
                 <a
                   href="sms:9805058050"

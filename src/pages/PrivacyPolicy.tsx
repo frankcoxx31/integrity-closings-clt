@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
             <p>
               Integrity Closings CLT<br />
               Email: fcoxx@integrityclosingsclt.com<br />
-              Phone: 980-372-4103
+              Phone: 980-505-8050
             </p>
           </div>
         </div>

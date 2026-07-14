@@ -171,11 +171,11 @@ export default function HospitalNotary() {
 
             <div className="mb-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:9803724103"
+                href="tel:9805058050"
                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Call 980-372-4103
+                Call 980-505-8050
               </a>
               <a
                 href="sms:9805058050"
@@ -335,11 +335,11 @@ export default function HospitalNotary() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="tel:9803724103"
+                    href="tel:9805058050"
                     className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors shadow-sm"
                   >
                     <Phone className="w-5 h-5 mr-2" />
-                    Call 980-372-4103
+                    Call 980-505-8050
                   </a>
                   <a
                     href="sms:9805058050"

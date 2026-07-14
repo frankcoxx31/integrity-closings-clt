@@ -20,7 +20,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6">Need a Notary Now?</h3>
             <p className="text-slate-300 mb-6">
-              Call <a href={`tel:${businessConfig.phone.tel}`} className="text-brand-400 font-bold hover:underline">{businessConfig.phone.display}</a> or text <a href={`sms:${businessConfig.textPhone.sms}`} className="text-brand-400 font-bold hover:underline">{businessConfig.textPhone.display}</a> to schedule your appointment. Same-day and after-hours appointments available.
+              Call or text <a href={`tel:${businessConfig.phone.tel}`} className="text-brand-400 font-bold hover:underline">{businessConfig.phone.display}</a> to schedule your appointment. Same-day and after-hours appointments available.
             </p>
             <ul className="space-y-4">
               <li className="flex items-start">

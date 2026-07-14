@@ -17,14 +17,10 @@ export interface Review {
 export const businessConfig = {
   name: 'Integrity Closings CLT',
   ownerName: 'Frank Coxx',
+  // Single number for both calls and texts.
   phone: {
-    display: '980-372-4103',
-    tel: '9803724103',
-  },
-  // Separate SMS-only line — the main number above does not accept texts.
-  textPhone: {
     display: '980-505-8050',
-    sms: '9805058050',
+    tel: '9805058050',
   },
   email: 'fcoxx@integrityclosingsclt.com',
   contactEmail: 'info@integrityclosingsclt.com',

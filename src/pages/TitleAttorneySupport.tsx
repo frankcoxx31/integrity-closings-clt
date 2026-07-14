@@ -103,9 +103,9 @@ export default function TitleAttorneySupport() {
               <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-white bg-brand-600 hover:bg-brand-700 transition-all shadow-lg hover:shadow-brand-500/25">
                 Request Closing Support
               </Link>
-              <a href="tel:9803724103" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-slate-900 bg-accent-400 hover:bg-accent-500 transition-all shadow-lg hover:shadow-accent-500/25">
+              <a href="tel:9805058050" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-slate-900 bg-accent-400 hover:bg-accent-500 transition-all shadow-lg hover:shadow-accent-500/25">
                 <Phone className="w-5 h-5 mr-3" />
-                (980) 372-4103
+                (980) 505-8050
               </a>
             </div>
           </div>
@@ -253,9 +253,9 @@ export default function TitleAttorneySupport() {
             <Link to="/booking" className="w-full sm:w-auto px-10 py-5 bg-white text-brand-600 font-bold text-xl rounded-xl hover:bg-brand-50 transition-all shadow-xl">
               Request Closing Support
             </Link>
-            <a href="tel:9803724103" className="w-full sm:w-auto px-10 py-5 bg-accent-400 text-slate-900 font-bold text-xl rounded-xl hover:bg-accent-500 transition-all shadow-xl flex items-center justify-center">
+            <a href="tel:9805058050" className="w-full sm:w-auto px-10 py-5 bg-accent-400 text-slate-900 font-bold text-xl rounded-xl hover:bg-accent-500 transition-all shadow-xl flex items-center justify-center">
               <Phone className="w-6 h-6 mr-3" />
-              980-372-4103
+              980-505-8050
             </a>
           </div>
         </div>

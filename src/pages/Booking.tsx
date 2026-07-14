@@ -82,6 +82,7 @@ export default function Booking() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [mileageFeeAgreed, setMileageFeeAgreed] = useState(false);
 
   // Fetch availability when date changes
   useEffect(() => {
@@ -168,6 +169,9 @@ export default function Booking() {
       if (!selectedDate || !selectedTime || !selectedService) {
         throw new Error('Missing required booking details');
       }
+      if (!mileageFeeAgreed) {
+        throw new Error('Please agree to the mileage/travel fee terms before booking.');
+      }
 
       const service = SERVICES.find(s => s.id === selectedService);
       
@@ -214,6 +218,7 @@ export default function Booking() {
           serviceName: service?.name,
           startTime: startTimeStr,
           endTime: endTimeStr,
+          mileageFeeAgreed,
         }),
       });
 
@@ -604,13 +609,25 @@ export default function Booking() {
                   </div>
 
                   <div className="mt-8">
+                    <label className="flex items-start gap-3 p-4 bg-brand-50 rounded-lg border border-brand-100 cursor-pointer mb-4">
+                      <input
+                        type="checkbox"
+                        required
+                        checked={mileageFeeAgreed}
+                        onChange={(e) => setMileageFeeAgreed(e.target.checked)}
+                        className="mt-1 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-600"
+                      />
+                      <span className="text-sm text-slate-700">
+                        I agree to pay the notary fee ($10 per notarized signature, per North Carolina law) plus a travel/mileage fee at the current IRS mileage rate ($0.725/mile), calculated from the notary's office to my appointment location. <span className="font-semibold">This is my written agreement to the travel fee before the notary travels, as required by N.C. Gen. Stat. § 10B-31.</span>
+                      </span>
+                    </label>
                     {submitError && (
                       <div className="mb-4 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
                         {submitError}
                       </div>
                     )}
                     <div className="flex justify-between">
-                      <button 
+                      <button
                         type="button"
                         onClick={handleBack}
                         disabled={isSubmitting}

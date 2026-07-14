@@ -72,7 +72,9 @@ export default function App() {
   );
 }
 
-function AppContent() {
+// Exported so the build-time prerender script (scripts/prerender.tsx) can
+// render this same route tree under a StaticRouter instead of BrowserRouter.
+export function AppContent() {
   const location = useLocation();
   const isLandingPage = location.pathname === '/book';
 
@@ -84,9 +86,8 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/book" element={<BookLanding />} />
           <Route path="/mobile-notary-charlotte-nc" element={<MobileNotaryServices />} />
-            
+
             {/* Detailed Service Pages */}
-            <Route path="/estate-planning-notary-charlotte-nc" element={<EstateNotary />} />
             <Route path="/services/business-documents" element={<BusinessDocuments />} />
             <Route path="/services/financial-documents" element={<FinancialDocuments />} />
             <Route path="/services/legal-documents" element={<LegalDocuments />} />

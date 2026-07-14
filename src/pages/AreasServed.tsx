@@ -121,11 +121,11 @@ export default function AreasServed() {
                     Book Appointment
                   </Link>
                   <a 
-                    href="tel:9803724103" 
+                    href="tel:9805058050" 
                     className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors shadow-sm"
                   >
                     <Phone className="w-5 h-5 mr-2" />
-                    Call 980-372-4103
+                    Call 980-505-8050
                   </a>
                 </div>
               </div>

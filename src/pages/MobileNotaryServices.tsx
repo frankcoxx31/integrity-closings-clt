@@ -9,7 +9,7 @@ export default function MobileNotaryServices() {
 
     // Meta description
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Need a mobile notary in Charlotte, NC? Book same-day or after-hours service for POA, estate docs, hospital visits & more. Call 980-372-4103 now.');
+    if (metaDesc) metaDesc.setAttribute('content', 'Need a mobile notary in Charlotte, NC? Book same-day or after-hours service for POA, estate docs, hospital visits & more. Call 980-505-8050 now.');
 
     // Canonical — fix the critical canonical bug (was pointing to homepage)
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
@@ -32,7 +32,7 @@ export default function MobileNotaryServices() {
           "@id": "https://www.integrityclosingsclt.com/#business",
           "name": "Integrity Closings CLT",
           "url": "https://www.integrityclosingsclt.com/",
-          "telephone": "(980) 372-4103",
+          "telephone": "(980) 505-8050",
           "email": "fcoxx@integrityclosingsclt.com",
           "image": "https://www.integrityclosingsclt.com/logo.jpg",
           "description": "Professional mobile notary services in Charlotte, NC — same-day, after-hours, hospital bedside, and estate document notarizations throughout Mecklenburg and Union counties.",
@@ -260,12 +260,12 @@ export default function MobileNotaryServices() {
                 We specialize in situations where time matters most: a family member hospitalized at Atrium Health or Novant who needs a power of attorney signed, a real estate closing that needs a notary at the property, or an after-hours signing when every other option is closed.
               </p>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                Simply call or text 980-372-4103, tell us what you need and where you are, and we'll confirm availability and arrive — often the same day.
+                Simply call or text 980-505-8050, tell us what you need and where you are, and we'll confirm availability and arrive — often the same day.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/booking" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors">Book Now</Link>
-                <a href="tel:9803724103" className="inline-flex items-center justify-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors">
-                  Call 980-372-4103
+                <a href="tel:9805058050" className="inline-flex items-center justify-center px-6 py-3 border border-slate-300 text-base font-medium rounded-md text-slate-700 bg-white hover:bg-slate-50 transition-colors">
+                  Call 980-505-8050
                 </a>
               </div>
             </div>
@@ -428,11 +428,11 @@ export default function MobileNotaryServices() {
         <div className="bg-slate-900 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Need a Mobile Notary in Charlotte Today?</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            Call 980-372-4103 or text 980-505-8050 for same-day service, or book online. We serve Charlotte and all surrounding communities in Mecklenburg and Union counties.
+            Call or text 980-505-8050 for same-day service, or book online. We serve Charlotte and all surrounding communities in Mecklenburg and Union counties.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-slate-900 bg-white hover:bg-slate-100 transition-colors">Book Appointment</Link>
-            <a href="tel:9803724103" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white border-2 border-white hover:bg-white hover:text-slate-900 transition-colors">Call 980-372-4103</a>
+            <a href="tel:9805058050" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-white border-2 border-white hover:bg-white hover:text-slate-900 transition-colors">Call 980-505-8050</a>
           </div>
         </div>
 
