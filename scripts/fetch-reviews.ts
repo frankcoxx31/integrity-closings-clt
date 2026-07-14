@@ -18,6 +18,13 @@
  *
  * Note: the legacy Places API caps the `reviews` field at 5 results — this
  * is a documented Google limitation, not a bug here.
+ *
+ * Place ID resolution: a hardcoded Place ID was tried first and came back
+ * NOT_FOUND ("no longer valid") from a real, working API key — Place IDs
+ * can go stale over time per Google's own docs. Rather than hardcode a new
+ * one that can drift again, this script resolves the current Place ID from
+ * the business name + address via the Find Place endpoint on every run, so
+ * it self-heals if Google reassigns the ID again later.
  */
 
 import { writeFileSync } from 'fs';
@@ -28,7 +35,22 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const outPath = path.join(__dirname, '..', 'src', 'data', 'reviews.json');
 
-const PLACE_ID = 'ChIJPc0MmfQjxQkRXEws2youoak';
+const BUSINESS_QUERY = 'Integrity Closings CLT, Mint Hill, NC';
+
+async function resolvePlaceId(apiKey: string): Promise<string | null> {
+  const url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=${encodeURIComponent(BUSINESS_QUERY)}&inputtype=textquery&fields=place_id&key=${apiKey}`;
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.warn(`[fetch-reviews] Find Place lookup returned HTTP ${res.status}.`);
+    return null;
+  }
+  const data = await res.json();
+  if (data.status !== 'OK' || !data.candidates?.[0]?.place_id) {
+    console.warn(`[fetch-reviews] Find Place lookup status "${data.status}"${data.error_message ? `: ${data.error_message}` : ''}.`);
+    return null;
+  }
+  return data.candidates[0].place_id;
+}
 
 interface GooglePlaceReview {
   author_name: string;
@@ -58,9 +80,14 @@ async function main() {
     return;
   }
 
-  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${encodeURIComponent(PLACE_ID)}&fields=reviews,rating,user_ratings_total&key=${apiKey}`;
-
   try {
+    const placeId = await resolvePlaceId(apiKey);
+    if (!placeId) {
+      console.warn('[fetch-reviews] Could not resolve a current Place ID — keeping existing reviews.json.');
+      return;
+    }
+
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${encodeURIComponent(placeId)}&fields=reviews,rating,user_ratings_total&key=${apiKey}`;
     const res = await fetch(url);
     if (!res.ok) {
       console.warn(`[fetch-reviews] Places API returned HTTP ${res.status} — keeping existing reviews.json.`);
