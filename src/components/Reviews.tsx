@@ -1,8 +1,25 @@
 import { Star } from 'lucide-react';
-import { businessConfig } from '../config/business';
+import reviewsData from '../data/reviews.json';
+
+const AVATAR_COLORS = ['bg-purple-500', 'bg-emerald-500', 'bg-blue-500', 'bg-amber-500', 'bg-rose-500', 'bg-cyan-600'];
+
+function avatarColorFor(name: string) {
+  const hash = name.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  return AVATAR_COLORS[hash % AVATAR_COLORS.length];
+}
+
+function StarRow({ rating, size = 'w-4 h-4' }: { rating: number; size?: string }) {
+  return (
+    <div className="flex text-accent-400">
+      {[...Array(5)].map((_, i) => (
+        <Star key={i} className={`${size} ${i < Math.round(rating) ? 'fill-current' : ''}`} />
+      ))}
+    </div>
+  );
+}
 
 export default function Reviews() {
-  const reviews = businessConfig.reviews;
+  const { rating, userRatingsTotal, reviews } = reviewsData;
 
   return (
     <section className="py-20 bg-slate-50 border-t border-slate-100">
@@ -11,26 +28,24 @@ export default function Reviews() {
           <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">What Our Clients Say</h2>
           <div className="mt-4 flex items-center justify-center gap-2">
             <span className="text-lg font-semibold text-slate-700">Excellent</span>
-            <div className="flex text-accent-400">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-current" />
-              ))}
-            </div>
-            <span className="text-lg text-slate-600">5.0 out of 5</span>
+            {rating != null && <StarRow rating={rating} size="w-5 h-5" />}
+            {rating != null && <span className="text-lg text-slate-600">{rating.toFixed(1)} out of 5</span>}
           </div>
-          <p className="mt-2 text-slate-500">Based on Google Reviews</p>
+          <p className="mt-2 text-slate-500">
+            {userRatingsTotal != null ? `Based on ${userRatingsTotal} Google Reviews` : 'Based on Google Reviews'}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl ${review.color}`}>
-                  {review.initial}
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl ${avatarColorFor(review.authorName)}`}>
+                  {review.authorName.charAt(0).toUpperCase()}
                 </div>
                 <div className="ml-4">
-                  <h3 className="font-bold text-slate-900">{review.name}</h3>
-                  <p className="text-sm text-slate-500">{review.date}</p>
+                  <h3 className="font-bold text-slate-900">{review.authorName}</h3>
+                  <p className="text-sm text-slate-500">{review.relativeTimeDescription}</p>
                 </div>
                 <div className="ml-auto">
                   <svg className="w-6 h-6" viewBox="0 0 24 24">
@@ -41,10 +56,8 @@ export default function Reviews() {
                   </svg>
                 </div>
               </div>
-              <div className="flex text-accent-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
+              <div className="mb-4">
+                <StarRow rating={review.rating} />
               </div>
               <p className="text-slate-600 leading-relaxed">"{review.text}"</p>
             </div>

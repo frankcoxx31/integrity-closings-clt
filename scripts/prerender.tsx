@@ -32,6 +32,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { AppContent } from '../src/App';
 import { pageMeta } from '../src/seo/pageMeta';
+import reviewsData from '../src/data/reviews.json';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -92,6 +93,18 @@ function applyMeta(html: string, route: string): string {
   return html;
 }
 
+// The LocalBusiness schema's aggregateRating is the same block on every
+// page (it lives in index.html's <head>, shared by the whole shell), so
+// this applies to every route the same way — sourced from reviews.json,
+// which fetch-reviews.ts refreshes from the live Places API each build.
+function applyAggregateRating(html: string): string {
+  const { rating, userRatingsTotal } = reviewsData;
+  if (rating == null || userRatingsTotal == null) return html;
+  html = html.replace(/"ratingValue":\s*"[^"]*"/, `"ratingValue": "${rating}"`);
+  html = html.replace(/"reviewCount":\s*"[^"]*"/, `"reviewCount": "${userRatingsTotal}"`);
+  return html;
+}
+
 function main() {
   if (!existsSync(shellPath)) {
     console.error('[prerender] dist/index.html not found — run `vite build` first.');
@@ -111,6 +124,7 @@ function main() {
       );
       let html = shell.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
       html = applyMeta(html, route);
+      html = applyAggregateRating(html);
 
       const outPath = route === '/'
         ? shellPath

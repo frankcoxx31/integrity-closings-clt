@@ -1,0 +1,28 @@
+{
+  "rating": 5,
+  "userRatingsTotal": 12,
+  "reviews": [
+    {
+      "authorName": "Sarah Jenkins",
+      "rating": 5,
+      "relativeTimeDescription": "3 weeks ago",
+      "text": "Quick, professional, and easy to schedule. Made a stressful paperwork day much simpler.",
+      "time": 0
+    },
+    {
+      "authorName": "Michael T.",
+      "rating": 5,
+      "relativeTimeDescription": "2 months ago",
+      "text": "Showed up on time and walked me through everything clearly. Highly recommend for mobile notary needs.",
+      "time": 0
+    },
+    {
+      "authorName": "David Chen",
+      "rating": 5,
+      "relativeTimeDescription": "2 months ago",
+      "text": "Professional, organized, and great communication throughout. Would use again.",
+      "time": 0
+    }
+  ],
+  "fetchedAt": null
+}

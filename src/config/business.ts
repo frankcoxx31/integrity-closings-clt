@@ -6,14 +6,6 @@
  * from here — see that doc for why).
  */
 
-export interface Review {
-  name: string;
-  date: string;
-  text: string;
-  initial: string;
-  color: string;
-}
-
 export const businessConfig = {
   name: 'Integrity Closings CLT',
   ownerName: 'Frank Coxx',
@@ -75,32 +67,6 @@ export const businessConfig = {
     gaId: 'G-RBR8WJGG39',
     googleAdsId: 'AW-17355177903',
   },
-
-  // Generic placeholders, safe to resell as-is. Replace with a customer's
-  // real reviews (with permission) once they have some.
-  reviews: [
-    {
-      name: 'Sarah Jenkins',
-      date: '3 weeks ago',
-      text: 'Quick, professional, and easy to schedule. Made a stressful paperwork day much simpler.',
-      initial: 'S',
-      color: 'bg-purple-500',
-    },
-    {
-      name: 'Michael T.',
-      date: '2 months ago',
-      text: 'Showed up on time and walked me through everything clearly. Highly recommend for mobile notary needs.',
-      initial: 'M',
-      color: 'bg-emerald-500',
-    },
-    {
-      name: 'David Chen',
-      date: '2 months ago',
-      text: 'Professional, organized, and great communication throughout. Would use again.',
-      initial: 'D',
-      color: 'bg-blue-500',
-    },
-  ] as Review[],
 };
 
 export type BusinessConfig = typeof businessConfig;
