@@ -446,7 +446,7 @@ export default function BlogPost() {
           <ul className="list-disc pl-6 space-y-4 mb-6">
             <li><strong>Atrium Health:</strong> Carolinas Medical Center, Mercy, Pineville, and University.</li>
             <li><strong>Novant Health:</strong> Presbyterian Medical Center, Matthews Medical Center, and Huntersville.</li>
-            <li><strong>Rehab and Nursing Homes:</strong> We regularly visit residents in <Link to="/nursing-home-notary" className="text-brand-600 hover:underline">nursing homes</Link> throughout Mecklenburg and Cabarrus counties.</li>
+            <li><strong>Rehab and Nursing Homes:</strong> We regularly visit residents in <Link to="/nursing-home-notary-charlotte-nc" className="text-brand-600 hover:underline">nursing homes</Link> throughout Mecklenburg and Cabarrus counties.</li>
           </ul>
           <p className="mb-6">If you’re unsure if we cover your area, you can view our full list of <Link to="/areas-served" className="text-brand-600 hover:underline">areas served</Link>.</p>
 
@@ -455,7 +455,7 @@ export default function BlogPost() {
           <ul className="list-disc pl-6 space-y-4 mb-6">
             <li><strong>Professionalism:</strong> We arrive dressed professionally and act as a calm presence in a stressful environment.</li>
             <li><strong>Knowledge:</strong> We understand NC notary laws inside and out, specifically regarding medical and estate documents.</li>
-            <li><strong>Flexibility:</strong> We offer <Link to="/about-same-day-service-near-you" className="text-brand-600 hover:underline">same-day service near you</Link> because we know that in a hospital, things change fast.</li>
+            <li><strong>Flexibility:</strong> We offer <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">same-day service near you</Link> because we know that in a hospital, things change fast.</li>
             <li><strong>Compassion:</strong> We treat every patient like they are our own family. We don't rush; we listen.</li>
           </ul>
 
@@ -466,7 +466,7 @@ export default function BlogPost() {
           <p className="mb-4 font-bold">Our Services Include:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
             <li>Hospital & Bedside Notarizations</li>
-            <li><Link to="/nursing-home-notary" className="text-brand-600 hover:underline">Nursing Home & Assisted Living Visits</Link></li>
+            <li><Link to="/nursing-home-notary-charlotte-nc" className="text-brand-600 hover:underline">Nursing Home & Assisted Living Visits</Link></li>
             <li><Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney & Estate Documents</Link></li>
             <li><Link to="/general-notary-charlotte-nc" className="text-brand-600 hover:underline">General Notary Services</Link></li>
           </ul>
@@ -539,7 +539,7 @@ export default function BlogPost() {
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Key Benefits for Charlotte Homebuyers</h2>
           <p className="mb-6">Why are more people choosing <strong>Charlotte mobile notary services</strong> instead of the traditional office visit? It usually boils down to four main things:</p>
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">1. Unmatched Convenience</h3>
-          <p className="mb-6">You’re moving. Your life is currently packed into cardboard boxes. The last thing you want to do is load the kids into the car or take a half-day off work to drive across town. With a mobile notary, the "office" comes to you. We’ve done closings in driveways, at work desks, and even in hospital rooms via our <Link to="/services/hospital-notary" className="text-brand-600 hover:underline">nursing home notary services</Link>.</p>
+          <p className="mb-6">You’re moving. Your life is currently packed into cardboard boxes. The last thing you want to do is load the kids into the car or take a half-day off work to drive across town. With a mobile notary, the "office" comes to you. We’ve done closings in driveways, at work desks, and even in hospital rooms via our <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">nursing home notary services</Link>.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">2. Flexibility for Busy Professionals</h3>
           <p className="mb-6">Charlotte is a hub for finance, tech, and healthcare. We know your 9-to-5 isn’t always a 9-to-5. Mobile notaries often work outside of standard banking hours. Need to sign at 7:00 PM after the kids are in bed? We can make that happen.</p>
@@ -560,10 +560,10 @@ export default function BlogPost() {
           <li><strong>The Initial Escrow Account Disclosure:</strong> This explains how your taxes and insurance will be paid out of your monthly mortgage payment.</li>
           <li><strong>Signature Affidavit and Name Affidavit:</strong> A formal way to confirm that "Jon Doe" and "Jonathan Q. Doe" are the same person.</li>
           </ul>
-          <p className="mb-6">If you’re feeling overwhelmed, don't worry. Part of our <Link to="/services/mobile-notary-services" className="text-brand-600 hover:underline">mobile notary services</Link> involves helping you stay organized so you don't feel buried by the paperwork.</p>
+          <p className="mb-6">If you’re feeling overwhelmed, don't worry. Part of our <Link to="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">mobile notary services</Link> involves helping you stay organized so you don't feel buried by the paperwork.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How to Prepare for a Smooth Remote or Mobile Closing</h2>
-          <p className="mb-6">To make sure your <strong>Charlotte NC remote closings</strong> go off without a hitch, here are a few <Link to="/what-to-bring-to-a-notary-appointment" className="text-brand-600 hover:underline">buyer closing tips Charlotte</Link>:</p>
+          <p className="mb-6">To make sure your <strong>Charlotte NC remote closings</strong> go off without a hitch, here are a few <Link to="/resources/what-is-mobile-notary" className="text-brand-600 hover:underline">buyer closing tips Charlotte</Link>:</p>
           <ol className="list-decimal pl-6 space-y-4 mb-6">
           <li><strong>Have Your ID Ready:</strong> We cannot notarize your signature without a valid, government-issued photo ID. A driver's license or passport works best. Check the expiration date!</li>
           <li><strong>Clear the Table:</strong> We need a little bit of room to spread out the documents. A kitchen table or dining room table is perfect.</li>
@@ -575,8 +575,8 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">North Carolina Rules: Why Working with Pros Matters</h2>
           <p className="mb-6">North Carolina has specific rules about how real estate is handled. Because we are an attorney-closings state, the mobile notary isn't a replacement for legal counsel, we are an extension of the service. </p>
-          <p className="mb-6">Working with a qualified <strong>loan signing agent Charlotte NC</strong> is vital because a single mistake can halt a multi-million dollar transaction. At Integrity Closings CLT, we understand the nuances of NC notary law and the specific requirements of major lenders. Whether it's a traditional purchase or a <Link to="/services/mobile-refi-service-notarization" className="text-brand-600 hover:underline">mobile refi service</Link>, we ensure the "integrity" of your documents is never in question.</p>
-          <p className="mb-6">If you are debating between an <Link to="/services/attorney-office-closing-vs-mobile-closing-which-is-better-for-your-charlotte-home-sale" className="text-brand-600 hover:underline">attorney office closing vs. a mobile closing</Link>, consider your own stress levels. If you value your time and want a personalized experience, the mobile route is almost always the winner.</p>
+          <p className="mb-6">Working with a qualified <strong>loan signing agent Charlotte NC</strong> is vital because a single mistake can halt a multi-million dollar transaction. At Integrity Closings CLT, we understand the nuances of NC notary law and the specific requirements of major lenders. Whether it's a traditional purchase or a <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile refi service</Link>, we ensure the "integrity" of your documents is never in question.</p>
+          <p className="mb-6">If you are debating between an <Link to="/title-company-attorney-closing-support-charlotte-nc" className="text-brand-600 hover:underline">attorney office closing vs. a mobile closing</Link>, consider your own stress levels. If you value your time and want a personalized experience, the mobile route is almost always the winner.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">FAQ: Charlotte Remote Closings &amp; Mobile Notaries</h2>
           <p className="mb-6"><strong>1. Is a remote closing legal in North Carolina?</strong><br/>
@@ -588,7 +588,7 @@ export default function BlogPost() {
           <p className="mb-6"><strong>4. What if I find an error in the documents during the signing?</strong><br/>
           If there’s a typo or a wrong number, we immediately contact your closing attorney or loan officer. In many cases, they can email a corrected page that we can print or handle digitally to keep the closing on track.</p>
           <p className="mb-6"><strong>5. Do you offer services outside of Charlotte?</strong><br/>
-          Yes! We serve the greater Charlotte area, including Pineville, Matthews, Concord, and even Gastonia. If you're looking for a <Link to="/locations/pineville" className="text-brand-600 hover:underline">loan signing notary in Pineville</Link>, we've got you covered.</p>
+          Yes! We serve the greater Charlotte area, including Pineville, Matthews, Concord, and even Gastonia. If you're looking for a <Link to="/areas-served" className="text-brand-600 hover:underline">loan signing notary in Pineville</Link>, we've got you covered.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Ready to Close on Your Terms?</h2>
           <p className="mb-6">Buying a home is a massive milestone. It should be a moment of celebration, not a logistical nightmare. By choosing a <strong>remote home closing Charlotte</strong> service, you’re taking control of your time and ensuring the process happens on your home turf.</p>
@@ -686,7 +686,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Don’t Wait for a Crisis to Plan</h2>
           <p className="mb-6">The common thread among these documents is that they must be created while you are of sound mind and capable of making your own decisions. Waiting until a health scare or a family emergency occurs is often too late.</p>
-          <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we understand that estate planning can feel overwhelming. That’s why we offer <a href="/mobile-notary-services" className="text-brand-600 hover:underline">mobile notary services</a> throughout the Charlotte area. We bring the professional, stress-free notarization process to your home or office, so you can secure your future without the hassle of traveling to a bank or attorney’s office.</p>
+          <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we understand that estate planning can feel overwhelming. That’s why we offer <a href="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">mobile notary services</a> throughout the Charlotte area. We bring the professional, stress-free notarization process to your home or office, so you can secure your future without the hassle of traveling to a bank or attorney’s office.</p>
           <p className="mb-6">Turning 50 is a time to celebrate how far you’ve come. Make sure you’re protected for how far you’re going. <a href="/booking" className="text-brand-600 hover:underline">Schedule your mobile notary appointment today</a> and cross these essential documents off your list.</p>
 
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
@@ -740,7 +740,7 @@ export default function BlogPost() {
           <p className="mb-6">In casual conversation, we use these terms interchangeably. However, in a North Carolina real estate contract, they represent two very different events on the timeline.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">What is Settlement?</h3>
-          <p className="mb-6">Settlement is the actual meeting. This is when you, the buyer, sit down (often at a closing attorney's office or via a <a href="/mobile-notary-services" className="text-brand-600 hover:underline">mobile notary service</a>) to execute all the necessary paperwork. During settlement, you sign the Deed of Trust, the Closing Disclosure (CD), and various other state and federal disclosures. You also provide the remaining funds required to complete the purchase.</p>
+          <p className="mb-6">Settlement is the actual meeting. This is when you, the buyer, sit down (often at a closing attorney's office or via a <a href="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">mobile notary service</a>) to execute all the necessary paperwork. During settlement, you sign the Deed of Trust, the Closing Disclosure (CD), and various other state and federal disclosures. You also provide the remaining funds required to complete the purchase.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">What is Closing?</h3>
           <p className="mb-6">In North Carolina, "Closing" is not a meeting; it is a process. Legally, closing is defined as the moment the deed is officially recorded at the local Register of Deeds. Only when the county clerk stamps that document and adds it to the public record is the transaction considered "closed." This is the moment ownership officially transfers from the seller to you.</p>
@@ -773,7 +773,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Recording Reality: Why You Won't Always Get Keys on Friday</h2>
           <p className="mb-6">If you schedule your settlement for 4:00 PM on a Friday, you are almost certainly not moving in that evening.</p>
-          <p className="mb-6">The Register of Deeds in counties like <a href="/mecklenburg-county" className="text-brand-600 hover:underline">Mecklenburg County</a> or <a href="/rowan-county" className="text-brand-600 hover:underline">Rowan County</a> operates on government business hours. If your settlement happens late in the day, the attorney may not be able to finish their title update and submit the documents before the recording office closes.</p>
+          <p className="mb-6">The Register of Deeds in counties like <a href="/areas-served" className="text-brand-600 hover:underline">Mecklenburg County</a> or <a href="/areas-served" className="text-brand-600 hover:underline">Rowan County</a> operates on government business hours. If your settlement happens late in the day, the attorney may not be able to finish their title update and submit the documents before the recording office closes.</p>
           <p className="mb-6">In this scenario, "Closing" won't happen until Monday morning. You will have "settled" on Friday, but you won't "close" or get your keys until the following week. For a first-time buyer with a moving truck idling in the driveway, this can be a disaster.</p>
 
           <img 
@@ -789,13 +789,13 @@ export default function BlogPost() {
             <li><strong>Schedule Early in the Day:</strong> Try to set your settlement appointment for the morning. This gives the attorney enough time to update the title, get lender approval, and record the deed before the end of the business day.</li>
             <li><strong>Schedule Mid-Week:</strong> Avoid closing on a Friday if possible. If a delay occurs on a Tuesday, you can usually close on Wednesday. If a delay occurs on a Friday, you are stuck waiting until Monday.</li>
             <li><strong>Don't Schedule the Mover for the Same Day:</strong> If possible, schedule your moving truck for the day <em>after</em> settlement. This gives you a buffer in case recording is delayed.</li>
-            <li><strong>Know What to Bring:</strong> Delays often happen because of missing information. Check out our guide on <a href="/what-to-bring-to-a-notary-appointment" className="text-brand-600 hover:underline">what to bring to a notary appointment</a> to ensure you have your ID and funds ready to go.</li>
+            <li><strong>Know What to Bring:</strong> Delays often happen because of missing information. Check out our guide on <a href="/resources/what-is-mobile-notary" className="text-brand-600 hover:underline">what to bring to a notary appointment</a> to ensure you have your ID and funds ready to go.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How Integrity Closings CLT Simplifies the Process</h2>
           <p className="mb-6">While the legal "gap" is a mandatory part of North Carolina law, the way you handle your side of the paperwork can significantly impact the speed of the transaction. At Integrity Closings CLT, we specialize in making the "Settlement" portion as convenient as possible.</p>
-          <p className="mb-6">We understand that you may not have time to drive across town to an attorney's office, especially if you are balancing a job and a move. We offer <a href="/mobile-notary-services" className="text-brand-600 hover:underline">mobile notary services</a> and <a href="/mobile-refi-service-notarization" className="text-brand-600 hover:underline">mobile refi notarization</a> to bring the signing table to you. Whether you are in Pineville, Charlotte, or the surrounding areas, our professional team ensures that your documents are executed perfectly the first time, preventing administrative delays that could push back your recording time.</p>
-          <p className="mb-6">For sellers who have already moved out of state or are busy packing, our <a href="/seller-notarization-same-day-notary-service" className="text-brand-600 hover:underline">seller notarization services</a> allow you to sign your deed and closing docs from your own kitchen table. By getting the seller's paperwork finalized and delivered to the attorney early, you help ensure that everything is ready for the buyer’s settlement.</p>
+          <p className="mb-6">We understand that you may not have time to drive across town to an attorney's office, especially if you are balancing a job and a move. We offer <a href="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">mobile notary services</a> and <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile refi notarization</a> to bring the signing table to you. Whether you are in Pineville, Charlotte, or the surrounding areas, our professional team ensures that your documents are executed perfectly the first time, preventing administrative delays that could push back your recording time.</p>
+          <p className="mb-6">For sellers who have already moved out of state or are busy packing, our <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">seller notarization services</a> allow you to sign your deed and closing docs from your own kitchen table. By getting the seller's paperwork finalized and delivered to the attorney early, you help ensure that everything is ready for the buyer’s settlement.</p>
 
           <img 
             src="https://cdn.marblism.com/T7D7GbiqFxW.webp" 
@@ -814,7 +814,7 @@ export default function BlogPost() {
           </ul>
 
           <p className="mb-6">Navigating your first home purchase in North Carolina doesn't have to be overwhelming. By understanding the legal requirements of the state and planning for the recording gap, you can set realistic expectations for your moving day.</p>
-          <p className="mb-6">If you are a seller looking for a more convenient way to handle your paperwork, or an attorney needing a reliable <a href="/loan-signing-notary-pineville-nc" className="text-brand-600 hover:underline">loan signing notary in Pineville, NC</a>, we are here to help. At Integrity Closings CLT, we bring professionalism and efficiency to the signing table, helping you get one step closer to those keys.</p>
+          <p className="mb-6">If you are a seller looking for a more convenient way to handle your paperwork, or an attorney needing a reliable <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing notary in Pineville, NC</a>, we are here to help. At Integrity Closings CLT, we bring professionalism and efficiency to the signing table, helping you get one step closer to those keys.</p>
 
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Schedule Your Signing?</h2>
@@ -1667,13 +1667,13 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. Solving the "Last Minute" Crisis</h2>
           <p className="mb-6">We've all been there: a file is cleared to close at 4:00 PM on a Friday, and the buyers are leaving town the next morning. Or perhaps a seller is hospitalized and cannot make it to your office. These scenarios can derail a closing timeline and put a commission in jeopardy.</p>
-          <p className="mb-6">Having a go-to partner for <Link to="/hospital-and-nursing-home-notarizations" className="text-brand-600 hover:underline">hospital and nursing home notarizations</Link> or emergency weekend signings is a lifesaver. Instead of telling the client "we can't do it," you can say, "we'll send our mobile partner to you." This level of service distinguishes your firm from the competition.</p>
+          <p className="mb-6">Having a go-to partner for <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital and nursing home notarizations</Link> or emergency weekend signings is a lifesaver. Instead of telling the client "we can't do it," you can say, "we'll send our mobile partner to you." This level of service distinguishes your firm from the competition.</p>
 
           <img src="https://cdn.marblism.com/NjtrTERUYCq.webp" alt="Mobile notary Charlotte NC providing reliable signing services at a hospital for a closing attorney's client." className="w-full h-auto rounded-lg my-8 shadow-md" referrerPolicy="no-referrer" />
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. Strategic Geographic Flexibility</h2>
           <p className="mb-6">Charlotte is sprawling. A firm based in Davidson might find it difficult to service a client in Waxhaw or Belmont. By utilizing a mobile signing network, your "office" effectively expands to cover the entire metro area. You can take on more files from a wider geographic range because you aren't limited by your physical location.</p>
-          <p className="mb-6">For a deeper dive into how this compares to traditional methods, you might find our analysis on <Link to="/services/attorney-office-closing-vs-mobile-closing-which-is-better-for-your-charlotte-home-sale" className="text-brand-600 hover:underline">Attorney Office Closing vs. Mobile Closing</Link> helpful for explaining the benefits to your own clients.</p>
+          <p className="mb-6">For a deeper dive into how this compares to traditional methods, you might find our analysis on <Link to="/title-company-attorney-closing-support-charlotte-nc" className="text-brand-600 hover:underline">Attorney Office Closing vs. Mobile Closing</Link> helpful for explaining the benefits to your own clients.</p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">6. Reducing the Post-Closing Workload</h2>
           <p className="mb-6">Every minute your paralegals spend chasing down a missed signature is a minute they aren't working on the next file. A reliable mobile signing agent performs a "triple check" before leaving the signing table. This precision significantly reduces the post-closing "cleanup" that plagues so many law firms. When the documents come back right the first time, your staff can move directly to disbursement and recording, keeping the entire pipeline moving smoothly.</p>
@@ -1704,7 +1704,7 @@ export default function BlogPost() {
           </ul>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">Partner with Integrity Closings CLT</h3>
-          <p className="mb-6">At Integrity Closings CLT, we understand the high stakes of North Carolina real estate. We aren't just notaries; we are your partners in ensuring every transaction ends with a handshake and a smile. Whether you need help with a <Link to="/services/mobile-refi-service-notarization" className="text-brand-600 hover:underline">mobile refi service</Link> or a complex estate closing involving a <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney</Link>, we have the expertise you need.</p>
+          <p className="mb-6">At Integrity Closings CLT, we understand the high stakes of North Carolina real estate. We aren't just notaries; we are your partners in ensuring every transaction ends with a handshake and a smile. Whether you need help with a <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile refi service</Link> or a complex estate closing involving a <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney</Link>, we have the expertise you need.</p>
 
           <p className="mb-4 font-bold">Our Services Include:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">

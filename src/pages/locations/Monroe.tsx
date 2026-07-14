@@ -6,7 +6,7 @@ export default function Monroe() {
     <CityPageLayout
       city="Monroe"
       geo={{ lat: 34.9854, lng: -80.5495 }}
-      image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920"
+      image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1920"
       introText={
         <>
           Need a <strong>mobile notary in Monroe, NC</strong>? Integrity Closings CLT provides professional, on-demand notary services throughout Union County. Whether you are at a local coffee shop in <strong>Downtown Monroe</strong>, a business near <strong>Highway 74</strong>, or your own front door, we bring the notary office to you. We are committed to providing Monroe residents with secure, accurate, and stress-free notarizations for all their legal and financial documents.
