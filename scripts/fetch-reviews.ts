@@ -18,13 +18,6 @@
  *
  * Note: the legacy Places API caps the `reviews` field at 5 results — this
  * is a documented Google limitation, not a bug here.
- *
- * Place ID resolution: a hardcoded Place ID was tried first and came back
- * NOT_FOUND ("no longer valid") from a real, working API key — Place IDs
- * can go stale over time per Google's own docs. Rather than hardcode a new
- * one that can drift again, this script resolves the current Place ID from
- * the business name + address via the Find Place endpoint on every run, so
- * it self-heals if Google reassigns the ID again later.
  */
 
 import { writeFileSync } from 'fs';
@@ -35,42 +28,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const outPath = path.join(__dirname, '..', 'src', 'data', 'reviews.json');
 
-const BUSINESS_QUERY = 'Integrity Closings CLT';
-// Actual office coordinates (src/config/business.ts officeLocation) — biases
-// the text search toward the right result without requiring an exact
-// address match.
-const OFFICE_LAT = 35.1813;
-const OFFICE_LNG = -80.6556;
-// Business phone number in E.164 format — Find Place also accepts this as
-// an input type, and it's a far more exact match than fuzzy name text
-// search, which returned ZERO_RESULTS twice even with a location bias.
-const BUSINESS_PHONE_E164 = '+19805058050';
-
-async function findPlace(apiKey: string, input: string, inputtype: 'textquery' | 'phonenumber', locationbias?: string): Promise<string | null> {
-  const params = new URLSearchParams({ input, inputtype, fields: 'place_id', key: apiKey });
-  if (locationbias) params.set('locationbias', locationbias);
-  const url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?${params.toString()}`;
-  const res = await fetch(url);
-  if (!res.ok) {
-    console.warn(`[fetch-reviews] Find Place (${inputtype}) lookup returned HTTP ${res.status}.`);
-    return null;
-  }
-  const data = await res.json();
-  if (data.status !== 'OK' || !data.candidates?.[0]?.place_id) {
-    console.warn(`[fetch-reviews] Find Place (${inputtype}) lookup status "${data.status}"${data.error_message ? `: ${data.error_message}` : ''}.`);
-    return null;
-  }
-  return data.candidates[0].place_id;
-}
-
-async function resolvePlaceId(apiKey: string): Promise<string | null> {
-  // Try the phone number first — it's an exact match, not a fuzzy text
-  // search, so it's the most reliable identifier we have.
-  const byPhone = await findPlace(apiKey, BUSINESS_PHONE_E164, 'phonenumber');
-  if (byPhone) return byPhone;
-
-  return findPlace(apiKey, BUSINESS_QUERY, 'textquery', `point:${OFFICE_LAT},${OFFICE_LNG}`);
-}
+const PLACE_ID = 'ChIJ0tPMkD9fVIgRXEwsq2ouoKk';
 
 interface GooglePlaceReview {
   author_name: string;
@@ -101,13 +59,7 @@ async function main() {
   }
 
   try {
-    const placeId = await resolvePlaceId(apiKey);
-    if (!placeId) {
-      console.warn('[fetch-reviews] Could not resolve a current Place ID — keeping existing reviews.json.');
-      return;
-    }
-
-    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${encodeURIComponent(placeId)}&fields=reviews,rating,user_ratings_total&key=${apiKey}`;
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${encodeURIComponent(PLACE_ID)}&fields=reviews,rating,user_ratings_total&key=${apiKey}`;
     const res = await fetch(url);
     if (!res.ok) {
       console.warn(`[fetch-reviews] Places API returned HTTP ${res.status} — keeping existing reviews.json.`);
