@@ -48,6 +48,20 @@ export default function Services() {
       image: '/mobile-notary.jpg',
       link: '/loan-signing-agent-charlotte-nc',
       anchor: 'Loan Signing Agent in Charlotte'
+    },
+    {
+      title: 'Seller Documents',
+      description: 'Notarization for home sellers — deeds, settlement statements, affidavits of title, and closing packages.',
+      image: 'https://images.unsplash.com/photo-1759428679273-11d914866394?auto=format&fit=crop&q=80&w=800',
+      link: '/services/seller-documents',
+      anchor: 'Seller Documents Notary in Charlotte'
+    },
+    {
+      title: 'Lender Provided Documents',
+      description: 'Signing support for refinance packages, buyer/seller packages, HELOCs, and loan modifications.',
+      image: '/lender-provided-documents.png',
+      link: '/services/lender-provided-documents',
+      anchor: 'Lender Provided Documents Notary in Charlotte'
     }
   ];
 

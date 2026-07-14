@@ -54,6 +54,16 @@ export const pageMeta: Record<string, PageMeta> = {
     description: 'Professional mobile notary for Power of Attorney, Wills, and Trust documents in Charlotte, NC. Home, hospital, and nursing home visits available.',
     canonical: `${businessConfig.domain}/power-of-attorney-estate-documents-charlotte-nc`,
   },
+  '/services/lender-provided-documents': {
+    title: `Lender Provided Documents Notary Charlotte NC | ${businessConfig.name}`,
+    description: 'Mobile notary and loan signing agent for lender-provided document packages in Charlotte, NC — refinances, buyer/seller packages, HELOCs, and loan modifications.',
+    canonical: `${businessConfig.domain}/services/lender-provided-documents`,
+  },
+  '/services/seller-documents': {
+    title: `Seller Closing Documents Notary Charlotte NC | ${businessConfig.name}`,
+    description: 'Mobile notary for home sellers in Charlotte, NC — deeds, settlement statements, affidavits of title, and other seller closing package documents.',
+    canonical: `${businessConfig.domain}/services/seller-documents`,
+  },
   '/areas-served': {
     title: `Mobile Notary Service Areas | Charlotte NC & Surrounding Counties | ${businessConfig.name}`,
     description: `${businessConfig.name} provides mobile notary services across Mecklenburg, Union, and Cabarrus counties including Mint Hill, Matthews, Huntersville, Monroe, and more.`,

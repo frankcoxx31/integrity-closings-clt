@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function LenderProvidedDocuments() {
   useEffect(() => {
-    document.title = "Loan Signing Agent Charlotte NC | Lender Provided Documents";
+    document.title = "Lender Provided Documents Notary Charlotte NC | Integrity Closings CLT";
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'lender-notary-schema';

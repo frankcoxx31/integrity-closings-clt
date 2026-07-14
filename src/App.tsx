@@ -44,6 +44,7 @@ import RealEstateDocuments from './pages/services/RealEstateDocuments';
 import SpecialConsiderations from './pages/services/SpecialConsiderations';
 import MiscellaneousDocuments from './pages/services/MiscellaneousDocuments';
 import LenderProvidedDocuments from './pages/services/LenderProvidedDocuments';
+import SellerDocuments from './pages/services/SellerDocuments';
 import PowerOfAttorneyEstateDocuments from './pages/services/PowerOfAttorneyEstateDocuments';
 
 // Location Pages
@@ -95,6 +96,7 @@ export function AppContent() {
             <Route path="/services/special-considerations" element={<SpecialConsiderations />} />
             <Route path="/services/miscellaneous-documents" element={<MiscellaneousDocuments />} />
             <Route path="/services/lender-provided-documents" element={<LenderProvidedDocuments />} />
+            <Route path="/services/seller-documents" element={<SellerDocuments />} />
             <Route path="/power-of-attorney-estate-documents-charlotte-nc" element={<PowerOfAttorneyEstateDocuments />} />
 
             {/* Location Pages */}

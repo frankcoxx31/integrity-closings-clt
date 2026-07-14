@@ -65,6 +65,7 @@ const routes = [
   '/services/special-considerations',
   '/services/miscellaneous-documents',
   '/services/lender-provided-documents',
+  '/services/seller-documents',
   '/locations/charlotte',
   '/locations/concord',
   '/locations/gastonia',
@@ -95,8 +96,7 @@ function applyMeta(html: string, route: string): string {
 
 // The LocalBusiness schema's aggregateRating is the same block on every
 // page (it lives in index.html's <head>, shared by the whole shell), so
-// this applies to every route the same way — sourced from reviews.json,
-// which fetch-reviews.ts refreshes from the live Places API each build.
+// this applies to every route the same way — sourced from reviews.json.
 function applyAggregateRating(html: string): string {
   const { rating, userRatingsTotal } = reviewsData;
   if (rating == null || userRatingsTotal == null) return html;
