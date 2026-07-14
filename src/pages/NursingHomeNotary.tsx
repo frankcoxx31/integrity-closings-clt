@@ -370,7 +370,7 @@ export default function NursingHomeNotary() {
               <div className="flex flex-wrap gap-3">
                 <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline text-sm">Hospital & Bedside Notary</Link>
                 <span className="text-slate-300">|</span>
-                <Link to="/estate-planning-notary-charlotte-nc" className="text-brand-600 hover:underline text-sm">Estate Planning Notary</Link>
+                <Link to="/estate-notary-charlotte-nc" className="text-brand-600 hover:underline text-sm">Estate Planning Notary</Link>
                 <span className="text-slate-300">|</span>
                 <Link to="/blog/power-of-attorney-north-carolina-notarized" className="text-brand-600 hover:underline text-sm">Power of Attorney Guide</Link>
                 <span className="text-slate-300">|</span>

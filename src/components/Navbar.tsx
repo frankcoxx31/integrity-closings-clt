@@ -117,7 +117,7 @@ export default function Navbar() {
                         </button>
                         <div className="border-t border-white/10" />
                         <button
-                          onClick={() => { setServicesOpen(false); navigate('/estate-planning-notary-charlotte-nc'); }}
+                          onClick={() => { setServicesOpen(false); navigate('/estate-notary-charlotte-nc'); }}
                           className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-white/5 transition-colors"
                         >
                           📜 Estate Notarizations
@@ -213,7 +213,7 @@ export default function Navbar() {
                 📋 Loan Signing Agent
               </button>
               <button
-                onClick={() => { setIsOpen(false); navigate('/estate-planning-notary-charlotte-nc'); }}
+                onClick={() => { setIsOpen(false); navigate('/estate-notary-charlotte-nc'); }}
                 className="block w-full text-left px-3 py-2 pl-6 rounded-md text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-brand-900 focus:outline-none"
               >
                 📜 Estate Notarizations
