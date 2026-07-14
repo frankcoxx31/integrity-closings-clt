@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Citation Tracker — Integrity Closings CLT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #f1f5f9; padding: 32px 16px; color: #1e293b; }
+
+    .container { max-width: 900px; margin: 0 auto; }
+
+    h1 { font-size: 1.5rem; font-weight: 700; color: #172554; margin-bottom: 4px; }
+    .subtitle { font-size: .88rem; color: #64748b; margin-bottom: 24px; }
+
+    /* NAP Block */
+    .nap-block {
+      background: #172554; color: #fff; border-radius: 10px;
+      padding: 20px 24px; margin-bottom: 28px;
+    }
+    .nap-block h2 { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #93c5fd; margin-bottom: 12px; }
+    .nap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+    .nap-row { font-size: .82rem; }
+    .nap-row span { color: rgba(255,255,255,.5); margin-right: 6px; }
+    .nap-row strong { color: #fff; }
+    .nap-desc { margin-top: 10px; font-size: .78rem; color: rgba(255,255,255,.65); line-height: 1.55; grid-column: 1 / -1; }
+
+    /* Progress bar */
+    .progress-wrap { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+    .progress-label { font-size: .82rem; font-weight: 600; color: #172554; white-space: nowrap; }
+    .progress-bar-bg { flex: 1; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: #2563eb; border-radius: 4px; transition: width .3s; }
+    .progress-count { font-size: .82rem; color: #64748b; white-space: nowrap; }
+
+    /* Section */
+    .section-title {
+      font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: #64748b; padding: 6px 0; margin: 20px 0 8px; border-bottom: 1px solid #e2e8f0;
+    }
+
+    /* Citation rows */
+    .citation-row {
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;
+      padding: 12px 16px; margin-bottom: 6px;
+      display: grid; grid-template-columns: 24px 1fr auto;
+      gap: 12px; align-items: center;
+      cursor: pointer;
+      transition: border-color .15s;
+    }
+    .citation-row:hover { border-color: #93c5fd; }
+    .citation-row.done { background: #f0fdf4; border-color: #bbf7d0; }
+    .citation-row.done .cite-name { text-decoration: line-through; color: #86efac; }
+
+    .cite-check {
+      width: 20px; height: 20px; border-radius: 4px; border: 2px solid #cbd5e1;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: all .15s;
+    }
+    .citation-row.done .cite-check { background: #22c55e; border-color: #22c55e; }
+    .cite-check svg { display: none; }
+    .citation-row.done .cite-check svg { display: block; }
+
+    .cite-info { min-width: 0; }
+    .cite-name { font-size: .88rem; font-weight: 600; color: #172554; margin-bottom: 2px; }
+    .cite-why { font-size: .74rem; color: #64748b; line-height: 1.45; }
+
+    .cite-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+    .cite-cost { font-size: .68rem; font-weight: 600; padding: 2px 8px; border-radius: 100px; }
+    .cost-free { background: #dcfce7; color: #166534; }
+    .cost-paid { background: #fef3c7; color: #92400e; }
+    .cost-ppl { background: #ede9fe; color: #5b21b6; }
+    .cite-link { font-size: .72rem; color: #2563eb; text-decoration: none; }
+    .cite-link:hover { text-decoration: underline; }
+
+    .tier-badge { font-size: .6rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #94a3b8; }
+
+    @media print {
+      .no-print { display: none; }
+      body { background: #fff; padding: 16px; }
+      .citation-row { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+    <div>
+      <h1>Citation Tracker — Integrity Closings CLT</h1>
+      <p class="subtitle">Check off each listing as you claim it. Click any row to mark done. Progress saves in your browser.</p>
+    </div>
+    <button class="no-print" onclick="window.print()" style="background:#172554;color:#fff;border:none;padding:8px 18px;border-radius:6px;font-size:.82rem;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0;margin-left:16px;">Print Checklist</button>
+  </div>
+
+  <!-- NAP Block -->
+  <div class="nap-block">
+    <h2>Use This NAP Exactly — Copy/Paste for Every Directory</h2>
+    <div class="nap-grid">
+      <div class="nap-row"><span>Name:</span><strong>Integrity Closings CLT</strong></div>
+      <div class="nap-row"><span>Phone:</span><strong>(980) 505-8050</strong></div>
+      <div class="nap-row"><span>Address:</span><strong>Charlotte, NC (SAB — no street)</strong></div>
+      <div class="nap-row"><span>Email:</span><strong>fcoxx@integrityclosingsclt.com</strong></div>
+      <div class="nap-row"><span>Website:</span><strong>https://www.integrityclosingsclt.com</strong></div>
+      <div class="nap-row"><span>Categories:</span><strong>Notary Public, Loan Signing Agent, Mobile Notary</strong></div>
+      <div class="nap-desc">Description: Mobile notary and loan signing services in Charlotte, NC and surrounding areas. Serving Mecklenburg, Union, and Cabarrus Counties including Matthews, Mint Hill, Pineville, Concord, Monroe, and Indian Trail. Same-day, after-hours, hospital, and estate planning notarizations available.</div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-wrap">
+    <span class="progress-label">Progress</span>
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill" style="width:0%"></div></div>
+    <span class="progress-count" id="progressCount">0 / 34 claimed</span>
+  </div>
+
+  <!-- MUST DO -->
+  <div class="section-title">Must-Do — Claim These First</div>
+
+  <div id="citations">
+
+    <div class="citation-row" data-id="1" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Google Business Profile</div>
+        <div class="cite-why">Drives the local map pack — single highest-impact citation for Charlotte mobile notary searches</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://business.google.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="2" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Bing Places for Business</div>
+        <div class="cite-why">Feeds Apple Maps + Cortana; substantial share of desktop searches</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://bingplaces.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="3" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Apple Business Connect</div>
+        <div class="cite-why">Controls Apple Maps — critical for iPhone users searching "notary near me"</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://businessconnect.apple.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="4" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Notary Rotary</div>
+        <div class="cite-why">#1 notary-specific directory — title companies and signing services search here first to source local signing agents</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free / Paid</span>
+        <a class="cite-link" href="https://www.notaryrotary.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="5" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">123notary.com</div>
+        <div class="cite-why">Second-largest notary directory; consumers and escrow officers search by zip code — Charlotte market is active</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free / Paid</span>
+        <a class="cite-link" href="https://www.123notary.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="6" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">SigningAgent.com (NNA)</div>
+        <div class="cite-why">National Notary Association's official directory — NNA listing signals credibility to lenders and title companies</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-paid">Paid (NNA membership)</span>
+        <a class="cite-link" href="https://www.signingagent.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="7" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">NC Secretary of State — Notary Directory</div>
+        <div class="cite-why">Official NC state registry — attorneys and hospitals check this before engaging a notary</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.sosnc.gov/online_services/notary/search" target="_blank" onclick="event.stopPropagation()">Verify →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="8" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Data Axle / Express Update</div>
+        <div class="cite-why">Master aggregator feeding Yellowpages, Superpages, Yahoo Local, and 200+ downstream directories from one correction</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.expressupdate.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="9" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Localeze (Neustar)</div>
+        <div class="cite-why">Second major US data aggregator — fixes NAP consistency across Waze, HERE Maps, and local data networks</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free / Paid</span>
+        <a class="cite-link" href="https://www.neustarlocaleze.biz" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="10" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Yelp for Business</div>
+        <div class="cite-why">Consumers searching "notary near me Charlotte" frequently see Yelp results; reviews carry trust for document services</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://biz.yelp.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="11" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Facebook Business Page</div>
+        <div class="cite-why">Social citation + Charlotte neighborhood groups share local service recommendations here regularly</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://business.facebook.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="12" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Better Business Bureau (BBB Carolinas)</div>
+        <div class="cite-why">Trust signal for estate planning and POA clients — BBB accreditation is explicitly searched for legal-adjacent services</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free listing</span>
+        <a class="cite-link" href="https://www.bbb.org/us/nc/charlotte" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="13" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Snapdocs</div>
+        <div class="cite-why">Dominant platform connecting title companies with signing agents — primary B2B pipeline for loan signings in the US</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.snapdocs.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="14" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Thumbtack</div>
+        <div class="cite-why">Charlotte consumers actively search "mobile notary Charlotte" on Thumbtack — high-intent lead-gen category</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-ppl">Pay per lead</span>
+        <a class="cite-link" href="https://www.thumbtack.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <!-- SHOULD DO -->
+    <div class="section-title">Should-Do — High Value, Claim Within 30 Days</div>
+
+    <div class="citation-row" data-id="15" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">NotaryCafe.com</div>
+        <div class="cite-why">Community-based notary directory — signing services source local agents here; Charlotte listings get direct outreach</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.notarycafe.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="16" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">NotaryStars.com</div>
+        <div class="cite-why">Review-aggregator and directory for notaries — consumers compare agents by star rating and service area</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.notarystars.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="17" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Foursquare for Business</div>
+        <div class="cite-why">Feeds Uber, Samsung, TripAdvisor, and hundreds of apps — one claim creates broad downstream NAP consistency</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://foursquare.com/business" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="18" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">LinkedIn Company Page</div>
+        <div class="cite-why">B2B credibility for title companies and mortgage lenders researching signing agents; also a citation in Google's eyes</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.linkedin.com/company" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="19" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Nextdoor Business</div>
+        <div class="cite-why">Hyperlocal — Charlotte residents ask for notary recommendations on Nextdoor; claimed pages appear in those searches</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://business.nextdoor.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="20" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Charlotte Regional Business Alliance (Chamber)</div>
+        <div class="cite-why">Charlotte's main chamber of commerce — member listing signals local legitimacy and generates local link equity</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-paid">Paid membership</span>
+        <a class="cite-link" href="https://charlottechamber.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="21" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Alignable</div>
+        <div class="cite-why">Small-business referral network with active Charlotte community — real estate agents and mortgage brokers use it</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.alignable.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="22" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Yellow Pages (YP.com)</div>
+        <div class="cite-why">Significant downstream data source; SAB listing without street address is supported</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.yellowpages.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="23" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Whitepages</div>
+        <div class="cite-why">Consumers sometimes verify a business here before allowing a stranger into their home to notarize</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.whitepages.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="24" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">American Society of Notaries (ASN)</div>
+        <div class="cite-why">Secondary notary association directory — membership differentiates against uncredentialed competitors</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-paid">Paid membership</span>
+        <a class="cite-link" href="https://www.asnnotary.org" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="25" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Signing Order</div>
+        <div class="cite-why">Loan signing platform used by escrow and title companies — profile here feeds B2B loan signing leads directly</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free</span>
+        <a class="cite-link" href="https://www.signingorder.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="26" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Bark.com</div>
+        <div class="cite-why">Consumer marketplace active in Charlotte — after-hours and hospital notary queries appear regularly</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-ppl">Pay per lead</span>
+        <a class="cite-link" href="https://www.bark.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <div class="citation-row" data-id="27" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info">
+        <div class="cite-name">Angi (formerly Angie's List)</div>
+        <div class="cite-why">"Notary" and "document signing" categories are active in Charlotte; consumers use it to vet trust-service providers</div>
+      </div>
+      <div class="cite-right">
+        <span class="cite-cost cost-free">Free listing</span>
+        <a class="cite-link" href="https://www.angi.com" target="_blank" onclick="event.stopPropagation()">Claim →</a>
+      </div>
+    </div>
+
+    <!-- NICE TO HAVE -->
+    <div class="section-title">Nice-to-Have — Fill In Over Time</div>
+
+    <div class="citation-row" data-id="28" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info"><div class="cite-name">Hotfrog US</div><div class="cite-why">Free directory feeding smaller aggregators — low effort, minor NAP consistency value</div></div>
+      <div class="cite-right"><span class="cite-cost cost-free">Free</span><a class="cite-link" href="https://us.hotfrog.com" target="_blank" onclick="event.stopPropagation()">Claim →</a></div>
+    </div>
+
+    <div class="citation-row" data-id="29" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info"><div class="cite-name">Manta</div><div class="cite-why">Small business directory with decent domain authority; adds NAP consistency in Google's entity graph</div></div>
+      <div class="cite-right"><span class="cite-cost cost-free">Free</span><a class="cite-link" href="https://www.manta.com" target="_blank" onclick="event.stopPropagation()">Claim →</a></div>
+    </div>
+
+    <div class="citation-row" data-id="30" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info"><div class="cite-name">Superpages</div><div class="cite-why">Separate from YP.com; adds a second citation in the YP/AT&T data family</div></div>
+      <div class="cite-right"><span class="cite-cost cost-free">Free</span><a class="cite-link" href="https://www.superpages.com" target="_blank" onclick="event.stopPropagation()">Claim →</a></div>
+    </div>
+
+    <div class="citation-row" data-id="31" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info"><div class="cite-name">MerchantCircle</div><div class="cite-why">Free local business network — low authority but easy NAP win</div></div>
+      <div class="cite-right"><span class="cite-cost cost-free">Free</span><a class="cite-link" href="https://www.merchantcircle.com" target="_blank" onclick="event.stopPropagation()">Claim →</a></div>
+    </div>
+
+    <div class="citation-row" data-id="32" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info"><div class="cite-name">Brownbook</div><div class="cite-why">International free directory with US listings — minor aggregator footprint</div></div>
+      <div class="cite-right"><span class="cite-cost cost-free">Free</span><a class="cite-link" href="https://www.brownbook.net" target="_blank" onclick="event.stopPropagation()">Claim →</a></div>
+    </div>
+
+    <div class="citation-row" data-id="33" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info"><div class="cite-name">ChamberofCommerce.com</div><div class="cite-why">Business directory posing as chamber resource — lower quality than Charlotte chamber but adds a citation</div></div>
+      <div class="cite-right"><span class="cite-cost cost-free">Free</span><a class="cite-link" href="https://www.chamberofcommerce.com" target="_blank" onclick="event.stopPropagation()">Claim →</a></div>
+    </div>
+
+    <div class="citation-row" data-id="34" onclick="toggle(this)">
+      <div class="cite-check"><svg width="12" height="10" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1,5 4,8 11,1"/></svg></div>
+      <div class="cite-info"><div class="cite-name">ActiveRain</div><div class="cite-why">Real estate professional network — notary profile puts you in front of Charlotte Realtors who assign loan signings</div></div>
+      <div class="cite-right"><span class="cite-cost cost-free">Free</span><a class="cite-link" href="https://activerain.com" target="_blank" onclick="event.stopPropagation()">Claim →</a></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  const TOTAL = 34;
+
+  function toggle(row) {
+    row.classList.toggle('done');
+    const id = row.dataset.id;
+    const done = JSON.parse(localStorage.getItem('citations') || '{}');
+    if (row.classList.contains('done')) done[id] = true;
+    else delete done[id];
+    localStorage.setItem('citations', JSON.stringify(done));
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const done = JSON.parse(localStorage.getItem('citations') || '{}');
+    const count = Object.keys(done).length;
+    const pct = Math.round((count / TOTAL) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressCount').textContent = count + ' / ' + TOTAL + ' claimed';
+  }
+
+  function loadState() {
+    const done = JSON.parse(localStorage.getItem('citations') || '{}');
+    document.querySelectorAll('.citation-row').forEach(row => {
+      if (done[row.dataset.id]) row.classList.add('done');
+    });
+    updateProgress();
+  }
+
+  loadState();
+</script>
+</body>
+</html>
