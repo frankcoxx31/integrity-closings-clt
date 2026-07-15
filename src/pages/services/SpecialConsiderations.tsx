@@ -5,6 +5,10 @@ import { useEffect } from 'react';
 export default function SpecialConsiderations() {
   useEffect(() => {
     document.title = "After-Hours & Special Consideration Notary Charlotte NC | Integrity Closings CLT";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Flexible mobile notary services in Charlotte, NC for after-hours, special locations, and other unique notarization circumstances.");
+    }
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'special-notary-schema';

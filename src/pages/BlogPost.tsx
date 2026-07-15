@@ -2,40 +2,19 @@ import { Calendar, User, ArrowLeft } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import autoPosts from '../data/auto-blog-posts.json';
+import { manualBlogPosts } from '../data/manual-blog-posts';
 
 export default function BlogPost() {
   const { slug } = useParams();
 
   useEffect(() => {
-    const seoData: Record<string, { title: string, description: string }> = {
-      'power-of-attorney-north-carolina-notarized': {
-        title: 'Power of Attorney in North Carolina: What You Need & How to Get It Notarized | Integrity Closings CLT',
-        description: 'Learn the NC Power of Attorney requirements, types, what to bring to your notary appointment, and how a Charlotte mobile notary can come to your home or hospital room.'
-      },
-      'what-title-companies-need-from-mobile-loan-signing-agent': {
-        title: 'What Title Companies Need From a Mobile Loan Signing Agent | Integrity Closings CLT',
-        description: 'Title companies need more than a notary stamp. Discover the 6 qualities that separate a reliable mobile loan signing agent from one that creates costly errors and delays.'
-      },
-      'why-charlotte-closing-attorneys-need-trusted-mobile-signing-partner-2026': {
-        title: 'Why Charlotte Closing Attorneys Need a Trusted Mobile Signing Partner in 2026 | Integrity Closings CLT',
-        description: "Charlotte closing attorneys are turning to mobile signing partners to scale operations, meet client expectations, and handle last-minute closings in 2026's fast-paced real estate market."
-      },
-      'mobile-loan-signing-support-saves-closing-team-time': {
-        title: 'Mobile Loan Signing Support Saves Your Closing Team Time | Integrity Closings CLT',
-        description: 'See how mobile loan signing support helps Charlotte title companies and closing attorneys reduce delays, handle overflow, and keep borrowers happy from start to finish.'
-      },
-      'hospital-notary-services-charlotte': {
-        title: 'Hospital & Bedside Notary Charlotte NC | Integrity Closings CLT',
-        description: 'Learn why a specialized hospital notary is essential for Power of Attorney and healthcare directives in Charlotte medical facilities.'
-      },
-      '7-ways-reliable-signing-agent-makes-closings-run-smoother': {
-        title: '7 Ways a Reliable Signing Agent Makes Your Closings Run Smoother | Integrity Closings CLT',
-        description: 'Discover seven specific ways a reliable loan signing agent keeps your closings on track — from professional presence and error prevention to real-time updates and regional flexibility in Charlotte, NC.'
-      }
-    };
-
+    const manual = manualBlogPosts.find((p) => p.slug === slug);
     const auto = autoPosts.find((p) => p.slug === slug);
-    const currentSeo = seoData[slug || ''] || (auto ? { title: auto.seoTitle, description: auto.seoDescription } : undefined);
+    const currentSeo = manual?.seoTitle && manual?.seoDescription
+      ? { title: manual.seoTitle, description: manual.seoDescription }
+      : auto
+        ? { title: auto.seoTitle, description: auto.seoDescription }
+        : undefined;
     if (currentSeo) {
       document.title = currentSeo.title;
       const metaDesc = document.querySelector('meta[name="description"]');

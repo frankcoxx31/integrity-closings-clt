@@ -1,8 +1,12 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { pageMeta } from '../../seo/pageMeta';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 export default function WhatIsMobileNotary() {
+  usePageMeta(pageMeta['/resources/what-is-mobile-notary']);
+
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
       <div className="bg-brand-950 py-16">

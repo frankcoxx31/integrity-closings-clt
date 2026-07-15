@@ -1,4 +1,6 @@
 import { Star, StarHalf, ShoppingCart, Youtube, Stamp, Laptop, AppWindow, Briefcase } from 'lucide-react';
+import { pageMeta } from '../../seo/pageMeta';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 interface Product {
   name: string;
@@ -261,6 +263,8 @@ const sections: Section[] = [
 ];
 
 export default function NotaryToolkit() {
+  usePageMeta(pageMeta['/resources/notary-toolkit']);
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });

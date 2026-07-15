@@ -1,6 +1,10 @@
 import { CheckCircle, Shield, Award, Briefcase, Calendar } from 'lucide-react';
+import { pageMeta } from '../seo/pageMeta';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function About() {
+  usePageMeta(pageMeta['/about']);
+
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
       {/* Header Image */}

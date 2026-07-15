@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Phone, Mail, Clock, MapPin } from 'lucide-react';
 import { businessConfig } from '../config/business';
+import { pageMeta } from '../seo/pageMeta';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function Contact() {
+  usePageMeta(pageMeta['/contact']);
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',

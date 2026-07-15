@@ -31,8 +31,11 @@ import { fileURLToPath } from 'url';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
 import { AppContent } from '../src/App';
-import { pageMeta } from '../src/seo/pageMeta';
+import { pageMeta, type PageMeta } from '../src/seo/pageMeta';
+import { businessConfig } from '../src/config/business';
 import reviewsData from '../src/data/reviews.json';
+import autoPosts from '../src/data/auto-blog-posts.json';
+import { manualBlogPosts } from '../src/data/manual-blog-posts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -52,6 +55,7 @@ const routes = [
   '/areas-served',
   '/about',
   '/contact',
+  '/blog',
   '/faq',
   '/resources',
   '/resources/acknowledgment-vs-jurat',
@@ -85,8 +89,33 @@ const routes = [
   '/disclaimer',
 ];
 
+// Blog posts are data-driven (auto-blog-posts.json + manual-blog-posts.ts)
+// rather than one static route per file, so their meta is built here instead
+// of living in pageMeta.ts. Every post gets a real, unique title/description
+// baked into its prerendered HTML — previously /blog/:slug wasn't prerendered
+// at all, so crawlers saw the homepage's content on every blog URL.
+const blogMeta: Record<string, PageMeta> = {};
+for (const post of autoPosts) {
+  const route = `/blog/${post.slug}`;
+  routes.push(route);
+  blogMeta[route] = {
+    title: post.seoTitle,
+    description: post.seoDescription,
+    canonical: `${businessConfig.domain}${route}`,
+  };
+}
+for (const post of manualBlogPosts) {
+  const route = `/blog/${post.slug}`;
+  routes.push(route);
+  blogMeta[route] = {
+    title: post.seoTitle || `${post.title} | ${businessConfig.name}`,
+    description: post.seoDescription || post.excerpt.slice(0, 157).trim() + (post.excerpt.length > 157 ? '...' : ''),
+    canonical: `${businessConfig.domain}${route}`,
+  };
+}
+
 function applyMeta(html: string, route: string): string {
-  const meta = pageMeta[route];
+  const meta = pageMeta[route] || blogMeta[route];
   if (!meta) return html;
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
   html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);

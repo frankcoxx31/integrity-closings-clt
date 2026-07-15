@@ -5,6 +5,10 @@ import { useEffect } from 'react';
 export default function MiscellaneousDocuments() {
   useEffect(() => {
     document.title = "Miscellaneous Document Notary Charlotte NC | Integrity Closings CLT";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Mobile notary services for miscellaneous documents in Charlotte, NC — vehicle titles, school forms, travel consents, and more.");
+    }
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'misc-notary-schema';

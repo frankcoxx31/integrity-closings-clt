@@ -5,6 +5,10 @@ import { useEffect } from 'react';
 export default function LegalDocuments() {
   useEffect(() => {
     document.title = "Legal Document Mobile Notary Charlotte NC | Integrity Closings CLT";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Mobile notary services for legal documents in Charlotte, NC — court documents, adoption papers, settlement agreements, and more.");
+    }
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'legal-notary-schema';

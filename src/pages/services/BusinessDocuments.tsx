@@ -6,6 +6,10 @@ export default function BusinessDocuments() {
   useEffect(() => {
     // SEO Meta Tags
     document.title = "Business Document Mobile Notary Charlotte NC | Integrity Closings CLT";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Mobile notary services for business documents in Charlotte, NC — contracts, corporate resolutions, employment verification, and more.");
+    }
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'business-notary-schema';

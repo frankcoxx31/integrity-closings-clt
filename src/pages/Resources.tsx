@@ -1,8 +1,12 @@
 import React from 'react';
 import { FileText, Video, BookOpen, ExternalLink, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { pageMeta } from '../seo/pageMeta';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function Resources() {
+  usePageMeta(pageMeta['/resources']);
+
   const videos = [
     { 
       id: '1', 

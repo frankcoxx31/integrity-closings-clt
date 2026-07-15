@@ -723,13 +723,21 @@ async function startServer() {
     // scripts/prerender.tsx (run as part of `npm run build`) writes a fully
     // rendered dist/<route>/index.html for every route in pageMeta (and more)
     // — real page content plus correct <title>/description/canonical already
-    // baked in. express.static below serves those directly (with its default
-    // "/foo" -> "/foo/" redirect to the directory's index.html), so no
-    // runtime meta-injection or route-specific handling is needed here
-    // anymore. Routes that were never prerendered (the SPA fallback below)
-    // still get the generic index.html shell, same as before prerendering
-    // existed — not a regression, just not yet optimized.
+    // baked in, with canonical tags omitting the trailing slash. Serve those
+    // directories' index.html directly for the no-slash path so the
+    // canonical URL itself returns 200 instead of express.static's default
+    // "/foo" -> "/foo/" redirect (which made every canonical tag point to a
+    // redirecting URL, not the final served one).
     const indexPath = path.join(distPath, 'index.html');
+
+    app.use((req, res, next) => {
+      if (req.method !== 'GET' || path.extname(req.path)) return next();
+      const candidate = path.join(distPath, req.path, 'index.html');
+      if (fs.existsSync(candidate)) {
+        return res.sendFile(candidate);
+      }
+      next();
+    });
 
     app.use(express.static(distPath));
 

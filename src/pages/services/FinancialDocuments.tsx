@@ -5,6 +5,10 @@ import { useEffect } from 'react';
 export default function FinancialDocuments() {
   useEffect(() => {
     document.title = "Financial Document Mobile Notary Charlotte NC | Integrity Closings CLT";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Mobile notary services for financial documents in Charlotte, NC — loan modifications, refinances, promissory notes, and more.");
+    }
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'financial-notary-schema';

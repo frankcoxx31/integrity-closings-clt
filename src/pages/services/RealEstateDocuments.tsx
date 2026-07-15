@@ -5,6 +5,10 @@ import { useEffect } from 'react';
 export default function RealEstateDocuments() {
   useEffect(() => {
     document.title = "Real Estate Document Notary Charlotte NC | Integrity Closings CLT";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Mobile notary for real estate documents in Charlotte, NC — deeds, closing disclosures, title documents, and property transfers.");
+    }
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'real-estate-schema';

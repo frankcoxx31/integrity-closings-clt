@@ -1,7 +1,11 @@
 import { Plus, Minus, MapPin } from 'lucide-react';
 import React, { useState } from 'react';
+import { pageMeta } from '../seo/pageMeta';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 export default function FAQPage() {
+  usePageMeta(pageMeta['/faq']);
+
   const faqs = [
     {
       question: "How much does a mobile notary cost in Charlotte NC?",

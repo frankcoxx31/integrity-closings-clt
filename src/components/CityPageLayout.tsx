@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { MapPin, Phone, CheckCircle, Shield, Award, Clock, Calendar, MessageSquare, ChevronDown } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { businessConfig } from '../config/business';
+import { pageMeta } from '../seo/pageMeta';
 
 interface ServiceCard {
   title: string;
@@ -53,13 +54,15 @@ export default function CityPageLayout({
   geo = businessConfig.hubGeo
 }: CityPageLayoutProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
     document.title = `Mobile Notary ${city} ${businessConfig.address.region} | ${businessConfig.name}`;
-    if (metaDescription) {
+    const descriptionToUse = metaDescription || pageMeta[location.pathname]?.description;
+    if (descriptionToUse) {
       const meta = document.querySelector('meta[name="description"]');
       if (meta) {
-        meta.setAttribute('content', metaDescription);
+        meta.setAttribute('content', descriptionToUse);
       }
     }
 
@@ -134,7 +137,7 @@ export default function CityPageLayout({
       const existing1 = document.getElementById(`schema-city-${city.replace(/\s+/g, '-').toLowerCase()}`);
       if (existing1) document.head.removeChild(existing1);
     };
-  }, [city, metaDescription, services, faqs]);
+  }, [city, metaDescription, services, faqs, location.pathname]);
 
   return (
     <div className="bg-white font-sans">
