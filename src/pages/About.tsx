@@ -46,9 +46,9 @@ export default function About() {
             
             <div className="mt-12 lg:mt-0 relative">
               <div className="absolute inset-0 bg-brand-600 rounded-2xl transform rotate-3 opacity-10"></div>
-              <img 
-                src="/about-page.jpg" 
-                alt="Professional Notary Service" 
+              <img
+                src="/about-page1.jpg"
+                alt="Frank Coxx, Certified Notary Signing Agent"
                 className="relative rounded-2xl shadow-xl w-full object-cover h-96"
                 referrerPolicy="no-referrer"
               />
