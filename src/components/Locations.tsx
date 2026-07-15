@@ -17,13 +17,13 @@ export default function Locations() {
     {
       city: 'Gastonia',
       areas: 'Belmont, Mount Holly, Dallas, Bessemer City, Lowell, Stanley',
-      image: '/gastiona.png',
+      image: '/gastiona.jpg',
       link: '/locations/gastonia'
     },
     {
       city: 'Locust',
       areas: 'Stanfield, Oakboro, Red Bridge, Mission, Locust Town Center',
-      image: '/locust.png',
+      image: '/locust.jpg',
       link: '/locations/locust'
     },
     {
@@ -35,7 +35,7 @@ export default function Locations() {
     {
       city: 'Midland',
       areas: 'Reed Gold Mine, Rob Wallace Park, Rocky River, Highway 24/27',
-      image: '/midland.png',
+      image: '/midland.jpg',
       link: '/locations/midland'
     },
     {

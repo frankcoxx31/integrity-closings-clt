@@ -3,35 +3,35 @@ export default function Services() {
     {
       title: 'General Mobile Notary',
       description: 'Standard notarizations at your home, office, or preferred location across the metro area.',
-      image: '/general-notary-work.png',
+      image: '/general-notary-work.jpg',
       link: '/general-notary-charlotte-nc',
       anchor: 'General Mobile Notary in Charlotte'
     },
     {
       title: 'Hospital & Healthcare Notary',
       description: 'Compassionate, discreet notarizations for patients and caregivers at medical facilities.',
-      image: '/hospital.png',
+      image: '/hospital.jpg',
       link: '/hospital-notary-charlotte-nc',
       anchor: 'Hospital Notary in Charlotte'
     },
     {
       title: 'Nursing Home & Assisted Living Notary',
       description: 'Mobile notary visits for residents at nursing homes, assisted living, and memory care facilities.',
-      image: '/Nursing Home & Assisted Living Notary.png',
+      image: '/Nursing Home & Assisted Living Notary.jpg',
       link: '/nursing-home-notary-charlotte-nc',
       anchor: 'Nursing Home Notary in Charlotte'
     },
     {
       title: 'Estate Planning Documents',
       description: 'Secure notarization for wills, trusts, living wills, and advance directives.',
-      image: '/personal-documents.png',
+      image: '/personal-documents.jpg',
       link: '/estate-notary-charlotte-nc',
       anchor: 'Estate Planning Notary in Charlotte'
     },
     {
       title: 'After-Hours & Emergency Notary',
       description: 'Urgent evening and weekend appointments available when you need us most.',
-      image: '/lender-sent-documents.png',
+      image: '/lender-sent-documents.jpg',
       link: '/after-hours-mobile-notary-charlotte-nc',
       anchor: 'After-Hours Notary in Charlotte'
     },
@@ -59,7 +59,7 @@ export default function Services() {
     {
       title: 'Lender Documents',
       description: 'Signing support for refinance packages, buyer/seller packages, HELOCs, and loan modifications.',
-      image: '/lender-provided-documents.png',
+      image: '/lender-provided-documents.jpg',
       link: '/services/lender-provided-documents',
       anchor: 'Lender Provided Documents Notary in Charlotte'
     }

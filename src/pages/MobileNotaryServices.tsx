@@ -135,7 +135,7 @@ export default function MobileNotaryServices() {
   const serviceCategories = [
     {
       title: "Personal Documents",
-      image: "/personal-documents.png",
+      image: "/personal-documents.jpg",
       alt: "Mobile notary Charlotte NC — personal documents",
       link: "/estate-notary-charlotte-nc",
       items: ["Affidavits", "Power of Attorney", "Wills & Trusts", "Medical Directives", "Passport Applications"]
@@ -191,7 +191,7 @@ export default function MobileNotaryServices() {
     },
     {
       title: "Lender Provided Documents",
-      image: "/lender-provided-documents.png",
+      image: "/lender-provided-documents.jpg",
       alt: "Loan signing agent Charlotte NC — lender provided documents",
       link: "/loan-signing-agent-charlotte-nc",
       items: ["Refinance Packages", "Buyer/Seller Packages", "Loan Modifications", "HELOCs", "Reverse Mortgages"]

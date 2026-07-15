@@ -6,7 +6,7 @@ export default function Midland() {
     <CityPageLayout
       city="Midland"
       geo={{ lat: 35.2949, lng: -80.4956 }}
-      image="/midland.png"
+      image="/midland.jpg"
       introText={
         <>
           Need a reliable, professional <strong>mobile notary in Midland, NC</strong>? Integrity Closings CLT provides fully on-demand notary services throughout Cabarrus County and nearby communities. Whether you're near <strong>Highway 24/27</strong>, relaxing at <strong>Rob Wallace Park</strong>, or signing documents in the comfort of your own home, our mobile notary service brings precision, efficiency, and integrity straight to your doorstep.

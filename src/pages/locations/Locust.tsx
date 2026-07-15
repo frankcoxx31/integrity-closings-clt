@@ -6,7 +6,7 @@ export default function Locust() {
     <CityPageLayout
       city="Locust"
       geo={{ lat: 35.3960, lng: -80.4384 }}
-      image="/locust.png"
+      image="/locust.jpg"
       introText={
         <>
           Searching for a professional <strong>mobile notary in Locust, NC</strong>? Integrity Closings CLT is your trusted partner for prompt and secure on-demand notary services. Serving Stanly County and surrounding regions, we bring professional notary solutions directly to your storefront, medical room, or living room. Experience hassle-free document authentication with a certified notary who meets you on your timeline.
