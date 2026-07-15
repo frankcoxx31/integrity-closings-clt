@@ -120,6 +120,12 @@ function applyMeta(html: string, route: string): string {
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
   html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);
   html = html.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${meta.canonical}"`);
+  // Open Graph tags default to the homepage's values in index.html's shell
+  // (shared by every prerendered route) — without this every non-homepage
+  // page shows the homepage's title/description/url when shared on social.
+  html = html.replace(/<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${meta.title}"`);
+  html = html.replace(/<meta property="og:description" content="[^"]*"/, `<meta property="og:description" content="${meta.description}"`);
+  html = html.replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${meta.canonical}"`);
   return html;
 }
 
