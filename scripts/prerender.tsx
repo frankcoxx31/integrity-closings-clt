@@ -134,6 +134,28 @@ function applyAggregateRating(html: string): string {
   return html;
 }
 
+// React 19 automatically emits a <link rel="preload" as="image"> for every
+// <img> it renders, inserted at the top of <div id="root"> — on the
+// homepage that's ~20 below-the-fold service/location card images, all
+// competing for bandwidth with the actual largest-contentful-paint element.
+// Hero.tsx renders its hero image as a CSS background-image (not an <img>),
+// so it never got one of these hints at all despite being the one image
+// that actually needs to load first. Strip the auto-generated ones and
+// inject a single correct high-priority preload for the routes that use
+// hero-bj.jpg as their above-the-fold visual.
+const HERO_IMAGE_ROUTES = new Set(['/', '/about']);
+
+function fixImagePreloads(html: string, route: string): string {
+  html = html.replace(/<link rel="preload" as="image"[^>]*\/>/g, '');
+  if (HERO_IMAGE_ROUTES.has(route)) {
+    html = html.replace(
+      '</title>',
+      '</title>\n    <link rel="preload" as="image" href="/hero-bj.jpg" fetchpriority="high" />'
+    );
+  }
+  return html;
+}
+
 function main() {
   if (!existsSync(shellPath)) {
     console.error('[prerender] dist/index.html not found — run `vite build` first.');
@@ -154,6 +176,7 @@ function main() {
       let html = shell.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
       html = applyMeta(html, route);
       html = applyAggregateRating(html);
+      html = fixImagePreloads(html, route);
 
       const outPath = route === '/'
         ? shellPath

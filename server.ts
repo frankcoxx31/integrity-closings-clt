@@ -18,6 +18,14 @@ async function startServer() {
 
   app.use(express.json());
 
+  // Tell browsers to only ever reach this site over HTTPS for the next
+  // year (including subdomains). Harmless if a request somehow arrives
+  // over plain HTTP — browsers only honor this header on HTTPS responses.
+  app.use((req, res, next) => {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    next();
+  });
+
   // Helper to load and clean Google Calendar credentials
   const getGoogleCredentials = async () => {
     let privateKey = process.env.GOOGLE_PRIVATE_KEY;
