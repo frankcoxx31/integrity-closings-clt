@@ -24,6 +24,7 @@ import GeneralNotary from './pages/GeneralNotary';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Disclaimer from './pages/Disclaimer';
+import ServiceAgreement from './pages/ServiceAgreement';
 import FAQPage from './pages/FAQPage';
 import QuoteCalculator from './pages/QuoteCalculator';
 import Resources from './pages/Resources';
@@ -137,6 +138,7 @@ export function AppContent() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/service-agreement" element={<ServiceAgreement />} />
           </Routes>
         </main>
         {!isLandingPage && <Footer />}

@@ -229,4 +229,9 @@ export const pageMeta: Record<string, PageMeta> = {
     description: 'Legal disclaimer for Integrity Closings CLT. A notary public is not an attorney and cannot give legal advice or draft legal documents.',
     canonical: `${businessConfig.domain}/disclaimer`,
   },
+  '/service-agreement': {
+    title: `Service Agreement & Fee Disclosure | ${businessConfig.name}`,
+    description: `Notary fee schedule and service terms for ${businessConfig.name} in North Carolina, including travel reimbursement, cancellation, and payment responsibility.`,
+    canonical: `${businessConfig.domain}/service-agreement`,
+  },
 };

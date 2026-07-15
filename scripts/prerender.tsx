@@ -87,6 +87,7 @@ const routes = [
   '/privacy-policy',
   '/terms-of-service',
   '/disclaimer',
+  '/service-agreement',
 ];
 
 // Blog posts are data-driven (auto-blog-posts.json + manual-blog-posts.ts)
