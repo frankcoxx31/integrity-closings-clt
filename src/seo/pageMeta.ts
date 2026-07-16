@@ -35,12 +35,12 @@ export const pageMeta: Record<string, PageMeta> = {
     canonical: `${businessConfig.domain}/estate-notary-charlotte-nc`,
   },
   '/after-hours-mobile-notary-charlotte-nc': {
-    title: `After-Hours Mobile Notary Charlotte NC | Evening & Weekend Notary | ${businessConfig.name}`,
+    title: `After-Hours Mobile Notary Charlotte NC | Nights & Weekends`,
     description: `Need a notary after hours in Charlotte, NC? We offer evening and weekend mobile notary appointments when banks and UPS stores are closed.`,
     canonical: `${businessConfig.domain}/after-hours-mobile-notary-charlotte-nc`,
   },
   '/loan-signing-agent-charlotte-nc': {
-    title: `Loan Signing Agent Charlotte NC | Certified Mobile Notary | ${businessConfig.name}`,
+    title: `Loan Signing Agent Charlotte NC | Certified Mobile Notary`,
     description: 'Certified loan signing agent serving Charlotte, NC and surrounding areas. Professional, accurate, and reliable closings at your home, office, or any location.',
     canonical: `${businessConfig.domain}/loan-signing-agent-charlotte-nc`,
   },
@@ -70,7 +70,7 @@ export const pageMeta: Record<string, PageMeta> = {
     canonical: `${businessConfig.domain}/blog`,
   },
   '/areas-served': {
-    title: `Mobile Notary Service Areas | Charlotte NC & Surrounding Counties | ${businessConfig.name}`,
+    title: `Mobile Notary Service Areas | Charlotte NC & Nearby`,
     description: `${businessConfig.name} provides mobile notary services across Mecklenburg, Union, and Cabarrus counties, including Mint Hill, Matthews, and Monroe.`,
     canonical: `${businessConfig.domain}/areas-served`,
   },
@@ -210,7 +210,7 @@ export const pageMeta: Record<string, PageMeta> = {
     canonical: `${businessConfig.domain}/locations/union-county-loan-signing-agent`,
   },
   '/title-company-attorney-closing-support-charlotte-nc': {
-    title: `Title Company & Attorney Closing Support | Charlotte, NC | ${businessConfig.name}`,
+    title: `Title Company & Attorney Closing Support | Charlotte NC`,
     description: 'Professional mobile closing support for title companies and real estate attorneys in Charlotte, NC. Reliable signer coordination and loan document execution.',
     canonical: `${businessConfig.domain}/title-company-attorney-closing-support-charlotte-nc`,
   },
