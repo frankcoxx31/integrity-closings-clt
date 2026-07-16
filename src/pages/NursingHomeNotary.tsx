@@ -391,7 +391,7 @@ export default function NursingHomeNotary() {
                   Text (980) 505-8050
                 </a>
                 <Link
-                  to="/book"
+                  to="/booking"
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-brand-600 bg-brand-50 hover:bg-brand-100 transition-colors border border-brand-200"
                 >
                   Book Online

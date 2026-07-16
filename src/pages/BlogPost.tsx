@@ -179,7 +179,7 @@ export default function BlogPost() {
             <h2 className="text-2xl font-bold mb-4 text-white font-sans">Ready to Get Your Power of Attorney Notarized?</h2>
             <p className="text-slate-300 mb-8 font-sans">Call or text (980) 505-8050 for same-day service, or book online. We come to you anywhere in the Charlotte area.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/book" className="bg-brand-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors font-sans">Book Appointment</Link>
+              <Link to="/booking" className="bg-brand-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-colors font-sans">Book Appointment</Link>
               <a href="tel:9805058050" className="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-slate-900 transition-colors font-sans">Call (980) 505-8050</a>
             </div>
             <p className="text-slate-400 text-sm mt-6 font-sans italic">Notarization services only — not legal advice. For legal guidance on drafting a POA, consult a licensed North Carolina attorney.</p>
@@ -450,7 +450,7 @@ export default function BlogPost() {
             <li><Link to="/general-notary-charlotte-nc" className="text-brand-600 hover:underline">General Notary Services</Link></li>
           </ul>
 
-          <p className="mb-6"><strong>Ready to get started?</strong><br/>You can <Link to="/book" className="text-brand-600 hover:underline">book your appointment online here</Link> or reach out to us directly to discuss your specific needs. We look forward to providing you with the professional, compassionate service that Integrity Closings CLT is known for.</p>
+          <p className="mb-6"><strong>Ready to get started?</strong><br/>You can <Link to="/booking" className="text-brand-600 hover:underline">book your appointment online here</Link> or reach out to us directly to discuss your specific needs. We look forward to providing you with the professional, compassionate service that Integrity Closings CLT is known for.</p>
 
           <div className="bg-slate-50 border-l-4 border-brand-600 p-6 my-8 rounded-r-lg">
             <h3 className="text-lg font-bold text-slate-900 mb-2 font-sans">Summary of Key Takeaways:</h3>
