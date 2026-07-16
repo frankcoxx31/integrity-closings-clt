@@ -23,7 +23,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     excerpt: 'A Power of Attorney that isn\'t signed, witnessed, and notarized correctly in NC is legally worthless. Learn the types, requirements, what to bring, and how a Charlotte mobile notary can come to you — even at the hospital.',
     imageUrl: 'https://images.unsplash.com/photo-1603796846097-bee99e4a601f?auto=format&fit=crop&q=80&w=800',
     seoTitle: 'Power of Attorney in North Carolina: What You Need & How to Get It Notarized | Integrity Closings CLT',
-    seoDescription: 'Learn the NC Power of Attorney requirements, types, what to bring to your notary appointment, and how a Charlotte mobile notary can come to your home or hospital room.'
+    seoDescription: 'Learn NC Power of Attorney requirements, what to bring to your notary appointment, and how a Charlotte mobile notary can come to your home or hospital.'
   },
   {
     title: 'What Title Companies Really Need From a Mobile Loan Signing Agent',
@@ -32,7 +32,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     excerpt: 'For title companies, the signing agent is the only face of your brand the borrower sees in person. Here\'s exactly what separates a reliable mobile loan signing partner from one that creates problems.',
     imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800',
     seoTitle: 'What Title Companies Need From a Mobile Loan Signing Agent | Integrity Closings CLT',
-    seoDescription: 'Title companies need more than a notary stamp. Discover the 6 qualities that separate a reliable mobile loan signing agent from one that creates costly errors and delays.'
+    seoDescription: 'Title companies need more than a notary stamp. Discover the 6 qualities of a reliable mobile loan signing agent — and what leads to costly errors and delays.'
   },
   {
     title: 'Why Charlotte Closing Attorneys Need a Trusted Mobile Signing Partner in 2026',
@@ -41,7 +41,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     excerpt: 'Charlotte\'s booming real estate market is putting pressure on closing attorneys to scale without sacrificing service. Here\'s why a trusted mobile signing partner is now a strategic necessity for law firms in the Queen City.',
     imageUrl: 'https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=800',
     seoTitle: 'Why Charlotte Closing Attorneys Need a Trusted Mobile Signing Partner in 2026 | Integrity Closings CLT',
-    seoDescription: "Charlotte closing attorneys are turning to mobile signing partners to scale operations, meet client expectations, and handle last-minute closings in 2026's fast-paced real estate market."
+    seoDescription: "Charlotte closing attorneys are turning to mobile signing partners to scale operations, meet client expectations, and handle last-minute closings in 2026."
   },
   {
     title: 'How Mobile Loan Signing Support Saves Your Closing Team Time (And Headaches)',
@@ -50,7 +50,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     excerpt: 'See how mobile loan signing support helps Charlotte title companies and closing attorneys reduce delays, handle overflow, and keep borrowers happy from start to finish.',
     imageUrl: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=800',
     seoTitle: 'Mobile Loan Signing Support Saves Your Closing Team Time | Integrity Closings CLT',
-    seoDescription: 'See how mobile loan signing support helps Charlotte title companies and closing attorneys reduce delays, handle overflow, and keep borrowers happy from start to finish.'
+    seoDescription: 'See how mobile loan signing support helps Charlotte title companies and closing attorneys reduce delays and keep borrowers happy from start to finish.'
   },
   {
     title: 'Hospital Notary Services in Charlotte',
@@ -68,7 +68,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     excerpt: 'In the high-stakes world of real estate and finance, the closing table is where the magic happens. Here are seven specific ways a reliable signing agent ensures your closings stay on track and run smoother than ever before.',
     imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800',
     seoTitle: '7 Ways a Reliable Signing Agent Makes Your Closings Run Smoother | Integrity Closings CLT',
-    seoDescription: 'Discover seven specific ways a reliable loan signing agent keeps your closings on track — from professional presence and error prevention to real-time updates and regional flexibility in Charlotte, NC.'
+    seoDescription: 'Discover seven ways a reliable loan signing agent keeps your Charlotte, NC closings on track — professionalism, error prevention, and real-time updates.'
   },
   {
     title: 'Charlotte, NC Remote Closings: How Mobile Notaries Help Buyers',

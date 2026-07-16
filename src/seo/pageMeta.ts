@@ -26,17 +26,17 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   '/mobile-notary-charlotte-nc': {
     title: `Mobile Notary Services in Charlotte, NC | ${businessConfig.name}`,
-    description: `${businessConfig.name} provides professional mobile notary services throughout Charlotte, NC. We come to your home, office, hospital, or care facility — same-day appointments available.`,
+    description: `${businessConfig.name} provides mobile notary services throughout Charlotte, NC — home, office, hospital, or care facility. Same-day appointments available.`,
     canonical: `${businessConfig.domain}/mobile-notary-charlotte-nc`,
   },
   '/estate-notary-charlotte-nc': {
     title: `Estate & Trust Notarization Charlotte NC | Mobile Notary`,
-    description: 'Professional mobile notary for estate planning and trust documents in Charlotte, NC. We travel to homes, hospitals, and nursing homes for Wills, Trusts, and POA.',
+    description: 'Professional mobile notary for estate planning and trust documents in Charlotte, NC. We travel to homes, hospitals, and nursing homes for Wills, Trusts, POA.',
     canonical: `${businessConfig.domain}/estate-notary-charlotte-nc`,
   },
   '/after-hours-mobile-notary-charlotte-nc': {
     title: `After-Hours Mobile Notary Charlotte NC | Evening & Weekend Notary | ${businessConfig.name}`,
-    description: `Need a notary after hours in Charlotte, NC? ${businessConfig.name} offers evening and weekend mobile notary appointments — available when banks and UPS stores are closed.`,
+    description: `Need a notary after hours in Charlotte, NC? We offer evening and weekend mobile notary appointments when banks and UPS stores are closed.`,
     canonical: `${businessConfig.domain}/after-hours-mobile-notary-charlotte-nc`,
   },
   '/loan-signing-agent-charlotte-nc': {
@@ -66,12 +66,12 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   '/blog': {
     title: `Notary Blog | Insights & Expert Advice | ${businessConfig.name}`,
-    description: `Articles and guides on mobile notary services, loan signings, estate documents, and NC notary rules from ${businessConfig.name}, serving Charlotte and the surrounding area.`,
+    description: `Articles and guides on mobile notary services, loan signings, estate documents, and NC notary rules from ${businessConfig.name} in Charlotte, NC.`,
     canonical: `${businessConfig.domain}/blog`,
   },
   '/areas-served': {
     title: `Mobile Notary Service Areas | Charlotte NC & Surrounding Counties | ${businessConfig.name}`,
-    description: `${businessConfig.name} provides mobile notary services across Mecklenburg, Union, and Cabarrus counties including Mint Hill, Matthews, Huntersville, Monroe, and more.`,
+    description: `${businessConfig.name} provides mobile notary services across Mecklenburg, Union, and Cabarrus counties, including Mint Hill, Matthews, and Monroe.`,
     canonical: `${businessConfig.domain}/areas-served`,
   },
   '/about': {
