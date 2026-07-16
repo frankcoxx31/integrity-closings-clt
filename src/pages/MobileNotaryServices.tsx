@@ -1,4 +1,4 @@
-import { CheckCircle, ArrowRight, Star, MapPin } from 'lucide-react';
+import { CheckCircle, ArrowRight, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -19,7 +19,7 @@ const mobileNotaryServicesSchema = {
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5",
-            "reviewCount": "3",
+            "reviewCount": "12",
             "bestRating": "5",
             "worstRating": "1"
           },
@@ -191,24 +191,27 @@ export default function MobileNotaryServices() {
 
   const testimonials = [
     {
-      name: "Sandra M.",
-      location: "SouthPark, Charlotte",
-      text: "Frank came to my mother's nursing home in Matthews on a Saturday afternoon to notarize her power of attorney. He was professional, calm, and made a stressful situation much easier. Highly recommend.",
-      service: "Hospital / Nursing Home",
+      name: "Carmen Turack",
+      subtitle: "Local Guide · 68 reviews",
+      text: "On time and did a great job",
       stars: 5
     },
     {
-      name: "James T.",
-      location: "Mint Hill, NC",
-      text: "Needed a deed notarized same-day and Frank was at my home within two hours. Fast, professional, and very reasonably priced. Will definitely use again for any future signings.",
-      service: "Real Estate Documents",
+      name: "Layvay Richardson",
+      subtitle: "Local Guide · 18 reviews",
+      text: "He was very respectful, patient and took the time with us with the paperwork",
       stars: 5
     },
     {
-      name: "Patricia W.",
-      location: "Monroe, NC",
-      text: "We called Frank when my father was hospitalized at Atrium Health and needed his advance directive notarized urgently. He arrived within the hour and handled everything perfectly. Cannot thank him enough.",
-      service: "Advance Directive / Healthcare POA",
+      name: "Ginger Shutt",
+      subtitle: "3 reviews",
+      text: "Prompt, Professional, Timely delivery of signed documents and Free of Errors. Highly Recommend!",
+      stars: 5
+    },
+    {
+      name: "Karen Crespo",
+      subtitle: "4 reviews",
+      text: "Very personable and professional. I highly recommend their services.",
       stars: 5
     }
   ];
@@ -331,8 +334,8 @@ export default function MobileNotaryServices() {
         {/* Testimonials */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 mb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-2">What Charlotte Clients Say</h2>
-          <p className="text-slate-500 mb-8 text-sm">Reviews from Google — Charlotte, NC area</p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <p className="text-slate-500 mb-8 text-sm">Real reviews from our Google Business Profile</p>
+          <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((t, i) => (
               <div key={i} className="bg-slate-50 rounded-xl border border-slate-100 p-6">
                 <div className="flex gap-0.5 mb-3">
@@ -345,10 +348,9 @@ export default function MobileNotaryServices() {
                   <div className="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-bold text-sm">{t.name[0]}</div>
                   <div>
                     <div className="text-sm font-semibold text-slate-800">{t.name}</div>
-                    <div className="text-xs text-slate-500 flex items-center gap-1"><MapPin className="w-3 h-3" />{t.location}</div>
+                    <div className="text-xs text-slate-500">{t.subtitle}</div>
                   </div>
                 </div>
-                <div className="mt-3 text-xs text-brand-600 font-medium">{t.service}</div>
               </div>
             ))}
           </div>
