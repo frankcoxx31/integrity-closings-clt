@@ -202,6 +202,26 @@ function main() {
   if (failed.length) {
     console.warn(`[prerender] Routes left as client-only (no regression, just not yet static): ${failed.join(', ')}`);
   }
+
+  // A literal dist/404.html for server.ts's catch-all to serve (with a real
+  // 404 status) for any path that isn't a known route or static asset.
+  // "/__404__" matches nothing in the route table, so NotFound renders.
+  try {
+    const notFoundHtml = renderToString(
+      <StaticRouter location="/__404__">
+        <AppContent />
+      </StaticRouter>
+    );
+    let html404 = shell.replace('<div id="root"></div>', `<div id="root">${notFoundHtml}</div>`);
+    html404 = html404.replace(/<title>[^<]*<\/title>/, `<title>Page Not Found | ${businessConfig.name}</title>`);
+    html404 = html404.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="The page you're looking for doesn't exist or may have moved."`);
+    html404 = html404.replace(/<meta name="robots" content="[^"]*"/, `<meta name="robots" content="noindex, follow"`);
+    html404 = fixImagePreloads(html404, '/__404__');
+    writeFileSync(path.join(distDir, '404.html'), html404, 'utf-8');
+    console.log('[prerender] Wrote dist/404.html');
+  } catch (err) {
+    console.warn('[prerender] Failed to write dist/404.html:', err instanceof Error ? err.message : err);
+  }
 }
 
 main();

@@ -26,6 +26,33 @@ async function startServer() {
     next();
   });
 
+  // Canonical host is https://www.integrityclosingsclt.com — permanently
+  // redirect the bare apex domain to it, for every path. Reads the raw Host
+  // header directly rather than req.hostname so this works regardless of
+  // whether Hostinger's front-end proxy sets "trust proxy" correctly.
+  app.use((req, res, next) => {
+    const host = (req.headers.host || '').split(':')[0].toLowerCase();
+    if (host === 'integrityclosingsclt.com') {
+      return res.redirect(301, `https://www.integrityclosingsclt.com${req.originalUrl}`);
+    }
+    next();
+  });
+
+  // Legacy URL slugs that used to be live — permanently redirect to their
+  // current equivalents so old backlinks/bookmarks/search results 301 to
+  // the right page instead of 404ing or silently serving the homepage.
+  const LEGACY_REDIRECTS: Record<string, string> = {
+    '/nursing-home-notary': '/nursing-home-notary-charlotte-nc',
+    '/service-locations-mobile-services-north-carolina.html': '/notary-service-locations-nc',
+  };
+  app.use((req, res, next) => {
+    const target = LEGACY_REDIRECTS[req.path];
+    if (target) {
+      return res.redirect(301, target);
+    }
+    next();
+  });
+
   // Helper to load and clean Google Calendar credentials
   const getGoogleCredentials = async () => {
     let privateKey = process.env.GOOGLE_PRIVATE_KEY;
@@ -749,13 +776,21 @@ async function startServer() {
 
     app.use(express.static(distPath));
 
-    // SPA fallback for any other route
+    // By this point the request matched no prerendered page and no static
+    // asset (express.static already had its turn above). A handful of
+    // routes are intentionally client-only — not prerendered — so still
+    // serve the SPA shell for those; everything else is a genuine unknown
+    // URL and must return a real 404, not the homepage with a 200.
+    const SPA_ONLY_ROUTES = new Set(['/book', '/booking', '/calculator']);
+    const notFoundPath = path.join(distPath, '404.html');
     app.get('*', (req, res) => {
-      if (fs.existsSync(indexPath)) {
-        res.sendFile(indexPath);
-      } else {
-        res.status(404).send('index.html not found. Check server logs.');
+      if (SPA_ONLY_ROUTES.has(req.path) && fs.existsSync(indexPath)) {
+        return res.sendFile(indexPath);
       }
+      if (fs.existsSync(notFoundPath)) {
+        return res.status(404).sendFile(notFoundPath);
+      }
+      res.status(404).send('Not Found');
     });
   }
 
