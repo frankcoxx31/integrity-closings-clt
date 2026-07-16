@@ -1,6 +1,7 @@
 import { ArrowLeft, CheckCircle, Info, MapPin, Phone, Heart, Clock, ShieldCheck, Users, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { pageMeta } from '../seo/pageMeta';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 const nursingHomeNotarySchema = {
       "@context": "https://schema.org",
@@ -96,18 +97,7 @@ const nursingHomeNotarySchema = {
 };
 
 export default function NursingHomeNotary() {
-  useEffect(() => {
-    document.title = "Nursing Home Notary Charlotte NC | Mobile Notary";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Need a notary at a nursing home or assisted living facility in Charlotte, NC? Integrity Closings CLT provides mobile notary services for residents at care facilities across Mecklenburg, Union, and Cabarrus counties.");
-    }
-
-    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (canonical) {
-      canonical.href = 'https://www.integrityclosingsclt.com/nursing-home-notary-charlotte-nc';
-    }
-  }, []);
+  usePageMeta(pageMeta['/nursing-home-notary-charlotte-nc']);
 
   const commonDocuments = [
     "Durable Power of Attorney",
