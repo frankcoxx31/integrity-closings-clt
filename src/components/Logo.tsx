@@ -10,7 +10,7 @@ export default function Logo({
 }: LogoProps) {
   return (
     <img
-      src="/logo-transparent.png"
+      src="/logo.jpg"
       alt={businessConfig.name}
       className={className}
       referrerPolicy="no-referrer"
