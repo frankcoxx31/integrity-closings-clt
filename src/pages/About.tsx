@@ -72,7 +72,7 @@ export default function About() {
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-100 flex flex-col items-center text-center">
                 <Briefcase className="w-10 h-10 text-brand-600 mb-4" />
                 <h4 className="font-bold text-slate-900 mb-2">Experience</h4>
-                <p className="text-sm text-slate-600">Over 7 years of specialized mobile notary and loan signing experience.</p>
+                <p className="text-sm text-slate-600">Over 9 years of specialized mobile notary and loan signing experience.</p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-100 flex flex-col items-center text-center">
                 <Calendar className="w-10 h-10 text-brand-600 mb-4" />

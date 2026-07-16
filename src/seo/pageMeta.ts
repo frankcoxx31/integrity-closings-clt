@@ -16,7 +16,7 @@ export interface PageMeta {
 export const pageMeta: Record<string, PageMeta> = {
   '/nursing-home-notary-charlotte-nc': {
     title: `Nursing Home Notary Charlotte NC | Mobile Notary`,
-    description: `Need a notary at a nursing home or assisted living facility in Charlotte, NC? ${businessConfig.name} sends a commissioned notary directly to residents in Mecklenburg, Union, and Cabarrus counties.`,
+    description: `Need a notary at a nursing home or assisted living facility in Charlotte, NC? We send a commissioned notary directly to residents.`,
     canonical: `${businessConfig.domain}/nursing-home-notary-charlotte-nc`,
   },
   '/hospital-notary-charlotte-nc': {

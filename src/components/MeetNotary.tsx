@@ -31,7 +31,7 @@ export default function MeetNotary() {
             </h2>
             <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
               <p>
-                Hi, I'm {businessConfig.ownerName}, the owner of {businessConfig.name}. With over 7 years of experience in loan signings and 20 years in real estate, I take pride in providing accurate, stress-free notarizations — whether at your home, office, hospital, or wherever you need me.
+                Hi, I'm {businessConfig.ownerName}, the owner of {businessConfig.name}. With over 9 years of experience in loan signings and 20+ years in real estate, I take pride in providing accurate, stress-free notarizations — whether at your home, office, hospital, or wherever you need me.
               </p>
               <p>
                 I built this business on trust and reliability, and I treat every signing like it's my own.

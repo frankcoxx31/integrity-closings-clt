@@ -161,7 +161,7 @@ export default function CityPageLayout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-brand-950">7+</div>
+              <div className="text-3xl font-bold text-brand-950">9+</div>
               <div className="text-sm text-slate-600 uppercase tracking-wider font-semibold">Years Experience</div>
             </div>
             <div>

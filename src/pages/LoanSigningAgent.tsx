@@ -42,7 +42,7 @@ const loanSigningSchema = {
               "name": "How quickly can you return the closing documents?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We immediately review all documents for accuracy at the signing table. Scantebacks are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
+                "text": "We immediately review all documents for accuracy at the signing table. Scan-backs are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
               }
             },
             {
@@ -196,7 +196,7 @@ export default function LoanSigningAgent() {
                   },
                   {
                     q: "How quickly can you return the closing documents?",
-                    a: "We immediately review all documents for accuracy at the signing table. Scantebacks are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
+                    a: "We immediately review all documents for accuracy at the signing table. Scan-backs are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
                   },
                   {
                     q: "Are you background screened?",
