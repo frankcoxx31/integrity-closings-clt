@@ -7,7 +7,8 @@ export default function Matthews() {
     <CityPageLayout
       city="Matthews"
       geo={{ lat: 35.1168, lng: -80.7237 }}
-      image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=1920"
+      // TODO(owner): stock photo — replace with a real photo of Frank/the business.
+      image="/matthews-nc-hero.webp"
       introText={
         <>
           Looking for a <strong>mobile notary in Matthews, NC</strong>? Integrity Closings CLT offers professional, on-demand general notary services for all your document needs. From power of attorney to vehicle titles, we bring the notary office to your home or office in Matthews.

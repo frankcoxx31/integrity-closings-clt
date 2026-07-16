@@ -137,7 +137,7 @@ export default function LoanSigningCityLayout({
       {/* Hero Section */}
       <section className="relative bg-slate-900 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-40">
-          <img src={image} alt={`${location} Loan Signing Agent`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src={image} alt={`${location} Loan Signing Agent`} className="w-full h-full object-cover" width="1920" height="1280" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-slate-900 mix-blend-multiply"></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

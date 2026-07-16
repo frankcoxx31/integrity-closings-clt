@@ -7,7 +7,8 @@ export default function Concord() {
     <CityPageLayout
       city="Concord"
       geo={{ lat: 35.4087, lng: -80.5795 }}
-      image="https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&q=80&w=1920"
+      // TODO(owner): stock photo — replace with a real photo of Frank/the business.
+      image="/concord-nc-hero.webp"
       introText={
         <>
           Searching for a <strong>mobile notary in Concord, NC</strong>? Integrity Closings CLT provides professional general notary services throughout Cabarrus County. We meet you at your convenience—at home, at work, or a local Concord landmark—to notarize your legal paperwork quickly and securely.

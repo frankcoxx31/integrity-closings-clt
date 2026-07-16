@@ -5,7 +5,7 @@ export default function MintHillLoanSigning() {
     <LoanSigningCityLayout
       location="Mint Hill"
       h1="Mint Hill Loan Signing Agent"
-      image="/matthews-1.jpg"
+      image="/matthews-nc-hero.webp"
       heroText="Mobile loan signing services in Mint Hill and East Charlotte. Professional mortgage document facilitation for refinances, purchases, and HELOCs."
       overviewText={
         <>

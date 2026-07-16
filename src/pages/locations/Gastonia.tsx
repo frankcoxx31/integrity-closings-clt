@@ -6,7 +6,8 @@ export default function Gastonia() {
     <CityPageLayout
       city="Gastonia"
       geo={{ lat: 35.2621, lng: -81.1873 }}
-      image="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920"
+      // TODO(owner): stock photo — replace with a real photo of Frank/the business.
+      image="/gastonia-nc-hero.webp"
       introText={
         <>
           Need a <strong>mobile notary in Gastonia, NC</strong>? Integrity Closings CLT provides professional, on-demand notary services throughout Gaston County. Whether you're at a local coffee shop in the <strong>Historic District</strong>, a business near <strong>Franklin Square</strong>, or your own front door, we bring the notary office to you. We are committed to providing Gastonia residents with secure, accurate, and stress-free notarizations for all their legal and financial documents.

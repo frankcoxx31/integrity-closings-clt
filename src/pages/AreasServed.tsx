@@ -34,12 +34,13 @@ export default function AreasServed() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
-            <img 
-              src="/charlotte.jpg"
-              alt="Charlotte, NC Skyline"
+            {/* TODO(owner): stock photo — replace with a real photo of Frank/the business. */}
+            <img
+              src="/charlotte-location-hero.webp"
+              alt="Mobile Notary Service Areas in Charlotte, NC"
               className="w-full h-full object-cover"
-              width="275"
-              height="183"
+              width="1920"
+              height="1280"
               referrerPolicy="no-referrer"
             />
           </div>

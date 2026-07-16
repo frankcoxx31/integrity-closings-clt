@@ -5,7 +5,7 @@ export default function CabarrusCountyLoanSigning() {
     <LoanSigningCityLayout
       location="Cabarrus County"
       h1="Cabarrus County Loan Signing Agent"
-      image="/concord.jpg"
+      image="/concord-nc-hero.webp"
       heroText="County-wide mobile loan signing services. Serving Concord, Kannapolis, and Harrisburg with professional mortgage document facilitation."
       overviewText={
         <>

@@ -5,7 +5,7 @@ export default function UnionCountyLoanSigning() {
     <LoanSigningCityLayout
       location="Union County"
       h1="Union County Loan Signing Agent"
-      image="/monroe-1.jpg"
+      image="/monroe-nc-hero.webp"
       heroText="Mobile loan signing services serving Union County. Punctual mortgage closings in Monroe, Waxhaw, Indian Trail, and across the region."
       overviewText={
         <>

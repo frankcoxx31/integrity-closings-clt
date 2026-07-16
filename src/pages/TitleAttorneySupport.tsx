@@ -82,11 +82,13 @@ export default function TitleAttorneySupport() {
       {/* Hero Section */}
       <section className="relative bg-slate-900 text-white py-24">
         <div className="absolute inset-0 overflow-hidden opacity-30">
-          <img 
-            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1920" 
-            alt="Real estate closing document signing" 
+          {/* TODO(owner): stock photo — replace with a real photo of Frank/the business. */}
+          <img
+            src="/blog-hero-charlotte-notary.webp"
+            alt="Real estate closing document signing"
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
+            width="1920"
+            height="1281"
           />
           <div className="absolute inset-0 bg-slate-900 mix-blend-multiply"></div>
         </div>

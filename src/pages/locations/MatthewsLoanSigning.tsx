@@ -5,7 +5,7 @@ export default function MatthewsLoanSigning() {
     <LoanSigningCityLayout
       location="Matthews"
       h1="Matthews Loan Signing Agent"
-      image="/matthews-1.jpg"
+      image="/matthews-nc-hero.webp"
       heroText="Reliable mobile loan signing services in Matthews and South Charlotte. Professionals delivering precise mortgage closings at your location."
       overviewText={
         <>

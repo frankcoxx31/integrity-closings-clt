@@ -5,7 +5,7 @@ export default function ConcordLoanSigning() {
     <LoanSigningCityLayout
       location="Concord"
       h1="Concord Loan Signing Agent"
-      image="/concord.jpg"
+      image="/concord-nc-hero.webp"
       heroText="Mobile loan signing services in Concord and Cabarrus County. Professional mortgage document facilitation for refinances, purchases, and residential closings."
       overviewText={
         <>

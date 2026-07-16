@@ -6,7 +6,8 @@ export default function Salisbury() {
     <CityPageLayout
       city="Salisbury"
       geo={{ lat: 35.6704, lng: -80.4747 }}
-      image="https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&q=80&w=1920"
+      // TODO(owner): stock photo — replace with a real photo of Frank/the business.
+      image="/salisbury-nc-hero.webp"
       introText={
         <>
           Looking for a <strong>mobile notary in Salisbury, NC</strong>? Integrity Closings CLT provides professional, on-demand notary services throughout Rowan County. Whether you are at a local coffee shop in the <strong>Historic District</strong>, a business near <strong>Innes Street</strong>, or your own front door, we bring the notary office to you. We specialize in handling sensitive legal documents and complex loan signings with the highest level of professionalism and integrity.
