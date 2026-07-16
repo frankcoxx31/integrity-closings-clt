@@ -2,20 +2,7 @@ import { ArrowLeft, CheckCircle, MapPin, Phone, Briefcase, FileText, ShieldCheck
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
-export default function LoanSigningAgent() {
-  useEffect(() => {
-    // SEO Meta Tags
-    document.title = "Loan Signing Agent Charlotte NC | Integrity Closings CLT";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Professional loan signing agent in Charlotte, NC for buyer, seller, refinance, and HELOC signings. Mobile appointments available.");
-    }
-
-    // JSON-LD Schema
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'loan-signing-schema';
-    script.innerHTML = JSON.stringify({
+const loanSigningSchema = {
       "@context": "https://schema.org",
       "@graph": [
         {
@@ -77,14 +64,15 @@ export default function LoanSigningAgent() {
           ]
         }
       ]
-    });
-    document.head.appendChild(script);
-    return () => {
-      const existingScript = document.getElementById('loan-signing-schema');
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-    };
+};
+
+export default function LoanSigningAgent() {
+  useEffect(() => {
+    document.title = "Loan Signing Agent Charlotte NC | Integrity Closings CLT";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Professional loan signing agent in Charlotte, NC for buyer, seller, refinance, and HELOC signings. Mobile appointments available.");
+    }
   }, []);
 
   const loanPackages = [
@@ -108,12 +96,13 @@ export default function LoanSigningAgent() {
 
   return (
     <div className="min-h-screen bg-slate-50 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(loanSigningSchema) }} />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-brand-600 hover:text-brand-800 mb-6 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to All Services
         </Link>
-        
+
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
             <img 

@@ -2,23 +2,7 @@ import { ArrowLeft, CheckCircle, Info, MapPin, Phone, Heart, Clock, ShieldCheck,
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
-export default function NursingHomeNotary() {
-  useEffect(() => {
-    document.title = "Nursing Home Notary Charlotte NC | Mobile Notary";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Need a notary at a nursing home or assisted living facility in Charlotte, NC? Integrity Closings CLT provides mobile notary services for residents at care facilities across Mecklenburg, Union, and Cabarrus counties.");
-    }
-
-    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (canonical) {
-      canonical.href = 'https://www.integrityclosingsclt.com/nursing-home-notary-charlotte-nc';
-    }
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'nursing-home-notary-schema';
-    script.innerHTML = JSON.stringify({
+const nursingHomeNotarySchema = {
       "@context": "https://schema.org",
       "@graph": [
         {
@@ -71,7 +55,7 @@ export default function NursingHomeNotary() {
               "name": "Can a notary visit me in a nursing home in Charlotte?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Integrity Closings CLT provides mobile notary services directly to nursing home and assisted living residents throughout Charlotte, NC and surrounding areas including Matthews, Monroe, Mint Hill, and Concord. We coordinate with facility staff and come to the resident's room."
+                "text": "Yes. We provide mobile notary services directly to nursing home and assisted living residents throughout Charlotte, NC and surrounding areas including Matthews, Monroe, Mint Hill, and Concord. We coordinate with facility staff and come to the resident's room."
               }
             },
             {
@@ -95,7 +79,7 @@ export default function NursingHomeNotary() {
               "name": "How do I schedule a notary to come to an assisted living facility?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Call or text Integrity Closings CLT at (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
+                "text": "Call or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
               }
             },
             {
@@ -103,18 +87,26 @@ export default function NursingHomeNotary() {
               "name": "Do we need witnesses for a Power of Attorney at a nursing home?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. North Carolina requires two qualified witnesses for a Power of Attorney in addition to the notary. Witnesses cannot be the named agent, a relative of the signer, or anyone who stands to inherit from the signer. Nursing home staff are often prohibited by facility policy from serving as witnesses. We can sometimes arrange witnesses for an additional fee — call us to discuss."
+                "text": "Yes. North Carolina requires two qualified witnesses for a Power of Attorney in addition to the notary. Witnesses cannot be the named agent, a relative of the signer, or anyone who stands to inherit from the signer. Nursing home staff are often prohibited by facility policy from serving as witnesses. We can sometimes arrange witnesses for an additional fee."
               }
             }
           ]
         }
       ]
-    });
-    document.head.appendChild(script);
-    return () => {
-      const existingScript = document.getElementById('nursing-home-notary-schema');
-      if (existingScript) document.head.removeChild(existingScript);
-    };
+};
+
+export default function NursingHomeNotary() {
+  useEffect(() => {
+    document.title = "Nursing Home Notary Charlotte NC | Mobile Notary";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Need a notary at a nursing home or assisted living facility in Charlotte, NC? Integrity Closings CLT provides mobile notary services for residents at care facilities across Mecklenburg, Union, and Cabarrus counties.");
+    }
+
+    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (canonical) {
+      canonical.href = 'https://www.integrityclosingsclt.com/nursing-home-notary-charlotte-nc';
+    }
   }, []);
 
   const commonDocuments = [
@@ -162,6 +154,7 @@ export default function NursingHomeNotary() {
 
   return (
     <div className="min-h-screen bg-slate-50 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(nursingHomeNotarySchema) }} />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-brand-600 hover:text-brand-800 mb-6 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />

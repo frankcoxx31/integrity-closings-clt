@@ -2,21 +2,8 @@ import { ArrowLeft, CheckCircle, Info, MapPin, Phone, Hospital, Heart, Clock, Sh
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
-export default function HospitalNotary() {
-  useEffect(() => {
-    // SEO Meta Tags
-    document.title = "Hospital & Bedside Notary Charlotte NC | Mobile Notary";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.");
-    }
-
-    // JSON-LD Schema
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'hospital-notary-schema';
-    script.innerHTML = JSON.stringify({
-      "@context": "https://schema.org",
+const hospitalNotarySchema = {
+  "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "Service",
@@ -98,15 +85,16 @@ export default function HospitalNotary() {
             }
           ]
         }
-      ]
-    });
-    document.head.appendChild(script);
-    return () => {
-      const existingScript = document.getElementById('hospital-notary-schema');
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-    };
+  ]
+};
+
+export default function HospitalNotary() {
+  useEffect(() => {
+    document.title = "Hospital & Bedside Notary Charlotte NC | Mobile Notary";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.");
+    }
   }, []);
 
   const commonDocuments = [
@@ -136,6 +124,7 @@ export default function HospitalNotary() {
 
   return (
     <div className="min-h-screen bg-slate-50 py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(hospitalNotarySchema) }} />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link to="/mobile-notary-charlotte-nc" className="inline-flex items-center text-brand-600 hover:text-brand-800 mb-6 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />

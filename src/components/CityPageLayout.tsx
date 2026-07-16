@@ -66,81 +66,73 @@ export default function CityPageLayout({
       }
     }
 
-    const script1 = document.createElement('script');
-    script1.type = 'application/ld+json';
-    script1.id = `schema-city-${city.replace(/\s+/g, '-').toLowerCase()}`;
-    script1.innerHTML = JSON.stringify({
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "serviceType": "Mobile Notary Public",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": businessConfig.name,
-            "image": `${businessConfig.domain}/logo.png`,
-            "telephone": businessConfig.phone.display,
-            "url": businessConfig.domain,
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": city,
-              "addressRegion": businessConfig.address.region,
-              "addressCountry": businessConfig.address.country
+  }, [city, metaDescription, location.pathname]);
+
+  const citySchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "serviceType": "Mobile Notary Public",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": businessConfig.name,
+          "image": `${businessConfig.domain}/logo.png`,
+          "telephone": businessConfig.phone.display,
+          "url": businessConfig.domain,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": city,
+            "addressRegion": businessConfig.address.region,
+            "addressCountry": businessConfig.address.country
+          },
+          "geo": {
+            "@type": "GeoCircle",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Notary"
             },
-            "geo": {
-              "@type": "GeoCircle",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Mobile Notary"
-              },
-              "geoMidpoint": {
-                "@type": "GeoCoordinates",
-                "latitude": String(geo.lat),
-                "longitude": String(geo.lng)
-              },
-              "geoRadius": String(geo.radiusMeters ?? businessConfig.hubGeo.radiusMeters)
-            }
-          },
-          "areaServed": {
-            "@type": "City",
-            "name": city
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Notary Services",
-            "itemListElement": services.map((s) => ({
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": s.title
-              }
-            }))
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": String(geo.lat),
+              "longitude": String(geo.lng)
+            },
+            "geoRadius": String(geo.radiusMeters ?? businessConfig.hubGeo.radiusMeters)
           }
         },
-        {
-          "@type": "FAQPage",
-          "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": faq.answer
+        "areaServed": {
+          "@type": "City",
+          "name": city
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Notary Services",
+          "itemListElement": services.map((s) => ({
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": s.title
             }
           }))
         }
-      ]
-    });
-    
-    document.head.appendChild(script1);
-
-    return () => {
-      const existing1 = document.getElementById(`schema-city-${city.replace(/\s+/g, '-').toLowerCase()}`);
-      if (existing1) document.head.removeChild(existing1);
-    };
-  }, [city, metaDescription, services, faqs, location.pathname]);
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    ]
+  };
 
   return (
     <div className="bg-white font-sans">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(citySchema) }} />
       {/* Header Section */}
       <div className="bg-brand-950 text-white py-20 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">

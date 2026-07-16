@@ -2,29 +2,7 @@ import { CheckCircle, ArrowRight, Star, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
-export default function MobileNotaryServices() {
-  useEffect(() => {
-    // Title
-    document.title = 'Mobile Notary Charlotte NC | Integrity Closings CLT';
-
-    // Meta description
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', 'Need a mobile notary in Charlotte, NC? Book same-day or after-hours service for POA, estate docs, hospital visits & more. Call 980-505-8050 now.');
-
-    // Canonical — fix the critical canonical bug (was pointing to homepage)
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = 'canonical';
-      document.head.appendChild(canonical);
-    }
-    canonical.href = 'https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc';
-
-    // Schema
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'mobile-notary-schema';
-    script.innerHTML = JSON.stringify({
+const mobileNotaryServicesSchema = {
       "@context": "https://schema.org",
       "@graph": [
         {
@@ -120,15 +98,28 @@ export default function MobileNotaryServices() {
           ]
         }
       ]
-    });
-    document.head.appendChild(script);
+};
+
+export default function MobileNotaryServices() {
+  useEffect(() => {
+    document.title = 'Mobile Notary Charlotte NC | Integrity Closings CLT';
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', 'Need a mobile notary in Charlotte, NC? Book same-day or after-hours service for POA, estate docs, hospital visits & more. Call 980-505-8050 now.');
+
+    // Canonical — fix the critical canonical bug (was pointing to homepage)
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = 'https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc';
 
     return () => {
-      const existingScript = document.getElementById('mobile-notary-schema');
-      if (existingScript) document.head.removeChild(existingScript);
       // Restore homepage canonical on unmount
       if (canonical) canonical.href = 'https://www.integrityclosingsclt.com/';
-      document.title = 'Mobile Notary Charlotte NC | Loan Signing Agent | Integrity Closings CLT';
+      document.title = 'Mobile Notary Charlotte NC | Integrity Closings CLT';
     };
   }, []);
 
@@ -230,6 +221,7 @@ export default function MobileNotaryServices() {
 
   return (
     <div className="bg-slate-50 min-h-screen py-12">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(mobileNotaryServicesSchema) }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumb */}
