@@ -150,6 +150,11 @@ export default function BookLanding() {
     if (metaDescription) {
       metaDescription.setAttribute('content', "Professional mobile notary and loan signing services in Charlotte and Mint Hill. Book your appointment online today. Same-day service available.");
     }
+
+    const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (canonical) {
+      canonical.href = 'https://www.integrityclosingsclt.com/book';
+    }
   }, []);
 
   const scrollToForm = (serviceId?: string) => {
