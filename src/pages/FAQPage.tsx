@@ -1,5 +1,5 @@
 import { Plus, Minus, MapPin } from 'lucide-react';
-import React, { useState } from 'react';
+import React from 'react';
 import { pageMeta } from '../seo/pageMeta';
 import { usePageMeta } from '../hooks/usePageMeta';
 
@@ -117,26 +117,16 @@ export default function FAQPage() {
 }
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
-      >
+    <details className="group bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
+      <summary className="w-full px-6 py-4 flex justify-between items-center cursor-pointer list-none [&::-webkit-details-marker]:hidden">
         <span className="font-medium text-slate-900">{question}</span>
-        {isOpen ? (
-          <Minus className="w-5 h-5 text-brand-600 flex-shrink-0" />
-        ) : (
-          <Plus className="w-5 h-5 text-slate-400 flex-shrink-0" />
-        )}
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-4 text-slate-600 border-t border-slate-100 pt-4">
-          {answer}
-        </div>
-      )}
-    </div>
+        <Plus className="w-5 h-5 text-slate-400 flex-shrink-0 group-open:hidden" />
+        <Minus className="w-5 h-5 text-brand-600 flex-shrink-0 hidden group-open:block" />
+      </summary>
+      <div className="px-6 pb-4 text-slate-600 border-t border-slate-100 pt-4">
+        {answer}
+      </div>
+    </details>
   );
 }

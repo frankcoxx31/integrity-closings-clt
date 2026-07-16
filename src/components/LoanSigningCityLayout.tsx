@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, CheckCircle, Shield, Award, Clock, Calendar, MessageSquare, ChevronDown, FileSignature, FileText, Landmark, Key, Receipt } from 'lucide-react';
 import { businessConfig } from '../config/business';
@@ -38,7 +38,6 @@ export default function LoanSigningCityLayout({
   mapEmbedUrl,
   metaDescription
 }: LoanSigningCityLayoutProps & { nearbyAreas?: { name: string, link: string }[] }) {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const displayH1 = h1 || `${location} Loan Signing Agent`;
 
@@ -276,20 +275,15 @@ export default function LoanSigningCityLayout({
           </div>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="border border-slate-200 rounded-xl overflow-hidden">
-                <button 
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-slate-50 transition-colors"
-                >
+              <details key={index} className="group border border-slate-200 rounded-xl overflow-hidden">
+                <summary className="w-full flex items-center justify-between p-6 bg-white hover:bg-slate-50 transition-colors cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                   <span className="font-bold text-slate-900 text-lg">{faq.question}</span>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform ${openFaq === index ? 'rotate-180' : ''}`} />
-                </button>
-                {openFaq === index && (
-                  <div className="p-6 bg-slate-50 border-t border-slate-200 text-slate-700 leading-relaxed">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
+                  <ChevronDown className="w-5 h-5 text-slate-400 transition-transform group-open:rotate-180" />
+                </summary>
+                <div className="p-6 bg-slate-50 border-t border-slate-200 text-slate-700 leading-relaxed">
+                  {faq.answer}
+                </div>
+              </details>
             ))}
           </div>
         </div>
