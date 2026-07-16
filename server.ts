@@ -44,6 +44,7 @@ async function startServer() {
   const LEGACY_REDIRECTS: Record<string, string> = {
     '/nursing-home-notary': '/nursing-home-notary-charlotte-nc',
     '/service-locations-mobile-services-north-carolina.html': '/notary-service-locations-nc',
+    '/mobile-notary-service-pricing': '/faq',
   };
   app.use((req, res, next) => {
     const target = LEGACY_REDIRECTS[req.path];
