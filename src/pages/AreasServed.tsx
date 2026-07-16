@@ -35,10 +35,12 @@ export default function AreasServed() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
             <img 
-              src="/charlotte.jpg" 
-              alt="Charlotte Skyline" 
-              className="w-full h-full object-cover" 
-              referrerPolicy="no-referrer" 
+              src="/charlotte.jpg"
+              alt="Charlotte, NC Skyline"
+              className="w-full h-full object-cover"
+              width="275"
+              height="183"
+              referrerPolicy="no-referrer"
             />
           </div>
           

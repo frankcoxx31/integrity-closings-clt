@@ -20,11 +20,13 @@ export default function Blog() {
     <div className="bg-slate-50 min-h-screen pb-20">
       {/* Hero Image Section */}
       <div className="w-full h-[250px] md:h-[400px] overflow-hidden relative bg-slate-900">
-        <img 
-          src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1920" 
-          alt="Integrity Closings Blog Hero" 
+        {/* TODO(owner): stock photo — replace with a real photo of Frank/the business. */}
+        <img
+          src="/blog-hero-charlotte-notary.webp"
+          alt="Integrity Closings Blog Hero"
           className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
+          width="1920"
+          height="1281"
         />
       </div>
 
@@ -51,10 +53,11 @@ export default function Blog() {
               className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow group flex flex-col"
             >
               <div className="aspect-w-16 aspect-h-9 relative h-64 overflow-hidden">
-                <img 
-                  src={post.imageUrl} 
-                  alt={post.title} 
+                <img
+                  src={post.imageUrl}
+                  alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
               </div>

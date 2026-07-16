@@ -135,7 +135,7 @@ export default function CityPageLayout({
       {/* Header Section */}
       <div className="bg-brand-950 text-white py-20 px-4 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-30">
-          <img src={image} alt={`Mobile Notary Services in ${city}, NC`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src={image} alt={`Mobile Notary Services in ${city}, NC`} className="w-full h-full object-cover" width="1920" height="1280" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-brand-950 mix-blend-multiply"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">

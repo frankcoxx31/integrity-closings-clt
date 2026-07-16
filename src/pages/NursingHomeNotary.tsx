@@ -163,11 +163,13 @@ export default function NursingHomeNotary() {
 
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
+            {/* TODO(owner): stock photo — replace with a real photo of Frank/the business. */}
             <img
-              src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=1200"
+              src="/nursing-home-notary-hero-charlotte.webp"
               alt="Nursing Home Notary Services in Charlotte NC"
               className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
+              width="1200"
+              height="793"
             />
           </div>
 

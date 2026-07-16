@@ -105,11 +105,13 @@ export default function LoanSigningAgent() {
 
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
-            <img 
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200" 
-              alt="Loan Signing Agent in Charlotte NC" 
-              className="w-full h-full object-cover" 
-              referrerPolicy="no-referrer" 
+            {/* TODO(owner): stock photo — replace with a real photo of Frank/the business. */}
+            <img
+              src="/loan-signing-agent-hero-charlotte.webp"
+              alt="Loan Signing Agent in Charlotte NC"
+              className="w-full h-full object-cover"
+              width="1200"
+              height="901"
             />
           </div>
           

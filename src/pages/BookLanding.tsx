@@ -434,10 +434,11 @@ export default function BookLanding() {
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=1200" 
-                alt="About Integrity Closings CLT" 
+              <img
+                src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=1200"
+                alt="About Integrity Closings CLT"
                 className="w-full aspect-video object-cover"
+                loading="lazy"
                 referrerPolicy="no-referrer"
               />
             </div>

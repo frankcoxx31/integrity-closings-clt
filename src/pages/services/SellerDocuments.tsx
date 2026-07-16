@@ -97,11 +97,13 @@ export default function SellerDocuments() {
 
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
+            {/* TODO(owner): stock photo — replace with a real photo of Frank/the business. */}
             <img
-              src="https://images.unsplash.com/photo-1759428679273-11d914866394?auto=format&fit=crop&q=80&w=1200"
-              alt="Seller Documents"
+              src="/seller-documents-charlotte-nc.webp"
+              alt="Seller Document Notarization in Charlotte, NC"
               className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
+              width="1200"
+              height="800"
             />
           </div>
 

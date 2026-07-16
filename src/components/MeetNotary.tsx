@@ -15,9 +15,11 @@ export default function MeetNotary() {
               <div className="absolute inset-0 bg-brand-600 rounded-2xl transform rotate-3 opacity-10"></div>
               <div className="relative rounded-2xl shadow-lg overflow-hidden bg-slate-200 aspect-[3/4]">
                 <img
-                  src="/new%20pic%20of%20me%20smaller.jpg"
+                  src="/frank-coxx-notary-charlotte.jpg"
                   alt={`${businessConfig.ownerName} - Professional Notary`}
                   className="w-full h-full object-cover"
+                  width="438"
+                  height="545"
                   referrerPolicy="no-referrer"
                 />
               </div>

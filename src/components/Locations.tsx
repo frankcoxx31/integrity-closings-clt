@@ -70,10 +70,11 @@ export default function Locations() {
           {locations.map((loc, index) => (
             <Link key={index} to={loc.link} className="group flex flex-col bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
               <div className="h-48 w-full overflow-hidden bg-slate-200">
-                <img 
-                  src={loc.image} 
-                  alt={`${loc.city}, NC`} 
+                <img
+                  src={loc.image}
+                  alt={`Mobile notary services in ${loc.city}, NC`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
               </div>

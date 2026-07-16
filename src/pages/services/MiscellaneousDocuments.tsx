@@ -101,7 +101,7 @@ export default function MiscellaneousDocuments() {
         
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
-            <img src="/miscellaneous-documents.png" alt="Miscellaneous Documents" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src="/miscellaneous-documents.png" alt="Miscellaneous Document Notarization in Charlotte, NC" className="w-full h-full object-cover" width="1536" height="1024" referrerPolicy="no-referrer" />
           </div>
           
           <div className="p-8 sm:p-12">

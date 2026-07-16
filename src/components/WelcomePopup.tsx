@@ -50,10 +50,12 @@ export default function WelcomePopup() {
         <div className="px-6 pt-10 pb-8 text-center">
           {/* Logo */}
           <div className="flex justify-center mb-6">
-            <img 
-              src="/logo.jpg" 
-              alt="Integrity Closings CLT" 
+            <img
+              src="/logo.jpg"
+              alt="Integrity Closings CLT"
               className="h-24 w-auto mix-blend-multiply object-contain"
+              width="342"
+              height="103"
               referrerPolicy="no-referrer"
             />
           </div>

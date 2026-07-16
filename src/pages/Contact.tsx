@@ -116,10 +116,13 @@ export default function Contact() {
                 <div className="pt-8 border-t border-brand-900">
                   <h3 className="font-semibold text-lg mb-4">Leave a Google Review</h3>
                   <div className="bg-white p-3 rounded-xl inline-block">
-                    <img 
-                      src="/google_review_qr.png" 
-                      alt="Google Review QR Code" 
+                    <img
+                      src="/google_review_qr.png"
+                      alt="QR code to leave a Google Review for Integrity Closings CLT"
                       className="w-32 h-32"
+                      width="132"
+                      height="132"
+                      loading="lazy"
                       referrerPolicy="no-referrer"
                     />
                   </div>

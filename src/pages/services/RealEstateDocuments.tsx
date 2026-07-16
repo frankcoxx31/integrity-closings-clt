@@ -101,7 +101,7 @@ export default function RealEstateDocuments() {
         
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
-            <img src="/real-estate-documents.png" alt="Real Estate Documents" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            <img src="/real-estate-documents.png" alt="Real Estate Document Notarization in Charlotte, NC" className="w-full h-full object-cover" width="1536" height="1024" referrerPolicy="no-referrer" />
           </div>
           
           <div className="p-8 sm:p-12">

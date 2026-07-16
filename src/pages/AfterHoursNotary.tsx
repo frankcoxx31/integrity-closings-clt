@@ -117,9 +117,11 @@ export default function AfterHoursNotary() {
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
             <img 
               src="/lender-sent-documents.jpg"
-              alt="After Hours Mobile Notary in Charlotte NC" 
-              className="w-full h-full object-cover" 
-              referrerPolicy="no-referrer" 
+              alt="After Hours Mobile Notary in Charlotte NC"
+              className="w-full h-full object-cover"
+              width="900"
+              height="600"
+              referrerPolicy="no-referrer"
             />
           </div>
           

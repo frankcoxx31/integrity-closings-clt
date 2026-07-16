@@ -133,11 +133,13 @@ export default function HospitalNotary() {
         
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="h-64 sm:h-80 w-full relative bg-slate-100">
-            <img 
-              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200" 
-              alt="Hospital Notary in Charlotte NC" 
-              className="w-full h-full object-cover" 
-              referrerPolicy="no-referrer" 
+            {/* TODO(owner): stock photo — replace with a real photo of Frank/the business. */}
+            <img
+              src="/hospital-notary-hero-charlotte.webp"
+              alt="Hospital Notary in Charlotte NC"
+              className="w-full h-full object-cover"
+              width="1200"
+              height="817"
             />
           </div>
           

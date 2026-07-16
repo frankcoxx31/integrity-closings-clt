@@ -17,7 +17,7 @@ export default function Services() {
     {
       title: 'Nursing Home & Assisted Living Notary',
       description: 'Mobile notary visits for residents at nursing homes, assisted living, and memory care facilities.',
-      image: '/Nursing Home & Assisted Living Notary.jpg',
+      image: '/nursing-home-notary-charlotte.jpg',
       link: '/nursing-home-notary-charlotte-nc',
       anchor: 'Nursing Home Notary in Charlotte'
     },
@@ -38,7 +38,8 @@ export default function Services() {
     {
       title: 'Power of Attorney',
       description: 'Legally binding notarization for financial, medical, and general POAs.',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800',
+      // TODO(owner): stock photo — replace with a real photo of Frank/the business.
+      image: '/power-of-attorney-charlotte-nc.webp',
       link: '/power-of-attorney-estate-documents-charlotte-nc',
       anchor: 'Power of Attorney Notary in Charlotte'
     },
@@ -52,7 +53,8 @@ export default function Services() {
     {
       title: 'Seller Documents',
       description: 'Notarization for home sellers — deeds, settlement statements, affidavits of title, and closing packages.',
-      image: 'https://images.unsplash.com/photo-1759428679273-11d914866394?auto=format&fit=crop&q=80&w=800',
+      // TODO(owner): stock photo — replace with a real photo of Frank/the business.
+      image: '/seller-documents-charlotte-nc.webp',
       link: '/services/seller-documents',
       anchor: 'Seller Documents Notary in Charlotte'
     },
@@ -77,10 +79,11 @@ export default function Services() {
           {services.map((service, index) => (
             <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow border border-slate-100 flex flex-col">
               <div className="mb-6 w-full h-40 rounded-lg overflow-hidden bg-slate-100">
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
+                <img
+                  src={service.image}
+                  alt={`${service.title} in Charlotte, NC`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                   referrerPolicy="no-referrer"
                 />
               </div>
