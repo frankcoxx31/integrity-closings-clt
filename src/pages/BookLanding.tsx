@@ -25,7 +25,6 @@ import {
   Lock
 } from 'lucide-react';
 import { format, addMonths, subMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, isToday, startOfWeek, endOfWeek, parseISO } from 'date-fns';
-import Logo from '../components/Logo';
 
 // --- Data ---
 
@@ -281,8 +280,7 @@ export default function BookLanding() {
         <div className="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center gap-2">
-              <Logo className="h-8 md:h-10 w-auto" />
-              <span className="font-serif font-bold text-lg md:text-xl hidden sm:inline">Integrity Closings CLT</span>
+              <span className="font-serif font-bold text-lg md:text-xl">Integrity Closings CLT</span>
             </Link>
             <div className="h-6 w-[1px] bg-slate-200 mx-2 hidden md:block"></div>
             <div className="hidden md:flex items-center text-[#6B7283] text-sm font-medium">
@@ -777,7 +775,6 @@ export default function BookLanding() {
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-12 mb-20">
           <div>
             <div className="flex items-center gap-2 mb-8 scale-110 origin-left">
-              <Logo className="h-10 w-auto" />
               <span className="font-serif font-bold text-2xl">Integrity Closings CLT</span>
             </div>
             <p className="text-slate-400 mb-8 max-w-xs leading-relaxed font-medium">
