@@ -62,6 +62,7 @@ const routes = [
   '/resources/acceptable-id-nc',
   '/resources/what-is-mobile-notary',
   '/resources/notary-toolkit',
+  '/resources/notary-ai-guides',
   '/services/business-documents',
   '/services/financial-documents',
   '/services/legal-documents',

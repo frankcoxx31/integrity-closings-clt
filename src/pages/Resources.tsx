@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, Video, BookOpen, ExternalLink, Play } from 'lucide-react';
+import { FileText, Video, BookOpen, ExternalLink, Play, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { pageMeta } from '../seo/pageMeta';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -53,11 +53,17 @@ export default function Resources() {
       icon: <BookOpen className="w-6 h-6 text-brand-600" />,
       link: '/resources/acceptable-id-nc'
     },
-    { 
-      title: 'What is a Mobile Notary?', 
-      description: 'Discover the benefits of using a mobile notary service and how it saves you time and hassle.', 
+    {
+      title: 'What is a Mobile Notary?',
+      description: 'Discover the benefits of using a mobile notary service and how it saves you time and hassle.',
       icon: <ExternalLink className="w-6 h-6 text-brand-600" />,
       link: '/resources/what-is-mobile-notary'
+    },
+    {
+      title: 'Notary AI Guides',
+      description: 'Free downloadable guides for using Claude, ChatGPT, Gemini, Perplexity, and Google AI Studio in your notary business.',
+      icon: <Sparkles className="w-6 h-6 text-brand-600" />,
+      link: '/resources/notary-ai-guides'
     }
   ];
 

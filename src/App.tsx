@@ -37,6 +37,7 @@ import AcknowledgmentVsJurat from './pages/resources/AcknowledgmentVsJurat';
 import AcceptableIdNc from './pages/resources/AcceptableIdNc';
 import WhatIsMobileNotary from './pages/resources/WhatIsMobileNotary';
 import NotaryToolkit from './pages/resources/NotaryToolkit';
+import NotaryAiGuides from './pages/resources/NotaryAiGuides';
 
 // New Service Pages
 import BusinessDocuments from './pages/services/BusinessDocuments';
@@ -128,6 +129,7 @@ export function AppContent() {
             <Route path="/resources/acceptable-id-nc" element={<AcceptableIdNc />} />
             <Route path="/resources/what-is-mobile-notary" element={<WhatIsMobileNotary />} />
             <Route path="/resources/notary-toolkit" element={<NotaryToolkit />} />
+            <Route path="/resources/notary-ai-guides" element={<NotaryAiGuides />} />
             <Route path="/calculator" element={<QuoteCalculator />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/after-hours-mobile-notary-charlotte-nc" element={<AfterHoursNotary />} />

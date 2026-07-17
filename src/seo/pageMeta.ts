@@ -114,6 +114,11 @@ export const pageMeta: Record<string, PageMeta> = {
     description: "Frank Coxx's personally tested recommendations for notary supplies, stamps, journals, and tools to run a professional notary business.",
     canonical: `${businessConfig.domain}/resources/notary-toolkit`,
   },
+  '/resources/notary-ai-guides': {
+    title: `Notary AI Guides | ${businessConfig.name}`,
+    description: 'Free downloadable guides for using Claude, ChatGPT, Gemini, Perplexity, and Google AI Studio in your notary business — no signup required.',
+    canonical: `${businessConfig.domain}/resources/notary-ai-guides`,
+  },
   '/services/business-documents': {
     title: `Business Document Mobile Notary Charlotte NC | ${businessConfig.name}`,
     description: "Mobile notary services for business documents in Charlotte, NC — contracts, corporate resolutions, employment verification, and more.",

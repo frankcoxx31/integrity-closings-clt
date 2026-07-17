@@ -155,6 +155,12 @@ export default function Navbar() {
                         >
                           🛠️ The Notary's Toolkit
                         </button>
+                        <button
+                          onClick={() => { setResourcesOpen(false); navigate('/resources/notary-ai-guides'); }}
+                          className="block w-full text-left px-4 py-3 text-sm font-semibold text-white/70 hover:text-accent-400 hover:bg-white/5 transition-colors"
+                        >
+                          🤖 Notary AI Guides
+                        </button>
                       </div>
                     )}
                   </div>
@@ -230,7 +236,13 @@ export default function Navbar() {
               >
                 🛠️ The Notary's Toolkit
               </button>
-              <button 
+              <button
+                onClick={() => { setIsOpen(false); navigate('/resources/notary-ai-guides'); }}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-bold text-accent-400 hover:text-accent-300 hover:bg-brand-900 focus:outline-none"
+              >
+                🤖 Notary AI Guides
+              </button>
+              <button
                 onClick={() => navigate('/booking')}
                 className="block w-full text-center mt-4 bg-white text-brand-950 px-4 py-3 rounded-full font-bold hover:bg-slate-100"
               >
