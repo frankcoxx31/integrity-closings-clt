@@ -7,6 +7,7 @@ interface Guide {
   title: string;
   description: string;
   file: string;
+  cover: string;
 }
 
 const guides: Guide[] = [
@@ -14,31 +15,37 @@ const guides: Guide[] = [
     title: 'Prompting Claude for Notaries',
     description: 'A practical guide to using Claude for day-to-day notary work — drafting client messages, organizing signing packages, and answering procedural questions.',
     file: '/downloads/prompting-claude-for-notaries.pdf',
+    cover: '/downloads/covers/cover-prompting-claude-for-notaries.jpg',
   },
   {
     title: 'Prompting ChatGPT for Notaries',
     description: 'Get more useful answers out of ChatGPT for scheduling, client communication, and general notary business tasks.',
     file: '/downloads/prompting-chatgpt-for-notaries.pdf',
+    cover: '/downloads/covers/cover-prompting-chatgpt-for-notaries.jpg',
   },
   {
     title: 'Prompting Gemini for Notaries',
     description: "Tips for getting the most out of Google's Gemini for everyday notary business writing and organization.",
     file: '/downloads/prompting-gemini-for-notaries.pdf',
+    cover: '/downloads/covers/cover-prompting-gemini-for-notaries.jpg',
   },
   {
     title: 'Prompting Perplexity for Notaries',
     description: 'Use Perplexity for research and fact-checking — verifying notary requirements, document rules, and state guidelines with cited sources.',
     file: '/downloads/prompting-perplexity-for-notaries.pdf',
+    cover: '/downloads/covers/cover-prompting-perplexity-for-notaries.jpg',
   },
   {
     title: 'Prompting Google AI Studio for Notaries',
     description: "A free research sandbox for notaries who want to experiment with AI without a paid subscription.",
     file: '/downloads/prompting-google-ai-studio-for-notaries.pdf',
+    cover: '/downloads/covers/cover-prompting-google-ai-studio-for-notaries.jpg',
   },
   {
     title: 'Designing with Claude Design for Notaries',
     description: 'Create simple flyers and social graphics to promote your notary business, no design experience required.',
     file: '/downloads/designing-with-claude-design-for-notaries.pdf',
+    cover: '/downloads/covers/cover-designing-with-claude-design-for-notaries.jpg',
   },
 ];
 
@@ -68,22 +75,31 @@ export default function NotaryAiGuides() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {guides.map((guide, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 hover:shadow-md transition-shadow flex flex-col h-full">
-              <div className="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-6">
-                <Download className="w-6 h-6 text-brand-600" />
+            <div key={index} className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+              <div className="bg-slate-100 flex items-center justify-center p-4">
+                <img
+                  src={guide.cover}
+                  alt={`${guide.title} — guide cover`}
+                  className="h-56 w-auto object-contain shadow-md rounded"
+                  width="400"
+                  height="518"
+                  loading="lazy"
+                />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">{guide.title}</h3>
-              <p className="text-slate-600 leading-relaxed flex-grow mb-6">
-                {guide.description}
-              </p>
-              <a
-                href={guide.file}
-                download
-                className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-bold py-3 px-6 rounded-full hover:bg-brand-700 transition-colors"
-              >
-                <Download className="w-4 h-4" />
-                Download Free Guide
-              </a>
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{guide.title}</h3>
+                <p className="text-slate-600 leading-relaxed flex-grow mb-6">
+                  {guide.description}
+                </p>
+                <a
+                  href={guide.file}
+                  download
+                  className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-bold py-3 px-6 rounded-full hover:bg-brand-700 transition-colors"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Free Guide
+                </a>
+              </div>
             </div>
           ))}
         </div>
