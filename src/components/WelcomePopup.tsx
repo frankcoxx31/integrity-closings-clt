@@ -53,7 +53,7 @@ export default function WelcomePopup() {
             <img
               src="/logo.jpg"
               alt="Integrity Closings CLT"
-              className="h-24 w-auto mix-blend-multiply object-contain"
+              className="h-12 w-auto mix-blend-multiply object-contain"
               width="342"
               height="103"
               referrerPolicy="no-referrer"
