@@ -32,6 +32,7 @@ const out = src
   .map(p => ({
     slug: p.slug,
     title: p.title,
+    category: p.category,
     date: fmt(p.date),
     publishDate: p.date,
     excerpt: p.excerpt || p.metaDescription,

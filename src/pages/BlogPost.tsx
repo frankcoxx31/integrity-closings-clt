@@ -1751,7 +1751,7 @@ export default function BlogPost() {
           </h1>
           <img
             src={autoPost.imageUrl}
-            alt={autoPost.title}
+            alt={`${autoPost.category} illustration — Integrity Closings CLT`}
             className="w-full h-auto rounded-lg my-8 shadow-md"
             loading="lazy" referrerPolicy="no-referrer"
           />

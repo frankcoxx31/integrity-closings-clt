@@ -56,6 +56,8 @@ export default function Blog() {
                 <img
                   src={post.imageUrl}
                   alt={post.title}
+                  width="640"
+                  height="360"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                   referrerPolicy="no-referrer"
