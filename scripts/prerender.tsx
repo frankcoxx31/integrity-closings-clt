@@ -207,6 +207,18 @@ function main() {
     console.warn(`[prerender] Routes left as client-only (no regression, just not yet static): ${failed.join(', ')}`);
   }
 
+  // sitemap.xml was previously a hand-maintained static file in public/ — new
+  // blog posts (auto-published or manual) silently never made it in. Generate
+  // it here instead, from the same `routes` list (already includes every
+  // /blog/:slug pulled from auto-blog-posts.json + manual-blog-posts.ts) so it
+  // can never drift from what's actually prerendered.
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${routes
+    .map((route) => `  <url><loc>${businessConfig.domain}${route === '/' ? '/' : route}</loc></url>`)
+    .join('\n')}\n</urlset>\n`;
+  writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf-8');
+  writeFileSync(path.join(__dirname, '..', 'public', 'sitemap.xml'), sitemapXml, 'utf-8');
+  console.log(`[prerender] Wrote sitemap.xml with ${routes.length} URLs.`);
+
   // A literal dist/404.html for server.ts's catch-all to serve (with a real
   // 404 status) for any path that isn't a known route or static asset.
   // "/__404__" matches nothing in the route table, so NotFound renders.

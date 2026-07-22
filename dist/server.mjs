@@ -61,6 +61,67 @@ try {
 
 // server.ts
 import { Resend } from "resend";
+
+// src/config/business.ts
+var businessConfig = {
+  name: "Integrity Closings CLT",
+  ownerName: "Frank Coxx",
+  // Single number for both calls and texts.
+  phone: {
+    display: "980-505-8050",
+    tel: "9805058050"
+  },
+  email: "fcoxx@integrityclosingsclt.com",
+  contactEmail: "info@integrityclosingsclt.com",
+  domain: "https://www.integrityclosingsclt.com",
+  // The primary city baked into route slugs, taglines, and the city-page grid
+  // today (e.g. /hospital-notary-charlotte-nc). This is a marketing/SEO hub
+  // city, not necessarily the notary's actual physical address (see
+  // `address`/`officeLocation` below). Renaming this to move to a new
+  // customer's city is handled by scripts/rebrand.mjs.
+  hubCity: "Charlotte",
+  hubState: "NC",
+  // Default schema.org geoMidpoint for city pages that don't specify their
+  // own coordinates (each city page should pass its own `geo` prop to
+  // CityPageLayout for accuracy — this is just the fallback).
+  hubGeo: {
+    lat: 35.2271,
+    lng: -80.8431,
+    radiusMeters: 5e4
+  },
+  // The notary's actual physical location — used for the real LocalBusiness
+  // address/geo on the homepage and as the mileage-calculator's origin point.
+  address: {
+    locality: "Mint Hill",
+    region: "NC",
+    postalCode: "28227",
+    country: "US"
+  },
+  officeLocation: {
+    lat: 35.1813,
+    lng: -80.6556
+  },
+  serviceAreaLabel: "Serving the Greater Metro Area",
+  hours: {
+    weekday: "Monday - Saturday: 9:00am - 7:00pm",
+    weekend: "Sunday: Closed",
+    afterHours: "After-hours service available (7:00pm - 11:00pm)"
+  },
+  pricing: {
+    notaryFeePerSignature: 10,
+    irsMileageRate: 0.725
+  },
+  // These IDs are literally different Google accounts per customer. They're
+  // documented here for reference, but index.html (static) and server.ts's
+  // pageMeta still need a manual edit — see TEMPLATE_SETUP.md.
+  analytics: {
+    gtmId: "GTM-WS4HGC6H",
+    gaId: "G-RBR8WJGG39",
+    googleAdsId: "AW-17355177903"
+  }
+};
+
+// server.ts
 var resend = new Resend(process.env.RESEND_API_KEY);
 var __filename = fileURLToPath(import.meta.url);
 var __dirname = path.dirname(__filename);
@@ -68,6 +129,29 @@ async function startServer() {
   const app = express();
   const PORT = Number(process.env.PORT) || 3e3;
   app.use(express.json());
+  app.use((req, res, next) => {
+    res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+    next();
+  });
+  app.use((req, res, next) => {
+    const host = (req.headers.host || "").split(":")[0].toLowerCase();
+    if (host === "integrityclosingsclt.com") {
+      return res.redirect(301, `https://www.integrityclosingsclt.com${req.originalUrl}`);
+    }
+    next();
+  });
+  const LEGACY_REDIRECTS = {
+    "/nursing-home-notary": "/nursing-home-notary-charlotte-nc",
+    "/service-locations-mobile-services-north-carolina.html": "/notary-service-locations-nc",
+    "/mobile-notary-service-pricing": "/faq"
+  };
+  app.use((req, res, next) => {
+    const target = LEGACY_REDIRECTS[req.path];
+    if (target) {
+      return res.redirect(301, target);
+    }
+    next();
+  });
   const getGoogleCredentials = async () => {
     let privateKey = process.env.GOOGLE_PRIVATE_KEY;
     let clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
@@ -347,7 +431,10 @@ ${cleanBody}
   });
   app.post("/api/book", async (req, res) => {
     try {
-      const { firstName, lastName, email, phone, address, notes, serviceName, startTime, endTime } = req.body;
+      const { firstName, lastName, email, phone, address, notes, serviceName, startTime, endTime, mileageFeeAgreed } = req.body;
+      if (mileageFeeAgreed !== true) {
+        return res.status(400).json({ error: "You must agree to the mileage/travel fee to book an appointment." });
+      }
       const { credentialsObj, calendarId } = await getGoogleCredentials();
       if (!credentialsObj || !calendarId) {
         return res.status(500).json({ error: "Calendar credentials not configured" });
@@ -362,6 +449,7 @@ ${cleanBody}
 Phone: ${phone}
 Email: ${email}
 Address: ${address}
+Mileage fee agreed in writing: Yes
 
 Notes: ${notes}`,
         start: {
@@ -391,6 +479,7 @@ Notes: ${notes}`,
             service_name: serviceName,
             start_time: startTime,
             end_time: endTime,
+            mileage_fee_agreed: true,
             created_at: (/* @__PURE__ */ new Date()).toISOString()
             // Using ISO string for now to match rules isValidBooking check
           });
@@ -480,6 +569,7 @@ Notes: ${notes}`,
                 }
               ],
               googleCalendarEventId,
+              mileageFeeAgreed: true,
               source: "website",
               createdBy: "website-form",
               createdAt: now,
@@ -504,14 +594,14 @@ Notes: ${notes}`,
           hour12: true
         });
         await resend.emails.send({
-          from: "Integrity Closings CLT <noreply@integrityclosingsclt.com>",
-          to: "fcoxx@integrityclosingsclt.com",
+          from: `${businessConfig.name} <noreply@${businessConfig.email.split("@")[1]}>`,
+          to: businessConfig.email,
           subject: `New Booking: ${firstName} ${lastName} \u2014 ${startFormatted}`,
           html: `
             <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#f8fafc;border-radius:8px;">
               <div style="background:#172554;padding:20px 24px;border-radius:6px 6px 0 0;">
                 <h1 style="color:#ffffff;margin:0;font-size:20px;">New Appointment Booked</h1>
-                <p style="color:rgba(255,255,255,.7);margin:4px 0 0;font-size:14px;">Integrity Closings CLT</p>
+                <p style="color:rgba(255,255,255,.7);margin:4px 0 0;font-size:14px;">${businessConfig.name}</p>
               </div>
               <div style="background:#ffffff;padding:24px;border-radius:0 0 6px 6px;border:1px solid #e2e8f0;border-top:none;">
                 <table style="width:100%;border-collapse:collapse;">
@@ -628,69 +718,26 @@ Notes: ${notes}`,
     if (!fs.existsSync(distPath)) {
       console.error("[Error] dist directory not found at", distPath);
     }
-    const pageMeta = {
-      "/nursing-home-notary-charlotte-nc": {
-        title: "Nursing Home Notary Charlotte NC | Mobile Notary for Assisted Living | Integrity Closings CLT",
-        description: "Need a notary at a nursing home or assisted living facility in Charlotte, NC? Integrity Closings CLT sends a commissioned notary directly to residents in Mecklenburg, Union, and Cabarrus counties.",
-        canonical: "https://www.integrityclosingsclt.com/nursing-home-notary-charlotte-nc"
-      },
-      "/hospital-notary-charlotte-nc": {
-        title: "Hospital & Bedside Notary Charlotte NC | Mobile Notary for Patients | Integrity Closings CLT",
-        description: "Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.",
-        canonical: "https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc"
-      },
-      "/mobile-notary-charlotte-nc": {
-        title: "Mobile Notary Services in Charlotte, NC | Integrity Closings CLT",
-        description: "Integrity Closings CLT provides professional mobile notary services throughout Charlotte, NC. We come to your home, office, hospital, or care facility \u2014 same-day appointments available.",
-        canonical: "https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc"
-      },
-      "/estate-planning-notary-charlotte-nc": {
-        title: "Estate & Trust Notarization Charlotte NC | Mobile Notary | Integrity Closings CLT",
-        description: "Professional mobile notary for estate planning and trust documents in Charlotte, NC. We travel to homes, hospitals, and nursing homes for Wills, Trusts, and POA.",
-        canonical: "https://www.integrityclosingsclt.com/estate-planning-notary-charlotte-nc"
-      },
-      "/after-hours-mobile-notary-charlotte-nc": {
-        title: "After-Hours Mobile Notary Charlotte NC | Evening & Weekend Notary | Integrity Closings CLT",
-        description: "Need a notary after hours in Charlotte, NC? Integrity Closings CLT offers evening and weekend mobile notary appointments \u2014 available when banks and UPS stores are closed.",
-        canonical: "https://www.integrityclosingsclt.com/after-hours-mobile-notary-charlotte-nc"
-      },
-      "/loan-signing-agent-charlotte-nc": {
-        title: "Loan Signing Agent Charlotte NC | Certified Mobile Notary | Integrity Closings CLT",
-        description: "Certified loan signing agent serving Charlotte, NC and surrounding areas. Professional, accurate, and reliable closings at your home, office, or any location.",
-        canonical: "https://www.integrityclosingsclt.com/loan-signing-agent-charlotte-nc"
-      },
-      "/areas-served": {
-        title: "Mobile Notary Service Areas | Charlotte NC & Surrounding Counties | Integrity Closings CLT",
-        description: "Integrity Closings CLT provides mobile notary services across Mecklenburg, Union, and Cabarrus counties including Mint Hill, Matthews, Huntersville, Monroe, and more.",
-        canonical: "https://www.integrityclosingsclt.com/areas-served"
-      }
-    };
     const indexPath = path.join(distPath, "index.html");
-    const injectMeta = (req, res) => {
-      res.setHeader("X-Served-By", "express-node");
-      if (!fs.existsSync(indexPath)) {
-        res.status(404).send("index.html not found.");
-        return;
+    app.use((req, res, next) => {
+      if (req.method !== "GET" || path.extname(req.path)) return next();
+      const candidate = path.join(distPath, req.path, "index.html");
+      if (fs.existsSync(candidate)) {
+        return res.sendFile(candidate);
       }
-      const meta = pageMeta[req.path];
-      let html = fs.readFileSync(indexPath, "utf-8");
-      if (meta) {
-        html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
-        html = html.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);
-        html = html.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${meta.canonical}"`);
-      }
-      res.send(html);
-    };
-    Object.keys(pageMeta).forEach((route) => {
-      app.get(route, injectMeta);
+      next();
     });
     app.use(express.static(distPath));
+    const SPA_ONLY_ROUTES = /* @__PURE__ */ new Set(["/book", "/booking", "/calculator"]);
+    const notFoundPath = path.join(distPath, "404.html");
     app.get("*", (req, res) => {
-      if (fs.existsSync(indexPath)) {
-        res.sendFile(indexPath);
-      } else {
-        res.status(404).send("index.html not found. Check server logs.");
+      if (SPA_ONLY_ROUTES.has(req.path) && fs.existsSync(indexPath)) {
+        return res.sendFile(indexPath);
       }
+      if (fs.existsSync(notFoundPath)) {
+        return res.status(404).sendFile(notFoundPath);
+      }
+      res.status(404).send("Not Found");
     });
   }
   app.listen(PORT, "0.0.0.0", () => {

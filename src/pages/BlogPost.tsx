@@ -6,14 +6,14 @@ import { manualBlogPosts } from '../data/manual-blog-posts';
 
 export default function BlogPost() {
   const { slug } = useParams();
+  const manualMeta = manualBlogPosts.find((p) => p.slug === slug);
+  const autoMeta = autoPosts.find((p) => p.slug === slug);
 
   useEffect(() => {
-    const manual = manualBlogPosts.find((p) => p.slug === slug);
-    const auto = autoPosts.find((p) => p.slug === slug);
-    const currentSeo = manual?.seoTitle && manual?.seoDescription
-      ? { title: manual.seoTitle, description: manual.seoDescription }
-      : auto
-        ? { title: auto.seoTitle, description: auto.seoDescription }
+    const currentSeo = manualMeta?.seoTitle && manualMeta?.seoDescription
+      ? { title: manualMeta.seoTitle, description: manualMeta.seoDescription }
+      : autoMeta
+        ? { title: autoMeta.seoTitle, description: autoMeta.seoDescription }
         : undefined;
     if (currentSeo) {
       document.title = currentSeo.title;
@@ -22,7 +22,32 @@ export default function BlogPost() {
         metaDesc.setAttribute('content', currentSeo.description);
       }
     }
-  }, [slug]);
+  }, [slug, manualMeta, autoMeta]);
+
+  // BlogPosting schema — sourced from manual-blog-posts.ts / auto-blog-posts.json,
+  // which cover every real post slug regardless of which renderContent() branch
+  // (hardcoded JSX vs data-driven) produces the body.
+  const schemaTitle = manualMeta?.seoTitle || autoMeta?.seoTitle || manualMeta?.title || autoMeta?.title;
+  const schemaDescription = manualMeta?.seoDescription || autoMeta?.seoDescription || manualMeta?.excerpt || autoMeta?.excerpt;
+  const schemaImage = manualMeta?.imageUrl || autoMeta?.imageUrl;
+  const schemaDateRaw = autoMeta?.publishDate || manualMeta?.date;
+  const schemaDate = schemaDateRaw ? new Date(schemaDateRaw).toISOString() : undefined;
+  const blogPostingSchema = schemaTitle && schemaImage && schemaDate ? {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": schemaTitle,
+    "description": schemaDescription,
+    "image": schemaImage,
+    "datePublished": schemaDate,
+    "dateModified": schemaDate,
+    "author": { "@type": "Person", "name": "Frank Coxx" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Integrity Closings CLT",
+      "logo": { "@type": "ImageObject", "url": "https://www.integrityclosingsclt.com/logo-transparent.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": `https://www.integrityclosingsclt.com/blog/${slug}` }
+  } : null;
 
   const renderContent = () => {
     if (slug === 'power-of-attorney-north-carolina-notarized') {
@@ -1756,6 +1781,9 @@ export default function BlogPost() {
 
   return (
     <div className="bg-slate-50 min-h-screen py-12">
+      {blogPostingSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
+      )}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link to="/blog" className="inline-flex items-center text-slate-600 hover:text-brand-600 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
