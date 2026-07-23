@@ -177,19 +177,38 @@ async function startServer() {
     return { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError, source, credentialsObj };
   };
 
+  // When set, the service account impersonates this Workspace user via
+  // domain-wide delegation rather than acting as itself. Events are then
+  // created *as* that user, which is what makes reminder overrides and
+  // attendee invitations actually reach them — a service account acting as
+  // itself only ever affects its own copy of an event.
+  //
+  // This also removes the need to share the calendar with the service
+  // account, so a Workspace domain can keep external calendar sharing
+  // locked down. Requires the service account's client ID to be authorized
+  // in Admin console > Security > API controls > Domain-wide delegation
+  // for the calendar scope below. Leave unset to keep the previous
+  // (non-impersonating) behavior.
+  const rawImpersonate = process.env.GOOGLE_IMPERSONATE_USER;
+  const IMPERSONATE_USER =
+    rawImpersonate && rawImpersonate !== 'undefined' && rawImpersonate !== 'null'
+      ? rawImpersonate.replace(/['"]/g, '').trim()
+      : null;
+
   // Robust auth client creator
   const getGoogleAuth = (credentialsObj: any) => {
     if (!credentialsObj || !credentialsObj.private_key || !credentialsObj.client_email) {
       return null;
     }
-    
+
     // Explicitly use JWT constructor for maximum control over parameters
     const auth = new google.auth.JWT({
       email: credentialsObj.client_email,
       key: credentialsObj.private_key,
-      scopes: ['https://www.googleapis.com/auth/calendar']
+      scopes: ['https://www.googleapis.com/auth/calendar'],
+      ...(IMPERSONATE_USER ? { subject: IMPERSONATE_USER } : {}),
     });
-    
+
     return auth;
   };
 
@@ -307,6 +326,7 @@ async function startServer() {
         GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING',
         GOOGLE_SERVICE_ACCOUNT_JSON: process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? 'CONFIGURED' : 'MISSING',
         RESEND_API_KEY: RESEND_API_KEY ? 'CONFIGURED' : 'MISSING',
+        GOOGLE_IMPERSONATE_USER: IMPERSONATE_USER || 'MISSING (acting as service account itself)',
         NODE_ENV: process.env.NODE_ENV || 'development'
       }
     });
