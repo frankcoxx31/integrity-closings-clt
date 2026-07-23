@@ -44,6 +44,7 @@ export default function Footer() {
               <li><Link to="/title-company-attorney-closing-support-charlotte-nc" className="text-slate-400 hover:text-white transition-colors">Title & Attorney Support</Link></li>
               <li><Link to="/faq" className="text-slate-400 hover:text-white transition-colors">FAQ</Link></li>
               <li><a href="/booking" className="text-slate-400 hover:text-white transition-colors">Book Appointment</a></li>
+              <li><a href="https://www.notaryproapp.com/intake" className="text-slate-400 hover:text-white transition-colors">Request a Notary</a></li>
             </ul>
           </div>
         </div>
