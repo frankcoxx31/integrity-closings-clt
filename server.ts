@@ -513,6 +513,20 @@ async function startServer() {
           dateTime: endTime,
           timeZone: 'America/New_York',
         },
+        // Phone/desktop popups ahead of the signing, rather than whatever the
+        // calendar's default happens to be. Note these fire before the
+        // appointment, not when the booking comes in — the "someone just
+        // booked" alert is the Resend email above. Reminders are also
+        // per-user in Google Calendar, and this event is inserted by the
+        // service account, so whether these reach the calendar owner depends
+        // on how the calendar is shared. Book a test appointment to confirm.
+        reminders: {
+          useDefault: false,
+          overrides: [
+            { method: 'popup', minutes: 24 * 60 },
+            { method: 'popup', minutes: 60 },
+          ],
+        },
       };
 
       const calendarEvent = await calendar.events.insert({
