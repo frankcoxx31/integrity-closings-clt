@@ -199,7 +199,7 @@ export default function QuoteCalculator() {
 
             <div className="mt-8 bg-brand-50 border-l-4 border-brand-600 p-4 rounded-r-lg">
               <p className="text-sm text-brand-900">
-                <strong>Disclaimer:</strong> In North Carolina, the notary fee is ${SETTINGS.notaryFeePerSignature} per notarized principal signature. Mobile notaries may also charge travel reimbursement at the IRS mileage rate (${SETTINGS.irsMileageRate} per mile), which must be agreed to before the appointment. This is state-specific notary law — rewrite this disclaimer if setting up for a customer outside North Carolina.
+                <strong>Mileage &amp; travel disclaimer:</strong> In North Carolina, the notary fee is ${SETTINGS.notaryFeePerSignature} per notarized principal signature. Travel is billed separately as mileage reimbursement at the IRS business rate of ${SETTINGS.irsMileageRate} per mile, calculated on round-trip distance from our office in {businessConfig.address.locality}, {businessConfig.address.region}. Travel reimbursement is not a notary fee and must be agreed to before the appointment. The mileage shown here is an estimate — the final figure is confirmed when your appointment is booked, and it may change if the address changes or a return trip is needed.
               </p>
             </div>
           </div>
