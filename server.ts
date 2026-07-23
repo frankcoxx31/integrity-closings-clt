@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -7,7 +8,30 @@ import { adminDb } from './src/lib/firebaseServer';
 import { Resend } from 'resend';
 import { businessConfig } from './src/config/business';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Resend sends the "new booking" notification email. Some hosts inject the
+// literal strings "undefined"/"null" for unset variables, so normalize those
+// away rather than handing them to the SDK as if they were a real key.
+const rawResendKey = process.env.RESEND_API_KEY;
+const RESEND_API_KEY =
+  rawResendKey && rawResendKey !== 'undefined' && rawResendKey !== 'null'
+    ? rawResendKey.replace(/['"]/g, '').trim()
+    : null;
+
+if (!RESEND_API_KEY) {
+  console.error(
+    '[EMAIL] RESEND_API_KEY is not set — booking notification emails will NOT be sent. ' +
+    'Set it in your hosting provider\'s environment variables (see .env.example).'
+  );
+}
+
+const resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
+
+// The address bookings are emailed from. Its domain must be verified in Resend
+// or every send is rejected. Override with RESEND_FROM_EMAIL if you verify a
+// different domain than the business email's.
+const NOTIFY_FROM_EMAIL =
+  process.env.RESEND_FROM_EMAIL || `noreply@${businessConfig.email.split('@')[1]}`;
+const NOTIFY_TO_EMAIL = process.env.RESEND_TO_EMAIL || businessConfig.email;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -229,10 +253,46 @@ async function startServer() {
       firebaseError = e.message;
     }
 
+    // Test Resend (booking notification email) configuration. domains.list()
+    // is a read-only call that proves the key works and shows whether the
+    // sending domain is actually verified — the two things that silently
+    // break booking notifications.
+    let resendStatus = 'NOT_CONFIGURED';
+    let resendError = null;
+    try {
+      if (!resend) {
+        resendStatus = 'MISSING_KEY: RESEND_API_KEY is not set';
+      } else {
+        const { data, error } = await resend.domains.list();
+        if (error) {
+          resendStatus = 'FAILED: key rejected by Resend';
+          resendError = `${error.name}: ${error.message}`;
+        } else {
+          const domains = data?.data || [];
+          const sendingDomain = NOTIFY_FROM_EMAIL.split('@')[1];
+          const match = domains.find((d: any) => d.name === sendingDomain);
+          if (!match) {
+            resendStatus = `KEY_OK but sending domain "${sendingDomain}" is NOT added in Resend`;
+          } else if (match.status !== 'verified') {
+            resendStatus = `KEY_OK but domain "${sendingDomain}" status is "${match.status}" (must be "verified")`;
+          } else {
+            resendStatus = `SUCCESS: key valid, "${sendingDomain}" verified`;
+          }
+        }
+      }
+    } catch (e: any) {
+      resendStatus = 'ERROR: ' + e.message;
+      resendError = e.message;
+    }
+
     res.json({
       status: 'ok',
       firebase: firebaseStatus,
       firebase_error: firebaseError,
+      resend: resendStatus,
+      resend_error: resendError,
+      resend_from: NOTIFY_FROM_EMAIL,
+      resend_to: NOTIFY_TO_EMAIL,
       google_auth_test: authTest,
       google_auth_error: authError,
       fallback_status: fallbackStatus,
@@ -246,6 +306,7 @@ async function startServer() {
         GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY ? (process.env.GOOGLE_PRIVATE_KEY === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING',
         GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL === 'undefined' ? 'UNDEFINED_STRING' : 'CONFIGURED') : 'MISSING',
         GOOGLE_SERVICE_ACCOUNT_JSON: process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? 'CONFIGURED' : 'MISSING',
+        RESEND_API_KEY: RESEND_API_KEY ? 'CONFIGURED' : 'MISSING',
         NODE_ENV: process.env.NODE_ENV || 'development'
       }
     });
@@ -586,6 +647,9 @@ async function startServer() {
 
       // Send booking notification email to Frank
       try {
+        if (!resend) {
+          throw new Error('RESEND_API_KEY is not configured on this server');
+        }
         const startFormatted = new Date(startTime).toLocaleString('en-US', {
           timeZone: 'America/New_York',
           weekday: 'long',
@@ -596,9 +660,9 @@ async function startServer() {
           minute: '2-digit',
           hour12: true
         });
-        await resend.emails.send({
-          from: `${businessConfig.name} <noreply@${businessConfig.email.split('@')[1]}>`,
-          to: businessConfig.email,
+        const { error: resendError } = await resend.emails.send({
+          from: `${businessConfig.name} <${NOTIFY_FROM_EMAIL}>`,
+          to: NOTIFY_TO_EMAIL,
           subject: `New Booking: ${firstName} ${lastName} — ${startFormatted}`,
           html: `
             <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#f8fafc;border-radius:8px;">
@@ -623,9 +687,15 @@ async function startServer() {
             </div>
           `
         });
-        console.log('[EMAIL] Booking notification sent to fcoxx@integrityclosingsclt.com');
-      } catch (emailErr) {
-        console.error('[EMAIL] Notification failed (non-blocking):', emailErr);
+        // The Resend SDK returns errors in the response body instead of
+        // throwing, so a rejected send (bad key, unverified domain) would
+        // otherwise look like a success here.
+        if (resendError) {
+          throw new Error(`${resendError.name}: ${resendError.message}`);
+        }
+        console.log(`[EMAIL] Booking notification sent to ${NOTIFY_TO_EMAIL}`);
+      } catch (emailErr: any) {
+        console.error('[EMAIL] Notification failed (non-blocking):', emailErr.message || emailErr);
       }
 
       res.json({ success: true });
