@@ -195,6 +195,51 @@ async function startServer() {
       ? rawImpersonate.replace(/['"]/g, '').trim()
       : null;
 
+  // The booking form sends wall-clock strings like "2026-07-30T14:00:00" with
+  // no zone attached (see src/pages/Booking.tsx). They are always the notary's
+  // local time — America/New_York. Passing one to `new Date()` parses it in the
+  // *server's* zone, which is UTC in production, so every subsequent
+  // toLocaleString('...', { timeZone: 'America/New_York' }) shifted the value
+  // back by the Eastern offset and reported bookings 4-5 hours early. The
+  // calendar event avoided this only because Google is handed the raw string
+  // plus an explicit timeZone and resolves it itself.
+  const ET_TIME_ZONE = 'America/New_York';
+
+  const parseNaiveParts = (naive: string) => {
+    const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(naive || '');
+    if (!m) return null;
+    return { year: +m[1], month: +m[2], day: +m[3], hour: +m[4], minute: +m[5] };
+  };
+
+  // Render the wall-clock value exactly as the client picked it. Building the
+  // Date in UTC and formatting in UTC means no conversion happens in between.
+  const formatNaiveEt = (naive: string, opts: Intl.DateTimeFormatOptions) => {
+    const p = parseNaiveParts(naive);
+    if (!p) return naive;
+    const d = new Date(Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute));
+    return d.toLocaleString('en-US', { ...opts, timeZone: 'UTC' });
+  };
+
+  // How far ahead of UTC is Eastern at this instant (handles EDT vs EST)?
+  const etOffsetMs = (utcMs: number) => {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: ET_TIME_ZONE, hour12: false,
+      year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+    }).formatToParts(new Date(utcMs));
+    const g = (t: string) => +(parts.find(p => p.type === t)?.value ?? 0);
+    return Date.UTC(g('year'), g('month') - 1, g('day'), g('hour') % 24, g('minute'), g('second')) - utcMs;
+  };
+
+  // The real UTC instant for an Eastern wall-clock string. Resolved in two
+  // passes so a time near a DST boundary uses the offset actually in effect.
+  const naiveEtToInstant = (naive: string) => {
+    const p = parseNaiveParts(naive);
+    if (!p) return new Date(naive);
+    const guess = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute);
+    return new Date(guess - etOffsetMs(guess - etOffsetMs(guess)));
+  };
+
   // Robust auth client creator
   const getGoogleAuth = (credentialsObj: any) => {
     if (!credentialsObj || !credentialsObj.private_key || !credentialsObj.client_email) {
@@ -587,20 +632,20 @@ async function startServer() {
           if (!ownerUserId) {
             console.error('[CRM] CRM_OWNER_USER_ID missing — skipping appointment write.');
           } else {
-            const startDate = new Date(startTime);
+            // date/time are the Eastern wall clock the client picked;
+            // sortableDateTime is the true instant that corresponds to.
+            const parts = parseNaiveParts(startTime);
+            const dateStr = parts
+              ? `${parts.year}-${String(parts.month).padStart(2, '0')}-${String(parts.day).padStart(2, '0')}`
+              : '';
 
-            const dateStr = startDate.toLocaleDateString('en-CA', {
-              timeZone: 'America/New_York'
-            });
-
-            const timeStr = startDate.toLocaleTimeString('en-US', {
-              timeZone: 'America/New_York',
+            const timeStr = formatNaiveEt(startTime, {
               hour: 'numeric',
               minute: '2-digit',
               hour12: true
             });
 
-            const sortableDateTime = startDate.toISOString();
+            const sortableDateTime = naiveEtToInstant(startTime).toISOString();
             const appointmentId = generateCrmId();
             const now = new Date().toISOString();
 
@@ -684,8 +729,7 @@ async function startServer() {
         if (!resend) {
           throw new Error('RESEND_API_KEY is not configured on this server');
         }
-        const startFormatted = new Date(startTime).toLocaleString('en-US', {
-          timeZone: 'America/New_York',
+        const startFormatted = formatNaiveEt(startTime, {
           weekday: 'long',
           year: 'numeric',
           month: 'long',
