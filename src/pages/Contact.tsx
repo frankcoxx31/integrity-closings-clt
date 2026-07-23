@@ -110,6 +110,7 @@ export default function Contact() {
                     <p className="text-slate-300 mt-1">{businessConfig.hours.weekday}</p>
                     <p className="text-slate-300">{businessConfig.hours.weekend}</p>
                     <p className="text-sm text-slate-400 mt-1">{businessConfig.hours.afterHours}</p>
+                    <p className="text-sm font-medium text-brand-300 mt-2">{businessConfig.hours.facilityLabel}</p>
                   </div>
                 </div>
 

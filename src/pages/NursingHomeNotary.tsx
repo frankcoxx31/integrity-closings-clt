@@ -2,6 +2,7 @@ import { ArrowLeft, CheckCircle, Info, MapPin, Phone, Heart, Clock, ShieldCheck,
 import { Link } from 'react-router-dom';
 import { pageMeta } from '../seo/pageMeta';
 import { usePageMeta } from '../hooks/usePageMeta';
+import EmergencyAvailability from '../components/EmergencyAvailability';
 
 const nursingHomeNotarySchema = {
       "@context": "https://schema.org",
@@ -22,7 +23,13 @@ const nursingHomeNotarySchema = {
             { "@type": "City", "name": "Concord" },
             { "@type": "City", "name": "Mint Hill" }
           ],
-          "description": "Mobile notary services for residents at nursing homes, assisted living facilities, and memory care units in Charlotte, NC and surrounding areas.",
+          "description": "Mobile notary services for residents at nursing homes, assisted living facilities, and memory care units in Charlotte, NC and surrounding areas. Available 24/7 for emergency and after-hours visits.",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
           "url": "https://www.integrityclosingsclt.com/nursing-home-notary-charlotte-nc"
         },
         {
@@ -197,6 +204,8 @@ export default function NursingHomeNotary() {
               </a>
             </div>
             <p className="text-center text-slate-500 -mt-6 mb-10 text-sm">To schedule a nursing home or assisted living notary visit</p>
+
+            <EmergencyAvailability facilityType="nursing home and assisted living" />
 
             {/* How it works */}
             <section className="mb-12">

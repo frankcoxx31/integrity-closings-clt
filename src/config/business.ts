@@ -52,6 +52,9 @@ export const businessConfig = {
     weekday: 'Monday - Saturday: 9:00am - 7:00pm',
     weekend: 'Sunday: Closed',
     afterHours: 'After-hours service available (7:00pm - 11:00pm)',
+    // Hospital, hospice, and nursing home / assisted living signings are handled
+    // around the clock, since bedside documents are often time-critical.
+    facilityLabel: 'Hospital & nursing home visits: 24/7 emergency availability',
   },
 
   pricing: {

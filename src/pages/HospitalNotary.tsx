@@ -1,6 +1,7 @@
 import { ArrowLeft, CheckCircle, Info, MapPin, Phone, Hospital, Heart, Clock, ShieldCheck, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import EmergencyAvailability from '../components/EmergencyAvailability';
 
 const hospitalNotarySchema = {
   "@context": "https://schema.org",
@@ -14,7 +15,13 @@ const hospitalNotarySchema = {
             "url": "https://www.integrityclosingsclt.com/"
           },
           "areaServed": {"@type": "City", "name": "Charlotte"},
-          "description": "Mobile notary services for patients, families, and caregivers at hospitals, nursing homes, and care facilities in Charlotte, NC.",
+          "description": "Mobile notary services for patients, families, and caregivers at hospitals, nursing homes, and care facilities in Charlotte, NC. Available 24/7 for emergency bedside notarizations.",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
           "url": "https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc"
         },
         {
@@ -177,7 +184,9 @@ export default function HospitalNotary() {
               </a>
             </div>
             <p className="text-center text-slate-500 -mt-6 mb-10 text-sm">To schedule a hospital notary appointment in Charlotte, NC — same-day requests welcome.</p>
-            
+
+            <EmergencyAvailability facilityType="hospital and bedside" />
+
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <Hospital className="w-6 h-6 text-brand-600 mr-3" />
