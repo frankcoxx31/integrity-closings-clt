@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
-import { X, Calendar, MessageSquare, Calculator } from 'lucide-react';
+import { X, Calendar, MessageSquare, Hospital, Phone, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
 export default function WelcomePopup() {
   const [isOpen, setIsOpen] = useState(false);
+  // Bedside callers are usually in a hurry, so this expands in place rather
+  // than navigating them away from the popup.
+  const [showBedside, setShowBedside] = useState(false);
 
   useEffect(() => {
     // Check if the user has already seen the popup in this session
@@ -86,23 +89,54 @@ export default function WelcomePopup() {
               Text Now 980-505-8050
             </a>
 
+            {/* Urgent Button: Hospital / nursing home bedside signings */}
+            <div className="rounded-xl bg-amber-50 border border-amber-200 overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setShowBedside(v => !v)}
+                aria-expanded={showBedside}
+                className="flex items-center justify-center w-full py-3 px-6 text-amber-900 font-bold hover:bg-amber-100 transition-colors"
+              >
+                <Hospital className="w-5 h-5 mr-2 text-amber-600" />
+                24/7 Hospital &amp; Bedside
+                <ChevronDown className={`w-4 h-4 ml-2 text-amber-600 transition-transform ${showBedside ? 'rotate-180' : ''}`} />
+              </button>
+
+              {showBedside && (
+                <div className="px-4 pb-4 pt-1 space-y-3 text-center">
+                  <p className="text-sm text-amber-900 leading-relaxed">
+                    Hospitals, nursing homes, hospice, rehab and assisted living — day or night.
+                    Call and we'll confirm the visit on the phone.
+                  </p>
+
+                  <a
+                    href="tel:9805058050"
+                    onClick={handleClose}
+                    className="flex items-center justify-center w-full py-4 px-6 rounded-xl bg-amber-600 text-white font-bold text-lg hover:bg-amber-700 transition-colors shadow-md"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call (980) 505-8050
+                  </a>
+
+                  <Link
+                    to="/hospital-notary-charlotte-nc"
+                    onClick={handleClose}
+                    className="block text-sm font-semibold text-amber-800 underline hover:text-amber-900"
+                  >
+                    What to have ready before we arrive
+                  </Link>
+                </div>
+              )}
+            </div>
+
             {/* Secondary Button: Book Online */}
-            <a href="/booking" 
+            <Link
+              to="/booking"
               onClick={handleClose}
               className="flex items-center justify-center w-full py-3 px-6 rounded-xl bg-slate-100 text-brand-950 font-bold hover:bg-slate-200 transition-colors"
             >
               <Calendar className="w-5 h-5 mr-2 text-brand-700" />
               Book Online
-            </a>
-
-            {/* Secondary Button: Quick Quote */}
-            <Link 
-              to="/calculator" 
-              onClick={handleClose}
-              className="flex items-center justify-center w-full py-3 px-6 rounded-xl bg-slate-100 text-brand-950 font-bold hover:bg-slate-200 transition-colors"
-            >
-              <Calculator className="w-5 h-5 mr-2 text-brand-700" />
-              Quick Quote Calculator
             </Link>
           </div>
         </div>

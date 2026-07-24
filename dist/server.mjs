@@ -1,4 +1,5 @@
 // server.ts
+import "dotenv/config";
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -105,7 +106,10 @@ var businessConfig = {
   hours: {
     weekday: "Monday - Saturday: 9:00am - 7:00pm",
     weekend: "Sunday: Closed",
-    afterHours: "After-hours service available (7:00pm - 11:00pm)"
+    afterHours: "After-hours service available (7:00pm - 11:00pm)",
+    // Hospital, hospice, and nursing home / assisted living signings are handled
+    // around the clock, since bedside documents are often time-critical.
+    facilityLabel: "Hospital & nursing home visits: 24/7 emergency availability"
   },
   pricing: {
     notaryFeePerSignature: 10,
@@ -122,7 +126,16 @@ var businessConfig = {
 };
 
 // server.ts
-var resend = new Resend(process.env.RESEND_API_KEY);
+var rawResendKey = process.env.RESEND_API_KEY;
+var RESEND_API_KEY = rawResendKey && rawResendKey !== "undefined" && rawResendKey !== "null" ? rawResendKey.replace(/['"]/g, "").trim() : null;
+if (!RESEND_API_KEY) {
+  console.error(
+    "[EMAIL] RESEND_API_KEY is not set \u2014 booking notification emails will NOT be sent. Set it in your hosting provider's environment variables (see .env.example)."
+  );
+}
+var resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
+var NOTIFY_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || `noreply@${businessConfig.email.split("@")[1]}`;
+var NOTIFY_TO_EMAIL = process.env.RESEND_TO_EMAIL || businessConfig.email;
 var __filename = fileURLToPath(import.meta.url);
 var __dirname = path.dirname(__filename);
 async function startServer() {
@@ -220,6 +233,40 @@ ${cleanBody}
     }
     return { privateKey, clientEmail, calendarId, fallbackStatus, fallbackError, source, credentialsObj };
   };
+  const rawImpersonate = process.env.GOOGLE_IMPERSONATE_USER;
+  const IMPERSONATE_USER = rawImpersonate && rawImpersonate !== "undefined" && rawImpersonate !== "null" ? rawImpersonate.replace(/['"]/g, "").trim() : null;
+  const ET_TIME_ZONE = "America/New_York";
+  const parseNaiveParts = (naive) => {
+    const m = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/.exec(naive || "");
+    if (!m) return null;
+    return { year: +m[1], month: +m[2], day: +m[3], hour: +m[4], minute: +m[5] };
+  };
+  const formatNaiveEt = (naive, opts) => {
+    const p = parseNaiveParts(naive);
+    if (!p) return naive;
+    const d = new Date(Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute));
+    return d.toLocaleString("en-US", { ...opts, timeZone: "UTC" });
+  };
+  const etOffsetMs = (utcMs) => {
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: ET_TIME_ZONE,
+      hour12: false,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit"
+    }).formatToParts(new Date(utcMs));
+    const g = (t) => +(parts.find((p) => p.type === t)?.value ?? 0);
+    return Date.UTC(g("year"), g("month") - 1, g("day"), g("hour") % 24, g("minute"), g("second")) - utcMs;
+  };
+  const naiveEtToInstant = (naive) => {
+    const p = parseNaiveParts(naive);
+    if (!p) return new Date(naive);
+    const guess = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute);
+    return new Date(guess - etOffsetMs(guess - etOffsetMs(guess)));
+  };
   const getGoogleAuth = (credentialsObj) => {
     if (!credentialsObj || !credentialsObj.private_key || !credentialsObj.client_email) {
       return null;
@@ -227,7 +274,8 @@ ${cleanBody}
     const auth = new google.auth.JWT({
       email: credentialsObj.client_email,
       key: credentialsObj.private_key,
-      scopes: ["https://www.googleapis.com/auth/calendar"]
+      scopes: ["https://www.googleapis.com/auth/calendar"],
+      ...IMPERSONATE_USER ? { subject: IMPERSONATE_USER } : {}
     });
     return auth;
   };
@@ -282,10 +330,41 @@ ${cleanBody}
       firebaseStatus = "ERROR: " + e.message;
       firebaseError = e.message;
     }
+    let resendStatus = "NOT_CONFIGURED";
+    let resendError = null;
+    try {
+      if (!resend) {
+        resendStatus = "MISSING_KEY: RESEND_API_KEY is not set";
+      } else {
+        const { data, error } = await resend.domains.list();
+        if (error) {
+          resendStatus = "FAILED: key rejected by Resend";
+          resendError = `${error.name}: ${error.message}`;
+        } else {
+          const domains = data?.data || [];
+          const sendingDomain = NOTIFY_FROM_EMAIL.split("@")[1];
+          const match = domains.find((d) => d.name === sendingDomain);
+          if (!match) {
+            resendStatus = `KEY_OK but sending domain "${sendingDomain}" is NOT added in Resend`;
+          } else if (match.status !== "verified") {
+            resendStatus = `KEY_OK but domain "${sendingDomain}" status is "${match.status}" (must be "verified")`;
+          } else {
+            resendStatus = `SUCCESS: key valid, "${sendingDomain}" verified`;
+          }
+        }
+      }
+    } catch (e) {
+      resendStatus = "ERROR: " + e.message;
+      resendError = e.message;
+    }
     res.json({
       status: "ok",
       firebase: firebaseStatus,
       firebase_error: firebaseError,
+      resend: resendStatus,
+      resend_error: resendError,
+      resend_from: NOTIFY_FROM_EMAIL,
+      resend_to: NOTIFY_TO_EMAIL,
       google_auth_test: authTest,
       google_auth_error: authError,
       fallback_status: fallbackStatus,
@@ -299,6 +378,8 @@ ${cleanBody}
         GOOGLE_PRIVATE_KEY: process.env.GOOGLE_PRIVATE_KEY ? process.env.GOOGLE_PRIVATE_KEY === "undefined" ? "UNDEFINED_STRING" : "CONFIGURED" : "MISSING",
         GOOGLE_SERVICE_ACCOUNT_EMAIL: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ? process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL === "undefined" ? "UNDEFINED_STRING" : "CONFIGURED" : "MISSING",
         GOOGLE_SERVICE_ACCOUNT_JSON: process.env.GOOGLE_SERVICE_ACCOUNT_JSON ? "CONFIGURED" : "MISSING",
+        RESEND_API_KEY: RESEND_API_KEY ? "CONFIGURED" : "MISSING",
+        GOOGLE_IMPERSONATE_USER: IMPERSONATE_USER || "MISSING (acting as service account itself)",
         NODE_ENV: process.env.NODE_ENV || "development"
       }
     });
@@ -459,6 +540,20 @@ Notes: ${notes}`,
         end: {
           dateTime: endTime,
           timeZone: "America/New_York"
+        },
+        // Phone/desktop popups ahead of the signing, rather than whatever the
+        // calendar's default happens to be. Note these fire before the
+        // appointment, not when the booking comes in — the "someone just
+        // booked" alert is the Resend email above. Reminders are also
+        // per-user in Google Calendar, and this event is inserted by the
+        // service account, so whether these reach the calendar owner depends
+        // on how the calendar is shared. Book a test appointment to confirm.
+        reminders: {
+          useDefault: false,
+          overrides: [
+            { method: "popup", minutes: 24 * 60 },
+            { method: "popup", minutes: 60 }
+          ]
         }
       };
       const calendarEvent = await calendar.events.insert({
@@ -496,17 +591,14 @@ Notes: ${notes}`,
           if (!ownerUserId) {
             console.error("[CRM] CRM_OWNER_USER_ID missing \u2014 skipping appointment write.");
           } else {
-            const startDate = new Date(startTime);
-            const dateStr = startDate.toLocaleDateString("en-CA", {
-              timeZone: "America/New_York"
-            });
-            const timeStr = startDate.toLocaleTimeString("en-US", {
-              timeZone: "America/New_York",
+            const parts = parseNaiveParts(startTime);
+            const dateStr = parts ? `${parts.year}-${String(parts.month).padStart(2, "0")}-${String(parts.day).padStart(2, "0")}` : "";
+            const timeStr = formatNaiveEt(startTime, {
               hour: "numeric",
               minute: "2-digit",
               hour12: true
             });
-            const sortableDateTime = startDate.toISOString();
+            const sortableDateTime = naiveEtToInstant(startTime).toISOString();
             const appointmentId = generateCrmId();
             const now = (/* @__PURE__ */ new Date()).toISOString();
             const appointmentRecord = {
@@ -583,8 +675,10 @@ Notes: ${notes}`,
         console.error("[CRM] Appointment write error (non-blocking):", apptE.message);
       }
       try {
-        const startFormatted = new Date(startTime).toLocaleString("en-US", {
-          timeZone: "America/New_York",
+        if (!resend) {
+          throw new Error("RESEND_API_KEY is not configured on this server");
+        }
+        const startFormatted = formatNaiveEt(startTime, {
           weekday: "long",
           year: "numeric",
           month: "long",
@@ -593,9 +687,9 @@ Notes: ${notes}`,
           minute: "2-digit",
           hour12: true
         });
-        await resend.emails.send({
-          from: `${businessConfig.name} <noreply@${businessConfig.email.split("@")[1]}>`,
-          to: businessConfig.email,
+        const { error: resendError } = await resend.emails.send({
+          from: `${businessConfig.name} <${NOTIFY_FROM_EMAIL}>`,
+          to: NOTIFY_TO_EMAIL,
           subject: `New Booking: ${firstName} ${lastName} \u2014 ${startFormatted}`,
           html: `
             <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#f8fafc;border-radius:8px;">
@@ -620,9 +714,12 @@ Notes: ${notes}`,
             </div>
           `
         });
-        console.log("[EMAIL] Booking notification sent to fcoxx@integrityclosingsclt.com");
+        if (resendError) {
+          throw new Error(`${resendError.name}: ${resendError.message}`);
+        }
+        console.log(`[EMAIL] Booking notification sent to ${NOTIFY_TO_EMAIL}`);
       } catch (emailErr) {
-        console.error("[EMAIL] Notification failed (non-blocking):", emailErr);
+        console.error("[EMAIL] Notification failed (non-blocking):", emailErr.message || emailErr);
       }
       res.json({ success: true });
       try {
