@@ -174,18 +174,6 @@ export default function Navbar() {
                   </button>
                 )
               )}
-              <a
-                href="https://www.notaryproapp.com/intake"
-                className="flex items-center border-2 border-white text-white px-5 py-2 rounded-full font-bold hover:bg-white hover:text-brand-950 transition-colors"
-              >
-                Request a Notary
-              </a>
-              <button
-                onClick={() => navigate('/booking')}
-                className="flex items-center bg-white text-brand-950 px-6 py-2.5 rounded-full font-bold hover:bg-slate-100 transition-colors"
-              >
-                Book Now
-              </button>
             </div>
 
             <div className="flex items-center lg:hidden">
@@ -248,15 +236,9 @@ export default function Navbar() {
               >
                 🤖 Notary AI Guides
               </button>
-              <a
-                href="https://www.notaryproapp.com/intake"
-                className="block w-full text-center mt-4 border-2 border-white text-white px-4 py-3 rounded-full font-bold hover:bg-white hover:text-brand-950"
-              >
-                Request a Notary
-              </a>
               <button
                 onClick={() => navigate('/booking')}
-                className="block w-full text-center mt-2 bg-white text-brand-950 px-4 py-3 rounded-full font-bold hover:bg-slate-100"
+                className="block w-full text-center mt-4 bg-white text-brand-950 px-4 py-3 rounded-full font-bold hover:bg-slate-100"
               >
                 Book Now
               </button>
