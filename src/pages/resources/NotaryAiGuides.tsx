@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { ArrowLeft, Download, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { pageMeta } from '../../seo/pageMeta';
@@ -52,6 +53,17 @@ const guides: Guide[] = [
 export default function NotaryAiGuides() {
   usePageMeta(pageMeta['/resources/notary-ai-guides']);
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://payhip.com/embed-page.js?v=24u68985';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
       <div className="bg-brand-950 py-16">
@@ -102,6 +114,10 @@ export default function NotaryAiGuides() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 pt-12 border-t border-slate-200">
+          <div className="payhip-embed-page" data-key="xQJ4j"></div>
         </div>
       </div>
     </div>

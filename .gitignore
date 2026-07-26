@@ -16,3 +16,4 @@ test-auth.js
 *.tmp
 tmp/
 .tmp/
+integrity-closings-clt-main/
