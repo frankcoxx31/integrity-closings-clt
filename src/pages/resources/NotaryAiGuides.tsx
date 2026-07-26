@@ -56,7 +56,7 @@ export default function NotaryAiGuides() {
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'https://payhip.com/embed-page.js?v=24u68985';
+    script.src = 'https://payhip.com/payhip.js';
     script.async = true;
     document.body.appendChild(script);
     return () => {
@@ -117,7 +117,41 @@ export default function NotaryAiGuides() {
         </div>
 
         <div className="mt-16 pt-12 border-t border-slate-200">
-          <div className="payhip-embed-page" data-key="xQJ4j"></div>
+          <div className="flex items-center gap-3 mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 font-serif">
+              Premium Playbook
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+              <div className="bg-slate-100 flex items-center justify-center p-4">
+                <img
+                  src="/downloads/covers/cover-facility-hospice-signing-playbook.png"
+                  alt="The Facility & Hospice Signing Playbook — guide cover"
+                  className="h-56 w-auto object-contain shadow-md rounded"
+                  width="400"
+                  height="518"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  The Facility &amp; Hospice Signing Playbook
+                </h3>
+                <p className="text-slate-600 leading-relaxed flex-grow mb-6">
+                  Break into facility and hospice signing work — who to call, what to say, and what to charge for bedside appointments with elder-law firms, hospices, and assisted-living communities.
+                </p>
+                <a
+                  href="https://payhip.com/b/xQJ4j"
+                  className="payhip-buy-button inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-bold py-3 px-6 rounded-full hover:bg-brand-700 transition-colors"
+                  data-theme="none"
+                  data-product="xQJ4j"
+                >
+                  Get the Playbook — $27
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
