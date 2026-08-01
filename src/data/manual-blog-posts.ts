@@ -49,8 +49,8 @@ export const manualBlogPosts: ManualBlogPost[] = [
     date: 'May 15, 2026',
     excerpt: 'See how mobile loan signing support helps Charlotte title companies and closing attorneys reduce delays, handle overflow, and keep borrowers happy from start to finish.',
     imageUrl: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=800',
-    seoTitle: 'Mobile Loan Signing Support Saves Your Closing Team Time | Integrity Closings CLT',
-    seoDescription: 'See how mobile loan signing support helps Charlotte title companies and closing attorneys reduce delays and keep borrowers happy from start to finish.'
+    seoTitle: 'Mobile Loan Signing Support for Charlotte Closing Teams',
+    seoDescription: 'How mobile loan signing support helps Charlotte title companies cut delays, cover overflow, and keep borrowers happy. Call or text 980-505-8050.'
   },
   {
     title: 'Hospital Notary Services in Charlotte',

@@ -49,6 +49,37 @@ export default function BlogPost() {
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://www.integrityclosingsclt.com/blog/${slug}` }
   } : null;
 
+  // The mobile-loan-signing post was rewritten on 2026-08-01 with question/answer
+  // capsules, a visible byline and an author entity — signal the update and mark
+  // up the FAQ. FAQPage text must match the visible capsules verbatim.
+  if (blogPostingSchema && slug === 'mobile-loan-signing-support-saves-closing-team-time') {
+    blogPostingSchema.dateModified = '2026-08-01T00:00:00.000Z';
+    blogPostingSchema.author = {
+      "@type": "Person",
+      "name": "Frank Coxx",
+      "jobTitle": "Notary Public and Certified Notary Signing Agent",
+      "url": "https://www.integrityclosingsclt.com/about",
+      "telephone": "980-505-8050",
+      "worksFor": { "@type": "LocalBusiness", "name": "Integrity Closings CLT" },
+      "hasCredential": [
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "Commissioned Notary Public, State of North Carolina" },
+        { "@type": "EducationalOccupationalCredential", "credentialCategory": "NNA Certified Notary Signing Agent" }
+      ]
+    } as typeof blogPostingSchema.author;
+  }
+
+  const faqSchema = slug === 'mobile-loan-signing-support-saves-closing-team-time' ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does a disorganized signing appointment actually cost a closing team?", "acceptedAnswer": { "@type": "Answer", "text": "It costs rework, not just time. Documents returned with missing signatures or dates have to be chased down, re-executed, and re-submitted, which delays funding and puts your client relationship at risk." } },
+      { "@type": "Question", "name": "What does a mobile signing agent do for a title company?", "acceptedAnswer": { "@type": "Answer", "text": "A mobile signing agent handles the scheduling, travel, and in-the-field execution of the signing. That removes the back-and-forth from your office and returns a complete, correctly executed package ready to fund." } },
+      { "@type": "Question", "name": "How does mobile signing support handle end-of-month overflow?", "acceptedAnswer": { "@type": "Answer", "text": "It adds signing capacity only on the days you actually need it. Closing volume spikes at month end, and a field signing partner absorbs those extra appointments without you hiring or training permanent staff." } },
+      { "@type": "Question", "name": "How does the signing appointment affect a title company's brand?", "acceptedAnswer": { "@type": "Answer", "text": "The signing is often the only in-person moment of the whole transaction, so it carries an outsized share of the borrower's impression. A calm, prepared signing agent protects the reputation your team spent weeks building; a rushed or error-filled one undoes it." } },
+      { "@type": "Question", "name": "Which Charlotte-area counties are covered for loan signings?", "acceptedAnswer": { "@type": "Answer", "text": "I cover Mecklenburg, Cabarrus, Union, Gaston, Rowan, and Stanly counties. That includes Charlotte, Mint Hill, Matthews, Concord, Kannapolis, Harrisburg, Monroe, Waxhaw, Indian Trail, Gastonia, and Salisbury." } }
+    ]
+  } : null;
+
   const renderContent = () => {
     if (slug === 'power-of-attorney-north-carolina-notarized') {
       return (
@@ -218,11 +249,11 @@ export default function BlogPost() {
           <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
             <div className="flex items-center">
               <User className="w-4 h-4 mr-2" />
-              Integrity Closings CLT
+              By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
             </div>
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-2" />
-              May 15, 2026
+              Updated August 1, 2026
             </div>
           </div>
 
@@ -245,10 +276,13 @@ export default function BlogPost() {
           />
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">
-            The Real Cost of a Disorganized Signing Appointment
+            What does a disorganized signing appointment actually cost a closing team?
           </h2>
+          <p className="mb-6 font-semibold text-slate-900">
+            It costs rework, not just time. Documents returned with missing signatures or dates have to be chased down, re-executed, and re-submitted, which delays funding and puts your client relationship at risk.
+          </p>
           <p className="mb-6">
-            We’ve all seen what happens when a signing appointment goes sideways. A borrower arrives confused about their terms, a signer is late because they couldn't find the office, or even worse: documents are returned with missing signatures or dates. These small administrative hurdles don’t just stay at the signing table; they ripple all the way back to your desk, causing stressful re-draws, funding delays, and frustrated clients.
+            I’ve seen what happens when a signing appointment goes sideways. A borrower arrives confused about their terms, a signer is late because they couldn't find the office, or even worse: documents are returned with missing signatures or dates. These small administrative hurdles don’t just stay at the signing table; they ripple all the way back to your desk, causing stressful re-draws, funding delays, and frustrated clients.
           </p>
           <p className="mb-6">
             When an appointment is poorly handled, it reflects directly on your reputation as a title company or attorney. You’ve spent weeks building trust with the borrower, only to have that experience tarnished in the final hour. This is why the "who" behind the signing matters just as much as the "what."
@@ -258,13 +292,16 @@ export default function BlogPost() {
           </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">
-            What a Professional Mobile Signing Agent Actually Does For Your Team
+            What does a mobile signing agent do for a title company?
           </h2>
-          <p className="mb-6">
-            A professional mobile signer is essentially a logistics coordinator for your closing files. Instead of your staff spending hours on the phone trying to coordinate a time that works for the borrower to come into the office, the mobile agent handles the scheduling flexibility. We meet the borrowers where they are: whether that’s their home in Mint Hill, their workplace in Uptown Charlotte, or even a hospital in Matthews.
+          <p className="mb-6 font-semibold text-slate-900">
+            A mobile signing agent handles the scheduling, travel, and in-the-field execution of the signing. That removes the back-and-forth from your office and returns a complete, correctly executed package ready to fund.
           </p>
           <p className="mb-6">
-            This "meet them where they are" approach removes one of the biggest friction points in the closing process: the commute. By offering after-hours and weekend appointments, we ensure that the signing happens on the borrower's terms, which leads to higher satisfaction and fewer last-minute cancellations.
+            A professional mobile signer is essentially a logistics coordinator for your closing files. Instead of your staff spending hours on the phone trying to coordinate a time that works for the borrower to come into the office, the mobile agent handles the scheduling flexibility. I meet the borrowers where they are: whether that’s their home in Mint Hill, their workplace in Uptown Charlotte, or even a hospital in Matthews.
+          </p>
+          <p className="mb-6">
+            As a <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">commissioned North Carolina Notary Public</a>, I execute every signing under the state's notarial standards, including the <a href="https://www.ncleg.net/EnactedLegislation/Statutes/HTML/BySection/Chapter_10B/GS_10B-31.html" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">statutory notary fees set in N.C.G.S. 10B-31</a>. That "meet them where they are" approach removes one of the biggest friction points in the closing process: the commute. By offering after-hours and weekend appointments, I make sure the signing happens on the borrower's terms, which leads to higher satisfaction and fewer last-minute cancellations.
           </p>
           <p className="mb-6">
             Crucially, a top-tier signing agent keeps your office in the loop at every stage. You receive a confirmation when the appointment is set, a status update the moment the signing is complete, and tracking information for the returned documents. You are never left wondering if a file is on its way back; you have total visibility without having to make a single follow-up call.
@@ -278,13 +315,16 @@ export default function BlogPost() {
           />
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">
-            Overflow Coverage Without the Staffing Headache
+            How does mobile signing support handle end-of-month overflow?
           </h2>
-          <p className="mb-6">
-            Real estate is notoriously seasonal and volume-dependent. On the last day of the month, your office might be drowning in files, while mid-month is more manageable. Staffing for those peak "threddy" days is a constant challenge for Charlotte closing attorneys and title companies.
+          <p className="mb-6 font-semibold text-slate-900">
+            It adds signing capacity only on the days you actually need it. Closing volume spikes at month end, and a field signing partner absorbs those extra appointments without you hiring or training permanent staff.
           </p>
           <p className="mb-6">
-            This is where mobile signing support shines as a scalable solution. Instead of hiring more full-time employees to handle seasonal spikes, you can use Integrity Closings CLT as your reliable overflow resource. We absorb those extra appointments seamlessly, giving you the capacity to take on more business without increasing your overhead.
+            Real estate closing volume is seasonal and month-end heavy. On the last day of the month, your office might be drowning in files, while mid-month is more manageable. Staffing for those peak days is a constant challenge for Charlotte closing attorneys and title companies.
+          </p>
+          <p className="mb-6">
+            This is where mobile signing support shines as a scalable solution. Instead of hiring more full-time employees to handle seasonal spikes, you can use Integrity Closings CLT as your reliable overflow resource. I absorb those extra appointments seamlessly, giving you the capacity to take on more business without increasing your overhead.
           </p>
           <p className="mb-6">
             Having a trusted field resource you can call for last-minute or same-day coverage in Charlotte, Concord, or Gastonia means you never have to say "no" to a client because your conference room is full. You have the flexibility to scale your operations up or down instantly.
@@ -298,13 +338,16 @@ export default function BlogPost() {
           />
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">
-            The Borrower Experience Reflects on Your Brand
+            How does the signing appointment affect a title company's brand?
           </h2>
-          <p className="mb-6">
-            For many borrowers, the signing appointment is the most memorable part of the entire transaction. It’s when the reality of their new home or their financial savings finally sets in. If that experience is rushed, disorganized, or impersonal, it reflects poorly on the title company or attorney who facilitated the deal.
+          <p className="mb-6 font-semibold text-slate-900">
+            The signing is often the only in-person moment of the whole transaction, so it carries an outsized share of the borrower's impression. A calm, prepared signing agent protects the reputation your team spent weeks building; a rushed or error-filled one undoes it.
           </p>
           <p className="mb-6">
-            A calm, professional, and organized signing agent acts as a brand ambassador for your office. At Integrity Closings CLT, we approach every appointment with the understanding that we represent your team. We treat borrowers with respect, answer their non-legal questions with confidence, and maintain a professional demeanor that reinforces the high-quality service you've provided throughout the transaction.
+            For many borrowers, the signing appointment is the moment the reality of their new home or their financial savings finally sets in. If that experience is rushed, disorganized, or impersonal, it reflects poorly on the title company or attorney who facilitated the deal.
+          </p>
+          <p className="mb-6">
+            A calm, professional, and organized signing agent acts as a brand ambassador for your office. I approach every appointment with the understanding that I represent your team. I treat borrowers with respect, answer their non-legal questions with confidence, and maintain a professional demeanor that reinforces the high-quality service you've provided throughout the transaction.
           </p>
 
           <img 
@@ -315,23 +358,26 @@ export default function BlogPost() {
           />
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">
-            Serving Charlotte, Cabarrus County, Union County, and Surrounding Areas
+            Which Charlotte-area counties are covered for loan signings?
           </h2>
-          <p className="mb-6">
-            Our mobile coverage is designed to follow your clients wherever they are in the greater Charlotte region. We frequently handle appointments in Mint Hill, Matthews, and Uptown, but we also extend our reach deep into the surrounding communities.
+          <p className="mb-6 font-semibold text-slate-900">
+            I cover Mecklenburg, Cabarrus, Union, Gaston, Rowan, and Stanly counties. That includes Charlotte, Mint Hill, Matthews, Concord, Kannapolis, Harrisburg, Monroe, Waxhaw, Indian Trail, Gastonia, and Salisbury.
           </p>
           <p className="mb-6">
-            Whether your borrower is in Waxhaw, Indian Trail, or Weddington in Union County; or you have a closing in Concord, Kannapolis, or Harrisburg in Cabarrus County, we go the extra mile. Our familiarity with the local geography and the specific recording requirements of different counties makes us a more efficient partner for your team.
+            My mobile coverage is designed to follow your clients wherever they are in the greater Charlotte region. I frequently handle appointments in Mint Hill, Matthews, and Uptown, but I also extend my reach deep into the surrounding communities.
+          </p>
+          <p className="mb-6">
+            Whether your borrower is in Waxhaw, Indian Trail, or Weddington in Union County; or you have a closing in Concord, Kannapolis, or Harrisburg in Cabarrus County, I go the extra mile. My familiarity with the local geography and the specific recording requirements of different counties makes me a more efficient partner for your team.
           </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">
             Ready to Add Mobile Signing Support to Your Closing Pipeline?
           </h2>
           <p className="mb-6">
-            Streamlining your workflow starts with choosing the right partners. If your closing team is looking for a dependable field resource to handle mobile signings, manage overflow, and provide an exceptional borrower experience, Integrity Closings CLT is ready to help.
+            Streamlining your workflow starts with choosing the right partners. If your closing team is looking for a dependable field resource to handle mobile signings, manage overflow, and provide an exceptional borrower experience, I'm ready to help.
           </p>
           <p className="mb-10">
-            We invite Charlotte-area title companies and attorneys to reach out and discuss your upcoming scheduling needs. Let us show you how a professional mobile loan signing partner can save you time and eliminate the headaches of field coordination.
+            I invite Charlotte-area title companies and attorneys to reach out and discuss your upcoming scheduling needs. Let me show you how a professional mobile loan signing partner can save you time and eliminate the headaches of field coordination.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
@@ -341,12 +387,22 @@ export default function BlogPost() {
             >
               Closing Support Services
             </Link>
-            <a 
-              href="tel:9805058050" 
+            <a
+              href="tel:9805058050"
               className="bg-white text-brand-600 border-2 border-brand-600 px-8 py-4 rounded-lg font-bold hover:bg-brand-50 transition-colors text-center"
             >
               Call 980-505-8050
             </a>
+          </div>
+
+          <div className="border-t border-slate-200 pt-8 mt-8 flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+            <div>
+              <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                <Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He provides mobile notary services throughout Charlotte and the surrounding metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.
+              </p>
+            </div>
           </div>
 
           <div className="border-t border-slate-200 pt-16 mt-16">
@@ -1783,6 +1839,9 @@ export default function BlogPost() {
     <div className="bg-slate-50 min-h-screen py-12">
       {blogPostingSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
+      )}
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link to="/blog" className="inline-flex items-center text-slate-600 hover:text-brand-600 mb-8 transition-colors">
