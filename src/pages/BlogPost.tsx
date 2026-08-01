@@ -49,10 +49,30 @@ export default function BlogPost() {
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://www.integrityclosingsclt.com/blog/${slug}` }
   } : null;
 
-  // The mobile-loan-signing post was rewritten on 2026-08-01 with question/answer
-  // capsules, a visible byline and an author entity — signal the update and mark
-  // up the FAQ. FAQPage text must match the visible capsules verbatim.
-  if (blogPostingSchema && slug === 'mobile-loan-signing-support-saves-closing-team-time') {
+  // Posts rewritten to the on-page/GEO pattern (question capsules, first-person
+  // voice, visible byline, sourced claims). Each gets a full Person author entity,
+  // a bumped dateModified, and a FAQPage whose text matches the visible capsules
+  // verbatim. Add a post's slug here + its Q/A to GEO_FAQ_BY_SLUG when it's done.
+  const GEO_FAQ_BY_SLUG: Record<string, { q: string; a: string }[]> = {
+    'mobile-loan-signing-support-saves-closing-team-time': [
+      { q: "What does a disorganized signing appointment actually cost a closing team?", a: "It costs rework, not just time. Documents returned with missing signatures or dates have to be chased down, re-executed, and re-submitted, which delays funding and puts your client relationship at risk." },
+      { q: "What does a mobile signing agent do for a title company?", a: "A mobile signing agent handles the scheduling, travel, and in-the-field execution of the signing. That removes the back-and-forth from your office and returns a complete, correctly executed package ready to fund." },
+      { q: "How does mobile signing support handle end-of-month overflow?", a: "It adds signing capacity only on the days you actually need it. Closing volume spikes at month end, and a field signing partner absorbs those extra appointments without you hiring or training permanent staff." },
+      { q: "How does the signing appointment affect a title company's brand?", a: "The signing is often the only in-person moment of the whole transaction, so it carries an outsized share of the borrower's impression. A calm, prepared signing agent protects the reputation your team spent weeks building; a rushed or error-filled one undoes it." },
+      { q: "Which Charlotte-area counties are covered for loan signings?", a: "I cover Mecklenburg, Cabarrus, Union, Gaston, Rowan, and Stanly counties. That includes Charlotte, Mint Hill, Matthews, Concord, Kannapolis, Harrisburg, Monroe, Waxhaw, Indian Trail, Gastonia, and Salisbury." }
+    ],
+    'hospital-notary-services-charlotte': [
+      { q: "Why do you need a specialized hospital notary in Charlotte?", a: "Because hospitals usually cannot notarize patient documents themselves. Most facilities bar their staff from notarizing personal legal papers over liability concerns, so a mobile notary who comes to the bedside is often the only practical option." },
+      { q: "Which documents can be notarized at a hospital bedside?", a: "The most common are a durable power of attorney, a healthcare power of attorney or living will, a last will and testament, and real estate closing documents. These are the high-stakes papers that let families act when a patient cannot." },
+      { q: "Can someone in the hospital legally sign while on medication?", a: "Only if they are alert enough to understand the document and are signing willingly. North Carolina notary law requires me to be satisfied the signer is competent and aware, so if a patient is heavily sedated or unable to communicate, I cannot legally proceed." },
+      { q: "How does a hospital notary visit work?", a: "You call, I confirm the documents and the patient's location, and I schedule a visit around doctor rounds and visitor hours. I arrive, verify the patient's ID and awareness, witness the signatures, and apply the seal — usually in a single visit." },
+      { q: "How can you prepare for a smooth hospital notarization?", a: "Have the patient's unexpired photo ID on hand, line up any required non-staff witnesses, and schedule for when the patient is most alert. Make sure the document is fully filled out except for the signature before I arrive." },
+      { q: "Which Charlotte hospitals and facilities are covered?", a: "I cover the major Atrium Health and Novant Health medical centers across the Charlotte region, plus rehab centers and nursing homes throughout Mecklenburg and Cabarrus counties. Whether you are in a major medical center or a local rehab spot, I can reach you." },
+      { q: "What makes a good hospital notary?", a: "Professionalism, knowledge of NC notary law, scheduling flexibility, and genuine compassion. Hospital signings are not just about the stamp — they are about the person behind it and how they treat a patient in a stressful moment." }
+    ],
+  };
+
+  if (blogPostingSchema && GEO_FAQ_BY_SLUG[slug]) {
     blogPostingSchema.dateModified = '2026-08-01T00:00:00.000Z';
     blogPostingSchema.author = {
       "@type": "Person",
@@ -68,16 +88,14 @@ export default function BlogPost() {
     } as typeof blogPostingSchema.author;
   }
 
-  const faqSchema = slug === 'mobile-loan-signing-support-saves-closing-team-time' ? {
+  const faqSchema = GEO_FAQ_BY_SLUG[slug] ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "What does a disorganized signing appointment actually cost a closing team?", "acceptedAnswer": { "@type": "Answer", "text": "It costs rework, not just time. Documents returned with missing signatures or dates have to be chased down, re-executed, and re-submitted, which delays funding and puts your client relationship at risk." } },
-      { "@type": "Question", "name": "What does a mobile signing agent do for a title company?", "acceptedAnswer": { "@type": "Answer", "text": "A mobile signing agent handles the scheduling, travel, and in-the-field execution of the signing. That removes the back-and-forth from your office and returns a complete, correctly executed package ready to fund." } },
-      { "@type": "Question", "name": "How does mobile signing support handle end-of-month overflow?", "acceptedAnswer": { "@type": "Answer", "text": "It adds signing capacity only on the days you actually need it. Closing volume spikes at month end, and a field signing partner absorbs those extra appointments without you hiring or training permanent staff." } },
-      { "@type": "Question", "name": "How does the signing appointment affect a title company's brand?", "acceptedAnswer": { "@type": "Answer", "text": "The signing is often the only in-person moment of the whole transaction, so it carries an outsized share of the borrower's impression. A calm, prepared signing agent protects the reputation your team spent weeks building; a rushed or error-filled one undoes it." } },
-      { "@type": "Question", "name": "Which Charlotte-area counties are covered for loan signings?", "acceptedAnswer": { "@type": "Answer", "text": "I cover Mecklenburg, Cabarrus, Union, Gaston, Rowan, and Stanly counties. That includes Charlotte, Mint Hill, Matthews, Concord, Kannapolis, Harrisburg, Monroe, Waxhaw, Indian Trail, Gastonia, and Salisbury." } }
-    ]
+    "mainEntity": GEO_FAQ_BY_SLUG[slug].map(({ q, a }) => ({
+      "@type": "Question",
+      "name": q,
+      "acceptedAnswer": { "@type": "Answer", "text": a }
+    }))
   } : null;
 
   const renderContent = () => {
@@ -438,11 +456,11 @@ export default function BlogPost() {
           <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
             <div className="flex items-center">
               <User className="w-4 h-4 mr-2" />
-              Integrity Closings CLT
+              By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
             </div>
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-2" />
-              4/30/2026
+              April 30, 2026
             </div>
           </div>
 
@@ -450,20 +468,22 @@ export default function BlogPost() {
           
           <p className="mb-6">When a loved one is in the hospital, the last thing you want to worry about is legal paperwork. However, medical emergencies often bring the realization that important documents: like a Power of Attorney or a Healthcare Directive: aren't in place. You’re dealing with doctors, insurance, and emotional stress; trying to figure out how to get a document legally signed shouldn't be another burden on your shoulders.</p>
           
-          <p className="mb-6">That is where a <strong>hospital notary</strong> becomes a lifeline. At Integrity Closings CLT, we provide specialized mobile notary services that come directly to the bedside. Whether you are at Atrium Health Carolinas Medical Center, Novant Health Presbyterian, or any skilled nursing facility in the area, we bring the office to you.</p>
+          <p className="mb-6">That is where a <strong>hospital notary</strong> becomes a lifeline. At Integrity Closings CLT, I provide specialized mobile notary services that come directly to the bedside. Whether you are at Atrium Health Carolinas Medical Center, Novant Health Presbyterian, or any skilled nursing facility in the area, I bring the office to you.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why You Need a Specialized Hospital Notary in Charlotte</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why do you need a specialized hospital notary in Charlotte?</h2>
+          <p className="mb-6 font-semibold text-slate-900">Because hospitals usually cannot notarize patient documents themselves. Most facilities bar their staff from notarizing personal legal papers over liability concerns, so a mobile notary who comes to the bedside is often the only practical option.</p>
           <p className="mb-6">You might think, "Doesn't the hospital have someone who can do this?" It’s a common misconception. While some hospitals have a notary on staff, they are often prohibited by hospital policy from notarizing patient documents due to liability concerns. Hospital staff are focused on clinical care, and their legal departments often restrict them from participating in personal legal matters for patients.</p>
-          
-          <p className="mb-6">This is why hiring a professional <strong>mobile notary in Charlotte NC</strong> is essential. We understand the unique environment of a medical facility. We know how to navigate the hallways, work around nurse rounds, and: most importantly: handle the sensitive nature of these signings with the respect and patience they deserve.</p>
+
+          <p className="mb-6">This is why hiring a professional <strong>mobile notary in Charlotte NC</strong> is essential. As a <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">commissioned North Carolina Notary Public</a>, I understand the unique environment of a medical facility. I know how to navigate the hallways, work around nurse rounds, and — most importantly — handle the sensitive nature of these signings with the respect and patience they deserve.</p>
 
           <img src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&q=80&w=1200" alt="Legal document folder and pen prepared for a hospital notary signing in Charlotte NC." className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Common Documents We Notarize at the Bedside</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Which documents can be notarized at a hospital bedside?</h2>
+          <p className="mb-6 font-semibold text-slate-900">The most common are a durable power of attorney, a healthcare power of attorney or living will, a last will and testament, and real estate closing documents. These are the high-stakes papers that let families act when a patient cannot.</p>
           <p className="mb-6">In a medical setting, the documents required are usually high-stakes. These aren't just simple forms; they are the tools that allow families to make decisions when a patient cannot.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">1. Durable Power of Attorney (DPOA)</h3>
-          <p className="mb-6">A Power of Attorney allows a patient to appoint someone to handle their financial affairs. If a patient is hospitalized and bills need to be paid or accounts managed, a DPOA is the only way a family member can step in legally. You can learn more about how we handle these on our <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney page</Link>.</p>
+          <p className="mb-6">A Power of Attorney allows a patient to appoint someone to handle their financial affairs. If a patient is hospitalized and bills need to be paid or accounts managed, a DPOA is the only way a family member can step in legally. You can learn more about how I handle these on my <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney page</Link>.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">2. Healthcare Power of Attorney & Living Wills</h3>
           <p className="mb-6">These documents dictate who can make medical decisions and what kind of life-sustaining treatment a patient desires. Having these notarized ensures the medical team has clear, legal instructions to follow.</p>
@@ -472,58 +492,63 @@ export default function BlogPost() {
           <p className="mb-6">Sometimes, a hospital stay prompts a patient to finally finalize their will. While North Carolina has specific requirements for witnesses, a <strong>Charlotte notary public</strong> is a critical part of making the document self-proving and legally robust.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">4. Real Estate Closing Documents</h3>
-          <p className="mb-6">Life doesn't stop because of a hospital stay. We frequently help patients sign closing disclosures or deeds so their home sale or purchase doesn't fall through while they are recovering. Check out our <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing agent services</Link> for more details.</p>
+          <p className="mb-6">Life doesn't stop because of a hospital stay. I frequently help patients sign closing disclosures or deeds so their home sale or purchase doesn't fall through while they are recovering. Check out my <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing agent services</Link> for more details.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The "Sound Mind" Requirement: A Sensitive Balance</h2>
-          <p className="mb-6">One of the most important roles of a notary in a hospital setting is determining "competence and willingness." For a notarization to be legal, the person signing must understand what they are signing and be doing so of their own free will.</p>
-          <p className="mb-6">In a hospital, patients may be on medication or feeling fatigued. We are trained to perform a "spot check" of awareness. We’ll ask simple questions to ensure the signer knows who they are, where they are, and what the document represents. If a patient is heavily sedated or unable to communicate, we cannot legally proceed. This protects the patient, the family, and the legal integrity of the document. We approach these moments with extreme sensitivity, ensuring the patient feels comfortable and never pressured.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Can someone in the hospital legally sign while on medication?</h2>
+          <p className="mb-6 font-semibold text-slate-900">Only if they are alert enough to understand the document and are signing willingly. North Carolina notary law requires me to be satisfied the signer is competent and aware, so if a patient is heavily sedated or unable to communicate, I cannot legally proceed.</p>
+          <p className="mb-6">One of the most important roles of a notary in a hospital setting is determining "competence and willingness." For a notarization to be legal, the person signing must understand what they are signing and be doing so of their own free will — a duty set out in <a href="https://www.ncleg.net/EnactedLegislation/Statutes/HTML/BySection/Chapter_10B/GS_10B-20.html" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">N.C.G.S. 10B-20</a>.</p>
+          <p className="mb-6">In a hospital, patients may be on medication or feeling fatigued. I perform a "spot check" of awareness, asking simple questions to ensure the signer knows who they are, where they are, and what the document represents. If a patient is heavily sedated or unable to communicate, I cannot legally proceed. This protects the patient, the family, and the legal integrity of the document. I approach these moments with extreme sensitivity, making sure the patient feels comfortable and never pressured.</p>
 
           <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=1200" alt="Professional Charlotte notary public providing attentive bedside service in a medical suite." className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How the Process Works: Step-by-Step</h2>
-          <p className="mb-6">We aim to make the process of booking a <strong>hospital notary</strong> as seamless as possible. Here is what you can expect when you work with us:</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How does a hospital notary visit work?</h2>
+          <p className="mb-6 font-semibold text-slate-900">You call, I confirm the documents and the patient's location, and I schedule a visit around doctor rounds and visitor hours. I arrive, verify the patient's ID and awareness, witness the signatures, and apply the seal — usually in a single visit.</p>
+          <p className="mb-6">I aim to make booking a <strong>hospital notary</strong> as seamless as possible. Here is what you can expect:</p>
           <ol className="list-decimal pl-6 space-y-4 mb-6">
-            <li><strong>The Initial Call:</strong> You reach out to us (often on short notice). We’ll ask what documents need to be signed and where the patient is located.</li>
-            <li><strong>Scheduling:</strong> We coordinate a time that works between doctor rounds and visitor hours. We offer <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours mobile notary services</Link> because emergencies don't stick to a 9-to-5 schedule.</li>
-            <li><strong>Preparation:</strong> We’ll remind you to ensure the patient has a valid, unexpired government-issued ID (like a driver's license or passport).</li>
-            <li><strong>The Visit:</strong> We arrive at the hospital, check in, and proceed to the room. We take the time to explain the process to the patient, verify their identity, and ensure they are ready to sign.</li>
-            <li><strong>Execution:</strong> We witness the signature, apply the seal, and you’re done. You have the legal peace of mind you need to focus back on recovery.</li>
+            <li><strong>The Initial Call:</strong> You reach out (often on short notice). I’ll ask what documents need to be signed and where the patient is located.</li>
+            <li><strong>Scheduling:</strong> I coordinate a time that works between doctor rounds and visitor hours. I offer <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours mobile notary services</Link> because emergencies don't stick to a 9-to-5 schedule.</li>
+            <li><strong>Preparation:</strong> I’ll remind you to ensure the patient has a valid, unexpired government-issued ID (like a driver's license or passport).</li>
+            <li><strong>The Visit:</strong> I arrive at the hospital, check in, and proceed to the room. I take the time to explain the process to the patient, verify their identity, and ensure they are ready to sign.</li>
+            <li><strong>Execution:</strong> I witness the signature, apply the seal, and you’re done. You have the legal peace of mind you need to focus back on recovery.</li>
           </ol>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Tips for a Smooth Hospital Notarization</h2>
-          <p className="mb-6">To ensure we can complete the notarization in one visit, keep these tips in mind:</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How can you prepare for a smooth hospital notarization?</h2>
+          <p className="mb-6 font-semibold text-slate-900">Have the patient's unexpired photo ID on hand, line up any required non-staff witnesses, and schedule for when the patient is most alert. Make sure the document is fully filled out except for the signature before I arrive.</p>
+          <p className="mb-6">To make sure the notarization can be completed in one visit, keep these tips in mind:</p>
           <ul className="list-disc pl-6 space-y-4 mb-6">
             <li><strong>Check the ID:</strong> Make sure the patient's ID is physically present and not expired. If it’s at their home, have a family member bring it to the hospital.</li>
             <li><strong>Witnesses:</strong> Many medical documents in North Carolina require one or two witnesses in addition to a notary. Hospital staff are usually not allowed to act as witnesses. You may need to have friends or non-beneficiary family members present.</li>
             <li><strong>Timing is Everything:</strong> Try to schedule the notary visit for a time when the patient is most alert: usually in the morning after breakfast but before heavy afternoon medications.</li>
-            <li><strong>Read the Document:</strong> Ensure the document is completely filled out (except for the signature and notary block) before we arrive. A notary cannot give legal advice or help you fill out the forms.</li>
+            <li><strong>Read the Document:</strong> Ensure the document is completely filled out (except for the signature and notary block) before I arrive. A notary cannot give legal advice or help you fill out the forms.</li>
           </ul>
 
           <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200" alt="A mobile notary in Charlotte NC arriving for a scheduled appointment at a local hospital." className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Serving the Entire Charlotte Area</h2>
-          <p className="mb-6">Integrity Closings CLT isn't just limited to Uptown. We serve a wide range of facilities across the region. Whether you are in a major medical center or a local rehab spot, we can reach you.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Which Charlotte hospitals and facilities are covered?</h2>
+          <p className="mb-6 font-semibold text-slate-900">I cover the major Atrium Health and Novant Health medical centers across the Charlotte region, plus rehab centers and nursing homes throughout Mecklenburg and Cabarrus counties. Whether you are in a major medical center or a local rehab spot, I can reach you.</p>
+          <p className="mb-6">Integrity Closings CLT isn't just limited to Uptown. I serve a wide range of facilities across the region.</p>
           <ul className="list-disc pl-6 space-y-4 mb-6">
             <li><strong>Atrium Health:</strong> Carolinas Medical Center, Mercy, Pineville, and University.</li>
             <li><strong>Novant Health:</strong> Presbyterian Medical Center, Matthews Medical Center, and Huntersville.</li>
-            <li><strong>Rehab and Nursing Homes:</strong> We regularly visit residents in <Link to="/nursing-home-notary-charlotte-nc" className="text-brand-600 hover:underline">nursing homes</Link> throughout Mecklenburg and Cabarrus counties.</li>
+            <li><strong>Rehab and Nursing Homes:</strong> I regularly visit residents in <Link to="/nursing-home-notary-charlotte-nc" className="text-brand-600 hover:underline">nursing homes</Link> throughout Mecklenburg and Cabarrus counties.</li>
           </ul>
-          <p className="mb-6">If you’re unsure if we cover your area, you can view our full list of <Link to="/areas-served" className="text-brand-600 hover:underline">areas served</Link>.</p>
+          <p className="mb-6">If you’re unsure whether I cover your area, you can view my full list of <Link to="/areas-served" className="text-brand-600 hover:underline">areas served</Link>.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Families Choose Integrity Closings CLT</h2>
-          <p className="mb-6">We know there are several options for a <strong>mobile notary in Charlotte NC</strong>, but hospital signings require a specific touch. It’s not just about the stamp; it’s about the person behind the stamp. </p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What makes a good hospital notary?</h2>
+          <p className="mb-6 font-semibold text-slate-900">Professionalism, knowledge of NC notary law, scheduling flexibility, and genuine compassion. Hospital signings are not just about the stamp — they are about the person behind it and how they treat a patient in a stressful moment.</p>
+          <p className="mb-6">There are several options for a <strong>mobile notary in Charlotte NC</strong>, but hospital signings require a specific touch:</p>
           <ul className="list-disc pl-6 space-y-4 mb-6">
-            <li><strong>Professionalism:</strong> We arrive dressed professionally and act as a calm presence in a stressful environment.</li>
-            <li><strong>Knowledge:</strong> We understand NC notary laws inside and out, specifically regarding medical and estate documents.</li>
-            <li><strong>Flexibility:</strong> We offer <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">same-day service near you</Link> because we know that in a hospital, things change fast.</li>
-            <li><strong>Compassion:</strong> We treat every patient like they are our own family. We don't rush; we listen.</li>
+            <li><strong>Professionalism:</strong> I arrive dressed professionally and act as a calm presence in a stressful environment.</li>
+            <li><strong>Knowledge:</strong> I understand NC notary laws inside and out, specifically regarding medical and estate documents.</li>
+            <li><strong>Flexibility:</strong> I offer <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">same-day service near you</Link> because in a hospital, things change fast.</li>
+            <li><strong>Compassion:</strong> I treat every patient like my own family. I don't rush; I listen.</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Peace of Mind Is Just a Call Away</h2>
-          <p className="mb-6">You have enough on your plate right now. Let us handle the paperwork. By bringing a professional <strong>Charlotte notary public</strong> to the hospital, you remove one more obstacle to your loved one’s care and your family’s security. </p>
-          <p className="mb-6">Whether it’s a sudden need for a Power of Attorney or a planned signing of estate documents, we are here to help. Our goal is to make this the easiest part of your day.</p>
+          <p className="mb-6">You have enough on your plate right now. Let me handle the paperwork. By bringing a professional <strong>Charlotte notary public</strong> to the hospital, you remove one more obstacle to your loved one’s care and your family’s security. </p>
+          <p className="mb-6">Whether it’s a sudden need for a Power of Attorney (governed by <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_32A.html" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">N.C.G.S. Chapter 32A</a>) or a planned signing of estate documents, I am here to help. My goal is to make this the easiest part of your day.</p>
 
-          <p className="mb-4 font-bold">Our Services Include:</p>
+          <p className="mb-4 font-bold">Services Include:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
             <li>Hospital & Bedside Notarizations</li>
             <li><Link to="/nursing-home-notary-charlotte-nc" className="text-brand-600 hover:underline">Nursing Home & Assisted Living Visits</Link></li>
@@ -531,7 +556,15 @@ export default function BlogPost() {
             <li><Link to="/general-notary-charlotte-nc" className="text-brand-600 hover:underline">General Notary Services</Link></li>
           </ul>
 
-          <p className="mb-6"><strong>Ready to get started?</strong><br/>You can <Link to="/booking" className="text-brand-600 hover:underline">book your appointment online here</Link> or reach out to us directly to discuss your specific needs. We look forward to providing you with the professional, compassionate service that Integrity Closings CLT is known for.</p>
+          <p className="mb-6"><strong>Ready to get started?</strong><br/>You can <Link to="/booking" className="text-brand-600 hover:underline">book your appointment online here</Link> or reach out directly to discuss your specific needs. I look forward to providing you with the professional, compassionate service that Integrity Closings CLT is known for.</p>
+
+          <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+            <div>
+              <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+              <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He provides mobile and bedside notary services throughout Charlotte and the surrounding metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+            </div>
+          </div>
 
           <div className="bg-slate-50 border-l-4 border-brand-600 p-6 my-8 rounded-r-lg">
             <h3 className="text-lg font-bold text-slate-900 mb-2 font-sans">Summary of Key Takeaways:</h3>

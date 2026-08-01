@@ -58,7 +58,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     date: 'April 30, 2026',
     excerpt: 'When a loved one is in the hospital, the last thing you want to worry about is legal paperwork. Learn why a specialized hospital notary is essential for Power of Attorney and healthcare directives.',
     imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800',
-    seoTitle: 'Hospital & Bedside Notary Charlotte NC | Integrity Closings CLT',
+    seoTitle: 'Hospital & Bedside Notary Services in Charlotte NC',
     seoDescription: 'Learn why a specialized hospital notary is essential for Power of Attorney and healthcare directives in Charlotte medical facilities.'
   },
   {
