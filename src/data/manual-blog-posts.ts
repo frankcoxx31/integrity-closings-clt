@@ -89,7 +89,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     slug: 'settlement-vs-closing-nc-real-estate',
     date: 'April 1, 2026',
     excerpt: 'You have spent weeks, perhaps months, navigating the North Carolina real estate market. You have toured dozens of homes, survived the "Due Diligence" period, and finalized your mortgage. Now, the big day is here: Closing Day...',
-    imageUrl: 'https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800'
   },
   {
     title: 'Navigating the North Carolina Remote Electronic Notarization Act (RENA): What to Expect in 2025',
@@ -103,14 +103,14 @@ export const manualBlogPosts: ManualBlogPost[] = [
     slug: '7-mistakes-charlotte-sellers-make-with-closings',
     date: 'March 18, 2026',
     excerpt: 'Selling your Charlotte home should be exciting, not stressful. Yet many sellers find themselves scrambling at the last minute because they\'ve made preventable mistakes during the closing process.',
-    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800'
   },
   {
     title: 'Charlotte Notary Public Secrets Revealed: What Experts Don\'t Want You to Know',
     slug: 'charlotte-notary-public-secrets-revealed',
     date: 'March 18, 2026',
     excerpt: 'You trust notaries public with your most important documents: mortgage papers, property deeds, legal agreements that can change your life. But what if that trust is misplaced?',
-    imageUrl: 'https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800'
   },
   {
     title: 'The "DIY" Mortgage Loan Modification: How to Get Your Documents Notarized at Home in Charlotte',
