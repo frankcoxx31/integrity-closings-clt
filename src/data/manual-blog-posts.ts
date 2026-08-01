@@ -22,7 +22,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     date: 'July 2, 2026',
     excerpt: 'A Power of Attorney that isn\'t signed, witnessed, and notarized correctly in NC is legally worthless. Learn the types, requirements, what to bring, and how a Charlotte mobile notary can come to you — even at the hospital.',
     imageUrl: 'https://images.unsplash.com/photo-1603796846097-bee99e4a601f?auto=format&fit=crop&q=80&w=800',
-    seoTitle: 'Power of Attorney in North Carolina: What You Need & How to Get It Notarized | Integrity Closings CLT',
+    seoTitle: 'Power of Attorney Notary in North Carolina',
     seoDescription: 'Learn NC Power of Attorney requirements, what to bring to your notary appointment, and how a Charlotte mobile notary can come to your home or hospital.'
   },
   {
@@ -82,7 +82,9 @@ export const manualBlogPosts: ManualBlogPost[] = [
     slug: '5-documents-notarized-before-50',
     date: 'April 9, 2026',
     excerpt: 'Turning 50 is a significant milestone. It is often a time of reflection, celebration, and, most importantly, proactive planning. While you are likely focused on your career peak or looking ahead toward retirement, there is a critical set of "housekeeping" tasks that often get pushed to the back burner: estate planning and legal protection.',
-    imageUrl: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800',
+    seoTitle: '5 Documents to Notarize Before You Turn 50',
+    seoDescription: 'The five estate-planning documents every North Carolinian should notarize before 50 — durable POA, healthcare POA, will, living will, and living trust.'
   },
   {
     title: 'Settlement vs. Closing: Why You Won\'t Get Your Keys at the Signing Table in North Carolina',
