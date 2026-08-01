@@ -138,6 +138,8 @@ export const manualBlogPosts: ManualBlogPost[] = [
     slug: 'struggling-with-loan-mod-paperwork',
     date: 'March 7, 2026',
     excerpt: 'You’ve been through the ringer. You’ve spent weeks, perhaps months, going back and forth with your lender, submitting pay stubs, tax returns, and letters of explanation...',
-    imageUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800',
+    seoTitle: 'Loan Modification Notary in Charlotte NC',
+    seoDescription: 'Approved for a loan modification? A Charlotte mobile notary comes to you, executes the package correctly, and gets it back to your lender on time.'
   }
 ];
