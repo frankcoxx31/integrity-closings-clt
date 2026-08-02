@@ -127,14 +127,18 @@ export const manualBlogPosts: ManualBlogPost[] = [
     slug: 'diy-mortgage-loan-modification-notarized-at-home-charlotte',
     date: 'March 15, 2026',
     excerpt: 'You’ve spent months on the phone with your lender. You’ve sent in pay stubs, written hardship letters, and navigated the grueling trial period of a loan modification...',
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800',
+    seoTitle: 'Get a Loan Modification Notarized at Home in Charlotte',
+    seoDescription: 'Your lender says "find a notary by Friday." A Charlotte mobile notary comes to your home and executes the loan modification packet correctly the first time.'
   },
   {
     title: 'Why Your Refinance Demands a Specialized Loan Signing Agent',
     slug: 'why-your-refinance-demands-specialized-loan-signing-agent',
     date: 'March 15, 2026',
     excerpt: 'Opening a thick envelope from your mortgage lender can be daunting. Tucked between pages of complex legal terminology is often a simple directive...',
-    imageUrl: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&q=80&w=800',
+    seoTitle: 'Why Your Refinance Needs a Loan Signing Agent',
+    seoDescription: 'A refinance is no place for a general notary. Learn why a certified loan signing agent prevents rejections, rescission errors, and rate-lock delays.'
   },
   {
     title: '3 Reasons a Certified Loan Signing Agent is a Must for Your Mortgage Refinance',

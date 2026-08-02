@@ -77,6 +77,18 @@ export default function BlogPost() {
       { q: "What if I find an error in the documents during the signing?", a: "If there's a typo or a wrong number, I immediately contact your closing attorney or loan officer. In many cases, they can email a corrected page that I can print or handle digitally to keep the closing on track." },
       { q: "Do you offer services outside of Charlotte?", a: "Yes. I serve the greater Charlotte area, including Pineville, Matthews, Concord, and even Gastonia." }
     ],
+    'why-your-refinance-demands-specialized-loan-signing-agent': [
+      { q: "What's the difference between a notary public and a loan signing agent?", a: "A notary public verifies identities and witnesses signatures on simple documents. A loan signing agent is a certified specialist trained in mortgage packages — the Note, Deed of Trust, and Right to Cancel — who places every signature and date exactly to lender guidelines." },
+      { q: "Why do banks decline to notarize mortgage documents?", a: "Liability. Most major banks prohibit their employees from notarizing outside mortgage documents, so your \"safest bet\" often turns you away. A dedicated mobile signing agent whose only focus is your transaction fills that gap." },
+      { q: "What can go wrong with amateur mortgage notarization?", a: "A smudge or wrong ink color can trigger a technical rejection, a miscalculated three-day Right to Cancel can legally stall the loan, and a botched acknowledgment or jurat gets the deed rejected by the county recorder. Any one can reset your timeline or blow your rate lock." },
+      { q: "How does a mobile signing agent save time on a refinance?", a: "Refinancing is time-sensitive — rate locks expire and every day of delay costs money. I come to your home or office, guide you through the packet, notarize it flawlessly, triple-check it, and ship it back fast so your lender funds on schedule." }
+    ],
+    'diy-mortgage-loan-modification-notarized-at-home-charlotte': [
+      { q: "Why do lenders make you find your own notary?", a: "To cut overhead. Mortgage servicers are usually located hundreds of miles away with no local office, so shifting the signing to you saves them money — while leaving you with a strict deadline and a logistical hurdle." },
+      { q: "What's the problem with finding a notary yourself?", a: "Bank staff often can't touch mortgage documents, retail notaries keep 9-to-5 hours, and signing sensitive hardship papers at a public counter is a privacy risk. Worst of all, one missing initial can get the whole packet rejected." },
+      { q: "What exactly is a mortgage loan modification?", a: "It's a permanent change to your loan terms — a lower rate, longer term, or past-due amounts moved to the back of the loan — to make payments affordable. The final step is a notarized, recordable signing of the modification agreement." },
+      { q: "How do you prepare for your at-home signing?", a: "Don't sign anything ahead of time, have a valid unexpired photo ID ready, check the lender's ink-color instructions, and clear a large table for the 50-plus-page packet. That preparation is what gets the packet accepted on the first try." }
+    ],
     'charlotte-notary-public-secrets-revealed': [
       { q: "What are the red flags of a fraudulent notary?", a: "Walk away if a notary pressures you to sign quickly, won't check your photo ID, hands you pre-signed documents, refuses to keep records, or can't produce their commission certificate. Any one of these breaks basic North Carolina notary law." },
       { q: "Is a mobile notary safe to use?", a: "Yes — a properly commissioned, insured mobile notary is just as safe as an office and far more convenient. The key is verifying credentials before you sign, which a legitimate signing agent expects and welcomes." },
@@ -1371,24 +1383,28 @@ export default function BlogPost() {
                 <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
                   <div className="flex items-center">
                     <User className="w-4 h-4 mr-2" />
-                    Integrity Closings CLT
+                    By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="w-4 h-4 mr-2" />
-                    3/15/2026
+                    March 15, 2026
                   </div>
                 </div>
+
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">The "DIY" Mortgage Loan Modification: How to Get Your Documents Notarized at Home in Charlotte</h1>
 
                 <p className="mb-6">You’ve spent months on the phone with your lender. You’ve sent in pay stubs, written hardship letters, and navigated the grueling trial period of a loan modification. Finally, the heavy envelope arrives in the mail. You open it, expecting a simple "congratulations," but instead, you find a 50-page stack of legal documents and a cover letter that essentially says: <em>"Find a notary, get this signed, and send it back to us by Friday."</em></p>
 
                 <p className="mb-6">Suddenly, a process that was supposed to provide relief feels like a high-stakes DIY project. Many homeowners in the Charlotte area are surprised to learn that lenders often leave the final—and most important—step of a mortgage loan modification entirely up to the borrower. If you are feeling overwhelmed, you aren’t alone. Navigating a <strong>notary closing at home</strong> doesn’t have to be a headache.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Lenders Make You Find Your Own Notary</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why do lenders make you find your own notary?</h2>
+                <p className="mb-6 font-semibold text-slate-900">To cut overhead. Mortgage servicers are usually located hundreds of miles away with no local office, so shifting the signing to you saves them money — while leaving you with a strict deadline and a logistical hurdle.</p>
                 <p className="mb-6">Mortgage servicers are often located hundreds of miles away and do not have local offices to assist you. By shifting the responsibility to the homeowner, they reduce overhead, but they create a significant logistical hurdle for you.</p>
 
                 <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200" alt="Mortgage loan modification documents" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Problem with the "Traditional" Notary Search</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What's the problem with finding a notary yourself?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Bank staff often can't touch mortgage documents, retail notaries keep 9-to-5 hours, and signing sensitive hardship papers at a public counter is a privacy risk. Worst of all, one missing initial can get the whole packet rejected.</p>
                 <p className="mb-6">If you decide to drive around town to find a notary, you’ll likely encounter several common frustrations:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li><strong>Liability Policies:</strong> Many banks prohibit staff from touching mortgage documents to avoid liability.</li>
@@ -1397,21 +1413,24 @@ export default function BlogPost() {
                     <li><strong>The Risk of Rejection:</strong> A loan modification requires precise execution. A single missing initial or incorrect ink color can cause the lender to reject the entire packet.</li>
                 </ul>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Convenience of a Notary Closing at Home</h2>
-                <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we bring the professional to you. Whether you are in <strong>Mint Hill</strong>, Uptown, or anywhere in the Charlotte area, a mobile loan signing agent ensures your documents are executed with the precision lenders demand.</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How does a notary closing at home work?</h2>
+                <p className="mb-6 font-semibold text-slate-900">I come to you. As a <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">commissioned North Carolina Notary Public</a> and Certified Loan Signing Agent, I execute your modification packet at your kitchen table with the precision lenders demand — no driving, no public counter.</p>
+                <p className="mb-6">Whether you are in <strong>Mint Hill</strong>, Uptown, or anywhere in the Charlotte area, I bring the professional signing to you and make sure every page is executed correctly the first time.</p>
 
                 <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?auto=format&fit=crop&q=80&w=1200" alt="Mobile notary service in Mint Hill" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What Exactly is a Mortgage Loan Modification?</h2>
-                <p className="mb-6">A mortgage loan modification is a permanent change in your loan terms to make payments more affordable. The process typically follows these steps:</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What exactly is a mortgage loan modification?</h2>
+                <p className="mb-6 font-semibold text-slate-900">It's a permanent change to your loan terms — a lower rate, longer term, or past-due amounts moved to the back of the loan — to make payments affordable. The final step is a notarized, recordable signing of the modification agreement.</p>
+                <p className="mb-6">The process typically follows these steps:</p>
                 <ol className="list-decimal pl-6 space-y-4 mb-6">
                     <li><strong>Contacting the Servicer:</strong> Initiating loss mitigation.</li>
                     <li><strong>Hardship Application:</strong> Submission of income and tax documentation.</li>
                     <li><strong>The Trial Period:</strong> Demonstrating payment consistency.</li>
-                    <li><strong>The Final Execution:</strong> This is where our mobile notary services ensure your documents are legally binding and recordable.</li>
+                    <li><strong>The Final Execution:</strong> This is where my mobile notary services ensure your documents are legally binding and recordable.</li>
                 </ol>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How to Prepare for Your At-Home Signing</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How do you prepare for your at-home signing?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Don't sign anything ahead of time, have a valid unexpired photo ID ready, check the lender's ink-color instructions, and clear a large table for the 50-plus-page packet. That preparation is what gets the packet accepted on the first try.</p>
                 <p className="mb-6">To ensure your packet is accepted on the first try, follow these preparation tips:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li><strong>Don't Sign Anything Yet:</strong> A notary must witness your signature. Signing beforehand invalidates the documents.</li>
@@ -1422,11 +1441,19 @@ export default function BlogPost() {
 
                 <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1200" alt="Organized workspace for mortgage signing" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
+                <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+                    <div>
+                        <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+                        <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He provides mobile loan modification and refinance signings throughout Charlotte and the surrounding metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+                    </div>
+                </div>
+
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Finalize Your Modification?</h2>
-                    <p className="text-lg text-slate-300 mb-8">Don’t let a mountain of paperwork stress you out. Let us bring the professional closing to your table.</p>
+                    <p className="text-lg text-slate-300 mb-8">Don’t let a mountain of paperwork stress you out. Let me bring the professional closing to your table.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#" className="text-brand-600 hover:underline">Link</a>
+                        <a href="tel:9805058050" className="inline-block px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 font-bold rounded-lg transition-colors">Call 980-505-8050</a>
                         <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>
                 </section>
@@ -1444,19 +1471,22 @@ export default function BlogPost() {
                 <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
                   <div className="flex items-center">
                     <User className="w-4 h-4 mr-2" />
-                    Integrity Closings CLT
+                    By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="w-4 h-4 mr-2" />
-                    3/15/2026
+                    March 15, 2026
                   </div>
                 </div>
+
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">Why Your Refinance Demands a Specialized Loan Signing Agent</h1>
 
                 <p className="mb-6">Opening a thick envelope from your mortgage lender can be daunting. Tucked between pages of complex legal terminology is often a simple directive: <em>"Please find a notary and return these documents by Friday."</em></p>
 
                 <p className="mb-6">While the task seems straightforward, it is one of the most critical steps in your financial life. Entrusting these documents to a general notary—or a friend with a seal—is a gamble. Mortgage closings are high-stakes legal proceedings where precision is not just a preference; it is a requirement.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Distinction: Notary Public vs. Loan Signing Agent</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What's the difference between a notary public and a loan signing agent?</h2>
+                <p className="mb-6 font-semibold text-slate-900">A notary public verifies identities and witnesses signatures on simple documents. A loan signing agent is a certified specialist trained in mortgage packages — the Note, Deed of Trust, and Right to Cancel — who places every signature and date exactly to lender guidelines.</p>
                 <p className="mb-6">It is a common misconception that all notaries are created equal. A notary public is authorized to verify identities on simple documents, but they lack the specialized training required for mortgage protocols.</p>
                 
                 <div className="bg-slate-50 border-l-4 border-slate-900 p-6 my-8">
@@ -1467,35 +1497,46 @@ export default function BlogPost() {
 
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200" alt="Professional Loan Signing Setup" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Banks Often Decline Mortgage Notarizations</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why do banks decline to notarize mortgage documents?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Liability. Most major banks prohibit their employees from notarizing outside mortgage documents, so your "safest bet" often turns you away. A dedicated mobile signing agent whose only focus is your transaction fills that gap.</p>
                 <p className="mb-6">Many homeowners assume their local bank is the safest bet. In reality, most major financial institutions prohibit their employees from notarizing outside mortgage documents due to <strong>liability concerns</strong>.</p>
                 <p className="mb-6">When you choose a mobile notary service like <strong>Integrity Closings CLT</strong>, you aren't just paying for a stamp; you are paying for a professional whose singular focus is the integrity and accuracy of <em>your</em> specific transaction.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Operational Risks of Amateur Notarization</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What can go wrong with amateur mortgage notarization?</h2>
+                <p className="mb-6 font-semibold text-slate-900">A smudge or wrong ink color can trigger a technical rejection, a miscalculated three-day Right to Cancel can legally stall the loan, and a botched acknowledgment or jurat gets the deed rejected by the county recorder. Any one can reset your timeline or blow your rate lock.</p>
                 <p className="mb-6">Errors in this final phase can jeopardize the entire funding process. Consider these common pitfalls:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li><strong>Technical Rejections:</strong> Minor smudges or unauthorized ink colors can lead to immediate lender rejection.</li>
                     <li><strong>Rescission Errors:</strong> Miscalculating the three-day "Right to Cancel" period due to incorrect dating can legally stall your loan.</li>
                     <li><strong>Recording Failures:</strong> Inaccurate execution of the acknowledgment or jurat will result in rejection by the county recorder.</li>
                 </ul>
-                <p className="mb-6"><em>Learn more about avoiding these pitfalls in our guide: <a href="#" className="text-brand-600 hover:underline">Link</a>.</em></p>
+                <p className="mb-6"><em>These pitfalls come down to <a href="https://www.ncleg.net/EnactedLegislation/Statutes/HTML/BySection/Chapter_10B/GS_10B-20.html" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina's notarial acknowledgment requirements</a> — get them wrong and the county recorder rejects the deed.</em></p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Efficiency Through Mobile Professionalism</h2>
-                <p className="mb-6">Refinancing is time-sensitive. Rate locks are temporary, and every day of delay carries a financial cost. Our mobile service eliminates the commute and the waiting room.</p>
-                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">The Integrity Closings CLT Workflow:</h3>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How does a mobile signing agent save time on a refinance?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Refinancing is time-sensitive — rate locks expire and every day of delay costs money. I come to your home or office, guide you through the packet, notarize it flawlessly, triple-check it, and ship it back fast so your lender funds on schedule.</p>
+                <p className="mb-6">Rate locks are temporary, and every day of delay carries a financial cost. My mobile service eliminates the commute and the waiting room.</p>
+                <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">My signing workflow:</h3>
                 <ol className="list-decimal pl-6 space-y-4 mb-6">
                     <li><strong>Verified Identity:</strong> Rigorous compliance with state legal standards.</li>
                     <li><strong>Guided Review:</strong> Clear, professional navigation through your packet.</li>
                     <li><strong>Flawless Execution:</strong> Precise notarization of all required sections.</li>
-                    <li><strong>Quality Assurance:</strong> A triple-check of your packet before it leaves our sight.</li>
+                    <li><strong>Quality Assurance:</strong> A triple-check of your packet before it leaves my sight.</li>
                     <li><strong>Logistical Support:</strong> Expedited return shipping to ensure your lender receives documents on time.</li>
                 </ol>
 
+                <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+                    <div>
+                        <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+                        <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He handles refinance and mortgage signings throughout Charlotte and the surrounding metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+                    </div>
+                </div>
+
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready for a Stress-Free Closing?</h2>
-                    <p className="text-lg text-slate-300 mb-8">Don’t leave your financial future to chance. Let us bring the professional closing to your home or office.</p>
+                    <p className="text-lg text-slate-300 mb-8">Don’t leave your financial future to chance. Let me bring the professional closing to your home or office.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#" className="text-brand-600 hover:underline">Link</a>
+                        <a href="tel:9805058050" className="inline-block px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 font-bold rounded-lg transition-colors">Call 980-505-8050</a>
                         <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>
                 </section>
