@@ -49,33 +49,47 @@ export default function LoanSigningCityLayout({
     }
 
     const schemaId = `schema-loan-signing-${location.replace(/\s+/g, '-').toLowerCase()}`;
+    const graph: Record<string, unknown>[] = [
+      {
+        "@type": "Service",
+        "name": `${location} Loan Signing Agent Services`,
+        "serviceType": "Loan Signing Agent",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": businessConfig.name,
+          "telephone": businessConfig.phone.display,
+          "url": businessConfig.domain
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": location
+        },
+        "description": metaDescription
+      }
+    ];
+    // The page renders a visible "Frequently Asked Questions" section, so mark
+    // it up as FAQPage — text mirrors the on-page copy exactly, as Google requires.
+    if (faqs && faqs.length) {
+      graph.push({
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((f) => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+        }))
+      });
+    }
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = schemaId;
-    script.innerHTML = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": `${location} Loan Signing Agent Services`,
-      "serviceType": "Loan Signing Agent",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": businessConfig.name,
-        "telephone": businessConfig.phone.display,
-        "url": businessConfig.domain
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": location
-      },
-      "description": metaDescription
-    });
+    script.innerHTML = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
     document.head.appendChild(script);
 
     return () => {
       const existing = document.getElementById(schemaId);
       if (existing) document.head.removeChild(existing);
     };
-  }, [displayH1, location, metaDescription]);
+  }, [displayH1, location, metaDescription, faqs]);
 
   const loanServices: LoanSigningService[] = [
     {
@@ -108,15 +122,15 @@ export default function LoanSigningCityLayout({
   const trustPoints = [
     {
       title: "Punctual & Professional",
-      description: "We understand that loan closings are time-sensitive. We arrive on time, every time, dressed professionally."
+      description: "Loan closings are time-sensitive. I arrive on time, every time, dressed professionally."
     },
     {
       title: "Mobile Convenience",
-      description: "We meet you at your home, office, or any agreed meeting location across the region."
+      description: "I meet you at your home, office, or any agreed meeting location across the region."
     },
     {
       title: "Clear Communication",
-      description: "We keep all parties informed and confirm appointments promptly to ensure no surprises."
+      description: "I keep all parties informed and confirm appointments promptly to ensure no surprises."
     },
     {
       title: "Expert Workflow",
@@ -124,11 +138,11 @@ export default function LoanSigningCityLayout({
     },
     {
       title: "Surrounding Coverage",
-      description: "Extensive service across nearby communities, making us a versatile local partner."
+      description: "Extensive service across nearby communities, making me a versatile local partner."
     },
     {
       title: "Smooth Experience",
-      description: "Our goal is to make the signing process the easiest part of the entire mortgage journey."
+      description: "My goal is to make the signing process the easiest part of the entire mortgage journey."
     }
   ];
 
@@ -189,7 +203,7 @@ export default function LoanSigningCityLayout({
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Loan Signing Services</h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">We provide comprehensive mobile support for all types of mortgage and real estate document closings.</p>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">I provide comprehensive mobile support for all types of mortgage and real estate document closings.</p>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {loanServices.map((service, index) => (
@@ -258,7 +272,7 @@ export default function LoanSigningCityLayout({
           )}
           
           <div className="mt-16 text-center">
-            <p className="text-slate-400 mb-4">Looking for general information about our specialization?</p>
+            <p className="text-slate-400 mb-4">Looking for general information about my specialization?</p>
             <Link to="/loan-signing-agent-charlotte-nc" className="text-accent-400 font-bold hover:underline inline-flex items-center">
               View All Loan Signing Services <Award className="w-4 h-4 ml-2" />
             </Link>
