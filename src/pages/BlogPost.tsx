@@ -77,6 +77,18 @@ export default function BlogPost() {
       { q: "What if I find an error in the documents during the signing?", a: "If there's a typo or a wrong number, I immediately contact your closing attorney or loan officer. In many cases, they can email a corrected page that I can print or handle digitally to keep the closing on track." },
       { q: "Do you offer services outside of Charlotte?", a: "Yes. I serve the greater Charlotte area, including Pineville, Matthews, Concord, and even Gastonia." }
     ],
+    'why-charlotte-closing-attorneys-need-trusted-mobile-signing-partner-2026': [
+      { q: "Why doesn't the traditional office closing work in 2026?", a: "Because Charlotte clients value their time and expect to sign where they are, not in your Uptown office. Making every party fight I-77 or I-485 traffic creates friction a mobile signing partner removes by meeting the client at home, a coffee shop, or a hospital." },
+      { q: "How does a signing partner save an attorney time?", a: "It hands the two-hour signing appointment to a trusted agent so you can spend your billable hours reviewing titles and resolving legal issues. You increase file capacity without adding overhead or staff stress." },
+      { q: "Does a mobile signer weaken your client experience?", a: "No. A high-quality signing agent acts as a seamless extension of your firm — arriving on time, dressed professionally, and skilled at keeping nervous buyers calm. That convenience builds brand loyalty, referrals, and repeat business." },
+      { q: "How do you choose the right mobile signing partner?", a: "Look for experience with different loan types, proactive status updates, a track record of punctuality, and the right equipment — dual-tray printers and mobile scanning for fast document return." }
+    ],
+    'what-title-companies-need-from-mobile-loan-signing-agent': [
+      { q: "What do title companies need from a mobile loan signing agent?", a: "Six things: zero-error document review, proactive communication, real credentials (NNA certification and E&O insurance), professional bedside manner, mobile printing and scan-back technology, and expertise with specialized closings. That agent is a professional extension of your brand, not just a stamp." },
+      { q: "What credentials should a loan signing agent have?", a: "NNA certification with an annual background screening, Errors & Omissions insurance (title companies typically want $25,000 to $100,000 in coverage), and a current state notary commission. In North Carolina that also means knowing local customs for documents like power of attorney and estate papers." },
+      { q: "What communication should a signing agent provide?", a: "Appointment confirmation once the borrower sets a time, a \"signing complete\" update immediately after the closing, and real-time issue alerts while the agent is still at the table so you can resolve a problem before it stalls funding." },
+      { q: "What equipment does a mobile signing agent need?", a: "A dual-tray laser printer for legal and letter-sized documents, a high-speed mobile scanner for immediate scan-backs, and reliable transportation to arrive on time at a home, coffee shop, or hospital." }
+    ],
     '7-ways-reliable-signing-agent-makes-closings-run-smoother': [
       { q: "How does a signing agent prevent document errors?", a: "By performing a triple-check: a pre-check that all pages are printed and present, a table-check of each page as the borrower signs, and a post-check page-by-page scan before the package ships. That's what stops the missed initial that forces a costly re-sign." },
       { q: "Where's the line between explaining and giving legal advice?", a: "A reliable agent describes what a document is and where to sign — the \"what\" and \"where\" — without touching the \"why\" or \"should I,\" which is legal or financial advice. When a borrower asks about their rate or terms, the agent calls the loan officer instead of guessing." },
@@ -1851,17 +1863,19 @@ export default function BlogPost() {
           <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1200" alt="What Title Companies Really Need From a Mobile Loan Signing Agent" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
           <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
-            <div className="flex items-center"><User className="w-4 h-4 mr-2" />Integrity Closings CLT</div>
+            <div className="flex items-center"><User className="w-4 h-4 mr-2" />By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link></div>
             <div className="flex items-center"><Calendar className="w-4 h-4 mr-2" />June 25, 2026</div>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">What Title Companies Really Need From a Mobile Loan Signing Agent</h1>
 
+          <p className="mb-6 font-semibold text-slate-900">Title companies need a signing agent who delivers six things: zero-error document review, proactive communication, real credentials (NNA certification and E&amp;O insurance), professional bedside manner, mobile printing and scan-back technology, and expertise with specialized closings. That agent is a professional extension of your brand, not just a stamp.</p>
+
           <p className="mb-6">In the high-stakes world of mortgage closings, the final signing is the moment where everything either comes together or falls apart. For title companies and closing attorneys, the mobile loan signing agent is often the only person from the transaction that the borrower meets in person. You aren't just looking for a stamp; you are looking for a professional extension of your own brand.</p>
           <p className="mb-6">When a file hits the finish line, you need to know that your <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile loan signing agent</Link> is competent, reliable, and detail-oriented. A single missed initial can delay funding, frustrate borrowers, and damage your reputation with lenders.</p>
           <p className="mb-6">This guide breaks down exactly what title companies need from a professional signing partner to ensure every closing is a success.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Meticulous Attention to Detail (Zero-Error Tolerance)</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Why does zero-error document review matter to a title company?</h2>
           <p className="mb-6">For a title officer, there is nothing more frustrating than receiving a loan package back only to find a missing signature on the 1003 or a forgotten date on the Right to Cancel. These "small" errors cause massive headaches, requiring "go-backs" that annoy the client and stall the entire funding process.</p>
           <p className="mb-4">What you really need is an agent who treats every document as if it were the most important one in the pile. This includes:</p>
           <ul className="list-disc pl-6 space-y-3 mb-6">
@@ -1873,7 +1887,7 @@ export default function BlogPost() {
 
           <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200" alt="Professional Charlotte notary public reviewing loan documents with meticulous attention to detail." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Proactive and Transparent Communication</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. What communication should a signing agent provide?</h2>
           <p className="mb-6">Silence is the enemy of a smooth closing. Title companies need to know exactly where the file stands at all times. You shouldn't have to chase down a signing agent to find out if the appointment happened or if the documents are in the mail.</p>
           <p className="mb-4">A top-tier mobile loan signing agent provides:</p>
           <ul className="list-disc pl-6 space-y-3 mb-6">
@@ -1882,8 +1896,8 @@ export default function BlogPost() {
             <li><strong>Issue Alerts:</strong> If a borrower has a question about their interest rate or refuses to sign a specific document, you need to know <em>immediately</em> while the agent is still at the table so you can resolve the issue in real-time.</li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. Comprehensive Professional Credentials</h2>
-          <p className="mb-6">Compliance is non-negotiable in the mortgage industry. Title companies are under constant scrutiny from lenders and regulators, which means your vendors must be fully vetted.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. What credentials should a loan signing agent have?</h2>
+          <p className="mb-6">Compliance is non-negotiable in the mortgage industry. Title companies are under constant scrutiny from lenders and regulators, which means your vendors must be fully vetted — including a current <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina notary commission</a>.</p>
           <p className="mb-4">To protect your business and your clients, you need a signing agent who maintains:</p>
           <ul className="list-disc pl-6 space-y-3 mb-6">
             <li><strong>NNA Certification and Background Screening:</strong> The industry standard that proves the agent is trained and has passed a rigorous annual background check.</li>
@@ -1893,7 +1907,7 @@ export default function BlogPost() {
 
           <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1200" alt="A professional mobile loan signing agent with credentials ready for a mortgage closing." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. The "Bedside Manner" of Professionalism</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. Why do a signing agent's soft skills matter?</h2>
           <p className="mb-6">The signing table can be a stressful place. For a first-time homebuyer, it represents the biggest financial commitment of their life. For a seller, it might be an emotional goodbye to a family home.</p>
           <p className="mb-4">A mobile loan signing agent needs more than just technical skill; they need a high level of soft skills. You need a partner who:</p>
           <ul className="list-disc pl-6 space-y-3 mb-6">
@@ -1902,7 +1916,7 @@ export default function BlogPost() {
             <li><strong>Manages Tensions:</strong> If a borrower becomes frustrated, a calm, professional agent can de-escalate the situation and keep the closing on track.</li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. Logistics and Technical Proficiency</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. What equipment does a mobile signing agent need?</h2>
           <p className="mb-6">The "mobile" part of being a mobile loan signing agent involves a lot of moving parts. Title companies need agents who are tech-savvy and equipped to handle the modern digital workflow of <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mortgage closings</Link>.</p>
           <ul className="list-disc pl-6 space-y-3 mb-6">
             <li><strong>High-Quality Printing:</strong> Dual-tray laser printers are a must to ensure legal and letter-sized documents are printed correctly.</li>
@@ -1912,7 +1926,7 @@ export default function BlogPost() {
 
           <img src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?auto=format&fit=crop&q=80&w=1200" alt="Mobile loan signing agent setup inside a vehicle for efficient scan-backs during mortgage closings." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">6. Expertise in Specialized Closings</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">6. Can a signing agent handle complex closings?</h2>
           <p className="mb-6">Not every closing is a straightforward refinance. Title companies often deal with complex scenarios that require a higher level of expertise. You need an agent who is comfortable with:</p>
           <ul className="list-disc pl-6 space-y-3 mb-6">
             <li><strong>Seller-Side Packages:</strong> Knowing exactly which deed and tax forms are required.</li>
@@ -1920,7 +1934,7 @@ export default function BlogPost() {
             <li><strong>Hospital and Nursing Home Signings:</strong> Handling <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">sensitive notarizations</Link> with patience and dignity for signers who may have mobility or health challenges.</li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Local Expertise Matters in Charlotte</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why does local Charlotte expertise matter?</h2>
           <p className="mb-6">Working with a local <Link to="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">Charlotte notary public</Link> provides an added layer of security. Local agents understand North Carolina's specific notary laws and the geographic nuances of the Queen City. Whether the closing is in Uptown, Ballantyne, or Lake Norman, a local expert knows how to navigate the area to ensure punctuality.</p>
           <p className="mb-6">Furthermore, local agents are often available for <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours mobile notary services</Link>, which is a huge value-add for borrowers who work 9-to-5 jobs and cannot make it to an attorney's office during the day.</p>
 
@@ -1939,7 +1953,7 @@ export default function BlogPost() {
           <p className="mb-6">By choosing a partner who checks all these boxes, you aren't just hiring a contractor; you are securing the final link in your professional chain.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">Partner with Integrity Closings CLT</h3>
-          <p className="mb-4">If you are a title company or closing attorney looking for a reliable mobile loan signing agent in the Charlotte area, Integrity Closings CLT is here to help. We provide:</p>
+          <p className="mb-4">If you are a title company or closing attorney looking for a reliable mobile loan signing agent in the Charlotte area, I am here to help. I provide:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
             <li><strong>Loan Signing Services:</strong> Specialized expertise for all mortgage documents.</li>
             <li><strong>General Notary Work:</strong> Fast and reliable service for all your legal needs.</li>
@@ -1948,9 +1962,17 @@ export default function BlogPost() {
             <li><strong>After-Hours Availability:</strong> Closings on the borrower's schedule.</li>
           </ul>
 
+          <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+            <div>
+              <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+              <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He is the mobile signing partner for Charlotte-area title companies and closing attorneys. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+            </div>
+          </div>
+
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Streamline Your Next Closing?</h2>
-            <p className="text-lg text-slate-300 mb-8">Partner with Integrity Closings CLT and let us handle the field so you can focus on the file.</p>
+            <p className="text-lg text-slate-300 mb-8">Partner with Integrity Closings CLT and let me handle the field so you can focus on the file.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/booking" className="inline-block px-8 py-4 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors">Book a Signing</Link>
               <a href="tel:9805058050" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Call 980-505-8050</a>
@@ -1966,54 +1988,56 @@ export default function BlogPost() {
           <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=1200" alt="Why Charlotte Closing Attorneys Need a Trusted Mobile Signing Partner in 2026" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
           <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
-            <div className="flex items-center"><User className="w-4 h-4 mr-2" />Integrity Closings CLT</div>
+            <div className="flex items-center"><User className="w-4 h-4 mr-2" />By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link></div>
             <div className="flex items-center"><Calendar className="w-4 h-4 mr-2" />June 15, 2026</div>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">Why Charlotte Closing Attorneys Need a Trusted Mobile Signing Partner in 2026</h1>
 
-          <p className="mb-6">The real estate landscape in Charlotte, North Carolina, has shifted dramatically over the last few years. As we move through 2026, the "Queen City" continues to be a magnet for corporate relocations, tech startups, and a booming residential market. For <strong>Charlotte closing attorneys</strong>, this growth brings a significant challenge: how do you maintain a high volume of closings without sacrificing the personalized, professional service your clients expect?</p>
+          <p className="mb-6 font-semibold text-slate-900">A trusted mobile signing partner lets a Charlotte law firm scale closings without adding staff. It buys back attorney time, extends your brand to the client's location, handles complex packages error-free, covers last-minute and after-hours signings, and reduces post-closing cleanup.</p>
+
+          <p className="mb-6">The real estate landscape in Charlotte, North Carolina, has shifted dramatically over the last few years. As of 2026, the "Queen City" continues to be a magnet for corporate relocations, tech startups, and a booming residential market. For <strong>Charlotte closing attorneys</strong>, this growth brings a significant challenge: how do you maintain a high volume of closings without sacrificing the personalized, professional service your clients expect?</p>
           <p className="mb-6">The answer lies in strategic partnerships. In today's fast-paced legal environment, you can no longer afford to be tethered to a conference room. To stay competitive, law firms are increasingly turning to a <strong>mobile notary in Charlotte, NC</strong>, to handle the "boots on the ground" portion of the transaction. Partnering with a trusted mobile signing agent isn't just a matter of convenience; it's a strategic move that safeguards your firm's reputation and scales your operations.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The 2026 Reality: Why "Business as Usual" Doesn't Work Anymore</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why doesn't the traditional office closing work in 2026?</h2>
           <p className="mb-6">In 2026, the traditional 9-to-5 office closing is becoming the exception, not the rule. Your clients — whether they are first-time homebuyers in South End or busy executives in Ballantyne — value their time above all else. They expect a <strong>convenient home closing</strong> that fits into their hybrid work schedules and family lives.</p>
           <p className="mb-6">If your firm requires every party to fight I-77 or I-485 traffic to sign documents in your Uptown or South Park office, you're creating a point of friction. A mobile signing partner allows you to meet the client where they are, literally. Whether it's a kitchen table, a local coffee shop, or even a healthcare facility, a <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile loan signing agent</Link> ensures the deal gets done on the client's terms.</p>
 
           <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200" alt="Mobile notary in Charlotte NC meeting a couple at a local cafe for a convenient loan signing session." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Buying Back Your Firm's Most Valuable Asset: Time</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. How does a signing partner save an attorney time?</h2>
           <p className="mb-6">As a closing attorney, your expertise is best utilized in reviewing titles, resolving complex legal hurdles, and managing high-level client relationships. Spending two hours in a closing room for a straightforward refinance or a standard purchase is often a poor use of your billable potential.</p>
           <p className="mb-6">When you delegate the physical signing process to a trusted partner like Integrity Closings CLT, you reclaim hours of your day. You can focus on the legal intricacies of the file while your signing agent ensures every "i" is dotted and every "t" is crossed at the signing table. This allows you to increase your file capacity without increasing your overhead or staff stress levels.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Professionalism as an Extension of Your Brand</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Does a mobile signer weaken your client experience?</h2>
           <p className="mb-6">A common misconception is that using a mobile signer means losing control over the client experience. In reality, a high-quality signing agent acts as a seamless extension of your law firm.</p>
           <p className="mb-6">In 2026, the best mobile partners are not just notaries; they are specialists. They arrive on time, dress professionally, and possess the "soft skills" necessary to keep nervous buyers calm. When you hire an <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours mobile notary in Charlotte, NC</Link>, you're telling your client that their convenience is your priority. This builds immense brand loyalty that leads to referrals and repeat business.</p>
 
           <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?auto=format&fit=crop&q=80&w=1200" alt="Professional mobile signing agent facilitating a convenient home closing for a retired couple in Charlotte." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. Navigating the Complexity of Modern Loan Packages</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. How does a signing partner handle complex loan packages?</h2>
           <p className="mb-6">Loan packages haven't gotten any thinner in 2026. Between updated disclosure requirements and specific lender instructions, the margin for error is razor-thin. A missed signature or an incorrectly dated Patriot Act form can delay funding, frustrate lenders, and cause a cascade of headaches for your paralegals.</p>
           <p className="mb-6">A trusted mobile signing partner specializes in these documents. They know how to explain a Closing Disclosure (CD) or a Note without giving legal advice, ensuring the client feels informed but not overwhelmed. By the time the documents arrive back at your office — whether via overnight mail or e-recorded transmission — they are pristine and ready for funding.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. Solving the "Last Minute" Crisis</h2>
-          <p className="mb-6">We've all been there: a file is cleared to close at 4:00 PM on a Friday, and the buyers are leaving town the next morning. Or perhaps a seller is hospitalized and cannot make it to your office. These scenarios can derail a closing timeline and put a commission in jeopardy.</p>
-          <p className="mb-6">Having a go-to partner for <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital and nursing home notarizations</Link> or emergency weekend signings is a lifesaver. Instead of telling the client "we can't do it," you can say, "we'll send our mobile partner to you." This level of service distinguishes your firm from the competition.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. How does a mobile partner solve last-minute closings?</h2>
+          <p className="mb-6">Every firm has been there: a file is cleared to close at 4:00 PM on a Friday, and the buyers are leaving town the next morning. Or perhaps a seller is hospitalized and cannot make it to your office. These scenarios can derail a closing timeline and put a commission in jeopardy.</p>
+          <p className="mb-6">Having a go-to partner for <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital and nursing home notarizations</Link> or emergency weekend signings is a lifesaver. Instead of telling the client "we can't do it," you can say, "I'll send my mobile partner to you." This level of service distinguishes your firm from the competition.</p>
 
           <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200" alt="Mobile notary Charlotte NC providing reliable signing services at a hospital for a closing attorney's client." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. Strategic Geographic Flexibility</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. How does a mobile network expand your firm's reach?</h2>
           <p className="mb-6">Charlotte is sprawling. A firm based in Davidson might find it difficult to service a client in Waxhaw or Belmont. By utilizing a mobile signing network, your "office" effectively expands to cover the entire metro area. You can take on more files from a wider geographic range because you aren't limited by your physical location.</p>
-          <p className="mb-6">For a deeper dive into how this compares to traditional methods, you might find our analysis on <Link to="/title-company-attorney-closing-support-charlotte-nc" className="text-brand-600 hover:underline">Attorney Office Closing vs. Mobile Closing</Link> helpful for explaining the benefits to your own clients.</p>
+          <p className="mb-6">For a deeper dive into how this compares to traditional methods, you might find my breakdown of <Link to="/title-company-attorney-closing-support-charlotte-nc" className="text-brand-600 hover:underline">Attorney Office Closing vs. Mobile Closing</Link> helpful for explaining the benefits to your own clients.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">6. Reducing the Post-Closing Workload</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">6. How does a signing agent reduce post-closing work?</h2>
           <p className="mb-6">Every minute your paralegals spend chasing down a missed signature is a minute they aren't working on the next file. A reliable mobile signing agent performs a "triple check" before leaving the signing table. This precision significantly reduces the post-closing "cleanup" that plagues so many law firms. When the documents come back right the first time, your staff can move directly to disbursement and recording, keeping the entire pipeline moving smoothly.</p>
 
           <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&q=80&w=1200" alt="Securely organized closing documents ready for review by Charlotte closing attorneys to ensure total accuracy." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">7. Security and Compliance in a Digital Age</h2>
-          <p className="mb-6">In 2026, security is more important than ever. A trusted partner understands the importance of protecting Non-Public Personal Information (NPI). From secure document transport to verified identity checks, a professional mobile signing agent adheres to the highest standards of the National Notary Association (NNA). This reduces your firm's liability and ensures compliance with ever-evolving privacy laws.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">7. How does a signing partner protect client data?</h2>
+          <p className="mb-6">In 2026, security is more important than ever. A trusted partner understands the importance of protecting Non-Public Personal Information (NPI). From secure document transport to verified identity checks, a professional mobile signing agent works within <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina's notary law</a> and NNA best practices. This reduces your firm's liability and ensures compliance with ever-evolving privacy laws.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How to Choose the Right Mobile Partner in Charlotte</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How do you choose the right mobile signing partner?</h2>
           <p className="mb-6">Not all mobile notaries are created equal. When selecting a partner for your law firm, look for the following:</p>
           <ul className="list-disc pl-6 space-y-4 mb-6">
             <li><strong>Experience:</strong> Do they understand the difference between a VA loan and a Conventional Refinance?</li>
@@ -2034,9 +2058,9 @@ export default function BlogPost() {
           </ul>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">Partner with Integrity Closings CLT</h3>
-          <p className="mb-6">At Integrity Closings CLT, we understand the high stakes of North Carolina real estate. We aren't just notaries; we are your partners in ensuring every transaction ends with a handshake and a smile. Whether you need help with a <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile refi service</Link> or a complex estate closing involving a <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney</Link>, we have the expertise you need.</p>
+          <p className="mb-6">I understand the high stakes of North Carolina real estate. I'm not just a notary; I'm your partner in ensuring every transaction ends with a handshake and a smile. Whether you need help with a <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile refi service</Link> or a complex estate closing involving a <Link to="/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">Power of Attorney</Link>, I have the expertise you need.</p>
 
-          <p className="mb-4 font-bold">Our Services Include:</p>
+          <p className="mb-4 font-bold">Services Include:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
             <li>Loan Signing Services (Purchases, Refis, HELOCs)</li>
             <li>General Notary Work</li>
@@ -2045,9 +2069,17 @@ export default function BlogPost() {
             <li>After-Hours &amp; Weekend Appointments</li>
           </ul>
 
+          <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+            <div>
+              <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+              <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He is the mobile signing partner for Charlotte-area closing attorneys and title companies. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+            </div>
+          </div>
+
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Streamline Your Closings?</h2>
-            <p className="text-lg text-slate-300 mb-8">Partner with Integrity Closings CLT and let us handle the field so you can focus on the law.</p>
+            <p className="text-lg text-slate-300 mb-8">Partner with Integrity Closings CLT and let me handle the field so you can focus on the law.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/title-company-attorney-closing-support-charlotte-nc" className="inline-block px-8 py-4 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors">Attorney Closing Support</Link>
               <a href="tel:9805058050" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Call 980-505-8050</a>
@@ -2065,7 +2097,7 @@ export default function BlogPost() {
           <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
             <div className="flex items-center">
               <User className="w-4 h-4 mr-2" />
-              Integrity Closings CLT
+              By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
             </div>
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-2" />
@@ -2082,6 +2114,13 @@ export default function BlogPost() {
             loading="lazy" referrerPolicy="no-referrer"
           />
           <div dangerouslySetInnerHTML={{ __html: autoPost.contentHtml }} />
+          <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+            <div>
+              <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+              <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He provides mobile notary services throughout Charlotte and the surrounding metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+            </div>
+          </div>
         </div>
       );
     }

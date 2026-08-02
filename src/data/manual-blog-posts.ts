@@ -31,7 +31,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     date: 'June 25, 2026',
     excerpt: 'For title companies, the signing agent is the only face of your brand the borrower sees in person. Here\'s exactly what separates a reliable mobile loan signing partner from one that creates problems.',
     imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800',
-    seoTitle: 'What Title Companies Need From a Mobile Loan Signing Agent | Integrity Closings CLT',
+    seoTitle: 'What Title Companies Need From a Signing Agent',
     seoDescription: 'Title companies need more than a notary stamp. Discover the 6 qualities of a reliable mobile loan signing agent — and what leads to costly errors and delays.'
   },
   {
@@ -40,7 +40,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     date: 'June 15, 2026',
     excerpt: 'Charlotte\'s booming real estate market is putting pressure on closing attorneys to scale without sacrificing service. Here\'s why a trusted mobile signing partner is now a strategic necessity for law firms in the Queen City.',
     imageUrl: 'https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=800',
-    seoTitle: 'Why Charlotte Closing Attorneys Need a Trusted Mobile Signing Partner in 2026 | Integrity Closings CLT',
+    seoTitle: 'Why Charlotte Closing Attorneys Need a Signing Partner',
     seoDescription: "Charlotte closing attorneys are turning to mobile signing partners to scale operations, meet client expectations, and handle last-minute closings in 2026."
   },
   {
