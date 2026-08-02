@@ -212,12 +212,20 @@ function main() {
   // it here instead, from the same `routes` list (already includes every
   // /blog/:slug pulled from auto-blog-posts.json + manual-blog-posts.ts) so it
   // can never drift from what's actually prerendered.
-  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${routes
-    .map((route) => `  <url><loc>${businessConfig.domain}${route === '/' ? '/' : route}</loc></url>`)
+  // Standalone static pages that live in public/ as real .html files (not React
+  // routes, so not in `routes`). They return 200 and are linked from blog posts,
+  // but were absent from the sitemap so Google could never discover them.
+  const staticPages = [
+    '/notary-service-locations-nc.html',
+    '/what-to-have-ready-for-bedside-notary.html',
+  ];
+  const sitemapUrls = [...routes.map((r) => (r === '/' ? '/' : r)), ...staticPages];
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls
+    .map((loc) => `  <url><loc>${businessConfig.domain}${loc}</loc></url>`)
     .join('\n')}\n</urlset>\n`;
   writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf-8');
   writeFileSync(path.join(__dirname, '..', 'public', 'sitemap.xml'), sitemapXml, 'utf-8');
-  console.log(`[prerender] Wrote sitemap.xml with ${routes.length} URLs.`);
+  console.log(`[prerender] Wrote sitemap.xml with ${sitemapUrls.length} URLs.`);
 
   // A literal dist/404.html for server.ts's catch-all to serve (with a real
   // 404 status) for any path that isn't a known route or static asset.

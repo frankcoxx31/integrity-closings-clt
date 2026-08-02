@@ -124,7 +124,7 @@ export default function EstateNotary() {
             </h1>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Integrity Closings CLT provides professional mobile notary services specializing in the sensitive and precise nature of estate planning documents. We understand that these moments are critical, which is why we offer discreet, patient service directly to your home, attorney’s office, hospital room, or assisted living facility throughout the Greater Charlotte area.
+              Integrity Closings CLT provides professional mobile notary services specializing in the sensitive and precise nature of <Link to="/blog/notarize-deed-in-trust-north-carolina" className="text-brand-600 hover:underline">estate planning documents</Link>. We understand that these moments are critical, which is why we offer discreet, patient service directly to your home, attorney’s office, hospital room, or assisted living facility throughout the Greater Charlotte area.
             </p>
 
             <div className="mb-10 text-center">

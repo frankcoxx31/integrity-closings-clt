@@ -283,7 +283,7 @@ export default function MobileNotaryServices() {
                 <strong className="text-slate-800">Families with aging or ill relatives</strong> are the most common clients we serve in Charlotte. When a parent or spouse is in the hospital or a nursing home and decisions need to be made, a power of attorney or advance directive must be signed and notarized before it's too late. We go directly to Atrium Health, Novant Health, and care facilities throughout Mecklenburg County.
               </p>
               <p className="mb-4">
-                <strong className="text-slate-800">Homebound and elderly residents</strong> throughout Charlotte's neighborhoods — from Ballantyne to Huntersville — often need estate documents notarized but can no longer drive. We make house calls throughout the metro area, including Indian Trail, Waxhaw, and Monroe in Union County.
+                <strong className="text-slate-800">Homebound and elderly residents</strong> throughout Charlotte's neighborhoods — from Ballantyne to Huntersville — often need <Link to="/blog/notarize-deed-in-trust-north-carolina" className="text-brand-600 hover:underline">estate documents notarized</Link> but can no longer drive. We make house calls throughout the metro area, including Indian Trail, Waxhaw, and Monroe in Union County.
               </p>
             </div>
             <div>
