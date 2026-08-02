@@ -77,6 +77,17 @@ export default function BlogPost() {
       { q: "What if I find an error in the documents during the signing?", a: "If there's a typo or a wrong number, I immediately contact your closing attorney or loan officer. In many cases, they can email a corrected page that I can print or handle digitally to keep the closing on track." },
       { q: "Do you offer services outside of Charlotte?", a: "Yes. I serve the greater Charlotte area, including Pineville, Matthews, Concord, and even Gastonia." }
     ],
+    'charlotte-notary-public-secrets-revealed': [
+      { q: "What are the red flags of a fraudulent notary?", a: "Walk away if a notary pressures you to sign quickly, won't check your photo ID, hands you pre-signed documents, refuses to keep records, or can't produce their commission certificate. Any one of these breaks basic North Carolina notary law." },
+      { q: "Is a mobile notary safe to use?", a: "Yes — a properly commissioned, insured mobile notary is just as safe as an office and far more convenient. The key is verifying credentials before you sign, which a legitimate signing agent expects and welcomes." },
+      { q: "What questions should you ask before hiring a notary?", a: "Ask how long they've been in business, whether they're insured and bonded, whether they can provide references, how they verify identity, and whether they keep detailed records. Straight answers to all five are the mark of a professional." },
+      { q: "What should you do if you're a victim of notary fraud?", a: "Act immediately: file a police report, notify your lender or title company, report the notary to the North Carolina Secretary of State, consult a real estate attorney, and get new documents properly notarized. Speed limits the damage." }
+    ],
+    '7-mistakes-charlotte-sellers-make-with-closings': [
+      { q: "What are the most common mistakes Charlotte sellers make at closing?", a: "The seven most common are incomplete paperwork, missing North Carolina witness requirements, misunderstood closing costs, late title problems, keeping originals that should be recorded, final-walkthrough complications, and communication breakdowns. A mobile notary who reviews every document at your kitchen table catches most of them before they delay your sale." },
+      { q: "What are North Carolina's witness requirements for sellers?", a: "Certain North Carolina real estate documents require two witnesses in addition to notarization, and those witnesses must both sign and print their names clearly. Missing this requirement means the documents won't be accepted for recording and the closing has to be rescheduled." },
+      { q: "Should sellers keep the original closing documents?", a: "No. Original documents are needed for recording and must be submitted, while you keep certified copies for your records. Keeping originals that should have been recorded creates problems and risks tampering after the fact." }
+    ],
     'navigating-nc-rena-2025': [
       { q: "How did North Carolina remote notarization become permanent?", a: "RENA replaced the pandemic-era \"Emergency Video Notarization\" with a permanent system on July 1, 2025. Unlike the emergency Zoom-and-FaceTime fix, it requires secure, state-approved platforms with strict identity verification and session recording." },
       { q: "What does the North Carolina RENA law require?", a: "It requires identity proofing and credential analysis, a secure platform approved by the North Carolina Secretary of State, tamper-evident documents, and a recorded session kept for at least ten years. These are the safeguards the emergency video rules never had." },
@@ -1112,54 +1123,57 @@ export default function BlogPost() {
                 <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
                   <div className="flex items-center">
                     <User className="w-4 h-4 mr-2" />
-                    Integrity Closings CLT
+                    By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="w-4 h-4 mr-2" />
-                    3/18/2026
+                    March 18, 2026
                   </div>
                 </div>
 
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">7 Mistakes Charlotte Sellers Make With Closings (And How Mobile Notary Services Fix Them)</h1>
+
+                <p className="mb-6 font-semibold text-slate-900">The seven most common seller mistakes are incomplete paperwork, missing North Carolina witness requirements, misunderstood closing costs, late title problems, keeping originals that should be recorded, final-walkthrough complications, and communication breakdowns. A mobile notary who reviews every document at your kitchen table catches most of them before they delay your sale.</p>
                 <p className="mb-6">Selling your Charlotte home should be exciting, not stressful. Yet many sellers find themselves scrambling at the last minute because they've made preventable mistakes during the closing process. The good news? You don't have to join the ranks of sellers who've experienced closing delays, legal complications, or financial surprises.</p>
                 <p className="mb-6">Mobile notary services are transforming how Charlotte sellers approach closings, offering solutions that eliminate common pitfalls while letting you complete your sale from the comfort of your own home. Let's explore the seven most frequent mistakes sellers make and how mobile notary services fix each one.</p>
-                
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #1: Incomplete or Inaccurate Documentation</h2>
+
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #1: Why does incomplete paperwork delay a home closing?</h2>
                 <p className="mb-6">You've probably heard horror stories about closings delayed because someone forgot to sign page 47 or wrote the wrong date on a critical document. Unfortunately, these stories are all too real. Incomplete paperwork ranks as the top reason for closing delays in Charlotte real estate transactions.</p>
                 <p className="mb-6">The complexity of real estate documentation means even small errors can halt your entire sale. Missing signatures, incorrect dates, misspelled names, or improperly filled forms create legal complications that require time-consuming corrections.</p>
                 <p className="mb-6"><strong>How Mobile Notary Services Fix This:</strong> Mobile notaries bring systematic document review directly to your home. Before you sign anything, they carefully examine each document for completeness and accuracy. They verify that your name appears consistently across all paperwork, dates align properly, and every required signature line is addressed. This thorough review process catches errors before they become problems, ensuring your documents meet all recording requirements on the first attempt.</p>
                 
                 <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200" alt="image_1" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #2: Overlooking North Carolina's Witness Requirements</h2>
-                <p className="mb-6">North Carolina has specific witness requirements for certain real estate documents that many sellers don't know about until closing day. Your mortgage or deed may require two witnesses in addition to notarization, and these witnesses must not only sign but also print their names clearly.</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #2: What are North Carolina's witness requirements for sellers?</h2>
+                <p className="mb-6"><a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina</a> has specific witness requirements for certain real estate documents that many sellers don't know about until closing day. Your mortgage or deed may require two witnesses in addition to notarization, and these witnesses must not only sign but also print their names clearly.</p>
                 <p className="mb-6">Failing to meet witness requirements means your documents won't be accepted for recording, forcing you to reschedule your closing and potentially jeopardizing your entire transaction.</p>
                 <p className="mb-6"><strong>How Mobile Notary Services Fix This:</strong> Experienced mobile notaries understand Charlotte-area title company requirements and North Carolina's witness laws. They arrive at your home prepared with qualified witnesses when needed and ensure all witness provisions are properly completed. This local expertise prevents document rejection and keeps your closing on schedule.</p>
                 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #3: Financial Surprises and Misunderstood Closing Costs</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #3: What closing costs surprise home sellers?</h2>
                 <p className="mb-6">Many Charlotte sellers underestimate their closing costs or discover unexpected fees at the last minute. These financial surprises can range from higher-than-expected attorney fees to surprise repair requirements or outstanding liens against the property.</p>
                 <p className="mb-6">When you don't fully understand your financial obligations, you might arrive at closing unprepared to cover necessary costs, creating delays and stress for everyone involved.</p>
                 <p className="mb-6"><strong>How Mobile Notary Services Fix This:</strong> Mobile notaries take time to review your Closing Disclosure form with you in detail, explaining what each fee covers and why it's necessary. This review happens in your comfortable home environment where you can ask questions without feeling rushed. They help you understand your net proceeds from the sale and identify any unexpected costs before closing day arrives.</p>
 
                 <img src="https://images.unsplash.com/photo-1554260570-e9689a3418b8?auto=format&fit=crop&q=80&w=1200" alt="image_2" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #4: Title Problems That Surface Late</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #4: What title problems can derail a closing?</h2>
                 <p className="mb-6">Title issues represent one of the most serious threats to your closing. Problems like unpaid property taxes, existing liens, boundary disputes, or ownership questions can completely derail your sale. Sometimes sellers discover they don't have clear title due to inherited property complications or previous documentation errors.</p>
                 <p className="mb-6">These problems often surface just days before closing, leaving little time for resolution and potentially forcing you to postpone or cancel your sale.</p>
                 <p className="mb-6"><strong>How Mobile Notary Services Fix This:</strong> While mobile notaries can't resolve title problems directly, their expertise helps identify potential red flags in title documents early in the process. They work closely with title companies to ensure proper documentation of title transfers and can spot inconsistencies that might indicate title problems. This early identification gives you more time to address issues before they threaten your closing.</p>
                 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #5: Keeping Original Documents When You Should Have Copies</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #5: Should sellers keep the original closing documents?</h2>
                 <p className="mb-6">It's natural to want to keep important documents related to your home sale, but keeping originals when you should only have copies creates significant problems. Original documents are needed for recording and potential future disputes, and there's always risk that documents could be altered after the fact.</p>
                 <p className="mb-6">Many sellers make this mistake because they're uncertain about what they should keep versus what needs to be submitted for recording.</p>
                 <p className="mb-6"><strong>How Mobile Notary Services Fix This:</strong> Professional mobile notaries maintain clear custody protocols for all documents. They ensure you receive certified copies of everything you need for your records while maintaining proper custody of originals that must be submitted for recording. They explain exactly what documents you'll receive copies of and why originals must be submitted, eliminating confusion about document handling.</p>
 
                 <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200" alt="image_3" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #6: Final Walkthrough Complications</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #6: What goes wrong in the final walkthrough?</h2>
                 <p className="mb-6">The final walkthrough seems straightforward, but it's where many closing delays originate. You might accidentally take items you agreed to leave, leave items you promised to remove, or fail to complete agreed-upon repairs. Sometimes buyers discover problems during their walkthrough that weren't apparent earlier.</p>
                 <p className="mb-6">These issues create last-minute negotiations and can delay your closing by days or weeks while solutions are worked out.</p>
                 <p className="mb-6"><strong>How Mobile Notary Services Fix This:</strong> When mobile notaries conduct signings at your property, they can identify potential walkthrough issues before closing day arrives. Their trained eye spots items that might cause buyer concerns or areas where contract terms might not be clearly met. This early identification gives you time to address problems proactively rather than reactively during the actual walkthrough.</p>
                 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #7: Communication Breakdowns and Missed Instructions</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Mistake #7: How do communication breakdowns delay closings?</h2>
                 <p className="mb-6">Charlotte's competitive real estate market means many transactions involve newer agents or complex coordination between multiple parties. Communication failures often result in sellers not receiving clear instructions about what to bring to closing, when to arrive, or what to expect during the process.</p>
                 <p className="mb-6">These communication gaps lead to delays when sellers arrive unprepared or misunderstand closing procedures.</p>
                 <p className="mb-6"><strong>How Mobile Notary Services Fix This:</strong> Mobile notary services excel at communication because they work directly with you throughout the process. They provide clear, written instructions before your signing appointment, explaining exactly what you need to have ready and what will happen during the signing. They read and understand all special instructions from title companies and translate these requirements into plain English for you.</p>
@@ -1180,7 +1194,15 @@ export default function BlogPost() {
                 <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Take Control of Your Charlotte Home Sale</h2>
                 <p className="mb-6">You don't have to accept the stress and uncertainty that often accompany real estate closings. Mobile notary services put you in control of the process while providing professional expertise that prevents costly mistakes.</p>
                 <p className="mb-6">By choosing mobile notary services for your Charlotte home sale, you're investing in peace of mind and a smoother transaction. You'll avoid the seven most common seller mistakes while enjoying the convenience of completing your closing at home.</p>
-                <p className="mb-6">Ready to experience a stress-free closing for your Charlotte home sale? <a href="https://www.integrityclosingsclt.com" className="text-brand-600 hover:underline">Contact Integrity Closings CLT</a> today to learn how our mobile notary services can make your closing convenient, professional, and error-free. Your successful home sale is our priority.</p>
+                <p className="mb-6">Ready to experience a stress-free closing for your Charlotte home sale? <Link to="/booking" className="text-brand-600 hover:underline">Contact Integrity Closings CLT</Link> today to learn how my mobile notary services can make your closing convenient, professional, and error-free. Your successful home sale is my priority.</p>
+
+                <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+                    <div>
+                        <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+                        <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He provides mobile notary and seller signing services throughout Charlotte and the surrounding metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+                    </div>
+                </div>
 
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Protect Your Most Important Documents</h2>
@@ -1203,28 +1225,32 @@ export default function BlogPost() {
                 <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
                   <div className="flex items-center">
                     <User className="w-4 h-4 mr-2" />
-                    Integrity Closings CLT
+                    By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="w-4 h-4 mr-2" />
-                    3/18/2026
+                    March 18, 2026
                   </div>
                 </div>
 
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">Charlotte Notary Public Secrets: What to Check Before You Sign</h1>
+
+                <p className="mb-6 font-semibold text-slate-900">North Carolina has stripped 84 notaries of their commissions since 2015, some tied to real Charlotte home-theft fraud. The way to protect yourself is to verify a notary's commission, insurance, and record-keeping before you sign — which a professional signing agent welcomes.</p>
                 <p className="mb-6">You trust notaries public with your most important documents: mortgage papers, property deeds, legal agreements that can change your life. But what if that trust is misplaced? A recent investigation uncovered disturbing truths about North Carolina's notary system that every Charlotte resident needs to know before their next signing appointment.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Hidden Crisis in Charlotte's Notary System</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How big is the notary fraud problem in North Carolina?</h2>
                 <p className="mb-6">Since 2015, North Carolina has stripped 84 notaries of their commissions. That's not just a number: it represents 84 instances where the system failed to protect you. Among these cases, 22 notaries were directly connected to fraud, forgery, or embezzlement. Even more shocking: 10 of these notaries had criminal records the state never knew about when granting their original commissions.</p>
                 <p className="mb-6">State Senator Natasha Marcus admitted what many suspected: "There are people who slip through the cracks and unfortunately should never have had a notary public seal." This systemic failure means you could unknowingly work with a notary who shouldn't have a commission in the first place.</p>
 
                 <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831?auto=format&fit=crop&q=80&w=1200" alt="image_1" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Real Charlotte Families Pay the Price</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Has notary fraud actually hurt Charlotte homeowners?</h2>
                 <p className="mb-6">The consequences aren't just administrative: they're devastating. In Charlotte, investigators documented cases where corrupt notaries facilitated home theft schemes. One victim, Rahim Roopani, discovered his $300,000+ Charlotte home had been fraudulently sold for just $9,000 using forged signatures. He only learned about the theft when a neighbor called about strangers at his property.</p>
                 <p className="mb-6">This wasn't an isolated incident. Another home in the same neighborhood suffered an identical crime, involving the same notary stamp and signature. The notary officially resigned just one month after police reports were filed and promptly moved out of state: leaving victims to fight lengthy legal battles to reclaim their property.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How Unqualified Notaries Slip Through the Cracks</h2>
-                <p className="mb-6">Understanding how the system fails helps you protect yourself. North Carolina requires notaries to:</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How do unqualified notaries get commissioned?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Through inconsistent enforcement of the state's own rules. North Carolina sets clear requirements, but background disclosures aren't always caught — one terminated notary renewed for 15 years despite an undisclosed criminal record.</p>
+                <p className="mb-6">Understanding how the system fails helps you protect yourself. <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina</a> requires notaries to:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li>Be at least 18 years old</li>
                     <li>Reside or work in North Carolina</li>
@@ -1237,7 +1263,8 @@ export default function BlogPost() {
 
                 <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1200" alt="image_2" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Red Flags That Should Make You Walk Away</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What are the red flags of a fraudulent notary?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Walk away if a notary pressures you to sign quickly, won't check your photo ID, hands you pre-signed documents, refuses to keep records, or can't produce their commission certificate. Any one of these breaks basic North Carolina notary law.</p>
                 <p className="mb-6">Protecting yourself starts with recognizing warning signs of problematic notaries:</p>
                 <p className="mb-4"><strong>Pressure to Sign Quickly</strong>: Legitimate notaries never rush you through important documents. If someone pressures you to sign without reading or understanding what you're agreeing to, that's your cue to leave.</p>
                 <p className="mb-4"><strong>Unwillingness to Verify Your Identity</strong>: Proper notaries always check government-issued photo ID. Anyone who skips this step isn't following basic notary law.</p>
@@ -1245,7 +1272,8 @@ export default function BlogPost() {
                 <p className="mb-4"><strong>Refusal to Keep Records</strong>: North Carolina law requires notaries to maintain detailed records of every transaction. A notary who can't or won't show you their logbook is breaking the law.</p>
                 <p className="mb-6"><strong>Operating Without Proper Credentials</strong>: Always ask to see their notary commission certificate. If they can't produce it immediately, find another notary.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What to Bring to Your Notary Appointment</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What should you bring to a notary appointment?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Bring a current, unexpired government-issued photo ID and every document that needs notarizing — unsigned. Every additional signer must appear in person with their own ID, and you should ask about accepted payment methods when scheduling.</p>
                 <p className="mb-6">Proper preparation protects you from both delays and potential fraud. Here's exactly what you need for a successful notary appointment:</p>
                 <p className="mb-4"><strong>Required Identification</strong>: Bring a current, government-issued photo ID. This means your driver's license, state ID card, passport, or military ID. The photo must look like you, and the ID cannot be expired.</p>
                 <p className="mb-4"><strong>All Necessary Documents</strong>: Bring every document that needs notarization, but don't pre-sign anything. The notary must witness your actual signature.</p>
@@ -1254,7 +1282,7 @@ export default function BlogPost() {
 
                 <img src="https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&q=80&w=1200" alt="image_3" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The True Cost of Cheap Notary Services</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why are cheap notary services risky?</h2>
                 <p className="mb-6">The total cost to become a notary in North Carolina ranges from just $180 to $349. This low barrier to entry means almost anyone can become a notary: including people who shouldn't have access to this position of trust.</p>
                 <p className="mb-6">When you choose notary services based solely on price, you're gambling with documents that control your financial future. A mortgage closing mistake can cost thousands in delays. A property deed error can create ownership disputes lasting years.</p>
                 <p className="mb-6">Professional notary services charge more because they invest in:</p>
@@ -1266,17 +1294,19 @@ export default function BlogPost() {
                     <li>Detailed record-keeping systems</li>
                 </ul>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Location Matters for Your Safety</h2>
-                <p className="mb-6">Mobile notary services offer convenience, but they also create opportunities for fraud. When a notary comes to your home or office, you have less ability to verify their credentials or escape if something feels wrong.</p>
-                <p className="mb-6"><a href="https://www.integrityclosingsclt.com" className="text-brand-600 hover:underline">Professional notary services</a> operate from established business locations where you can:</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Is a mobile notary safe to use?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Yes — a properly commissioned, insured mobile notary is just as safe as an office and far more convenient. The key is verifying credentials before you sign, which a legitimate signing agent expects and welcomes.</p>
+                <p className="mb-6">Convenience and safety aren't opposites. A professional mobile notary comes to you and still gives you every way to confirm you're in good hands:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
-                    <li>Verify their business credentials</li>
-                    <li>Feel secure in a professional environment</li>
-                    <li>Access help if problems arise</li>
-                    <li>Know exactly where to find them if issues develop later</li>
+                    <li>Shows a current North Carolina notary commission certificate on request</li>
+                    <li>Carries professional liability insurance (E&amp;O) and is bonded</li>
+                    <li>Keeps a detailed journal of every notarization</li>
+                    <li>Verifies your ID and lets you read every document, unrushed</li>
                 </ul>
+                <p className="mb-6">With <Link to="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">my mobile notary service</Link>, you get the convenience of signing at home and a documented, verifiable process — the same standards you'd expect in any office.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Questions Every Charlotte Resident Should Ask</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What questions should you ask before hiring a notary?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Ask how long they've been in business, whether they're insured and bonded, whether they can provide references, how they verify identity, and whether they keep detailed records. Straight answers to all five are the mark of a professional.</p>
                 <p className="mb-6">Before scheduling any notary appointment, get answers to these crucial questions:</p>
                 <p className="mb-4"><strong>"How long have you been in business?"</strong> Established notaries have track records you can verify.</p>
                 <p className="mb-4"><strong>"Are you insured and bonded?"</strong> Professional notaries carry insurance protecting you from their mistakes.</p>
@@ -1286,19 +1316,21 @@ export default function BlogPost() {
 
                 <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&q=80&w=1200" alt="image_4" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What Happens When Things Go Wrong</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What should you do if you're a victim of notary fraud?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Act immediately: file a police report, notify your lender or title company, report the notary to the North Carolina Secretary of State, consult a real estate attorney, and get new documents properly notarized. Speed limits the damage.</p>
                 <p className="mb-6">If you discover notary fraud or errors affecting your documents, you need to act immediately:</p>
                 <ol className="list-decimal pl-6 space-y-4 mb-6">
                     <li>Contact local law enforcement to file a police report</li>
                     <li>Notify your lender, title company, or attorney involved in the transaction  </li>
-                    <li>Report the incident to the North Carolina Secretary of State</li>
+                    <li>Report the incident to the <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina Secretary of State</a></li>
                     <li>Consult with a real estate attorney about your legal options</li>
                     <li>Request new, properly notarized documents as quickly as possible</li>
                 </ol>
                 <p className="mb-6">The victims in Charlotte's home theft cases learned these lessons the hard way. Don't let inadequate notary services put your property and financial future at risk.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Your Next Steps for Safer Notarization</h2>
-                <p className="mb-6">Now that you understand the risks, you can make informed decisions about notary services. Start by researching any notary before your appointment. Check their business credentials, read online reviews, and verify they're currently licensed through the North Carolina Secretary of State website.</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How do you find a safer notary?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Research any notary before your appointment: check their business credentials, read reviews, and verify their commission is current through the North Carolina Secretary of State. A few minutes of verification protects documents that control your financial future.</p>
+                <p className="mb-6">Now that you understand the risks, you can make informed decisions about notary services. Verify any notary is currently commissioned through the <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina Secretary of State</a> before you sign.</p>
 
                 <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=1200" alt="image_5" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
@@ -1308,7 +1340,15 @@ export default function BlogPost() {
 
                 <p className="mb-6">The investigation into Charlotte's notary problems revealed systemic failures that put residents at risk. By choosing your notary services carefully and staying informed about these issues, you protect yourself from becoming the next victim of notary fraud.</p>
 
-                <p className="mb-6">Don't gamble with documents that control your financial future. When you need <a href="https://www.integrityclosingsclt.com" className="text-brand-600 hover:underline">reliable notary services</a>, choose professionals who understand the true value of your trust.</p>
+                <p className="mb-6">Don't gamble with documents that control your financial future. When you need <Link to="/booking" className="text-brand-600 hover:underline">reliable notary services</Link>, choose a professional who understands the true value of your trust.</p>
+
+                <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+                    <div>
+                        <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+                        <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He is insured, bonded, and keeps a detailed journal of every signing across the Charlotte metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+                    </div>
+                </div>
 
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Protect Your Most Important Documents</h2>

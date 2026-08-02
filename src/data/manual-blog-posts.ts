@@ -109,14 +109,18 @@ export const manualBlogPosts: ManualBlogPost[] = [
     slug: '7-mistakes-charlotte-sellers-make-with-closings',
     date: 'March 18, 2026',
     excerpt: 'Selling your Charlotte home should be exciting, not stressful. Yet many sellers find themselves scrambling at the last minute because they\'ve made preventable mistakes during the closing process.',
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800',
+    seoTitle: '7 Mistakes Charlotte Home Sellers Make at Closing',
+    seoDescription: 'The seven closing mistakes that delay Charlotte home sales — incomplete paperwork, witness rules, title issues, and more — and how a mobile notary prevents them.'
   },
   {
     title: 'Charlotte Notary Public Secrets Revealed: What Experts Don\'t Want You to Know',
     slug: 'charlotte-notary-public-secrets-revealed',
     date: 'March 18, 2026',
     excerpt: 'You trust notaries public with your most important documents: mortgage papers, property deeds, legal agreements that can change your life. But what if that trust is misplaced?',
-    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=800',
+    seoTitle: 'Charlotte Notary Fraud: How to Protect Yourself',
+    seoDescription: 'North Carolina has pulled 84 notary commissions since 2015. Learn the red flags of notary fraud and how to verify a notary before you sign.'
   },
   {
     title: 'The "DIY" Mortgage Loan Modification: How to Get Your Documents Notarized at Home in Charlotte',
