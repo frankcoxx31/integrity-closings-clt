@@ -155,6 +155,58 @@ export default function BlogPost() {
       { q: "How does a mobile notary simplify signing a loan modification?", a: "I come to you, verify every signer's ID, guide you through exactly where the lender needs signatures and initials, and get the package ready to ship back the same day. That turns a stressful deadline into a 30-minute appointment at your kitchen table." },
       { q: "What if I can't sign the documents at home?", a: "I still come to you. If you are dealing with a health issue or are in the hospital, I provide bedside and care-facility signings so your deadline is never at the mercy of your location." }
     ],
+    'notarize-deed-in-trust-north-carolina': [
+      { q: "What is a deed in trust in North Carolina?", a: "A deed in trust places property into a revocable living trust so it can pass to your beneficiaries outside of probate. North Carolina does not legally require it to be notarized, but notarizing it is almost always the smart move." },
+      { q: "What does North Carolina law say about notarizing a deed?", a: "A deed becomes valid when it is signed, delivered, and accepted, but to record it with the Register of Deeds it must be notarized or signed in front of a Register of Deeds official. Since almost everyone records their deed, notarization becomes practically necessary." },
+      { q: "Why should you notarize a deed in trust anyway?", a: "Because a notarized deed is immediately recordable, carries a legal presumption of authenticity, and satisfies lenders and title companies. For a few dollars you eliminate doubt and future legal challenges." },
+      { q: "What does a notary do for a deed in trust?", a: "A notary verifies your identity, confirms you are signing willingly, witnesses your signature, and applies an official seal. A notary is not a lawyer and cannot draft the deed or give legal advice." },
+    ],
+    'notary-requirements-guardianship-nc': [
+      { q: "Do guardianship documents need a notary in North Carolina?", a: "Some do and some do not. In North Carolina, several guardianship petitions and supporting documents must be notarized, while others do not, so which ones need a notary depends on the document and the court." },
+      { q: "Which guardianship documents typically require notarization?", a: "Affidavits of financial resources, physician’s affidavits, statements of incapacity, consent-to-guardianship forms, and related powers of attorney commonly need a notary in North Carolina. Requirements vary by county, so confirm with the court handling your case." },
+      { q: "Why does notarization matter in guardianship cases?", a: "Guardianship involves vulnerable people and significant legal authority, so courts give notarized documents more weight. Notarization verifies identity and willingness, which reduces the risk of fraud or coercion." },
+    ],
+    'notary-mistakes-avoid-charlotte-nc': [
+      { q: "Why do notary mistakes matter more than you think?", a: "A notary only verifies identity and witnesses signatures, but a small error there can delay a loan closing, invalidate a legal document, or trigger legal consequences. In Charlotte and Monroe, one mistake can cost families time, money, and peace of mind." },
+      { q: "Mistake #1: Why is identification the top reason notarizations fail?", a: "The notary must verify your identity with a current government-issued photo ID and record the details; an expired or unverifiable ID is the number-one reason notarizations get rejected. Bring a current driver’s license, passport, or military ID to every appointment." },
+      { q: "Mistake #2: Can you sign a document before the notary sees it?", a: "No. The notary must watch you sign in real time, so pre-signing completely voids the notarization. Bring every document unsigned and wait until the notary tells you to sign." },
+      { q: "Mistake #5: What happens if you use the wrong notarization type?", a: "Different documents require different notarial acts — an acknowledgment, a jurat, or another form — and using the wrong one makes the document invalid for its purpose. Ask the lender, court, or hospital exactly what type they need and bring that to your appointment." },
+    ],
+    'what-is-a-notary-signing-agent-charlotte-loan-closing': [
+      { q: "What is the difference between a notary and a notary signing agent?", a: "Every notary signing agent is a notary public, but not every notary is a signing agent. A signing agent has extra training and certification for loan documents — purchases, refinances, HELOCs, and reverse mortgages — which is why title companies and lenders hire them." },
+      { q: "What happens at a loan signing appointment?", a: "The agent confirms your identity against the documents, walks you through every signature and initial line in order, notarizes the required pages, and returns the package to the title company — usually the same day. Most residential signings take 45 to 60 minutes." },
+      { q: "Why do Charlotte borrowers use a mobile signing agent?", a: "A mobile signing agent comes to your home, workplace, or wherever is convenient across Mint Hill, Charlotte, Monroe, and Union County, including evenings and weekends. That matters most for refinances, purchase closings, time-sensitive HELOCs, and homebound borrowers." },
+    ],
+    'notarize-deed-charlotte-nc-property-transfer': [
+      { q: "Do North Carolina property transfers require notarization?", a: "Most do. In North Carolina, a deed generally must be notarized to be recorded with the Register of Deeds, and an unrecorded transfer may not be legally recognized. There are narrow exceptions, but the specifics matter." },
+      { q: "What does North Carolina law require for a deed?", a: "North Carolina General Statute § 47G-3 requires a deed to be executed in front of a notary (or two witnesses in limited cases) to be eligible for recording. Without notarization or proper witnessing, the deed cannot be officially recorded." },
+      { q: "Why does notarization matter for a property transfer?", a: "The notary verifies every signer’s identity, confirms they sign willingly, witnesses the signature, and applies a seal that serves as proof of execution. That protects buyer and seller from later claims of fraud, and the Register of Deeds will not record an unnotarized deed." },
+    ],
+    'notary-for-small-business-contracts-charlotte': [
+      { q: "When do small business contracts require a notary?", a: "Sometimes. North Carolina does not require most standard business contracts to be notarized unless they involve real property, certain financial instruments, or specific statutory rules. Business loan documents, however, often require notarization by law." },
+      { q: "Which business documents typically need notarizing?", a: "Partnership agreements with significant stakes, anything involving real estate, out-of-state agreements, and lender-, investor-, or franchisor-required signatures are the common ones. Commercial loan and line-of-credit documents almost always require a notarized signature." },
+      { q: "Why do Charlotte small businesses choose a mobile notary?", a: "Because time is money — a mobile notary comes to your office, job site, or a coffee shop instead of making you wait in a bank lobby. That is especially useful for multi-party signings, time-sensitive deals, loan closings, and after-hours signings." },
+    ],
+    'notarize-deed-before-selling-charlotte': [
+      { q: "Why does your deed need a notary signature?", a: "When you sell property in North Carolina, the deed that transfers ownership must be notarized — it is a legal requirement, not optional. The notary verifies your identity and witnesses your signature so the deed can be recorded." },
+      { q: "What happens during a deed notarization?", a: "You present a valid government-issued ID, the notary confirms your identity and that you understand the document, you sign in the notary’s presence, and the notary signs, stamps, and dates it. The whole process usually takes just a few minutes." },
+      { q: "Can a mobile notary come to you for a home sale?", a: "Yes. Many Charlotte-area sellers are surprised they do not have to visit a bank or notary office — a mobile notary meets you at home, your attorney’s office, or your title company. That removes one task from an already hectic sale." },
+    ],
+    'notarize-documents-before-hospital-stay': [
+      { q: "Why does notarizing documents before a hospital stay matter?", a: "The window before admission is often the best time to get healthcare directives and powers of attorney notarized, while you are clear-headed and mobile. Once you are admitted, capacity, mobility, and access all get harder." },
+      { q: "Which documents should you notarize before hospital admission?", a: "A healthcare power of attorney, a living will or advance directive, a HIPAA authorization, a durable power of attorney, and any real estate documents are the key ones. Many hospitals strongly recommend notarizing them so they are recognized and binding." },
+      { q: "Why is waiting until after admission a problem?", a: "Once admitted you may be confined to your room, pain medication can cloud the capacity a notary must confirm, and staff are focused on care, not paperwork. Finding a bedside notary quickly during a medical emergency is stressful for the whole family." },
+    ],
+    'notarize-documents-after-hours-charlotte': [
+      { q: "Why does after-hours notary service matter?", a: "Life’s pressing document needs do not stop at 5 p.m. — property closings, hospital paperwork, and estate documents often land after work. After-hours notary service means you can sign when it is convenient, not just during business hours." },
+      { q: "What counts as after-hours notary work?", a: "Anything beyond the standard 9-to-5 window: evening appointments, weekend signings, same-day emergency notarizations, and early-morning visits. Because the service is mobile, the notary comes to your home, office, hospital room, or care facility." },
+      { q: "How does after-hours mobile notary service work?", a: "You call or book online, confirm the time and location, and have your documents and photo ID ready. Frank Coxx arrives, verifies your identity, witnesses the signatures, applies the seal, and you keep the notarized documents." },
+    ],
+    'do-you-need-a-notary-for-power-of-attorney-nc': [
+      { q: "Does North Carolina require a power of attorney to be notarized?", a: "Yes. Under the North Carolina Uniform Power of Attorney Act, a POA must be signed in front of a notary and acknowledged, or banks, hospitals, and register of deeds offices can reject it. A healthcare POA also needs two qualified witnesses." },
+      { q: "What do you need at a power of attorney signing?", a: "Bring the unsigned document, a current government-issued photo ID, and — for a healthcare POA — two qualified witnesses who are not your agent, a relative, or your provider. Do not sign ahead of time; the notary must witness your signature." },
+      { q: "What if you cannot get to an office to sign a POA?", a: "A mobile notary comes to your home, hospital room, or care facility, which is exactly when many people need a POA — when someone is aging, ill, or recovering. Bedside and care-facility signings are often available the same day." },
+    ],
   };
 
   if (blogPostingSchema && GEO_FAQ_BY_SLUG[slug]) {
