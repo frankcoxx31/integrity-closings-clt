@@ -69,6 +69,10 @@ async function startServer() {
     '/nursing-home-notary': '/nursing-home-notary-charlotte-nc',
     '/service-locations-mobile-services-north-carolina.html': '/notary-service-locations-nc',
     '/mobile-notary-service-pricing': '/faq',
+    // Never a real page — was a broken internal link in the hospital-notary
+    // blog post that Google discovered and reported as "couldn't index". Point
+    // it at the real same-day/after-hours page.
+    '/about-same-day-service-near-you': '/after-hours-mobile-notary-charlotte-nc',
   };
   app.use((req, res, next) => {
     const target = LEGACY_REDIRECTS[req.path];
