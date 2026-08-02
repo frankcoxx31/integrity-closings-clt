@@ -73,6 +73,9 @@ async function startServer() {
     // blog post that Google discovered and reported as "couldn't index". Point
     // it at the real same-day/after-hours page.
     '/about-same-day-service-near-you': '/after-hours-mobile-notary-charlotte-nc',
+    // Malformed URL from an on-page audit (combined two live slugs) that 404s;
+    // send it to the real Concord location page.
+    '/cabarrus-countymobile-notary-concord-nc': '/locations/concord',
   };
   app.use((req, res, next) => {
     const target = LEGACY_REDIRECTS[req.path];

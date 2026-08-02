@@ -36,10 +36,12 @@ export const businessConfig = {
 
   // The notary's actual physical location — used for the real LocalBusiness
   // address/geo on the homepage and as the mileage-calculator's origin point.
+  // Service-area business: city is Charlotte, NC with NO published street
+  // address or ZIP (per site-brief NAP). `officeLocation` below is the private
+  // mileage-calculator origin only — never rendered or emitted in schema.
   address: {
-    locality: 'Mint Hill',
+    locality: 'Charlotte',
     region: 'NC',
-    postalCode: '28227',
     country: 'US',
   },
   officeLocation: {

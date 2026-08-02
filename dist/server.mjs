@@ -92,10 +92,12 @@ var businessConfig = {
   },
   // The notary's actual physical location — used for the real LocalBusiness
   // address/geo on the homepage and as the mileage-calculator's origin point.
+  // Service-area business: city is Charlotte, NC with NO published street
+  // address or ZIP (per site-brief NAP). `officeLocation` below is the private
+  // mileage-calculator origin only — never rendered or emitted in schema.
   address: {
-    locality: "Mint Hill",
+    locality: "Charlotte",
     region: "NC",
-    postalCode: "28227",
     country: "US"
   },
   officeLocation: {
@@ -160,7 +162,10 @@ async function startServer() {
     // Never a real page — was a broken internal link in the hospital-notary
     // blog post that Google discovered and reported as "couldn't index". Point
     // it at the real same-day/after-hours page.
-    "/about-same-day-service-near-you": "/after-hours-mobile-notary-charlotte-nc"
+    "/about-same-day-service-near-you": "/after-hours-mobile-notary-charlotte-nc",
+    // Malformed URL from an on-page audit (combined two live slugs) that 404s;
+    // send it to the real Concord location page.
+    "/cabarrus-countymobile-notary-concord-nc": "/locations/concord"
   };
   app.use((req, res, next) => {
     const target = LEGACY_REDIRECTS[req.path];

@@ -23,17 +23,6 @@ const mobileNotaryServicesSchema = {
             "bestRating": "5",
             "worstRating": "1"
           },
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Charlotte",
-            "addressRegion": "NC",
-            "addressCountry": "US"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 35.2271,
-            "longitude": -80.8431
-          },
           "areaServed": [
             { "@type": "City", "name": "Charlotte" },
             { "@type": "City", "name": "Mint Hill" },

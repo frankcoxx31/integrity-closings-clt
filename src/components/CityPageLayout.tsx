@@ -78,26 +78,7 @@ export default function CityPageLayout({
           "name": businessConfig.name,
           "image": `${businessConfig.domain}/logo.png`,
           "telephone": businessConfig.phone.display,
-          "url": businessConfig.domain,
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": city,
-            "addressRegion": businessConfig.address.region,
-            "addressCountry": businessConfig.address.country
-          },
-          "geo": {
-            "@type": "GeoCircle",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Mobile Notary"
-            },
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": String(geo.lat),
-              "longitude": String(geo.lng)
-            },
-            "geoRadius": String(geo.radiusMeters ?? businessConfig.hubGeo.radiusMeters)
-          }
+          "url": businessConfig.domain
         },
         "areaServed": {
           "@type": "City",
