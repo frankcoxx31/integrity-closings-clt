@@ -67,7 +67,7 @@ export const manualBlogPosts: ManualBlogPost[] = [
     date: 'May 31, 2026',
     excerpt: 'In the high-stakes world of real estate and finance, the closing table is where the magic happens. Here are seven specific ways a reliable signing agent ensures your closings stay on track and run smoother than ever before.',
     imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800',
-    seoTitle: '7 Ways a Reliable Signing Agent Makes Your Closings Run Smoother | Integrity Closings CLT',
+    seoTitle: '7 Ways a Signing Agent Smooths Your Closings',
     seoDescription: 'Discover seven ways a reliable loan signing agent keeps your Charlotte, NC closings on track — professionalism, error prevention, and real-time updates.'
   },
   {
@@ -145,7 +145,9 @@ export const manualBlogPosts: ManualBlogPost[] = [
     slug: 'certified-loan-signing-agent-mortgage-refinance',
     date: 'March 15, 2026',
     excerpt: 'You hear a heavy "thud" on your front porch. You open the door to find a thick FedEx envelope—your mortgage refinance or loan modification documents...',
-    imageUrl: 'https://images.unsplash.com/photo-1554260570-e9689a3418b8?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1554260570-e9689a3418b8?auto=format&fit=crop&q=80&w=800',
+    seoTitle: 'Why You Need a Certified Loan Signing Agent',
+    seoDescription: 'Three reasons a certified loan signing agent is a must for your mortgage refinance — document expertise, compliance, and at-home convenience in Charlotte.'
   },
   {
     title: 'Struggling with Loan Mod Paperwork? How a Mobile Notary Makes the Final Step Stress-Free',

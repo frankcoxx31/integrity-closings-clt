@@ -77,6 +77,17 @@ export default function BlogPost() {
       { q: "What if I find an error in the documents during the signing?", a: "If there's a typo or a wrong number, I immediately contact your closing attorney or loan officer. In many cases, they can email a corrected page that I can print or handle digitally to keep the closing on track." },
       { q: "Do you offer services outside of Charlotte?", a: "Yes. I serve the greater Charlotte area, including Pineville, Matthews, Concord, and even Gastonia." }
     ],
+    '7-ways-reliable-signing-agent-makes-closings-run-smoother': [
+      { q: "How does a signing agent prevent document errors?", a: "By performing a triple-check: a pre-check that all pages are printed and present, a table-check of each page as the borrower signs, and a post-check page-by-page scan before the package ships. That's what stops the missed initial that forces a costly re-sign." },
+      { q: "Where's the line between explaining and giving legal advice?", a: "A reliable agent describes what a document is and where to sign — the \"what\" and \"where\" — without touching the \"why\" or \"should I,\" which is legal or financial advice. When a borrower asks about their rate or terms, the agent calls the loan officer instead of guessing." },
+      { q: "How does a signing agent prevent real estate fraud?", a: "Identity verification is a core duty of every commissioned North Carolina notary. A reliable agent verifies the ID against the documents and watches for red flags of spoofing or identity theft, adding a layer of security on every signing." },
+      { q: "What updates should you get after the signing?", a: "A sign-off text confirming the signing succeeded, a drop confirmation with the FedEx or UPS tracking number, and high-quality scan-backs from the field so your funding team can start review while the physical papers are still in transit." }
+    ],
+    'certified-loan-signing-agent-mortgage-refinance': [
+      { q: "Why does refinance paperwork need a specialist?", a: "Because a mortgage package runs 100–150 pages with strict \"sign here\" and \"initial here\" rules on documents like the Closing Disclosure, the Note, and the Right to Cancel. A certified agent is trained to place every mark exactly where the lender requires it." },
+      { q: "How does a certified signing agent reduce your risk?", a: "By keeping every form compliant with North Carolina notary law and federal identification rules, and by running a secure, background-screened process. That protects your sensitive information and prevents the document errors that cause funding kickbacks." },
+      { q: "How is a mobile signing agent more convenient?", a: "I come to your home or office anywhere in the Charlotte area, on evenings and weekends if your lender's deadline demands it. That eliminates the office trip, the time off work, and the Charlotte traffic." }
+    ],
     'why-your-refinance-demands-specialized-loan-signing-agent': [
       { q: "What's the difference between a notary public and a loan signing agent?", a: "A notary public verifies identities and witnesses signatures on simple documents. A loan signing agent is a certified specialist trained in mortgage packages — the Note, Deed of Trust, and Right to Cancel — who places every signature and date exactly to lender guidelines." },
       { q: "Why do banks decline to notarize mortgage documents?", a: "Liability. Most major banks prohibit their employees from notarizing outside mortgage documents, so your \"safest bet\" often turns you away. A dedicated mobile signing agent whose only focus is your transaction fills that gap." },
@@ -1554,42 +1565,48 @@ export default function BlogPost() {
                 <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
                   <div className="flex items-center">
                     <User className="w-4 h-4 mr-2" />
-                    Integrity Closings CLT
+                    By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="w-4 h-4 mr-2" />
-                    3/15/2026
+                    March 15, 2026
                   </div>
                 </div>
 
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">3 Reasons a Certified Loan Signing Agent Is a Must for Your Mortgage Refinance</h1>
+
+                <p className="mb-6 font-semibold text-slate-900">A certified loan signing agent is worth it for three reasons: expertise with the 100–150-page mortgage package, compliance with North Carolina and federal rules, and the convenience of signing at home on your lender's deadline. A general notary risks errors that delay funding or blow your rate lock.</p>
+
                 <p className="mb-6">You hear a heavy "thud" on your front porch. You open the door to find a thick FedEx envelope—your mortgage refinance or loan modification documents. Along with the paperwork is a brief, frustrating instruction: <em>"Please find a notary and return these documents by Friday."</em></p>
 
-                <p className="mb-6">If you are like most homeowners, your first instinct is to head to a bank. However, a mortgage refinance is not a standard one-page document. It is a complex legal transaction. Using a general notary can lead to errors that delay your funding or cause your loan to be denied entirely. At <strong>Integrity Closings CLT</strong>, we specialize in high-stakes <a href="#" className="text-brand-600 hover:underline">Link</a>, ensuring your paperwork is handled with the precision it deserves.</p>
+                <p className="mb-6">If you are like most homeowners, your first instinct is to head to a bank. However, a mortgage refinance is not a standard one-page document. It is a complex legal transaction. Using a general notary can lead to errors that delay your funding or cause your loan to be denied entirely. As a specialist in high-stakes <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signings</Link>, I make sure your paperwork is handled with the precision it deserves.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Expertise in Complex Loan Documentation</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. Why does refinance paperwork need a specialist?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Because a mortgage package runs 100–150 pages with strict "sign here" and "initial here" rules on documents like the Closing Disclosure, the Note, and the Right to Cancel. A certified agent is trained to place every mark exactly where the lender requires it.</p>
                 <p className="mb-6">A mortgage package typically contains 100–150 pages of financial jargon and strict "sign here" rules. Certified loan signing agents undergo extensive training to help you navigate these documents, including the <strong>Closing Disclosure</strong>, the <strong>Note</strong>, and the <strong>Right to Cancel</strong>.</p>
                 
                 <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200" alt="Refinance document complexity" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <p className="mb-6">A single missed initial can trigger a mandatory three-day rescission delay, causing you to miss your rate-lock expiration. We perform a triple-check to ensure your loan stays on track. If you want to avoid these headaches, it is vital to know <a href="#" className="text-brand-600 hover:underline">Link</a> who understands the stakes.</p>
+                <p className="mb-6">A single missed initial can trigger a mandatory three-day rescission delay, causing you to miss your rate-lock expiration. I perform a triple-check to ensure your loan stays on track. If you want to avoid these headaches, it is vital to choose a <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing agent</Link> who understands the stakes.</p>
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Compliance and Risk Mitigation</h2>
-                <p className="mb-6">Mortgage transactions are heavily regulated. A certified signing agent is well-versed in North Carolina statutes, ensuring every form—including Patriot Act identification—is compliant. We provide a secure, background-screened process that protects your sensitive information and eliminates the risk of "kickbacks" caused by errors in your documentation.</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. How does a certified signing agent reduce your risk?</h2>
+                <p className="mb-6 font-semibold text-slate-900">By keeping every form compliant with <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina notary law</a> and federal identification rules, and by running a secure, background-screened process. That protects your sensitive information and prevents the document errors that cause funding "kickbacks."</p>
+                <p className="mb-6">Mortgage transactions are heavily regulated. A certified signing agent is well-versed in North Carolina statutes, ensuring every form—including Patriot Act identification—is compliant. I provide a secure, background-screened process that protects your sensitive information and eliminates the risk of "kickbacks" caused by errors in your documentation.</p>
 
                 <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&q=80&w=1200" alt="Professional notary seal" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. Unmatched Convenience and Efficiency</h2>
-                <p className="mb-6">Brick-and-mortar offices are often an ordeal. We offer a level of convenience they simply cannot match:</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. How is a mobile signing agent more convenient?</h2>
+                <p className="mb-6 font-semibold text-slate-900">I come to your home or office anywhere in the Charlotte area, on evenings and weekends if your lender's deadline demands it. That eliminates the office trip, the time off work, and the Charlotte traffic.</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
-                    <li><strong>We Come to You:</strong> Whether you are in Mint Hill, Uptown, or Monroe, we meet you where you are comfortable.</li>
-                    <li><strong>Flexible Scheduling:</strong> We offer <a href="#" className="text-brand-600 hover:underline">Link</a> and <a href="#" className="text-brand-600 hover:underline">Link</a> to meet your lender's deadlines.</li>
+                    <li><strong>I Come to You:</strong> Whether you are in Mint Hill, Uptown, or Monroe, I meet you where you are comfortable.</li>
+                    <li><strong>Flexible Scheduling:</strong> I offer <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours and weekend appointments</Link> to meet your lender's deadlines.</li>
                     <li><strong>Sanity Savings:</strong> Eliminate the need to take time off work or fight Charlotte traffic.</li>
                 </ul>
 
                 <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200" alt="Mobile notary home closing" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Choose Integrity Closings CLT?</h2>
-                <p className="mb-6">We are the premier choice for <a href="#" className="text-brand-600 hover:underline">Link</a> in the Charlotte area. Our expertise includes:</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What signings does Integrity Closings CLT handle?</h2>
+                <p className="mb-6">I'm a premier choice for <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile loan signings</Link> in the Charlotte area. My expertise includes:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li><strong>Full Refinance Packages</strong></li>
                     <li><strong>Loan Modifications</strong></li>
@@ -1597,11 +1614,19 @@ export default function BlogPost() {
                     <li><strong>Real Estate & Probate</strong></li>
                 </ul>
 
+                <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+                    <div>
+                        <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+                        <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He handles refinance, modification, and seller packages throughout Charlotte and the surrounding metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+                    </div>
+                </div>
+
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Don't Leave Your Refinance to Chance</h2>
                     <p className="text-lg text-slate-300 mb-8">Your mortgage refinance is a significant milestone. Ensure it is handled correctly the first time.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#" className="text-brand-600 hover:underline">Link</a>
+                        <a href="tel:9805058050" className="inline-block px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 font-bold rounded-lg transition-colors">Call 980-505-8050</a>
                         <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>
                 </section>
@@ -1713,7 +1738,7 @@ export default function BlogPost() {
           <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
             <div className="flex items-center">
               <User className="w-4 h-4 mr-2" />
-              Integrity Closings CLT
+              By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
             </div>
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-2" />
@@ -1727,22 +1752,24 @@ export default function BlogPost() {
 
           <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200" alt="7 Ways a Reliable Signing Agent Makes Your Closings Run Smoother" className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
 
+          <p className="mb-6 font-semibold text-slate-900">A reliable signing agent keeps your closings smooth in seven ways: professional presence, error prevention, staying inside communication limits, fraud and identity verification, controlling appointment flow, real-time post-signing updates, and regional flexibility. Together they stop the missed initials and delays that stall funding.</p>
+
           <p className="mb-6">In the high-stakes world of real estate and finance, the closing table is where the magic happens. You've worked hard to secure the deal, the title is clear, and the borrowers are ready to move into their new home or finalize their refinance. However, the final few yards of this marathon are often the most precarious. This is where a <strong>loan signing agent</strong> becomes your most valuable asset.</p>
 
-          <p className="mb-6">A <a href="https://www.integrityclosingsclt.com" className="text-brand-600 hover:underline">professional notary service</a> does more than just witness signatures; they act as the final quality control check and the face of your company at the closing. If you are a title company, an attorney, or a lender in the Charlotte area, you know that a single missed initial can delay funding, frustrate clients, and cost money.</p>
+          <p className="mb-6">A <Link to="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">professional notary service</Link> does more than just witness signatures; they act as the final quality control check and the face of your company at the closing. If you are a title company, an attorney, or a lender in the Charlotte area, you know that a single missed initial can delay funding, frustrate clients, and cost money.</p>
 
           <p className="mb-6">Here are seven specific ways a reliable signing agent ensures your closings stay on track and run smoother than ever before.</p>
 
           <hr className="my-8" />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. First Impressions and Professional Presence</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">1. How does a signing agent's professionalism affect a closing?</h2>
           <p className="mb-6">When a signing agent walks into a borrower's home or a local coffee shop, they aren't just representing themselves: they are representing you. A reliable agent understands that their appearance, demeanor, and punctuality set the tone for the entire appointment.</p>
           <p className="mb-6">By arriving five minutes early and presenting a professional image, the agent builds immediate trust. This is particularly important in <a href="https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">mobile notary Charlotte NC</a> services where the environment can be unpredictable. A professional who arrives organized and ready to lead the session reduces the borrower's anxiety, which in turn makes the document review process faster and more efficient.</p>
 
           <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?auto=format&fit=crop&q=80&w=1200" alt="Professional mobile notary service agent greeting homeowners for a real estate loan signing." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
           <em>Visual: A diverse professional notary in a modern business-casual outfit greeting a smiling couple of different ethnic backgrounds at their dining room table. The atmosphere is bright, organized, and welcoming.</em>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. Expert Document Knowledge and Error Prevention</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">2. How does a signing agent prevent document errors?</h2>
           <p className="mb-6">The most common reason for a "re-sign" is a simple clerical error. A missed date, a forgotten initial on a Patriot Act form, or a signature that doesn't quite match the printed name can halt the entire process.</p>
           <p className="mb-6">A seasoned <a href="https://www.integrityclosingsclt.com/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing agent</a> is trained to catch these issues before they leave the table. They don't just watch people sign; they perform a "triple-check" of the package:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
@@ -1752,22 +1779,22 @@ export default function BlogPost() {
           </ul>
           <p className="mb-6">This level of precision is why professional teams rely on Integrity Closings CLT to handle their <a href="https://www.integrityclosingsclt.com/mobile-refi-service-notarization" className="text-brand-600 hover:underline">mobile refi service notarization</a> and purchase files.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. Navigating the Fine Line of Communication</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">3. Where's the line between explaining and giving legal advice?</h2>
           <p className="mb-6">One of the biggest headaches for closing teams is the "talkative" notary who oversteps their bounds. There is a delicate balance between explaining what a document is and giving unauthorized legal or financial advice.</p>
           <p className="mb-6">Reliable agents are masters of this distinction. They can confidently describe a Closing Disclosure or a Note: explaining the "what" and the "where": without veering into the "why" or "should I." By setting these expectations upfront, they prevent the borrower from feeling confused or pressured. If a borrower has a specific question regarding their interest rate or loan terms, a professional agent knows exactly when to pick up the phone and call the loan officer, ensuring the issue is resolved immediately rather than letting it derail the closing.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. Enhanced Fraud Prevention and Identity Verification</h2>
-          <p className="mb-6">In 2026, real estate fraud is more sophisticated than ever. You need a signing agent who takes identity verification seriously. A reliable agent doesn't just glance at a driver's license; they meticulously verify the ID against the documents and look for red flags that might indicate "spoofing" or identity theft.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. How does a signing agent prevent real estate fraud?</h2>
+          <p className="mb-6">In 2026, real estate fraud is more sophisticated than ever. You need a signing agent who takes identity verification seriously — a core duty of every <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">commissioned North Carolina notary</a>. A reliable agent doesn't just glance at a driver's license; they meticulously verify the ID against the documents and look for red flags that might indicate "spoofing" or identity theft.</p>
           <p className="mb-6">By serving as your eyes and ears on the ground, the agent provides an essential layer of security. This is especially vital for <a href="https://www.integrityclosingsclt.com/power-of-attorney-estate-documents-charlotte-nc" className="text-brand-600 hover:underline">power of attorney and estate documents</a> where the signers might be in high-stress situations. Whether it's a <a href="https://www.integrityclosingsclt.com/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital notary</a> visit or a standard home closing, the integrity of the signature is the foundation of the entire deal.</p>
 
           <img src="https://images.unsplash.com/photo-1595475207225-428b62bda831?auto=format&fit=crop&q=80&w=1200" alt="Expert loan signing agent verifying identity with a driver's license to prevent fraud in Charlotte NC." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
           <em>Visual: A close-up shot of a diverse hand holding a high-tech, modern North Carolina driver's license next to a legal document, highlighting the careful verification process. The lighting is crisp and professional.</em>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. Maintaining Control and Appointment Flow</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">5. How does a signing agent keep a closing on schedule?</h2>
           <p className="mb-6">Closings can easily get off track. Distractions like children, pets, or ringing phones can cause a borrower to lose focus, leading to mistakes. A reliable signing agent is essentially a "closing conductor."</p>
           <p className="mb-6">They use confident transitions to keep the process moving. By managing the stack of documents efficiently, they ensure that the most critical items (like the Deed of Trust and the RTC) are handled while the borrower's attention is at its peak. This command of the "table flow" ensures that a typical closing takes 45 to 60 minutes rather than dragging on for two hours.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">6. Real-Time Updates and Post-Closing Reliability</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">6. What updates should you get after the signing?</h2>
           <p className="mb-6">Your job doesn't end when the borrower signs; in fact, the scramble to fund often begins the moment the ink is dry. A major benefit of working with a professional <a href="https://www.integrityclosingsclt.com/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">Charlotte NC mobile notary</a> is the communication you receive after the appointment.</p>
           <p className="mb-6">Reliable agents provide:</p>
           <ul className="list-disc pl-6 space-y-2 mb-6">
@@ -1780,29 +1807,37 @@ export default function BlogPost() {
           <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200" alt="Reliable signing agent organizing loan documents for secure shipping after a successful mobile closing." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
           <em>Visual: An aerial view of a clean, organized workspace. A laptop shows a "Success" notification, a smartphone displays a tracking number, and a set of professional closing documents is neatly tucked into a shipping envelope. Diverse hands are seen finishing a scan.</em>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">7. Flexibility and Regional Expertise</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">7. Why does regional flexibility matter in a signing partner?</h2>
           <p className="mb-6">The Charlotte metro area is sprawling. From the heart of Uptown to the growing communities in <a href="https://www.integrityclosingsclt.com/iredell-county" className="text-brand-600 hover:underline">Iredell County</a>, logistics can be a nightmare. A reliable mobile signing partner saves you time by handling the travel.</p>
           <p className="mb-6">Whether your client needs an <a href="https://www.integrityclosingsclt.com/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours mobile notary</a> because of their work schedule or requires a <a href="https://www.integrityclosingsclt.com/hospital-and-nursing-home-notarizations" className="text-brand-600 hover:underline">hospital or nursing home notarization</a>, a dedicated partner adapts to the borrower's needs. This flexibility doesn't just make the closing smoother; it makes you look like a hero to your client for providing such a convenient service.</p>
 
           <hr className="my-8" />
 
           <h3 className="text-xl font-bold text-slate-900 mt-12 mb-4 font-sans">Summary: Why Reliability Matters</h3>
-          <p className="mb-6">When you hire a loan signing agent, you aren't just hiring a "stamp." You are investing in a smoother workflow, happier clients, and a more secure bottom line. By focusing on punctuality, error prevention, and professional communication, a trusted partner like Integrity Closings CLT transforms the closing from a point of stress into a point of success.</p>
-          <p className="mb-6">If you're ready to experience the difference that a truly professional notary service can make for your team in Charlotte and the surrounding areas, we are here to help.</p>
+          <p className="mb-6">When you hire a loan signing agent, you aren't just hiring a "stamp." You are investing in a smoother workflow, happier clients, and a more secure bottom line. By focusing on punctuality, error prevention, and professional communication, a trusted partner transforms the closing from a point of stress into a point of success.</p>
+          <p className="mb-6">If you're ready to experience the difference that a truly professional notary service can make for your team in Charlotte and the surrounding areas, I am here to help.</p>
 
-          <h4 className="text-lg font-bold text-slate-900 mt-8 mb-4 font-sans">Our Professional Services Include:</h4>
+          <h4 className="text-lg font-bold text-slate-900 mt-8 mb-4 font-sans">My Professional Services Include:</h4>
           <ul className="list-disc pl-6 space-y-2 mb-6">
             <li><strong>Loan Signing Services:</strong> Refinances, Purchases, HELOCs, and Reverse Mortgages.</li>
-            <li><strong>Specialized Notarizations:</strong> <a href="https://www.integrityclosingsclt.com/estate-notary-charlotte-nc" className="text-brand-600 hover:underline">Estate Planning</a>, Power of Attorney, and <a href="https://www.integrityclosingsclt.com/general-notary-charlotte-nc" className="text-brand-600 hover:underline">General Notary</a> work.</li>
-            <li><strong>Mobile Support:</strong> We come to you or your client anywhere in our <a href="https://www.integrityclosingsclt.com/areas-served" className="text-brand-600 hover:underline">service area</a>.</li>
-            <li><strong>Flexible Scheduling:</strong> Including weekends and <a href="https://www.integrityclosingsclt.com/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours</a> appointments.</li>
+            <li><strong>Specialized Notarizations:</strong> <Link to="/estate-notary-charlotte-nc" className="text-brand-600 hover:underline">Estate Planning</Link>, Power of Attorney, and <Link to="/general-notary-charlotte-nc" className="text-brand-600 hover:underline">General Notary</Link> work.</li>
+            <li><strong>Mobile Support:</strong> I come to you or your client anywhere in my <Link to="/areas-served" className="text-brand-600 hover:underline">service area</Link>.</li>
+            <li><strong>Flexible Scheduling:</strong> Including weekends and <Link to="/after-hours-mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">after-hours</Link> appointments.</li>
           </ul>
+
+          <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+            <div>
+              <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+              <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He is the loan signing partner for Charlotte-area title companies and attorneys. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+            </div>
+          </div>
 
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to streamline your next closing?</h2>
-            <p className="text-lg text-slate-300 mb-8">Book your signing agent or visit our website to learn more about how we support Charlotte's top title companies and attorneys.</p>
+            <p className="text-lg text-slate-300 mb-8">Book your signing agent to see how I support Charlotte's top title companies and attorneys.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href="https://www.integrityclosingsclt.com/book" className="inline-block px-8 py-4 bg-brand-600 text-white hover:bg-brand-700 font-bold rounded-lg transition-colors">Book Your Signing Agent Here</a>
+              <a href="tel:9805058050" className="inline-block px-8 py-4 bg-brand-600 text-white hover:bg-brand-700 font-bold rounded-lg transition-colors">Call 980-505-8050</a>
               <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Book Appointment Online</a>
             </div>
           </section>
