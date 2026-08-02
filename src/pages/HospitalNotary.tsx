@@ -164,7 +164,7 @@ export default function HospitalNotary() {
             </h1>
 
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Need a notary at a hospital in Charlotte, NC? Integrity Closings CLT provides mobile bedside notary services for patients, families, and caregivers at Atrium Health Carolinas Medical Center, Novant Health Presbyterian Medical Center, Atrium Health Pineville, and rehabilitation and care facilities throughout the Charlotte metro. I travel directly to the patient's room to notarize important documents quickly and professionally, without the family needing to leave the hospital.
+              Need a notary at a hospital in Charlotte, NC? Integrity Closings CLT provides mobile bedside notary services for patients, families, and caregivers at Atrium Health Carolinas Medical Center, Novant Health Presbyterian Medical Center, Atrium Health Pineville, and rehabilitation and care facilities throughout the Charlotte metro. I travel directly to the patient's room to notarize important documents quickly and professionally, without the family needing to leave the hospital. If you need someone <Link to="/emergency-notary-charlotte-nc" className="text-brand-600 hover:underline">today, see my emergency &amp; same-day notary service</Link>.
             </p>
 
             <div className="mb-10 flex flex-col sm:flex-row gap-4 justify-center">

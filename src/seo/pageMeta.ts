@@ -19,6 +19,11 @@ export const pageMeta: Record<string, PageMeta> = {
     description: `Need a notary at a nursing home or assisted living facility in Charlotte, NC? I send a commissioned notary directly to residents.`,
     canonical: `${businessConfig.domain}/nursing-home-notary-charlotte-nc`,
   },
+  '/emergency-notary-charlotte-nc': {
+    title: `Emergency & Same-Day Mobile Notary Charlotte NC | 24/7`,
+    description: 'Need a notary today? Same-day and 24/7 emergency mobile notary in Charlotte, NC — hospital bedside, nursing home, and at-home service for powers of attorney, healthcare directives, and hospice documents. Call 980-505-8050.',
+    canonical: `${businessConfig.domain}/emergency-notary-charlotte-nc`,
+  },
   '/hospital-notary-charlotte-nc': {
     title: `24/7 Emergency Hospital & Bedside Notary Charlotte NC`,
     description: 'Need a notary at a hospital in Charlotte, NC today? I provide same-day and 24/7 emergency mobile bedside notary service for patients and families at Atrium, Novant, and every care facility in Mecklenburg County.',

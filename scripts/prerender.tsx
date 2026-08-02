@@ -46,6 +46,7 @@ const routes = [
   '/',
   '/mobile-notary-charlotte-nc',
   '/hospital-notary-charlotte-nc',
+  '/emergency-notary-charlotte-nc',
   '/nursing-home-notary-charlotte-nc',
   '/estate-notary-charlotte-nc',
   '/after-hours-mobile-notary-charlotte-nc',

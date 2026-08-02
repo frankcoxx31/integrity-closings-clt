@@ -18,6 +18,7 @@ import AfterHoursNotary from './pages/AfterHoursNotary';
 import Contact from './pages/Contact';
 import EstateNotary from './pages/EstateNotary';
 import HospitalNotary from './pages/HospitalNotary';
+import EmergencyNotary from './pages/EmergencyNotary';
 import NursingHomeNotary from './pages/NursingHomeNotary';
 import LoanSigningAgent from './pages/LoanSigningAgent';
 import GeneralNotary from './pages/GeneralNotary';
@@ -135,6 +136,7 @@ export function AppContent() {
             <Route path="/after-hours-mobile-notary-charlotte-nc" element={<AfterHoursNotary />} />
             <Route path="/estate-notary-charlotte-nc" element={<EstateNotary />} />
             <Route path="/hospital-notary-charlotte-nc" element={<HospitalNotary />} />
+            <Route path="/emergency-notary-charlotte-nc" element={<EmergencyNotary />} />
             <Route path="/nursing-home-notary-charlotte-nc" element={<NursingHomeNotary />} />
             <Route path="/loan-signing-agent-charlotte-nc" element={<LoanSigningAgent />} />
             <Route path="/general-notary-charlotte-nc" element={<GeneralNotary />} />

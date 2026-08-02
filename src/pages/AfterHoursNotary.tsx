@@ -131,7 +131,7 @@ export default function AfterHoursNotary() {
             </h1>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Need a notary outside normal business hours in Charlotte, NC? Integrity Closings CLT offers after-hours mobile notary services, including evenings and weekends. I come to your home, office, hospital, or agreed meeting location when you need a notary the most.
+              Need a notary outside normal business hours in Charlotte, NC? Integrity Closings CLT offers after-hours mobile notary services, including evenings and weekends. I come to your home, office, hospital, or agreed meeting location when you need a notary the most. For urgent, same-day requests, see my <Link to="/emergency-notary-charlotte-nc" className="text-brand-600 hover:underline">emergency &amp; same-day notary service</Link>.
             </p>
 
             <div className="mb-10 text-center">

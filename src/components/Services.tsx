@@ -1,6 +1,13 @@
 export default function Services() {
   const services = [
     {
+      title: 'Emergency & Same-Day Notary',
+      description: 'Need a notary today? Same-day and 24/7 emergency hospital bedside, nursing home, and at-home service across Charlotte.',
+      image: '/hospital.jpg',
+      link: '/emergency-notary-charlotte-nc',
+      anchor: 'Emergency & Same-Day Notary in Charlotte'
+    },
+    {
       title: 'General Mobile Notary',
       description: 'Standard notarizations at your home, office, or preferred location across the metro area.',
       image: '/general-notary-work.jpg',
@@ -29,8 +36,8 @@ export default function Services() {
       anchor: 'Estate Planning Notary in Charlotte'
     },
     {
-      title: 'After-Hours & Emergency Notary',
-      description: 'Urgent evening and weekend appointments available when you need me most.',
+      title: 'After-Hours Notary',
+      description: 'Evening and weekend appointments available when banks and shipping stores are closed.',
       image: '/lender-sent-documents.jpg',
       link: '/after-hours-mobile-notary-charlotte-nc',
       anchor: 'After-Hours Notary in Charlotte'
