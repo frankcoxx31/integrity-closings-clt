@@ -77,6 +77,19 @@ export default function BlogPost() {
       { q: "What if I find an error in the documents during the signing?", a: "If there's a typo or a wrong number, I immediately contact your closing attorney or loan officer. In many cases, they can email a corrected page that I can print or handle digitally to keep the closing on track." },
       { q: "Do you offer services outside of Charlotte?", a: "Yes. I serve the greater Charlotte area, including Pineville, Matthews, Concord, and even Gastonia." }
     ],
+    'navigating-nc-rena-2025': [
+      { q: "How did North Carolina remote notarization become permanent?", a: "RENA replaced the pandemic-era \"Emergency Video Notarization\" with a permanent system on July 1, 2025. Unlike the emergency Zoom-and-FaceTime fix, it requires secure, state-approved platforms with strict identity verification and session recording." },
+      { q: "What does the North Carolina RENA law require?", a: "It requires identity proofing and credential analysis, a secure platform approved by the North Carolina Secretary of State, tamper-evident documents, and a recorded session kept for at least ten years. These are the safeguards the emergency video rules never had." },
+      { q: "Do you still need a mobile notary now that remote notarization is legal?", a: "Yes. Some documents still require wet-ink, in-person notarization, and remote notarization depends on technology that isn't practical for hospital patients, complex closings, or anyone who wants documents in hand the same day." },
+      { q: "How do you prepare for a notarization under RENA?", a: "Confirm the receiving agency accepts remote/electronic notarization, have a current government-issued photo ID ready, review your documents in advance, and use a properly commissioned notary. The same preparation applies whether you sign in person or over video." }
+    ],
+    'settlement-vs-closing-nc-real-estate': [
+      { q: "What's the difference between settlement and closing in NC?", a: "Settlement is the meeting where you sign the documents and provide your funds. Closing is the later moment the deed is actually recorded at the Register of Deeds — and that's when ownership legally transfers and you get the keys." },
+      { q: "What does the closing attorney do after settlement?", a: "The attorney runs a final \"bring-down\" title search, verifies every signature and notary seal, and gets the lender's authorization to record. Only after all three are clear can the deed be recorded." },
+      { q: "When does the seller get paid in a North Carolina closing?", a: "Not at the signing table. The North Carolina Good Funds Settlement Act bars the attorney from disbursing any money until the deed is recorded, so the seller's proceeds, agent commissions, and mortgage payoff all wait until recording." },
+      { q: "Why won't you get your keys on a Friday closing?", a: "Because the Register of Deeds keeps government business hours. A late-day or Friday settlement often can't be recorded until the office reopens, which pushes your keys to Monday." },
+      { q: "How do you prepare for the recording gap?", a: "Schedule settlement early in the day and mid-week, don't book the moving truck for the same day, and bring your ID and funds ready to go. That gives the attorney time to record before the office closes and buffers you against a delay." }
+    ],
     '5-documents-notarized-before-50': [
       { q: "Which 5 documents should you notarize before 50?", a: "A durable power of attorney, a healthcare power of attorney, a last will and testament, a living will (advance directive), and a revocable living trust. Notarizing them while you are healthy makes sure courts, hospitals, and banks will honor them when it matters." },
       { q: "Why notarize a durable power of attorney before 50?", a: "In North Carolina a DPOA must be notarized to be legally valid, and many banks won't honor one without a clear notary seal. Having it done now means a family member can step in immediately if a sudden illness or accident leaves you unable to manage your finances." },
@@ -871,11 +884,11 @@ export default function BlogPost() {
           <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
             <div className="flex items-center">
               <User className="w-4 h-4 mr-2" />
-              Integrity Closings CLT
+              By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
             </div>
             <div className="flex items-center">
               <Calendar className="w-4 h-4 mr-2" />
-              4/1/2026
+              April 1, 2026
             </div>
           </div>
 
@@ -894,8 +907,9 @@ export default function BlogPost() {
             loading="lazy" referrerPolicy="no-referrer" 
           />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Understanding the Vocabulary: Settlement vs. Closing</h2>
-          <p className="mb-6">In casual conversation, we use these terms interchangeably. However, in a North Carolina real estate contract, they represent two very different events on the timeline.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What's the difference between settlement and closing in NC?</h2>
+          <p className="mb-6 font-semibold text-slate-900">Settlement is the meeting where you sign the documents and provide your funds. Closing is the later moment the deed is actually recorded at the Register of Deeds — and that's when ownership legally transfers and you get the keys.</p>
+          <p className="mb-6">In casual conversation, people use these terms interchangeably. However, in a North Carolina real estate contract, they represent two very different events on the timeline.</p>
 
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">What is Settlement?</h3>
           <p className="mb-6">Settlement is the actual meeting. This is when you, the buyer, sit down (often at a closing attorney's office or via a <a href="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">mobile notary service</a>) to execute all the necessary paperwork. During settlement, you sign the Deed of Trust, the Closing Disclosure (CD), and various other state and federal disclosures. You also provide the remaining funds required to complete the purchase.</p>
@@ -903,8 +917,9 @@ export default function BlogPost() {
           <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">What is Closing?</h3>
           <p className="mb-6">In North Carolina, "Closing" is not a meeting; it is a process. Legally, closing is defined as the moment the deed is officially recorded at the local Register of Deeds. Only when the county clerk stamps that document and adds it to the public record is the transaction considered "closed." This is the moment ownership officially transfers from the seller to you.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Role of the Closing Attorney in the "Gap"</h2>
-          <p className="mb-6">North Carolina is an "attorney state," meaning an attorney must oversee the real estate transaction. Their job doesn't end when you stop signing documents. In fact, some of their most critical work happens in the hours: or sometimes days: immediately following your settlement meeting.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What does the closing attorney do after settlement?</h2>
+          <p className="mb-6 font-semibold text-slate-900">The attorney runs a final "bring-down" title search, verifies every signature and notary seal, and gets the lender's authorization to record. Only after all three are clear can the deed be recorded.</p>
+          <p className="mb-6">North Carolina is an "attorney state," meaning an attorney must oversee the real estate transaction. Their job doesn't end when you stop signing documents. In fact, some of their most critical work happens in the hours — or sometimes days — immediately following your settlement meeting.</p>
           <p className="mb-6">Once you leave the table, the attorney must perform several tasks before they can record the deed:</p>
           <ol className="list-decimal pl-6 space-y-4 mb-6">
             <li><strong>The Title Update:</strong> The attorney performs a "bring-down" or final title search. They check the public record one last time to ensure no new liens, judgments, or encumbrances have been filed against the property since the initial title search.</li>
@@ -919,8 +934,9 @@ export default function BlogPost() {
             loading="lazy" referrerPolicy="no-referrer" 
           />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Timing Matters for Funds Disbursement</h2>
-          <p className="mb-6">A common misconception is that the seller gets their check as soon as you sign yours. In reality, the North Carolina Good Funds Settlement Act prohibits attorneys from dispersing money until the deed is recorded.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">When does the seller get paid in a North Carolina closing?</h2>
+          <p className="mb-6 font-semibold text-slate-900">Not at the signing table. The North Carolina Good Funds Settlement Act bars the attorney from disbursing any money until the deed is recorded, so the seller's proceeds, agent commissions, and mortgage payoff all wait until recording.</p>
+          <p className="mb-6">A common misconception is that the seller gets their check as soon as you sign yours. In reality, the <a href="https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/ByChapter/Chapter_45A.html" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina Good Funds Settlement Act (Chapter 45A)</a> prohibits attorneys from disbursing money until the deed is recorded.</p>
           <p className="mb-6">This means:</p>
           <ul className="list-disc pl-6 space-y-4 mb-6">
             <li><strong>The Seller</strong> does not get their proceeds at the settlement table.</li>
@@ -929,7 +945,8 @@ export default function BlogPost() {
           </ul>
           <p className="mb-6">Because the money cannot move until the deed is recorded, the seller has a legal right to retain possession of the house until that moment. If they give you the keys before the deed is recorded and something goes wrong with the funding, they are still the legal owners, but you are now inside their property. To protect everyone involved, keys stay with the attorney or the listing agent until the "all clear" is given.</p>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Recording Reality: Why You Won't Always Get Keys on Friday</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why won't you get your keys on a Friday closing?</h2>
+          <p className="mb-6 font-semibold text-slate-900">Because the Register of Deeds keeps government business hours. A late-day or Friday settlement often can't be recorded until the office reopens, which pushes your keys to Monday.</p>
           <p className="mb-6">If you schedule your settlement for 4:00 PM on a Friday, you are almost certainly not moving in that evening.</p>
           <p className="mb-6">The Register of Deeds in counties like <a href="/areas-served" className="text-brand-600 hover:underline">Mecklenburg County</a> or <a href="/areas-served" className="text-brand-600 hover:underline">Rowan County</a> operates on government business hours. If your settlement happens late in the day, the attorney may not be able to finish their title update and submit the documents before the recording office closes.</p>
           <p className="mb-6">In this scenario, "Closing" won't happen until Monday morning. You will have "settled" on Friday, but you won't "close" or get your keys until the following week. For a first-time buyer with a moving truck idling in the driveway, this can be a disaster.</p>
@@ -941,19 +958,21 @@ export default function BlogPost() {
             loading="lazy" referrerPolicy="no-referrer" 
           />
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How to Prepare for the Wait</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How do you prepare for the recording gap?</h2>
+          <p className="mb-6 font-semibold text-slate-900">Schedule settlement early in the day and mid-week, don't book the moving truck for the same day, and bring your ID and funds ready to go. That gives the attorney time to record before the office closes and buffers you against a delay.</p>
           <p className="mb-6">To ensure a smooth transition and minimize the stress of the "possession gap," follow these practical steps:</p>
           <ul className="list-disc pl-6 space-y-4 mb-6">
             <li><strong>Schedule Early in the Day:</strong> Try to set your settlement appointment for the morning. This gives the attorney enough time to update the title, get lender approval, and record the deed before the end of the business day.</li>
             <li><strong>Schedule Mid-Week:</strong> Avoid closing on a Friday if possible. If a delay occurs on a Tuesday, you can usually close on Wednesday. If a delay occurs on a Friday, you are stuck waiting until Monday.</li>
             <li><strong>Don't Schedule the Mover for the Same Day:</strong> If possible, schedule your moving truck for the day <em>after</em> settlement. This gives you a buffer in case recording is delayed.</li>
-            <li><strong>Know What to Bring:</strong> Delays often happen because of missing information. Check out our guide on <a href="/resources/what-is-mobile-notary" className="text-brand-600 hover:underline">what to bring to a notary appointment</a> to ensure you have your ID and funds ready to go.</li>
+            <li><strong>Know What to Bring:</strong> Delays often happen because of missing information. Check out my guide on <a href="/resources/what-is-mobile-notary" className="text-brand-600 hover:underline">what to bring to a notary appointment</a> to ensure you have your ID and funds ready to go.</li>
           </ul>
 
-          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How Integrity Closings CLT Simplifies the Process</h2>
-          <p className="mb-6">While the legal "gap" is a mandatory part of North Carolina law, the way you handle your side of the paperwork can significantly impact the speed of the transaction. At Integrity Closings CLT, we specialize in making the "Settlement" portion as convenient as possible.</p>
-          <p className="mb-6">We understand that you may not have time to drive across town to an attorney's office, especially if you are balancing a job and a move. We offer <a href="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">mobile notary services</a> and <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile refi notarization</a> to bring the signing table to you. Whether you are in Pineville, Charlotte, or the surrounding areas, our professional team ensures that your documents are executed perfectly the first time, preventing administrative delays that could push back your recording time.</p>
-          <p className="mb-6">For sellers who have already moved out of state or are busy packing, our <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">seller notarization services</a> allow you to sign your deed and closing docs from your own kitchen table. By getting the seller's paperwork finalized and delivered to the attorney early, you help ensure that everything is ready for the buyer’s settlement.</p>
+          <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How can a mobile notary speed up your settlement?</h2>
+          <p className="mb-6 font-semibold text-slate-900">By making the signing itself fast, convenient, and error-free. I bring the signing table to you and check every page so administrative mistakes don't delay your recording.</p>
+          <p className="mb-6">While the legal "gap" is a mandatory part of North Carolina law, the way you handle your side of the paperwork can significantly impact the speed of the transaction. I specialize in making the "Settlement" portion as convenient as possible.</p>
+          <p className="mb-6">You may not have time to drive across town to an attorney's office, especially if you are balancing a job and a move. I offer <a href="/mobile-notary-charlotte-nc" className="text-brand-600 hover:underline">mobile notary services</a> and <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">mobile refi notarization</a> to bring the signing table to you. Whether you are in Pineville, Charlotte, or the surrounding areas, I make sure your documents are executed perfectly the first time, preventing administrative delays that could push back your recording time.</p>
+          <p className="mb-6">For sellers who have already moved out of state or are busy packing, my <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">seller notarization services</a> allow you to sign your deed and closing docs from your own kitchen table. By getting the seller's paperwork finalized and delivered to the attorney early, you help ensure that everything is ready for the buyer’s settlement.</p>
 
           <img 
             src="https://images.unsplash.com/photo-1590650046871-92c887180603?auto=format&fit=crop&q=80&w=1200" 
@@ -972,7 +991,15 @@ export default function BlogPost() {
           </ul>
 
           <p className="mb-6">Navigating your first home purchase in North Carolina doesn't have to be overwhelming. By understanding the legal requirements of the state and planning for the recording gap, you can set realistic expectations for your moving day.</p>
-          <p className="mb-6">If you are a seller looking for a more convenient way to handle your paperwork, or an attorney needing a reliable <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing notary in Pineville, NC</a>, we are here to help. At Integrity Closings CLT, we bring professionalism and efficiency to the signing table, helping you get one step closer to those keys.</p>
+          <p className="mb-6">If you are a seller looking for a more convenient way to handle your paperwork, or an attorney needing a reliable <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing notary in Pineville, NC</a>, I am here to help. I bring professionalism and efficiency to the signing table, helping you get one step closer to those keys.</p>
+
+          <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+            <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+            <div>
+              <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+              <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He provides mobile notary and loan signing services throughout Charlotte and the surrounding metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+            </div>
+          </div>
 
           <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
             <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Ready to Schedule Your Signing?</h2>
@@ -994,23 +1021,27 @@ export default function BlogPost() {
                 <div className="flex flex-wrap items-center text-slate-500 text-sm mb-8 gap-4 sm:gap-6 border-b border-slate-100 pb-8 font-sans">
                   <div className="flex items-center">
                     <User className="w-4 h-4 mr-2" />
-                    Integrity Closings CLT
+                    By <Link to="/about" className="ml-1 text-brand-600 hover:underline font-semibold">Frank Coxx</Link>
                   </div>
                   <div className="flex items-center">
                     <Calendar className="w-4 h-4 mr-2" />
-                    3/27/2026
+                    March 27, 2026
                   </div>
                 </div>
 
-                <p className="mb-6">For years, the way you notarize documents in North Carolina has been in a state of transition. From the traditional pen-and-paper methods to the temporary "emergency" video measures introduced during the pandemic, the landscape has been shifting beneath our feet. As we move through 2026, we are now living in the reality shaped by the <strong>North Carolina Remote Electronic Notarization Act (RENA)</strong>.</p>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight font-sans">Navigating the North Carolina Remote Electronic Notarization Act (RENA)</h1>
+
+                <p className="mb-6">For years, the way you notarize documents in North Carolina has been in a state of transition. From the traditional pen-and-paper methods to the temporary "emergency" video measures introduced during the pandemic, the landscape has been shifting. As of 2026, the state now operates under the <strong>North Carolina Remote Electronic Notarization Act (RENA)</strong>.</p>
                 <p className="mb-6">If you are a homeowner, a business owner, or a legal professional, understanding the permanent framework that took root on July 1, 2025, is essential. This legislation didn't just make video notarization permanent; it introduced rigorous standards to ensure the security and integrity of your most important transactions.</p>
                 <p className="mb-6">Here is what you need to know about navigating RENA in 2025 and beyond.</p>
                 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">The Shift from "Emergency" to Permanent</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How did North Carolina remote notarization become permanent?</h2>
+                <p className="mb-6 font-semibold text-slate-900">RENA replaced the pandemic-era "Emergency Video Notarization" with a permanent system on July 1, 2025. Unlike the emergency Zoom-and-FaceTime fix, it requires secure, state-approved platforms with strict identity verification and session recording.</p>
                 <p className="mb-6">During the COVID-19 pandemic, North Carolina allowed "Emergency Video Notarization" (EVN). It was a temporary fix that allowed notaries to witness signatures via standard video platforms like Zoom or FaceTime. However, EVN was never intended to be a long-term solution.</p>
                 <p className="mb-6">RENA replaced the temporary measures with a robust, permanent system for <strong>Remote Electronic Notarization (REN)</strong>. Unlike the emergency measures, REN requires the use of specialized, secure platforms that meet strict state requirements for identity verification and session recording.</p>
                 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Key Features of RENA: What’s Different Now?</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">What does the North Carolina RENA law require?</h2>
+                <p className="mb-6 font-semibold text-slate-900">It requires identity proofing and credential analysis, a secure platform approved by the <a href="https://www.sosnc.gov/divisions/notary" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">North Carolina Secretary of State</a>, tamper-evident documents, and a recorded session kept for at least ten years. These are the safeguards the emergency video rules never had.</p>
                 <p className="mb-6">The permanent act introduced several layers of security that were missing from the emergency video protocols:</p>
                 <ol className="list-decimal pl-6 space-y-4 mb-6">
                     <li><strong>Identity Proofing and Credential Analysis:</strong> It’s no longer enough to just hold your ID up to a webcam. RENA-compliant platforms use automated technology to verify the authenticity of your government-issued ID and may use "knowledge-based authentication" (KBA)—asking questions only you would know the answer to—to confirm your identity.</li>
@@ -1021,9 +1052,9 @@ export default function BlogPost() {
                 
                 <img src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?auto=format&fit=crop&q=80&w=1200" alt="Remote Electronic Notarization Setup" className="w-full h-auto rounded-lg my-8" loading="lazy" referrerPolicy="no-referrer" />
 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Why Mobile Notary Services Remain Vital</h2>
-                <p className="mb-6">With the rise of remote electronic notarization, you might wonder: <em>"Do I still need a mobile notary to come to my house?"</em></p>
-                <p className="mb-6">The answer is a resounding <strong>yes</strong>. While REN offers convenience, it isn't always the right choice for every situation. Here is why mobile notary services in Charlotte, NC, continue to be the preferred choice for many:</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Do you still need a mobile notary now that remote notarization is legal?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Yes. Some documents still require wet-ink, in-person notarization, and remote notarization depends on technology that isn't practical for hospital patients, complex closings, or anyone who wants documents in hand the same day.</p>
+                <p className="mb-6">With the rise of remote electronic notarization, you might wonder: <em>"Do I still need a mobile notary to come to my house?"</em> The answer is a resounding <strong>yes</strong>. While REN offers convenience, it isn't always the right choice for every situation. Here is why mobile notary services in Charlotte, NC, continue to be the preferred choice for many:</p>
                 
                 <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">1. Not All Documents Are Eligible</h3>
                 <p className="mb-6">Certain high-stakes documents, such as some types of trusts or specific real estate deeds, may still require traditional "wet ink" signatures and in-person notarization depending on the requirements of the receiving agency or lender. A mobile notary ensures that these critical documents are executed correctly in person.</p>
@@ -1037,7 +1068,8 @@ export default function BlogPost() {
                 <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4 font-sans">4. Immediate Peace of Mind</h3>
                 <p className="mb-6">When a mobile notary leaves your home, you have the physical, notarized documents in your hand. There is no waiting for digital files to process or worrying about whether a platform’s security certificate is up to date. You have the tangible proof of a completed transaction.</p>
                 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Preparing for Your Notarization in 2025</h2>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">How do you prepare for a notarization under RENA?</h2>
+                <p className="mb-6 font-semibold text-slate-900">Confirm the receiving agency accepts remote/electronic notarization, have a current government-issued photo ID ready, review your documents in advance, and use a properly commissioned notary. The same preparation applies whether you sign in person or over video.</p>
                 <p className="mb-6">Whether you choose a remote electronic notarization or a traditional mobile notary service, preparation is key to a smooth experience:</p>
                 <ul className="list-disc pl-6 space-y-4 mb-6">
                     <li><strong>Verify the Requirements:</strong> Always check with the person or agency receiving the document to see if they accept electronic signatures and remote notarization.</li>
@@ -1046,14 +1078,22 @@ export default function BlogPost() {
                     <li><strong>Choose a Professional:</strong> Whether in-person or remote, ensure your notary is properly commissioned and experienced in the type of document you are signing.</li>
                 </ul>
                 
-                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Integrity Closings CLT: Your Partner in a Changing Landscape</h2>
-                <p className="mb-6">At <strong>Integrity Closings CLT</strong>, we stay at the forefront of North Carolina’s notary laws to provide you with the most accurate and reliable service possible. Whether you need a <a href="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital notary</a>, a <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing agent</a>, or an <a href="/estate-notary-charlotte-nc" className="text-brand-600 hover:underline">estate document notary</a>, we bring professional expertise directly to your door.</p>
-                <p className="mb-6">The North Carolina Remote Electronic Notarization Act has brought our state into the digital age, but the need for professional, reliable, and personal service remains unchanged. We are here to help you navigate these changes with confidence.</p>
+                <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">Your partner in a changing notary landscape</h2>
+                <p className="mb-6">I stay at the forefront of North Carolina’s notary laws to provide you with the most accurate and reliable service possible. Whether you need a <a href="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital notary</a>, a <a href="/loan-signing-agent-charlotte-nc" className="text-brand-600 hover:underline">loan signing agent</a>, or an <a href="/estate-notary-charlotte-nc" className="text-brand-600 hover:underline">estate document notary</a>, I bring professional expertise directly to your door.</p>
+                <p className="mb-6">The North Carolina Remote Electronic Notarization Act has brought the state into the digital age, but the need for professional, reliable, and personal service remains unchanged. I am here to help you navigate these changes with confidence.</p>
                 <p className="mb-6"><strong>Need a mobile notary in Charlotte, NC?</strong> <a href="/booking" className="text-brand-600 hover:underline">Schedule your appointment today</a> and experience the peace of mind that comes with professional, in-person service.</p>
-                
+
+                <div className="border-t border-slate-200 pt-8 mt-12 flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-lg font-sans">FC</div>
+                    <div>
+                        <p className="font-bold text-slate-900 mb-1 font-sans">About the author</p>
+                        <p className="text-slate-600 text-sm leading-relaxed"><Link to="/about" className="text-brand-600 hover:underline font-semibold">Frank Coxx</Link> is a commissioned North Carolina Notary Public and NNA-certified Notary Signing Agent with 9+ years in loan signings and 20+ years in real estate. He provides mobile notary services throughout Charlotte and the surrounding metro. Call or text <a href="tel:9805058050" className="text-brand-600 hover:underline">980-505-8050</a>.</p>
+                    </div>
+                </div>
+
                 <section className="bg-slate-900 text-white p-10 rounded-xl text-center mt-16">
                     <h2 className="text-3xl font-bold text-white mb-4 border-none font-sans">Experience Professional Mobile Notary Service</h2>
-                    <p className="text-lg text-slate-300 mb-8">Whether you need in-person or guidance on the latest North Carolina notary laws, we are here to help.</p>
+                    <p className="text-lg text-slate-300 mb-8">Whether you need in-person service or guidance on the latest North Carolina notary laws, I am here to help.</p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <a href="/booking" className="inline-block px-8 py-4 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition-colors">Schedule Appointment Now</a>
                     </div>

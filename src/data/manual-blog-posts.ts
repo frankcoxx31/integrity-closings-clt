@@ -91,14 +91,18 @@ export const manualBlogPosts: ManualBlogPost[] = [
     slug: 'settlement-vs-closing-nc-real-estate',
     date: 'April 1, 2026',
     excerpt: 'You have spent weeks, perhaps months, navigating the North Carolina real estate market. You have toured dozens of homes, survived the "Due Diligence" period, and finalized your mortgage. Now, the big day is here: Closing Day...',
-    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
+    seoTitle: 'Settlement vs. Closing in North Carolina Explained',
+    seoDescription: "In NC you don't get your keys at the signing table. Learn the difference between settlement and closing, and why the deed must be recorded first."
   },
   {
     title: 'Navigating the North Carolina Remote Electronic Notarization Act (RENA): What to Expect in 2025',
     slug: 'navigating-nc-rena-2025',
     date: 'March 27, 2026',
     excerpt: 'For years, the way you notarize documents in North Carolina has been in a state of transition. From the traditional pen-and-paper methods to the temporary "emergency" video measures introduced during the pandemic, the landscape has been shifting beneath our feet.',
-    imageUrl: 'https://images.unsplash.com/photo-1568992688065-536aad8a12f6?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1568992688065-536aad8a12f6?auto=format&fit=crop&q=80&w=800',
+    seoTitle: 'North Carolina RENA: Remote Notarization Explained',
+    seoDescription: 'How North Carolina\'s Remote Electronic Notarization Act (RENA) works, what it requires, and why mobile in-person notary service still matters.'
   },
   {
     title: '7 Mistakes Charlotte Sellers Make with Closings (And How Mobile Notary Services Fix Them)',
