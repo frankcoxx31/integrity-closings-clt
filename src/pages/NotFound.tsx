@@ -22,7 +22,7 @@ export default function NotFound() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 sm:p-12">
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-sans">Page Not Found</h1>
           <p className="text-lg text-slate-600 mb-8">
-            The page you're looking for doesn't exist or may have moved. If you need a mobile notary in Charlotte, NC, we're happy to help.
+            The page you're looking for doesn't exist or may have moved. If you need a mobile notary in Charlotte, NC, I'm happy to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -23,7 +23,7 @@ export default function EmergencyAvailability({
       </div>
       <div className="p-6">
         <p className="text-slate-700 leading-relaxed mb-4">
-          We know {facilityType} documents can't always wait for business hours. A power of
+          I know {facilityType} documents can't always wait for business hours. A power of
           attorney needed before an early-morning surgery, a healthcare directive during an
           overnight admission, hospice paperwork on a weekend — Integrity Closings CLT is
           available <strong>24 hours a day, 7 days a week</strong> for emergency bedside

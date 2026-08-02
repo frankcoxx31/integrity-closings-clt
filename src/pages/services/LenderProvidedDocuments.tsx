@@ -31,7 +31,7 @@ export default function LenderProvidedDocuments() {
               "name": "Are you certified to handle loan signings?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, our team holds the National Notary Association (NNA) Certified Notary Signing Agent credential. We are thoroughly background-screened and maintain E&O insurance."
+                "text": "Yes, my team holds the National Notary Association (NNA) Certified Notary Signing Agent credential. I am thoroughly background-screened and maintain E&O insurance."
               }
             },
             {
@@ -39,7 +39,7 @@ export default function LenderProvidedDocuments() {
               "name": "Will you print the loan package?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely. We are equipped with dual-tray laser printers to print your loan documents correctly in legal and letter sizes."
+                "text": "Absolutely. I am equipped with dual-tray laser printers to print your loan documents correctly in legal and letter sizes."
               }
             },
             {
@@ -47,7 +47,7 @@ export default function LenderProvidedDocuments() {
               "name": "Can you provide scanbacks for the lender/title company?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we provide high-quality scanbacks of the signed documents directly to the title company or lender immediately after the signing."
+                "text": "Yes, I provide high-quality scanbacks of the signed documents directly to the title company or lender immediately after the signing."
               }
             },
             {
@@ -55,7 +55,7 @@ export default function LenderProvidedDocuments() {
               "name": "Do you drop documents off at FedEx or UPS?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Upon completing the signing and quality check, we promptly deliver the documents to the requested carrier (FedEx/UPS) to ensure they make the cutoff time."
+                "text": "Yes. Upon completing the signing and quality check, I promptly deliver the documents to the requested carrier (FedEx/UPS) to ensure they make the cutoff time."
               }
             },
             {
@@ -63,7 +63,7 @@ export default function LenderProvidedDocuments() {
               "name": "What if the borrower has questions about their loan terms?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "As Notary Signing Agents, we cannot explain or advise on loan terms. However, we will point the borrower to the closing disclosure and offer to contact the loan officer or escrow agent directly during the appointment."
+                "text": "As Notary Signing Agents, I cannot explain or advise on loan terms. However, I will point the borrower to the closing disclosure and offer to contact the loan officer or escrow agent directly during the appointment."
               }
             }
           ]
@@ -103,7 +103,7 @@ export default function LenderProvidedDocuments() {
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Lender Provided Documents</h1>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              We provide professional mobile notary and loan signing agent services for lender-provided document packages. We ensure all signatures, dates, and initials are properly executed for a smooth closing process.
+              I provide professional mobile notary and loan signing agent services for lender-provided document packages. I ensure all signatures, dates, and initials are properly executed for a smooth closing process.
             </p>
             
             <div className="space-y-6 mb-10">
@@ -124,23 +124,23 @@ export default function LenderProvidedDocuments() {
                 {[
                   {
                     q: "Are you certified to handle loan signings?",
-                    a: "Yes, our team holds the National Notary Association (NNA) Certified Notary Signing Agent credential. We are thoroughly background-screened and maintain E&O insurance."
+                    a: "Yes, my team holds the National Notary Association (NNA) Certified Notary Signing Agent credential. I am thoroughly background-screened and maintain E&O insurance."
                   },
                   {
                     q: "Will you print the loan package?",
-                    a: "Absolutely. We are equipped with dual-tray laser printers to print your loan documents correctly in legal and letter sizes."
+                    a: "Absolutely. I am equipped with dual-tray laser printers to print your loan documents correctly in legal and letter sizes."
                   },
                   {
                     q: "Can you provide scanbacks for the lender/title company?",
-                    a: "Yes, we provide high-quality scanbacks of the signed documents directly to the title company or lender immediately after the signing."
+                    a: "Yes, I provide high-quality scanbacks of the signed documents directly to the title company or lender immediately after the signing."
                   },
                   {
                     q: "Do you drop documents off at FedEx or UPS?",
-                    a: "Yes. Upon completing the signing and quality check, we promptly deliver the documents to the requested carrier (FedEx/UPS) to ensure they make the cutoff time."
+                    a: "Yes. Upon completing the signing and quality check, I promptly deliver the documents to the requested carrier (FedEx/UPS) to ensure they make the cutoff time."
                   },
                   {
                     q: "What if the borrower has questions about their loan terms?",
-                    a: "As Notary Signing Agents, we cannot explain or advise on loan terms. However, we will point the borrower to the closing disclosure and offer to contact the loan officer or escrow agent directly during the appointment."
+                    a: "As Notary Signing Agents, I cannot explain or advise on loan terms. However, I will point the borrower to the closing disclosure and offer to contact the loan officer or escrow agent directly during the appointment."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">

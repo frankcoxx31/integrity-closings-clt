@@ -16,12 +16,12 @@ export interface PageMeta {
 export const pageMeta: Record<string, PageMeta> = {
   '/nursing-home-notary-charlotte-nc': {
     title: `Nursing Home Notary Charlotte NC | Mobile Notary`,
-    description: `Need a notary at a nursing home or assisted living facility in Charlotte, NC? We send a commissioned notary directly to residents.`,
+    description: `Need a notary at a nursing home or assisted living facility in Charlotte, NC? I send a commissioned notary directly to residents.`,
     canonical: `${businessConfig.domain}/nursing-home-notary-charlotte-nc`,
   },
   '/hospital-notary-charlotte-nc': {
-    title: `Hospital & Bedside Notary Charlotte NC | Mobile Notary`,
-    description: 'Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.',
+    title: `24/7 Emergency Hospital & Bedside Notary Charlotte NC`,
+    description: 'Need a notary at a hospital in Charlotte, NC today? I provide same-day and 24/7 emergency mobile bedside notary service for patients and families at Atrium, Novant, and every care facility in Mecklenburg County.',
     canonical: `${businessConfig.domain}/hospital-notary-charlotte-nc`,
   },
   '/mobile-notary-charlotte-nc': {
@@ -31,12 +31,12 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   '/estate-notary-charlotte-nc': {
     title: `Estate & Trust Notarization Charlotte NC | Mobile Notary`,
-    description: 'Professional mobile notary for estate planning and trust documents in Charlotte, NC. We travel to homes, hospitals, and nursing homes for Wills, Trusts, POA.',
+    description: 'Professional mobile notary for estate planning and trust documents in Charlotte, NC. I travel to homes, hospitals, and nursing homes for Wills, Trusts, POA.',
     canonical: `${businessConfig.domain}/estate-notary-charlotte-nc`,
   },
   '/after-hours-mobile-notary-charlotte-nc': {
     title: `After-Hours Mobile Notary Charlotte NC | Nights & Weekends`,
-    description: `Need a notary after hours in Charlotte, NC? We offer evening and weekend mobile notary appointments when banks and UPS stores are closed.`,
+    description: `Need a notary after hours in Charlotte, NC? I offer evening and weekend mobile notary appointments when banks and UPS stores are closed.`,
     canonical: `${businessConfig.domain}/after-hours-mobile-notary-charlotte-nc`,
   },
   '/loan-signing-agent-charlotte-nc': {
@@ -45,8 +45,8 @@ export const pageMeta: Record<string, PageMeta> = {
     canonical: `${businessConfig.domain}/loan-signing-agent-charlotte-nc`,
   },
   '/general-notary-charlotte-nc': {
-    title: `General Mobile Notary Charlotte NC | We Come To You`,
-    description: 'General mobile notary services in Charlotte, NC. Skip the line and hassle, we travel to you for affidavits, auto titles, I-9s, and general documents.',
+    title: `General Mobile Notary Charlotte NC | I Come To You`,
+    description: 'General mobile notary services in Charlotte, NC. Skip the line and hassle, I travel to you for affidavits, auto titles, I-9s, and general documents.',
     canonical: `${businessConfig.domain}/general-notary-charlotte-nc`,
   },
   '/power-of-attorney-estate-documents-charlotte-nc': {
@@ -81,7 +81,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   '/contact': {
     title: `Contact Us | ${businessConfig.name}`,
-    description: `Contact ${businessConfig.name} to book a mobile notary or loan signing appointment in Charlotte, NC. Call, text, or fill out our online form.`,
+    description: `Contact ${businessConfig.name} to book a mobile notary or loan signing appointment in Charlotte, NC. Call, text, or fill out my online form.`,
     canonical: `${businessConfig.domain}/contact`,
   },
   '/faq': {
@@ -151,42 +151,42 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   '/locations/charlotte': {
     title: `Mobile Notary Charlotte, NC | ${businessConfig.name}`,
-    description: 'Professional mobile notary services in Charlotte, NC — same-day appointments, hospital & nursing home visits, and loan signings. We come to you.',
+    description: 'Professional mobile notary services in Charlotte, NC — same-day appointments, hospital & nursing home visits, and loan signings. I come to you.',
     canonical: `${businessConfig.domain}/locations/charlotte`,
   },
   '/locations/concord': {
     title: `Mobile Notary Concord, NC | ${businessConfig.name}`,
-    description: 'Professional mobile notary services in Concord, NC — same-day appointments, hospital & nursing home visits, and loan signings. We come to you.',
+    description: 'Professional mobile notary services in Concord, NC — same-day appointments, hospital & nursing home visits, and loan signings. I come to you.',
     canonical: `${businessConfig.domain}/locations/concord`,
   },
   '/locations/gastonia': {
     title: `Mobile Notary Gastonia, NC | ${businessConfig.name}`,
-    description: 'Professional mobile notary services in Gastonia, NC — same-day appointments, hospital & nursing home visits, and loan signings. We come to you.',
+    description: 'Professional mobile notary services in Gastonia, NC — same-day appointments, hospital & nursing home visits, and loan signings. I come to you.',
     canonical: `${businessConfig.domain}/locations/gastonia`,
   },
   '/locations/locust': {
     title: `Mobile Notary Locust, NC | ${businessConfig.name}`,
-    description: 'Professional mobile notary services in Locust, NC — same-day appointments, hospital & nursing home visits, and loan signings. We come to you.',
+    description: 'Professional mobile notary services in Locust, NC — same-day appointments, hospital & nursing home visits, and loan signings. I come to you.',
     canonical: `${businessConfig.domain}/locations/locust`,
   },
   '/locations/matthews': {
     title: `Mobile Notary Matthews, NC | ${businessConfig.name}`,
-    description: 'Professional mobile notary services in Matthews, NC — same-day appointments, hospital & nursing home visits, and loan signings. We come to you.',
+    description: 'Professional mobile notary services in Matthews, NC — same-day appointments, hospital & nursing home visits, and loan signings. I come to you.',
     canonical: `${businessConfig.domain}/locations/matthews`,
   },
   '/locations/midland': {
     title: `Mobile Notary Midland, NC | ${businessConfig.name}`,
-    description: 'Professional mobile notary services in Midland, NC — same-day appointments, hospital & nursing home visits, and loan signings. We come to you.',
+    description: 'Professional mobile notary services in Midland, NC — same-day appointments, hospital & nursing home visits, and loan signings. I come to you.',
     canonical: `${businessConfig.domain}/locations/midland`,
   },
   '/locations/monroe': {
     title: `Mobile Notary Monroe, NC | ${businessConfig.name}`,
-    description: 'Professional mobile notary services in Monroe, NC — same-day appointments, hospital & nursing home visits, and loan signings. We come to you.',
+    description: 'Professional mobile notary services in Monroe, NC — same-day appointments, hospital & nursing home visits, and loan signings. I come to you.',
     canonical: `${businessConfig.domain}/locations/monroe`,
   },
   '/locations/salisbury': {
     title: `Mobile Notary Salisbury, NC | ${businessConfig.name}`,
-    description: 'Professional mobile notary services in Salisbury, NC — same-day appointments, hospital & nursing home visits, and loan signings. We come to you.',
+    description: 'Professional mobile notary services in Salisbury, NC — same-day appointments, hospital & nursing home visits, and loan signings. I come to you.',
     canonical: `${businessConfig.domain}/locations/salisbury`,
   },
   '/locations/mint-hill-loan-signing-agent': {

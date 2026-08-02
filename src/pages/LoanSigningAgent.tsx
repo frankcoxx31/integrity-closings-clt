@@ -34,7 +34,7 @@ const loanSigningSchema = {
               "name": "Do you travel to my clients for loan closings?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we provide 100% mobile loan signing services. We can travel to your client's home, office, real estate agency, or any mutually agreed-upon location in the greater Charlotte area."
+                "text": "Yes, I provide 100% mobile loan signing services. I can travel to your client's home, office, real estate agency, or any mutually agreed-upon location in the greater Charlotte area."
               }
             },
             {
@@ -42,7 +42,7 @@ const loanSigningSchema = {
               "name": "How quickly can you return the closing documents?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We immediately review all documents for accuracy at the signing table. Scan-backs are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
+                "text": "I immediately review all documents for accuracy at the signing table. Scan-backs are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
               }
             },
             {
@@ -50,7 +50,7 @@ const loanSigningSchema = {
               "name": "Are you background screened?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we are highly trained, background screened, and carry $100,000 in Errors and Omissions (E&O) insurance to protect both you and your clients."
+                "text": "Yes, I am highly trained, background screened, and carry $100,000 in Errors and Omissions (E&O) insurance to protect both you and your clients."
               }
             },
             {
@@ -58,7 +58,7 @@ const loanSigningSchema = {
               "name": "What types of loan packages do you handle?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We handle Buyer, Seller, Refinance, HELOCs, Reverse Mortgages, Loan Modifications, and Commercial real estate packages."
+                "text": "I handle Buyer, Seller, Refinance, HELOCs, Reverse Mortgages, Loan Modifications, and Commercial real estate packages."
               }
             }
           ]
@@ -121,7 +121,7 @@ export default function LoanSigningAgent() {
             </h1>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Need a professional loan signing agent in Charlotte, NC? Integrity Closings CLT provides accurate, dependable mobile loan signing services for buyers, sellers, refinances, HELOCs, and other real estate transactions. We travel to homes, offices, and agreed meeting locations throughout Charlotte and surrounding areas.
+              Need a professional loan signing agent in Charlotte, NC? Integrity Closings CLT provides accurate, dependable mobile loan signing services for buyers, sellers, refinances, HELOCs, and other real estate transactions. I travel to homes, offices, and agreed meeting locations throughout Charlotte and surrounding areas.
             </p>
 
             <div className="mb-10 text-center">
@@ -140,14 +140,14 @@ export default function LoanSigningAgent() {
                 <h2 className="text-2xl font-bold text-slate-900">Professional Mobile Loan Signing Services</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We help borrowers complete loan documents accurately and on time. Integrity Closings CLT provides professional mobile loan signing services in Charlotte, NC for title companies, signing services, lenders, and private clients.
+                I help borrowers complete loan documents accurately and on time. Integrity Closings CLT provides professional mobile loan signing services in Charlotte, NC for title companies, signing services, lenders, and private clients.
               </p>
             </section>
             
             <section className="mb-12">
               <div className="flex items-center mb-6">
                 <FileText className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Loan Packages We Commonly Handle</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Loan Packages I Commonly Handle</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {loanPackages.map((doc, i) => (
@@ -165,7 +165,7 @@ export default function LoanSigningAgent() {
                 <h2 className="text-2xl font-bold text-slate-900">Convenient Signing Appointments</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We offer mobile loan signings at homes, offices, hospitals, nursing facilities, and other approved meeting locations. Evening and weekend appointments may be available based on scheduling.
+                I offer mobile loan signings at homes, offices, hospitals, nursing facilities, and other approved meeting locations. Evening and weekend appointments may be available based on scheduling.
               </p>
             </section>
 
@@ -194,19 +194,19 @@ export default function LoanSigningAgent() {
                   },
                   {
                     q: "Do you travel to my clients for loan closings?",
-                    a: "Yes, we provide 100% mobile loan signing services. We can travel to your client's home, office, real estate agency, or any mutually agreed-upon location in the greater Charlotte area."
+                    a: "Yes, I provide 100% mobile loan signing services. I can travel to your client's home, office, real estate agency, or any mutually agreed-upon location in the greater Charlotte area."
                   },
                   {
                     q: "How quickly can you return the closing documents?",
-                    a: "We immediately review all documents for accuracy at the signing table. Scan-backs are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
+                    a: "I immediately review all documents for accuracy at the signing table. Scan-backs are typically provided within hours of closing, and physical documents are dropped at FedEx or UPS the same day before the cutoff."
                   },
                   {
                     q: "Are you background screened?",
-                    a: "Yes, we are highly trained, background screened, and carry $100,000 in Errors and Omissions (E&O) insurance to protect both you and your clients."
+                    a: "Yes, I am highly trained, background screened, and carry $100,000 in Errors and Omissions (E&O) insurance to protect both you and your clients."
                   },
                   {
                     q: "What types of loan packages do you handle?",
-                    a: "We handle Buyer, Seller, Refinance, HELOCs, Reverse Mortgages, Loan Modifications, and Commercial real estate packages."
+                    a: "I handle Buyer, Seller, Refinance, HELOCs, Reverse Mortgages, Loan Modifications, and Commercial real estate packages."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
@@ -247,7 +247,7 @@ export default function LoanSigningAgent() {
               <div className="mt-8 p-6 bg-brand-50 rounded-2xl border border-brand-100 flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Title Company or Attorney?</h3>
-                  <p className="text-slate-600">We offer specialized overflow and mobile closing support for Charlotte-area firms.</p>
+                  <p className="text-slate-600">I offer specialized overflow and mobile closing support for Charlotte-area firms.</p>
                 </div>
                 <Link to="/title-company-attorney-closing-support-charlotte-nc" className="whitespace-nowrap px-6 py-3 bg-brand-600 text-white font-bold rounded-lg hover:bg-brand-700 transition-colors">
                   View Professional Support
@@ -258,10 +258,10 @@ export default function LoanSigningAgent() {
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <MapPin className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Areas We Serve</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Areas I Serve</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We provide loan signing services in Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and surrounding areas.
+                I provide loan signing services in Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and surrounding areas.
               </p>
             </section>
             

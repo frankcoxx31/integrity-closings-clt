@@ -10,7 +10,7 @@ export default function Charlotte() {
       image="/charlotte-location-hero.webp"
       introText={
         <>
-          As the premier <strong>mobile notary in Charlotte, NC</strong>, Integrity Closings CLT provides professional, on-demand notarization services across the entire Queen City. Whether you're finalizing a corporate merger in <strong>Uptown</strong>, signing medical directives near <strong>Atrium Health Main</strong>, or closing on a new home in <strong>Ballantyne</strong>, I bring the notary office directly to your location. Skip the Charlotte traffic and let us handle your important documents with the precision and integrity you deserve.
+          As the premier <strong>mobile notary in Charlotte, NC</strong>, Integrity Closings CLT provides professional, on-demand notarization services across the entire Queen City. Whether you're finalizing a corporate merger in <strong>Uptown</strong>, signing medical directives near <strong>Atrium Health Main</strong>, or closing on a new home in <strong>Ballantyne</strong>, I bring the notary office directly to your location. Skip the Charlotte traffic and let me handle your important documents with the precision and integrity you deserve.
         </>
       }
       services={[

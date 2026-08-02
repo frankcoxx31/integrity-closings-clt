@@ -2073,7 +2073,7 @@ export default function BlogPost() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-12 mb-4 border-b-2 border-slate-900 pb-2 font-sans">4. How does a mobile partner solve last-minute closings?</h2>
           <p className="mb-6">Every firm has been there: a file is cleared to close at 4:00 PM on a Friday, and the buyers are leaving town the next morning. Or perhaps a seller is hospitalized and cannot make it to your office. These scenarios can derail a closing timeline and put a commission in jeopardy.</p>
-          <p className="mb-6">Having a go-to partner for <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital and nursing home notarizations</Link> or emergency weekend signings is a lifesaver. Instead of telling the client "we can't do it," you can say, "I'll send my mobile partner to you." This level of service distinguishes your firm from the competition.</p>
+          <p className="mb-6">Having a go-to partner for <Link to="/hospital-notary-charlotte-nc" className="text-brand-600 hover:underline">hospital and nursing home notarizations</Link> or emergency weekend signings is a lifesaver. Instead of telling the client "I can't do it," you can say, "I'll send my mobile partner to you." This level of service distinguishes your firm from the competition.</p>
 
           <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1200" alt="Mobile notary Charlotte NC providing reliable signing services at a hospital for a closing attorney's client." className="w-full h-auto rounded-lg my-8 shadow-md" loading="lazy" referrerPolicy="no-referrer" />
 
@@ -2190,7 +2190,7 @@ export default function BlogPost() {
           {titleMap[slug || ''] || 'Article Coming Soon'}
         </h1>
         <div className="prose prose-lg prose-slate max-w-none py-12 text-center">
-          <p className="text-xl text-slate-500">We are currently writing this article. Please check back soon!</p>
+          <p className="text-xl text-slate-500">I am currently writing this article. Please check back soon!</p>
         </div>
       </>
     );

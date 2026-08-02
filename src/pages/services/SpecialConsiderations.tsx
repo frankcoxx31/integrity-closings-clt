@@ -35,7 +35,7 @@ export default function SpecialConsiderations() {
               "name": "Do you offer after-hours or late-night notary services?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we offer emergency after-hours notary services pending our availability. A premium after-hours travel fee will apply."
+                "text": "Yes, I offer emergency after-hours notary services pending my availability. A premium after-hours travel fee will apply."
               }
             },
             {
@@ -43,7 +43,7 @@ export default function SpecialConsiderations() {
               "name": "Can you notarize documents for an inmate at the Mecklenburg County Jail?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we routinely visit local detention centers for notarizations. We know the procedures required to efficiently get signed documents from incarcerated individuals."
+                "text": "Yes, I routinely visit local detention centers for notarizations. I know the procedures required to efficiently get signed documents from incarcerated individuals."
               }
             },
             {
@@ -51,15 +51,15 @@ export default function SpecialConsiderations() {
               "name": "Is there a specific process for jail notarizations?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Generally, the inmate must have a valid form of ID in their property, or we must use credible witnesses. We also need their full name and booking number."
+                "text": "Yes. Generally, the inmate must have a valid form of ID in their property, or I must use credible witnesses. I also need their full name and booking number."
               }
             },
             {
               "@type": "Question",
-              "name": "Can we meet at a coffee shop or public place?",
+              "name": "Can I meet at a coffee shop or public place?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely. For safety, convenience, or privacy, many of our clients prefer to meet at local coffee shops, libraries, or outdoor public areas."
+                "text": "Absolutely. For safety, convenience, or privacy, many of my clients prefer to meet at local coffee shops, libraries, or outdoor public areas."
               }
             },
             {
@@ -67,7 +67,7 @@ export default function SpecialConsiderations() {
               "name": "Can you come to my office while I'm at work?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes! Workplace visits are common. We just ask that you have a private space, like an empty conference room or breakroom, where we can review the documents undisturbed."
+                "text": "Yes! Workplace visits are common. I just ask that you have a private space, like an empty conference room or breakroom, where I can review the documents undisturbed."
               }
             }
           ]
@@ -106,7 +106,7 @@ export default function SpecialConsiderations() {
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Special Considerations</h1>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              We understand that not all notarizations happen during normal business hours or in standard locations. We offer flexible mobile notary services tailored to your unique circumstances.
+              I understand that not all notarizations happen during normal business hours or in standard locations. I offer flexible mobile notary services tailored to your unique circumstances.
             </p>
             
             <div className="space-y-6 mb-10">
@@ -127,23 +127,23 @@ export default function SpecialConsiderations() {
                 {[
                   {
                     q: "Do you offer after-hours or late-night notary services?",
-                    a: "Yes, we offer emergency after-hours notary services pending our availability. A premium after-hours travel fee will apply."
+                    a: "Yes, I offer emergency after-hours notary services pending my availability. A premium after-hours travel fee will apply."
                   },
                   {
                     q: "Can you notarize documents for an inmate at the Mecklenburg County Jail?",
-                    a: "Yes, we routinely visit local detention centers for notarizations. We know the procedures required to efficiently get signed documents from incarcerated individuals."
+                    a: "Yes, I routinely visit local detention centers for notarizations. I know the procedures required to efficiently get signed documents from incarcerated individuals."
                   },
                   {
                     q: "Is there a specific process for jail notarizations?",
-                    a: "Yes. Generally, the inmate must have a valid form of ID in their property, or we must use credible witnesses. We also need their full name and booking number."
+                    a: "Yes. Generally, the inmate must have a valid form of ID in their property, or I must use credible witnesses. I also need their full name and booking number."
                   },
                   {
-                    q: "Can we meet at a coffee shop or public place?",
-                    a: "Absolutely. For safety, convenience, or privacy, many of our clients prefer to meet at local coffee shops, libraries, or outdoor public areas."
+                    q: "Can I meet at a coffee shop or public place?",
+                    a: "Absolutely. For safety, convenience, or privacy, many of my clients prefer to meet at local coffee shops, libraries, or outdoor public areas."
                   },
                   {
                     q: "Can you come to my office while I'm at work?",
-                    a: "Yes! Workplace visits are common. We just ask that you have a private space, like an empty conference room or breakroom, where we can review the documents undisturbed."
+                    a: "Yes! Workplace visits are common. I just ask that you have a private space, like an empty conference room or breakroom, where I can review the documents undisturbed."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">

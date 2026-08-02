@@ -80,7 +80,7 @@ export default function Midland() {
         },
         {
           question: "How do I calculate the travel fee to Midland, NC?",
-          answer: "My fees are based on the NC statutory rate per notarized signature plus an affordable mobile travel fee calculated from your precise address. Let us know your address and I will provide an up-front quote."
+          answer: "My fees are based on the NC statutory rate per notarized signature plus an affordable mobile travel fee calculated from your precise address. Let me know your address and I will provide an up-front quote."
         },
         {
           question: "Do you offer emergency or weekend notary in Midland?",

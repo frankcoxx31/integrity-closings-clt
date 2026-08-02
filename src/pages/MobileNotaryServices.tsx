@@ -72,17 +72,17 @@ const mobileNotaryServicesSchema = {
             {
               "@type": "Question",
               "name": "Do you provide witnesses for document signings?",
-              "acceptedAnswer": { "@type": "Answer", "text": "If your documents require additional witnesses beyond the notary, we can often provide them given enough advance notice. An additional fee applies per witness provided." }
+              "acceptedAnswer": { "@type": "Answer", "text": "If your documents require additional witnesses beyond the notary, I can often provide them given enough advance notice. An additional fee applies per witness provided." }
             },
             {
               "@type": "Question",
               "name": "How far do you travel in the Charlotte area?",
-              "acceptedAnswer": { "@type": "Answer", "text": "We travel extensively throughout Mecklenburg County, Union County, and parts of Cabarrus County. This includes Charlotte, Mint Hill, Matthews, Pineville, Concord, Monroe, and Indian Trail." }
+              "acceptedAnswer": { "@type": "Answer", "text": "I travel extensively throughout Mecklenburg County, Union County, and parts of Cabarrus County. This includes Charlotte, Mint Hill, Matthews, Pineville, Concord, Monroe, and Indian Trail." }
             },
             {
               "@type": "Question",
               "name": "Can you print my documents before arriving?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer document printing services for an additional fee. You can simply email us your PDF documents beforehand, and we will bring the physical copies to your location." }
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes, I offer document printing services for an additional fee. You can simply email me your PDF documents beforehand, and I will bring the physical copies to your location." }
             }
           ]
         }
@@ -188,7 +188,7 @@ export default function MobileNotaryServices() {
     {
       name: "Layvay Richardson",
       subtitle: "Local Guide · 18 reviews",
-      text: "He was very respectful, patient and took the time with us with the paperwork",
+      text: "He was very respectful, patient and took the time with me with the paperwork",
       stars: 5
     },
     {
@@ -238,13 +238,13 @@ export default function MobileNotaryServices() {
             <div>
               <h2 className="text-2xl font-bold text-slate-900 mb-4">Same-Day Mobile Notary In The Charlotte Area</h2>
               <p className="text-slate-600 mb-4 leading-relaxed">
-                Charlotte residents, business owners, and families throughout Mecklenburg and Union counties count on Integrity Closings CLT when documents need to be notarized fast — and they can't get to an office. Whether you're in SouthPark, Ballantyne, Mint Hill, or Monroe, we come to you within hours.
+                Charlotte residents, business owners, and families throughout Mecklenburg and Union counties count on Integrity Closings CLT when documents need to be notarized fast — and they can't get to an office. Whether you're in SouthPark, Ballantyne, Mint Hill, or Monroe, I come to you within hours.
               </p>
               <p className="text-slate-600 mb-4 leading-relaxed">
-                We specialize in situations where time matters most: a family member hospitalized at Atrium Health or Novant who needs a power of attorney signed, a real estate closing that needs a notary at the property, or an after-hours signing when every other option is closed.
+                I specialize in situations where time matters most: a family member hospitalized at Atrium Health or Novant who needs a power of attorney signed, a real estate closing that needs a notary at the property, or an after-hours signing when every other option is closed.
               </p>
               <p className="text-slate-600 mb-6 leading-relaxed">
-                Simply call or text 980-505-8050, tell us what you need and where you are, and we'll confirm availability and arrive — often the same day.
+                Simply call or text 980-505-8050, tell me what you need and where you are, and I'll confirm availability and arrive — often the same day.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/booking" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 transition-colors">Book Now</Link>
@@ -257,12 +257,12 @@ export default function MobileNotaryServices() {
               <h3 className="text-lg font-bold text-brand-900 mb-3">Why Charlotte Residents Choose Integrity Closings CLT</h3>
               <ul className="space-y-3">
                 {[
-                  "We come to your home, office, or hospital room",
+                  "I come to your home, office, or hospital room",
                   "Same-day and after-hours appointments available",
                   "NC commissioned notary public — Frank L. Coxx",
                   "Hospital bedside notarizations throughout Charlotte",
                   "Serving Mecklenburg, Union & Cabarrus counties",
-                  "Responsive — call or text, we answer quickly"
+                  "Responsive — call or text, I answer quickly"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-brand-600 mr-2 flex-shrink-0 mt-0.5" />
@@ -280,18 +280,18 @@ export default function MobileNotaryServices() {
           <div className="grid md:grid-cols-2 gap-6 text-slate-600 leading-relaxed">
             <div>
               <p className="mb-4">
-                <strong className="text-slate-800">Families with aging or ill relatives</strong> are the most common clients we serve in Charlotte. When a parent or spouse is in the hospital or a nursing home and decisions need to be made, a power of attorney or advance directive must be signed and notarized before it's too late. We go directly to Atrium Health, Novant Health, and care facilities throughout Mecklenburg County.
+                <strong className="text-slate-800">Families with aging or ill relatives</strong> are the most common clients I serve in Charlotte. When a parent or spouse is in the hospital or a nursing home and decisions need to be made, a power of attorney or advance directive must be signed and notarized before it's too late. I go directly to Atrium Health, Novant Health, and care facilities throughout Mecklenburg County.
               </p>
               <p className="mb-4">
-                <strong className="text-slate-800">Homebound and elderly residents</strong> throughout Charlotte's neighborhoods — from Ballantyne to Huntersville — often need <Link to="/blog/notarize-deed-in-trust-north-carolina" className="text-brand-600 hover:underline">estate documents notarized</Link> but can no longer drive. We make house calls throughout the metro area, including Indian Trail, Waxhaw, and Monroe in Union County.
+                <strong className="text-slate-800">Homebound and elderly residents</strong> throughout Charlotte's neighborhoods — from Ballantyne to Huntersville — often need <Link to="/blog/notarize-deed-in-trust-north-carolina" className="text-brand-600 hover:underline">estate documents notarized</Link> but can no longer drive. I make house calls throughout the metro area, including Indian Trail, Waxhaw, and Monroe in Union County.
               </p>
             </div>
             <div>
               <p className="mb-4">
-                <strong className="text-slate-800">Real estate transactions</strong> frequently require a notary at the property, a title company, or an attorney's office. We work with Charlotte-area buyers, sellers, and attorneys on deed transfers, quitclaim deeds, and closing packages — including same-day service for time-sensitive closings.
+                <strong className="text-slate-800">Real estate transactions</strong> frequently require a notary at the property, a title company, or an attorney's office. I work with Charlotte-area buyers, sellers, and attorneys on deed transfers, quitclaim deeds, and closing packages — including same-day service for time-sensitive closings.
               </p>
               <p className="mb-4">
-                <strong className="text-slate-800">Business owners and professionals</strong> across Charlotte use our services for contracts, corporate resolutions, and employment documents — especially when multiple parties need to sign and a convenient central location doesn't exist.
+                <strong className="text-slate-800">Business owners and professionals</strong> across Charlotte use my services for contracts, corporate resolutions, and employment documents — especially when multiple parties need to sign and a convenient central location doesn't exist.
               </p>
             </div>
           </div>
@@ -323,7 +323,7 @@ export default function MobileNotaryServices() {
         {/* Testimonials */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 mb-12">
           <h2 className="text-2xl font-bold text-slate-900 mb-2">What Charlotte Clients Say</h2>
-          <p className="text-slate-500 mb-8 text-sm">Real reviews from our Google Business Profile</p>
+          <p className="text-slate-500 mb-8 text-sm">Real reviews from my Google Business Profile</p>
           <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((t, i) => (
               <div key={i} className="bg-slate-50 rounded-xl border border-slate-100 p-6">
@@ -350,9 +350,9 @@ export default function MobileNotaryServices() {
 
         {/* Service area */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 mb-12">
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Charlotte Neighborhoods & Surrounding Areas We Serve</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Charlotte Neighborhoods & Surrounding Areas I Serve</h2>
           <p className="text-slate-600 mb-6 leading-relaxed">
-            Integrity Closings CLT serves all of Charlotte and the surrounding communities in Mecklenburg, Union, and Cabarrus counties. Whether you're in Uptown, need a notary in Ballantyne, or are looking for a mobile notary in Monroe or Waxhaw, we come to you.
+            Integrity Closings CLT serves all of Charlotte and the surrounding communities in Mecklenburg, Union, and Cabarrus counties. Whether you're in Uptown, need a notary in Ballantyne, or are looking for a mobile notary in Monroe or Waxhaw, I come to you.
           </p>
           <div className="flex flex-wrap gap-2 mb-6">
             {neighborhoods.map((n, i) => (
@@ -389,15 +389,15 @@ export default function MobileNotaryServices() {
               },
               {
                 q: "Do you provide witnesses for document signings?",
-                a: "If your documents require additional witnesses beyond the notary, we can often provide them given enough advance notice. An additional fee applies per witness provided."
+                a: "If your documents require additional witnesses beyond the notary, I can often provide them given enough advance notice. An additional fee applies per witness provided."
               },
               {
                 q: "How far do you travel in the Charlotte area?",
-                a: "We travel extensively throughout Mecklenburg County, Union County, and parts of Cabarrus County. This includes Charlotte, Mint Hill, Matthews, Pineville, Concord, Monroe, and Indian Trail."
+                a: "I travel extensively throughout Mecklenburg County, Union County, and parts of Cabarrus County. This includes Charlotte, Mint Hill, Matthews, Pineville, Concord, Monroe, and Indian Trail."
               },
               {
                 q: "Can you print my documents before arriving?",
-                a: "Yes, we offer document printing services for an additional fee. You can simply email us your PDF documents beforehand, and we will bring the physical copies to your location."
+                a: "Yes, I offer document printing services for an additional fee. You can simply email me your PDF documents beforehand, and I will bring the physical copies to your location."
               }
             ].map((faq, i) => (
               <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
@@ -411,7 +411,7 @@ export default function MobileNotaryServices() {
         <div className="bg-slate-900 rounded-2xl p-8 text-center text-white">
           <h2 className="text-2xl font-bold mb-4">Need a Mobile Notary in Charlotte Today?</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            Call or text 980-505-8050 for same-day service, or book online. We serve Charlotte and all surrounding communities in Mecklenburg and Union counties.
+            Call or text 980-505-8050 for same-day service, or book online. I serve Charlotte and all surrounding communities in Mecklenburg and Union counties.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-md text-slate-900 bg-white hover:bg-slate-100 transition-colors">Book Appointment</Link>

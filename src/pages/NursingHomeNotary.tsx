@@ -63,7 +63,7 @@ const nursingHomeNotarySchema = {
               "name": "Can a notary visit me in a nursing home in Charlotte?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. We provide mobile notary services directly to nursing home and assisted living residents throughout Charlotte, NC and surrounding areas including Matthews, Monroe, Mint Hill, and Concord. We coordinate with facility staff and come to the resident's room."
+                "text": "Yes. I provide mobile notary services directly to nursing home and assisted living residents throughout Charlotte, NC and surrounding areas including Matthews, Monroe, Mint Hill, and Concord. I coordinate with facility staff and come to the resident's room."
               }
             },
             {
@@ -79,7 +79,7 @@ const nursingHomeNotarySchema = {
               "name": "Does the nursing home resident need to have mental capacity?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. North Carolina law requires the notary to confirm the signer understands what they are signing and is acting voluntarily. If a resident has dementia or another condition affecting cognition, we may not be able to proceed. We recommend consulting with the attending physician before scheduling."
+                "text": "Yes. North Carolina law requires the notary to confirm the signer understands what they are signing and is acting voluntarily. If a resident has dementia or another condition affecting cognition, I may not be able to proceed. I recommend consulting with the attending physician before scheduling."
               }
             },
             {
@@ -87,15 +87,15 @@ const nursingHomeNotarySchema = {
               "name": "How do I schedule a notary to come to an assisted living facility?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Call or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
+                "text": "Call or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. I coordinate directly with the facility's front desk or charge nurse before arriving."
               }
             },
             {
               "@type": "Question",
-              "name": "Do we need witnesses for a Power of Attorney at a nursing home?",
+              "name": "Do I need witnesses for a Power of Attorney at a nursing home?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. North Carolina requires two qualified witnesses for a Power of Attorney in addition to the notary. Witnesses cannot be the named agent, a relative of the signer, or anyone who stands to inherit from the signer. Nursing home staff are often prohibited by facility policy from serving as witnesses. We can sometimes arrange witnesses for an additional fee."
+                "text": "Yes. North Carolina requires two qualified witnesses for a Power of Attorney in addition to the notary. Witnesses cannot be the named agent, a relative of the signer, or anyone who stands to inherit from the signer. Nursing home staff are often prohibited by facility policy from serving as witnesses. I can sometimes arrange witnesses for an additional fee."
               }
             }
           ]
@@ -129,7 +129,7 @@ export default function NursingHomeNotary() {
   const faqs = [
     {
       q: "Can a notary visit me in a nursing home in Charlotte?",
-      a: "Yes. We provide mobile notary services directly to nursing home and assisted living residents throughout Charlotte, NC and surrounding areas including Matthews, Monroe, Mint Hill, and Concord. We coordinate with facility staff and come to the resident's room."
+      a: "Yes. I provide mobile notary services directly to nursing home and assisted living residents throughout Charlotte, NC and surrounding areas including Matthews, Monroe, Mint Hill, and Concord. I coordinate with facility staff and come to the resident's room."
     },
     {
       q: "What documents can be notarized at a nursing home?",
@@ -137,15 +137,15 @@ export default function NursingHomeNotary() {
     },
     {
       q: "Does the nursing home resident need to have mental capacity?",
-      a: "Yes. North Carolina law requires the notary to confirm the signer understands what they are signing and is acting voluntarily. If a resident has dementia or another condition affecting cognition, we may not be able to proceed. We recommend consulting with the attending physician before scheduling."
+      a: "Yes. North Carolina law requires the notary to confirm the signer understands what they are signing and is acting voluntarily. If a resident has dementia or another condition affecting cognition, I may not be able to proceed. I recommend consulting with the attending physician before scheduling."
     },
     {
       q: "How do I schedule a notary to come to an assisted living facility?",
-      a: "Call or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. We coordinate directly with the facility's front desk or charge nurse before arriving."
+      a: "Call or text (980) 505-8050. Tell us the facility name, the resident's room, what documents need to be notarized, and whether two qualified witnesses will be present. I coordinate directly with the facility's front desk or charge nurse before arriving."
     },
     {
-      q: "Do we need witnesses for a Power of Attorney at a nursing home?",
-      a: "Yes. North Carolina requires two qualified witnesses for a Power of Attorney in addition to the notary. Witnesses cannot be the named agent, a relative of the signer, or anyone who stands to inherit from the signer. Nursing home staff are often prohibited by facility policy from serving as witnesses. We can sometimes arrange witnesses for an additional fee."
+      q: "Do I need witnesses for a Power of Attorney at a nursing home?",
+      a: "Yes. North Carolina requires two qualified witnesses for a Power of Attorney in addition to the notary. Witnesses cannot be the named agent, a relative of the signer, or anyone who stands to inherit from the signer. Nursing home staff are often prohibited by facility policy from serving as witnesses. I can sometimes arrange witnesses for an additional fee."
     }
   ];
 
@@ -211,13 +211,13 @@ export default function NursingHomeNotary() {
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <Heart className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">How Our Nursing Home Notary Service Works</h2>
+                <h2 className="text-2xl font-bold text-slate-900">How My Nursing Home Notary Service Works</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
                 {[
-                  { step: "1", title: "Call or text us", desc: "Tell us the facility, the resident's room, and what needs to be notarized." },
-                  { step: "2", title: "We coordinate", desc: "We contact the facility's front desk or charge nurse to confirm visitor access before arriving." },
-                  { step: "3", title: "We come to them", desc: "We arrive at the resident's room, verify identity, and complete the notarization on site." }
+                  { step: "1", title: "Call or text me", desc: "Tell us the facility, the resident's room, and what needs to be notarized." },
+                  { step: "2", title: "I coordinate", desc: "I contact the facility's front desk or charge nurse to confirm visitor access before arriving." },
+                  { step: "3", title: "I come to them", desc: "I arrive at the resident's room, verify identity, and complete the notarization on site." }
                 ].map((item) => (
                   <div key={item.step} className="bg-slate-50 rounded-xl p-6 border border-slate-100 text-center">
                     <div className="w-10 h-10 bg-brand-600 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-3">{item.step}</div>
@@ -232,7 +232,7 @@ export default function NursingHomeNotary() {
             <section className="mb-12">
               <div className="flex items-center mb-6">
                 <CheckCircle className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Documents We Commonly Notarize at Nursing Homes</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Documents I Commonly Notarize at Nursing Homes</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {commonDocuments.map((doc, i) => (
@@ -243,7 +243,7 @@ export default function NursingHomeNotary() {
                 ))}
               </div>
               <p className="text-slate-500 text-sm mt-4">
-                Need something not on this list? <a href="tel:9805058050" className="text-brand-600 hover:underline">Call us</a> — if it can be notarized in NC, we can handle it.
+                Need something not on this list? <a href="tel:9805058050" className="text-brand-600 hover:underline">Call me</a> — if it can be notarized in NC, I can handle it.
               </p>
             </section>
 
@@ -275,7 +275,7 @@ export default function NursingHomeNotary() {
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <Users className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Facilities We Visit</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Facilities I Visit</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {facilities.map((f, i) => (
@@ -298,7 +298,7 @@ export default function NursingHomeNotary() {
                       "The resident must have mental capacity — they must understand what they are signing and be acting voluntarily.",
                       "A valid government-issued photo ID is required (driver's license, state ID, or passport).",
                       "Power of Attorney documents require two qualified witnesses in addition to the notary.",
-                      "Documents should be printed and unsigned before we arrive — do not have the resident sign early.",
+                      "Documents should be printed and unsigned before I arrive — do not have the resident sign early.",
                       "If dementia or cognitive impairment is a concern, consult the attending physician before scheduling."
                     ].map((item, i) => (
                       <li key={i} className="flex items-start text-slate-700">
@@ -328,10 +328,10 @@ export default function NursingHomeNotary() {
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <MapPin className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Areas We Serve</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Areas I Serve</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We serve nursing homes, assisted living facilities, and memory care communities throughout Charlotte, Matthews, Monroe, Mint Hill, Pineville, Concord, Harrisburg, Indian Trail, Waxhaw, and surrounding areas in Mecklenburg, Union, and Cabarrus counties.
+                I serve nursing homes, assisted living facilities, and memory care communities throughout Charlotte, Matthews, Monroe, Mint Hill, Pineville, Concord, Harrisburg, Indian Trail, Waxhaw, and surrounding areas in Mecklenburg, Union, and Cabarrus counties.
               </p>
             </section>
 
@@ -344,11 +344,11 @@ export default function NursingHomeNotary() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
                   "Experienced with facility coordination and visitor protocols",
-                  "Patient, respectful, and calm — we understand these situations are sensitive",
+                  "Patient, respectful, and calm — I understand these situations are sensitive",
                   "Same-day and after-hours appointments available",
                   "Commissioned NC Notary Public — credentials verifiable through NC Secretary of State",
                   "Serving Charlotte area facilities for Power of Attorney, Living Wills, and more",
-                  "We can sometimes arrange qualified witnesses if your family cannot provide them"
+                  "I can sometimes arrange qualified witnesses if your family cannot provide them"
                 ].map((reason, i) => (
                   <div key={i} className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-brand-600 mr-3 flex-shrink-0 mt-0.5" />
@@ -375,7 +375,7 @@ export default function NursingHomeNotary() {
             {/* CTA */}
             <div className="text-center pt-10 border-t border-slate-100">
               <p className="text-xl font-bold text-slate-900 mb-2">Need a Notary at a Nursing Home or Assisted Living Facility?</p>
-              <p className="text-slate-500 mb-6">We coordinate with the facility and come directly to the resident. Same-day appointments often available.</p>
+              <p className="text-slate-500 mb-6">I coordinate with the facility and come directly to the resident. Same-day appointments often available.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="tel:9805058050"

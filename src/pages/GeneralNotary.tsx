@@ -5,10 +5,10 @@ import { useEffect } from 'react';
 export default function GeneralNotary() {
   useEffect(() => {
     // SEO Meta Tags
-    document.title = "General Mobile Notary Charlotte NC | We Come To You";
+    document.title = "General Mobile Notary Charlotte NC | I Come To You";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "General mobile notary services in Charlotte, NC. Skip the line and hassle, we travel to you for affidavits, auto titles, I-9s, and general documents.");
+      metaDescription.setAttribute('content', "General mobile notary services in Charlotte, NC. Skip the line and hassle, I travel to you for affidavits, auto titles, I-9s, and general documents.");
     }
 
     // JSON-LD Schema
@@ -27,7 +27,7 @@ export default function GeneralNotary() {
             "url": "https://www.integrityclosingsclt.com/"
           },
           "areaServed": {"@type": "City", "name": "Charlotte"},
-          "description": "General mobile notary services in Charlotte, NC. Skip the line and hassle, we travel to you for affidavits, auto titles, I-9s, and general documents.",
+          "description": "General mobile notary services in Charlotte, NC. Skip the line and hassle, I travel to you for affidavits, auto titles, I-9s, and general documents.",
           "url": "https://www.integrityclosingsclt.com/services/general-notary"
         },
         {
@@ -46,7 +46,7 @@ export default function GeneralNotary() {
               "name": "Will you notarize my handwritten document?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we can notarize signatures on handwritten documents as long as the document has appropriate notarial wording (a jurat or acknowledgment certificate) attached or included, and all signers have valid ID."
+                "text": "Yes, I can notarize signatures on handwritten documents as long as the document has appropriate notarial wording (a jurat or acknowledgment certificate) attached or included, and all signers have valid ID."
               }
             },
             {
@@ -54,7 +54,7 @@ export default function GeneralNotary() {
               "name": "Do you offer I-9 Employment Verification?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. While I-9 forms technically do not require a notary seal, we frequently act as an Authorized Representative for remote employees to verify their physical I-9 identity documents on behalf of their employer."
+                "text": "Yes. While I-9 forms technically do not require a notary seal, I frequently act as an Authorized Representative for remote employees to verify their physical I-9 identity documents on behalf of their employer."
               }
             },
             {
@@ -62,7 +62,7 @@ export default function GeneralNotary() {
               "name": "How much does a general mobile notary cost?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "In North Carolina, the maximum fee for a notarial act is $10 per signature. However, as a mobile notary, we also charge a separate travel/convenience fee which varies based on the travel distance and time of day."
+                "text": "In North Carolina, the maximum fee for a notarial act is $10 per signature. However, as a mobile notary, I also charge a separate travel/convenience fee which varies based on the travel distance and time of day."
               }
             },
             {
@@ -70,7 +70,7 @@ export default function GeneralNotary() {
               "name": "Can you meet me at a coffee shop or my office?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely! We provide true mobile services and are happy to meet you at a local Starbucks, your workplace lobby, or any public location where you feel comfortable."
+                "text": "Absolutely! I provide true mobile services and are happy to meet you at a local Starbucks, your workplace lobby, or any public location where you feel comfortable."
               }
             }
           ]
@@ -99,9 +99,9 @@ export default function GeneralNotary() {
           <div className="p-8 sm:p-12 max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Convenient Notarization at Your Location</h2>
             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-              Skip the hassle of finding a local notary office, waiting in lines, or dealing with limited business hours. Our general mobile notary service brings the notary public directly to you—whether you're at home, at the office, or even a local coffee shop.
+              Skip the hassle of finding a local notary office, waiting in lines, or dealing with limited business hours. My general mobile notary service brings the notary public directly to you—whether you're at home, at the office, or even a local coffee shop.
             </p>
-            <h3 className="text-xl font-bold text-slate-900 mb-4">Common Documents We Notarize:</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-4">Common Documents I Notarize:</h3>
             <ul className="space-y-3 mb-8">
               {[
                 'Affidavits & Sworn Statements', 
@@ -118,7 +118,7 @@ export default function GeneralNotary() {
             </ul>
             <div className="bg-brand-50 p-6 rounded-xl border border-brand-100 mb-8">
               <h3 className="text-lg font-bold text-brand-900 mb-2">Fast, Flexible, and Reliable</h3>
-              <p className="text-brand-800">We offer flexible scheduling, including evenings and weekends, to accommodate your busy lifestyle. Just let us know where and when, and we'll be there to ensure your documents are legally and properly notarized.</p>
+              <p className="text-brand-800">I offer flexible scheduling, including evenings and weekends, to accommodate your busy lifestyle. Just let me know where and when, and I'll be there to ensure your documents are legally and properly notarized.</p>
             </div>
 
             <section className="mb-12">
@@ -131,19 +131,19 @@ export default function GeneralNotary() {
                   },
                   {
                     q: "Will you notarize my handwritten document?",
-                    a: "Yes, we can notarize signatures on handwritten documents as long as the document has appropriate notarial wording (a jurat or acknowledgment certificate) attached or included, and all signers have valid ID."
+                    a: "Yes, I can notarize signatures on handwritten documents as long as the document has appropriate notarial wording (a jurat or acknowledgment certificate) attached or included, and all signers have valid ID."
                   },
                   {
                     q: "Do you offer I-9 Employment Verification?",
-                    a: "Yes. While I-9 forms technically do not require a notary seal, we frequently act as an Authorized Representative for remote employees to verify their physical I-9 identity documents on behalf of their employer."
+                    a: "Yes. While I-9 forms technically do not require a notary seal, I frequently act as an Authorized Representative for remote employees to verify their physical I-9 identity documents on behalf of their employer."
                   },
                   {
                     q: "How much does a general mobile notary cost?",
-                    a: "In North Carolina, the maximum fee for a notarial act is $10 per signature. However, as a mobile notary, we also charge a separate travel/convenience fee which varies based on the travel distance and time of day."
+                    a: "In North Carolina, the maximum fee for a notarial act is $10 per signature. However, as a mobile notary, I also charge a separate travel/convenience fee which varies based on the travel distance and time of day."
                   },
                   {
                     q: "Can you meet me at a coffee shop or my office?",
-                    a: "Absolutely! We provide true mobile services and are happy to meet you at a local Starbucks, your workplace lobby, or any public location where you feel comfortable."
+                    a: "Absolutely! I provide true mobile services and are happy to meet you at a local Starbucks, your workplace lobby, or any public location where you feel comfortable."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">

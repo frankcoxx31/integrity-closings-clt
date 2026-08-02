@@ -47,17 +47,17 @@ export default function AreasServed() {
           
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-6">
-              Our Service Areas
+              My Service Areas
             </h1>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Integrity Closings CLT is proud to be a premier mobile notary public and loan signing agency serving the greater Charlotte metropolitan area. We travel to homes, hospitals, nursing facilities, corporate offices, and coffee shops throughout Mecklenburg County, Union County, and Cabarrus County.
+              Integrity Closings CLT is proud to be a premier mobile notary public and loan signing agency serving the greater Charlotte metropolitan area. I travel to homes, hospitals, nursing facilities, corporate offices, and coffee shops throughout Mecklenburg County, Union County, and Cabarrus County.
             </p>
 
             <section className="mb-12">
               <div className="flex items-center mb-6">
                 <Map className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Cities & Neighborhoods We Serve</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Cities & Neighborhoods I Serve</h2>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-6 mb-12">
                 {serviceAreas.map((area, index) => (
@@ -102,10 +102,10 @@ export default function AreasServed() {
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Don't See Your City Listed?</h3>
                   <p className="text-slate-600 leading-relaxed mb-4">
-                    While the locations above represent our primary service zone, we frequently accommodate special requests and extended travel for real estate closings and emergency bedside notarizations. 
+                    While the locations above represent my primary service zone, I frequently accommodate special requests and extended travel for real estate closings and emergency bedside notarizations. 
                   </p>
                   <p className="text-sm text-slate-500 italic">
-                    *Additional travel fees may apply for distances outside of our standard radius.
+                    *Additional travel fees may apply for distances outside of my standard radius.
                   </p>
                 </div>
               </div>

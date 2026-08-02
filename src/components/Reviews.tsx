@@ -25,7 +25,7 @@ export default function Reviews() {
     <section className="py-20 bg-slate-50 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">What Our Clients Say</h2>
+          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">What My Clients Say</h2>
           <div className="mt-4 flex items-center justify-center gap-2">
             <span className="text-lg font-semibold text-slate-700">Excellent</span>
             {rating != null && <StarRow rating={rating} size="w-5 h-5" />}

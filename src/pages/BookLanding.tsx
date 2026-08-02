@@ -50,7 +50,7 @@ const SERVICES = [
   {
     id: 'hospital-visit',
     name: 'Hospital, Hospice, or Facility Visit',
-    description: 'Compassionate bedside service at Charlotte hospitals and care facilities. We coordinate with facility staff.',
+    description: 'Compassionate bedside service at Charlotte hospitals and care facilities. I coordinate with facility staff.',
     icon: <Heart className="w-8 h-8" />
   },
   {
@@ -70,7 +70,7 @@ const SERVICES = [
 const FAQS = [
   {
     question: "How much does notarization cost in North Carolina?",
-    answer: "In North Carolina, the statutory notary fee is $10 per principal signature. As a mobile service, we also charge a travel fee based on the distance and time of day, which must be agreed upon prior to the appointment. We provide clear, upfront quotes."
+    answer: "In North Carolina, the statutory notary fee is $10 per principal signature. As a mobile service, I also charge a travel fee based on the distance and time of day, which must be agreed upon prior to the appointment. I provide clear, upfront quotes."
   },
   {
     question: "What ID do I need?",
@@ -78,27 +78,27 @@ const FAQS = [
   },
   {
     question: "Can you come to a hospital or care facility?",
-    answer: "Yes, we specialize in bedside notarizations at hospitals (like Atrium Health and Novant Health) and nursing homes across the Charlotte area. We handle these sensitive appointments with patience and professionalism."
+    answer: "Yes, I specialize in bedside notarizations at hospitals (like Atrium Health and Novant Health) and nursing homes across the Charlotte area. I handle these sensitive appointments with patience and professionalism."
   },
   {
     question: "Do estate planning documents need witnesses?",
-    answer: "Many estate planning documents (like Wills and some POAs) require one or two disinterested witnesses. While we can sometimes assist in finding witnesses, it is usually best if you coordinate with friends or neighbors who are not named in the document."
+    answer: "Many estate planning documents (like Wills and some POAs) require one or two disinterested witnesses. While I can sometimes assist in finding witnesses, it is usually best if you coordinate with friends or neighbors who are not named in the document."
   },
   {
     question: "Do you offer same-day appointments?",
-    answer: "Absolutely. We pride ourselves on offering same-day mobile notary services whenever possible. If you have an urgent need, calling us directly is the fastest way to secure a same-day slot."
+    answer: "Absolutely. I pride ourselves on offering same-day mobile notary services whenever possible. If you have an urgent need, calling us directly is the fastest way to secure a same-day slot."
   },
   {
     question: "Can you notarize real estate documents?",
-    answer: "Yes, we are highly experienced in real estate closings. Whether it's a seller's package, a refinance, or a simple quitclaim deed, we ensure every page is initialed and signed correctly the first time."
+    answer: "Yes, I am highly experienced in real estate closings. Whether it's a seller's package, a refinance, or a simple quitclaim deed, I ensure every page is initialed and signed correctly the first time."
   },
   {
     question: "Do you provide legal advice?",
-    answer: "No. As Notaries Public, we are prohibited by law from providing legal advice, explaining the effects of a document, or assisting with the preparation of legal forms. Please consult an attorney for legal questions."
+    answer: "No. As Notaries Public, I am prohibited by law from providing legal advice, explaining the effects of a document, or assisting with the preparation of legal forms. Please consult an attorney for legal questions."
   },
   {
     question: "What areas do you serve?",
-    answer: "We primarily serve Charlotte and Mint Hill, but we travel throughout Mecklenburg and surrounding counties including Matthews, Indian Trail, Harrisburg, Concord, Monroe, and more."
+    answer: "I primarily serve Charlotte and Mint Hill, but I travel throughout Mecklenburg and surrounding counties including Matthews, Indian Trail, Harrisburg, Concord, Monroe, and more."
   }
 ];
 
@@ -108,7 +108,7 @@ const TESTIMONIALS = [
     author: "Sarah J., Charlotte"
   },
   {
-    quote: "I've used several mobile notaries in the area, but the attention to detail here is unmatched. They handled our complex real estate closing perfectly.",
+    quote: "I've used several mobile notaries in the area, but the attention to detail here is unmatched. They handled my complex real estate closing perfectly.",
     author: "David M., Mint Hill"
   },
   {
@@ -416,9 +416,9 @@ export default function BookLanding() {
           <div className="grid md:grid-cols-3 gap-8 relative mt-16">
             <div className="hidden md:block absolute top-10 left-[20%] right-[20%] h-[2px] bg-slate-200 border-dashed border-t"></div>
             {[
-              { num: "01", title: "Choose your service", desc: "Select the notarization type you need from our list of expert services." },
-              { num: "02", title: "Confirm appointment", desc: "Pick a date and time that works and tell us where the notary should meet you." },
-              { num: "03", title: "Meet your notary", desc: "We arrive promptly, verify your ID, witness your signature, and apply the official seal." }
+              { num: "01", title: "Choose your service", desc: "Select the notarization type you need from my list of expert services." },
+              { num: "02", title: "Confirm appointment", desc: "Pick a date and time that works and tell me where the notary should meet you." },
+              { num: "03", title: "Meet your notary", desc: "I arrive promptly, verify your ID, witness your signature, and apply the official seal." }
             ].map((step, i) => (
               <div key={i} className="relative z-10 flex flex-col items-center">
                 <div className="w-14 h-14 bg-[#0F1A2B] text-white rounded-full flex items-center justify-center font-bold text-lg mb-6 shadow-lg shadow-[#0F1A2B]/20">
@@ -457,7 +457,7 @@ export default function BookLanding() {
               Integrity Closings CLT provides mobile notary and loan signing services across Charlotte, Mint Hill, and nearby areas, with a focus on professionalism, punctuality, and confidentiality.
             </p>
             <p className="text-lg text-[#6B7283] mb-10 leading-relaxed">
-              We understand that your time is valuable and your legal matters are private. Our goal is to make the notarization process the smoothest part of your transaction, handled with the precision that 9+ years of experience brings.
+              I understand that your time is valuable and your legal matters are private. My goal is to make the notarization process the smoothest part of your transaction, handled with the precision that 9+ years of experience brings.
             </p>
             <button 
               onClick={() => scrollToForm()}
@@ -472,7 +472,7 @@ export default function BookLanding() {
       {/* 7. SERVICE AREA SECTION */}
       <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4">
-          <SectionHeading title="Service Areas" subtitle="We travel across the greater Charlotte metro and Mint Hill region to reach you wherever you are." />
+          <SectionHeading title="Service Areas" subtitle="I travel across the greater Charlotte metro and Mint Hill region to reach you wherever you are." />
           <div className="bg-white rounded-3xl p-10 shadow-sm border border-[#E3E8EF]">
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
               {SERVICE_AREAS.map((area) => (
@@ -562,7 +562,7 @@ export default function BookLanding() {
                          </div>
                        </div>
                        <div className="grid grid-cols-7 gap-1 text-center text-[10px] uppercase font-bold text-[#6B7283] mb-4">
-                         {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(d => <div key={d}>{d}</div>)}
+                         {["Su", "Mo", "Tu", "I", "Th", "Fr", "Sa"].map(d => <div key={d}>{d}</div>)}
                        </div>
                        <div className="grid grid-cols-7 gap-1">
                          {eachDayOfInterval({ 
@@ -691,7 +691,7 @@ export default function BookLanding() {
                     <CheckCircle className="w-12 h-12 text-green-600" />
                   </div>
                   <h3 className="text-3xl font-extrabold mb-4">Request Sent!</h3>
-                  <p className="text-lg text-[#6B7283] mb-8 font-medium">Thank you, {formData.firstName}. We'll review your request for <span className="text-[#0F1A2B]">{selectedDate && format(selectedDate, "MMM d")} at {selectedTime}</span> and contact you shortly.</p>
+                  <p className="text-lg text-[#6B7283] mb-8 font-medium">Thank you, {formData.firstName}. I'll review your request for <span className="text-[#0F1A2B]">{selectedDate && format(selectedDate, "MMM d")} at {selectedTime}</span> and contact you shortly.</p>
                   <button onClick={() => setStep(1)} className="px-10 py-4 border-2 border-[#0F1A2B] text-[#0F1A2B] font-bold rounded-xl hover:bg-[#0F1A2B] hover:text-white transition-all">Make Another Request</button>
                 </div>
               )}
@@ -703,7 +703,7 @@ export default function BookLanding() {
       {/* 9. TESTIMONIALS SECTION */}
       <section className="py-20 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto px-4">
-          <SectionHeading title="What our clients say" />
+          <SectionHeading title="What my clients say" />
           <div className="grid md:grid-cols-3 gap-8">
             {TESTIMONIALS.map((t, i) => (
               <div key={i} className="bg-white p-10 rounded-3xl border border-[#E3E8EF] relative">
@@ -754,7 +754,7 @@ export default function BookLanding() {
             <div className="relative z-10">
               <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Need a notary today?</h2>
               <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
-                We're standing by to assist with your most critical appointments. Secure, professional, and reliable mobile service across the Charlotte metro.
+                I'm standing by to assist with your most critical appointments. Secure, professional, and reliable mobile service across the Charlotte metro.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <button 

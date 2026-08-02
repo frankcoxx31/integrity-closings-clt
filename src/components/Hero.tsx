@@ -15,13 +15,13 @@ export default function Hero() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center pt-24 pb-16 md:pt-28 md:pb-20">
         <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-          Charlotte's On-Demand Notary — Home, Office, or Hospital
+          Charlotte's On-Demand Notary — Home, Office, or Hospital Bedside
         </h1>
         <p className="text-xl md:text-2xl text-slate-300 mb-4 max-w-4xl mx-auto">
-          We come to you for same-day notarizations, hospital visits, estate documents, and loan signings.
+          I come to you for same-day and 24/7 emergency notarizations — hospital bedside, nursing home, estate documents, and loan signings.
         </p>
         <p className="text-lg text-brand-400 font-semibold mb-8">
-          Same-Day Service • After Hours Available • Professional Signings
+          24/7 Emergency &amp; Hospital Bedside • Same-Day Service • Professional Signings
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-4xl mx-auto">

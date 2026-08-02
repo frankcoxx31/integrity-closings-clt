@@ -55,7 +55,7 @@ const hospitalNotarySchema = {
               "name": "Can you come to a hospital room same-day?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we frequently fulfill same-day requests for hospital bedside notarizations. However, we ask that you secure approval from the nursing staff regarding visitation policies before we arrive."
+                "text": "Yes, I frequently fulfill same-day requests for hospital bedside notarizations. However, I ask that you secure approval from the nursing staff regarding visitation policies before I arrive."
               }
             },
             {
@@ -63,7 +63,7 @@ const hospitalNotarySchema = {
               "name": "What if the patient does not have a physical ID on them?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "If a physical ID (like a Driver's License or Passport) was left at home, North Carolina law may allow the use of credible identifying witnesses. Call us directly to discuss the specific circumstances so we can verify if this option is legally viable."
+                "text": "If a physical ID (like a Driver's License or Passport) was left at home, North Carolina law may allow the use of credible identifying witnesses. Call me directly to discuss the specific circumstances so I can verify if this option is legally viable."
               }
             },
             {
@@ -71,7 +71,7 @@ const hospitalNotarySchema = {
               "name": "Does the patient need to be awake and communicative?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely. By law, the notary must assess that the signer is alert, aware of what they are signing, and signing willingly. We cannot notarize documents for a patient who is unconscious, heavily medicated to the point of impairment, or unable to communicate."
+                "text": "Absolutely. By law, the notary must assess that the signer is alert, aware of what they are signing, and signing willingly. I cannot notarize documents for a patient who is unconscious, heavily medicated to the point of impairment, or unable to communicate."
               }
             },
             {
@@ -79,7 +79,7 @@ const hospitalNotarySchema = {
               "name": "Do I need to print the documents, or can you bring them?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We typically ask that you print the documents beforehand or have the hospital social worker print them. If that is impossible, we can offer document printing services for an additional convenience fee if you email us the files prior to the appointment."
+                "text": "I typically ask that you print the documents beforehand or have the hospital social worker print them. If that is impossible, I can offer document printing services for an additional convenience fee if you email me the files prior to the appointment."
               }
             },
             {
@@ -87,7 +87,7 @@ const hospitalNotarySchema = {
               "name": "Can a nurse or doctor act as a witness?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Hospital staff and doctors are usually prohibited by hospital policy from acting as witnesses for legal documents. We recommend arranging for friends or non-beneficiary family members to act as witnesses. If needed, we can try to provide a witness for an additional fee."
+                "text": "Hospital staff and doctors are usually prohibited by hospital policy from acting as witnesses for legal documents. I recommend arranging for friends or non-beneficiary family members to act as witnesses. If needed, I can try to provide a witness for an additional fee."
               }
             }
           ]
@@ -100,7 +100,7 @@ export default function HospitalNotary() {
     document.title = "Hospital & Bedside Notary Charlotte NC | Mobile Notary";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Need a notary at a hospital in Charlotte, NC? We provide mobile bedside notary services for patients and families at Atrium, Novant, and care facilities.");
+      metaDescription.setAttribute('content', "Need a notary at a hospital in Charlotte, NC today? I provide same-day and 24/7 emergency mobile bedside notary service for patients and families at Atrium, Novant, and every care facility in Mecklenburg County.");
     }
   }, []);
 
@@ -118,7 +118,7 @@ export default function HospitalNotary() {
   const appointmentInfo = [
     "All signers must be alert, aware, and able to communicate.",
     "A valid government-issued photo ID is required for all signers.",
-    "We cannot provide legal advice or explain the contents of documents.",
+    "I cannot provide legal advice or explain the contents of documents.",
     "Please ensure the signer is awake and ready at the scheduled time."
   ];
 
@@ -160,11 +160,11 @@ export default function HospitalNotary() {
             </nav>
 
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
-              Hospital & Bedside Notary in Charlotte, NC
+              24/7 Emergency Hospital & Bedside Notary in Charlotte, NC
             </h1>
 
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Need a notary at a hospital in Charlotte, NC? Integrity Closings CLT provides mobile bedside notary services for patients, families, and caregivers at Atrium Health Carolinas Medical Center, Novant Health Presbyterian Medical Center, Atrium Health Pineville, and rehabilitation and care facilities throughout the Charlotte metro. We travel directly to the patient's room to notarize important documents quickly and professionally, without the family needing to leave the hospital.
+              Need a notary at a hospital in Charlotte, NC? Integrity Closings CLT provides mobile bedside notary services for patients, families, and caregivers at Atrium Health Carolinas Medical Center, Novant Health Presbyterian Medical Center, Atrium Health Pineville, and rehabilitation and care facilities throughout the Charlotte metro. I travel directly to the patient's room to notarize important documents quickly and professionally, without the family needing to leave the hospital.
             </p>
 
             <div className="mb-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -193,15 +193,15 @@ export default function HospitalNotary() {
                 <h2 className="text-2xl font-bold text-slate-900">Mobile Hospital Notary Services in Charlotte, NC</h2>
               </div>
               <p className="text-slate-600 leading-relaxed mb-4">
-                We provide mobile notary services at hospitals, nursing homes, rehabilitation centers, and assisted living facilities throughout Charlotte, NC. If a signer cannot travel, we come directly to their location — a hospital bed, an ICU waiting room, or a rehab facility room.
+                I provide mobile notary services at hospitals, nursing homes, rehabilitation centers, and assisted living facilities throughout Charlotte, NC. If a signer cannot travel, I come directly to their location — a hospital bed, an ICU waiting room, or a rehab facility room.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Families in Charlotte often need a bedside notary on short notice: a parent is admitted and needs a Power of Attorney signed before surgery, a spouse needs a Healthcare Proxy notarized during an extended hospital stay, or a hospital social worker requests HIPAA authorization paperwork before discharge planning can begin. We understand these situations are stressful, and we work directly with hospital staff, charge nurses, and social workers to make the notarization as smooth as possible.
+                Families in Charlotte often need a bedside notary on short notice: a parent is admitted and needs a Power of Attorney signed before surgery, a spouse needs a Healthcare Proxy notarized during an extended hospital stay, or a hospital social worker requests HIPAA authorization paperwork before discharge planning can begin. I understand these situations are stressful, and I work directly with hospital staff, charge nurses, and social workers to make the notarization as smooth as possible.
               </p>
             </section>
 
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Documents We Commonly Notarize</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Documents I Commonly Notarize</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {commonDocuments.map((doc, i) => (
                   <div key={i} className="flex items-center">
@@ -219,10 +219,10 @@ export default function HospitalNotary() {
                   North Carolina law caps the notarial fee at $10 per notarized principal signature, regardless of where the notarization takes place.
                 </p>
                 <p>
-                  For a hospital or bedside visit, a separate travel fee applies at the current IRS mileage rate, calculated from our office to the hospital. There is no separate "hospital surcharge" — you're paying the statutory notary fee plus mileage, the same as any other mobile appointment.
+                  For a hospital or bedside visit, a separate travel fee applies at the current IRS mileage rate, calculated from my office to the hospital. There is no separate "hospital surcharge" — you're paying the statutory notary fee plus mileage, the same as any other mobile appointment.
                 </p>
                 <p>
-                  Call or text us with the hospital name and how many signatures are needed, and we'll give you the exact total before you book — no surprises at bedside.
+                  Call or text me with the hospital name and how many signatures are needed, and I’ll give you the exact total before you book — no surprises at bedside.
                 </p>
               </div>
             </section>
@@ -288,23 +288,23 @@ export default function HospitalNotary() {
                 {[
                   {
                     q: "Can you come to a hospital room same-day?",
-                    a: "Yes, we frequently fulfill same-day requests for hospital bedside notarizations. However, we ask that you secure approval from the nursing staff regarding visitation policies before we arrive."
+                    a: "Yes, I frequently fulfill same-day requests for hospital bedside notarizations. However, I ask that you secure approval from the nursing staff regarding visitation policies before I arrive."
                   },
                   {
                     q: "What if the patient does not have a physical ID on them?",
-                    a: "If a physical ID (like a Driver's License or Passport) was left at home, North Carolina law may allow the use of credible identifying witnesses. Call us directly to discuss the specific circumstances so we can verify if this option is legally viable."
+                    a: "If a physical ID (like a Driver's License or Passport) was left at home, North Carolina law may allow the use of credible identifying witnesses. Call me directly to discuss the specific circumstances so I can verify if this option is legally viable."
                   },
                   {
                     q: "Does the patient need to be awake and communicative?",
-                    a: "Absolutely. By law, the notary must assess that the signer is alert, aware of what they are signing, and signing willingly. We cannot notarize documents for a patient who is unconscious, heavily medicated to the point of impairment, or unable to communicate."
+                    a: "Absolutely. By law, the notary must assess that the signer is alert, aware of what they are signing, and signing willingly. I cannot notarize documents for a patient who is unconscious, heavily medicated to the point of impairment, or unable to communicate."
                   },
                   {
                     q: "Do I need to print the documents, or can you bring them?",
-                    a: "We typically ask that you print the documents beforehand or have the hospital social worker print them. If that is impossible, we can offer document printing services for an additional convenience fee if you email us the files prior to the appointment."
+                    a: "I typically ask that you print the documents beforehand or have the hospital social worker print them. If that is impossible, I can offer document printing services for an additional convenience fee if you email me the files prior to the appointment."
                   },
                   {
                     q: "Can a nurse or doctor act as a witness?",
-                    a: "Hospital staff and doctors are usually prohibited by hospital policy from acting as witnesses for legal documents. We recommend arranging for friends or non-beneficiary family members to act as witnesses. If needed, we can try to provide a witness for an additional fee."
+                    a: "Hospital staff and doctors are usually prohibited by hospital policy from acting as witnesses for legal documents. I recommend arranging for friends or non-beneficiary family members to act as witnesses. If needed, I can try to provide a witness for an additional fee."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
@@ -318,13 +318,13 @@ export default function HospitalNotary() {
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <MapPin className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Areas We Serve</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Areas I Serve</h2>
               </div>
               <p className="text-slate-600 leading-relaxed mb-4">
-                We serve all major hospitals and care facilities in Charlotte, NC and the surrounding metro, including Atrium Health Carolinas Medical Center, Novant Health Presbyterian Medical Center Charlotte, Atrium Health Pineville, CMC-Mercy, and rehabilitation centers throughout Mecklenburg, Union, and Cabarrus counties.
+                I serve all major hospitals and care facilities in Charlotte, NC and the surrounding metro, including Atrium Health Carolinas Medical Center, Novant Health Presbyterian Medical Center Charlotte, Atrium Health Pineville, CMC-Mercy, and rehabilitation centers throughout Mecklenburg, Union, and Cabarrus counties.
               </p>
               <p className="text-slate-500 text-sm">
-                Need a notary for a resident at a nursing home or assisted living facility instead of a hospital? See our <Link to="/nursing-home-notary-charlotte-nc" className="text-brand-600 hover:underline">Nursing Home & Assisted Living Notary</Link> page.
+                Need a notary for a resident at a nursing home or assisted living facility instead of a hospital? See my <Link to="/nursing-home-notary-charlotte-nc" className="text-brand-600 hover:underline">Nursing Home & Assisted Living Notary</Link> page.
               </p>
             </section>
             

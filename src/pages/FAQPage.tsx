@@ -17,7 +17,7 @@ export default function FAQPage() {
     },
     {
       question: "What areas of Charlotte do you serve as a mobile notary?",
-      answer: "We provide mobile notary services throughout Charlotte, NC, including Uptown, South End, Ballantyne, University City, Mint Hill, Matthews, and nearby Mecklenburg County areas."
+      answer: "I provide mobile notary services throughout Charlotte, NC, including Uptown, South End, Ballantyne, University City, Mint Hill, Matthews, and nearby Mecklenburg County areas."
     },
     {
       question: "Can a mobile notary come to hospitals or nursing homes in Charlotte?",
@@ -33,7 +33,7 @@ export default function FAQPage() {
     },
     {
       question: "Can you notarize documents in a foreign language?",
-      answer: "Yes, we can notarize documents in a foreign language as long as the notarial certificate is in English and the notary can communicate directly with the signer without a translator."
+      answer: "Yes, I can notarize documents in a foreign language as long as the notarial certificate is in English and the notary can communicate directly with the signer without a translator."
     },
     {
       question: "Are you a licensed attorney?",
@@ -41,11 +41,11 @@ export default function FAQPage() {
     },
     {
       question: "Do you provide witnesses if my document requires them?",
-      answer: "We can often provide witnesses for an additional fee if requested in advance. However, it is usually more cost-effective for you to provide your own witnesses (who must also have valid ID and not be named in the document)."
+      answer: "I can often provide witnesses for an additional fee if requested in advance. However, it is usually more cost-effective for you to provide your own witnesses (who must also have valid ID and not be named in the document)."
     },
     {
       question: "What forms of payment do you accept?",
-      answer: "We accept all major credit cards, cash, and digital payments like Zelle or Venmo. Payment is due at the time of service."
+      answer: "I accept all major credit cards, cash, and digital payments like Zelle or Venmo. Payment is due at the time of service."
     }
   ];
 
@@ -72,7 +72,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-brand-100 max-w-2xl mx-auto">
-            Find answers to common questions about our mobile notary and loan signing services in Charlotte, NC.
+            Find answers to common questions about my mobile notary and loan signing services in Charlotte, NC.
           </p>
         </div>
       </div>
@@ -92,7 +92,7 @@ export default function FAQPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Our Service Area</h2>
+            <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">My Service Area</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto flex items-center justify-center">
               <MapPin className="w-5 h-5 text-brand-600 mr-2" />
               Serving Charlotte, NC and surrounding Mecklenburg County areas.

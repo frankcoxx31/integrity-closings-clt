@@ -30,7 +30,7 @@ export default function Services() {
     },
     {
       title: 'After-Hours & Emergency Notary',
-      description: 'Urgent evening and weekend appointments available when you need us most.',
+      description: 'Urgent evening and weekend appointments available when you need me most.',
       image: '/lender-sent-documents.jpg',
       link: '/after-hours-mobile-notary-charlotte-nc',
       anchor: 'After-Hours Notary in Charlotte'
@@ -71,7 +71,7 @@ export default function Services() {
     <section id="services" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">Our Services</h2>
+          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl">My Services</h2>
           <p className="mt-4 text-lg text-slate-600">Professional mobile notary and signing services delivered directly to your location.</p>
         </div>
 

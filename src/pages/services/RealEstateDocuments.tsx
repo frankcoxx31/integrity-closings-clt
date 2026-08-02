@@ -35,7 +35,7 @@ export default function RealEstateDocuments() {
               "name": "Do you handle seller packages for out-of-state transactions?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes! We frequently assist Charlotte-area sellers closing on property located in other states by receiving the seller package and bringing it to them for execution."
+                "text": "Yes! I frequently assist Charlotte-area sellers closing on property located in other states by receiving the seller package and bringing it to them for execution."
               }
             },
             {
@@ -51,7 +51,7 @@ export default function RealEstateDocuments() {
               "name": "Do you need any special certification to notarize real estate documents?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, our team holds the National Notary Association (NNA) Certified Notary Signing Agent credential, ensuring we are highly trained to handle complex real estate document packages securely and accurately."
+                "text": "Yes, my team holds the National Notary Association (NNA) Certified Notary Signing Agent credential, ensuring I am highly trained to handle complex real estate document packages securely and accurately."
               }
             },
             {
@@ -59,7 +59,7 @@ export default function RealEstateDocuments() {
               "name": "Can you notarize a Quitclaim Deed?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we routinely notarize Quitclaim Deeds. However, we cannot draft the deed for you or provide advice on the legal consequences of signing one."
+                "text": "Yes, I routinely notarize Quitclaim Deeds. However, I cannot draft the deed for you or provide advice on the legal consequences of signing one."
               }
             },
             {
@@ -67,7 +67,7 @@ export default function RealEstateDocuments() {
               "name": "Will you drop off the real estate documents at FedEx/UPS?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, scanbacks and prompt FedEx or UPS drop-offs are included in our loan signing services. We ensure your documents make the required shipping cutoff."
+                "text": "Yes, scanbacks and prompt FedEx or UPS drop-offs are included in my loan signing services. I ensure your documents make the required shipping cutoff."
               }
             }
           ]
@@ -107,7 +107,7 @@ export default function RealEstateDocuments() {
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Real Estate Documents</h1>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              We provide professional mobile notary services for a wide variety of real estate documents. Whether you're handling deeds, closing disclosures, or property transfers, we ensure your documents are properly executed and legally binding.
+              I provide professional mobile notary services for a wide variety of real estate documents. Whether you're handling deeds, closing disclosures, or property transfers, I ensure your documents are properly executed and legally binding.
             </p>
             
             <div className="space-y-6 mb-10">
@@ -128,7 +128,7 @@ export default function RealEstateDocuments() {
                 {[
                   {
                     q: "Do you handle seller packages for out-of-state transactions?",
-                    a: "Yes! We frequently assist Charlotte-area sellers closing on property located in other states by receiving the seller package and bringing it to them for execution."
+                    a: "Yes! I frequently assist Charlotte-area sellers closing on property located in other states by receiving the seller package and bringing it to them for execution."
                   },
                   {
                     q: "What is a Closing Disclosure?",
@@ -136,15 +136,15 @@ export default function RealEstateDocuments() {
                   },
                   {
                     q: "Do you need any special certification to notarize real estate documents?",
-                    a: "Yes, our team holds the National Notary Association (NNA) Certified Notary Signing Agent credential, ensuring we are highly trained to handle complex real estate document packages securely and accurately."
+                    a: "Yes, my team holds the National Notary Association (NNA) Certified Notary Signing Agent credential, ensuring I am highly trained to handle complex real estate document packages securely and accurately."
                   },
                   {
                     q: "Can you notarize a Quitclaim Deed?",
-                    a: "Yes, we routinely notarize Quitclaim Deeds. However, we cannot draft the deed for you or provide advice on the legal consequences of signing one."
+                    a: "Yes, I routinely notarize Quitclaim Deeds. However, I cannot draft the deed for you or provide advice on the legal consequences of signing one."
                   },
                   {
                     q: "Will you drop off the real estate documents at FedEx/UPS?",
-                    a: "Yes, scanbacks and prompt FedEx or UPS drop-offs are included in our loan signing services. We ensure your documents make the required shipping cutoff."
+                    a: "Yes, scanbacks and prompt FedEx or UPS drop-offs are included in my loan signing services. I ensure your documents make the required shipping cutoff."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">

@@ -23,10 +23,10 @@ export default function About() {
                 Integrity Closings CLT
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                We are a premier mobile notary service based in Charlotte, NC, dedicated to providing convenient, professional, and reliable notarization services. We understand that your time is valuable, which is why we come to you—whether you're at home, in the office, at a hospital, or a local coffee shop.
+                I am a premier mobile notary service based in Charlotte, NC, dedicated to providing convenient, professional, and reliable notarization services. I understand that your time is valuable, which is why I come to you—whether you're at home, in the office, at a hospital, or a local coffee shop.
               </p>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                Our team is experienced in handling sensitive documents with care and confidentiality. From real estate loan signings to urgent hospital notarizations, we ensure your documents are executed correctly the first time.
+                My team is experienced in handling sensitive documents with care and confidentiality. From real estate loan signings to urgent hospital notarizations, I ensure your documents are executed correctly the first time.
               </p>
               
               <div className="space-y-4">

@@ -193,13 +193,13 @@ export default function QuoteCalculator() {
               </div>
               {distanceError && <p className="text-red-600 text-sm mt-2">{distanceError}</p>}
               <p className="text-slate-500 text-sm mt-2">
-                Calculates round-trip driving distance from our office in {businessConfig.address.locality}, {businessConfig.address.region}.
+                Calculates round-trip driving distance from my office in {businessConfig.address.locality}, {businessConfig.address.region}.
               </p>
             </div>
 
             <div className="mt-8 bg-brand-50 border-l-4 border-brand-600 p-4 rounded-r-lg">
               <p className="text-sm text-brand-900">
-                <strong>Mileage &amp; travel disclaimer:</strong> In North Carolina, the notary fee is ${SETTINGS.notaryFeePerSignature} per notarized principal signature. Travel is billed separately as mileage reimbursement at the IRS business rate of ${SETTINGS.irsMileageRate} per mile, calculated on round-trip distance from our office in {businessConfig.address.locality}, {businessConfig.address.region}. Travel reimbursement is not a notary fee and must be agreed to before the appointment. The mileage shown here is an estimate — the final figure is confirmed when your appointment is booked, and it may change if the address changes or a return trip is needed.
+                <strong>Mileage &amp; travel disclaimer:</strong> In North Carolina, the notary fee is ${SETTINGS.notaryFeePerSignature} per notarized principal signature. Travel is billed separately as mileage reimbursement at the IRS business rate of ${SETTINGS.irsMileageRate} per mile, calculated on round-trip distance from my office in {businessConfig.address.locality}, {businessConfig.address.region}. Travel reimbursement is not a notary fee and must be agreed to before the appointment. The mileage shown here is an estimate — the final figure is confirmed when your appointment is booked, and it may change if the address changes or a return trip is needed.
               </p>
             </div>
           </div>

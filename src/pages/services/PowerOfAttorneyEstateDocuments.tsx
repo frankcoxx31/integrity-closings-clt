@@ -50,7 +50,7 @@ export default function PowerOfAttorneyEstateDocuments() {
               "name": "Can you draft a Power of Attorney for me?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No. Under North Carolina law, Notaries Public are legally barred from drafting legal documents or providing advice. Please have an attorney or legal service prepare the POA before we arrive."
+                "text": "No. Under North Carolina law, Notaries Public are legally barred from drafting legal documents or providing advice. Please have an attorney or legal service prepare the POA before I arrive."
               }
             },
             {
@@ -58,7 +58,7 @@ export default function PowerOfAttorneyEstateDocuments() {
               "name": "Do I need witnesses for a Healthcare Power of Attorney?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Typically, yes. Most Healthcare Power of Attorney forms in North Carolina require two impartial witnesses in addition to the notary. We recommend providing your own witnesses if possible."
+                "text": "Typically, yes. Most Healthcare Power of Attorney forms in North Carolina require two impartial witnesses in addition to the notary. I recommend providing your own witnesses if possible."
               }
             },
             {
@@ -66,7 +66,7 @@ export default function PowerOfAttorneyEstateDocuments() {
               "name": "If my parent is in the hospital, can you notarize their POA?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, as long as they are conscious, understand the document, and are willing to sign. We specialize in hospital visits for emergency POA signings."
+                "text": "Yes, as long as they are conscious, understand the document, and are willing to sign. I specialize in hospital visits for emergency POA signings."
               }
             },
             {
@@ -128,7 +128,7 @@ export default function PowerOfAttorneyEstateDocuments() {
             </h1>
             
             <p className="text-lg text-slate-600 mb-10 leading-relaxed">
-              Integrity Closings CLT provides professional mobile notary services specializing in the precise notarization of Power of Attorney and critical estate planning documents. We travel directly to your location—whether it is a private residence, attorney’s office, hospital, or senior care facility—throughout the Greater Charlotte area.
+              Integrity Closings CLT provides professional mobile notary services specializing in the precise notarization of Power of Attorney and critical estate planning documents. I travel directly to your location—whether it is a private residence, attorney’s office, hospital, or senior care facility—throughout the Greater Charlotte area.
             </p>
             
             <div className="mb-12 rounded-xl overflow-hidden shadow-sm border border-slate-100">
@@ -149,12 +149,12 @@ export default function PowerOfAttorneyEstateDocuments() {
                 <h2 className="text-2xl font-bold text-slate-900">Mobile Service to Hospitals, Nursing Homes & Residences</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We understand that coordinating signatures for Powers of Attorney often involves loved ones who may be in a medical center, rehabilitation facility, or simply prefer the comfort of home. We provide a calm, patient, and professional mobile service to ensure your documents are handled correctly and with respect.
+                I understand that coordinating signatures for Powers of Attorney often involves loved ones who may be in a medical center, rehabilitation facility, or simply prefer the comfort of home. I provide a calm, patient, and professional mobile service to ensure your documents are handled correctly and with respect.
               </p>
             </section>
             
             <section className="mb-10">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Documents We Commonly Notarize</h2>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Documents I Commonly Notarize</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {commonDocuments.map((doc, i) => (
                   <div key={i} className="flex items-center">
@@ -190,7 +190,7 @@ export default function PowerOfAttorneyEstateDocuments() {
                   },
                   {
                     q: "Can the notary help me understand or draft the POA?",
-                    a: "No. Under North Carolina law, Notaries Public are legally prohibited from drafting legal documents or providing advice. Please have an attorney or legal service prepare the documents before our arrival."
+                    a: "No. Under North Carolina law, Notaries Public are legally prohibited from drafting legal documents or providing advice. Please have an attorney or legal service prepare the documents before my arrival."
                   },
                   {
                     q: "Do I need to provide my own witnesses?",
@@ -198,7 +198,7 @@ export default function PowerOfAttorneyEstateDocuments() {
                   },
                   {
                     q: "What if the signer is in a hospital or ICU?",
-                    a: "We specialize in hospital visits for Power of Attorney signings. As long as the signer is conscious, understands what they are signing, and is willing to do so, we can proceed. If they are sedated or incapacitated, we legally cannot notarize."
+                    a: "I specialize in hospital visits for Power of Attorney signings. As long as the signer is conscious, understands what they are signing, and is willing to do so, I can proceed. If they are sedated or incapacitated, I legally cannot notarize."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">

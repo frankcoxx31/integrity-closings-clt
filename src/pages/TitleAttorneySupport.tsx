@@ -30,12 +30,12 @@ export default function TitleAttorneySupport() {
   const features = [
     {
       title: "Mobile Convenience",
-      description: "We meet your clients at their home, office, or any preferred location across the Charlotte region.",
+      description: "I meet your clients at their home, office, or any preferred location across the Charlotte region.",
       icon: <MapPin className="w-6 h-6 text-brand-600" />
     },
     {
       title: "Punctual & Professional",
-      description: "We represent your firm with the highest level of professionalism and reach every appointment on time.",
+      description: "I represent your firm with the highest level of professionalism and reach every appointment on time.",
       icon: <Clock className="w-6 h-6 text-brand-600" />
     },
     {
@@ -99,7 +99,7 @@ export default function TitleAttorneySupport() {
               Title Company & Attorney Closing Support in Charlotte, NC
             </h1>
             <p className="text-xl text-slate-300 mb-10 leading-relaxed">
-              Integrity Closings CLT provides professional mobile closing support for scheduled loan document appointments, signer coordination, and field signing coverage. We act as a reliable extension of your team to ensure every appointment is handled with technical precision.
+              Integrity Closings CLT provides professional mobile closing support for scheduled loan document appointments, signer coordination, and field signing coverage. I act as a reliable extension of your team to ensure every appointment is handled with technical precision.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/booking" className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-lg text-white bg-brand-600 hover:bg-brand-700 transition-all shadow-lg hover:shadow-brand-500/25">
@@ -121,7 +121,7 @@ export default function TitleAttorneySupport() {
             <div>
               <h2 className="text-3xl font-bold text-slate-900 mb-6">Expert Mobile Extension for Your Firm</h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                As a transaction coordinator, title officer, or escrow professional, your reputation depends on the quality of the final signing experience. We provide the professional presence and technical proficiency required to represent your firm in the field.
+                As a transaction coordinator, title officer, or escrow professional, your reputation depends on the quality of the final signing experience. I provide the professional presence and technical proficiency required to represent your firm in the field.
               </p>
               <div className="space-y-4">
                 {[
@@ -206,12 +206,12 @@ export default function TitleAttorneySupport() {
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6">1</div>
               <h3 className="text-xl font-bold mb-4">Request Coordination</h3>
-              <p className="text-slate-400">Share appointment details and document requirements via phone or our booking portal.</p>
+              <p className="text-slate-400">Share appointment details and document requirements via phone or my booking portal.</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6">2</div>
               <h3 className="text-xl font-bold mb-4">Professional Execution</h3>
-              <p className="text-slate-400">We meet signers, facilitate the closing package, and perform all necessary notarizations.</p>
+              <p className="text-slate-400">I meet signers, facilitate the closing package, and perform all necessary notarizations.</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-2xl font-bold mb-6">3</div>

@@ -35,7 +35,7 @@ export default function LegalDocuments() {
               "name": "Can you meet me at the courthouse to notarize a document?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we regularly provide mobile notary services at the Mecklenburg County Courthouse, law firms, and mediation centers."
+                "text": "Yes, I regularly provide mobile notary services at the Mecklenburg County Courthouse, law firms, and mediation centers."
               }
             },
             {
@@ -43,7 +43,7 @@ export default function LegalDocuments() {
               "name": "Do you notarize divorce decrees and separation agreements?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely. Separation agreements and divorce papers frequently require notarization, and we can handle these with discretion and professionalism."
+                "text": "Absolutely. Separation agreements and divorce papers frequently require notarization, and I can handle these with discretion and professionalism."
               }
             },
             {
@@ -59,7 +59,7 @@ export default function LegalDocuments() {
               "name": "What if my legal document doesn't have a notary block?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "You must instruct the notary on what type of notarization is required (Jurat or Acknowledgment). We can then attach the appropriate loose certificate."
+                "text": "You must instruct the notary on what type of notarization is required (Jurat or Acknowledgment). I can then attach the appropriate loose certificate."
               }
             },
             {
@@ -67,7 +67,7 @@ export default function LegalDocuments() {
               "name": "Can both parties sign a settlement agreement at different times?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, parties can sign at different times and locations. We can meet each party separately, or you can use different notaries for each signature."
+                "text": "Yes, parties can sign at different times and locations. I can meet each party separately, or you can use different notaries for each signature."
               }
             }
           ]
@@ -107,7 +107,7 @@ export default function LegalDocuments() {
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Legal Documents</h1>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              We provide professional mobile notary services for a wide variety of legal documents. Whether you're handling court documents, adoption papers, or settlement agreements, we ensure your documents are properly executed and legally binding.
+              I provide professional mobile notary services for a wide variety of legal documents. Whether you're handling court documents, adoption papers, or settlement agreements, I ensure your documents are properly executed and legally binding.
             </p>
             
             <div className="space-y-6 mb-10">
@@ -128,11 +128,11 @@ export default function LegalDocuments() {
                 {[
                   {
                     q: "Can you meet me at the courthouse to notarize a document?",
-                    a: "Yes, we regularly provide mobile notary services at the Mecklenburg County Courthouse, law firms, and mediation centers."
+                    a: "Yes, I regularly provide mobile notary services at the Mecklenburg County Courthouse, law firms, and mediation centers."
                   },
                   {
                     q: "Do you notarize divorce decrees and separation agreements?",
-                    a: "Absolutely. Separation agreements and divorce papers frequently require notarization, and we can handle these with discretion and professionalism."
+                    a: "Absolutely. Separation agreements and divorce papers frequently require notarization, and I can handle these with discretion and professionalism."
                   },
                   {
                     q: "Are you able to provide legal advice on which form I need?",
@@ -140,11 +140,11 @@ export default function LegalDocuments() {
                   },
                   {
                     q: "What if my legal document doesn't have a notary block?",
-                    a: "You must instruct the notary on what type of notarization is required (Jurat or Acknowledgment). We can then attach the appropriate loose certificate."
+                    a: "You must instruct the notary on what type of notarization is required (Jurat or Acknowledgment). I can then attach the appropriate loose certificate."
                   },
                   {
                     q: "Can both parties sign a settlement agreement at different times?",
-                    a: "Yes, parties can sign at different times and locations. We can meet each party separately, or you can use different notaries for each signature."
+                    a: "Yes, parties can sign at different times and locations. I can meet each party separately, or you can use different notaries for each signature."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">

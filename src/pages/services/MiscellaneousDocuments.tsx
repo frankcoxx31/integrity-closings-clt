@@ -35,7 +35,7 @@ export default function MiscellaneousDocuments() {
               "name": "Can a notary help with a vehicle title transfer?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, North Carolina law requires a notary's acknowledgement on the transfer section of vehicle titles. We can meet you and the buyer/seller to notarize the signatures."
+                "text": "Yes, North Carolina law requires a notary's acknowledgement on the transfer section of vehicle titles. I can meet you and the buyer/seller to notarize the signatures."
               }
             },
             {
@@ -107,7 +107,7 @@ export default function MiscellaneousDocuments() {
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Miscellaneous Documents</h1>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              We provide professional mobile notary services for a wide variety of miscellaneous documents. Whether you're handling vehicle title transfers, school forms, or travel consents, we ensure your documents are properly executed and legally binding.
+              I provide professional mobile notary services for a wide variety of miscellaneous documents. Whether you're handling vehicle title transfers, school forms, or travel consents, I ensure your documents are properly executed and legally binding.
             </p>
             
             <div className="space-y-6 mb-10">
@@ -128,7 +128,7 @@ export default function MiscellaneousDocuments() {
                 {[
                   {
                     q: "Can a notary help with a vehicle title transfer?",
-                    a: "Yes, North Carolina law requires a notary's acknowledgement on the transfer section of vehicle titles. We can meet you and the buyer/seller to notarize the signatures."
+                    a: "Yes, North Carolina law requires a notary's acknowledgement on the transfer section of vehicle titles. I can meet you and the buyer/seller to notarize the signatures."
                   },
                   {
                     q: "Do both parents need to sign a minor travel consent form?",

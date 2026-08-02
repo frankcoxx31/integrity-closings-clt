@@ -39,7 +39,7 @@ export default function SellerDocuments() {
               "name": "Can you notarize for a seller who lives out of state?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. We regularly meet sellers wherever they are in the Charlotte area, and can coordinate with the closing attorney or title company to receive and return an out-of-state seller's package by mail or courier."
+                "text": "Yes. I regularly meet sellers wherever they are in the Charlotte area, and can coordinate with the closing attorney or title company to receive and return an out-of-state seller's package by mail or courier."
               }
             },
             {
@@ -55,7 +55,7 @@ export default function SellerDocuments() {
               "name": "Can all sellers on the deed sign together?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we can notarize for multiple sellers in the same appointment if they're signing together, or schedule separate visits if they're not."
+                "text": "Yes, I can notarize for multiple sellers in the same appointment if they're signing together, or schedule separate visits if they're not."
               }
             },
             {
@@ -63,7 +63,7 @@ export default function SellerDocuments() {
               "name": "Will you return the signed package to the title company?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we provide scanbacks and prompt FedEx or UPS drop-off so the signed seller package reaches the title company or closing attorney in time for closing."
+                "text": "Yes, I provide scanbacks and prompt FedEx or UPS drop-off so the signed seller package reaches the title company or closing attorney in time for closing."
               }
             }
           ]
@@ -110,7 +110,7 @@ export default function SellerDocuments() {
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Seller Documents</h1>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              We provide professional mobile notary services for home sellers closing on a property sale in Charlotte, NC. We come to you to notarize your seller closing package — accurately, on your schedule, and without a trip to the title company's office.
+              I provide professional mobile notary services for home sellers closing on a property sale in Charlotte, NC. I come to you to notarize your seller closing package — accurately, on your schedule, and without a trip to the title company's office.
             </p>
 
             <div className="space-y-6 mb-10">
@@ -135,7 +135,7 @@ export default function SellerDocuments() {
                   },
                   {
                     q: "Can you notarize for a seller who lives out of state?",
-                    a: "Yes. We regularly meet sellers wherever they are in the Charlotte area, and can coordinate with the closing attorney or title company to receive and return an out-of-state seller's package by mail or courier."
+                    a: "Yes. I regularly meet sellers wherever they are in the Charlotte area, and can coordinate with the closing attorney or title company to receive and return an out-of-state seller's package by mail or courier."
                   },
                   {
                     q: "Do I need to bring anything to the signing?",
@@ -143,11 +143,11 @@ export default function SellerDocuments() {
                   },
                   {
                     q: "Can all sellers on the deed sign together?",
-                    a: "Yes, we can notarize for multiple sellers in the same appointment if they're signing together, or schedule separate visits if they're not."
+                    a: "Yes, I can notarize for multiple sellers in the same appointment if they're signing together, or schedule separate visits if they're not."
                   },
                   {
                     q: "Will you return the signed package to the title company?",
-                    a: "Yes, we provide scanbacks and prompt FedEx or UPS drop-off so the signed seller package reaches the title company or closing attorney in time for closing."
+                    a: "Yes, I provide scanbacks and prompt FedEx or UPS drop-off so the signed seller package reaches the title company or closing attorney in time for closing."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">

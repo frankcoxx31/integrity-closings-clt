@@ -106,7 +106,7 @@ export default function WelcomePopup() {
                 <div className="px-4 pb-4 pt-1 space-y-3 text-center">
                   <p className="text-sm text-amber-900 leading-relaxed">
                     Hospitals, nursing homes, hospice, rehab and assisted living — day or night.
-                    Call and we'll confirm the visit on the phone.
+                    Call and I'll confirm the visit on the phone.
                   </p>
 
                   <a
@@ -123,7 +123,7 @@ export default function WelcomePopup() {
                     onClick={handleClose}
                     className="block text-sm font-semibold text-amber-800 underline hover:text-amber-900"
                   >
-                    What to have ready before we arrive
+                    What to have ready before I arrive
                   </Link>
                 </div>
               )}

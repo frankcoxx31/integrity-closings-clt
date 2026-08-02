@@ -35,7 +35,7 @@ export default function FinancialDocuments() {
               "name": "Can you notarize loan modifications at my home?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we specialize in mobile loan modifications and refinancing documents. We’ll meet you at your home or office to ensure everything is signed correctly."
+                "text": "Yes, I specialize in mobile loan modifications and refinancing documents. I’ll meet you at your home or office to ensure everything is signed correctly."
               }
             },
             {
@@ -43,7 +43,7 @@ export default function FinancialDocuments() {
               "name": "Will you print the financial documents for me?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, simply email the secure PDFs to our office. We provide document printing services for an additional fee and bring the physical copies to you."
+                "text": "Yes, simply email the secure PDFs to my office. I provide document printing services for an additional fee and bring the physical copies to you."
               }
             },
             {
@@ -51,7 +51,7 @@ export default function FinancialDocuments() {
               "name": "How quickly can you accommodate a HELOC signing?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We offer same-day and after-hours appointments. We can often accommodate a HELOC signing within a few hours of your request in the Charlotte area."
+                "text": "I offer same-day and after-hours appointments. I can often accommodate a HELOC signing within a few hours of your request in the Charlotte area."
               }
             },
             {
@@ -59,7 +59,7 @@ export default function FinancialDocuments() {
               "name": "Are you certified to handle Reverse Mortgages?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, our team consists of NNA Certified Loan Signing Agents who are experienced in walking seniors through Reverse Mortgage application and closing packages."
+                "text": "Yes, my team consists of NNA Certified Loan Signing Agents who are experienced in walking seniors through Reverse Mortgage application and closing packages."
               }
             },
             {
@@ -67,7 +67,7 @@ export default function FinancialDocuments() {
               "name": "Do you double-check the documents before shipping them back?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Our Quality Assurance process ensures that every signature, date, and notary stamp is double-checked before the documents are handed back or dropped at FedEx/UPS."
+                "text": "My Quality Assurance process ensures that every signature, date, and notary stamp is double-checked before the documents are handed back or dropped at FedEx/UPS."
               }
             }
           ]
@@ -107,7 +107,7 @@ export default function FinancialDocuments() {
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Financial Documents</h1>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              We provide professional mobile notary services for a wide variety of financial documents. Whether you're handling loan modifications, refinances, or promissory notes, we ensure your documents are properly executed and legally binding.
+              I provide professional mobile notary services for a wide variety of financial documents. Whether you're handling loan modifications, refinances, or promissory notes, I ensure your documents are properly executed and legally binding.
             </p>
             
             <div className="space-y-6 mb-10">
@@ -128,23 +128,23 @@ export default function FinancialDocuments() {
                 {[
                   {
                     q: "Can you notarize loan modifications at my home?",
-                    a: "Yes, we specialize in mobile loan modifications and refinancing documents. We’ll meet you at your home or office to ensure everything is signed correctly."
+                    a: "Yes, I specialize in mobile loan modifications and refinancing documents. I’ll meet you at your home or office to ensure everything is signed correctly."
                   },
                   {
                     q: "Will you print the financial documents for me?",
-                    a: "Yes, simply email the secure PDFs to our office. We provide document printing services for an additional fee and bring the physical copies to you."
+                    a: "Yes, simply email the secure PDFs to my office. I provide document printing services for an additional fee and bring the physical copies to you."
                   },
                   {
                     q: "How quickly can you accommodate a HELOC signing?",
-                    a: "We offer same-day and after-hours appointments. We can often accommodate a HELOC signing within a few hours of your request in the Charlotte area."
+                    a: "I offer same-day and after-hours appointments. I can often accommodate a HELOC signing within a few hours of your request in the Charlotte area."
                   },
                   {
                     q: "Are you certified to handle Reverse Mortgages?",
-                    a: "Yes, our team consists of NNA Certified Loan Signing Agents who are experienced in walking seniors through Reverse Mortgage application and closing packages."
+                    a: "Yes, my team consists of NNA Certified Loan Signing Agents who are experienced in walking seniors through Reverse Mortgage application and closing packages."
                   },
                   {
                     q: "Do you double-check the documents before shipping them back?",
-                    a: "Our Quality Assurance process ensures that every signature, date, and notary stamp is double-checked before the documents are handed back or dropped at FedEx/UPS."
+                    a: "My Quality Assurance process ensures that every signature, date, and notary stamp is double-checked before the documents are handed back or dropped at FedEx/UPS."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">

@@ -190,8 +190,8 @@ export default function Booking() {
       const startTime = new Date(selectedDate);
       startTime.setHours(hours, minutes, 0, 0);
 
-      // Create start time in a format that we'll treat as notary-local time (America/New_York)
-      // We format it manually as "YYYY-MM-DDTHH:mm:ss" without TZ info
+      // Create start time in a format that I'll treat as notary-local time (America/New_York)
+      // I format it manually as "YYYY-MM-DDTHH:mm:ss" without TZ info
       const year = selectedDate.getFullYear();
       const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
       const day = selectedDate.getDate().toString().padStart(2, '0');
@@ -234,7 +234,7 @@ export default function Booking() {
       window.location.href = '/thank-you.html';
     } catch (error: any) {
       console.error('Booking error:', error);
-      setSubmitError(error.message || 'There was an error scheduling your appointment. Please try again or call us.');
+      setSubmitError(error.message || 'There was an error scheduling your appointment. Please try again or call me.');
     } finally {
       setIsSubmitting(false);
     }
@@ -359,7 +359,7 @@ export default function Booking() {
                     </div>
                     
                     <div className="grid grid-cols-7 gap-1 mb-2">
-                      {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(day => (
+                      {['Su', 'Mo', 'Tu', 'I', 'Th', 'Fr', 'Sa'].map(day => (
                         <div key={day} className="text-center text-xs font-semibold text-slate-500 py-2">
                           {day}
                         </div>
@@ -666,14 +666,14 @@ export default function Booking() {
                 </div>
                 <h2 className="text-3xl font-bold font-serif text-slate-900 mb-4">Booking Request Received!</h2>
                 <p className="text-lg text-slate-600 mb-8 max-w-lg mx-auto">
-                  Thank you, {formData.firstName}. We have received your appointment request for <strong>{selectedDate && format(selectedDate, 'MMMM d, yyyy')} at {selectedTime}</strong>.
+                  Thank you, {formData.firstName}. I have received your appointment request for <strong>{selectedDate && format(selectedDate, 'MMMM d, yyyy')} at {selectedTime}</strong>.
                 </p>
                 <div className="bg-slate-50 rounded-xl p-6 max-w-md mx-auto text-left border border-slate-200 mb-8">
                   <h3 className="font-bold text-slate-900 mb-4 border-b pb-2">What happens next?</h3>
                   <ul className="space-y-3 text-sm text-slate-700">
                     <li className="flex items-start">
                       <span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold mr-3 shrink-0">1</span>
-                      We will review your request and calculate any applicable travel fees based on your address.
+                      I will review your request and calculate any applicable travel fees based on your address.
                     </li>
                     <li className="flex items-start">
                       <span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold mr-3 shrink-0">2</span>
@@ -681,7 +681,7 @@ export default function Booking() {
                     </li>
                     <li className="flex items-start">
                       <span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-xs font-bold mr-3 shrink-0">3</span>
-                      Our notary will meet you at your specified location at the scheduled time.
+                      My notary will meet you at your specified location at the scheduled time.
                     </li>
                   </ul>
                 </div>

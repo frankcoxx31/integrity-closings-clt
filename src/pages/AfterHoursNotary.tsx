@@ -39,7 +39,7 @@ export default function AfterHoursNotary() {
               "name": "What are your after-hours notary availability times?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We typically offer regular business hours from 8 AM to 6 PM, but our after-hours services are available late evenings and on weekends by appointment to accommodate emergency situations and working professionals."
+                "text": "I typically offer regular business hours from 8 AM to 6 PM, but my after-hours services are available late evenings and on weekends by appointment to accommodate emergency situations and working professionals."
               }
             },
             {
@@ -55,7 +55,7 @@ export default function AfterHoursNotary() {
               "name": "What if I need an emergency notary in the middle of the night?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "For extreme emergencies like hospital bedside document notarizations, please call or text us right away. We do our absolute best to accommodate urgent medical needs 24/7."
+                "text": "For extreme emergencies like hospital bedside document notarizations, please call or text me right away. I do my absolute best to accommodate urgent medical needs 24/7."
               }
             },
             {
@@ -63,7 +63,7 @@ export default function AfterHoursNotary() {
               "name": "Where can an after-hours notary meet me?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "For your safety and ours during late hours, we prefer meeting at well-lit public locations like 24-hour diners, hotel lobbies, hospital cafeterias, or safe-exchange zones at police stations."
+                "text": "For your safety and ours during late hours, I prefer meeting at well-lit public locations like 24-hour diners, hotel lobbies, hospital cafeterias, or safe-exchange zones at police stations."
               }
             },
             {
@@ -71,7 +71,7 @@ export default function AfterHoursNotary() {
               "name": "How quickly can you arrive for an out-of-hours request?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Response times depend entirely on traffic and our current location in the Charlotte metro area. Typically, we can dispatch a mobile notary to your location within 60 to 90 minutes."
+                "text": "Response times depend entirely on traffic and my current location in the Charlotte metro area. Typically, I can dispatch a mobile notary to your location within 60 to 90 minutes."
               }
             }
           ]
@@ -131,7 +131,7 @@ export default function AfterHoursNotary() {
             </h1>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Need a notary outside normal business hours in Charlotte, NC? Integrity Closings CLT offers after-hours mobile notary services, including evenings and weekends. We come to your home, office, hospital, or agreed meeting location when you need a notary the most.
+              Need a notary outside normal business hours in Charlotte, NC? Integrity Closings CLT offers after-hours mobile notary services, including evenings and weekends. I come to your home, office, hospital, or agreed meeting location when you need a notary the most.
             </p>
 
             <div className="mb-10 text-center">
@@ -150,7 +150,7 @@ export default function AfterHoursNotary() {
                 <h2 className="text-2xl font-bold text-slate-900">Evening and Weekend Notary Services</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We understand that not everyone is available during standard business hours. Our after-hours mobile notary service in Charlotte, NC provides flexible scheduling for clients who need notarizations in the evening or on weekends.
+                I understand that not everyone is available during standard business hours. My after-hours mobile notary service in Charlotte, NC provides flexible scheduling for clients who need notarizations in the evening or on weekends.
               </p>
             </section>
 
@@ -160,14 +160,14 @@ export default function AfterHoursNotary() {
                 <h2 className="text-2xl font-bold text-slate-900">Convenient Mobile Appointments</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We travel to homes, offices, hospitals, nursing homes, and other locations throughout Charlotte and surrounding areas. Our goal is to make notarization convenient, even outside of normal hours.
+                I travel to homes, offices, hospitals, nursing homes, and other locations throughout Charlotte and surrounding areas. My goal is to make notarization convenient, even outside of normal hours.
               </p>
             </section>
             
             <section className="mb-12">
               <div className="flex items-center mb-6">
                 <FileText className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Documents We Can Notarize</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Documents I Can Notarize</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {commonDocuments.map((doc, i) => (
@@ -200,7 +200,7 @@ export default function AfterHoursNotary() {
                 {[
                   {
                     q: "What are your after-hours notary availability times?",
-                    a: "We typically offer regular business hours from 8 AM to 6 PM, but our after-hours services are available late evenings and on weekends by appointment to accommodate emergency situations and working professionals."
+                    a: "I typically offer regular business hours from 8 AM to 6 PM, but my after-hours services are available late evenings and on weekends by appointment to accommodate emergency situations and working professionals."
                   },
                   {
                     q: "Do you charge extra for evening or weekend appointments?",
@@ -208,15 +208,15 @@ export default function AfterHoursNotary() {
                   },
                   {
                     q: "What if I need an emergency notary in the middle of the night?",
-                    a: "For extreme emergencies like hospital bedside document notarizations, please call or text us right away. We do our absolute best to accommodate urgent medical needs 24/7."
+                    a: "For extreme emergencies like hospital bedside document notarizations, please call or text me right away. I do my absolute best to accommodate urgent medical needs 24/7."
                   },
                   {
                     q: "Where can an after-hours notary meet me?",
-                    a: "For your safety and ours during late hours, we prefer meeting at well-lit public locations like 24-hour diners, hotel lobbies, hospital cafeterias, or safe-exchange zones at police stations."
+                    a: "For your safety and ours during late hours, I prefer meeting at well-lit public locations like 24-hour diners, hotel lobbies, hospital cafeterias, or safe-exchange zones at police stations."
                   },
                   {
                     q: "How quickly can you arrive for an out-of-hours request?",
-                    a: "Response times depend entirely on traffic and our current location in the Charlotte metro area. Typically, we can dispatch a mobile notary to your location within 60 to 90 minutes."
+                    a: "Response times depend entirely on traffic and my current location in the Charlotte metro area. Typically, I can dispatch a mobile notary to your location within 60 to 90 minutes."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
@@ -230,10 +230,10 @@ export default function AfterHoursNotary() {
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <MapPin className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Areas We Serve</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Areas I Serve</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We provide after-hours mobile notary services in Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and nearby areas.
+                I provide after-hours mobile notary services in Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and nearby areas.
               </p>
             </section>
             

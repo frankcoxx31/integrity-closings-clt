@@ -45,7 +45,7 @@ export default function Contact() {
         message: ''
       });
       // Do not auto-reset isSubmitted too quickly, let them see it.
-      // But we can reset it after 10 seconds if we want.
+      // But I can reset it after 10 seconds if I want.
       setTimeout(() => setIsSubmitted(false), 10000);
     } catch (err: any) {
       console.error('Contact submit error:', err);
@@ -66,7 +66,7 @@ export default function Contact() {
         <div className="text-center mb-12">
           <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">Contact Us</h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Need a mobile notary? Have questions about our services? Fill out the form below or reach out directly.
+            Need a mobile notary? Have questions about my services? Fill out the form below or reach out directly.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-lg">Service Area</h3>
                     <p className="text-slate-300 mt-1">{businessConfig.hubCity}, {businessConfig.hubState} & Surrounding Counties</p>
-                    <p className="text-sm text-slate-400 mt-1">We travel to your location</p>
+                    <p className="text-sm text-slate-400 mt-1">I travel to your location</p>
                   </div>
                 </div>
 
@@ -127,7 +127,7 @@ export default function Contact() {
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <p className="text-sm text-slate-400 mt-3">Scan to share your experience with us!</p>
+                  <p className="text-sm text-slate-400 mt-3">Scan to share your experience with me!</p>
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
-                  <p>Thank you for reaching out. We will get back to you as soon as possible.</p>
+                  <p>Thank you for reaching out. I will get back to you as soon as possible.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -177,7 +177,7 @@ export default function Contact() {
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">Message</label>
-                    <textarea id="message" value={formData.message} onChange={handleInputChange} required rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-colors resize-none" placeholder="How can we help you today?"></textarea>
+                    <textarea id="message" value={formData.message} onChange={handleInputChange} required rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-600 focus:border-brand-600 outline-none transition-colors resize-none" placeholder="How can I help you today?"></textarea>
                   </div>
 
                   <button 

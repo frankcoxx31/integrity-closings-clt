@@ -36,7 +36,7 @@ export default function BusinessDocuments() {
               "name": "Can you notarize documents for a business entity?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we routinely notarize business documents such as corporate resolutions, operating agreements, and commercial leases for LLCs, Corporations, and Partnerships."
+                "text": "Yes, I routinely notarize business documents such as corporate resolutions, operating agreements, and commercial leases for LLCs, Corporations, and Partnerships."
               }
             },
             {
@@ -44,7 +44,7 @@ export default function BusinessDocuments() {
               "name": "Do you travel to corporate offices in Upton Charlotte?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Absolutely. We provide mobile notary services to corporate offices, co-working spaces, and businesses throughout the entire Charlotte metropolitan area."
+                "text": "Absolutely. I provide mobile notary services to corporate offices, co-working spaces, and businesses throughout the entire Charlotte metropolitan area."
               }
             },
             {
@@ -52,7 +52,7 @@ export default function BusinessDocuments() {
               "name": "Can you act as an authorized agent for I-9 Employment Verification?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we can act as the Authorized Representative for remote employees to verify their identity and complete Section 2 of the Form I-9."
+                "text": "Yes, I can act as the Authorized Representative for remote employees to verify their identity and complete Section 2 of the Form I-9."
               }
             },
             {
@@ -60,7 +60,7 @@ export default function BusinessDocuments() {
               "name": "Do you offer corporate or bulk billing accounts?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, for local attorneys, HR departments, and property management companies that require frequent notary services, we offer monthly invoicing. Please contact us to set up an account."
+                "text": "Yes, for local attorneys, HR departments, and property management companies that require frequent notary services, I offer monthly invoicing. Please contact me to set up an account."
               }
             },
             {
@@ -108,7 +108,7 @@ export default function BusinessDocuments() {
           <div className="p-8 sm:p-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Business Documents</h1>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              We provide professional mobile notary services for a wide variety of business documents. Whether you're handling contracts, corporate resolutions, or employment verification, we ensure your documents are properly executed and legally binding.
+              I provide professional mobile notary services for a wide variety of business documents. Whether you're handling contracts, corporate resolutions, or employment verification, I ensure your documents are properly executed and legally binding.
             </p>
             
             <div className="space-y-6 mb-10">
@@ -129,19 +129,19 @@ export default function BusinessDocuments() {
                 {[
                   {
                     q: "Can you notarize documents for a business entity?",
-                    a: "Yes, we routinely notarize business documents such as corporate resolutions, operating agreements, and commercial leases for LLCs, Corporations, and Partnerships."
+                    a: "Yes, I routinely notarize business documents such as corporate resolutions, operating agreements, and commercial leases for LLCs, Corporations, and Partnerships."
                   },
                   {
                     q: "Do you travel to corporate offices in Upton Charlotte?",
-                    a: "Absolutely. We provide mobile notary services to corporate offices, co-working spaces, and businesses throughout the entire Charlotte metropolitan area."
+                    a: "Absolutely. I provide mobile notary services to corporate offices, co-working spaces, and businesses throughout the entire Charlotte metropolitan area."
                   },
                   {
                     q: "Can you act as an authorized agent for I-9 Employment Verification?",
-                    a: "Yes, we can act as the Authorized Representative for remote employees to verify their identity and complete Section 2 of the Form I-9."
+                    a: "Yes, I can act as the Authorized Representative for remote employees to verify their identity and complete Section 2 of the Form I-9."
                   },
                   {
                     q: "Do you offer corporate or bulk billing accounts?",
-                    a: "Yes, for local attorneys, HR departments, and property management companies that require frequent notary services, we offer monthly invoicing. Please contact us to set up an account."
+                    a: "Yes, for local attorneys, HR departments, and property management companies that require frequent notary services, I offer monthly invoicing. Please contact me to set up an account."
                   },
                   {
                     q: "What do my employees need to bring to get a document notarized?",

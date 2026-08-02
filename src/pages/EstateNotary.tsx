@@ -8,7 +8,7 @@ export default function EstateNotary() {
     document.title = "Estate & Trust Notarization Charlotte NC | Mobile Notary";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Professional mobile notary for estate planning and trust documents in Charlotte, NC. We travel to homes, hospitals, and nursing homes for Wills, Trusts, and POA.");
+      metaDescription.setAttribute('content', "Professional mobile notary for estate planning and trust documents in Charlotte, NC. I travel to homes, hospitals, and nursing homes for Wills, Trusts, and POA.");
     }
 
     // JSON-LD Schema
@@ -38,7 +38,7 @@ export default function EstateNotary() {
               "name": "What types of documents can you notarize for estate planning?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "We frequently notarize Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare POAs, Advance Directives, Living Wills, and HIPAA Authorizations."
+                "text": "I frequently notarize Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare POAs, Advance Directives, Living Wills, and HIPAA Authorizations."
               }
             },
             {
@@ -62,7 +62,7 @@ export default function EstateNotary() {
               "name": "Will you travel to patients in the ICU or memory care units?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, we travel to all medical facilities. However, if the signer is under heavy sedation or cannot demonstrate awareness of the document and a willingness to sign, we legally cannot proceed with the notarization."
+                "text": "Yes, I travel to all medical facilities. However, if the signer is under heavy sedation or cannot demonstrate awareness of the document and a willingness to sign, I legally cannot proceed with the notarization."
               }
             }
           ]
@@ -124,7 +124,7 @@ export default function EstateNotary() {
             </h1>
             
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Integrity Closings CLT provides professional mobile notary services specializing in the sensitive and precise nature of <Link to="/blog/notarize-deed-in-trust-north-carolina" className="text-brand-600 hover:underline">estate planning documents</Link>. We understand that these moments are critical, which is why we offer discreet, patient service directly to your home, attorney’s office, hospital room, or assisted living facility throughout the Greater Charlotte area.
+              Integrity Closings CLT provides professional mobile notary services specializing in the sensitive and precise nature of <Link to="/blog/notarize-deed-in-trust-north-carolina" className="text-brand-600 hover:underline">estate planning documents</Link>. I understand that these moments are critical, which is why I offer discreet, patient service directly to your home, attorney’s office, hospital room, or assisted living facility throughout the Greater Charlotte area.
             </p>
 
             <div className="mb-10 text-center">
@@ -143,14 +143,14 @@ export default function EstateNotary() {
                 <h2 className="text-2xl font-bold text-slate-900">Mobile Service to Hospitals & Care Facilities</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                Navigating the notarization of Wills, Trusts, and Powers of Attorney when a loved one is in a medical or senior living facility requires experience and patience. We regularly visit major hospitals and nursing homes in Mecklenburg County, providing a calm and professional presence for every signing.
+                Navigating the notarization of Wills, Trusts, and Powers of Attorney when a loved one is in a medical or senior living facility requires experience and patience. I regularly visit major hospitals and nursing homes in Mecklenburg County, providing a calm and professional presence for every signing.
               </p>
             </section>
             
             <section className="mb-12">
               <div className="flex items-center mb-6">
                 <FileText className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Documents We Commonly Notarize</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Documents I Commonly Notarize</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {commonDocuments.map((doc, i) => (
@@ -210,7 +210,7 @@ export default function EstateNotary() {
                 {[
                   {
                     q: "What types of documents can you notarize for estate planning?",
-                    a: "We frequently notarize Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare POAs, Advance Directives, Living Wills, and HIPAA Authorizations."
+                    a: "I frequently notarize Last Wills and Testaments, Revocable Living Trusts, Durable Powers of Attorney, Healthcare POAs, Advance Directives, Living Wills, and HIPAA Authorizations."
                   },
                   {
                     q: "Do I need to have my witnesses ready?",
@@ -222,7 +222,7 @@ export default function EstateNotary() {
                   },
                   {
                     q: "Will you travel to patients in the ICU or memory care units?",
-                    a: "Yes, we travel to all medical facilities. However, if the signer is under heavy sedation or cannot demonstrate awareness of the document and a willingness to sign, we legally cannot proceed with the notarization."
+                    a: "Yes, I travel to all medical facilities. However, if the signer is under heavy sedation or cannot demonstrate awareness of the document and a willingness to sign, I legally cannot proceed with the notarization."
                   }
                 ].map((faq, i) => (
                   <div key={i} className="bg-slate-50 p-6 rounded-lg border border-slate-100">
@@ -236,10 +236,10 @@ export default function EstateNotary() {
             <section className="mb-12">
               <div className="flex items-center mb-4">
                 <MapPin className="w-6 h-6 text-brand-600 mr-3" />
-                <h2 className="text-2xl font-bold text-slate-900">Areas We Serve</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Areas I Serve</h2>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                We provide estate document notarization in Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and nearby areas in Mecklenburg and Union County.
+                I provide estate document notarization in Charlotte, Matthews, Mint Hill, Concord, Pineville, Monroe, and nearby areas in Mecklenburg and Union County.
               </p>
             </section>
             
