@@ -11,21 +11,21 @@ export default function Matthews() {
       image="/matthews-nc-hero.webp"
       introText={
         <>
-          Looking for a <strong>mobile notary in Matthews, NC</strong>? Integrity Closings CLT offers professional, on-demand general notary services for all your document needs. From power of attorney to vehicle titles, we bring the notary office to your home or office in Matthews.
+          Looking for a <strong>mobile notary in Matthews, NC</strong>? Integrity Closings CLT offers professional, on-demand general notary services for all your document needs. From power of attorney to vehicle titles, I bring the notary office to your home or office in Matthews.
           <br /><br />
-          <em>Need a mortgage closing?</em> Visit our dedicated <Link to="/locations/matthews-loan-signing-agent" className="text-brand-600 font-bold hover:underline">Matthews Loan Signing Agent</Link> page for high-intent mortgage facilitation.
+          <em>Need a mortgage closing?</em> Visit my dedicated <Link to="/locations/matthews-loan-signing-agent" className="text-brand-600 font-bold hover:underline">Matthews Loan Signing Agent</Link> page for high-intent mortgage facilitation.
         </>
       }
       services={[
         {
           title: "Loan Signing Specialty",
-          description: <>High-intent mortgage facilitation including refinances and purchases. Visit our dedicated <Link to="/locations/matthews-loan-signing-agent" className="text-brand-600 font-bold hover:underline">Matthews Loan Signing</Link> page.</>,
+          description: <>High-intent mortgage facilitation including refinances and purchases. Visit my dedicated <Link to="/locations/matthews-loan-signing-agent" className="text-brand-600 font-bold hover:underline">Matthews Loan Signing</Link> page.</>,
           icon: <FileSignature className="w-6 h-6 text-brand-600" />,
           link: "/locations/matthews-loan-signing-agent"
         },
         {
           title: "Estate Planning Notary",
-          description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. We are happy to meet at local landmarks such as <strong>Brakeman’s Coffee</strong> or the <strong>Matthews Library</strong>.</>,
+          description: <>Secure notarization for Power of Attorney (POA), Wills, and Trusts. I am happy to meet at local landmarks such as <strong>Brakeman’s Coffee</strong> or the <strong>Matthews Library</strong>.</>,
           icon: <FileText className="w-6 h-6 text-brand-600" />,
           link: "/estate-notary-charlotte-nc"
         },
@@ -43,7 +43,7 @@ export default function Matthews() {
         },
         {
           title: "General Notary Services",
-          description: <>Fast and reliable notarization for affidavits, vehicle titles, and school forms. We meet you at any <strong>Matthews</strong> location for your convenience.</>,
+          description: <>Fast and reliable notarization for affidavits, vehicle titles, and school forms. I meet you at any <strong>Matthews</strong> location for your convenience.</>,
           icon: <ShieldCheck className="w-6 h-6 text-brand-600" />,
           link: "/general-notary-charlotte-nc"
         },
@@ -54,17 +54,17 @@ export default function Matthews() {
           link: "/services/business-documents"
         }
       ]}
-      hospitalsIntro="Legal matters don't stop for medical emergencies. We provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Matthews area:"
+      hospitalsIntro="Legal matters don't stop for medical emergencies. I provide compassionate, mobile notary services to patients and families at the primary healthcare hubs in the Matthews area:"
       hospitals={[
         {
           name: "Novant Health Matthews Medical Center",
           location: "Matthews, NC",
-          description: <>We provide bedside notary services for medical POAs, living wills, and other urgent documents for patients at Novant Health near <strong>Matthews Township Pkwy</strong>.</>
+          description: <>I provide bedside notary services for medical POAs, living wills, and other urgent documents for patients at Novant Health near <strong>Matthews Township Pkwy</strong>.</>
         },
         {
           name: "Atrium Health Union West",
           location: "Stallings / Matthews, NC",
-          description: <>Conveniently serving the new facility on the border of Stallings. We offer flexible scheduling to meet you or your loved ones near <strong>Stumptown Park</strong> and the surrounding medical offices.</>
+          description: <>Conveniently serving the new facility on the border of Stallings. I offer flexible scheduling to meet you or your loved ones near <strong>Stumptown Park</strong> and the surrounding medical offices.</>
         }
       ]}
       additionalLocations={[
@@ -82,19 +82,19 @@ export default function Matthews() {
       faqs={[
         {
           question: "Can you meet me at Brakeman's Coffee in Matthews?",
-          answer: "Yes! We frequently meet clients at local favorites like Brakeman's Coffee, Carolina Beer Temple, and the Matthews Library for convenient signings."
+          answer: "Yes! I frequently meet clients at local favorites like Brakeman's Coffee, Carolina Beer Temple, and the Matthews Library for convenient signings."
         },
         {
           question: "Do you offer mobile notary services at Novant Health Matthews?",
-          answer: "Absolutely. We provide prompt bedside notary services at Novant Health Matthews for medical directives, powers of attorney, and other urgent legal documents."
+          answer: "Absolutely. I provide prompt bedside notary services at Novant Health Matthews for medical directives, powers of attorney, and other urgent legal documents."
         },
         {
           question: "Are you available for after-hours notary in Matthews?",
-          answer: "Yes, we offer 24/7 mobile notary services by appointment in Matthews, including evenings, weekends, and holidays."
+          answer: "Yes, I offer 24/7 mobile notary services by appointment in Matthews, including evenings, weekends, and holidays."
         },
         {
           question: "How do I book a mobile notary in Matthews?",
-          answer: "You can book directly through our website's booking tool or call/text us at 980-505-8050 for immediate assistance."
+          answer: "You can book directly through my website's booking tool or call/text me at 980-505-8050 for immediate assistance."
         }
       ]}
       mapEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52125.41904712348!2d-80.71333335136719!3d35.12263590000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885404566735661d%3A0x884650e6bfde5145!2sMatthews%2C%20NC!5e0!3m2!1sen!2sus!4v1712874600000!5m2!1sen!2sus"

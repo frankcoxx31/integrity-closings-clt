@@ -9,31 +9,31 @@ export default function Locust() {
       image="/locust.jpg"
       introText={
         <>
-          Searching for a professional <strong>mobile notary in Locust, NC</strong>? Integrity Closings CLT is your trusted partner for prompt and secure on-demand notary services. Serving Stanly County and surrounding regions, we bring professional notary solutions directly to your storefront, medical room, or living room. Experience hassle-free document authentication with a certified notary who meets you on your timeline.
+          Searching for a professional <strong>mobile notary in Locust, NC</strong>? Integrity Closings CLT is your trusted partner for prompt and secure on-demand notary services. Serving Stanly County and surrounding regions, I bring professional notary solutions directly to your storefront, medical room, or living room. Experience hassle-free document authentication with a certified notary who meets you on your timeline.
         </>
       }
       services={[
         {
           title: "Loan Signing Services",
-          description: <>Flawless facilitation of refinancing packets, HELOCs, buyer/seller packages, and home equity documentation. We travel straight to your Locust residence or local office space.</>,
+          description: <>Flawless facilitation of refinancing packets, HELOCs, buyer/seller packages, and home equity documentation. I travel straight to your Locust residence or local office space.</>,
           icon: <FileSignature className="w-6 h-6 text-brand-600" />,
           link: "/locations/union-county-loan-signing-agent"
         },
         {
           title: "Estate Planning Notary",
-          description: <>We notarize crucial lifetime preparation documents including Wills, Living Trusts, Healthcare Directives, and Powers of Attorney (POA) right in Stanly County.</>,
+          description: <>I notarize crucial lifetime preparation documents including Wills, Living Trusts, Healthcare Directives, and Powers of Attorney (POA) right in Stanly County.</>,
           icon: <FileText className="w-6 h-6 text-brand-600" />,
           link: "/estate-notary-charlotte-nc"
         },
         {
           title: "Hospital & Nursing Home Notary",
-          description: <>Caring bedside services at hospitals, nursing clinics, and rehabilitation facilities. We make sure patients have stress-free access to urgent notarizations.</>,
+          description: <>Caring bedside services at hospitals, nursing clinics, and rehabilitation facilities. I make sure patients have stress-free access to urgent notarizations.</>,
           icon: <HeartPulse className="w-6 h-6 text-brand-600" />,
           link: "/hospital-notary-charlotte-nc"
         },
         {
           title: "After Hours & Emergency Notary",
-          description: <>Need an evening or holiday signature? Our 24/7 on-demand network makes matching a notary in the Locust area convenient for any urgent deadline.</>,
+          description: <>Need an evening or holiday signature? My 24/7 on-demand network makes matching a notary in the Locust area convenient for any urgent deadline.</>,
           icon: <Clock className="w-6 h-6 text-brand-600" />,
           link: "/after-hours-mobile-notary-charlotte-nc"
         },
@@ -50,7 +50,7 @@ export default function Locust() {
           link: "/services/business-documents"
         }
       ]}
-      hospitalsIntro="We recognize how critical family documents can be in medical scenarios. We provide timely and compassionate bedside notarizations to facilities in and around the Stanly County area:"
+      hospitalsIntro="I recognize how critical family documents can be in medical scenarios. I provide timely and compassionate bedside notarizations to facilities in and around the Stanly County area:"
       hospitals={[
         {
           name: "Atrium Health Stanly (Nearby)",
@@ -76,18 +76,18 @@ export default function Locust() {
       faqs={[
         {
           question: "Can you meet me in Locust Town Center for a notary signing?",
-          answer: "Yes, definitely. We love meeting clients at the beautiful Locust Town Center, local coffee shops, offices, restaurants, or directly at your apartment or house."
+          answer: "Yes, definitely. I love meeting clients at the beautiful Locust Town Center, local coffee shops, offices, restaurants, or directly at your apartment or house."
         },
         {
           question: "How quickly can a mobile notary arrive in Locust, NC?",
-          answer: "Depending on your immediate schedule and traffic, we can usually place a notary at your exact Locust address within 60 to 90 minutes for urgent matters."
+          answer: "Depending on your immediate schedule and traffic, I can usually place a notary at your exact Locust address within 60 to 90 minutes for urgent matters."
         },
         {
           question: "Is there a travel limit for your Locust mobile notary services?",
-          answer: "No travel limit! We serve all of Locust, NC, as well as adjacent towns like Midland, Mount Pleasant, Oakboro, and Stanfield."
+          answer: "No travel limit! I serve all of Locust, NC, as well as adjacent towns like Midland, Mount Pleasant, Oakboro, and Stanfield."
         },
         {
-          question: "What should I inspect before our notary appointment?",
+          question: "What should I inspect before my notary appointment?",
           answer: "Each signer must present a physical, unexpired state-issued identification with photo and signature. Please double-check that your document has all details filled out except for your signature."
         }
       ]}

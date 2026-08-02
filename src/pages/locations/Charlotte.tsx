@@ -10,19 +10,19 @@ export default function Charlotte() {
       image="/charlotte-location-hero.webp"
       introText={
         <>
-          As the premier <strong>mobile notary in Charlotte, NC</strong>, Integrity Closings CLT provides professional, on-demand notarization services across the entire Queen City. Whether you're finalizing a corporate merger in <strong>Uptown</strong>, signing medical directives near <strong>Atrium Health Main</strong>, or closing on a new home in <strong>Ballantyne</strong>, we bring the notary office directly to your location. Skip the Charlotte traffic and let us handle your important documents with the precision and integrity you deserve.
+          As the premier <strong>mobile notary in Charlotte, NC</strong>, Integrity Closings CLT provides professional, on-demand notarization services across the entire Queen City. Whether you're finalizing a corporate merger in <strong>Uptown</strong>, signing medical directives near <strong>Atrium Health Main</strong>, or closing on a new home in <strong>Ballantyne</strong>, I bring the notary office directly to your location. Skip the Charlotte traffic and let us handle your important documents with the precision and integrity you deserve.
         </>
       }
       services={[
         {
           title: "Loan Signing Services",
-          description: <>Expert handling of mortgage refinances, HELOCs, and seller packages. We work with title companies and lenders to ensure error-free closings in neighborhoods like <strong>Myers Park, SouthPark, and Dilworth</strong>.</>,
+          description: <>Expert handling of mortgage refinances, HELOCs, and seller packages. I work with title companies and lenders to ensure error-free closings in neighborhoods like <strong>Myers Park, SouthPark, and Dilworth</strong>.</>,
           icon: <FileSignature className="w-6 h-6 text-brand-600" />,
           link: "/loan-signing-agent-charlotte-nc"
         },
         {
           title: "Estate Planning Notary",
-          description: <>Secure notarization for Wills, Trusts, and Power of Attorney documents. We provide mobile service to your home or office in <strong>South End, NoDa, and Plaza Midwood</strong>.</>,
+          description: <>Secure notarization for Wills, Trusts, and Power of Attorney documents. I provide mobile service to your home or office in <strong>South End, NoDa, and Plaza Midwood</strong>.</>,
           icon: <FileText className="w-6 h-6 text-brand-600" />,
           link: "/estate-notary-charlotte-nc"
         },
@@ -34,13 +34,13 @@ export default function Charlotte() {
         },
         {
           title: "After Hours & Emergency",
-          description: <>Need a notary late at night or on the weekend? We offer 24/7 emergency mobile notary services for urgent matters across <strong>Mecklenburg County</strong>.</>,
+          description: <>Need a notary late at night or on the weekend? I offer 24/7 emergency mobile notary services for urgent matters across <strong>Mecklenburg County</strong>.</>,
           icon: <Clock className="w-6 h-6 text-brand-600" />,
           link: "/after-hours-mobile-notary-charlotte-nc"
         },
         {
           title: "General Notary Services",
-          description: <>Fast and reliable notarization for affidavits, I-9 verifications, minor travel consents, and vehicle titles. We meet you at any <strong>Charlotte</strong> location.</>,
+          description: <>Fast and reliable notarization for affidavits, I-9 verifications, minor travel consents, and vehicle titles. I meet you at any <strong>Charlotte</strong> location.</>,
           icon: <ShieldCheck className="w-6 h-6 text-brand-600" />,
           link: "/general-notary-charlotte-nc"
         },
@@ -51,7 +51,7 @@ export default function Charlotte() {
           link: "/services/business-documents"
         }
       ]}
-      hospitalsIntro="We understand that legal needs often arise during medical challenges. We provide prompt, professional mobile notary services to patients and families at Charlotte's leading medical centers:"
+      hospitalsIntro="I understand that legal needs often arise during medical challenges. I provide prompt, professional mobile notary services to patients and families at Charlotte's leading medical centers:"
       hospitals={[
         {
           name: "Atrium Health Carolinas Medical Center",
@@ -79,15 +79,15 @@ export default function Charlotte() {
       faqs={[
         {
           question: "How much does a mobile notary in Charlotte cost?",
-          answer: "Our fees consist of the North Carolina statutory notary fee per signature plus a travel fee based on your specific location in Charlotte and the time of day. Contact us for a precise quote."
+          answer: "My fees consist of the North Carolina statutory notary fee per signature plus a travel fee based on your specific location in Charlotte and the time of day. Contact me for a precise quote."
         },
         {
           question: "Can you meet me at Charlotte Douglas Airport (CLT)?",
-          answer: "Yes! We frequently meet clients at CLT airport for urgent travel consents, business contracts, and other time-sensitive documents."
+          answer: "Yes! I frequently meet clients at CLT airport for urgent travel consents, business contracts, and other time-sensitive documents."
         },
         {
           question: "Do you offer same-day notary appointments in Charlotte?",
-          answer: "Absolutely. We specialize in same-day and emergency mobile notary services. We can often be at your location within 60-90 minutes depending on traffic."
+          answer: "Absolutely. I specialize in same-day and emergency mobile notary services. I can often be at your location within 60-90 minutes depending on traffic."
         },
         {
           question: "What do I need to have ready for the notary?",

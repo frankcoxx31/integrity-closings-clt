@@ -172,9 +172,9 @@ export default function CityPageLayout({
             <div className="mt-10 p-6 bg-brand-50 rounded-2xl border border-brand-100">
               <h3 className="text-xl font-bold text-brand-950 mb-4 flex items-center">
                 <Shield className="w-6 h-6 text-brand-600 mr-3" />
-                Our Service Guarantee
+                My Service Guarantee
               </h3>
-              <p className="text-slate-700">We guarantee professional, accurate, and punctual service. If we make a clerical error on your notarization, we will return to correct it at no additional cost to you.</p>
+              <p className="text-slate-700">I guarantee professional, accurate, and punctual service. If I make a clerical error on your notarization, I will return to correct it at no additional cost to you.</p>
             </div>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
@@ -193,7 +193,7 @@ export default function CityPageLayout({
 
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-brand-950 mb-4">Specialized Notary Services</h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">We handle complex legal documents with precision and care, ensuring every signing is legally binding and stress-free.</p>
+          <p className="text-slate-600 max-w-2xl mx-auto">I handle complex legal documents with precision and care, ensuring every signing is legally binding and stress-free.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -243,7 +243,7 @@ export default function CityPageLayout({
           </div>
 
           <div className="bg-white/5 p-10 rounded-3xl border border-white/10">
-            <h3 className="text-2xl font-bold mb-8 text-center">Neighborhoods & Landmarks We Serve in {city}:</h3>
+            <h3 className="text-2xl font-bold mb-8 text-center">Neighborhoods & Landmarks I Serve in {city}:</h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {additionalLocations.map((location, index) => (
                 <li key={index} className="flex items-center text-slate-300">
@@ -261,7 +261,7 @@ export default function CityPageLayout({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-950 mb-4">Frequently Asked Questions</h2>
-            <p className="text-slate-600">Common questions about our mobile notary services in {city}, NC.</p>
+            <p className="text-slate-600">Common questions about my mobile notary services in {city}, NC.</p>
           </div>
 
           <div className="space-y-4">
@@ -288,7 +288,7 @@ export default function CityPageLayout({
         </div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Need a Notary in {city} Right Now?</h2>
-          <p className="text-xl text-brand-100 mb-12 max-w-2xl mx-auto">We offer same-day appointments and after-hours emergency services to ensure your documents are signed when you need them.</p>
+          <p className="text-xl text-brand-100 mb-12 max-w-2xl mx-auto">I offer same-day appointments and after-hours emergency services to ensure your documents are signed when you need them.</p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a href="/booking" className="w-full sm:w-auto px-10 py-5 bg-white text-brand-600 font-bold text-xl rounded-xl hover:bg-brand-50 transition-all shadow-xl">
