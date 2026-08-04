@@ -66,8 +66,19 @@ export default function NotaryAiGuides() {
 
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
-      <div className="bg-brand-950 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative bg-brand-950 py-16 overflow-hidden">
+        {/* Hero background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url("/ai-guide-hero.png")' }}
+          aria-hidden="true"
+        ></div>
+        {/* Dark overlay keeps the white text readable */}
+        <div className="absolute inset-0 bg-brand-950/80" aria-hidden="true"></div>
+        {/* Light-blue tint */}
+        <div className="absolute inset-0 bg-sky-400/20 mix-blend-screen" aria-hidden="true"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/resources" className="inline-flex items-center text-brand-200 hover:text-white mb-6 transition-colors font-medium">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Resources
