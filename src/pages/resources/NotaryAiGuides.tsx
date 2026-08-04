@@ -151,6 +151,35 @@ export default function NotaryAiGuides() {
                 </a>
               </div>
             </div>
+
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-md transition-shadow flex flex-col h-full">
+              <div className="bg-slate-100 flex items-center justify-center p-4">
+                <img
+                  src="/downloads/covers/cover-nursing-home-notary-playbook.png"
+                  alt="The Nursing Home Notary Playbook — book cover"
+                  className="h-56 w-auto object-contain shadow-md rounded"
+                  width="400"
+                  height="600"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                  The Nursing Home Notary Playbook
+                </h3>
+                <p className="text-slate-600 leading-relaxed flex-grow mb-6">
+                  How to start and grow a profitable mobile notary business in hospitals, nursing homes, and hospice — step-by-step strategies, real clients, and high-value signings in senior-care settings.
+                </p>
+                <a
+                  href="https://www.amazon.com/Nursing-Home-Notary-Playbook-Profitable-ebook/dp/B0HC489CYP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-bold py-3 px-6 rounded-full hover:bg-brand-700 transition-colors"
+                >
+                  Get it on Amazon
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
