@@ -70,8 +70,19 @@ export default function Resources() {
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
       {/* Hero Section */}
-      <div className="bg-brand-950 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative bg-brand-950 pt-28 pb-20 overflow-hidden">
+        {/* Hero background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url("/resources-hero.png")' }}
+          aria-hidden="true"
+        ></div>
+        {/* Dark overlay keeps the white text readable */}
+        <div className="absolute inset-0 bg-brand-950/80" aria-hidden="true"></div>
+        {/* Black tint */}
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-serif">
             Notary Resources & Insights
           </h1>

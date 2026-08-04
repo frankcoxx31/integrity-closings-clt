@@ -69,7 +69,7 @@ export default function Navbar() {
 
   // Pages whose hero has its own background image — the nav sits transparently
   // on top of it (like the homepage) instead of a solid bar.
-  const HERO_ROUTES = new Set(['/', '/resources/notary-ai-guides']);
+  const HERO_ROUTES = new Set(['/', '/resources', '/resources/notary-ai-guides']);
   const isHeroPage = HERO_ROUTES.has(location.pathname);
   const navBackground = isScrolled
     ? 'bg-brand-950 shadow-md'
