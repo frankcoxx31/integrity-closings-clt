@@ -147,7 +147,7 @@ export default function NotaryAiGuides() {
                   data-theme="none"
                   data-product="xQJ4j"
                 >
-                  Get the Playbook — $27
+                  Get the Playbook — $4.99
                 </a>
               </div>
             </div>
