@@ -75,8 +75,8 @@ export default function NotaryAiGuides() {
         ></div>
         {/* Dark overlay keeps the white text readable */}
         <div className="absolute inset-0 bg-brand-950/80" aria-hidden="true"></div>
-        {/* Light-blue tint */}
-        <div className="absolute inset-0 bg-sky-400/20 mix-blend-screen" aria-hidden="true"></div>
+        {/* Black tint */}
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true"></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/resources" className="inline-flex items-center text-brand-200 hover:text-white mb-6 transition-colors font-medium">
