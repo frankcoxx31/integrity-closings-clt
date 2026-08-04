@@ -66,7 +66,7 @@ export default function NotaryAiGuides() {
 
   return (
     <div className="min-h-screen bg-slate-50 pb-12">
-      <div className="relative bg-brand-950 py-16 overflow-hidden">
+      <div className="relative bg-brand-950 pt-28 pb-16 overflow-hidden">
         {/* Hero background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"

@@ -67,10 +67,13 @@ export default function Navbar() {
     { name: 'Contact', href: '/contact' },
   ];
 
-  const isHomePage = location.pathname === '/';
-  const navBackground = isScrolled 
-    ? 'bg-brand-950 shadow-md' 
-    : (isHomePage ? 'bg-transparent' : 'bg-brand-950');
+  // Pages whose hero has its own background image — the nav sits transparently
+  // on top of it (like the homepage) instead of a solid bar.
+  const HERO_ROUTES = new Set(['/', '/resources/notary-ai-guides']);
+  const isHeroPage = HERO_ROUTES.has(location.pathname);
+  const navBackground = isScrolled
+    ? 'bg-brand-950 shadow-md'
+    : (isHeroPage ? 'bg-transparent' : 'bg-brand-950');
 
   return (
     <>
@@ -246,7 +249,7 @@ export default function Navbar() {
           </div>
         )}
       </nav>
-      {!isHomePage && <div className="h-20"></div>}
+      {!isHeroPage && <div className="h-20"></div>}
     </>
   );
 }
