@@ -72,13 +72,13 @@ export default function NotaryAiGuides() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Resources
           </Link>
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <Sparkles className="w-8 h-8 text-accent-400" />
             <h1 className="text-3xl md:text-5xl font-bold text-white font-serif leading-tight">
               Notary AI Guides
             </h1>
           </div>
-          <p className="text-lg text-brand-100 max-w-2xl">
+          <p className="text-lg text-brand-100 max-w-2xl mx-auto text-center">
             Free, downloadable guides to help you use AI tools in your notary business — no signup, no email required.
           </p>
         </div>
