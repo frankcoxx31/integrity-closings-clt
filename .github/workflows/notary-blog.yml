@@ -25,9 +25,9 @@ jobs:
       - name: Write a new post with Claude
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # Optional: if set, the bot generates a unique cover image per post.
+          # If set, the bot generates a unique cover image per post via Gemini.
           # Without it, the bot falls back to a pool of distinct stock photos.
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/auto-blog.mjs
 
       - name: Build React blog data from the manifest

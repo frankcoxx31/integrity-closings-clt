@@ -61,26 +61,33 @@ function pickUniquePoolImage(manifest, post) {
   return IMAGE_POOL.find(img => !used.has(img)) || preferred;
 }
 
-// Generate a brand-new hero image for this post with OpenAI's image model and
-// save it to public/blog-img/<slug>.png. Returns the public path on success,
-// or null if OPENAI_API_KEY is missing or the request fails (caller falls back
-// to the pool). Best-effort — never throws.
+// Generate a brand-new hero image for this post with Google's Gemini image
+// model (Nano Banana) and save it to public/blog-img/<slug>.png. Returns the
+// public path on success, or null if GEMINI_API_KEY is missing or the request
+// fails (caller falls back to the pool). Best-effort — never throws.
 async function generateHeroImage(post, slug) {
-  const key = process.env.OPENAI_API_KEY;
+  const key = process.env.GEMINI_API_KEY;
   if (!key) return null;
   try {
-    const prompt = `Professional, photorealistic hero image for a mobile-notary blog post titled "${post.title}". A warm, trustworthy ${post.category} scene relevant to a home, hospital, or office signing — documents, a notary stamp, and a pen on a clean desk with soft natural light. No text, no words, no watermarks, no logos, no readable document content.`;
-    const res = await fetch('https://api.openai.com/v1/images/generations', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ model: 'gpt-image-1', prompt, size: '1536x1024', n: 1 }),
-    });
+    const prompt = `Professional, photorealistic wide 16:9 hero image for a mobile-notary blog post titled "${post.title}". A warm, trustworthy ${post.category} scene relevant to a home, hospital, or office signing — documents, a notary stamp, and a pen on a clean desk with soft natural light. No text, no words, no watermarks, no logos, no readable document content.`;
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent?key=${key}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { responseModalities: ['IMAGE'] },
+        }),
+      }
+    );
     if (!res.ok) {
       console.warn(`Image generation failed (${res.status}): ${(await res.text()).slice(0, 200)}`);
       return null;
     }
     const data = await res.json();
-    const b64 = data?.data?.[0]?.b64_json;
+    const parts = data?.candidates?.[0]?.content?.parts || [];
+    const b64 = parts.find((p) => p.inlineData?.data)?.inlineData?.data;
     if (!b64) return null;
     writeFileSync(join(ROOT, 'public', 'blog-img', `${slug}.png`), Buffer.from(b64, 'base64'));
     console.log(`✓ Generated hero image → /blog-img/${slug}.png`);
