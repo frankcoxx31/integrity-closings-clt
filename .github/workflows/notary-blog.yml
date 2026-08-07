@@ -25,6 +25,9 @@ jobs:
       - name: Write a new post with Claude
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Optional: if set, the bot generates a unique cover image per post.
+          # Without it, the bot falls back to a pool of distinct stock photos.
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node scripts/auto-blog.mjs
 
       - name: Build React blog data from the manifest
@@ -34,7 +37,7 @@ jobs:
         run: |
           git config user.name "Integrity Blog Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/blog-posts.json src/data/auto-blog-posts.json
+          git add data/blog-posts.json src/data/auto-blog-posts.json public/blog-img
           if git diff --cached --quiet; then
             echo "No changes to publish."
           else

@@ -51,6 +51,46 @@ const IMAGE_POOL = [
   U('photo-1517245386807-bb43f82c33c4'), U('photo-1460925895917-afdab827c52f'),
 ];
 
+// Pick the first pool image no existing post uses (global uniqueness). Prefers
+// the post's category image, then any unused pool image, then the category
+// image as a last resort if the whole pool is somehow exhausted.
+function pickUniquePoolImage(manifest, post) {
+  const used = new Set(manifest.map(p => p.heroImg));
+  const preferred = CATEGORY_IMAGE[post.category] || FALLBACK_IMAGE;
+  if (!used.has(preferred)) return preferred;
+  return IMAGE_POOL.find(img => !used.has(img)) || preferred;
+}
+
+// Generate a brand-new hero image for this post with OpenAI's image model and
+// save it to public/blog-img/<slug>.png. Returns the public path on success,
+// or null if OPENAI_API_KEY is missing or the request fails (caller falls back
+// to the pool). Best-effort — never throws.
+async function generateHeroImage(post, slug) {
+  const key = process.env.OPENAI_API_KEY;
+  if (!key) return null;
+  try {
+    const prompt = `Professional, photorealistic hero image for a mobile-notary blog post titled "${post.title}". A warm, trustworthy ${post.category} scene relevant to a home, hospital, or office signing — documents, a notary stamp, and a pen on a clean desk with soft natural light. No text, no words, no watermarks, no logos, no readable document content.`;
+    const res = await fetch('https://api.openai.com/v1/images/generations', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'gpt-image-1', prompt, size: '1536x1024', n: 1 }),
+    });
+    if (!res.ok) {
+      console.warn(`Image generation failed (${res.status}): ${(await res.text()).slice(0, 200)}`);
+      return null;
+    }
+    const data = await res.json();
+    const b64 = data?.data?.[0]?.b64_json;
+    if (!b64) return null;
+    writeFileSync(join(ROOT, 'public', 'blog-img', `${slug}.png`), Buffer.from(b64, 'base64'));
+    console.log(`✓ Generated hero image → /blog-img/${slug}.png`);
+    return `/blog-img/${slug}.png`;
+  } catch (e) {
+    console.warn(`Image generation error: ${e.message}`);
+    return null;
+  }
+}
+
 const manifest = JSON.parse(readFileSync(manifestPath, 'utf-8'));
 const usedTitles = manifest.map(p => p.title);
 const usedSlugs = new Set(manifest.map(p => p.slug));
@@ -121,18 +161,10 @@ post.slug = slug;
 
 post.date = today;
 
-// Give every post a UNIQUE hero image. Prefer the category image; if any
-// earlier post already used it, take the first pool image that no existing
-// post uses (global uniqueness, not just a recent window). Only if the whole
-// pool is exhausted do we fall back to the category image.
-const usedImages = new Set(manifest.map(p => p.heroImg));
-const preferred = CATEGORY_IMAGE[post.category] || FALLBACK_IMAGE;
-let heroImg = preferred;
-if (usedImages.has(heroImg)) {
-  const unused = IMAGE_POOL.find(img => !usedImages.has(img));
-  if (unused) heroImg = unused;
-}
-post.heroImg = heroImg;
+// Hero image: first try to GENERATE a fresh, unique cover for this exact post
+// (needs OPENAI_API_KEY). If that isn't configured or fails, fall back to an
+// unused image from the pool so no two posts ever share a photo.
+post.heroImg = (await generateHeroImage(post, slug)) || pickUniquePoolImage(manifest, post);
 
 // Minimal validation
 for (const f of ['title', 'metaDescription', 'category', 'excerpt', 'bodyHtml']) {
