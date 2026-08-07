@@ -21,7 +21,10 @@ const manifestPath = join(ROOT, 'data', 'blog-posts.json');
 const API_KEY = process.env.ANTHROPIC_API_KEY;
 if (!API_KEY) { console.error('Missing ANTHROPIC_API_KEY'); process.exit(1); }
 
-// Category → topic-relevant AI hero image (custom, brand-matched, in /public/blog-img)
+// Category → topic-relevant brand hero image (custom, in /public/blog-img).
+// Used as the FIRST preference for a new post; if that image is already taken
+// by any earlier post, the selector falls back to an unused image from the
+// pool below so no two posts ever share a hero photo.
 const CATEGORY_IMAGE = {
   'Estate & POA': '/blog-img/cat-estate-poa.png',
   'Loan Signings': '/blog-img/cat-loan-signings.png',
@@ -31,6 +34,22 @@ const CATEGORY_IMAGE = {
   'Notary Insights': '/blog-img/cat-notary-insights.png',
 };
 const FALLBACK_IMAGE = '/blog-img/cat-notary-insights.png';
+
+// A larger pool of distinct notary / legal / estate / real-estate photos so
+// each post gets its own image. These are verified Unsplash photo IDs not used
+// by the hand-written posts. Add more IDs here to extend the runway.
+const U = (id) => `https://images.unsplash.com/${id}?auto=format&fit=crop&q=80&w=800`;
+const IMAGE_POOL = [
+  ...Object.values(CATEGORY_IMAGE),
+  U('photo-1436450412740-6b988f486c6b'), U('photo-1517842645767-c639042777db'),
+  U('photo-1607863680198-23d4b2565df0'), U('photo-1554224154-26032ffc0d07'),
+  U('photo-1521791136064-7986c2920216'), U('photo-1589578527966-fdac0f44566c'),
+  U('photo-1521737711867-e3b97375f902'), U('photo-1454165804606-c3d57bc86b40'),
+  U('photo-1497215728101-856f4ea42174'), U('photo-1556742049-0cfed4f6a45d'),
+  U('photo-1512626120412-faf41adb4874'), U('photo-1423592707957-3b212afa6733'),
+  U('photo-1591696205602-2f950c417cb9'), U('photo-1554224154-22dec7ec8818'),
+  U('photo-1517245386807-bb43f82c33c4'), U('photo-1460925895917-afdab827c52f'),
+];
 
 const manifest = JSON.parse(readFileSync(manifestPath, 'utf-8'));
 const usedTitles = manifest.map(p => p.title);
@@ -102,17 +121,16 @@ post.slug = slug;
 
 post.date = today;
 
-// Only 6 category images exist, so two posts landing in the same category
-// (e.g. two "Mobile Notary" posts) would otherwise get an identical hero
-// image back-to-back in the blog feed. If the category's canonical image
-// was used by any of the last few posts, fall back to whichever of the 6
-// images is least recently used instead of colliding.
-const RECENT_WINDOW = 5;
-const recentImages = manifest.slice(-RECENT_WINDOW).map(p => p.heroImg);
-let heroImg = CATEGORY_IMAGE[post.category] || FALLBACK_IMAGE;
-if (recentImages.includes(heroImg)) {
-  const alternative = Object.values(CATEGORY_IMAGE).find(img => !recentImages.includes(img));
-  if (alternative) heroImg = alternative;
+// Give every post a UNIQUE hero image. Prefer the category image; if any
+// earlier post already used it, take the first pool image that no existing
+// post uses (global uniqueness, not just a recent window). Only if the whole
+// pool is exhausted do we fall back to the category image.
+const usedImages = new Set(manifest.map(p => p.heroImg));
+const preferred = CATEGORY_IMAGE[post.category] || FALLBACK_IMAGE;
+let heroImg = preferred;
+if (usedImages.has(heroImg)) {
+  const unused = IMAGE_POOL.find(img => !usedImages.has(img));
+  if (unused) heroImg = unused;
 }
 post.heroImg = heroImg;
 
