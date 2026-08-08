@@ -165,7 +165,10 @@ async function startServer() {
     "/about-same-day-service-near-you": "/after-hours-mobile-notary-charlotte-nc",
     // Malformed URL from an on-page audit (combined two live slugs) that 404s;
     // send it to the real Concord location page.
-    "/cabarrus-countymobile-notary-concord-nc": "/locations/concord"
+    "/cabarrus-countymobile-notary-concord-nc": "/locations/concord",
+    // Orphaned static duplicate of the real hospital-notary page — same
+    // title/keyword target, splitting ranking signal across two URLs.
+    "/hospital-notary-charlotte.html": "/hospital-notary-charlotte-nc"
   };
   app.use((req, res, next) => {
     const target = LEGACY_REDIRECTS[req.path];

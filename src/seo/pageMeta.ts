@@ -26,7 +26,7 @@ export const pageMeta: Record<string, PageMeta> = {
   },
   '/hospital-notary-charlotte-nc': {
     title: `24/7 Emergency Hospital & Bedside Notary Charlotte NC`,
-    description: 'Need a notary at a hospital in Charlotte, NC today? I provide same-day and 24/7 emergency mobile bedside notary service for patients and families at Atrium, Novant, and every care facility in Mecklenburg County.',
+    description: 'Need a notary at a Charlotte hospital today? Same-day, 24/7 bedside notary service at Atrium, Novant, and every Mecklenburg County care facility.',
     canonical: `${businessConfig.domain}/hospital-notary-charlotte-nc`,
   },
   '/mobile-notary-charlotte-nc': {
