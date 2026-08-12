@@ -102,6 +102,19 @@ const manifest = JSON.parse(readFileSync(manifestPath, 'utf-8'));
 const usedTitles = manifest.map(p => p.title);
 const usedSlugs = new Set(manifest.map(p => p.slug));
 
+// Fixed run order for the next 5 posts (hospital & nursing-home signings, per
+// request). Each is dropped once its title shows up in usedTitles, then the
+// next queue item takes over; once the queue is empty, topic picking reverts
+// to the freeform TASK instruction below.
+const TOPIC_QUEUE = [
+  'What Documents Can a Notary Sign at a Hospital Bedside in Charlotte?',
+  'Notarizing Documents for a Loved One in Hospice or Nursing Care in NC',
+  "Can a Hospital Patient Sign Legal Documents While Sedated or on Pain Medication?",
+  'How to Get a Healthcare Power of Attorney Notarized Fast During a Hospital Emergency',
+  'Notary Requirements for Skilled Nursing Facility Admissions in North Carolina',
+];
+const nextQueuedTopic = TOPIC_QUEUE.find(t => !usedTitles.includes(t));
+
 const today = new Date().toISOString().slice(0, 10);
 
 const prompt = `You write local-SEO blog posts for Integrity Closings CLT, a mobile notary business.
@@ -120,7 +133,9 @@ INTERNAL LINKS you may use inside bodyHtml (use 2–4 relevant ones; these are t
 ALREADY PUBLISHED (do NOT repeat these topics or titles):
 ${usedTitles.map(t => '- ' + t).join('\n') || '(none yet)'}
 
-TASK: Write ONE new, genuinely useful ~700-word post on a fresh topic relevant to a Charlotte-area mobile notary's customers (loan signings, estate/POA, hospital/care-facility signings, general notary questions, small-business docs, NC notary rules, same-day/after-hours service, etc.).
+TASK: ${nextQueuedTopic
+  ? `Write the post titled EXACTLY "${nextQueuedTopic}" (category: Hospital & Care). Keep the title exactly as given — do not reword it.`
+  : `Write ONE new, genuinely useful ~700-word post on a fresh topic relevant to a Charlotte-area mobile notary's customers (loan signings, estate/POA, hospital/care-facility signings, general notary questions, small-business docs, NC notary rules, same-day/after-hours service, etc.).`}
 
 Return ONLY a raw JSON object (no markdown, no code fences) with EXACTLY these fields:
 {
