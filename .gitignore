@@ -17,3 +17,5 @@ test-auth.js
 tmp/
 .tmp/
 integrity-closings-clt-main/
+
+scripts/fix-blog-photo.log
