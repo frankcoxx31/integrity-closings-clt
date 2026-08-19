@@ -107,7 +107,9 @@ const usedSlugs = new Set(manifest.map(p => p.slug));
 // next queue item takes over; once the queue is empty, topic picking reverts
 // to the freeform TASK instruction below.
 const TOPIC_QUEUE = [
-  'What Documents Can a Notary Sign at a Hospital Bedside in Charlotte?',
+  // "What Documents Can a Notary Sign at a Hospital Bedside" removed — already
+  // covered by the Aug 14 "Hospital Bedside Notary Documents in Charlotte" post;
+  // the queued version auto-published a near-duplicate and was deleted.
   'Notarizing Documents for a Loved One in Hospice or Nursing Care in NC',
   "Can a Hospital Patient Sign Legal Documents While Sedated or on Pain Medication?",
   'How to Get a Healthcare Power of Attorney Notarized Fast During a Hospital Emergency',

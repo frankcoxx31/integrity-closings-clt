@@ -168,7 +168,10 @@ async function startServer() {
     "/cabarrus-countymobile-notary-concord-nc": "/locations/concord",
     // Orphaned static duplicate of the real hospital-notary page — same
     // title/keyword target, splitting ranking signal across two URLs.
-    "/hospital-notary-charlotte.html": "/hospital-notary-charlotte-nc"
+    "/hospital-notary-charlotte.html": "/hospital-notary-charlotte-nc",
+    // Deleted near-duplicate hospital-bedside blog post (auto-published a
+    // second time on a near-identical slug) — 301 into the kept original.
+    "/blog/hospital-bedside-notary-documents-charlotte": "/blog/notary-hospital-bedside-documents-charlotte"
   };
   app.use((req, res, next) => {
     const target = LEGACY_REDIRECTS[req.path];
