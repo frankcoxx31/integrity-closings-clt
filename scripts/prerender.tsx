@@ -173,7 +173,15 @@ function main() {
     console.error('[prerender] dist/index.html not found — run `vite build` first.');
     process.exit(1);
   }
-  const shell = readFileSync(shellPath, 'utf-8');
+  let shell = readFileSync(shellPath, 'utf-8');
+
+  // Inject the Microsoft Advertising UET tag immediately before </head> on the
+  // FINAL built output (after Vite has appended its asset tags), so it lands
+  // last in the head on every prerendered page — exactly once per page.
+  const UET_TAG = '<!-- Microsoft Advertising UET tag -->\n    <script>(function(w, d, t, u, o) {w[u] = w[u] || [], o.ts = (new Date).getTime();var n = d.createElement(t);n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : ""),n.async = 1, n.onload = n.onreadystatechange = function() {var s = this.readyState;s && "loaded" !== s && "complete" !== s ||(o.q = w[u], w[u] = new UET(o), w[u].push("pageLoad"),n.onload = n.onreadystatechange = null)};var i = d.getElementsByTagName(t)[0];i.parentNode.insertBefore(n, i);})(window, document, "script", "uetq", {ti: "187268816",enableAutoSpaTracking: true});</script>';
+  if (!shell.includes('ti: "187268816"')) {
+    shell = shell.replace('</head>', `${UET_TAG}\n  </head>`);
+  }
 
   let succeeded = 0;
   const failed: string[] = [];
